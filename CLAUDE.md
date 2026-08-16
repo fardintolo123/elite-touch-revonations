@@ -21,22 +21,31 @@ Read the linked docs; do not assume their contents.
 **Elite Touch Renovations (ETR)** — a renovation business specialising in **bathroom renovations**.
 Run by **Omar and Adam**. Building a marketing website from scratch.
 
-| Fact | Status |
+| Fact | Value |
 |---|---|
-| Trade focus | **Bathroom renovations** (confirmed — all 18 testimonials are bathroom jobs) |
-| Principals | Omar and Adam |
-| Real customer reviews | ✅ **18, verbatim, in [Customer Reviews.md](Customer%20Reviews.md)** — this is the only approved source of testimonial copy |
-| Service area / location | **TODO** — not yet recorded anywhere |
-| Other services offered (kitchens? laundries? full home?) | **TODO** — do not advertise anything beyond bathrooms until confirmed |
-| Licence / builder registration number | **TODO** |
-| ABN | **TODO** |
-| Phone · email · address | **TODO** |
+| Trade focus | **Bathroom renovations**, Sydney NSW |
+| Services (4) | **Bathroom · Ensuite · Bathroom + laundry · Powder room** renovations |
+| Family / principals | **The Dawood family** — Omar and Adam |
+| Founded | **2023** |
+| NSW Builder Licence | **475204C** |
+| Phone | **0411 752 334** |
+| Standards claim | Built to **AS 3740** waterproofing + current Australian Standards |
+| Offer | **Free on-site measure** across Sydney · **fixed-scope written quotes** |
+| Workmanship warranty | Offered, and stated on the site — ⚠️ **term not yet supplied; never write a number** (D-19) |
+| Google Business Profile | **Exists** — rating / review count / URL still to capture |
+| Packages | **BASIC $17,999 · STANDARD from $25,999 · PREMIUM from $32,999** (+ an ORIGINAL tier) |
+| Real customer reviews | **18, verbatim, in [Customer Reviews.md](Customer%20Reviews.md)** — the only approved source of testimonial copy |
+| Case studies (3) | The Rocks heritage bathroom · Hunters Hill marble bathroom · Artarmon bathroom + ensuite |
+| ABN · email · address | **TODO** |
 | Tech stack + hosting | **TODO** — nothing is built yet |
 | Google Business Profile | **TODO** |
 
-**As soon as any of these is known, put it in `src/data/businessInfo.ts` (or equivalent) — one file,
-one source of truth — and record it in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).** Never let a business
-fact live only in JSX, only in a doc, or only in a conversation.
+Sources: the page-copy and package PDFs on **issue #2**, and
+[docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md). Full detail, including every
+package inclusion, is in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
+
+**Once the site exists, put all of this in `src/data/businessInfo.ts` (or equivalent) — one file, one
+source of truth.** Never let a business fact live only in JSX, only in a doc, or only in a conversation.
 
 ---
 
@@ -51,6 +60,11 @@ fact live only in JSX, only in a doc, or only in a conversation.
   Already written. Do not contradict it, and do not start a second design system.
 - [Customer Reviews.md](Customer%20Reviews.md) — the 18 real testimonials. **The only permitted source
   of review copy.**
+- [service-areas.json](service-areas.json) — ⭐ **machine-readable service areas:** every suburb with
+  slug, postcode, tier and Tier-1 URL. **Generate location routes from this file; never retype the
+  list.** Entries flagged `isNotASuburb` exist for postcode completeness and get no service-area copy.
+- `ETR images/` · `ETR images and reviews/` — **33 project photos, unreviewed and unmapped.**
+  Inventory what each one shows before using it ([PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) K5).
 - [Web Design Research.md](Web%20Design%20Research.md) — background UX/CRO reference. Useful reading,
   **not** a rulebook; where it disagrees with `DESIGN.md`, `DESIGN.md` wins.
 
@@ -98,22 +112,33 @@ When two sources disagree, the **higher tier wins**:
 | **New page or section** | `DESIGN.md` → `docs/SEO_CONTENT_GUIDE.md` → `docs/CONTENT_QUALITY_CHECKLIST.md` → `docs/SEO_AEO_GEO_CHECKLIST.md` |
 | **Copywriting / readability** | `docs/CONTENT_QUALITY_CHECKLIST.md` |
 | **SEO / keywords / content strategy** | `docs/SEO_CONTENT_GUIDE.md` |
-| **Suburb / location page** (which suburbs get one, its URL, which hub it links to) | `docs/BATHROOM_SITE_STRUCTURE.md` — the tier split and routes are already settled there; do not add a suburb page that isn't Tier 1 |
+| **Suburb / location page** (which suburbs get one, its URL, which hub it links to) | `docs/BATHROOM_SITE_STRUCTURE.md` for the reasoning + [service-areas.json](service-areas.json) for the data. The tier split and routes are already settled; **do not add a suburb page that isn't Tier 1** without new volume evidence |
+| **Photos / images** | `ETR images/`, `ETR images and reviews/`. **Inventory before use** — record what each photo shows, then write alt text describing **the photograph**, never the page topic |
 | **Testimonials / proof / trust signals** | [Customer Reviews.md](Customer%20Reviews.md) — **verbatim only**, attributed as written |
 | **Anything that adds weight** (dependency · component kit · animation · third-party script · image · font · `'use client'` · page) | ⭐ `docs/PERFORMANCE_BUDGET.md` — **baseline before, re-measure after.** This is the row that gets skipped, and skipping it is how a site degrades one "small" change at a time |
 | **Performance / Core Web Vitals** | `docs/PERFORMANCE_BUDGET.md` |
 | **Schema / structured data** | `docs/SEO_AEO_GEO_CHECKLIST.md` Phase 1 |
 | **Sitemap / robots / canonicals / indexation** | `docs/SEO_AEO_GEO_CHECKLIST.md` Phases 0 & 2 + [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) |
 | **Third-party SEO tool report** (cannibalisation · gap · audit PDF) | `docs/SEO_CONTENT_GUIDE.md` → *Report intake*. **Do not action one as written** |
-| **Pricing / quotes / cost content** | **TODO** — there is no pricing source of truth yet. **Never state or imply a price until one exists.** Build it before writing cost content |
+| **Pricing / quotes / cost content** | The **Renovation Packages** PDF on issue #2 is the pricing source of truth; the tiers and their inclusion lists are summarised in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) §2. Always pair a price with its stated bathroom size. A cost/pricing page is a confirmed opportunity (100–1K/mo — `docs/BATHROOM_SITE_STRUCTURE.md`) |
+| **Anything sourced from a competitor site** (incl. issue #1's reference link) | [DECISIONS.md](DECISIONS.md) D-05 — **layout and structure may be used as reference; copy, specifications and claims may not.** |
 
 ---
 
 ## Business Rules
 
-- **Bathroom renovations are the confirmed trade.** Do **not** advertise kitchens, laundries,
-  extensions, tiling-only, waterproofing-only or any other service until the owner confirms it is
-  offered. Competitor coverage is not a reason to claim a trade.
+- **Four services, and only four:** bathroom · ensuite · bathroom-and-laundry · powder room
+  renovations. Do **not** advertise kitchens, full-home extensions, tiling-only, or standalone
+  waterproofing/leak-repair jobs until the owner confirms them. Competitor coverage is not a reason to
+  claim a trade. *(Waterproofing is performed **as part of** a renovation, to AS 3740 — that is a
+  process claim, not a standalone service.)*
+- **The licence number `475204C`, the phone `0411 752 334`, `AS 3740` and "family-run since 2023" are
+  real and load-bearing trust signals.** Reproduce them exactly. Never approximate a licence number,
+  never round the founding year, never upgrade "family-run" into a team size we cannot evidence.
+- **Package prices are `$17,999` / from `$25,999` / from `$32,999`, each tied to a stated bathroom
+  size and a specific inclusion list.** Never quote a price without its size basis and never present
+  "starts from" as a fixed price. The full inclusion matrix is in `PROJECT_CONTEXT.md` — if a claim
+  is not in it, it is not in the package.
 - **The only real reviews are the 18 in `Customer Reviews.md`.** Reproduce them verbatim with the
   reviewer's name as written. **Never write a testimonial, never invent a customer, never invent a
   quote, and never generate review schema for a review that does not exist.**
