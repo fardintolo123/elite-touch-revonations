@@ -19,7 +19,8 @@ the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds 
 | Fact | Value |
 |---|---|
 | Business name | **Elite Touch Renovations** (customers also write **ETR**) |
-| Owners | **The Dawood family** — **Omar** and **Adam**, named repeatedly in reviews |
+| Legal entity name | **Elite Touch Renovations Pty Ltd** — from the business's own logo file, `docs/IMAGE_INVENTORY.md` |
+| Owners | **The Dawood family** — **Omar** and **Adam** (Projects Managers, named repeatedly in reviews) and **Farah** (Architectural Designer, owner-confirmed 2026-08-17) |
 | Positioning | Family-run, small focused team, *"done once and done properly"* |
 | Founded | **2023** |
 | Market | **Sydney, NSW** |
@@ -155,19 +156,50 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 | # | Item | Owner |
 |---|---|---|
 | K1 | ABN, business email, postal/base address | Owner |
-| K2 | GBP **exists** — still need the **rating, review count and profile URL**, plus whether the 18 testimonials in `Customer Reviews.md` came from it (if so, it is also the live rating source) | Owner |
+| K2 | GBP **exists** — still need the **rating, review count and profile URL**, plus whether the 19 testimonials in `Customer Reviews.md` came from it (if so, it is also the live rating source) | Owner |
 | K2b | **The warranty term.** Confirmed as offered and to be stated; the number is missing and must not be guessed | Owner |
 | K3 | Stack + hosting choice | Owner + agent |
 | K4 | Analytics + call-tracking approach — settle **before** any tag is added | Owner + agent |
-| K5 | **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root. **Unreviewed and unmapped:** which project is each one, which of the three case studies do they support, and are there genuine before/after pairs? **Build an image inventory before using any of them** — see the note below | Owner + agent |
-| K6 | Customer consent to publish photos of their homes | Owner |
+| K5 | **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root (the ETR logo, not a photo). Detect/Inventory/Verify/Approve are done — see [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — confirmed genuine ETR work with consent (D-38, D-39). **Still open: no suburb, street or project is known for any of them** (O-4) — use as general, unattributed project photography only; never invent or infer an attribution (D-06). **Add to repo / Commit / public asset URL are blocked on K3 + K9.** | Owner + agent |
+| ~~K6~~ | ✅ Customer consent to publish photos of their homes — **confirmed by owner 2026-08-17** (D-39) | Resolved |
 | K7 | The ORIGINAL package price — present in the PDF's structure but not captured as a figure here | Owner / re-read PDF |
-| K9 | The repo-root `.jpg` and the two image folders sit outside any structure. Decide where assets live before the first page is built | Agent |
-
-> **Before any photo is used on the site, write down what each one actually shows** — room, project,
-> stage, and whether it is one half of a real before/after pair. The sibling project shipped alt text
-> describing the *page topic* instead of the photo across ~155 image pairs, plus a case study whose
-> "exterior before/after" photos were interiors. On a trade site that is a false claim about work
-> performed, not a copywriting slip. An inventory file mapping photo → subject → where used makes
-> every later audit cheap and stops the same photo being reused on six pages.
+| K9 | The repo-root `.jpg` and the two image folders sit outside any structure. Decide where assets live before the first page is built — this is the target directory the "Add to repo" step below moves approved images into | Agent |
 | K8 | Does the "family-run since 2023" line risk reading as inexperienced? It is true and must stay true — but the *framing* is a copy decision worth making deliberately | Owner |
+
+> ### Image workflow (D-36) — every image, not just the initial 33
+>
+> **Detect → Inventory → Verify → Flag issues → Approve → Add to repo → Commit → Use public asset URL → Add accurate alt text.**
+> No image is used on the site until it has cleared Approve. This is a standing rule — it applies
+> automatically to every future image, not only the 33 currently sitting in the two ETR folders; don't
+> wait to be asked to run it again.
+>
+> 1. **Detect.** A new photo appears in `ETR images/`, `ETR images and reviews/`, or wherever the owner
+>    drops it — as a raw, uncommitted local file, not yet part of the repo.
+> 2. **Inventory.** Record, per photo: interior or exterior; the room/area/feature/material shown;
+>    which of the four services or which of the three documented case studies (The Rocks heritage
+>    bathroom, Hunters Hill marble bathroom, Artarmon bathroom + ensuite) it actually represents, if
+>    any; whether it is genuinely one half of a matched before/after pair. **Never infer any of this
+>    from the filename, folder name, existing alt text, or the page it might end up on** — the WhatsApp
+>    export filenames (`WhatsApp Image 2026-08-13 at 7.40.13 AM (1).jpeg`) carry zero descriptive
+>    information, and assuming otherwise is exactly how the sibling project's alt-text drift happened
+>    (engineering lesson #9, below).
+> 3. **Verify.** Cross-check the inventoried claim against what is actually evidenced (a documented
+>    project, genuine consent). Do not label a photo with a project or location it cannot be evidenced
+>    against — see D-06.
+> 4. **Flag issues.** Anything uncertain, mismatched, duplicated, or that would create an unevidenced
+>    claim goes back to the owner instead of being guessed. Do not work around a flag.
+> 5. **Approve.** Owner or agent sign-off, per photo, once Verify is clean.
+> 6. **Add to repo.** Move the approved file into the site's asset directory (see K9) under a
+>    consistent, descriptive naming convention — not the WhatsApp export name.
+> 7. **Commit.** Track it in git like any other source file.
+> 8. **Use public asset URL.** Reference it via the URL the deployment setup actually serves (its
+>    public/CDN path). Never a local filesystem path, and never a GitHub `blob` page URL when the
+>    deployment setup provides a real asset URL.
+> 9. **Add accurate alt text.** Describes the photograph itself — never the page topic or the target
+>    keyword.
+>
+> The sibling project shipped alt text describing the *page topic* instead of the photo across ~155
+> image pairs, plus a case study whose "exterior before/after" photos were interiors. On a trade site
+> that is a false claim about work performed, not a copywriting slip. An inventory mapping photo →
+> subject → where used makes every later audit cheap and stops the same photo being reused on six
+> pages.

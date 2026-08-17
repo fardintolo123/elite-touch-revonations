@@ -133,7 +133,7 @@ authoritative content has a real chance.
 
 - **No invented facts.** No fabricated reviews, testimonials, case studies, project locations,
   before/after pairs, prices, credentials, team sizes, or years in business.
-- **The 18 testimonials are the only permitted review copy**, verbatim and attributed as written.
+- **The 19 testimonials are the only permitted review copy**, verbatim and attributed as written.
 - **Only the four services** — see D-01. Waterproofing is a process claim, not a product.
 - **Prices always carry their size basis**, and "starts from" is never shortened to a flat price.
 - **Competitor sites are a layout reference only** — never a source of copy, specifications or

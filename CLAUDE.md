@@ -19,13 +19,13 @@ Read the linked docs; do not assume their contents.
 ## Project Overview
 
 **Elite Touch Renovations (ETR)** — a renovation business specialising in **bathroom renovations**.
-Run by **Omar and Adam**. Building a marketing website from scratch.
+Run by the Dawood family — **Omar, Adam and Farah**. Building a marketing website from scratch.
 
 | Fact | Value |
 |---|---|
 | Trade focus | **Bathroom renovations**, Sydney NSW |
 | Services (4) | **Bathroom · Ensuite · Bathroom + laundry · Powder room** renovations |
-| Family / principals | **The Dawood family** — Omar and Adam |
+| Family / principals | **The Dawood family** — Omar and Adam Dawood (Projects Managers), **Farah Dawood (Architectural Designer)** |
 | Founded | **2023** |
 | NSW Builder Licence | **475204C** |
 | Phone | **0411 752 334** |
@@ -34,7 +34,7 @@ Run by **Omar and Adam**. Building a marketing website from scratch.
 | Workmanship warranty | Offered, and stated on the site — ⚠️ **term not yet supplied; never write a number** (D-19) |
 | Google Business Profile | **Exists** — rating / review count / URL still to capture |
 | Packages | **BASIC $17,999 · STANDARD from $25,999 · PREMIUM from $32,999** (+ an ORIGINAL tier) |
-| Real customer reviews | **18, verbatim, in [Customer Reviews.md](Customer%20Reviews.md)** — the only approved source of testimonial copy |
+| Real customer reviews | **19, verbatim, in [Customer Reviews.md](Customer%20Reviews.md)** — the only approved source of testimonial copy |
 | Case studies (3) | The Rocks heritage bathroom · Hunters Hill marble bathroom · Artarmon bathroom + ensuite |
 | ABN · email · address | **TODO** |
 | Tech stack + hosting | **TODO** — nothing is built yet |
@@ -58,13 +58,20 @@ source of truth.** Never let a business fact live only in JSX, only in a doc, or
   proposing a change.
 - [DESIGN.md](DESIGN.md) — ⭐ **authoritative for brand, colour, type, spacing, components, motion.**
   Already written. Do not contradict it, and do not start a second design system.
-- [Customer Reviews.md](Customer%20Reviews.md) — the 18 real testimonials. **The only permitted source
+- [Customer Reviews.md](Customer%20Reviews.md) — the 19 real testimonials. **The only permitted source
   of review copy.**
 - [service-areas.json](service-areas.json) — ⭐ **machine-readable service areas:** every suburb with
   slug, postcode, tier and Tier-1 URL. **Generate location routes from this file; never retype the
   list.** Entries flagged `isNotASuburb` exist for postcode completeness and get no service-area copy.
-- `ETR images/` · `ETR images and reviews/` — **33 project photos, unreviewed and unmapped.**
-  Inventory what each one shows before using it ([PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) K5).
+- `ETR images/` · `ETR images and reviews/` — **33 project photos, uncommitted.** Every image — these
+  33 and any added later — follows one standing pipeline before it ships: **Detect → Inventory →
+  Verify → Flag issues → Approve → Add to repo → Commit → Use public asset URL → Add accurate alt
+  text** (decision record D-36 in [DECISIONS.md](DECISIONS.md)). This is automatic — don't wait to be
+  told to run it again.
+- [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — ⭐ **Detect/Inventory/Verify are done for all 34
+  files** (the 33 plus the root logo). **Approve is not** — read the flags before shortlisting anything
+  from it (an unverified testimonial not in `Customer Reviews.md`, an undocumented family member,
+  unconfirmed provenance on several template graphics).
 - [Web Design Research.md](Web%20Design%20Research.md) — background UX/CRO reference. Useful reading,
   **not** a rulebook; where it disagrees with `DESIGN.md`, `DESIGN.md` wins.
 
@@ -113,7 +120,7 @@ When two sources disagree, the **higher tier wins**:
 | **Copywriting / readability** | `docs/CONTENT_QUALITY_CHECKLIST.md` |
 | **SEO / keywords / content strategy** | `docs/SEO_CONTENT_GUIDE.md` |
 | **Suburb / location page** (which suburbs get one, its URL, which hub it links to) | `docs/BATHROOM_SITE_STRUCTURE.md` for the reasoning + [service-areas.json](service-areas.json) for the data. The tier split and routes are already settled; **do not add a suburb page that isn't Tier 1** without new volume evidence |
-| **Photos / images** | `ETR images/`, `ETR images and reviews/`. **Inventory before use** — record what each photo shows, then write alt text describing **the photograph**, never the page topic |
+| **Photos / images** (any image — the initial 33 or any added later) | [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) K5 for the full pipeline — **Detect → Inventory → Verify → Flag issues → Approve → Add to repo → Commit → Use public asset URL → Add accurate alt text.** Never infer subject, location or before/after status from a filename, folder or page topic; alt text describes the photograph, not the keyword |
 | **Testimonials / proof / trust signals** | [Customer Reviews.md](Customer%20Reviews.md) — **verbatim only**, attributed as written |
 | **Anything that adds weight** (dependency · component kit · animation · third-party script · image · font · `'use client'` · page) | ⭐ `docs/PERFORMANCE_BUDGET.md` — **baseline before, re-measure after.** This is the row that gets skipped, and skipping it is how a site degrades one "small" change at a time |
 | **Performance / Core Web Vitals** | `docs/PERFORMANCE_BUDGET.md` |

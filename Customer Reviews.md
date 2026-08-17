@@ -1,6 +1,6 @@
 # Customer Reviews
 
-Elite Touch Renovations — 18 customer testimonials, reproduced verbatim.
+Elite Touch Renovations — 19 customer testimonials, reproduced verbatim.
 
 ---
 
@@ -81,3 +81,7 @@ I recently had my bathroom renovated by ETR and I'm thrilled with the results. T
 ## Rasha Sayel
 
 ETR did an awesome job renovating our bathroom. They kept me updated at every step. Definitely recommend them.
+
+## Kieran C
+
+Adam and Omar did a very professional job installing large format Carrara marble wall and floor tiles for our bathroom renovation. The finished tiling was first class with good falls, neat consistent joints, clean cuts and no lippage. They exercised due care at all times including providing drop sheets and surface protection to and from the work area and leaving the site clean and tidy at the end of each day. Good housekeeping of this standard is not common practice for the majority of tradespeople in my experience and is evidence of a company that takes great pride in their work. Their price for the job was competitive to boot. I'd highly recommend their services and would use again.
