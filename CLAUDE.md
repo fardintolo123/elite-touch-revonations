@@ -146,7 +146,7 @@ When two sources disagree, the **higher tier wins**:
   size and a specific inclusion list.** Never quote a price without its size basis and never present
   "starts from" as a fixed price. The full inclusion matrix is in `PROJECT_CONTEXT.md` — if a claim
   is not in it, it is not in the package.
-- **The only real reviews are the 18 in `Customer Reviews.md`.** Reproduce them verbatim with the
+- **The only real reviews are the 19 in `Customer Reviews.md`.** Reproduce them verbatim with the
   reviewer's name as written. **Never write a testimonial, never invent a customer, never invent a
   quote, and never generate review schema for a review that does not exist.**
 - **Never invent project details** — no suburb, street, budget, duration or "before/after" pairing

@@ -1,0 +1,24 @@
+{
+  "name": "elite-touch-renovations",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Elite Touch Renovations — Sydney bathroom renovations. Next.js 16 App Router.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "verify:redirects": "node scripts/verify-redirects.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}

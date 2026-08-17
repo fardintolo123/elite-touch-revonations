@@ -4,9 +4,11 @@
 the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds the *facts and the
 "why does it behave like that"*.
 
-> **Status: documentation-only repo.** No site is built yet. §1–§2 are real, sourced facts. §4 is
-> carried over from a sibling trade-business site that hit each of those traps in production — they
-> are framework behaviour, not that project's quirks. **Never invent a value to fill a gap.**
+> **Status: MVP codebase exists as of 2026-08-17.** Next.js 16 App Router, built and verified
+> locally, **not deployed** (D-35). See §6 for how it is wired and [MIGRATION.md](MIGRATION.md) for
+> the WordPress → Next.js redirect layer. §1–§2 are real, sourced facts. §4 is carried over from a
+> sibling trade-business site that hit each of those traps in production — they are framework
+> behaviour, not that project's quirks. **Never invent a value to fill a gap.**
 
 **Sources of the facts below:** the eight page-copy and package PDFs attached to **GitHub issue #2**,
 [docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md), and
@@ -20,7 +22,7 @@ the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds 
 |---|---|
 | Business name | **Elite Touch Renovations** (customers also write **ETR**) |
 | Legal entity name | **Elite Touch Renovations Pty Ltd** — from the business's own logo file, `docs/IMAGE_INVENTORY.md` |
-| Owners | **The Dawood family** — **Omar** and **Adam** (Projects Managers, named repeatedly in reviews) and **Farah** (Architectural Designer, owner-confirmed 2026-08-17) |
+| Owners | **The Dawood family — FOUR members** (D-50, supersedes D-37): **Omar Dawood** (Licensed Builder & Civil Engineer, founder, holds the licence) · **Adam Dawood** (Licensed Tiler & Projects Manager, 25+ years, **the father**) · **Farah Dawood** (Architectural Designer) · **Mohammed Dawood** (Assistant Project Manager) |
 | Positioning | Family-run, small focused team, *"done once and done properly"* |
 | Founded | **2023** |
 | Market | **Sydney, NSW** |
@@ -30,9 +32,13 @@ the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds 
 | Offer | **Free on-site measure** across Sydney · **fixed-scope written quotes** |
 | Primary CTA | "Book a free on-site measure" · Secondary: "Call 0411 752 334" |
 | Workmanship warranty | ✅ **Offered and to be stated on the site** — ⚠️ **term not yet supplied. Never write a number until the owner gives it** ([DECISIONS.md](DECISIONS.md) D-19) |
-| Google Business Profile | ✅ **Exists** (owner confirmed 2026-08-16) — rating, review count and profile URL still to capture |
-| ABN | ❓ **TODO** |
-| Email / business address | ❓ **TODO** |
+| Google Business Profile | ✅ https://share.google/PLJDhhWBCrWAq6GVH — **5.0 across 17 Google reviews** as at the issue-#2 PDF. ⚠️ **Not verified live; not displayed and not in schema** (D-52). Note 17 Google reviews ≠ the 19 testimonials |
+| ABN · ACN | **92 679 016 721** · **679 016 721** (D-51) |
+| Email | **Elitetouchrenovations@gmail.com** (live). `info@elitetouchrenovations.au` is preferred but the owner marked it *"currently being set up"* — **not published until confirmed receiving** |
+| Office · hours | **Granville, NSW (by appointment)** · Mon–Fri 7:00am–5:30pm, Sat 8:00am–3:30pm |
+| Insurance · memberships | Public Liability **$20M** · Workers' Comp **Allianz** · HBCF certificates · **HIA** member · HIA fixed-price renovation contract |
+| Payment terms | **30% deposit**, then a **30 / 40 / 30** progressive schedule |
+| Second phone | **0423 305 852** (Mohammed) — not currently surfaced on the site |
 
 ### The four services
 1. **Bathroom renovations** — full strip-out and rebuild of the main bathroom
@@ -44,7 +50,7 @@ the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds 
 is **not** sold as a standalone service, and neither is leak repair. See [DECISIONS.md](DECISIONS.md) D-02.
 
 ### Proof assets that already exist
-- **18 verbatim customer testimonials** with real names — [Customer Reviews.md](Customer%20Reviews.md).
+- **19 verbatim customer testimonials** with real names — [Customer Reviews.md](Customer%20Reviews.md).
   Recurring, evidenced themes: **communication, responsiveness by phone/SMS, punctuality,
   cleanliness, precision tiling, honest regular updates, fair pricing.** Lead with these; they are
   earned, specific, and repeated across independent reviewers.
@@ -155,14 +161,16 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 
 | # | Item | Owner |
 |---|---|---|
-| K1 | ABN, business email, postal/base address | Owner |
-| K2 | GBP **exists** — still need the **rating, review count and profile URL**, plus whether the 19 testimonials in `Customer Reviews.md` came from it (if so, it is also the live rating source) | Owner |
+| ~~K1~~ | ✅ **RESOLVED 2026-08-17 from GitHub issue #2** — ABN, ACN, email, Granville office, hours, insurances (D-51). Remaining detail: when `info@elitetouchrenovations.au` goes live, and whether a street address should be published | Detail only |
+| K2 | ⚠️ **Mostly resolved 2026-08-17** — profile URL captured, and the issue-#2 PDF states **5.0 across 17 Google reviews**. **Still needed: verify those figures live before displaying them or emitting `aggregateRating` (D-52).** Also note the count settles part of the old question: there are **17 Google reviews but 19 testimonials**, so the two sets are NOT the same and the mapping is unknown | Agent — verify live |
 | K2b | **The warranty term.** Confirmed as offered and to be stated; the number is missing and must not be guessed | Owner |
-| K3 | Stack + hosting choice | Owner + agent |
+| K3 | ⚠️ **Stack resolved 2026-08-17** (Next.js 16 App Router + TypeScript + DESIGN.md CSS tokens — D-40). **Hosting still open.** It must run the Node runtime: `proxy.ts` serves the 410s and is unsupported on a static export | Owner — hosting |
 | K4 | Analytics + call-tracking approach — settle **before** any tag is added | Owner + agent |
 | K5 | **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root (the ETR logo, not a photo). Detect/Inventory/Verify/Approve are done — see [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — confirmed genuine ETR work with consent (D-38, D-39). **Still open: no suburb, street or project is known for any of them** (O-4) — use as general, unattributed project photography only; never invent or infer an attribution (D-06). **Add to repo / Commit / public asset URL are blocked on K3 + K9.** | Owner + agent |
 | ~~K6~~ | ✅ Customer consent to publish photos of their homes — **confirmed by owner 2026-08-17** (D-39) | Resolved |
-| K7 | The ORIGINAL package price — present in the PDF's structure but not captured as a figure here | Owner / re-read PDF |
+| K7 | ⚠️ **Still open after re-reading the PDF.** The Packages PDF's page 2 lists an ORIGINAL tier with a *different* size basis (1.5 × 1.5 × 2.4 m) but **shows no prices at all on that page** — page 2 appears to be a separate or older matrix. The figure does not exist in the source. **Owner must supply it**, and should also say which of the two matrices is current | Owner |
+| K10 | ⚠️ **Two conflicting build durations in issue #2** — About says "two to four weeks", the Bathroom service page says "three and five weeks". No duration is on the site until this is settled | Owner |
+| K11 | ⚠️ **Outstanding content asks from the marketing audit** (`docs/source-copy/action-items.md`), none of which exist yet: professional team photos and head shots, on-site photos, finished-bathroom video, a **downloadable sample quote**, and a founder video. The sample quote in particular is a strong, cheap trust asset for a fixed-scope-quote business | Owner |
 | K9 | The repo-root `.jpg` and the two image folders sit outside any structure. Decide where assets live before the first page is built — this is the target directory the "Add to repo" step below moves approved images into | Agent |
 | K8 | Does the "family-run since 2023" line risk reading as inexperienced? It is true and must stay true — but the *framing* is a copy decision worth making deliberately | Owner |
 
@@ -203,3 +211,64 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 > that is a false claim about work performed, not a copywriting slip. An inventory mapping photo →
 > subject → where used makes every later audit cheap and stops the same photo being reused on six
 > pages.
+
+---
+
+## 6. Codebase mechanics — "why does it behave like that"
+
+Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
+[DECISIONS.md](DECISIONS.md); the migration runbook is [MIGRATION.md](MIGRATION.md).
+
+### Where things live
+
+| Path | What it is |
+|---|---|
+| `app/` | App Router. `layout.tsx` · `page.tsx` (home) · `about-us/` · `contact-us/` · `services/` + `services/[slug]/` · `gallery/` · `packages/` · `not-found.tsx` · `sitemap.ts` · `robots.ts` · `globals.css` · `fonts/` |
+| `components/` | `layout/SiteHeader.tsx`, `layout/SiteFooter.tsx`, `EnquiryForm.tsx` |
+| `lib/businessInfo.ts` | ⭐ **The single source of truth for business facts and the four services.** Never let a fact live only in JSX. |
+| `lib/reviews.ts` | The 19 testimonials, verbatim (D-03) |
+| `lib/actions.ts` | Enquiry server action |
+| `next.config.ts` | 19 × 301 + `trailingSlash: true` + security headers |
+| `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |
+| `scripts/verify-redirects.mjs` | `npm run verify:redirects` |
+
+### Things that will bite you
+
+1. **`trailingSlash: true` is load-bearing** (D-41). Every canonical, every sitemap entry and every
+   internal `href` carries a trailing slash. Flipping it silently adds a redirect hop to every
+   indexed URL. Re-run `npm run verify:redirects` if it ever changes.
+2. **`headers()` cannot set a status code.** That is why the 410s are in `proxy.ts` (D-43). Do not
+   "simplify" them back into the config — they would become 200s.
+3. **Redirect order matters.** `next.config.ts` matches first-wins. The specific `/staging/...`
+   rules must stay above the `/staging/:path*` catch-all.
+4. **`services` in `lib/businessInfo.ts` is a URL generator.** Every record becomes a live page.
+   `dynamicParams = false` makes unknown slugs 404 rather than render, but adding a fifth record
+   ships a fifth service page — and D-01 says there are four.
+5. **`EnquiryForm.tsx` is the only `'use client'` in the app**, and deliberately a leaf. The contact
+   page stays a server component so its copy is in the server HTML. Do not lift the directive up.
+6. **The enquiry form has no destination** and fails loudly by design (D-47). Set
+   `ETR_ENQUIRY_WEBHOOK_URL` and send a live test before telling anyone the form works.
+7. **The reviews render eagerly and in full** on `/about-us/` — verified as 19 `<figcaption>`
+   elements in the served HTML, not the React tree. Never wrap them in a lazy-loader (D-31).
+8. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
+   only (D-32), and every call CTA is already a real `tel:` anchor (D-33) — verified as 4 anchors
+   and 0 `<button>` call CTAs — so a single delegated listener is all that is needed.
+
+### How it is verified
+
+`npm run build` must be green, then with the server running:
+
+```bash
+npx next start -p 3210
+npm run verify:redirects          # 34 checks: 5 keep · 18 redirect · 2 gone · 7 new · 2 404
+```
+
+The expectation table in that script is transcribed **independently** of `next.config.ts` on
+purpose — a script importing the config would only prove the config equals itself. It also follows
+every 301 to its destination and asserts 200, because a redirect into a 404 destroys the equity it
+exists to preserve.
+
+⚠️ **Stopping the dev/prod server:** killing the background task wrapper does **not** kill the
+`next start` child on Windows. It keeps holding the port, and the next `next start` fails with
+`EADDRINUSE` while your tests quietly pass against the **stale** build. Check the port owner
+(`netstat -ano | grep 3210`) and `Stop-Process` the real PID.
