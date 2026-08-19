@@ -8,15 +8,13 @@ import { businessInfo, services } from '@/lib/businessInfo'
  * are now shown here (see docs/ISSUE_FINDINGS.md §A).
  *
  * What is deliberately STILL ABSENT and must stay absent:
- *   - warranty term  — D-19 / K2b. Issue #2 supplied only a SUPPLIER warranty
- *                      on fixtures and a reference to the statutory defects
- *                      period. Neither is ETR's workmanship warranty.
  *   - star rating / review count — the GBP shows 5.0 across 17 reviews as at
  *                      the issue #2 PDF, but that has not been verified live.
  *                      A stale rating is a real problem, not a rounding error.
- *   - the info@elitetouchrenovations.au address — the owner marked it
- *                      "currently being set up". An advertised address that
- *                      bounces loses enquiries silently.
+ *
+ * Resolved 2026-08-19 by the owner: the 10-year workmanship warranty (closes
+ * D-19), the info@ address, and the Greenfleet tree planting are all confirmed
+ * and now shown.
  *
  * Each of these is legally or commercially significant on a builder's site.
  * Leaving one out is correct. Approximating one is not.
@@ -35,8 +33,23 @@ export function SiteFooter() {
             </p>
             <p className="et-body-sm" style={{ color: '#b9bec7' }}>
               Family-run bathroom renovations across Sydney since{' '}
-              {businessInfo.foundedYear}. Fixed-scope written quotes and a free
-              on-site measure.
+              {businessInfo.foundedYear}. Fixed-scope written quotes, a free
+              on-site measure, and a{' '}
+              {businessInfo.workmanshipWarrantyYears}-year workmanship warranty.
+            </p>
+            <p
+              className="et-body-sm"
+              style={{ color: '#b9bec7', marginTop: 'var(--et-space-4)' }}
+            >
+              We plant one tree for every project we complete, through{' '}
+              <a
+                href={businessInfo.sustainability.partnerUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {businessInfo.sustainability.partner}
+              </a>
+              .
             </p>
           </div>
 
@@ -81,8 +94,8 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${businessInfo.email.current}`}>
-                  {businessInfo.email.current}
+                <a href={`mailto:${businessInfo.email.primary}`}>
+                  {businessInfo.email.primary}
                 </a>
               </li>
               <li>
@@ -118,6 +131,9 @@ export function SiteFooter() {
           </span>
           <span>
             Waterproofing to {businessInfo.standards.waterproofing} ·{' '}
+            {businessInfo.workmanshipWarrantyYears}-year workmanship warranty
+          </span>
+          <span>
             {businessInfo.address.suburb}, {businessInfo.address.state} (
             {businessInfo.address.note.toLowerCase()})
           </span>

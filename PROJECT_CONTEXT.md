@@ -24,17 +24,17 @@ the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds 
 | Legal entity name | **Elite Touch Renovations Pty Ltd** — from the business's own logo file, `docs/IMAGE_INVENTORY.md` |
 | Owners | **The Dawood family — FOUR members** (D-50, supersedes D-37): **Omar Dawood** (Licensed Builder & Civil Engineer, founder, holds the licence) · **Adam Dawood** (Licensed Tiler & Projects Manager, 25+ years, **the father**) · **Farah Dawood** (Architectural Designer) · **Mohammed Dawood** (Assistant Project Manager) |
 | Positioning | Family-run, small focused team, *"done once and done properly"* |
-| Founded | **2023** |
+| Founded | **2022** — owner-corrected 2026-08-19 (D-57). Earlier docs and the About PDF's opening line say 2023; the owner's direct answer wins |
 | Market | **Sydney, NSW** |
 | NSW Builder Licence | **475204C** |
 | Phone | **0411 752 334** |
 | Standards | **AS 3740** waterproofing + current Australian Standards |
 | Offer | **Free on-site measure** across Sydney · **fixed-scope written quotes** |
 | Primary CTA | "Book a free on-site measure" · Secondary: "Call 0411 752 334" |
-| Workmanship warranty | ✅ **Offered and to be stated on the site** — ⚠️ **term not yet supplied. Never write a number until the owner gives it** ([DECISIONS.md](DECISIONS.md) D-19) |
+| Workmanship warranty | ✅ **10 years** — owner-confirmed 2026-08-19 (D-58), closing D-19/K2b. Distinct from the supplier's product warranty on fittings and from the statutory defects period. ⚠️ Contractual: state as written, never embellish |
 | Google Business Profile | ✅ https://share.google/PLJDhhWBCrWAq6GVH — **5.0 across 17 Google reviews** as at the issue-#2 PDF. ⚠️ **Not verified live; not displayed and not in schema** (D-52). Note 17 Google reviews ≠ the 19 testimonials |
 | ABN · ACN | **92 679 016 721** · **679 016 721** (D-51) |
-| Email | **Elitetouchrenovations@gmail.com** (live). `info@elitetouchrenovations.au` is preferred but the owner marked it *"currently being set up"* — **not published until confirmed receiving** |
+| Email | **info@elitetouchrenovations.au** — owner-nominated 2026-08-19 (D-59) and now published. `Elitetouchrenovations@gmail.com` is retained in `businessInfo` as `legacyGmail` but is not shown. ⚠️ **Confirm the .au address is actually receiving before launch** |
 | Office · hours | **Granville, NSW (by appointment)** · Mon–Fri 7:00am–5:30pm, Sat 8:00am–3:30pm |
 | Insurance · memberships | Public Liability **$20M** · Workers' Comp **Allianz** · HBCF certificates · **HIA** member · HIA fixed-price renovation contract |
 | Payment terms | **30% deposit**, then a **30 / 40 / 30** progressive schedule |
@@ -63,15 +63,24 @@ is **not** sold as a standalone service, and neither is leak repair. See [DECISI
 
 ## 2. Pricing — the package structure
 
-**Source of truth: the "Elite Touch Renovation Packages" PDF on issue #2.** Four tiers. Each price is
-tied to a **stated bathroom size** — a price quoted without its size basis is misleading.
+⭐ **Source of truth: [`docs/source-copy/packages-2026-08-19.md`](docs/source-copy/packages-2026-08-19.md)**
+— the revision the owner supplied on 2026-08-19. It **supersedes** the issue-#2 sheet
+(`docs/source-copy/packages.md`), which had four tiers and different inclusions.
+
+**Three tiers. All three are "from" prices** (D-60). Each is tied to a **stated bathroom size** — a
+price quoted without its size basis is misleading (D-07).
 
 | Tier | Price | Size basis |
 |---|---|---|
-| ORIGINAL | (entry tier) | approx. 1.5 × 1.5 × 2.4 m and similar |
-| **BASIC** | **$17,999** | approx. 1.5 m × 1.8 m × 2.4 m |
-| **STANDARD** | **starts from $25,999** | approx. 1.8 m × 2.4 m × 2.4 m |
-| **PREMIUM** | **starts from $32,999** | approx. 2.4 m × 2.4 m |
+| **Basic** | **from $18,000** | approx. 1.5 m × 1.8 m × 2.4 m |
+| **Standard** | **from $25,000** | approx. 1.8 m × 2.4 m × 2.4 m |
+| **Premium** | **from $30,000** | approx. 2.4 m × 2.4 m × 2.4 m |
+
+> ⚠️ **The ORIGINAL tier no longer exists** — that closes the old K7 question about its price.
+> ⚠️ The current sheet also **changed inclusions**: Premium is a **900 mm** vanity and cabinet (not
+> 1200 mm), gains a **freestanding bath**, and keeps a back-to-wall toilet rather than an in-wall
+> cistern; Basic gains a **semi-frameless** screen; all tiers gain **aluminium angles** around the
+> shower and door plus **painting of bathroom ceilings**. Do not reintroduce the old sheet's values.
 
 **Included in every tier:** planning & design · demolition (floor protection, disconnection and
 removal of existing PC items, floor and wall tiles including old cement bedding, complete off-site
@@ -81,16 +90,15 @@ holder, shower head, shower mixer, vanity mixer) · render / re-sheet walls · *
 Australian standards, primer plus two coats, certificate included** · tiling (new screed to create
 falls to drains, all glues, tile trims, grouts and silicone) · final clean before handover.
 
-**What separates the tiers** is tile size and coverage (300×600 ceramic in the shower enclosure vs.
-full floor-to-ceiling 300×600 or 600×600) and the fittings schedule — mirror (600 mm pencil edge →
-900 mm → 1200 mm shaving cabinet), vanity (600 mm ceramic → 900 mm → 1200 mm stone top), shower head
-(standard → rain head with hand rail), screen (framed → semi-frameless → fully framed), towel rail
-(standard → heated), toilet (back-to-wall → in-wall cistern), lighting (2 → 3 LED downlights),
-exhaust fan, and heated flooring.
+**What separates the tiers** (current sheet) is tile coverage — shower enclosure only on Basic vs.
+full floor-to-ceiling on Standard and Premium — and the fittings schedule: shaving cabinet and vanity
+(600 mm → 900 mm → 900 mm), shower head (standard → rain head with hand rail), screen (semi-frameless
+→ fully frameless → fully frameless), power points (1 → 2 → 3), and Premium alone adding a
+**freestanding bath, heated towel rail, heated flooring, 2 LED downlights and an exhaust fan**.
 
 > ⚠️ **Do not paraphrase this list into marketing copy without checking it.** "Includes everything"
 > and "premium fittings throughout" are the kinds of claims that turn a fixed-scope quote into a
-> dispute. If a claim is not in the PDF, it is not in the package.
+> dispute. If a claim is not in the current sheet, it is not in the package.
 
 ---
 
@@ -166,12 +174,14 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 | K2b | **The warranty term.** Confirmed as offered and to be stated; the number is missing and must not be guessed | Owner |
 | K3 | ⚠️ **Stack resolved 2026-08-17** (Next.js 16 App Router + TypeScript + DESIGN.md CSS tokens — D-40). **Hosting still open.** It must run the Node runtime: `proxy.ts` serves the 410s and is unsupported on a static export | Owner — hosting |
 | K4 | Analytics + call-tracking approach — settle **before** any tag is added | Owner + agent |
-| K5 | **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root (the ETR logo, not a photo). Detect/Inventory/Verify/Approve are done — see [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — confirmed genuine ETR work with consent (D-38, D-39). **Still open: no suburb, street or project is known for any of them** (O-4) — use as general, unattributed project photography only; never invent or infer an attribution (D-06). **Add to repo / Commit / public asset URL are blocked on K3 + K9.** | Owner + agent |
+| K5 | ⚠️ **Superseded in practice by the 2026-08-19 Gallery folder.** 23 attributed photos across five projects are now live (D-64); see §6. The item below concerns the ORIGINAL 33, which remain unattributed and unused. **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root (the ETR logo, not a photo). Detect/Inventory/Verify/Approve are done — see [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — confirmed genuine ETR work with consent (D-38, D-39). **Still open: no suburb, street or project is known for any of them** (O-4) — use as general, unattributed project photography only; never invent or infer an attribution (D-06). **Add to repo / Commit / public asset URL are blocked on K3 + K9.** | Owner + agent |
 | ~~K6~~ | ✅ Customer consent to publish photos of their homes — **confirmed by owner 2026-08-17** (D-39) | Resolved |
-| K7 | ⚠️ **Still open after re-reading the PDF.** The Packages PDF's page 2 lists an ORIGINAL tier with a *different* size basis (1.5 × 1.5 × 2.4 m) but **shows no prices at all on that page** — page 2 appears to be a separate or older matrix. The figure does not exist in the source. **Owner must supply it**, and should also say which of the two matrices is current | Owner |
+| ~~K7~~ | ✅ **CLOSED 2026-08-19.** The current Packages sheet has **three tiers** — the ORIGINAL tier no longer exists, so there was never a price to find (D-61) | Resolved |
 | K10 | ⚠️ **Two conflicting build durations in issue #2** — About says "two to four weeks", the Bathroom service page says "three and five weeks". No duration is on the site until this is settled | Owner |
+| K12 | ⚠️ **Which Sydney areas does ETR prefer?** The owner confirmed they work Sydney-wide *"but we prefer some areas over others"* (D-63). Knowing which should drive the next suburb pages. Also: **Hornsby** now has two photographed projects but is absent from `service-areas.json` | Owner |
+| K13 | ⚠️ **Is the gallery's Artarmon project the same job as the documented "Artarmon bathroom + ensuite" case study?** The case study describes large-format porcelain and LED backlit mirrors over a four-week program; the gallery Artarmon shows gold fixtures and a round gold mirror. They may be two different jobs. **Not merged** (D-06) — owner to confirm | Owner |
 | K11 | ⚠️ **Outstanding content asks from the marketing audit** (`docs/source-copy/action-items.md`), none of which exist yet: professional team photos and head shots, on-site photos, finished-bathroom video, a **downloadable sample quote**, and a founder video. The sample quote in particular is a strong, cheap trust asset for a fixed-scope-quote business | Owner |
-| K9 | The repo-root `.jpg` and the two image folders sit outside any structure. Decide where assets live before the first page is built — this is the target directory the "Add to repo" step below moves approved images into | Agent |
+| ~~K9~~ | ✅ **RESOLVED 2026-08-19 (D-65).** Project photography lives in **`public/images/projects/{project-slug}/`** as WebP. The repo-root `.jpg` (the logo) and the two original `ETR images*` folders are still unstructured and uncommitted — decide separately whether any of those 33 are still needed now that five attributed projects exist | Agent |
 | K8 | Does the "family-run since 2023" line risk reading as inexperienced? It is true and must stay true — but the *framing* is a copy decision worth making deliberately | Owner |
 
 > ### Image workflow (D-36) — every image, not just the initial 33
@@ -227,6 +237,8 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `components/` | `layout/SiteHeader.tsx`, `layout/SiteFooter.tsx`, `EnquiryForm.tsx` |
 | `lib/businessInfo.ts` | ⭐ **The single source of truth for business facts and the four services.** Never let a fact live only in JSX. |
 | `lib/reviews.ts` | The 19 testimonials, verbatim (D-03) |
+| `lib/projects.ts` | ⭐ **The five photographed projects and every image's alt text.** Alt text describes the PHOTOGRAPH, not the page topic (D-66) |
+| `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
 | `lib/actions.ts` | Enquiry server action |
 | `next.config.ts` | 19 × 301 + `trailingSlash: true` + security headers |
 | `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |
@@ -250,7 +262,15 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    `ETR_ENQUIRY_WEBHOOK_URL` and send a live test before telling anyone the form works.
 7. **The reviews render eagerly and in full** on `/about-us/` — verified as 19 `<figcaption>`
    elements in the served HTML, not the React tree. Never wrap them in a lazy-loader (D-31).
-8. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
+8. **`lib/projects.ts` is a URL generator too.** Every record becomes `/gallery/{slug}/` and a
+   sitemap entry. `dynamicParams = false` keeps unknown slugs at 404.
+9. **Images are pre-optimised WebP, committed to the repo.** Do NOT re-add the source PNGs — they
+   were 20.6 MB for 23 files. The conversion is ≤1400 px wide, quality 82, alpha stripped. Only the
+   first image on a page is `priority`; everything else is lazy.
+10. **Two suburbs in the gallery are Tier-1** (Castle Hill, Randwick) and one is not in the site
+   structure at all (Hornsby). When location pages get built, import from `lib/projects.ts` rather
+   than copying image paths.
+11. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
    only (D-32), and every call CTA is already a real `tel:` anchor (D-33) — verified as 4 anchors
    and 0 `<button>` call CTAs — so a single delegated listener is all that is needed.
 

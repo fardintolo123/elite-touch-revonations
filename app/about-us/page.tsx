@@ -21,7 +21,7 @@ import { reviews } from '@/lib/reviews'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Elite Touch Renovations is a family-run Sydney bathroom renovation business, founded in 2023 by the Dawood family. NSW Builder Licence 475204C.',
+    'Elite Touch Renovations is a family-run Sydney bathroom renovation business, founded in 2022 by the Dawood family. NSW Builder Licence 475204C.',
   alternates: { canonical: '/about-us/' },
 }
 
@@ -232,6 +232,89 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- Our commitments ----------------
+          Every line here is an owner-confirmed commitment, not marketing.
+          The 10-year workmanship warranty was confirmed 2026-08-19 (closes
+          D-19) and is a CONTRACTUAL claim — state it as written, never
+          embellish it, never extend it to third-party fittings.
+      */}
+      <section className="et-section et-band-canvas">
+        <div className="et-container et-stack">
+          <span className="et-eyebrow">Our commitments</span>
+          <h2 className="et-h2 et-measure-tight">
+            What we put in writing.
+          </h2>
+
+          <div
+            className="et-grid et-grid-2"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
+            <div className="et-card et-card-tinted">
+              <h3 className="et-h3">
+                {businessInfo.workmanshipWarrantyYears}-year workmanship
+                warranty
+              </h3>
+              <p
+                className="et-body-sm"
+                style={{
+                  marginTop: 'var(--et-space-4)',
+                  color: 'var(--et-text-secondary)',
+                }}
+              >
+                On the work we carry out. Separate from, and in addition to, the
+                manufacturer warranties that come with the fittings themselves,
+                and the statutory defects period under the Home Building Act
+                1989.
+              </p>
+            </div>
+
+            <div className="et-card">
+              <h3 className="et-h4">How you pay</h3>
+              <ul
+                className="et-checklist"
+                style={{ marginTop: 'var(--et-space-5)' }}
+              >
+                <li className="et-body-sm">
+                  {businessInfo.offer.deposit} to book your start date
+                </li>
+                <li className="et-body-sm">
+                  A {businessInfo.offer.paymentSchedule}, tied to agreed
+                  milestones
+                </li>
+                <li className="et-body-sm">
+                  You are never asked for money ahead of a milestone
+                </li>
+                <li className="et-body-sm">
+                  {businessInfo.insurance.contract}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="et-card" style={{ marginTop: 'var(--et-space-6)' }}>
+            <h3 className="et-h4">One tree for every project</h3>
+            <p
+              className="et-body-sm et-measure"
+              style={{
+                marginTop: 'var(--et-space-3)',
+                color: 'var(--et-text-secondary)',
+              }}
+            >
+              {businessInfo.sustainability.claim} Greenfleet is an Australian
+              not-for-profit that restores native forests.{' '}
+              <a
+                className="et-link"
+                href={businessInfo.sustainability.partnerUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                greenfleet.com.au
+              </a>
+            </p>
           </div>
         </div>
       </section>

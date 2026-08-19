@@ -89,9 +89,9 @@ export default function ContactPage() {
               </div>
 
               {/* Contact details supplied by the owner on issue #2.
-                  The info@elitetouchrenovations.au address is deliberately NOT
-                  shown — the owner marked it "currently being set up", and an
-                  advertised address that bounces loses enquiries silently. */}
+                  The info@elitetouchrenovations.au address was withheld while
+                  it was "being set up"; the owner confirmed on 2026-08-19 that
+                  it is the address to use, so it is now published. */}
               <div className="et-card">
                 <h3 className="et-h4">Contact details</h3>
                 <ul
@@ -107,10 +107,10 @@ export default function ContactPage() {
                   <li className="et-body-sm">
                     <strong>Email:</strong>{' '}
                     <a
-                      href={`mailto:${businessInfo.email.current}`}
+                      href={`mailto:${businessInfo.email.primary}`}
                       className="et-link"
                     >
-                      {businessInfo.email.current}
+                      {businessInfo.email.primary}
                     </a>
                   </li>
                   <li className="et-body-sm">

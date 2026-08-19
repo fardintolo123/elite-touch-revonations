@@ -19,26 +19,27 @@ Read the linked docs; do not assume their contents.
 ## Project Overview
 
 **Elite Touch Renovations (ETR)** — a renovation business specialising in **bathroom renovations**.
-Run by the Dawood family — **Omar, Adam and Farah**. Building a marketing website from scratch.
+Run by the Dawood family — **Omar, Adam, Farah and Mohammed**. Migrating from WordPress to a
+Next.js 16 site (built, not yet deployed).
 
 | Fact | Value |
 |---|---|
 | Trade focus | **Bathroom renovations**, Sydney NSW |
 | Services (4) | **Bathroom · Ensuite · Bathroom + laundry · Powder room** renovations |
-| Family / principals | **The Dawood family** — Omar and Adam Dawood (Projects Managers), **Farah Dawood (Architectural Designer)** |
-| Founded | **2023** |
+| Family / principals | **The Dawood family — four** (D-50): **Omar Dawood** (Licensed Builder & Civil Engineer, founder, licence holder) · **Adam Dawood** (Licensed Tiler & Projects Manager, 25+ yrs, the father) · **Farah Dawood** (Architectural Designer) · **Mohammed Dawood** (Assistant Project Manager) |
+| Founded | **2022** (owner-corrected 2026-08-19 — D-57; earlier docs said 2023) |
 | NSW Builder Licence | **475204C** |
 | Phone | **0411 752 334** |
 | Standards claim | Built to **AS 3740** waterproofing + current Australian Standards |
 | Offer | **Free on-site measure** across Sydney · **fixed-scope written quotes** |
-| Workmanship warranty | Offered, and stated on the site — ⚠️ **term not yet supplied; never write a number** (D-19) |
-| Google Business Profile | **Exists** — rating / review count / URL still to capture |
-| Packages | **BASIC $17,999 · STANDARD from $25,999 · PREMIUM from $32,999** (+ an ORIGINAL tier) |
+| Workmanship warranty | **10 years** (owner-confirmed 2026-08-19 — D-58). ⚠️ A contractual claim: state as written, never embellish, never extend it to third-party fittings |
+| Google Business Profile | https://share.google/PLJDhhWBCrWAq6GVH — **5.0 / 17 reviews** as at the issue-#2 PDF. ⚠️ Unverified live; **not displayed and not in schema** (D-52) |
+| Packages | **Basic from $18,000 · Standard from $25,000 · Premium from $30,000** — three tiers, all "from" prices, each tied to a stated bathroom size (D-60/D-61). The ORIGINAL tier no longer exists |
 | Real customer reviews | **19, verbatim, in [Customer Reviews.md](Customer%20Reviews.md)** — the only approved source of testimonial copy |
 | Case studies (3) | The Rocks heritage bathroom · Hunters Hill marble bathroom · Artarmon bathroom + ensuite |
-| ABN · email · address | **TODO** |
-| Tech stack + hosting | **TODO** — nothing is built yet |
-| Google Business Profile | **TODO** |
+| ABN · ACN | **92 679 016 721** · **679 016 721** |
+| Email · office | **info@elitetouchrenovations.au** · Granville, NSW (by appointment) |
+| Tech stack | **Next.js 16 App Router + TypeScript + DESIGN.md CSS tokens** (D-40). **Hosting still undecided** — must run Node, since `proxy.ts` serves the 410s |
 
 Sources: the page-copy and package PDFs on **issue #2**, and
 [docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md). Full detail, including every
@@ -139,20 +140,23 @@ When two sources disagree, the **higher tier wins**:
   waterproofing/leak-repair jobs until the owner confirms them. Competitor coverage is not a reason to
   claim a trade. *(Waterproofing is performed **as part of** a renovation, to AS 3740 — that is a
   process claim, not a standalone service.)*
-- **The licence number `475204C`, the phone `0411 752 334`, `AS 3740` and "family-run since 2023" are
-  real and load-bearing trust signals.** Reproduce them exactly. Never approximate a licence number,
-  never round the founding year, never upgrade "family-run" into a team size we cannot evidence.
-- **Package prices are `$17,999` / from `$25,999` / from `$32,999`, each tied to a stated bathroom
-  size and a specific inclusion list.** Never quote a price without its size basis and never present
-  "starts from" as a fixed price. The full inclusion matrix is in `PROJECT_CONTEXT.md` — if a claim
-  is not in it, it is not in the package.
+- **The licence number `475204C`, the phone `0411 752 334`, `AS 3740`, the ABN `92 679 016 721`, the
+  **10-year workmanship warranty** and "family-run since 2022" are real and load-bearing trust
+  signals.** Reproduce them exactly. Never approximate a licence number, never round the founding
+  year, never upgrade "family-run" into a team size we cannot evidence, and never embellish the
+  warranty — it is a contractual promise, not a slogan.
+- **Package prices are from `$18,000` / from `$25,000` / from `$30,000`, each tied to a stated
+  bathroom size and a specific inclusion list.** All three are **"from"** prices. Never quote one
+  without its size basis and never present it as fixed. The current inclusion matrix is
+  `docs/source-copy/packages-2026-08-19.md` — if a claim is not in it, it is not in the package, and
+  the older `packages.md` is superseded.
 - **The only real reviews are the 19 in `Customer Reviews.md`.** Reproduce them verbatim with the
   reviewer's name as written. **Never write a testimonial, never invent a customer, never invent a
   quote, and never generate review schema for a review that does not exist.**
 - **Never invent project details** — no suburb, street, budget, duration or "before/after" pairing
   unless it is evidenced. Do not label photos "before/after" without a genuine matched pair.
-- **Never state a price** until a pricing source of truth exists (see Task Routing). When it does,
-  ranges are indicative and firm only after an on-site quote.
+- **Prices are firm only after an on-site quote.** The published figures are starting prices tied to
+  a stated room size.
 - **Licence, ABN and insurance claims must be real.** These are legally significant on a trade site.
   Leave them out rather than approximate them.
 - **Photos of a customer's home are the customer's.** Get consent before publishing, and keep a record

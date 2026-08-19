@@ -85,7 +85,8 @@ export const metadata: Metadata = {
  *   - `review`          : D-03. The 19 testimonials in Customer Reviews.md are
  *                         real, but only 17 are Google reviews — the two sets
  *                         are not the same and the mapping is unknown.
- *   - `warranty` claims : D-19 — ETR's workmanship term has never been supplied.
+ *   (D-19 is now CLOSED — the owner confirmed a 10-year workmanship warranty
+ *    on 2026-08-19, and it is carried in `warranty` below.)
  *   - a street address  : only "Granville, NSW (by appointment)" is known.
  *                         `PostalAddress` without a street is honest; inventing
  *                         one to satisfy a validator is not.
@@ -97,7 +98,7 @@ const localBusinessSchema = {
   legalName: businessInfo.legalName,
   url: businessInfo.siteUrl,
   telephone: businessInfo.phone.display,
-  email: businessInfo.email.current,
+  email: businessInfo.email.primary,
   foundingDate: String(businessInfo.foundedYear),
   address: {
     '@type': 'PostalAddress',
@@ -142,6 +143,22 @@ const localBusinessSchema = {
     '@type': 'EducationalOccupationalCredential',
     credentialCategory: 'NSW Builder Licence',
     identifier: businessInfo.builderLicence,
+  },
+  makesOffer: {
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: 'Bathroom renovation',
+      areaServed: businessInfo.serviceArea.city,
+    },
+    warranty: {
+      '@type': 'WarrantyPromise',
+      durationOfWarranty: {
+        '@type': 'QuantitativeValue',
+        value: businessInfo.workmanshipWarrantyYears,
+        unitCode: 'ANN',
+      },
+    },
   },
   identifier: [
     { '@type': 'PropertyValue', name: 'ABN', value: businessInfo.abn },

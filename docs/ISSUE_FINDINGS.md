@@ -13,6 +13,31 @@ recorded as CONFIRMED.**
 
 ---
 
+## ⚡ UPDATE 2026-08-19 — most of §B is now RESOLVED
+
+The owner answered directly. See DECISIONS.md §3d (D-57 … D-66). Short version:
+
+| §B item | Outcome |
+|---|---|
+| 1. Founded 2022 or 2023? | ✅ **2022** (D-57) |
+| 2. Four Dawoods / wrong roles | ✅ Applied; D-37 superseded by D-50 |
+| 3. Two pricing models | ✅ **Packages lead, as FROM-prices** — from $18k / $25k / $30k (D-60). The ranges are not used. A **new** Packages sheet also supersedes the issue-#2 one (D-61) |
+| 4. Two build durations | ❌ **Still open** (K10). No duration is on the site |
+| 5. Service area too large | ✅ Sydney-wide coverage confirmed (D-63). ⚠️ **Which areas are preferred is still open** (K12) |
+| 6. Residential and commercial | ❌ **Still open.** Not added |
+| 7. Warranty unresolved | ✅ **10-year workmanship warranty** (D-58). D-19/K2b CLOSED |
+| 8. Greenfleet unproven | ✅ **Confirmed running** (D-62). Now published |
+| 9. PREMIUM size | ✅ Corrected, and re-confirmed by the new sheet |
+
+Also closed since: **K1** (ABN/ACN/email/address/hours), **K7** (no ORIGINAL tier exists),
+**K9** (assets live in `public/images/projects/`), **O-4 / D-48** (five suburb-attributed
+photographed projects are live).
+
+Still open from this document: the ranges pricing model, commercial work, the "Refresh package"
+as a fifth service, and build duration.
+
+---
+
 ## A. Open items this CLOSES
 
 | Was open | Now known | Source |

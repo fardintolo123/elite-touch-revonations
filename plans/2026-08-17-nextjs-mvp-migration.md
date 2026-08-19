@@ -96,3 +96,32 @@ LocalBusiness, analytics/call tracking (K4 — must be settled before any tag is
 - No image used anywhere — the D-36 pipeline has not cleared Approve→Commit, and K9 has not
   chosen an asset directory. Ship the MVP with typography and colour only.
 - Do not push or deploy (D-35).
+
+---
+
+## Addendum — 2026-08-19: owner answers, issue intake, and project photography
+
+- [x] Read GitHub issues #1 and #2; extracted all 8 PDFs to `docs/source-copy/` (text + originals)
+      and closed both issues with a summary comment. **Content preserved before closing.**
+- [x] Applied owner answers: founded **2022**, **10-year workmanship warranty** (closes D-19/K2b),
+      **info@elitetouchrenovations.au**, packages as **from $18k / $25k / $30k**, **Greenfleet
+      confirmed**, **Sydney-wide coverage confirmed**.
+- [x] New Packages sheet (2026-08-19) saved and applied — **three tiers, not four**; ORIGINAL is
+      gone, which closes K7. Premium inclusions changed (900 mm units, freestanding bath).
+- [x] **Project photography shipped.** 30 photos in five suburb-named folders → 23 selected,
+      **each individually viewed**, converted to WebP (20.6 MB → 0.81 MB, largest 74 KB), committed
+      to `public/images/projects/`, and published at `/gallery/` + `/gallery/{slug}/`.
+      Closes O-4, D-48 and K9.
+- [x] Alt text written from the photographs, not the descriptions — the Hornsby description says
+      "black countertop", the photos show a white top on a black cabinet (D-66).
+- [x] Docs updated: DECISIONS.md §3d (D-57…D-66) + O-7/O-8/O-9, D-04, D-07, CLAUDE.md,
+      PROJECT_CONTEXT.md §1/§2/§5/§6, ISSUE_FINDINGS.md resolution banner.
+- [x] **Gate:** build green (19 routes, up from 14), typecheck clean, **34/34 redirects still
+      passing**, all 17 page routes 200, images resolve, 0 console errors, mobile checks pass,
+      and greps confirm no old prices, no "since 2023", no `aggregateRating`, no before/after labels.
+
+### Still not done
+
+- [ ] **Lighthouse baseline** — `docs/PERFORMANCE_BUDGET.md` §4 is still empty. Now more important,
+      not less: the gallery pages carry real images for the first time.
+- [ ] Commit — still not requested, and D-35 forbids push/deploy.

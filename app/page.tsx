@@ -66,7 +66,7 @@ export default function HomePage() {
         <div className="et-container">
           <div className="et-hero-grid">
             <div className="et-stack">
-              <span className="et-eyebrow">Sydney · Family-run since 2023</span>
+              <span className="et-eyebrow">Sydney · Family-run since 2022</span>
 
               <h1 className="et-display et-measure-tight">
                 Bathroom renovations in Sydney, done once and done properly.
@@ -107,6 +107,10 @@ export default function HomePage() {
                 </li>
                 <li className="et-fact">
                   <strong>Quotes</strong> Fixed scope, in writing
+                </li>
+                <li className="et-fact">
+                  <strong>{businessInfo.workmanshipWarrantyYears}-year</strong>{' '}
+                  workmanship warranty
                 </li>
               </ul>
             </div>
@@ -253,6 +257,10 @@ export default function HomePage() {
                 <li>Regular updates by phone and SMS while the job runs</li>
                 <li>Floor protection, drop sheets, and a clean site each day</li>
                 <li>Final clean before handover</li>
+                <li>
+                  A {businessInfo.workmanshipWarrantyYears}-year workmanship
+                  warranty on everything we build
+                </li>
               </ul>
             </div>
           </div>

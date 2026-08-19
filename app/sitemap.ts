@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { projects } from '@/lib/projects'
 
 /**
  * Replaces Yoast's `sitemap_index.xml` / `page-sitemap.xml`.
@@ -30,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `${base}/`, changeFrequency: 'monthly', priority: 1 },
       { url: `${base}/services/`, changeFrequency: 'monthly', priority: 0.9 },
       { url: `${base}/packages/`, changeFrequency: 'monthly', priority: 0.9 },
-      { url: `${base}/gallery/`, changeFrequency: 'monthly', priority: 0.7 },
+      { url: `${base}/gallery/`, changeFrequency: 'monthly', priority: 0.8 },
       { url: `${base}/about-us/`, changeFrequency: 'yearly', priority: 0.7 },
       { url: `${base}/contact-us/`, changeFrequency: 'yearly', priority: 0.8 },
     ] satisfies MetadataRoute.Sitemap
@@ -43,5 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticRoutes, ...serviceRoutes]
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${base}/gallery/${project.slug}/`,
+    lastModified,
+    changeFrequency: 'yearly',
+    priority: 0.6,
+  }))
+
+  return [...staticRoutes, ...serviceRoutes, ...projectRoutes]
 }
