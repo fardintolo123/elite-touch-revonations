@@ -891,3 +891,83 @@ svg {
 .et-step + .et-step {
   margin-top: var(--et-space-8);
 }
+
+/* ==========================================================================
+   Project photography (DESIGN.md §8.4 media card, §9 imagery)
+
+   Rules honoured here:
+     - all imagery is rounded; radius-md INSIDE a radius-lg card (nesting rule)
+     - aspect-ratio is always set, so images reserve their space and cannot
+       cause layout shift as they load
+     - hover scales the IMAGE inside an overflow:hidden frame; the frame itself
+       never moves
+   ========================================================================== */
+
+.et-media-card {
+  padding: var(--et-space-5);
+}
+
+.et-media-frame {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--et-radius-md);
+  background: var(--et-ink-50);
+  aspect-ratio: 3 / 2;
+  margin-bottom: var(--et-space-5);
+}
+
+.et-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--et-duration-slow) var(--et-ease-standard);
+}
+
+.et-card-link:hover .et-media-frame img {
+  transform: scale(1.04);
+}
+
+.et-badge-suburb {
+  display: inline-block;
+  background: var(--et-surface-accent);
+  color: var(--et-text-accent);
+  font-size: var(--et-text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: var(--et-space-1) var(--et-space-3);
+  border-radius: var(--et-radius-pill);
+}
+
+/* Project detail: asymmetric grid, first image full width */
+.et-photo-grid {
+  display: grid;
+  gap: var(--et-space-5);
+}
+@media (min-width: 768px) {
+  .et-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--et-space-6);
+  }
+}
+
+.et-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--et-radius-xl);
+  background: var(--et-ink-50);
+  aspect-ratio: 3 / 2;
+}
+
+.et-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .et-photo-wide {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+}

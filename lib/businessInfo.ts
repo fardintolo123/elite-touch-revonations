@@ -23,13 +23,12 @@ export const businessInfo = {
   legalName: 'Elite Touch Renovations Pty Ltd',
 
   /**
-   * ⚠️ CONTESTED. D-04 has 2023 as CONFIRMED, and the About PDF's own opening
-   * line says "Since 2023, we have been helping homeowners…". But that same
-   * PDF's "Our story" section says "founded in 2022".
-   * Keeping 2023 — it is the CONFIRMED value and the PDF agrees with it twice
-   * out of three times. Owner must settle it. See docs/ISSUE_FINDINGS.md #1.
+   * RESOLVED 2026-08-19 — owner answered "2022" directly when asked
+   * "Founded 2022 or 2023?". This overrides D-04's earlier 2023 and the
+   * About PDF's contradictory "Since 2023" line. Owner instruction is the
+   * top of the source-of-truth hierarchy.
    */
-  foundedYear: 2023,
+  foundedYear: 2022,
 
   /** Canonical origin. Matches the host in the existing Yoast sitemaps. */
   siteUrl: 'https://www.elitetouchrenovations.au',
@@ -59,14 +58,14 @@ export const businessInfo = {
 
   email: {
     /**
-     * ⚠️ The PDF marks the .au address "(preferred) – currently being set up".
-     * Do NOT publish it until it is confirmed live and receiving — an advertised
-     * address that bounces loses enquiries silently.
+     * RESOLVED 2026-08-19 — owner answered "Info@elitetouchrenovations.au"
+     * when asked which address to use on the site. Published as the primary.
+     * Lowercased for the mailto: — addresses are case-insensitive in the
+     * local part in practice, and lowercase avoids looking like a typo.
      */
-    preferred: 'info@elitetouchrenovations.au',
-    preferredIsLive: false,
-    /** Currently working address (issue #2). */
-    current: 'Elitetouchrenovations@gmail.com',
+    primary: 'info@elitetouchrenovations.au',
+    /** Kept on file; no longer shown on the site. */
+    legacyGmail: 'Elitetouchrenovations@gmail.com',
   },
 
   /** (issue #2) "Office Address: Granville, NSW (By Appointment)" */
@@ -118,6 +117,18 @@ export const businessInfo = {
     memberships: ['Housing Industry Association (HIA)'],
     contract: 'HIA fixed-price renovation contract',
   },
+
+  /**
+   * RESOLVED 2026-08-19 — D-19 / K2b is CLOSED. Asked directly
+   * "What's your workmanship warranty?", the owner answered "10 year's warranty".
+   * That is an owner statement about ETR's own workmanship, distinct from the
+   * "10-year warranty from our trusted supplier" in the Action Items PDF, which
+   * was a product warranty on fittings.
+   * ⚠️ This is a CONTRACTUAL claim on a licensed builder's site. It may be
+   * stated as written and must never be embellished — no "lifetime", no
+   * "fully guaranteed", no extending it to fittings or third-party products.
+   */
+  workmanshipWarrantyYears: 10,
 
   offer: {
     primaryCta: 'Book a free on-site measure',
@@ -179,6 +190,17 @@ export const businessInfo = {
     verifiedLive: false,
   },
 
+  /**
+   * RESOLVED 2026-08-19 — owner confirmed the tree planting is actually
+   * running when asked "Is the Greenfleet tree-planting actually running?".
+   * One tree per completed project, through Greenfleet.
+   */
+  sustainability: {
+    partner: 'Greenfleet',
+    partnerUrl: 'https://www.greenfleet.com.au',
+    claim: 'We plant one tree for every project we complete, through Greenfleet.',
+  },
+
   /** (issue #2) Used for `sameAs` in schema. */
   socialProfiles: {
     instagram: 'https://www.instagram.com/elitetouchrenovations/',
@@ -193,15 +215,6 @@ export const businessInfo = {
    * STILL NOT SUPPLIED — do not invent, do not infer, do not copy a competitor's.
    */
   unknown: {
-    /**
-     * DECISIONS.md D-19 / K2b. STILL OPEN even after issue #2.
-     * The PDFs mention a "10-year warranty from our trusted supplier" — that is a
-     * SUPPLIER/product warranty on fixtures, NOT ETR's own workmanship warranty.
-     * They also reference "the statutory defects period under the Home Building
-     * Act 1989", which is a legal minimum, not a stated warranty term.
-     * None of these is the workmanship warranty D-19 asks for. No number ships.
-     */
-    workmanshipWarrantyTermYears: null,
     /** Street address and postcode for the Granville office. */
     streetAddress: null,
   },
