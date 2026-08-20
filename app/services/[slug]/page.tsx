@@ -133,6 +133,50 @@ export default async function ServicePage({
         </div>
       </section>
 
+      {/* Build durations. Owner-supplied (issue #2 service PDF), settled in
+          D-75. These are on-site programs and a real customer promise — do not
+          shorten them to sound more competitive. */}
+      <section className="et-section et-band-surface">
+        <div className="et-container et-stack">
+          <span className="et-eyebrow">How long it takes</span>
+          <h2 className="et-h2 et-measure-tight">
+            How long you will have us in the house.
+          </h2>
+          <p className="et-lead et-measure">
+            These are on-site programs, and you get yours in writing before work
+            starts. Older Sydney homes can need extra days for what turns up at
+            strip-out — rot, non-compliant plumbing, asbestos — and we tell you
+            how that is handled in the quote, not afterwards.
+          </p>
+
+          <div
+            className="et-grid et-grid-3"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
+            {businessInfo.buildDurations.map((item) => (
+              <div key={item.label} className="et-card">
+                <p className="et-h3">{item.weeks}</p>
+                <h3
+                  className="et-h4"
+                  style={{ marginTop: 'var(--et-space-4)' }}
+                >
+                  {item.label}
+                </h3>
+                <p
+                  className="et-body-sm"
+                  style={{
+                    marginTop: 'var(--et-space-2)',
+                    color: 'var(--et-text-secondary)',
+                  }}
+                >
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="et-section et-band-ink">
         <div className="et-container et-stack">
           <span className="et-eyebrow">Customer review</span>

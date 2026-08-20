@@ -169,6 +169,45 @@ export const businessInfo = {
   },
 
   /**
+   * RESOLVED 2026-08-19 (D-75) — settles the two conflicting durations.
+   *
+   * The About PDF said a flat "two to four weeks". The Bathroom service PDF
+   * said "three and five weeks" AND broke it down by job type. The breakdown
+   * wins: it is more specific, internally consistent, and it is the only one
+   * that stays true for a reconfigure — a flat "2–4 weeks" applied to a job
+   * that moves walls is a promise ETR would break.
+   *
+   * It is also corroborated: the documented Artarmon project ran TWO wet areas
+   * in four weeks, which is consistent with 3–5 for a single full renovation
+   * and not with 2–4 as a universal figure.
+   *
+   * ⚠️ The service PDF also priced a "Refresh package" at 1–2 weeks. That is a
+   * FIFTH service D-01 does not confirm, so it is deliberately omitted here.
+   * Do not add it back without owner sign-off.
+   *
+   * ⚠️ These are on-site programs, and they are a customer promise. The reviews
+   * repeatedly praise ETR for finishing on time — that reputation is the asset
+   * being protected by quoting the honest range rather than the flattering one.
+   */
+  buildDurations: [
+    {
+      label: 'Full renovation',
+      detail: 'same footprint, everything new',
+      weeks: '3–5 weeks',
+    },
+    {
+      label: 'Premium build',
+      detail: 'natural stone, custom joinery, complex glazing',
+      weeks: '5–6 weeks',
+    },
+    {
+      label: 'Reconfigure',
+      detail: 'walls or fixture positions move',
+      weeks: '5–7 weeks',
+    },
+  ],
+
+  /**
    * ⚠️ FOUR family members, not three. DECISIONS.md D-37 recorded three
    * (Omar, Adam, Farah) — that is now known to be incomplete. The About PDF
    * names four and the Home PDF says "The four Dawoods".

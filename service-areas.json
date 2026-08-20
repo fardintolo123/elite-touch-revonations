@@ -182,7 +182,8 @@
           "tier": 2
         }
       ],
-      "hubPublished": false
+      "hubPublished": true,
+      "note": "Published 2026-08-19 (D-74). Has BOTH volume evidence (Tier-1 suburb confirmed by Ahrefs + GKP, D-10) AND a photographed, suburb-attributed project to prove local work."
     },
     {
       "name": "Inner West",
@@ -869,7 +870,8 @@
           "tier": 2
         }
       ],
-      "hubPublished": false
+      "hubPublished": true,
+      "note": "Published 2026-08-19 (D-74). Has BOTH volume evidence (Tier-1 suburb confirmed by Ahrefs + GKP, D-10) AND a photographed, suburb-attributed project to prove local work."
     },
     {
       "name": "North Shore",
