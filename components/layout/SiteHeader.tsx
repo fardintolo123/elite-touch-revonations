@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 
@@ -12,9 +13,16 @@ import { businessInfo } from '@/lib/businessInfo'
  *
  * The call CTA is a real `tel:` anchor (D-33). Never a button with a JS handler —
  * anchors cannot double-count in call tracking.
+ *
+ * The brand mark is the ETR monogram from the owner's own logo file
+ * (`public/brand/`, D-79). `priority` because it sits in the header on every
+ * page and is a small, above-the-fold asset.
  */
 
 const NAV_LINKS = [
+  /* "Home" is an explicit link, not just the logo. The logo works, but a
+     visible Home item is what most people look for — reported 2026-08-20. */
+  { href: '/', label: 'Home' },
   { href: '/services/', label: 'Services' },
   { href: '/packages/', label: 'Packages' },
   { href: '/gallery/', label: 'Gallery' },
@@ -27,8 +35,18 @@ export function SiteHeader() {
     <header className="et-header">
       <div className="et-container">
         <div className="et-header-inner">
-          <Link href="/" className="et-logo">
-            Elite Touch <span>Renovations</span>
+          <Link href="/" className="et-logo" aria-label={`${businessInfo.name} — home`}>
+            <Image
+              className="et-logo-mark"
+              src="/brand/etr-mark.webp"
+              alt=""
+              width={163}
+              height={160}
+              priority
+            />
+            <span aria-hidden="true">
+              Elite Touch <span>Renovations</span>
+            </span>
           </Link>
 
           <nav className="et-nav" aria-label="Primary">

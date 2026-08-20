@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo } from '@/lib/businessInfo'
 import { projects, projectBySlug } from '@/lib/projects'
+import { ContactSection } from '@/components/ContactSection'
 
 /**
  * One page per photographed project, driven by `lib/projects.ts`.
@@ -169,31 +170,7 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      <section className="et-section et-band-surface">
-        <div className="et-container">
-          <div className="et-card et-stack" style={{ textAlign: 'center' }}>
-            <h2 className="et-h2">Planning something similar?</h2>
-            <p className="et-lead et-measure" style={{ marginInline: 'auto' }}>
-              Book a free on-site measure anywhere in Sydney and we will price
-              it properly, in writing.
-            </p>
-            <div className="et-hero-cta" style={{ justifyContent: 'center' }}>
-              <Link
-                href="/contact-us/"
-                className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-              >
-                {businessInfo.offer.primaryCta}
-              </Link>
-              <a
-                href={businessInfo.phone.href}
-                className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-              >
-                Call {businessInfo.phone.display}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </>
   )
 }

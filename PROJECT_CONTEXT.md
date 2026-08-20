@@ -246,7 +246,11 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `app/services/[slug]/[location]/` | Regional hub renderer (D-71). Builds only `hubPublished` regions |
 | `lib/projects.ts` | ⭐ **The five photographed projects and every image's alt text.** Alt text describes the PHOTOGRAPH, not the page topic (D-66) |
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
-| `lib/actions.ts` | Enquiry server action |
+| `lib/actions.ts` | Enquiry server action. ⚠️ **Exports async functions ONLY** — see D-77 |
+| `lib/enquiry.ts` | Enquiry types + initial state. Exists precisely so they are NOT exported from a `'use server'` file |
+| `components/ContactSection.tsx` | The enquiry block on **every** page (D-80) |
+| `components/WorkStrip.tsx` | Project photos, reusable. Every card is suburb-labelled — never decoration (D-83) |
+| `public/brand/` | Logo mark + lockup, light and dark variants (D-79). Favicon is `app/icon.png` |
 | `next.config.ts` | 19 × 301 + `trailingSlash: true` + security headers |
 | `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |
 | `scripts/verify-redirects.mjs` | `npm run verify:redirects` |
@@ -265,8 +269,10 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    ships a fifth service page — and D-01 says there are four.
 5. **`EnquiryForm.tsx` is the only `'use client'` in the app**, and deliberately a leaf. The contact
    page stays a server component so its copy is in the server HTML. Do not lift the directive up.
-6. **The enquiry form has no destination** and fails loudly by design (D-47). Set
-   `ETR_ENQUIRY_WEBHOOK_URL` and send a live test before telling anyone the form works.
+6. **The enquiry form sends via Resend** (D-78). Set `RESEND_API_KEY` and `ETR_ENQUIRY_FROM` in
+   Vercel, then send a live test before telling anyone it works. Unset, it fails loudly (D-47).
+   ⚠️ **Never export a non-function from `lib/actions.ts`** — that exact mistake produced a
+   production-only crash on the first real submission (D-77).
 7. **The reviews render eagerly and in full** on `/about-us/` — verified as 19 `<figcaption>`
    elements in the served HTML, not the React tree. Never wrap them in a lazy-loader (D-31).
 8. **`lib/projects.ts` is a URL generator too.** Every record becomes `/gallery/{slug}/` and a
@@ -282,7 +288,13 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    checks for this. Never retype the list into a component.
 12. **Adding a region does NOT publish it.** `hubPublished: true` does. This is deliberate
    (D-73) and is the guard against §4.4 plus D-10's thin-page rule.
-13. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
+13. **Dark surfaces need `--et-text-inverse`.** `.et-quote` hard-sets the light-mode ink colour;
+   overrides for `.et-band-ink` / `.et-card-dark` live at the end of `globals.css` (D-81). If you
+   add a new component that can sit on an ink band, check its contrast before shipping.
+14. **The form's JS is on every route** because `ContactSection` is on every page (D-80). Homepage
+   JS is **179 KB gzipped — over the ≤150 KB shared-route budget line.** Accepted deliberately.
+   Slim the form if it must come down; do not strip the form from pages.
+15. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
    only (D-32), and every call CTA is already a real `tel:` anchor (D-33) — verified as 4 anchors
    and 0 `<button>` call CTAs — so a single delegated listener is all that is needed.
 

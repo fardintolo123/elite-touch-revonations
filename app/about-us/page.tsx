@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { reviews } from '@/lib/reviews'
+import { ContactSection } from '@/components/ContactSection'
+import { WorkStrip } from '@/components/WorkStrip'
 
 /**
  * About us.
@@ -362,31 +364,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="et-section et-band-surface">
-        <div className="et-container">
-          <div className="et-card et-stack" style={{ textAlign: 'center' }}>
-            <h2 className="et-h2">Talk to us about your bathroom</h2>
-            <p className="et-lead et-measure" style={{ marginInline: 'auto' }}>
-              A free on-site measure anywhere in Sydney, and a fixed-scope
-              written quote to go with it.
-            </p>
-            <div className="et-hero-cta" style={{ justifyContent: 'center' }}>
-              <Link
-                href="/contact-us/"
-                className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-              >
-                {businessInfo.offer.primaryCta}
-              </Link>
-              <a
-                href={businessInfo.phone.href}
-                className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-              >
-                Call {businessInfo.phone.display}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkStrip band="canvas" />
+
+      <ContactSection />
     </>
   )
 }

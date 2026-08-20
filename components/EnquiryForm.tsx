@@ -2,11 +2,8 @@
 
 import { useActionState } from 'react'
 import { useFormStatus } from 'react-dom'
-import {
-  initialEnquiryState,
-  submitEnquiry,
-  type EnquiryState,
-} from '@/lib/actions'
+import { submitEnquiry } from '@/lib/actions'
+import { initialEnquiryState, type EnquiryState } from '@/lib/enquiry'
 import { services } from '@/lib/businessInfo'
 
 /**
@@ -110,7 +107,7 @@ export function EnquiryForm() {
 
       <div className="et-field">
         <label className="et-label" htmlFor="email">
-          Email <span style={{ fontWeight: 400 }}>(optional)</span>
+          Email
         </label>
         <input
           className="et-input"
@@ -118,6 +115,7 @@ export function EnquiryForm() {
           name="email"
           type="email"
           autoComplete="email"
+          required
           aria-describedby={state.errors?.email ? 'email-error' : undefined}
           aria-invalid={state.errors?.email ? true : undefined}
         />

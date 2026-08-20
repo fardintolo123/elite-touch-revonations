@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
 
@@ -28,9 +29,15 @@ export function SiteFooter() {
       <div className="et-container">
         <div className="et-grid et-grid-4">
           <div>
-            <p className="et-h4" style={{ marginBottom: 'var(--et-space-4)' }}>
-              Elite Touch Renovations
-            </p>
+            {/* White-on-transparent variant of the owner's logo (D-79). */}
+            <Image
+              className="et-footer-logo"
+              src="/brand/etr-logo-light.webp"
+              alt="Elite Touch Renovations Pty Ltd"
+              width={385}
+              height={320}
+              loading="lazy"
+            />
             <p className="et-body-sm" style={{ color: '#b9bec7' }}>
               Family-run bathroom renovations across Sydney since{' '}
               {businessInfo.foundedYear}. Fixed-scope written quotes, a free

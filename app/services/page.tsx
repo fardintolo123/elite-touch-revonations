@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { ContactSection } from '@/components/ContactSection'
+import { WorkStrip } from '@/components/WorkStrip'
 
 /**
  * Services index — an existing indexed URL on the WordPress site (it is in
@@ -68,31 +70,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="et-section et-band-surface">
-        <div className="et-container">
-          <div className="et-card et-stack" style={{ textAlign: 'center' }}>
-            <h2 className="et-h2">Not sure which one you need?</h2>
-            <p className="et-lead et-measure" style={{ marginInline: 'auto' }}>
-              Book a free on-site measure and we will tell you what the room
-              actually needs.
-            </p>
-            <div className="et-hero-cta" style={{ justifyContent: 'center' }}>
-              <Link
-                href="/contact-us/"
-                className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-              >
-                {businessInfo.offer.primaryCta}
-              </Link>
-              <a
-                href={businessInfo.phone.href}
-                className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-              >
-                Call {businessInfo.phone.display}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkStrip band="surface" />
+
+      <ContactSection />
     </>
   )
 }

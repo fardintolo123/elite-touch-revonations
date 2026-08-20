@@ -171,11 +171,11 @@ export const businessInfo = {
   /**
    * RESOLVED 2026-08-19 (D-75) — settles the two conflicting durations.
    *
-   * The About PDF said a flat "two to four weeks". The Bathroom service PDF
-   * said "three and five weeks" AND broke it down by job type. The breakdown
-   * wins: it is more specific, internally consistent, and it is the only one
-   * that stays true for a reconfigure — a flat "2–4 weeks" applied to a job
-   * that moves walls is a promise ETR would break.
+   * OWNER-CORRECTED 2026-08-20: a standard full renovation is **3–4 weeks**,
+   * not the 3–5 the service PDF stated. The owner knows how long their own
+   * jobs run; that supersedes both PDFs for this row.
+   * The breakdown-by-job-type structure is kept, because a single flat figure
+   * would be a promise ETR breaks on any job that moves walls.
    *
    * It is also corroborated: the documented Artarmon project ran TWO wet areas
    * in four weeks, which is consistent with 3–5 for a single full renovation
@@ -193,7 +193,7 @@ export const businessInfo = {
     {
       label: 'Full renovation',
       detail: 'same footprint, everything new',
-      weeks: '3–5 weeks',
+      weeks: '3–4 weeks',
     },
     {
       label: 'Premium build',

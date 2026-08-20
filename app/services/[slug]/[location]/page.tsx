@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo } from '@/lib/businessInfo'
+import { ContactSection } from '@/components/ContactSection'
 import {
   LOCATION_PARENT_SLUG,
   listableSuburbs,
@@ -277,33 +278,7 @@ export default async function LocationHubPage({
         </div>
       </section>
 
-      <section className="et-section et-band-canvas">
-        <div className="et-container">
-          <div className="et-card et-stack" style={{ textAlign: 'center' }}>
-            <h2 className="et-h2">
-              Book a free measure on the {region.name}
-            </h2>
-            <p className="et-lead et-measure" style={{ marginInline: 'auto' }}>
-              We will come to you, measure the room, and send a fixed-scope
-              written quote. No charge, no obligation.
-            </p>
-            <div className="et-hero-cta" style={{ justifyContent: 'center' }}>
-              <Link
-                href="/contact-us/"
-                className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-              >
-                {businessInfo.offer.primaryCta}
-              </Link>
-              <a
-                href={businessInfo.phone.href}
-                className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-              >
-                Call {businessInfo.phone.display}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </>
   )
 }

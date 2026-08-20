@@ -992,3 +992,100 @@ svg {
   break-inside: avoid;
   padding-block: var(--et-space-1);
 }
+
+/* ==========================================================================
+   Contrast fixes on dark bands (reported 2026-08-20)
+
+   `.et-quote` and `.et-quote-author` hard-set `--et-text`, which is dark ink.
+   Inside an ink band or a dark card that rendered near-black on near-black and
+   was effectively unreadable. DESIGN.md §2.5: on dark surfaces text goes to
+   `--et-text-inverse`. These rules restore that everywhere a dark surface can
+   contain quote markup.
+   ========================================================================== */
+
+.et-band-ink .et-quote,
+.et-band-ink .et-quote p,
+.et-card-dark .et-quote,
+.et-card-dark .et-quote p {
+  color: var(--et-text-inverse);
+}
+
+.et-band-ink .et-quote-author,
+.et-card-dark .et-quote-author {
+  color: #ffffff;
+}
+
+.et-band-ink .et-checklist > li,
+.et-card-dark .et-checklist > li,
+.et-card-dark .et-body-sm,
+.et-band-ink .et-body-sm {
+  color: var(--et-text-inverse);
+}
+
+.et-card-dark .et-h3,
+.et-card-dark .et-h4,
+.et-band-ink .et-h2,
+.et-band-ink .et-h3,
+.et-band-ink .et-h4 {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Brand mark
+   ========================================================================== */
+
+.et-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--et-space-3);
+}
+.et-logo-mark {
+  width: auto;
+  height: 32px;
+  flex: 0 0 auto;
+}
+@media (min-width: 1024px) {
+  .et-logo-mark {
+    height: 40px;
+  }
+}
+.et-footer-logo {
+  height: 56px;
+  width: auto;
+  margin-bottom: var(--et-space-5);
+}
+
+/* ==========================================================================
+   Hero image (homepage)
+   ========================================================================== */
+
+.et-hero-media {
+  overflow: hidden;
+  border-radius: var(--et-radius-xl);
+  aspect-ratio: 4 / 3;
+  background: var(--et-ink-50);
+}
+@media (min-width: 1024px) {
+  .et-hero-media {
+    border-radius: var(--et-radius-2xl);
+    aspect-ratio: 3 / 4;
+  }
+}
+.et-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Full-bleed image band (DESIGN.md §4.4 "Image band") */
+.et-band-media {
+  overflow: hidden;
+  border-radius: var(--et-radius-xl);
+  aspect-ratio: 16 / 9;
+  background: var(--et-ink-50);
+}
+.et-band-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

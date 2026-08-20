@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { projects, projectCover } from '@/lib/projects'
+import { ContactSection } from '@/components/ContactSection'
 
 /**
  * Gallery / our work.
@@ -157,31 +158,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <section className="et-section et-band-canvas">
-        <div className="et-container">
-          <div className="et-card et-stack" style={{ textAlign: 'center' }}>
-            <h2 className="et-h2">Want to see what we would do with yours?</h2>
-            <p className="et-lead et-measure" style={{ marginInline: 'auto' }}>
-              Book a free on-site measure and we will talk through the options
-              in your actual room.
-            </p>
-            <div className="et-hero-cta" style={{ justifyContent: 'center' }}>
-              <Link
-                href="/contact-us/"
-                className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-              >
-                {businessInfo.offer.primaryCta}
-              </Link>
-              <a
-                href={businessInfo.phone.href}
-                className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-              >
-                Call {businessInfo.phone.display}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </>
   )
 }

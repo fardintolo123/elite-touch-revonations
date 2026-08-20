@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { featuredReviews } from '@/lib/reviews'
+import { ContactSection } from '@/components/ContactSection'
+import { WorkStrip } from '@/components/WorkStrip'
 import {
   LOCATION_PARENT_SLUG,
   listableSuburbs,
@@ -262,6 +264,14 @@ export default async function ServicePage({
           </div>
         </div>
       </section>
+      <WorkStrip
+        title="Bathrooms we have finished"
+        intro="Our own photographs, with the suburb each job was in."
+        band="canvas"
+      />
+
+      <ContactSection />
+
     </>
   )
 }

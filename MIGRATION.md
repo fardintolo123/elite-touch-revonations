@@ -256,9 +256,24 @@ has to be re-verified. Pick one and do not mix them.
 
 ### Before the first deploy
 
-1. Set **`ETR_ENQUIRY_WEBHOOK_URL`** in Vercel → Project → Settings → Environment Variables, for
-   Production. Until it is set the enquiry form deliberately refuses to accept submissions rather
-   than silently dropping them (D-47).
+1. **Set the enquiry email variables** in Vercel → Project → Settings → Environment Variables
+   (Production). Delivery is via **Resend** (D-78):
+
+   | Variable | Value |
+   |---|---|
+   | `RESEND_API_KEY` | from resend.com → API Keys |
+   | `ETR_ENQUIRY_FROM` | e.g. `Elite Touch Renovations <enquiries@elitetouchrenovations.au>` — **must be on a domain verified in Resend** |
+   | `ETR_ENQUIRY_TO` | optional; defaults to `info@elitetouchrenovations.au` |
+
+   Until `RESEND_API_KEY` and `ETR_ENQUIRY_FROM` are both set, the form refuses submissions and
+   sends the customer to the phone rather than silently dropping the lead (D-47).
+
+   ⚠️ **SPF WARNING.** Verifying a sending domain in Resend means adding SPF/DKIM **TXT** records.
+   `elitetouchrenovations.au` already has an SPF record for Google Workspace. **Merge Resend into
+   the existing SPF record — do not add a second one.** A domain with two SPF records is invalid,
+   and it degrades deliverability for ordinary business email too, not just the form.
+   This is separate from the MX warning above: **MX = receiving, SPF/DKIM = sending.** Both must
+   survive the migration.
 2. Deploy to the **preview URL first** and run `npm run verify:redirects <preview-url>` against it.
    All 34 checks must pass on the real host, not just locally.
 3. Only then attach the production domain.

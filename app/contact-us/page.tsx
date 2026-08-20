@@ -15,8 +15,8 @@ import { businessInfo } from '@/lib/businessInfo'
  *
  * Phone is presented first, and deliberately. The reviews repeatedly praise
  * how responsive Omar and Adam are by phone and SMS — it is the channel that
- * demonstrably works, and it is the one that works TODAY (the form has no
- * configured destination; see lib/actions.ts).
+ * demonstrably works. The form sends via Resend (D-78) once its keys are set in
+ * Vercel; until then it fails loudly rather than dropping leads (D-47).
  */
 
 export const metadata: Metadata = {

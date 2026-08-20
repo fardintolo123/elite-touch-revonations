@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { featuredReviews } from '@/lib/reviews'
+import Image from 'next/image'
+import { ContactSection } from '@/components/ContactSection'
+import { WorkStrip } from '@/components/WorkStrip'
+import { projects } from '@/lib/projects'
 
 /**
  * Homepage.
@@ -55,6 +59,11 @@ const PROCESS = [
     body: 'New screed and falls to drains, tiling, plumbing and electrical fit-off, then a final clean before handover.',
   },
 ] as const
+
+/* The hero photograph. Castle Hill's double vanity is the strongest single
+   image we have and it is genuinely our work, in a Tier-1 suburb. */
+const heroImage =
+  projects.find((p) => p.slug === 'castle-hill-bathroom')!.images[0]
 
 export default function HomePage() {
   const [firstReview, secondReview] = featuredReviews(2)
@@ -115,6 +124,20 @@ export default function HomePage() {
               </ul>
             </div>
 
+            <div className="et-stack">
+              {/* LCP candidate: eager + high priority. Our own photograph,
+                  with alt text describing the photo (D-66). */}
+              <div className="et-hero-media">
+                <Image
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  width={heroImage.width}
+                  height={heroImage.height}
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  priority
+                />
+              </div>
+
             {/* Social proof above the fold — verbatim, attributed as written */}
             <aside className="et-card et-card-tinted">
               <span className="et-eyebrow">What our customers say</span>
@@ -137,6 +160,7 @@ export default function HomePage() {
                 </Link>
               </p>
             </aside>
+            </div>
           </div>
         </div>
       </section>
@@ -268,38 +292,13 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      <section className="et-section et-band-canvas">
-        <div className="et-container">
-          <div className="et-card et-stack" style={{ textAlign: 'center' }}>
-            <h2 className="et-h2">Book a free on-site measure</h2>
-            <p
-              className="et-lead et-measure"
-              style={{ marginInline: 'auto' }}
-            >
-              We will come to you anywhere in Sydney, measure the room, and put
-              a fixed scope and price in writing. There is no charge for the
-              visit and no obligation.
-            </p>
-            <div
-              className="et-hero-cta"
-              style={{ justifyContent: 'center' }}
-            >
-              <Link
-                href="/contact-us/"
-                className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-              >
-                Request your free measure
-              </Link>
-              <a
-                href={businessInfo.phone.href}
-                className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-              >
-                Call {businessInfo.phone.display}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkStrip
+        title="Recent Sydney bathrooms"
+        intro="Our own photographs of finished work, with the suburb each job was in."
+        band="canvas"
+      />
+
+      <ContactSection />
     </>
   )
 }
