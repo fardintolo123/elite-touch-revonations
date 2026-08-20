@@ -407,6 +407,20 @@ svg {
   }
 }
 
+/* Vertically center a short info column against a taller sibling (a form,
+   a long checklist card) instead of leaving it stretched and top-anchored.
+   Stretch is correct for symmetric card-vs-card grids (equal-height cards
+   read as one row); it is wrong for text-vs-card pairs, where it leaves a
+   block of dead white space under the shorter column once the taller one
+   runs on. Reported 2026-08-20 on ContactSection, which appears on every
+   page — scoped rather than a global .et-grid-2 default because most
+   .et-grid-2 uses ARE symmetric card grids that want the stretch. */
+@media (min-width: 768px) {
+  .et-grid-align-center {
+    align-items: center;
+  }
+}
+
 /* ==========================================================================
    Components (DESIGN.md §8)
    ========================================================================== */
@@ -1056,7 +1070,15 @@ svg {
 }
 
 /* ==========================================================================
-   Hero image (homepage)
+   Hero image (homepage + PageHero)
+
+   Fixed 2026-08-20: the desktop rule forced a PORTRAIT 3/4 box. Every hero
+   photo we have (lib/projects.ts) is landscape, around 3/2. Cropping a
+   landscape source into a portrait frame with object-fit: cover throws away
+   most of the width and renders a tight, awkward zoom (reported by the
+   owner). 4/3 is DESIGN.md §9's own "feature image" ratio and is close
+   enough to the real ~3/2 source photos that `cover` only trims the edges.
+   Kept identical at both breakpoints so nothing has to special-case desktop.
    ========================================================================== */
 
 .et-hero-media {
@@ -1068,7 +1090,6 @@ svg {
 @media (min-width: 1024px) {
   .et-hero-media {
     border-radius: var(--et-radius-2xl);
-    aspect-ratio: 3 / 4;
   }
 }
 .et-hero-media img {

@@ -5,11 +5,30 @@ import { businessInfo, services } from '@/lib/businessInfo'
 import { featuredReviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
+import { PageHero } from '@/components/PageHero'
+import { projects } from '@/lib/projects'
 import {
   LOCATION_PARENT_SLUG,
   listableSuburbs,
   publishedRegions,
 } from '@/lib/locations'
+
+/**
+ * Which real, suburb-attributed photo (if any) illustrates each service hero.
+ *
+ * ⚠️ Only `bathroom-renovations` and `ensuite-bathroom-renovations` are
+ * photographed (lib/projects.ts). `laundry-renovations` and
+ * `powder-room-renovations` have NO evidenced photography — showing a
+ * bathroom photo on either would imply proof of work we cannot support
+ * (DECISIONS.md D-83, D-06). Those two slugs are deliberately absent from
+ * this map, so their hero stays text-only. Do not add a fallback image here.
+ */
+const SERVICE_HERO_IMAGE: Partial<
+  Record<(typeof services)[number]['slug'], { slug: string; imageIndex?: number }>
+> = {
+  'bathroom-renovations': { slug: 'randwick-bathroom', imageIndex: 1 },
+  'ensuite-bathroom-renovations': { slug: 'hornsby-ensuite', imageIndex: 0 },
+}
 
 /**
  * One renderer, four pages, driven by `services` in lib/businessInfo.ts.
@@ -78,30 +97,23 @@ export default async function ServicePage({
   const others = services.filter((item) => item.slug !== service.slug)
   const hubs = publishedRegions()
 
+  const heroImageRef = SERVICE_HERO_IMAGE[service.slug]
+  const heroProject = heroImageRef
+    ? projects.find((p) => p.slug === heroImageRef.slug)
+    : undefined
+
   return (
     <>
-      <section className="et-hero">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">{service.title}</span>
-          <h1 className="et-h1 et-measure-tight">{service.h1}</h1>
-          <p className="et-lead et-measure">{service.summary}</p>
-
-          <div className="et-hero-cta">
-            <Link
-              href="/contact-us/"
-              className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-            >
-              {businessInfo.offer.primaryCta}
-            </Link>
-            <a
-              href={businessInfo.phone.href}
-              className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-            >
-              Call {businessInfo.phone.display}
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow={service.title}
+        title={service.h1}
+        leads={[service.summary]}
+        image={
+          heroProject
+            ? { project: heroProject, imageIndex: heroImageRef?.imageIndex }
+            : undefined
+        }
+      />
 
       <section className="et-section et-band-canvas">
         <div className="et-container">

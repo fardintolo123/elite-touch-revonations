@@ -4,6 +4,8 @@ import { businessInfo } from '@/lib/businessInfo'
 import { reviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
+import { PageHero } from '@/components/PageHero'
+import { projects } from '@/lib/projects'
 
 /**
  * About us.
@@ -27,30 +29,24 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about-us/' },
 }
 
+const heroProject = projects.find((p) => p.slug === 'artarmon-bathroom')!
+
 export default function AboutPage() {
   return (
     <>
-      <section className="et-hero">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">About us</span>
-          <h1 className="et-h1 et-measure-tight">
-            A family business that only renovates wet areas.
-          </h1>
-          <p className="et-lead et-measure">
-            Elite Touch Renovations was founded in {businessInfo.foundedYear} by
-            the Dawood family and works across Sydney. We are deliberately
-            small: the people who quote your job are the people who run it.
-          </p>
-          {/* Owner confirmed commercial work 2026-08-19 (D-67). Wording is the
-              owner's own from the About PDF — it widens the CLIENT TYPE only.
-              The four services are unchanged (D-01), and no commercial-specific
-              compliance claim is made. */}
-          <p className="et-lead et-measure">
-            We take on both residential and commercial projects, though most of
-            our work is family homes.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About us"
+        title="A family business that only renovates wet areas."
+        leads={[
+          `Elite Touch Renovations was founded in ${businessInfo.foundedYear} by the Dawood family and works across Sydney. We are deliberately small: the people who quote your job are the people who run it.`,
+          // Owner confirmed commercial work 2026-08-19 (D-67). Wording is the
+          // owner's own from the About PDF — it widens the CLIENT TYPE only.
+          // The four services are unchanged (D-01), and no commercial-specific
+          // compliance claim is made.
+          'We take on both residential and commercial projects, though most of our work is family homes.',
+        ]}
+        image={{ project: heroProject, imageIndex: 2 }}
+      />
 
       {/* ---------------- The family ---------------- */}
       <section className="et-section et-band-canvas">

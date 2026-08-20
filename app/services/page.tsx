@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { businessInfo, services } from '@/lib/businessInfo'
+import { services } from '@/lib/businessInfo'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
+import { PageHero } from '@/components/PageHero'
+import { projects } from '@/lib/projects'
 
 /**
  * Services index — an existing indexed URL on the WordPress site (it is in
@@ -18,22 +20,19 @@ export const metadata: Metadata = {
   alternates: { canonical: '/services/' },
 }
 
+const heroProject = projects.find((p) => p.slug === 'hornsby-bathroom')!
+
 export default function ServicesPage() {
   return (
     <>
-      <section className="et-hero">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">Our services</span>
-          <h1 className="et-h1 et-measure-tight">
-            Bathroom renovation services across Sydney.
-          </h1>
-          <p className="et-lead et-measure">
-            Four services, and they are all wet areas. We do not take kitchens,
-            extensions or tiling-only work — the whole business is built around
-            getting the waterproofing and the tile setout right.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our services"
+        title="Bathroom renovation services across Sydney."
+        leads={[
+          'Four services, and they are all wet areas. We do not take kitchens, extensions or tiling-only work — the whole business is built around getting the waterproofing and the tile setout right.',
+        ]}
+        image={{ project: heroProject }}
+      />
 
       <section className="et-section et-band-canvas">
         <div className="et-container">

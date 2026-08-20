@@ -250,6 +250,7 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `lib/enquiry.ts` | Enquiry types + initial state. Exists precisely so they are NOT exported from a `'use server'` file |
 | `components/ContactSection.tsx` | The enquiry block on **every** page (D-80) |
 | `components/WorkStrip.tsx` | Project photos, reusable. Every card is suburb-labelled — never decoration (D-83) |
+| `components/PageHero.tsx` | Shared hero for every page except home. `image` prop is OPTIONAL — only pass it where a real photo exists (D-84) |
 | `public/brand/` | Logo mark + lockup, light and dark variants (D-79). Favicon is `app/icon.png` |
 | `next.config.ts` | 19 × 301 + `trailingSlash: true` + security headers |
 | `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |
@@ -297,6 +298,13 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 15. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
    only (D-32), and every call CTA is already a real `tel:` anchor (D-33) — verified as 4 anchors
    and 0 `<button>` call CTAs — so a single delegated listener is all that is needed.
+16. **`.et-hero-media` is a fixed 4/3 ratio at every breakpoint** (D-84). Every source photo in
+   `lib/projects.ts` is landscape (~3/2) — do not reintroduce a portrait override for "desktop
+   polish"; that exact change was the reported crop bug.
+17. **`SERVICE_HERO_IMAGE` in `app/services/[slug]/page.tsx` only has two entries.** Only
+   `bathroom-renovations` and `ensuite-bathroom-renovations` have real photography. Adding a third
+   entry for `laundry-renovations` or `powder-room-renovations` puts an unevidenced photo on a page
+   that has none — check D-83/D-06 before touching this map.
 
 ### How it is verified
 

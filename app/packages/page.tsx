@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
+import { PageHero } from '@/components/PageHero'
+import { projects } from '@/lib/projects'
 
 /**
  * Packages / pricing.
@@ -110,36 +112,31 @@ const IN_EVERY_TIER = [
   'Final clean of the bathroom prior to handover',
 ] as const
 
+const heroProject = projects.find((p) => p.slug === 'castle-hill-bathroom')!
+
 export default function PackagesPage() {
   return (
     <>
-      <section className="et-hero">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">Packages</span>
-          <h1 className="et-h1 et-measure-tight">
-            Bathroom renovation packages and pricing.
-          </h1>
-          <p className="et-lead et-measure">
-            Each package price is tied to a bathroom of a stated size. That is
-            deliberate — a price quoted without the size it assumes is not a
-            price, it is a guess. All three are starting prices; your final
-            figure is fixed in writing after a free on-site measure.
-          </p>
-          <ul className="et-facts">
-            <li className="et-fact">
-              <strong>{businessInfo.workmanshipWarrantyYears}-year</strong>{' '}
-              workmanship warranty
-            </li>
-            <li className="et-fact">
-              <strong>{businessInfo.offer.deposit}</strong> to start
-            </li>
-            <li className="et-fact">
-              <strong>Progressive payments</strong>{' '}
-              {businessInfo.offer.paymentSchedule}
-            </li>
-          </ul>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Packages"
+        title="Bathroom renovation packages and pricing."
+        leads={[
+          'Each package price is tied to a bathroom of a stated size. That is deliberate — a price quoted without the size it assumes is not a price, it is a guess. All three are starting prices; your final figure is fixed in writing after a free on-site measure.',
+        ]}
+        cta={false}
+        facts={[
+          {
+            label: `${businessInfo.workmanshipWarrantyYears}-year`,
+            value: 'workmanship warranty',
+          },
+          { label: businessInfo.offer.deposit, value: 'to start' },
+          {
+            label: 'Progressive payments',
+            value: businessInfo.offer.paymentSchedule,
+          },
+        ]}
+        image={{ project: heroProject, imageIndex: 1 }}
+      />
 
       <section className="et-section et-band-canvas">
         <div className="et-container">

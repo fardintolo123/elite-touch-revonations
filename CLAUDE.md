@@ -222,6 +222,31 @@ These are framework-level lessons, not preferences. Adjust the names to whatever
 6. **Complete:** build green, docs updated, decisions recorded in `DECISIONS.md`.
 7. **Report** using one Executive Summary — see below.
 
+## Issue Workflow
+
+When a task is broken into GitHub issues (rather than executed directly against the plan), each
+issue must:
+
+- **Come from the plan and checklist** in `plans/`. Never open an issue from a passing idea that
+  has not gone through step 1 above — an issue with no plan behind it is exactly how the sibling
+  project lost track of *why* work was queued.
+- **Be small, actionable and specific.** One deliverable, doable in one sitting — not a milestone,
+  not "polish the homepage." If it needs its own sub-checklist, it is still a plan, not an issue.
+- **Include a linked checklist item or page reference** — the specific `plans/*.md` line, or a
+  `DECISIONS.md` / doc anchor, it was raised from. An issue that cannot be traced back to the plan
+  cannot be reconciled with it later.
+- **Reference the relevant files** (paths) it expects to touch, so the next session — human or
+  agent — does not have to rediscover scope before starting.
+- **Be updated together with the plan and checklist during implementation.** When a checklist item
+  is ticked, its linked issue is closed or updated in the *same* change, not in a follow-up pass.
+  A plan and an issue tracker that drift apart both become unreliable at once.
+
+**Structure the set so issues can be executed one at a time without losing track:** order them by
+dependency (not by discovery order), keep the count of "in progress" issues low, and record a
+blocked issue's blocker explicitly rather than leaving it silently stalled. The plan file is the
+map; each issue is one step on it — if you cannot point at the plan line an issue came from, it is
+not ready to open.
+
 ## Testing Workflow
 
 - The build must be green before commit. Treat a **drop** in the route count as the red flag; don't
@@ -288,5 +313,7 @@ what's wrong, what to decide, and exactly what to do next.
 - [ ] **No performance regression** — budgets in `docs/PERFORMANCE_BUDGET.md` met; no new dependency,
       third-party script or `'use client'` added without justification.
 - [ ] Build green; verified in a browser if the UI changed.
+- [ ] If GitHub issues were opened for this task, each traces to a plan/checklist line and was
+      updated alongside it (Issue Workflow).
 - [ ] Decisions and mechanics recorded in the right file.
 - [ ] Response follows the Reporting Format, "What should happen next" last.
