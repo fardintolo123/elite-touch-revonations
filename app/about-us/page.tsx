@@ -39,6 +39,14 @@ export default function AboutPage() {
             the Dawood family and works across Sydney. We are deliberately
             small: the people who quote your job are the people who run it.
           </p>
+          {/* Owner confirmed commercial work 2026-08-19 (D-67). Wording is the
+              owner's own from the About PDF — it widens the CLIENT TYPE only.
+              The four services are unchanged (D-01), and no commercial-specific
+              compliance claim is made. */}
+          <p className="et-lead et-measure">
+            We take on both residential and commercial projects, though most of
+            our work is family homes.
+          </p>
         </div>
       </section>
 

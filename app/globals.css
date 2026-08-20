@@ -971,3 +971,24 @@ svg {
     aspect-ratio: 16 / 9;
   }
 }
+
+/* Suburb list on a regional hub. Multi-column so 50 entries stay scannable
+   without becoming a wall of text. */
+.et-suburb-list {
+  columns: 2;
+  column-gap: var(--et-space-8);
+}
+@media (min-width: 768px) {
+  .et-suburb-list {
+    columns: 3;
+  }
+}
+@media (min-width: 1024px) {
+  .et-suburb-list {
+    columns: 4;
+  }
+}
+.et-suburb-list > li {
+  break-inside: avoid;
+  padding-block: var(--et-space-1);
+}

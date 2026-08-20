@@ -3,6 +3,11 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { featuredReviews } from '@/lib/reviews'
+import {
+  LOCATION_PARENT_SLUG,
+  listableSuburbs,
+  publishedRegions,
+} from '@/lib/locations'
 
 /**
  * One renderer, four pages, driven by `services` in lib/businessInfo.ts.
@@ -69,6 +74,7 @@ export default async function ServicePage({
 
   const [review] = featuredReviews(1)
   const others = services.filter((item) => item.slug !== service.slug)
+  const hubs = publishedRegions()
 
   return (
     <>
@@ -140,6 +146,48 @@ export default async function ServicePage({
           </figure>
         </div>
       </section>
+
+      {/* Published regional hubs. Only rendered for the service they hang off
+          (D-71), and only for regions with `hubPublished: true` — a data row
+          must never silently become an internal link to a page that has
+          nothing to say (D-10). */}
+      {service.slug === LOCATION_PARENT_SLUG && hubs.length > 0 && (
+        <section className="et-section et-band-canvas">
+          <div className="et-container et-stack">
+            <span className="et-eyebrow">Where we work</span>
+            <h2 className="et-h2 et-measure-tight">
+              Bathroom renovations by area
+            </h2>
+            <p className="et-lead et-measure">
+              We work {businessInfo.serviceArea.coverage}. These areas have a
+              page of their own, with the projects we have completed there.
+            </p>
+            <div
+              className="et-grid et-grid-3"
+              style={{ marginTop: 'var(--et-space-8)' }}
+            >
+              {hubs.map((region) => (
+                <Link
+                  key={region.slug}
+                  href={`${region.hubUrl}/`}
+                  className="et-card et-card-link"
+                >
+                  <h3 className="et-h4">{region.name}</h3>
+                  <p
+                    className="et-body-sm"
+                    style={{
+                      marginTop: 'var(--et-space-3)',
+                      color: 'var(--et-text-secondary)',
+                    }}
+                  >
+                    {listableSuburbs(region).length} suburbs served
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">

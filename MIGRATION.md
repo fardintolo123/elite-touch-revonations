@@ -208,3 +208,57 @@ The expectation table inside `scripts/verify-redirects.mjs` is transcribed **ind
 `next.config.ts` — on purpose. A script that imported the config would only prove the config equals
 itself, and would pass with a typo in it. The script also follows every 301 to its destination and
 asserts a 200, because a redirect pointing at a 404 destroys the equity it exists to preserve.
+
+---
+
+## 8. Hosting: Vercel (decided 2026-08-19)
+
+Vercel is a **verified adapter** for Next.js 16 — it runs the full Next compatibility test suite —
+so everything this site uses is supported with no configuration file:
+
+| Feature we depend on | On Vercel |
+|---|---|
+| `proxy.ts` (the 410s) | ✅ Supported. Node runtime, which is what Next 16 Proxy requires |
+| `redirects()` with `statusCode: 301` | ✅ Supported |
+| `trailingSlash: true` | ✅ Supported |
+| `next/image` optimisation | ✅ Supported (`sharp` is bundled) |
+| Server Actions (the enquiry form) | ✅ Supported |
+
+**No `vercel.json` is needed.** Adding one is more likely to break the above than help it.
+
+### ⚠️ The one thing that can go badly wrong: DNS
+
+`elitetouchrenovations.au` currently has **Google Workspace MX records**:
+
+```
+aspmx.l.google.com                 (priority 1)
+alt1/alt2.aspmx.l.google.com       (priority 5)
+alt3/alt4.aspmx.l.google.com       (priority 10)
+```
+
+That is what makes `info@elitetouchrenovations.au` able to receive mail at all.
+
+**When you point the domain at Vercel, change ONLY the `A` / `CNAME` records. Do not touch, replace
+or "clean up" the `MX` records.** Wiping MX while repointing a domain is one of the most common
+migration mistakes, and the symptom is silent — email simply stops arriving, and nobody notices for
+days. On a business whose enquiries arrive by email, that is worse than the website being down.
+
+Same applies to any `TXT` records (SPF/DKIM/Google verification) — leave them alone.
+
+### Apex vs www — must match the canonical
+
+Every canonical URL, the sitemap and `businessInfo.siteUrl` use **`https://www.elitetouchrenovations.au`**.
+
+So in Vercel: set **`www.elitetouchrenovations.au` as the primary domain**, and let the apex
+`elitetouchrenovations.au` **redirect to www**. If you prefer the apex instead, that is fine — but
+then `siteUrl` in `lib/businessInfo.ts` must change with it, and every canonical and sitemap entry
+has to be re-verified. Pick one and do not mix them.
+
+### Before the first deploy
+
+1. Set **`ETR_ENQUIRY_WEBHOOK_URL`** in Vercel → Project → Settings → Environment Variables, for
+   Production. Until it is set the enquiry form deliberately refuses to accept submissions rather
+   than silently dropping them (D-47).
+2. Deploy to the **preview URL first** and run `npm run verify:redirects <preview-url>` against it.
+   All 34 checks must pass on the real host, not just locally.
+3. Only then attach the production domain.

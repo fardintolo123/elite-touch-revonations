@@ -117,10 +117,15 @@ Summary:
 
 - **Tier 1 — six dedicated suburb pages:** Baulkham Hills, Castle Hill, Kellyville (Hills District),
   Marrickville (Inner West), Ryde (North-Western Sydney), Randwick (Eastern Suburbs).
-- **Tier 2 — four regional hubs:** Hills District, Inner West, North-Western Sydney, Eastern Suburbs.
-  Every other suburb is *listed* on its hub, not given a URL — this is the deliberate guard against
-  thin, near-duplicate location pages.
-- **Routes:** `/bathroom-renovations/` overview → `/bathroom-renovations/{suburb-or-region}`.
+- **Tier 2 — FIVE regional hubs:** Hills District, Inner West, North-Western Sydney, Eastern Suburbs,
+  and **North Shore** (added 2026-08-19, D-72 — 50 suburbs, Lower + Upper). Every other suburb is
+  *listed* on its hub, not given a URL — the deliberate guard against thin, near-duplicate pages.
+- **Routes (D-71, supersedes D-11):** `/services/bathroom-renovations/` →
+  `/services/bathroom-renovations/{suburb-or-region}/`. Locations are children of the service page,
+  so there is exactly one canonical bathroom page.
+- ⚠️ **Only North Shore is actually published.** The other four are `hubPublished: false` and
+  **404 by design** (D-73) — they have no differentiated content yet. Turning one on is a content
+  job, not a config flip.
 - **Linking rule:** Tier 1 links up to its hub; each hub links down to its Tier 1 pages; the overview
   links to all four hubs.
 - **Biggest single opportunity: "bathroom renovations near me" / "…contractors near me" at
@@ -178,7 +183,7 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 | ~~K6~~ | ✅ Customer consent to publish photos of their homes — **confirmed by owner 2026-08-17** (D-39) | Resolved |
 | ~~K7~~ | ✅ **CLOSED 2026-08-19.** The current Packages sheet has **three tiers** — the ORIGINAL tier no longer exists, so there was never a price to find (D-61) | Resolved |
 | K10 | ⚠️ **Two conflicting build durations in issue #2** — About says "two to four weeks", the Bathroom service page says "three and five weeks". No duration is on the site until this is settled | Owner |
-| K12 | ⚠️ **Which Sydney areas does ETR prefer?** The owner confirmed they work Sydney-wide *"but we prefer some areas over others"* (D-63). Knowing which should drive the next suburb pages. Also: **Hornsby** now has two photographed projects but is absent from `service-areas.json` | Owner |
+| K12 | ⚠️ **Which Sydney areas does ETR prefer?** Owner confirmed Sydney-wide *"but we prefer some areas over others"* (D-63). **Still open, and now the main input into which hub gets published next** — four are built as data but deliberately 404 (D-73). ~~Hornsby absent from `service-areas.json`~~ ✅ resolved by D-72. | Owner |
 | K13 | ⚠️ **Is the gallery's Artarmon project the same job as the documented "Artarmon bathroom + ensuite" case study?** The case study describes large-format porcelain and LED backlit mirrors over a four-week program; the gallery Artarmon shows gold fixtures and a round gold mirror. They may be two different jobs. **Not merged** (D-06) — owner to confirm | Owner |
 | K11 | ⚠️ **Outstanding content asks from the marketing audit** (`docs/source-copy/action-items.md`), none of which exist yet: professional team photos and head shots, on-site photos, finished-bathroom video, a **downloadable sample quote**, and a founder video. The sample quote in particular is a strong, cheap trust asset for a fixed-scope-quote business | Owner |
 | ~~K9~~ | ✅ **RESOLVED 2026-08-19 (D-65).** Project photography lives in **`public/images/projects/{project-slug}/`** as WebP. The repo-root `.jpg` (the logo) and the two original `ETR images*` folders are still unstructured and uncommitted — decide separately whether any of those 33 are still needed now that five attributed projects exist | Agent |
@@ -237,6 +242,8 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `components/` | `layout/SiteHeader.tsx`, `layout/SiteFooter.tsx`, `EnquiryForm.tsx` |
 | `lib/businessInfo.ts` | ⭐ **The single source of truth for business facts and the four services.** Never let a fact live only in JSX. |
 | `lib/reviews.ts` | The 19 testimonials, verbatim (D-03) |
+| `lib/locations.ts` | Reads `service-areas.json`. `publishedRegions()` is the **only** thing that turns a region into a page |
+| `app/services/[slug]/[location]/` | Regional hub renderer (D-71). Builds only `hubPublished` regions |
 | `lib/projects.ts` | ⭐ **The five photographed projects and every image's alt text.** Alt text describes the PHOTOGRAPH, not the page topic (D-66) |
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
 | `lib/actions.ts` | Enquiry server action |
@@ -270,7 +277,12 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 10. **Two suburbs in the gallery are Tier-1** (Castle Hill, Randwick) and one is not in the site
    structure at all (Hornsby). When location pages get built, import from `lib/projects.ts` rather
    than copying image paths.
-11. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
+11. **`service-areas.json` is the ONLY suburb list.** 187 suburbs, 5 regions, verified zero
+   duplicates across regions. A suburb in two regions makes two hubs compete — the add script
+   checks for this. Never retype the list into a component.
+12. **Adding a region does NOT publish it.** `hubPublished: true` does. This is deliberate
+   (D-73) and is the guard against §4.4 plus D-10's thin-page rule.
+13. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
    only (D-32), and every call CTA is already a real `tel:` anchor (D-33) — verified as 4 anchors
    and 0 `<button>` call CTAs — so a single delegated listener is all that is needed.
 

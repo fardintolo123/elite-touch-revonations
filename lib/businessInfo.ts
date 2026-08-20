@@ -89,6 +89,34 @@ export const businessInfo = {
     city: 'Sydney',
     state: 'NSW',
     country: 'AU',
+    /**
+     * RESOLVED 2026-08-19 (D-63) — owner: "we work all over Sydney but we
+     * prefer some areas over others". Coverage is Sydney-wide.
+     * ⚠️ This is a COVERAGE claim, not a site-structure change. Which suburbs
+     * get their own page is still governed by D-10 and the volume evidence in
+     * docs/BATHROOM_SITE_STRUCTURE.md.
+     */
+    coverage: 'across Sydney',
+  },
+
+  /**
+   * RESOLVED 2026-08-19 (D-67) — owner answered "yes" to "Do you do commercial
+   * work?".
+   *
+   * ⚠️ Scope discipline still applies. This widens the CLIENT TYPE, not the
+   * service list: the four services in `services` below are unchanged (D-01).
+   * The wording used on the site is the owner's own from the About PDF —
+   * "residential and commercial, with most of our work focused on family
+   * homes" — which is accurate and appropriately hedged.
+   *
+   * Do NOT extrapolate from this into commercial-specific compliance claims
+   * (accessible/DDA bathrooms to AS 1428, strata programs, end-of-trip
+   * facilities). Those are different obligations and none of them is evidenced.
+   */
+  clientTypes: {
+    residential: true,
+    commercial: true,
+    emphasis: 'most of our work is family homes',
   },
 
   standards: {

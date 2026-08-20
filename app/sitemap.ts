@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { projects } from '@/lib/projects'
+import { LOCATION_PARENT_SLUG, publishedRegions } from '@/lib/locations'
 
 /**
  * Replaces Yoast's `sitemap_index.xml` / `page-sitemap.xml`.
@@ -51,5 +52,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticRoutes, ...serviceRoutes, ...projectRoutes]
+  const locationRoutes: MetadataRoute.Sitemap = publishedRegions().map(
+    (region) => ({
+      url: `${base}/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    })
+  )
+
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...projectRoutes,
+    ...locationRoutes,
+  ]
 }

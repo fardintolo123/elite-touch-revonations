@@ -1,172 +1,1183 @@
 {
   "business": "Elite Touch Renovations",
   "service": "Bathroom Renovations",
-  "lastUpdated": "2026-08-16",
-  "notes": "tier 1 = dedicated page, tier 2 = hub-page-only. slug fields are kebab-case and ready for use in URL paths. Entries flagged isNotASuburb are non-residential/non-suburb locations included for postcode-data completeness only and should not receive individual service-area copy.",
+  "lastUpdated": "2026-08-19",
+  "notes": "tier 1 = dedicated page, tier 2 = hub-page-only. slug fields are kebab-case and ready for use in URL paths. Entries flagged isNotASuburb are non-residential/non-suburb locations included for postcode-data completeness only and should not receive individual service-area copy. URLs follow D-71: locations are children of the bathroom service page at /services/bathroom-renovations/{slug}/. A region is only rendered as a page when hubPublished is true - adding a region here does NOT publish it.",
   "regions": [
     {
       "name": "Hills District",
       "slug": "hills-district",
-      "hubUrl": "/bathroom-renovations/hills-district",
+      "hubUrl": "/services/bathroom-renovations/hills-district",
       "suburbs": [
-        { "name": "West Pennant Hills", "slug": "west-pennant-hills", "postcode": "2125", "tier": 2 },
-        { "name": "Cherrybrook", "slug": "cherrybrook", "postcode": "2126", "tier": 2 },
-        { "name": "Baulkham Hills", "slug": "baulkham-hills", "postcode": "2153", "tier": 1, "url": "/bathroom-renovations/baulkham-hills" },
-        { "name": "Bella Vista", "slug": "bella-vista", "postcode": "2153", "tier": 2 },
-        { "name": "Crestwood", "slug": "crestwood", "postcode": "2153", "tier": 2 },
-        { "name": "Winston Hills", "slug": "winston-hills", "postcode": "2153", "tier": 2 },
-        { "name": "Castle Hill", "slug": "castle-hill", "postcode": "2154", "tier": 1, "url": "/bathroom-renovations/castle-hill" },
-        { "name": "Beaumont Hills", "slug": "beaumont-hills", "postcode": "2155", "tier": 2 },
-        { "name": "Kellyville", "slug": "kellyville", "postcode": "2155", "tier": 1, "url": "/bathroom-renovations/kellyville" },
-        { "name": "Kellyville Ridge", "slug": "kellyville-ridge", "postcode": "2155", "tier": 2 },
-        { "name": "Rouse Hill", "slug": "rouse-hill", "postcode": "2155", "tier": 2 },
-        { "name": "Annangrove", "slug": "annangrove", "postcode": "2156", "tier": 2 },
-        { "name": "Glenhaven", "slug": "glenhaven", "postcode": "2156", "tier": 2 },
-        { "name": "Kenthurst", "slug": "kenthurst", "postcode": "2156", "tier": 2 },
-        { "name": "Canoelands", "slug": "canoelands", "postcode": "2157", "tier": 2 },
-        { "name": "Forest Glen", "slug": "forest-glen", "postcode": "2157", "tier": 2 },
-        { "name": "Glenorie", "slug": "glenorie", "postcode": "2157", "tier": 2 },
-        { "name": "Hillside", "slug": "hillside", "postcode": "2157", "tier": 2, "note": "GKP showed 100-1K volume but excluded from tier 1 - likely generic keyword matching, not suburb-specific demand. See site-structure.md." },
-        { "name": "Middle Dural", "slug": "middle-dural", "postcode": "2158", "tier": 2 },
-        { "name": "Arcadia", "slug": "arcadia", "postcode": "2159", "tier": 2 },
-        { "name": "Berrilee", "slug": "berrilee", "postcode": "2159", "tier": 2 },
-        { "name": "Fiddletown", "slug": "fiddletown", "postcode": "2159", "tier": 2 },
-        { "name": "Galston", "slug": "galston", "postcode": "2159", "tier": 2 },
-        { "name": "Acacia Gardens", "slug": "acacia-gardens", "postcode": "2763", "tier": 2 },
-        { "name": "Quakers Hill", "slug": "quakers-hill", "postcode": "2763", "tier": 2 },
-        { "name": "Glenwood", "slug": "glenwood", "postcode": "2768", "tier": 2 },
-        { "name": "Parklea", "slug": "parklea", "postcode": "2768", "tier": 2 },
-        { "name": "Stanhope Gardens", "slug": "stanhope-gardens", "postcode": "2768", "tier": 2 }
-      ]
+        {
+          "name": "West Pennant Hills",
+          "slug": "west-pennant-hills",
+          "postcode": "2125",
+          "tier": 2
+        },
+        {
+          "name": "Cherrybrook",
+          "slug": "cherrybrook",
+          "postcode": "2126",
+          "tier": 2
+        },
+        {
+          "name": "Baulkham Hills",
+          "slug": "baulkham-hills",
+          "postcode": "2153",
+          "tier": 1,
+          "url": "/services/bathroom-renovations/baulkham-hills"
+        },
+        {
+          "name": "Bella Vista",
+          "slug": "bella-vista",
+          "postcode": "2153",
+          "tier": 2
+        },
+        {
+          "name": "Crestwood",
+          "slug": "crestwood",
+          "postcode": "2153",
+          "tier": 2
+        },
+        {
+          "name": "Winston Hills",
+          "slug": "winston-hills",
+          "postcode": "2153",
+          "tier": 2
+        },
+        {
+          "name": "Castle Hill",
+          "slug": "castle-hill",
+          "postcode": "2154",
+          "tier": 1,
+          "url": "/services/bathroom-renovations/castle-hill"
+        },
+        {
+          "name": "Beaumont Hills",
+          "slug": "beaumont-hills",
+          "postcode": "2155",
+          "tier": 2
+        },
+        {
+          "name": "Kellyville",
+          "slug": "kellyville",
+          "postcode": "2155",
+          "tier": 1,
+          "url": "/services/bathroom-renovations/kellyville"
+        },
+        {
+          "name": "Kellyville Ridge",
+          "slug": "kellyville-ridge",
+          "postcode": "2155",
+          "tier": 2
+        },
+        {
+          "name": "Rouse Hill",
+          "slug": "rouse-hill",
+          "postcode": "2155",
+          "tier": 2
+        },
+        {
+          "name": "Annangrove",
+          "slug": "annangrove",
+          "postcode": "2156",
+          "tier": 2
+        },
+        {
+          "name": "Glenhaven",
+          "slug": "glenhaven",
+          "postcode": "2156",
+          "tier": 2
+        },
+        {
+          "name": "Kenthurst",
+          "slug": "kenthurst",
+          "postcode": "2156",
+          "tier": 2
+        },
+        {
+          "name": "Canoelands",
+          "slug": "canoelands",
+          "postcode": "2157",
+          "tier": 2
+        },
+        {
+          "name": "Forest Glen",
+          "slug": "forest-glen",
+          "postcode": "2157",
+          "tier": 2
+        },
+        {
+          "name": "Glenorie",
+          "slug": "glenorie",
+          "postcode": "2157",
+          "tier": 2
+        },
+        {
+          "name": "Hillside",
+          "slug": "hillside",
+          "postcode": "2157",
+          "tier": 2,
+          "note": "GKP showed 100-1K volume but excluded from tier 1 - likely generic keyword matching, not suburb-specific demand. See site-structure.md."
+        },
+        {
+          "name": "Middle Dural",
+          "slug": "middle-dural",
+          "postcode": "2158",
+          "tier": 2
+        },
+        {
+          "name": "Arcadia",
+          "slug": "arcadia",
+          "postcode": "2159",
+          "tier": 2
+        },
+        {
+          "name": "Berrilee",
+          "slug": "berrilee",
+          "postcode": "2159",
+          "tier": 2
+        },
+        {
+          "name": "Fiddletown",
+          "slug": "fiddletown",
+          "postcode": "2159",
+          "tier": 2
+        },
+        {
+          "name": "Galston",
+          "slug": "galston",
+          "postcode": "2159",
+          "tier": 2
+        },
+        {
+          "name": "Acacia Gardens",
+          "slug": "acacia-gardens",
+          "postcode": "2763",
+          "tier": 2
+        },
+        {
+          "name": "Quakers Hill",
+          "slug": "quakers-hill",
+          "postcode": "2763",
+          "tier": 2
+        },
+        {
+          "name": "Glenwood",
+          "slug": "glenwood",
+          "postcode": "2768",
+          "tier": 2
+        },
+        {
+          "name": "Parklea",
+          "slug": "parklea",
+          "postcode": "2768",
+          "tier": 2
+        },
+        {
+          "name": "Stanhope Gardens",
+          "slug": "stanhope-gardens",
+          "postcode": "2768",
+          "tier": 2
+        }
+      ],
+      "hubPublished": false
     },
     {
       "name": "Inner West",
       "slug": "inner-west",
-      "hubUrl": "/bathroom-renovations/inner-west",
+      "hubUrl": "/services/bathroom-renovations/inner-west",
       "suburbs": [
-        { "name": "Forest Lodge", "slug": "forest-lodge", "postcode": "2037", "tier": 2 },
-        { "name": "Glebe", "slug": "glebe", "postcode": "2037", "tier": 2 },
-        { "name": "Annandale", "slug": "annandale", "postcode": "2038", "tier": 2 },
-        { "name": "Rozelle", "slug": "rozelle", "postcode": "2039", "tier": 2 },
-        { "name": "Leichhardt", "slug": "leichhardt", "postcode": "2040", "tier": 2 },
-        { "name": "Lilyfield", "slug": "lilyfield", "postcode": "2040", "tier": 2 },
-        { "name": "Balmain", "slug": "balmain", "postcode": "2041", "tier": 2 },
-        { "name": "Balmain East", "slug": "balmain-east", "postcode": "2041", "tier": 2 },
-        { "name": "Birchgrove", "slug": "birchgrove", "postcode": "2041", "tier": 2 },
-        { "name": "Newtown", "slug": "newtown", "postcode": "2042", "tier": 2 },
-        { "name": "St Peters", "slug": "st-peters", "postcode": "2044", "tier": 2 },
-        { "name": "Sydenham", "slug": "sydenham", "postcode": "2044", "tier": 2 },
-        { "name": "Tempe", "slug": "tempe", "postcode": "2044", "tier": 2 },
-        { "name": "Haberfield", "slug": "haberfield", "postcode": "2045", "tier": 2 },
-        { "name": "Abbotsford", "slug": "abbotsford", "postcode": "2046", "tier": 2 },
-        { "name": "Canada Bay", "slug": "canada-bay", "postcode": "2046", "tier": 2 },
-        { "name": "Chiswick", "slug": "chiswick", "postcode": "2046", "tier": 2 },
-        { "name": "Five Dock", "slug": "five-dock", "postcode": "2046", "tier": 2 },
-        { "name": "Rodd Point", "slug": "rodd-point", "postcode": "2046", "tier": 2 },
-        { "name": "Russell Lea", "slug": "russell-lea", "postcode": "2046", "tier": 2 },
-        { "name": "Wareemba", "slug": "wareemba", "postcode": "2046", "tier": 2 },
-        { "name": "Drummoyne", "slug": "drummoyne", "postcode": "2047", "tier": 2 },
-        { "name": "Stanmore", "slug": "stanmore", "postcode": "2048", "tier": 2 },
-        { "name": "Lewisham", "slug": "lewisham", "postcode": "2049", "tier": 2 },
-        { "name": "Petersham", "slug": "petersham", "postcode": "2049", "tier": 2 },
-        { "name": "Camperdown", "slug": "camperdown", "postcode": "2050", "tier": 2 },
-        { "name": "Ashfield", "slug": "ashfield", "postcode": "2131", "tier": 2 },
-        { "name": "Croydon", "slug": "croydon", "postcode": "2132", "tier": 2 },
-        { "name": "Enfield South", "slug": "enfield-south", "postcode": "2133", "tier": 2 },
-        { "name": "Croydon Park", "slug": "croydon-park", "postcode": "2133", "tier": 2 },
-        { "name": "Burwood", "slug": "burwood", "postcode": "2134", "tier": 2 },
-        { "name": "Strathfield", "slug": "strathfield", "postcode": "2135", "tier": 2 },
-        { "name": "Burwood Heights", "slug": "burwood-heights", "postcode": "2136", "tier": 2 },
-        { "name": "Enfield", "slug": "enfield", "postcode": "2136", "tier": 2 },
-        { "name": "Strathfield South", "slug": "strathfield-south", "postcode": "2136", "tier": 2 },
-        { "name": "Breakfast Point", "slug": "breakfast-point", "postcode": "2137", "tier": 2 },
-        { "name": "Cabarita", "slug": "cabarita", "postcode": "2137", "tier": 2 },
-        { "name": "Concord", "slug": "concord", "postcode": "2137", "tier": 2 },
-        { "name": "Mortlake", "slug": "mortlake", "postcode": "2137", "tier": 2 },
-        { "name": "North Strathfield", "slug": "north-strathfield", "postcode": "2137", "tier": 2 },
-        { "name": "Dulwich Hill", "slug": "dulwich-hill", "postcode": "2203", "tier": 2 },
-        { "name": "Marrickville", "slug": "marrickville", "postcode": "2204", "tier": 1, "url": "/bathroom-renovations/marrickville" },
-        { "name": "Clemton Park", "slug": "clemton-park", "postcode": "2206", "tier": 2 },
-        { "name": "Earlwood", "slug": "earlwood", "postcode": "2206", "tier": 2 },
-        { "name": "Undercliffe", "slug": "undercliffe", "postcode": "2206", "tier": 2 }
-      ]
+        {
+          "name": "Forest Lodge",
+          "slug": "forest-lodge",
+          "postcode": "2037",
+          "tier": 2
+        },
+        {
+          "name": "Glebe",
+          "slug": "glebe",
+          "postcode": "2037",
+          "tier": 2
+        },
+        {
+          "name": "Annandale",
+          "slug": "annandale",
+          "postcode": "2038",
+          "tier": 2
+        },
+        {
+          "name": "Rozelle",
+          "slug": "rozelle",
+          "postcode": "2039",
+          "tier": 2
+        },
+        {
+          "name": "Leichhardt",
+          "slug": "leichhardt",
+          "postcode": "2040",
+          "tier": 2
+        },
+        {
+          "name": "Lilyfield",
+          "slug": "lilyfield",
+          "postcode": "2040",
+          "tier": 2
+        },
+        {
+          "name": "Balmain",
+          "slug": "balmain",
+          "postcode": "2041",
+          "tier": 2
+        },
+        {
+          "name": "Balmain East",
+          "slug": "balmain-east",
+          "postcode": "2041",
+          "tier": 2
+        },
+        {
+          "name": "Birchgrove",
+          "slug": "birchgrove",
+          "postcode": "2041",
+          "tier": 2
+        },
+        {
+          "name": "Newtown",
+          "slug": "newtown",
+          "postcode": "2042",
+          "tier": 2
+        },
+        {
+          "name": "St Peters",
+          "slug": "st-peters",
+          "postcode": "2044",
+          "tier": 2
+        },
+        {
+          "name": "Sydenham",
+          "slug": "sydenham",
+          "postcode": "2044",
+          "tier": 2
+        },
+        {
+          "name": "Tempe",
+          "slug": "tempe",
+          "postcode": "2044",
+          "tier": 2
+        },
+        {
+          "name": "Haberfield",
+          "slug": "haberfield",
+          "postcode": "2045",
+          "tier": 2
+        },
+        {
+          "name": "Abbotsford",
+          "slug": "abbotsford",
+          "postcode": "2046",
+          "tier": 2
+        },
+        {
+          "name": "Canada Bay",
+          "slug": "canada-bay",
+          "postcode": "2046",
+          "tier": 2
+        },
+        {
+          "name": "Chiswick",
+          "slug": "chiswick",
+          "postcode": "2046",
+          "tier": 2
+        },
+        {
+          "name": "Five Dock",
+          "slug": "five-dock",
+          "postcode": "2046",
+          "tier": 2
+        },
+        {
+          "name": "Rodd Point",
+          "slug": "rodd-point",
+          "postcode": "2046",
+          "tier": 2
+        },
+        {
+          "name": "Russell Lea",
+          "slug": "russell-lea",
+          "postcode": "2046",
+          "tier": 2
+        },
+        {
+          "name": "Wareemba",
+          "slug": "wareemba",
+          "postcode": "2046",
+          "tier": 2
+        },
+        {
+          "name": "Drummoyne",
+          "slug": "drummoyne",
+          "postcode": "2047",
+          "tier": 2
+        },
+        {
+          "name": "Stanmore",
+          "slug": "stanmore",
+          "postcode": "2048",
+          "tier": 2
+        },
+        {
+          "name": "Lewisham",
+          "slug": "lewisham",
+          "postcode": "2049",
+          "tier": 2
+        },
+        {
+          "name": "Petersham",
+          "slug": "petersham",
+          "postcode": "2049",
+          "tier": 2
+        },
+        {
+          "name": "Camperdown",
+          "slug": "camperdown",
+          "postcode": "2050",
+          "tier": 2
+        },
+        {
+          "name": "Ashfield",
+          "slug": "ashfield",
+          "postcode": "2131",
+          "tier": 2
+        },
+        {
+          "name": "Croydon",
+          "slug": "croydon",
+          "postcode": "2132",
+          "tier": 2
+        },
+        {
+          "name": "Enfield South",
+          "slug": "enfield-south",
+          "postcode": "2133",
+          "tier": 2
+        },
+        {
+          "name": "Croydon Park",
+          "slug": "croydon-park",
+          "postcode": "2133",
+          "tier": 2
+        },
+        {
+          "name": "Burwood",
+          "slug": "burwood",
+          "postcode": "2134",
+          "tier": 2
+        },
+        {
+          "name": "Strathfield",
+          "slug": "strathfield",
+          "postcode": "2135",
+          "tier": 2
+        },
+        {
+          "name": "Burwood Heights",
+          "slug": "burwood-heights",
+          "postcode": "2136",
+          "tier": 2
+        },
+        {
+          "name": "Enfield",
+          "slug": "enfield",
+          "postcode": "2136",
+          "tier": 2
+        },
+        {
+          "name": "Strathfield South",
+          "slug": "strathfield-south",
+          "postcode": "2136",
+          "tier": 2
+        },
+        {
+          "name": "Breakfast Point",
+          "slug": "breakfast-point",
+          "postcode": "2137",
+          "tier": 2
+        },
+        {
+          "name": "Cabarita",
+          "slug": "cabarita",
+          "postcode": "2137",
+          "tier": 2
+        },
+        {
+          "name": "Concord",
+          "slug": "concord",
+          "postcode": "2137",
+          "tier": 2
+        },
+        {
+          "name": "Mortlake",
+          "slug": "mortlake",
+          "postcode": "2137",
+          "tier": 2
+        },
+        {
+          "name": "North Strathfield",
+          "slug": "north-strathfield",
+          "postcode": "2137",
+          "tier": 2
+        },
+        {
+          "name": "Dulwich Hill",
+          "slug": "dulwich-hill",
+          "postcode": "2203",
+          "tier": 2
+        },
+        {
+          "name": "Marrickville",
+          "slug": "marrickville",
+          "postcode": "2204",
+          "tier": 1,
+          "url": "/services/bathroom-renovations/marrickville"
+        },
+        {
+          "name": "Clemton Park",
+          "slug": "clemton-park",
+          "postcode": "2206",
+          "tier": 2
+        },
+        {
+          "name": "Earlwood",
+          "slug": "earlwood",
+          "postcode": "2206",
+          "tier": 2
+        },
+        {
+          "name": "Undercliffe",
+          "slug": "undercliffe",
+          "postcode": "2206",
+          "tier": 2
+        }
+      ],
+      "hubPublished": false
     },
     {
       "name": "North-Western Sydney",
       "slug": "north-western-sydney",
-      "hubUrl": "/bathroom-renovations/north-western-sydney",
+      "hubUrl": "/services/bathroom-renovations/north-western-sydney",
       "suburbs": [
-        { "name": "Hunters Hill", "slug": "hunters-hill", "postcode": "2110", "tier": 2 },
-        { "name": "Hunters Hill West", "slug": "hunters-hill-west", "postcode": "2110", "tier": 2 },
-        { "name": "Woolwich", "slug": "woolwich", "postcode": "2110", "tier": 2 },
-        { "name": "Gladesville", "slug": "gladesville", "postcode": "2111", "tier": 2 },
-        { "name": "Henley", "slug": "henley", "postcode": "2111", "tier": 2 },
-        { "name": "Huntleys Cove", "slug": "huntleys-cove", "postcode": "2111", "tier": 2 },
-        { "name": "Huntleys Point", "slug": "huntleys-point", "postcode": "2111", "tier": 2 },
-        { "name": "Tennyson Point", "slug": "tennyson-point", "postcode": "2111", "tier": 2 },
-        { "name": "Denistone East", "slug": "denistone-east", "postcode": "2112", "tier": 2 },
-        { "name": "Putney", "slug": "putney", "postcode": "2112", "tier": 2 },
-        { "name": "Ryde", "slug": "ryde", "postcode": "2112", "tier": 1, "url": "/bathroom-renovations/ryde" },
-        { "name": "Blenheim Road", "slug": "blenheim-road", "postcode": "2113", "tier": 2 },
-        { "name": "East Ryde", "slug": "east-ryde", "postcode": "2113", "tier": 2 },
-        { "name": "Macquarie Park", "slug": "macquarie-park", "postcode": "2113", "tier": 2 },
-        { "name": "North Ryde", "slug": "north-ryde", "postcode": "2113", "tier": 2 },
-        { "name": "Denistone", "slug": "denistone", "postcode": "2114", "tier": 2 },
-        { "name": "Denistone West", "slug": "denistone-west", "postcode": "2114", "tier": 2 },
-        { "name": "Meadowbank", "slug": "meadowbank", "postcode": "2114", "tier": 2 },
-        { "name": "Melrose Park", "slug": "melrose-park", "postcode": "2114", "tier": 2 },
-        { "name": "West Ryde", "slug": "west-ryde", "postcode": "2114", "tier": 2 },
-        { "name": "Beecroft", "slug": "beecroft", "postcode": "2119", "tier": 2 },
-        { "name": "Cheltenham", "slug": "cheltenham", "postcode": "2119", "tier": 2 },
-        { "name": "Pennant Hills", "slug": "pennant-hills", "postcode": "2120", "tier": 2 },
-        { "name": "Thornleigh", "slug": "thornleigh", "postcode": "2120", "tier": 2 },
-        { "name": "Westleigh", "slug": "westleigh", "postcode": "2120", "tier": 2 },
-        { "name": "Epping", "slug": "epping", "postcode": "2121", "tier": 2 },
-        { "name": "North Epping", "slug": "north-epping", "postcode": "2121", "tier": 2 },
-        { "name": "Eastwood", "slug": "eastwood", "postcode": "2122", "tier": 2 },
-        { "name": "Marsfield", "slug": "marsfield", "postcode": "2122", "tier": 2 }
-      ]
+        {
+          "name": "Hunters Hill",
+          "slug": "hunters-hill",
+          "postcode": "2110",
+          "tier": 2
+        },
+        {
+          "name": "Hunters Hill West",
+          "slug": "hunters-hill-west",
+          "postcode": "2110",
+          "tier": 2
+        },
+        {
+          "name": "Woolwich",
+          "slug": "woolwich",
+          "postcode": "2110",
+          "tier": 2
+        },
+        {
+          "name": "Gladesville",
+          "slug": "gladesville",
+          "postcode": "2111",
+          "tier": 2
+        },
+        {
+          "name": "Henley",
+          "slug": "henley",
+          "postcode": "2111",
+          "tier": 2
+        },
+        {
+          "name": "Huntleys Cove",
+          "slug": "huntleys-cove",
+          "postcode": "2111",
+          "tier": 2
+        },
+        {
+          "name": "Huntleys Point",
+          "slug": "huntleys-point",
+          "postcode": "2111",
+          "tier": 2
+        },
+        {
+          "name": "Tennyson Point",
+          "slug": "tennyson-point",
+          "postcode": "2111",
+          "tier": 2
+        },
+        {
+          "name": "Denistone East",
+          "slug": "denistone-east",
+          "postcode": "2112",
+          "tier": 2
+        },
+        {
+          "name": "Putney",
+          "slug": "putney",
+          "postcode": "2112",
+          "tier": 2
+        },
+        {
+          "name": "Ryde",
+          "slug": "ryde",
+          "postcode": "2112",
+          "tier": 1,
+          "url": "/services/bathroom-renovations/ryde"
+        },
+        {
+          "name": "Blenheim Road",
+          "slug": "blenheim-road",
+          "postcode": "2113",
+          "tier": 2
+        },
+        {
+          "name": "East Ryde",
+          "slug": "east-ryde",
+          "postcode": "2113",
+          "tier": 2
+        },
+        {
+          "name": "Macquarie Park",
+          "slug": "macquarie-park",
+          "postcode": "2113",
+          "tier": 2
+        },
+        {
+          "name": "North Ryde",
+          "slug": "north-ryde",
+          "postcode": "2113",
+          "tier": 2
+        },
+        {
+          "name": "Denistone",
+          "slug": "denistone",
+          "postcode": "2114",
+          "tier": 2
+        },
+        {
+          "name": "Denistone West",
+          "slug": "denistone-west",
+          "postcode": "2114",
+          "tier": 2
+        },
+        {
+          "name": "Meadowbank",
+          "slug": "meadowbank",
+          "postcode": "2114",
+          "tier": 2
+        },
+        {
+          "name": "Melrose Park",
+          "slug": "melrose-park",
+          "postcode": "2114",
+          "tier": 2
+        },
+        {
+          "name": "West Ryde",
+          "slug": "west-ryde",
+          "postcode": "2114",
+          "tier": 2
+        },
+        {
+          "name": "Beecroft",
+          "slug": "beecroft",
+          "postcode": "2119",
+          "tier": 2
+        },
+        {
+          "name": "Cheltenham",
+          "slug": "cheltenham",
+          "postcode": "2119",
+          "tier": 2
+        },
+        {
+          "name": "Pennant Hills",
+          "slug": "pennant-hills",
+          "postcode": "2120",
+          "tier": 2
+        },
+        {
+          "name": "Thornleigh",
+          "slug": "thornleigh",
+          "postcode": "2120",
+          "tier": 2
+        },
+        {
+          "name": "Westleigh",
+          "slug": "westleigh",
+          "postcode": "2120",
+          "tier": 2
+        },
+        {
+          "name": "Epping",
+          "slug": "epping",
+          "postcode": "2121",
+          "tier": 2
+        },
+        {
+          "name": "North Epping",
+          "slug": "north-epping",
+          "postcode": "2121",
+          "tier": 2
+        },
+        {
+          "name": "Eastwood",
+          "slug": "eastwood",
+          "postcode": "2122",
+          "tier": 2
+        },
+        {
+          "name": "Marsfield",
+          "slug": "marsfield",
+          "postcode": "2122",
+          "tier": 2
+        }
+      ],
+      "hubPublished": false
     },
     {
       "name": "Eastern Suburbs",
       "slug": "eastern-suburbs",
-      "hubUrl": "/bathroom-renovations/eastern-suburbs",
+      "hubUrl": "/services/bathroom-renovations/eastern-suburbs",
       "suburbs": [
-        { "name": "Elizabeth Bay", "slug": "elizabeth-bay", "postcode": "2011", "tier": 2 },
-        { "name": "HMAS Kuttabul", "slug": "hmas-kuttabul", "postcode": "2011", "tier": 2, "isNotASuburb": true, "note": "Naval base, not a residential suburb" },
-        { "name": "Kings Cross", "slug": "kings-cross", "postcode": "2011", "tier": 2 },
-        { "name": "Potts Point", "slug": "potts-point", "postcode": "2011", "tier": 2 },
-        { "name": "Rushcutters Bay", "slug": "rushcutters-bay", "postcode": "2011", "tier": 2 },
-        { "name": "Woolloomooloo", "slug": "woolloomooloo", "postcode": "2011", "tier": 2 },
-        { "name": "Centennial Park", "slug": "centennial-park", "postcode": "2021", "tier": 2 },
-        { "name": "Moore Park", "slug": "moore-park", "postcode": "2021", "tier": 2 },
-        { "name": "Paddington", "slug": "paddington", "postcode": "2021", "tier": 2 },
-        { "name": "Bondi Junction", "slug": "bondi-junction", "postcode": "2022", "tier": 2 },
-        { "name": "Bondi Junction Plaza", "slug": "bondi-junction-plaza", "postcode": "2022", "tier": 2, "isNotASuburb": true, "note": "Shopping centre, not a residential suburb" },
-        { "name": "Queens Park", "slug": "queens-park", "postcode": "2022", "tier": 2 },
-        { "name": "Bellevue Hill", "slug": "bellevue-hill", "postcode": "2023", "tier": 2 },
-        { "name": "Bronte", "slug": "bronte", "postcode": "2024", "tier": 2 },
-        { "name": "Charing Cross", "slug": "charing-cross", "postcode": "2024", "tier": 2 },
-        { "name": "Waverley", "slug": "waverley", "postcode": "2024", "tier": 2 },
-        { "name": "Woollahra", "slug": "woollahra", "postcode": "2025", "tier": 2 },
-        { "name": "Ben Buckler", "slug": "ben-buckler", "postcode": "2026", "tier": 2, "isNotASuburb": true, "note": "Headland within North Bondi, not a standalone suburb" },
-        { "name": "Bondi", "slug": "bondi", "postcode": "2026", "tier": 2 },
-        { "name": "Bondi Beach", "slug": "bondi-beach", "postcode": "2026", "tier": 2 },
-        { "name": "North Bondi", "slug": "north-bondi", "postcode": "2026", "tier": 2 },
-        { "name": "Tamarama", "slug": "tamarama", "postcode": "2026", "tier": 2 },
-        { "name": "Point Piper", "slug": "point-piper", "postcode": "2027", "tier": 2 },
-        { "name": "Darling Point", "slug": "darling-point", "postcode": "2027", "tier": 2 },
-        { "name": "Edgecliff", "slug": "edgecliff", "postcode": "2027", "tier": 2 },
-        { "name": "Double Bay", "slug": "double-bay", "postcode": "2028", "tier": 2 },
-        { "name": "Rose Bay", "slug": "rose-bay", "postcode": "2029", "tier": 2 },
-        { "name": "Diamond Bay", "slug": "diamond-bay", "postcode": "2030", "tier": 2 },
-        { "name": "Dover Heights", "slug": "dover-heights", "postcode": "2030", "tier": 2 },
-        { "name": "Vaucluse", "slug": "vaucluse", "postcode": "2030", "tier": 2 },
-        { "name": "Watsons Bay", "slug": "watsons-bay", "postcode": "2030", "tier": 2 },
-        { "name": "Clovelly", "slug": "clovelly", "postcode": "2031", "tier": 2 },
-        { "name": "Randwick", "slug": "randwick", "postcode": "2031", "tier": 1, "url": "/bathroom-renovations/randwick" },
-        { "name": "Coogee", "slug": "coogee", "postcode": "2034", "tier": 2 },
-        { "name": "South Coogee", "slug": "south-coogee", "postcode": "2034", "tier": 2 }
+        {
+          "name": "Elizabeth Bay",
+          "slug": "elizabeth-bay",
+          "postcode": "2011",
+          "tier": 2
+        },
+        {
+          "name": "HMAS Kuttabul",
+          "slug": "hmas-kuttabul",
+          "postcode": "2011",
+          "tier": 2,
+          "isNotASuburb": true,
+          "note": "Naval base, not a residential suburb"
+        },
+        {
+          "name": "Kings Cross",
+          "slug": "kings-cross",
+          "postcode": "2011",
+          "tier": 2
+        },
+        {
+          "name": "Potts Point",
+          "slug": "potts-point",
+          "postcode": "2011",
+          "tier": 2
+        },
+        {
+          "name": "Rushcutters Bay",
+          "slug": "rushcutters-bay",
+          "postcode": "2011",
+          "tier": 2
+        },
+        {
+          "name": "Woolloomooloo",
+          "slug": "woolloomooloo",
+          "postcode": "2011",
+          "tier": 2
+        },
+        {
+          "name": "Centennial Park",
+          "slug": "centennial-park",
+          "postcode": "2021",
+          "tier": 2
+        },
+        {
+          "name": "Moore Park",
+          "slug": "moore-park",
+          "postcode": "2021",
+          "tier": 2
+        },
+        {
+          "name": "Paddington",
+          "slug": "paddington",
+          "postcode": "2021",
+          "tier": 2
+        },
+        {
+          "name": "Bondi Junction",
+          "slug": "bondi-junction",
+          "postcode": "2022",
+          "tier": 2
+        },
+        {
+          "name": "Bondi Junction Plaza",
+          "slug": "bondi-junction-plaza",
+          "postcode": "2022",
+          "tier": 2,
+          "isNotASuburb": true,
+          "note": "Shopping centre, not a residential suburb"
+        },
+        {
+          "name": "Queens Park",
+          "slug": "queens-park",
+          "postcode": "2022",
+          "tier": 2
+        },
+        {
+          "name": "Bellevue Hill",
+          "slug": "bellevue-hill",
+          "postcode": "2023",
+          "tier": 2
+        },
+        {
+          "name": "Bronte",
+          "slug": "bronte",
+          "postcode": "2024",
+          "tier": 2
+        },
+        {
+          "name": "Charing Cross",
+          "slug": "charing-cross",
+          "postcode": "2024",
+          "tier": 2
+        },
+        {
+          "name": "Waverley",
+          "slug": "waverley",
+          "postcode": "2024",
+          "tier": 2
+        },
+        {
+          "name": "Woollahra",
+          "slug": "woollahra",
+          "postcode": "2025",
+          "tier": 2
+        },
+        {
+          "name": "Ben Buckler",
+          "slug": "ben-buckler",
+          "postcode": "2026",
+          "tier": 2,
+          "isNotASuburb": true,
+          "note": "Headland within North Bondi, not a standalone suburb"
+        },
+        {
+          "name": "Bondi",
+          "slug": "bondi",
+          "postcode": "2026",
+          "tier": 2
+        },
+        {
+          "name": "Bondi Beach",
+          "slug": "bondi-beach",
+          "postcode": "2026",
+          "tier": 2
+        },
+        {
+          "name": "North Bondi",
+          "slug": "north-bondi",
+          "postcode": "2026",
+          "tier": 2
+        },
+        {
+          "name": "Tamarama",
+          "slug": "tamarama",
+          "postcode": "2026",
+          "tier": 2
+        },
+        {
+          "name": "Point Piper",
+          "slug": "point-piper",
+          "postcode": "2027",
+          "tier": 2
+        },
+        {
+          "name": "Darling Point",
+          "slug": "darling-point",
+          "postcode": "2027",
+          "tier": 2
+        },
+        {
+          "name": "Edgecliff",
+          "slug": "edgecliff",
+          "postcode": "2027",
+          "tier": 2
+        },
+        {
+          "name": "Double Bay",
+          "slug": "double-bay",
+          "postcode": "2028",
+          "tier": 2
+        },
+        {
+          "name": "Rose Bay",
+          "slug": "rose-bay",
+          "postcode": "2029",
+          "tier": 2
+        },
+        {
+          "name": "Diamond Bay",
+          "slug": "diamond-bay",
+          "postcode": "2030",
+          "tier": 2
+        },
+        {
+          "name": "Dover Heights",
+          "slug": "dover-heights",
+          "postcode": "2030",
+          "tier": 2
+        },
+        {
+          "name": "Vaucluse",
+          "slug": "vaucluse",
+          "postcode": "2030",
+          "tier": 2
+        },
+        {
+          "name": "Watsons Bay",
+          "slug": "watsons-bay",
+          "postcode": "2030",
+          "tier": 2
+        },
+        {
+          "name": "Clovelly",
+          "slug": "clovelly",
+          "postcode": "2031",
+          "tier": 2
+        },
+        {
+          "name": "Randwick",
+          "slug": "randwick",
+          "postcode": "2031",
+          "tier": 1,
+          "url": "/services/bathroom-renovations/randwick"
+        },
+        {
+          "name": "Coogee",
+          "slug": "coogee",
+          "postcode": "2034",
+          "tier": 2
+        },
+        {
+          "name": "South Coogee",
+          "slug": "south-coogee",
+          "postcode": "2034",
+          "tier": 2
+        }
+      ],
+      "hubPublished": false
+    },
+    {
+      "name": "North Shore",
+      "slug": "north-shore",
+      "hubUrl": "/services/bathroom-renovations/north-shore",
+      "hubPublished": true,
+      "note": "Added 2026-08-19 (D-72). Covers the Lower and Upper North Shore. Justified by real evidence rather than keyword volume: three of the five photographed projects are in this region (Artarmon x1, Hornsby x2). No Tier-1 suburb page here yet - D-10 requires volume evidence and there is none for Hornsby. Hornsby is the first candidate for promotion.",
+      "suburbs": [
+        {
+          "name": "North Sydney",
+          "slug": "north-sydney",
+          "postcode": "2060",
+          "tier": 2
+        },
+        {
+          "name": "Waverton",
+          "slug": "waverton",
+          "postcode": "2060",
+          "tier": 2
+        },
+        {
+          "name": "Milsons Point",
+          "slug": "milsons-point",
+          "postcode": "2061",
+          "tier": 2
+        },
+        {
+          "name": "Kirribilli",
+          "slug": "kirribilli",
+          "postcode": "2061",
+          "tier": 2
+        },
+        {
+          "name": "Cammeray",
+          "slug": "cammeray",
+          "postcode": "2062",
+          "tier": 2
+        },
+        {
+          "name": "Northbridge",
+          "slug": "northbridge",
+          "postcode": "2063",
+          "tier": 2
+        },
+        {
+          "name": "Artarmon",
+          "slug": "artarmon",
+          "postcode": "2064",
+          "tier": 2
+        },
+        {
+          "name": "Crows Nest",
+          "slug": "crows-nest",
+          "postcode": "2065",
+          "tier": 2
+        },
+        {
+          "name": "St Leonards",
+          "slug": "st-leonards",
+          "postcode": "2065",
+          "tier": 2
+        },
+        {
+          "name": "Naremburn",
+          "slug": "naremburn",
+          "postcode": "2065",
+          "tier": 2
+        },
+        {
+          "name": "Wollstonecraft",
+          "slug": "wollstonecraft",
+          "postcode": "2065",
+          "tier": 2
+        },
+        {
+          "name": "Greenwich",
+          "slug": "greenwich",
+          "postcode": "2065",
+          "tier": 2
+        },
+        {
+          "name": "Lane Cove",
+          "slug": "lane-cove",
+          "postcode": "2066",
+          "tier": 2
+        },
+        {
+          "name": "Lane Cove North",
+          "slug": "lane-cove-north",
+          "postcode": "2066",
+          "tier": 2
+        },
+        {
+          "name": "Lane Cove West",
+          "slug": "lane-cove-west",
+          "postcode": "2066",
+          "tier": 2
+        },
+        {
+          "name": "Riverview",
+          "slug": "riverview",
+          "postcode": "2066",
+          "tier": 2
+        },
+        {
+          "name": "Longueville",
+          "slug": "longueville",
+          "postcode": "2066",
+          "tier": 2
+        },
+        {
+          "name": "Northwood",
+          "slug": "northwood",
+          "postcode": "2066",
+          "tier": 2
+        },
+        {
+          "name": "Chatswood",
+          "slug": "chatswood",
+          "postcode": "2067",
+          "tier": 2
+        },
+        {
+          "name": "Chatswood West",
+          "slug": "chatswood-west",
+          "postcode": "2067",
+          "tier": 2
+        },
+        {
+          "name": "Willoughby",
+          "slug": "willoughby",
+          "postcode": "2068",
+          "tier": 2
+        },
+        {
+          "name": "Castlecrag",
+          "slug": "castlecrag",
+          "postcode": "2068",
+          "tier": 2
+        },
+        {
+          "name": "Middle Cove",
+          "slug": "middle-cove",
+          "postcode": "2068",
+          "tier": 2
+        },
+        {
+          "name": "Castle Cove",
+          "slug": "castle-cove",
+          "postcode": "2069",
+          "tier": 2
+        },
+        {
+          "name": "Roseville",
+          "slug": "roseville",
+          "postcode": "2069",
+          "tier": 2
+        },
+        {
+          "name": "Roseville Chase",
+          "slug": "roseville-chase",
+          "postcode": "2069",
+          "tier": 2
+        },
+        {
+          "name": "Mosman",
+          "slug": "mosman",
+          "postcode": "2088",
+          "tier": 2
+        },
+        {
+          "name": "Neutral Bay",
+          "slug": "neutral-bay",
+          "postcode": "2089",
+          "tier": 2
+        },
+        {
+          "name": "Cremorne",
+          "slug": "cremorne",
+          "postcode": "2090",
+          "tier": 2
+        },
+        {
+          "name": "Cremorne Point",
+          "slug": "cremorne-point",
+          "postcode": "2090",
+          "tier": 2
+        },
+        {
+          "name": "Lindfield",
+          "slug": "lindfield",
+          "postcode": "2070",
+          "tier": 2
+        },
+        {
+          "name": "East Lindfield",
+          "slug": "east-lindfield",
+          "postcode": "2070",
+          "tier": 2
+        },
+        {
+          "name": "Killara",
+          "slug": "killara",
+          "postcode": "2071",
+          "tier": 2
+        },
+        {
+          "name": "East Killara",
+          "slug": "east-killara",
+          "postcode": "2071",
+          "tier": 2
+        },
+        {
+          "name": "Gordon",
+          "slug": "gordon",
+          "postcode": "2072",
+          "tier": 2
+        },
+        {
+          "name": "Pymble",
+          "slug": "pymble",
+          "postcode": "2073",
+          "tier": 2
+        },
+        {
+          "name": "West Pymble",
+          "slug": "west-pymble",
+          "postcode": "2073",
+          "tier": 2
+        },
+        {
+          "name": "Turramurra",
+          "slug": "turramurra",
+          "postcode": "2074",
+          "tier": 2
+        },
+        {
+          "name": "North Turramurra",
+          "slug": "north-turramurra",
+          "postcode": "2074",
+          "tier": 2
+        },
+        {
+          "name": "South Turramurra",
+          "slug": "south-turramurra",
+          "postcode": "2074",
+          "tier": 2
+        },
+        {
+          "name": "Warrawee",
+          "slug": "warrawee",
+          "postcode": "2074",
+          "tier": 2
+        },
+        {
+          "name": "St Ives",
+          "slug": "st-ives",
+          "postcode": "2075",
+          "tier": 2
+        },
+        {
+          "name": "St Ives Chase",
+          "slug": "st-ives-chase",
+          "postcode": "2075",
+          "tier": 2
+        },
+        {
+          "name": "Wahroonga",
+          "slug": "wahroonga",
+          "postcode": "2076",
+          "tier": 2
+        },
+        {
+          "name": "North Wahroonga",
+          "slug": "north-wahroonga",
+          "postcode": "2076",
+          "tier": 2
+        },
+        {
+          "name": "Normanhurst",
+          "slug": "normanhurst",
+          "postcode": "2076",
+          "tier": 2
+        },
+        {
+          "name": "Hornsby",
+          "slug": "hornsby",
+          "postcode": "2077",
+          "tier": 2
+        },
+        {
+          "name": "Hornsby Heights",
+          "slug": "hornsby-heights",
+          "postcode": "2077",
+          "tier": 2
+        },
+        {
+          "name": "Asquith",
+          "slug": "asquith",
+          "postcode": "2077",
+          "tier": 2
+        },
+        {
+          "name": "Waitara",
+          "slug": "waitara",
+          "postcode": "2077",
+          "tier": 2
+        }
       ]
     }
   ]

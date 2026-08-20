@@ -24,7 +24,7 @@ The owner answered directly. See DECISIONS.md §3d (D-57 … D-66). Short versio
 | 3. Two pricing models | ✅ **Packages lead, as FROM-prices** — from $18k / $25k / $30k (D-60). The ranges are not used. A **new** Packages sheet also supersedes the issue-#2 one (D-61) |
 | 4. Two build durations | ❌ **Still open** (K10). No duration is on the site |
 | 5. Service area too large | ✅ Sydney-wide coverage confirmed (D-63). ⚠️ **Which areas are preferred is still open** (K12) |
-| 6. Residential and commercial | ❌ **Still open.** Not added |
+| 6. Residential and commercial | ✅ **Confirmed yes** (D-67). Added with the owner's own hedged wording. Client type only — the four services are unchanged |
 | 7. Warranty unresolved | ✅ **10-year workmanship warranty** (D-58). D-19/K2b CLOSED |
 | 8. Greenfleet unproven | ✅ **Confirmed running** (D-62). Now published |
 | 9. PREMIUM size | ✅ Corrected, and re-confirmed by the new sheet |
@@ -33,8 +33,12 @@ Also closed since: **K1** (ABN/ACN/email/address/hours), **K7** (no ORIGINAL tie
 **K9** (assets live in `public/images/projects/`), **O-4 / D-48** (five suburb-attributed
 photographed projects are live).
 
-Still open from this document: the ranges pricing model, commercial work, the "Refresh package"
-as a fifth service, and build duration.
+Still open from this document: the ranges pricing model, the "Refresh package" as a fifth
+service, and build duration.
+
+**Also settled 2026-08-19:** commercial work (D-67), **hosting on Vercel** (D-68, closing O-1/K3),
+the Artarmon case-study overlap left deliberately unmerged (D-69), and a **recommendation to add a
+North Shore regional hub** rather than a lone Hornsby page (D-70).
 
 ---
 
