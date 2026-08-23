@@ -131,12 +131,11 @@ If no recent baseline exists, **take one before editing.** A number without a be
 
 ## 4. Baselines
 
-**No measurements yet — the site is not built.** Take the first Lighthouse run as soon as a home page
-renders, and record every run here, newest first. An empty table is honest; a guessed one is not.
+Record every run here, newest first.
 
 | Date | Where | Perf | FCP | LCP | TBT | CLS | SI | Shared JS | Note |
 |---|---|---|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | — | — | *first run pending* |
+| 2026-08-23 | Local production build (`next start`), mobile, simulated throttling | 93–94 | 1.0s | 2.9s | 90–100ms | 0 | 3.5s | 179 KB gzip (D-80, over the 150 KB shared line, under the 230 KB per-route cap — accepted) | First recorded baseline, taken while triaging GitHub issue #5. **Not the live domain** — the Vercel deployment is behind Deployment Protection (`DECISIONS.md` O-11) and could not be measured anonymously. A single first run scored 84 with a 420ms TBT spike from shared-VM noise; discarded per §5's "never trust a single run" — the numbers above are the median of three runs. Re-measure against the real domain once DNS cuts over. |
 
 ---
 

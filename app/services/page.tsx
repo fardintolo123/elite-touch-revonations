@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { services } from '@/lib/businessInfo'
+import { businessInfo, services } from '@/lib/businessInfo'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { projects } from '@/lib/projects'
 
 /**
@@ -25,11 +26,17 @@ const heroProject = projects.find((p) => p.slug === 'hornsby-bathroom')!
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+        ]}
+      />
       <PageHero
         eyebrow="Our services"
         title="Bathroom renovation services across Sydney."
         leads={[
-          'Four services, and they are all wet areas. We do not take kitchens, extensions or tiling-only work — the whole business is built around getting the waterproofing and the tile setout right.',
+          'Four services, and they are all wet areas. We do not take kitchens, extensions or tiling-only work. The whole business is built around getting the waterproofing and the tile setout right.',
         ]}
         image={{ project: heroProject }}
       />

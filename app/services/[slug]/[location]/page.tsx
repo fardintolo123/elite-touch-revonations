@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { businessInfo } from '@/lib/businessInfo'
+import { businessInfo, services } from '@/lib/businessInfo'
 import { ContactSection } from '@/components/ContactSection'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import {
   LOCATION_PARENT_SLUG,
   listableSuburbs,
@@ -11,6 +12,8 @@ import {
   publishedLocationSlugs,
   regionBySlug,
 } from '@/lib/locations'
+
+const parentService = services.find((s) => s.slug === LOCATION_PARENT_SLUG)!
 
 /**
  * Regional hub pages: `/services/bathroom-renovations/{region}/`
@@ -77,6 +80,20 @@ export default async function LocationHubPage({
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+          {
+            name: parentService.title,
+            url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/`,
+          },
+          {
+            name: region.name,
+            url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
+          },
+        ]}
+      />
       <section className="et-hero">
         <div className="et-container et-stack">
           <p className="et-body-sm">

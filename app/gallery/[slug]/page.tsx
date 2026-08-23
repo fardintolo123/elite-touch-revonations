@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { businessInfo } from '@/lib/businessInfo'
 import { projects, projectBySlug } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 
 /**
  * One page per photographed project, driven by `lib/projects.ts`.
@@ -61,6 +62,16 @@ export default async function ProjectPage({
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
+          {
+            name: project.name,
+            url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
+          },
+        ]}
+      />
       <section className="et-hero">
         <div className="et-container et-stack">
           <p className="et-body-sm">
@@ -109,9 +120,9 @@ export default async function ProjectPage({
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">What every renovation includes</span>
+          <span className="et-eyebrow">What every job includes</span>
           <h2 className="et-h2 et-measure-tight">
-            The same standard under every one of these.
+            The same standard on every job.
           </h2>
           <ul className="et-checklist" style={{ marginTop: 'var(--et-space-6)' }}>
             <li className="et-body-sm">

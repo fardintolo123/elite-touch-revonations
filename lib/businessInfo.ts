@@ -220,25 +220,25 @@ export const businessInfo = {
       name: 'Omar Dawood',
       role: 'Licensed Builder & Civil Engineer',
       detail:
-        'Founder. Background in civil engineering and construction management, including residential, commercial and government maintenance projects for Homes NSW. Oversees project planning, client communication and coordination.',
+        'Founder. Background in civil engineering and construction management, including home, commercial and government maintenance projects for Homes NSW. Leads project planning, talks with clients, and keeps the job on track.',
     },
     {
       name: 'Adam Dawood',
       role: 'Licensed Tiler & Projects Manager',
       detail:
-        'More than 25 years in the construction industry. Oversees site operations, project sequencing and quality control.',
+        'More than 25 years in the construction industry. Runs site operations, project sequencing and quality control.',
     },
     {
       name: 'Farah Dawood',
       role: 'Architectural Designer',
       detail:
-        "Master's degree in Architecture from the University of Technology Sydney, with industry experience at SJB. Leads layout, finishes and material selection.",
+        "Master's degree in Architecture from the University of Technology Sydney, with industry experience at SJB. Leads layout, finishes and material choices.",
     },
     {
       name: 'Mohammed Dawood',
       role: 'Assistant Project Manager',
       detail:
-        'Graduate Certificate in Construction Project Management. Supports scheduling, site coordination and client communication.',
+        'Graduate Certificate in Construction Project Management. Helps schedule work, coordinate the site and talk with clients.',
     },
   ],
 
@@ -301,14 +301,14 @@ export const services = [
     title: 'Bathroom Renovations',
     h1: 'Bathroom Renovations Sydney',
     summary:
-      'A full strip-out-to-studs rebuild of the main bathroom — demolition, waterproofing to AS 3740, tiling, plumbing and electrical, finished to a fixed written scope.',
+      'A full strip-out-to-studs rebuild of the main bathroom. Demolition, waterproofing to AS 3740, tiling, plumbing and electrical — finished to a fixed written scope.',
   },
   {
     slug: 'ensuite-bathroom-renovations',
     title: 'Ensuite Renovations',
     h1: 'Ensuite Renovations Sydney',
     summary:
-      'Small-footprint master-suite work, with the ventilation and acoustic detailing an ensuite needs when it shares a wall with the bedroom.',
+      'Small-footprint master-suite work. We handle the ventilation and sound-proofing an ensuite needs when it shares a wall with the bedroom.',
   },
   {
     slug: 'laundry-renovations',
@@ -322,7 +322,7 @@ export const services = [
     title: 'Bathroom + Laundry Renovations',
     h1: 'Bathroom and Laundry Renovations Sydney',
     summary:
-      'Two wet areas run as a single program — one demolition, one waterproofing stage, one trade sequence, and one disruption to the house instead of two.',
+      'Two wet areas run as a single program. One demolition, one waterproofing stage, one trade sequence — and one disruption to the house instead of two.',
   },
   {
     slug: 'powder-room-renovations',

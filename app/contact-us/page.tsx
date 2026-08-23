@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { EnquiryForm } from '@/components/EnquiryForm'
 import { businessInfo } from '@/lib/businessInfo'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 
 /**
  * Contact us.
@@ -29,6 +30,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Contact Us', url: `${businessInfo.siteUrl}/contact-us/` },
+        ]}
+      />
       <section className="et-hero">
         <div className="et-container et-stack">
           <span className="et-eyebrow">Contact us</span>

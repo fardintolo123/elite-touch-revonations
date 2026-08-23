@@ -4,6 +4,7 @@ import { businessInfo } from '@/lib/businessInfo'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { projects } from '@/lib/projects'
 
 /**
@@ -117,6 +118,12 @@ const heroProject = projects.find((p) => p.slug === 'castle-hill-bathroom')!
 export default function PackagesPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
+        ]}
+      />
       <PageHero
         eyebrow="Packages"
         title="Bathroom renovation packages and pricing."

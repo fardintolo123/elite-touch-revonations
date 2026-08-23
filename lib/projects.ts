@@ -54,7 +54,7 @@ export const projects: readonly Project[] = [
     name: 'Artarmon bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'Brushed gold fixtures paired with warm, sandy-toned tiles for a luxurious but inviting feel. A freestanding bath creates a serene focal point, and a wall-hung vanity keeps the floor clear and the room feeling open.',
+      'Brushed gold fixtures with warm, sandy-toned tiles for a rich, easy feel. A freestanding bath makes a calm focal point, and a wall-hung vanity keeps the floor clear and the room open.',
     images: [
       {
         src: `${DIR}/artarmon-bathroom/full-room-shower-toilet.webp`,
@@ -100,7 +100,7 @@ export const projects: readonly Project[] = [
     name: 'Castle Hill bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A bright, modern family bathroom in soft neutral tones and natural textures. Light wood, soft greys and crisp whites with brushed nickel tapware, large-format tiles to open the space up, and a frameless glass shower.',
+      'A bright, modern family bathroom in soft neutral tones and natural textures. Light wood, soft greys and crisp whites, with brushed nickel tapware. Large-format tiles open the space up, with a frameless glass shower.',
     images: [
       {
         src: `${DIR}/castle-hill-bathroom/double-vanity-led-mirror.webp`,
@@ -146,7 +146,7 @@ export const projects: readonly Project[] = [
     name: 'Hornsby bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A bold, timeless black-and-white scheme. Crisp marble-look walls and deep black fixtures create a striking contrast, while a frameless shower and wall-hung vanity keep the room uncluttered with plenty of hidden storage.',
+      'A bold, timeless black-and-white scheme. Crisp marble-look walls and deep black fixtures make a sharp contrast. A frameless shower and wall-hung vanity keep the room neat, with lots of hidden storage.',
     images: [
       {
         src: `${DIR}/hornsby-bathroom/vanity-marble-storage-tower.webp`,
@@ -180,7 +180,7 @@ export const projects: readonly Project[] = [
     name: 'Hornsby ensuite renovation',
     service: 'Ensuite renovation',
     blurb:
-      'The ensuite to the same home, carrying the black-and-white design through so both rooms read as one scheme. A frameless shower and a wall-hung vanity keep a small footprint feeling open.',
+      'The ensuite to the same home carries the black-and-white design through, so both rooms read as one scheme. A frameless shower and a wall-hung vanity keep the small room feeling open.',
     images: [
       {
         src: `${DIR}/hornsby-ensuite/vanity-window-greenery.webp`,
@@ -202,7 +202,7 @@ export const projects: readonly Project[] = [
     name: 'Randwick bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A stylish family bathroom in a neutral colour scheme, with matte black fittings for a contemporary edge and a custom angled shower screen as a distinctive design feature. The wall-hung vanity keeps the room open while still giving everyday storage.',
+      'A stylish family bathroom in a neutral colour scheme, with matte black fittings for a modern edge. A custom angled shower screen is the standout design feature. The wall-hung vanity keeps the room open, with daily storage.',
     images: [
       {
         src: `${DIR}/randwick-bathroom/shower-vanity-round-mirror.webp`,

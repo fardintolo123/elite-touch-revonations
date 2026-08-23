@@ -93,7 +93,15 @@ export const metadata: Metadata = {
  */
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'HomeAndConstructionBusiness',
+  /**
+   * Both types on one node. `HomeAndConstructionBusiness` IS-A `Organization`
+   * in schema.org's own class hierarchy, but some validators and AI crawlers
+   * pattern-match the literal `@type` string rather than resolving that
+   * inheritance — GitHub issue #8's GEO audit flagged "Organization schema
+   * missing" against this exact node for that reason. Declaring both is
+   * standard practice for closing that gap without a second, redundant node.
+   */
+  '@type': ['HomeAndConstructionBusiness', 'Organization'],
   name: businessInfo.name,
   legalName: businessInfo.legalName,
   url: businessInfo.siteUrl,
@@ -170,6 +178,20 @@ const localBusinessSchema = {
   ],
 }
 
+/**
+ * Minimal WebSite node — the other schema GitHub issue #8's GEO audit flagged
+ * as missing. Deliberately WITHOUT a `SearchAction`: that requires a real
+ * on-site search endpoint, which does not exist here, and a `target` pointing
+ * at a search feature that does not work would misrepresent the site rather
+ * than describe it.
+ */
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: businessInfo.name,
+  url: businessInfo.siteUrl,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -187,6 +209,13 @@ export default function RootLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
           }}
         />
       </body>

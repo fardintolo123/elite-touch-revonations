@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "verify:redirects": "node scripts/verify-redirects.mjs"
+    "verify:redirects": "node scripts/verify-redirects.mjs",
+    "check:readability": "node scripts/check-readability.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",

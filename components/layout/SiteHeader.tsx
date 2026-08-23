@@ -15,8 +15,18 @@ import { businessInfo } from '@/lib/businessInfo'
  * anchors cannot double-count in call tracking.
  *
  * The brand mark is the ETR monogram from the owner's own logo file
- * (`public/brand/`, D-79). `priority` because it sits in the header on every
- * page and is a small, above-the-fold asset.
+ * (`public/brand/`, D-79). No `priority` — every page also has its own hero
+ * photo as the real LCP candidate with `priority`, and PERFORMANCE_BUDGET.md
+ * rule 16 caps high-priority preloads at one per page. A second one here (this
+ * logo) competed with the hero for bandwidth and measurably hurt LCP.
+ *
+ * Deliberately no `loading="eager"` either: passing `loading="eager"` without
+ * `priority` still makes next/image emit a `<link rel="preload">` for this
+ * image (verified against the built output on 2026-08-23), which reproduces
+ * the same competing-preload problem `priority` would. Plain default
+ * (`loading="lazy"`, browser-native) is the only combination that renders
+ * with no preload — and a native lazy image already at the top of the
+ * viewport on page load is fetched immediately by the browser regardless.
  */
 
 const NAV_LINKS = [
@@ -42,7 +52,6 @@ export function SiteHeader() {
               alt=""
               width={163}
               height={160}
-              priority
             />
             <span aria-hidden="true">
               Elite Touch <span>Renovations</span>

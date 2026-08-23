@@ -5,6 +5,7 @@ import { reviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { projects } from '@/lib/projects'
 
 /**
@@ -34,11 +35,17 @@ const heroProject = projects.find((p) => p.slug === 'artarmon-bathroom')!
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'About Us', url: `${businessInfo.siteUrl}/about-us/` },
+        ]}
+      />
       <PageHero
         eyebrow="About us"
         title="A family business that only renovates wet areas."
         leads={[
-          `Elite Touch Renovations was founded in ${businessInfo.foundedYear} by the Dawood family and works across Sydney. We are deliberately small: the people who quote your job are the people who run it.`,
+          `Elite Touch Renovations was founded in ${businessInfo.foundedYear} by the Dawood family and works across Sydney. We are small on purpose: the people who quote your job are the people who run it.`,
           // Owner confirmed commercial work 2026-08-19 (D-67). Wording is the
           // owner's own from the About PDF — it widens the CLIENT TYPE only.
           // The four services are unchanged (D-01), and no commercial-specific
@@ -54,8 +61,8 @@ export default function AboutPage() {
           <span className="et-eyebrow">Who you will deal with</span>
           <h2 className="et-h2 et-measure-tight">The Dawood family</h2>
           <p className="et-lead et-measure">
-            Our customers name us individually in their reviews, which is a fair
-            reflection of how the business runs — you are not handed to a
+            Our customers name us by name in their reviews, which is a fair
+            picture of how the business runs — you are not handed to a
             different team once the quote is signed.
           </p>
 
@@ -119,7 +126,7 @@ export default function AboutPage() {
                   color: 'var(--et-text-secondary)',
                 }}
               >
-                Check it on the NSW Fair Trading register before you engage
+                Check it on the NSW Fair Trading register before you hire
                 anyone, including us.
               </p>
             </div>
@@ -177,9 +184,9 @@ export default function AboutPage() {
                 Licences, insurance and protections
               </h3>
               <p className="et-body-sm et-measure">
-                Bathroom renovation is regulated work. Every job is delivered
-                under the licences, insurances and statutory protections
-                required by NSW law and the National Construction Code.
+                Bathroom renovation is regulated work. Every job meets the
+                licence, insurance and legal rules set by NSW law and the
+                National Construction Code.
               </p>
             </div>
 
@@ -271,10 +278,9 @@ export default function AboutPage() {
                   color: 'var(--et-text-secondary)',
                 }}
               >
-                On the work we carry out. Separate from, and in addition to, the
-                manufacturer warranties that come with the fittings themselves,
-                and the statutory defects period under the Home Building Act
-                1989.
+                On the work we carry out. This is on top of the warranty that
+                comes with the fittings themselves, and the legal defects
+                period under the Home Building Act 1989.
               </p>
             </div>
 

@@ -23,7 +23,7 @@ import { businessInfo } from '@/lib/businessInfo'
 
 export function ContactSection({
   title = 'Book a free on-site measure',
-  intro = 'Tell us about the room and we will come and measure it, anywhere in Sydney. No charge, no obligation — and a fixed-scope written quote to follow.',
+  intro = 'Tell us about the room. We will come and measure it anywhere in Sydney — at no cost, with nothing owed — then send a fixed-scope written quote.',
 }: {
   title?: string
   intro?: string

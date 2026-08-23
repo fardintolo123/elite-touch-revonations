@@ -255,6 +255,8 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `next.config.ts` | 19 × 301 + `trailingSlash: true` + security headers |
 | `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |
 | `scripts/verify-redirects.mjs` | `npm run verify:redirects` |
+| `app/llms.txt/route.ts` | Served at `/llms.txt` (D-85). Generated from `services`, `projects` and `publishedRegions()` — same data `sitemap.ts` reads — so it can never state a fact the rest of the site doesn't |
+| `scripts/check-readability.mjs` | `npm run check:readability` — Flesch Reading Ease per page, read straight from `.next/server/app/**.html` (D-96) |
 
 ### Things that will bite you
 
@@ -305,6 +307,17 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    `bathroom-renovations` and `ensuite-bathroom-renovations` have real photography. Adding a third
    entry for `laundry-renovations` or `powder-room-renovations` puts an unevidenced photo on a page
    that has none — check D-83/D-06 before touching this map.
+18. **`.next/` is a shared build directory and this repo is regularly worked by several agent
+   sessions at once** (Git Workflow's "never `git add -A`" warning is the same fact). A `next start`
+   left running gets its served output silently corrupted the moment another session's `next build`
+   lands underneath it — no crash, no error, just wrong content (a homepage that suddenly measures
+   4,600 words instead of 700) or routes 404ing that build fine moments later. It is NOT evidence
+   your own change broke something. Prefer reading `.next/server/app/**.html` straight off disk
+   (`scripts/check-readability.mjs` does this) over holding a live server open — a single file read
+   right after your own build has a far smaller collision window than a server process sitting
+   there for the next several commands. If you do need `next start`, treat any unexplained 404 or
+   nonsense content as a possible collision and re-build-and-recheck once before debugging your own
+   code.
 
 ### How it is verified
 
@@ -324,3 +337,10 @@ exists to preserve.
 `next start` child on Windows. It keeps holding the port, and the next `next start` fails with
 `EADDRINUSE` while your tests quietly pass against the **stale** build. Check the port owner
 (`netstat -ano | grep 3210`) and `Stop-Process` the real PID.
+
+Readability (docs/CONTENT_QUALITY_CHECKLIST.md §2, D-96) needs only a build, no server:
+
+```bash
+npm run build
+npm run check:readability          # reads .next/server/app/**.html directly
+```

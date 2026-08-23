@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { projects, projectCover } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 
 /**
  * Gallery / our work.
@@ -51,6 +52,12 @@ const TEXT_ONLY_PROJECTS = [
 export default function GalleryPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
+        ]}
+      />
       <section className="et-hero">
         <div className="et-container et-stack">
           <span className="et-eyebrow">Our work</span>

@@ -6,6 +6,7 @@ import { featuredReviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { projects } from '@/lib/projects'
 import {
   LOCATION_PARENT_SLUG,
@@ -104,6 +105,16 @@ export default async function ServicePage({
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+          {
+            name: service.title,
+            url: `${businessInfo.siteUrl}/services/${service.slug}/`,
+          },
+        ]}
+      />
       <PageHero
         eyebrow={service.title}
         title={service.h1}
