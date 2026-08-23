@@ -161,6 +161,37 @@ are built (both are currently `hubPublished: false`, so they 404 by design — D
 
 ---
 
+## 3e. Intake of GitHub issue #3 (2026-08-23) — third-party "topic gap" report
+
+Issue #3 ("gaps") attached a third-party "Topic Gap Analysis Report" (generated 2026-08-10,
+comparing ETR against `sydneyeastbuilding.com.au`, branded with a `HeyTony.ca` content-strategy
+pitch). Full triage in `plans/2026-08-23-issue-3-gap-report-triage.md`; the original PDF is
+preserved at `docs/source-copy/pdf/topic-gap-report-2026-08-10.pdf`. Applied
+`docs/SEO_CONTENT_GUIDE.md`'s Report-intake rules.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-85** | **18 of the report's 20 "gaps" are REJECTED — not actioned as written.** | **AGENT** | (1) **The named competitor is not a real competitor** — `sydneyeastbuilding.com.au` is a full-scale home builder (double-storey homes, duplexes, granny flats, pools, landscaping; 220 pages), not a bathroom-renovation specialist; its page count is not a benchmark for a 4-service niche site. (2) **16 items sit entirely outside D-01's four confirmed services** (double-storey homes, duplexes, granny flats, single-storey homes, pools, landscaping, and their blog equivalents) — building them is a trade-scope expansion, which is an owner decision, not an SEO inference; competitor presence is not demand. (3) **"Waterproofing Services" and "Leaking Shower Repairs" as standalone pages directly re-litigate D-02** (no standalone waterproofing/repair services) with no new evidence. (4) **"30+ eastern-suburbs location pages" re-litigates D-10/D-71/D-74** — Tier-1 pages require real Ahrefs+GKP volume evidence, not a competitor's page count, and the report is factually stale here: it claims ETR has only "a single Artarmon page," but **Randwick (Eastern Suburbs, Tier-1) and three published regional hubs are already live.** (5) **"Team & Expertise Pages" is already closed** — About page carries all four Dawoods' roles and credentials (D-50). (6) The report supplies **zero search volume or difficulty for any item**, checks gaps in **one direction only**, and ends with a sales pitch for its own author's services — exactly the report profile `docs/SEO_CONTENT_GUIDE.md` §3 warns against actioning as written. |
+| **D-86** | **Two items are kept as candidates, not commitments.** (a) A bathroom-renovation-specific blog (planning, pitfalls, process content) — no blog exists on the site yet; build only after the same GKP/Ahrefs volume evidence every other content decision here required (D-10 precedent), not on this report's say-so. (b) Deeper case-study detail (timeline, challenges) on the existing gallery projects, using real project data already on file. | **AGENT** | These are the only two of the 20 items that (i) fall inside D-01's four services and (ii) aren't already-settled architecture. Neither is approved to build — both still need the evidence gate every other content decision on this site has passed. ⚠️ **Case-study depth must never add "before/after" labelling** without a genuine matched pair (D-06) — none is supplied here. **Revisit (a) with real GKP/Ahrefs volume; revisit (b) if the owner supplies richer project detail.** |
+
+---
+
+## 3f. Intake of GitHub issue #4 (2026-08-23) — second third-party "topic gap" report
+
+Issue #4 ("gaps"), filed the same day as issue #3, attached a second third-party "Topic Gap
+Analysis Report" (also generated 2026-08-10, comparing ETR against `tradeindustriesgroup.com.au`,
+same `HeyTony.ca` content-strategy pitch). Full triage in
+`plans/2026-08-23-issue-4-gap-report-triage.md`; the original PDF is preserved at
+`docs/source-copy/pdf/topic-gap-report-2026-08-10-tradeindustriesgroup.pdf`. Applied
+`docs/SEO_CONTENT_GUIDE.md`'s Report-intake rules — same six-point process as D-85/D-86.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-87** | **All 20 of the report's "gaps" are REJECTED — not actioned as written.** | **AGENT** | (1) **The named competitor is not a real competitor** — `tradeindustriesgroup.com.au` is a general renovation **and disaster-restoration** company (kitchens, extensions, commercial/shop fit-outs, offices, attic conversions, water/fire damage restoration; 217 pages) — not a bathroom-renovation specialist. (2) **6 items sit entirely outside D-01's four confirmed services** (kitchen, extensions, commercial/shop fit-out, office renovation, attic conversion, and water/fire damage restoration) — a trade-scope expansion is an owner decision, not an SEO inference. (3) **"Water Damage and Fire Damage Restoration" directly re-litigates D-02** (no standalone waterproofing/repair services) with no new evidence. (4) **The report's own site-comparison table is stale** — it claims ETR has "10 total pages, 1 blog post, 9 money pages," but the live site already has 23+ pages (4 services, 6 Tier-1 suburbs, 3 published hubs, 5 gallery projects, plus core pages) and correctly has zero blog posts because no blog exists yet. (5) **Two items restate already-planned roadmap work with no new evidence** — "Renovation Cost Guides and Pricing" and "Small Space and Apartment Renovations" are the bathroom cost guide and small-bathroom page already listed as GKP-confirmed opportunities in `docs/SEO_CONTENT_GUIDE.md` §2 priority 6; the report just renames them in general-renovation terms. (6) **"Real Renovation Case Studies and Project Examples" is already closed** — three documented case studies plus five photographed gallery projects are live (D-64, D-48). (7) The report supplies **zero search volume or difficulty for any item**, checks gaps in **one direction only**, reports **0 money-page gaps** (the one figure in it actually consistent with D-01's scope), and ends with a sales pitch for its own author's services — exactly the report profile `docs/SEO_CONTENT_GUIDE.md` §3 warns against actioning as written. |
+| **D-88** | **No new commitments were created from this report.** | **AGENT** | The two topics that overlap real ETR services (bathroom cost guide, small-bathroom page) were already roadmap items *before* this report arrived (`docs/SEO_CONTENT_GUIDE.md` §2 priority 6). This report supplies no volume or difficulty evidence for either, so it changes nothing about when they get built — they stay gated on GKP/Ahrefs evidence like every other content decision on this site. Unlike D-86 (issue #3), this report added no genuinely new candidate. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |
