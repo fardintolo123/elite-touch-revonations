@@ -3,9 +3,9 @@
 **Site:** Elite Touch Renovations — `https://www.elitetouchrenovations.au`
 **From:** WordPress + Elementor + Yoast SEO
 **To:** Next.js 16.3.1, App Router, Turbopack
-**Status:** Redirect layer built and verified locally. **Not deployed** (DECISIONS.md D-35 — no
-push or deploy without owner sign-off).
-**Last updated:** 2026-08-17
+**Status:** **Live in production on Vercel** at the domain above (cutover complete, owner-confirmed
+2026-08-24). Hosting decision: D-68. Deployment-protection reachability: O-11.
+**Last updated:** 2026-08-24
 
 ---
 

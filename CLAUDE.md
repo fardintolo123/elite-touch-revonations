@@ -19,8 +19,9 @@ Read the linked docs; do not assume their contents.
 ## Project Overview
 
 **Elite Touch Renovations (ETR)** — a renovation business specialising in **bathroom renovations**.
-Run by the Dawood family — **Omar, Adam, Farah and Mohammed**. Migrating from WordPress to a
-Next.js 16 site (built, not yet deployed).
+Run by the Dawood family — **Omar, Adam, Farah and Mohammed**. Migrated from WordPress to a
+Next.js 16 site, **live in production on Vercel** at https://www.elitetouchrenovations.au/
+(owner-confirmed 2026-08-24 — see DECISIONS.md D-68 and O-11).
 
 | Fact | Value |
 |---|---|
@@ -39,7 +40,7 @@ Next.js 16 site (built, not yet deployed).
 | Case studies (3) | The Rocks heritage bathroom · Hunters Hill marble bathroom · Artarmon bathroom + ensuite |
 | ABN · ACN | **92 679 016 721** · **679 016 721** |
 | Email · office | **info@elitetouchrenovations.au** · Granville, NSW (by appointment) |
-| Tech stack | **Next.js 16 App Router + TypeScript + DESIGN.md CSS tokens** (D-40). **Hosting still undecided** — must run Node, since `proxy.ts` serves the 410s |
+| Tech stack | **Next.js 16 App Router + TypeScript + DESIGN.md CSS tokens** (D-40). **Hosting is Vercel** (D-68) — runs Node, so `proxy.ts` can serve the 410s |
 
 Sources: the page-copy and package PDFs on **issue #2**, and
 [docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md). Full detail, including every

@@ -246,7 +246,7 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `app/services/[slug]/[location]/` | Regional hub renderer (D-71). Builds only `hubPublished` regions |
 | `lib/projects.ts` | ⭐ **The five photographed projects and every image's alt text.** Alt text describes the PHOTOGRAPH, not the page topic (D-66) |
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
-| `lib/actions.ts` | Enquiry server action. ⚠️ **Exports async functions ONLY** — see D-77 |
+| `lib/actions.ts` | Enquiry server action — office email (critical) + customer email (best-effort) + Supabase write (best-effort). ⚠️ **Exports async functions ONLY** — see D-77 |
 | `lib/enquiry.ts` | Enquiry types + initial state. Exists precisely so they are NOT exported from a `'use server'` file |
 | `components/ContactSection.tsx` | The enquiry block on **every** page (D-80) |
 | `components/WorkStrip.tsx` | Project photos, reusable. Every card is suburb-labelled — never decoration (D-83) |
@@ -255,7 +255,7 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `next.config.ts` | 19 × 301 + `trailingSlash: true` + security headers |
 | `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |
 | `scripts/verify-redirects.mjs` | `npm run verify:redirects` |
-| `app/llms.txt/route.ts` | Served at `/llms.txt` (D-85). Generated from `services`, `projects` and `publishedRegions()` — same data `sitemap.ts` reads — so it can never state a fact the rest of the site doesn't |
+| `app/llms.txt/route.ts` | Served at `/llms.txt` (D-90). Generated from `services`, `projects` and `publishedRegions()` — same data `sitemap.ts` reads — so it can never state a fact the rest of the site doesn't |
 | `scripts/check-readability.mjs` | `npm run check:readability` — Flesch Reading Ease per page, read straight from `.next/server/app/**.html` (D-96) |
 
 ### Things that will bite you
@@ -307,6 +307,14 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    `bathroom-renovations` and `ensuite-bathroom-renovations` have real photography. Adding a third
    entry for `laundry-renovations` or `powder-room-renovations` puts an unevidenced photo on a page
    that has none — check D-83/D-06 before touching this map.
+18. **Only the office notification email is allowed to fail the enquiry submission** (D-85). The
+   customer confirmation email and the Supabase insert are both wrapped in their own try/catch and
+   only `console.error` on failure — never make either of them `return`/`throw` on error, or a
+   Resend or Supabase hiccup would turn a successfully-captured lead into an error page.
+19. **`SUPABASE_SERVICE_ROLE_KEY` must be set in Vercel for the Supabase write to run at all** —
+   when it's unset, `lib/actions.ts` sets its module-level `supabase` client to `null` and the
+   insert is skipped (not attempted, not logged as an error). The `enquiries` table has RLS enabled
+   with no insert policy, so the `anon` key could not write to it even if used instead.
 18. **`.next/` is a shared build directory and this repo is regularly worked by several agent
    sessions at once** (Git Workflow's "never `git add -A`" warning is the same fact). A `next start`
    left running gets its served output silently corrupted the moment another session's `next build`
