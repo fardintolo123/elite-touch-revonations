@@ -266,6 +266,38 @@ See also **PROJECT_CONTEXT.md K14**.
 
 ---
 
+## 3j. Intake of GitHub issue #11 (2026-08-26) — findquestions.com blog topic list
+
+Issue #11 ("questions for blogs") listed three question titles sourced from `findquestions.com`, a
+third-party "people also ask"-style question tool, with no volume/difficulty data attached to any of
+them. Applied `docs/SEO_CONTENT_GUIDE.md`'s Report-intake rules — same standard as every other
+third-party content suggestion this repo has triaged (D-85–D-92). Full detail:
+`plans/2026-08-26-issue-11-findquestions-triage.md`.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-104** | **The three topics are NOT three blog posts.** They fold into the single already-approved cost/pricing guide page (`docs/SEO_CONTENT_GUIDE.md` §2 priority 6, D-15) as one page with distinct sections — not built yet. | **AGENT — recommendation, awaiting build** | (1) *"How much does a bathroom renovation cost in Sydney"* is the page's lead: it is the one topic in the issue with independent, pre-existing GKP evidence — `bathroom renovation cost sydney`, 100–1K/mo, Medium competition (`docs/BATHROOM_SITE_STRUCTURE.md`) — and matches a roadmap item that already exists for that exact reason. It answers with real prices only: Basic from $18,000 / Standard from $25,000 / Premium from $30,000, each with its size basis (D-07/D-60). (2) *"Is $30,000 really the minimum"* becomes an objection-handling section inside the same page, not a second URL — it targets the identical searcher at the identical moment (researching Sydney bathroom cost), so a separate page would compete with the first for the same query (`docs/SEO_CONTENT_GUIDE.md` §3 "one term, one page"). The honest, evidenced answer is **no** — ETR's real entry point is $18,000 (Basic, ~1.5×1.8×2.4 m), well under the $30,000 figure many broad "Sydney bathroom reno cost" sources cite — which is a genuine differentiator, not spin. (3) *"What does a $10,000 bathroom renovation include"* is **rejected as a page or a claim** — ETR has no $10,000 tier; the cheapest real package is $18,000. Answering the question with ETR's own inclusions would either invent a price tier that does not exist (a fabricated fact, forbidden outright) or set an expectation the business cannot meet, producing unqualified leads who then have to be turned away. It is addressed only as one short, honestly-framed paragraph inside the same page — "you'll see $10k figures searched online; here's what a compliant Sydney reno actually starts at and why" — which qualifies leads rather than misleading them. |
+| **D-105** | **No standalone blog section is created from this issue.** Confirms D-86/D-88 stand unchanged: a general blog remains a candidate pending real GKP/Ahrefs volume evidence, not a commitment. | **AGENT** | findquestions.com supplied titles with no volume or difficulty data of its own — per the Report-intake rule, that alone cannot justify CREATE. Only one of the three topics happens to already have independent volume evidence (via `BATHROOM_SITE_STRUCTURE.md`, gathered before this issue existed), and that evidence supports the already-planned cost guide, not a new blog vertical. |
+
+---
+
+## 3k. Intake of GitHub issue #12 (2026-08-26) — AnswerThePublic "AI-Suggested Content Ideas" report
+
+Issue #12 ("to improve seo") is a single screenshot of AnswerThePublic's Content Studio tool: 10 topic
+clusters, 2 keywords unlocked per cluster (20 of a claimed "50 content ideas"), the rest paywalled.
+Every visible `Volume` cell reads the placeholder "Niche"; `Opportunity` and `Intent` are blurred —
+**no usable volume or difficulty figure anywhere in the report.** Triaged against
+`docs/BATHROOM_SITE_STRUCTURE.md`'s own GKP-confirmed table, same Report-intake standard as every
+other third-party suggestion (D-85–D-92, D-104/D-105). Full detail:
+`plans/2026-08-26-issue-12-answerthepublic-triage.md`.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-106** | **None of the 10 clusters is built as a standalone blog post.** Two clusters (ensuite-vs-main, bathroom-and-laundry-combined) are **REJECTED, re-confirming existing findings**; one cluster (waterproofing) stays **bounded to a trust/process section inside an existing page**, never standalone; one cluster (tiles) **folds into existing pages** per already-set priority 8; the cost cluster needs **no new action** (already covered by D-104/D-105); and four clusters (process, signs-of-need, fixed-price-vs-hourly, hiring-a-licensed-renovator) are **candidates that corroborate — but do not accelerate — the already-planned priority-7 buyer-support guides.** | **AGENT** | (1) Ensuite-vs-main and bathroom+laundry-combined: `BATHROOM_SITE_STRUCTURE.md` already GKP-tested `ensuite renovation sydney` and `bathroom and laundry renovation sydney` — both returned **No data**, explicitly flagged to deprioritize. This report's own volume data for both is locked, so it supplies no new evidence to reopen either finding. (2) Waterproofing: GKP shows real but modest volume (`bathroom waterproofing sydney`, 10–100, Medium), but `BATHROOM_SITE_STRUCTURE.md` is explicit that a dedicated page is only warranted **if repairs are an actual offered service** — D-02 says they are not. A standalone waterproofing post would silently reopen D-02 with no new evidence; the topic stays a bounded AS 3740 trust/process section inside an existing page. (3) Tiles: adjacent to `bathroom colour schemes` (100–1K, Medium), which `docs/SEO_CONTENT_GUIDE.md` §2 priority 8 already routes to "fold into existing pages, not standalone URLs" — no independent evidence for tiles itself. (4) Cost: already GKP-confirmed and already the subject of D-104/D-105 from issue #11 — this report repeats a known opportunity, it doesn't add one. |
+| **D-107** | **One genuinely actionable finding: the "powder room / small bathroom" cluster corroborates an already-confirmed opportunity — recommended as an IMPROVE to the existing powder-room service page, not a new blog post.** No new blog vertical is created; D-86/D-88/D-104/D-105 stand unchanged. | **AGENT — recommendation, awaiting owner sign-off** | Powder room is one of D-01's four real, confirmed services, and the cluster's second keyword ("small bathroom reno") lines up with `BATHROOM_SITE_STRUCTURE.md`'s own pre-existing GKP-confirmed opportunity — `small bathroom renovation sydney`, 100–1K, High competition — already named "worth building" alongside the cost guide (line 137, gathered before this issue existed). That is real, independent evidence, so the underlying content angle is sound. But it is evidence for strengthening the **existing powder-room service page** (or the already-planned small-bathroom content), not grounds for opening a new blog post — `docs/SEO_CONTENT_GUIDE.md` §3 defaults to IMPROVE over CREATE whenever a page already exists for the topic. **On "bring clients, not just traffic"** (the owner's own framing): the clusters with a credible line to an enquiry are the ones tied to a considered-purchase moment and a real ETR trust signal — cost, powder-room/small-bathroom, a *licensed* renovator (licence 475204C), a written fixed-price quote (ETR's actual process). The clusters with no volume evidence and no trust-signal tie (signs-you-need-a-reno, tiles, ensuite-vs-main, laundry-combined) are generic top-of-funnel bait that would add traffic without a credible path to an enquiry — the opposite of the brief. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |
