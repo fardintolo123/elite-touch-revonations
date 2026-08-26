@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import Script from 'next/script'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { businessInfo } from '@/lib/businessInfo'
@@ -198,6 +199,17 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={jost.variable}>
       <body>
+        {/*
+         * Browsers restore the pre-reload scroll position by default
+         * (`history.scrollRestoration === 'auto'`), so an F5 on a page the
+         * visitor had scrolled down leaves them mid-page instead of at the
+         * top. `beforeInteractive` runs before hydration/paint so there is
+         * no visible jump. Applies site-wide since it lives in the root
+         * layout, not a per-page component.
+         */}
+        <Script id="disable-scroll-restoration" strategy="beforeInteractive">
+          {`if ('scrollRestoration' in history) { history.scrollRestoration = 'manual' }`}
+        </Script>
         <a className="et-skip-link" href="#main">
           Skip to content
         </a>

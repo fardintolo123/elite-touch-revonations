@@ -23,6 +23,19 @@
  *
  * `blurb` is the owner's own description, lightly trimmed. `blurb` is marketing
  * copy; `alt` is a factual description. Do not swap their jobs.
+ *
+ * SECOND BATCH (2026-08-25): 6 more projects — Balmain, Gladesville, Little
+ * Bay, Hunters Hill, The Rocks, Artarmon (bathroom + ensuite) — added from a
+ * separate "Projects Before & After (1)" folder, each with its own written
+ * Project Info document and a genuine matched before/after photo pair
+ * (consent confirmed by the user 2026-08-25). Full intake triage:
+ * plans/2026-08-25-new-project-photos-intake.md. Three projects from that
+ * same folder were NOT added — see PROJECT_CONTEXT.md K14 for why
+ * (unconfirmed location, and two standalone-laundry jobs outside the
+ * confirmed service scope). The `before.webp` in each of these six IS
+ * labelled as the pre-renovation state, because the source folder supplied
+ * genuine matched pairs — unlike the first batch above, where no pairing was
+ * evidenced (D-06).
  */
 
 export type ProjectImage = {
@@ -227,6 +240,264 @@ export const projects: readonly Project[] = [
         alt: 'Close-up of a matte black basin mixer on a white rectangular basin, with a lit white candle beside it and the lower edge of a round mirror above.',
         width: 496,
         height: 750,
+      },
+    ],
+  },
+  {
+    slug: 'balmain-bathroom',
+    suburb: 'Balmain',
+    name: 'Balmain bathroom renovation',
+    service: 'Bathroom renovation',
+    blurb:
+      'A concrete-look bathroom with warm timber-look floors for contrast. A custom vanity with a matching tall storage cabinet keeps everything tidy, and a freestanding bath anchors the room.',
+    images: [
+      {
+        src: `${DIR}/balmain-bathroom/vanity-bath-window.webp`,
+        alt: 'Bathroom with grey concrete-look wall tiles and timber-look floor tiles, a dark timber wall-hung vanity with a white top and chrome tap, a wall-hung toilet, and the foot of a white built-in bath in the foreground.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/balmain-bathroom/vanity-storage-cabinet.webp`,
+        alt: 'Dark timber tall storage cabinet beside a matching wall-hung vanity with a white top and chrome tap, a wall-hung toilet, and a window set into grey concrete-look wall tiles.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/balmain-bathroom/freestanding-bath-towel-rail.webp`,
+        alt: 'White built-in bath below a window, with a chrome wall-mounted mixer, grey concrete-look tiles, timber-look floor, and a ladder-style towel rail holding two dark grey towels.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/balmain-bathroom/before.webp`,
+        alt: "Black-and-white photograph of the bathroom before renovation, showing textured cream wall tiles, dark patterned floor tiles, a built-in bath with two chrome taps, and a white vanity unit beside the toilet.",
+        width: 873,
+        height: 508,
+      },
+    ],
+  },
+  {
+    slug: 'gladesville-bathroom',
+    suburb: 'Gladesville',
+    name: 'Gladesville bathroom renovation',
+    service: 'Bathroom renovation',
+    blurb:
+      'A crisp white bathroom finished in classic subway tiles, with a frameless glass shower and a floating vanity that keeps the floor open.',
+    images: [
+      {
+        src: `${DIR}/gladesville-bathroom/full-room-toilet-tub-vanity.webp`,
+        alt: 'White bathroom with subway-tile walls, a frameless glass shower screen, a wall-hung toilet, a built-in bath below a window with patterned blinds, and the edge of a white vanity with a chrome tap in the foreground.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/gladesville-bathroom/shower-niche-detail.webp`,
+        alt: 'Corner of a frameless glass shower with a chrome rail shower and handheld head, a recessed tiled niche holding a dark bottle, and white subway tile walls.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/gladesville-bathroom/tub-vanity-window-plant.webp`,
+        alt: 'White built-in bath below a window with patterned blinds, a potted plant with red flowers on the tiled ledge, and the edge of a white vanity with a chrome tap.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/gladesville-bathroom/tub-vanity-mirror.webp`,
+        alt: 'White built-in bath and a white vanity with a chrome tap, reflected in a wall mirror, with white subway tile walls and a window with patterned blinds.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/gladesville-bathroom/before.webp`,
+        alt: 'Black-and-white photograph of the bathroom before renovation, showing small dotted-pattern wall tiles with a black trim border, black floor tiles, a glass shower screen, and a wall-hung toilet.',
+        width: 887,
+        height: 508,
+      },
+    ],
+  },
+  {
+    slug: 'little-bay-bathroom',
+    suburb: 'Little Bay',
+    name: 'Little Bay bathroom renovation',
+    service: 'Bathroom renovation',
+    blurb:
+      'A bright white bathroom with a statement turquoise vessel basin and a freestanding bath. Timber plantation shutters and a frameless shower keep the room feeling open.',
+    images: [
+      {
+        src: `${DIR}/little-bay-bathroom/shower-vanity-tub-wide.webp`,
+        alt: 'White bathroom with large-format tiles, a frameless glass shower with a rain head, a floating vanity with a turquoise vessel basin, and a freestanding bath below timber plantation shutters.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/little-bay-bathroom/vanity-blue-basin-shower.webp`,
+        alt: 'Floating white vanity with a turquoise vessel basin and a chrome wall-mounted tap, folded blue towels on the open shelf below, beside a frameless glass shower with a tiled niche.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/little-bay-bathroom/freestanding-tub-towel-rail.webp`,
+        alt: 'White freestanding bath below timber plantation shutters, with a ladder-style heated towel rail holding a teal towel on the tiled wall beside it.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/little-bay-bathroom/shower-niche-bottles.webp`,
+        alt: 'Recessed tiled shower niche with a patterned grey feature tile, holding two turquoise pump-bottle toiletries.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/little-bay-bathroom/blue-basin-tap-detail.webp`,
+        alt: 'Close-up of a turquoise glass vessel basin with a chrome wall-mounted spout, a white orchid and a shell-shaped dish on the vanity beside it.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/little-bay-bathroom/shower-vanity-mirror-wide.webp`,
+        alt: 'Frameless glass shower with a rain head and tiled niche, beside a wide mirrored cabinet, a floating vanity with a turquoise vessel basin, and timber plantation shutters reflected in the mirror.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/little-bay-bathroom/vanity-toilet-doorway.webp`,
+        alt: 'Floating white vanity with a turquoise vessel basin, a close-coupled toilet beside a woven storage basket, a wall-mounted heated towel rail, and an open door leading to an adjoining bedroom.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/little-bay-bathroom/before.webp`,
+        alt: 'Black-and-white photograph of the original vanity before renovation, cluttered with toiletries and a tray on a curved laminate benchtop, with an oval mirror above.',
+        width: 874,
+        height: 601,
+      },
+    ],
+  },
+  {
+    slug: 'hunters-hill-bathroom',
+    suburb: 'Hunters Hill',
+    name: 'Hunters Hill bathroom renovation',
+    service: 'Bathroom renovation',
+    blurb:
+      'Full-height marble-look tiling, a custom double vanity and a freestanding bath beneath plantation shutters. Matte black fixtures throughout for a sharp, contemporary finish.',
+    images: [
+      {
+        src: `${DIR}/hunters-hill-bathroom/freestanding-bath-shutters.webp`,
+        alt: 'White freestanding bath beneath timber plantation shutters looking onto greenery, with full-height white marble-look wall tiles, a matte black ladder towel rail, and the edge of a frameless glass shower.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/hunters-hill-bathroom/double-vanity-marble.webp`,
+        alt: 'Double vanity with two rectangular basins on a white stone top, matte black wall-mounted mixers, a wide mirrored cabinet, and full-height white marble-look wall tiles.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/hunters-hill-bathroom/tapware-detail.webp`,
+        alt: 'Close-up of a matte black bath spout and mixer on white marble-look tiling, beside a potted rubber plant.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/hunters-hill-bathroom/vanity-shutters-shower-wide.webp`,
+        alt: 'Double vanity with matte black tapware and a round LED mirror reflecting a frameless glass shower, beside a freestanding bath below timber plantation shutters looking onto greenery.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/hunters-hill-bathroom/shower-head-detail.webp`,
+        alt: 'Close-up of a matte black loop-handle handheld shower head on a rail, mounted on a frameless glass shower screen.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/hunters-hill-bathroom/before.webp`,
+        alt: 'Black-and-white photograph of the bathroom before renovation, showing a dated built-in bath with two chrome taps and a tiled surround, viewed through a window with venetian blinds.',
+        width: 876,
+        height: 602,
+      },
+    ],
+  },
+  {
+    slug: 'the-rocks-bathroom',
+    suburb: 'The Rocks',
+    name: 'The Rocks heritage bathroom renovation',
+    service: 'Bathroom renovation',
+    blurb:
+      'A bathroom in a heritage terrace, built around an original leadlight window. A freestanding bath, patterned floor tiles and a frameless shower bring a modern finish without losing the character of the house.',
+    images: [
+      {
+        src: `${DIR}/the-rocks-bathroom/shower-window-tub-wide.webp`,
+        alt: 'Bathroom with a frameless glass shower and black-and-white patterned floor tiles, an original leadlight window with a floral motif, a colourful portrait artwork on the white tiled wall, and a white freestanding bath with a matte black spout.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/the-rocks-bathroom/tub-vanity-black-door.webp`,
+        alt: 'White freestanding bath with a matte black wall-mounted spout, a colourful portrait artwork above, a round white vessel basin on a black wall-hung vanity, and a black timber sliding barn door, all on black-and-white patterned floor tiles.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/the-rocks-bathroom/shower-handheld-detail.webp`,
+        alt: 'Close-up of a matte black square rain head and handheld shower on a riser rail, mounted in a glass-walled shower.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/the-rocks-bathroom/before.webp`,
+        alt: 'Black-and-white photograph of the bathroom before renovation, showing a chrome-framed shower screen and the same leadlight window with a floral motif above a pedestal vanity.',
+        width: 872,
+        height: 515,
+      },
+    ],
+  },
+  {
+    slug: 'artarmon-bathroom-ensuite',
+    suburb: 'Artarmon',
+    name: 'Artarmon bathroom and ensuite renovation',
+    service: 'Ensuite renovation',
+    blurb:
+      'A bathroom and ensuite renovated together for a cohesive, contemporary finish. Charcoal stone-look tiles, a round LED backlit mirror and warm terracotta towels give the double vanity and frameless showers a distinctive touch.',
+    images: [
+      {
+        src: `${DIR}/artarmon-bathroom-ensuite/double-vanity-corner-window.webp`,
+        alt: 'Bathroom with grey stone-look tiles, a double vanity with two basins and matte black tapware, a wall-hung toilet in a corner window nook, a terracotta towel on a heated rail, and a frameless glass shower.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/artarmon-bathroom-ensuite/ensuite-vanity-mirror-shower.webp`,
+        alt: 'Ensuite with a single vanity, a round mirror, chrome tapware, a wall-hung toilet behind a frameless glass shower screen, and a small window with a potted plant on the sill.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/artarmon-bathroom-ensuite/round-mirror-vanity-detail.webp`,
+        alt: 'Round LED backlit mirror above a dark vanity with a potted plant, reflecting a doorway, set against charcoal stone-look tiles.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/artarmon-bathroom-ensuite/shower-niche-detail.webp`,
+        alt: 'Chrome rail shower with a handheld head in a frameless glass shower, beside a recessed tiled niche holding two terracotta bottles.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/artarmon-bathroom-ensuite/vanity-taps-detail.webp`,
+        alt: 'Close-up of a chrome basin tap on a dark vanity, with a terracotta towel, a reed diffuser and a potted plant beside a backlit mirror glowing warm light.',
+        width: 1180,
+        height: 680,
+      },
+      {
+        src: `${DIR}/artarmon-bathroom-ensuite/before.webp`,
+        alt: 'Black-and-white photograph of the bathroom before renovation, showing a corner shower enclosure, a wall-hung toilet beneath a window, and a laminate vanity with a mirrored cabinet.',
+        width: 867,
+        height: 511,
       },
     ],
   },

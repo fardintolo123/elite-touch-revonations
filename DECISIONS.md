@@ -249,6 +249,23 @@ bar. Full detail: `plans/2026-08-23-issue-9-readability.md`.
 
 ---
 
+## 3i. Second project-photo batch intake (2026-08-25)
+
+A second, separate folder of project photography ("Projects Before & After (1)", outside the
+repo) was supplied: 9 projects, 38 photos, each with a written Project Info document. Full triage:
+[plans/2026-08-25-new-project-photos-intake.md](plans/2026-08-25-new-project-photos-intake.md).
+See also **PROJECT_CONTEXT.md K14**.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-99** | **Consent confirmed for this batch.** Six projects added as new photographed gallery entries at `/gallery/{slug}/`: **Balmain, Gladesville, Little Bay, Hunters Hill, The Rocks, and Artarmon (bathroom + ensuite)** (`hunters-hill-bathroom`, `the-rocks-bathroom`, `artarmon-bathroom-ensuite` are new slugs distinct from the existing `artarmon-bathroom`). 30 of the batch's 38 photos were converted to WebP (≤1400 px, quality 82, ~1.6 MB total) and each one individually viewed before its alt text was written (D-36 step 9), matching the D-65 pipeline. | **CONFIRMED (user, 2026-08-25)** — consent; **AGENT** — which 6 of 9 to ship | Asked directly, the user confirmed consent for the whole batch. Six of the nine projects had no flag beyond consent once that was given. |
+| **D-100** | **This batch's genuine matched before/after photo pairs ARE labelled as "before" in alt text**, unlike the first `Gallery/` batch (D-64/D-66), where no pairing was supplied. | **AGENT** | The source folders are literally structured as matched pairs (one grainy phone "before" per project, several professional "after" shots), and every before photo is visibly the same room as its after set. This satisfies D-06's "genuine matched pair" bar, which the original 33/30 never met. |
+| **D-101** | **Two standalone-laundry projects in this batch (Enmore; the "North Ryde" folder) are NOT published as case studies.** | **AGENT — user delegated ("you decide")** | D-01 confirms four services (bathroom · ensuite · bathroom-and-laundry · powder room) and D-45 requires the `laundry-renovations` page to always read "Bathroom + Laundry," never standalone. Both of these projects are laundry-only, no bathroom involved. Publishing either — even gallery-only — would visually claim a service ETR has not confirmed it sells on its own. **Revisit if the owner confirms ETR wants to advertise standalone laundry work**, at which point these two (plus their location questions below) can be re-triaged. |
+| **D-102** | **Two projects are held on unresolved location, not published under either name.** The "Mosman" folder's own Project Info doc states **Drummoyne**; the "North Ryde" folder's doc states **North Sydney**. Asked directly, the user did not know which was correct for either. | **AGENT** | Mosman (North Shore, published hub) vs. Drummoyne (Inner West, unpublished hub), and North Ryde vs. North Sydney (also different regions), are not interchangeable — publishing the wrong one puts a false location claim on the site (D-06). The `Project` type requires a `suburb` field that renders as a prominent badge, so there is no "unattributed" gallery path the way the original 33 photos got one (O-4) — these two are simply held pending the correct location. |
+| **D-103** | **Hunters Hill and The Rocks in this batch are NOT merged with the existing text-only case studies of the same name** — shipped as separate, distinct gallery entries. | **AGENT** | Both new entries closely match their same-named text-only case study (Hunters Hill: full-height marble, double vanity, freestanding bath, all matching; The Rocks: the same distinctive leadlight heritage window visible in both the new "before" photo and the existing case-study description). Asked directly, the user did not know whether they are the same job. Per the D-69 precedent (Artarmon), close resemblance is not treated as proof — kept unmerged rather than guessed. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |

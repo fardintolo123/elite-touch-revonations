@@ -29,14 +29,24 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 export const metadata: Metadata = {
   title: 'Our Work',
   description:
-    'Bathroom renovation projects by Elite Touch Renovations across Sydney — including Artarmon, Castle Hill, Hornsby and Randwick. Real photographs of completed work.',
+    'Bathroom renovation projects by Elite Touch Renovations across Sydney — including Artarmon, Balmain, Castle Hill, Gladesville, Hornsby, Hunters Hill, Little Bay, Randwick and The Rocks. Real photographs of completed work.',
   alternates: { canonical: '/gallery/' },
 }
 
 /**
  * Documented projects with no photography supplied. Kept as text so the work is
  * still represented. Do NOT attach any of the gallery photos to these — there
- * is no evidence linking them (D-06).
+ * is no confirmed evidence linking them (D-06).
+ *
+ * ⚠️ 2026-08-25: a photographed Hunters Hill and a photographed The Rocks
+ * project were added to `lib/projects.ts` (slugs `hunters-hill-bathroom`,
+ * `the-rocks-bathroom`) from a separate source. Both closely match the
+ * descriptions below — same suburb, same distinctive features (the Hunters
+ * Hill entry's marble/double-vanity/freestanding-bath; The Rocks entry's
+ * protected heritage window). They MAY be the same jobs as these two text
+ * entries, now with photos. Asked directly, the user did not know either way
+ * (see PROJECT_CONTEXT.md K14), so per D-06/D-69 they are kept as separate,
+ * unmerged entries rather than assumed identical.
  */
 const TEXT_ONLY_PROJECTS = [
   {
@@ -65,9 +75,9 @@ export default function GalleryPage() {
             Bathroom renovations we have completed across Sydney.
           </h1>
           <p className="et-lead et-measure">
-            Real photographs of finished work in Artarmon, Castle Hill, Hornsby
-            and Randwick — different homes, different budgets, the same
-            standard underneath the tiles.
+            Real photographs of finished work across Sydney, from Artarmon and
+            Balmain to Little Bay and The Rocks — different homes, different
+            budgets, the same standard underneath the tiles.
           </p>
         </div>
       </section>
