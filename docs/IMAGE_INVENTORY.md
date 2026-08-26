@@ -12,6 +12,26 @@ here has been committed to the repo or given a public URL.
 
 ---
 
+## Second batch — "Projects Before & After (1)" (2026-08-25)
+
+A separate, later-supplied folder (`C:\Users\Administrator\Downloads\Projects Before & After (1)\`,
+outside the repo) — 9 named projects, 38 photos, each with a written Project Info doc (budget,
+timeframe, scope of works, outcome). **Detect + Inventory + Verify + Flag complete. Approve is
+blocked** — see [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K14 and the full triage in
+[plans/2026-08-25-new-project-photos-intake.md](../plans/2026-08-25-new-project-photos-intake.md).
+
+Short version: **consent for this batch has not been confirmed** (blocks all 9); two folders'
+names don't match their own doc's stated suburb (Mosman↔Drummoyne, North Ryde↔North Sydney); two
+projects are standalone laundry jobs, outside the currently-confirmed service scope (D-01/D-45);
+Hunters Hill and The Rocks in this batch closely resemble two existing text-only case studies and
+may be the same jobs. **Balmain, Gladesville and Little Bay carry no flag beyond consent.**
+
+**A second, separate batch (2026-08-25) is recorded in its own section below** — see
+*"2026-08-25 batch — `Projects Before & After (1)/`."* It is a different source folder from the
+33/34 files above and has its own Detect/Inventory/Verify/Flag record; do not conflate the two.
+
+---
+
 ## Flags — resolved and standing
 
 1. ✅ **RESOLVED 2026-08-17.** The "Kieran C" testimonial is a genuine 19th review — owner-confirmed.

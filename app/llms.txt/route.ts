@@ -35,7 +35,7 @@ export async function GET() {
 
   lines.push('## Overview')
   lines.push(
-    `- [Home](${base}/): Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family. NSW-licensed, built to current Australian Standards, with fixed-scope written quotes.`
+    `- [Home](${base}/): Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family. NSW-licensed, AS 3740 waterproofing, fixed-scope written quotes.`
   )
   lines.push(
     `- [About Us](${base}/about-us/): Elite Touch Renovations is a family-run Sydney bathroom renovation business, founded in ${businessInfo.foundedYear} by the Dawood family. NSW Builder Licence ${businessInfo.builderLicence}.`

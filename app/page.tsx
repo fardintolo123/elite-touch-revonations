@@ -25,15 +25,20 @@ import { projects } from '@/lib/projects'
  */
 
 /**
- * Meta title and description are the owner's own approved wording from the
- * Home page PDF on GitHub issue #2 (docs/source-copy/home.md). Where the owner
- * has written copy, it wins over anything we would compose.
+ * Meta title and description started as the owner's own approved wording from
+ * the Home page PDF on GitHub issue #2 (docs/source-copy/home.md). Both were
+ * over the 30–60 / 50–160 char limits in docs/SEO_AEO_GEO_CHECKLIST.md Phase 1
+ * (78 and ~178 chars) — flagged by GitHub issue #8's GEO audit (DECISIONS.md
+ * D-91/O-10) — and the owner asked for them shortened (2026-08-23). Trimmed
+ * for length only: every fact below still traces to the same source. The
+ * description swaps "built to current Australian Standards" for the specific
+ * standard code, AS 3740 — already the value of `businessInfo.standards.
+ * waterproofing` — which is more concrete, not less accurate.
  */
 export const metadata: Metadata = {
-  title:
-    'Sydney Bathroom Renovations | Family-Run Specialists | Elite Touch Renovations',
+  title: 'Sydney Bathroom Renovations | Elite Touch Renovations',
   description:
-    'Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family. NSW-licensed, built to current Australian Standards, with fixed-scope written quotes.',
+    'Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family. NSW-licensed, AS 3740 waterproofing, fixed-scope written quotes.',
   alternates: { canonical: '/' },
 }
 
