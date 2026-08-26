@@ -17,8 +17,18 @@ Not yet in `docs/IMAGE_INVENTORY.md`. Routed per `CLAUDE.md` "Photos / images" r
       **Add to repo** step (alt text is written from the photo, D-66) — no point doing it twice
       before Approve.
 - [x] **Flag issues** — see Flags below. Several are genuine owner decisions, not agent calls.
-- [ ] **Approve** — blocked on owner answers to the Flags. Nothing proceeds past this step yet.
-- [ ] Add to repo / Commit / asset URL / alt text — not started.
+- [x] **Approve** — user confirmed consent (2026-08-25) and answered the flags: laundry-scope
+      decision delegated to agent (D-101), Mosman/Drummoyne and North Ryde/North Sydney location
+      unresolved (D-102, held), Hunters Hill/Rocks merge unresolved (D-103, kept separate).
+- [x] Add to repo — 6 of 9 projects added to `lib/projects.ts` (Balmain, Gladesville, Little Bay,
+      Hunters Hill, The Rocks, Artarmon bathroom+ensuite). 30 photos converted to WebP and placed
+      in `public/images/projects/{slug}/`. 3 held (Enmore, "North Ryde" laundry, "Mosman"/
+      Drummoyne) — see DECISIONS.md D-101/D-102.
+- [ ] Commit — pending build verification.
+- [x] Use public asset URL — all `src` values are `/images/projects/{slug}/...`, matching D-36
+      step 8.
+- [x] Add accurate alt text — every one of the 30 shipped photos individually viewed; alt text
+      describes the photograph, not the page topic (D-36 step 9 / PROJECT_CONTEXT.md §4.9).
 
 ## Inventory — 9 projects
 

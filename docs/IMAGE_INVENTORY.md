@@ -16,15 +16,25 @@ here has been committed to the repo or given a public URL.
 
 A separate, later-supplied folder (`C:\Users\Administrator\Downloads\Projects Before & After (1)\`,
 outside the repo) — 9 named projects, 38 photos, each with a written Project Info doc (budget,
-timeframe, scope of works, outcome). **Detect + Inventory + Verify + Flag complete. Approve is
-blocked** — see [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K14 and the full triage in
-[plans/2026-08-25-new-project-photos-intake.md](../plans/2026-08-25-new-project-photos-intake.md).
+timeframe, scope of works, outcome). Full triage in
+[plans/2026-08-25-new-project-photos-intake.md](../plans/2026-08-25-new-project-photos-intake.md);
+decisions in [DECISIONS.md](../DECISIONS.md) §3i (D-99–D-103); open items in
+[PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K14.
 
-Short version: **consent for this batch has not been confirmed** (blocks all 9); two folders'
-names don't match their own doc's stated suburb (Mosman↔Drummoyne, North Ryde↔North Sydney); two
-projects are standalone laundry jobs, outside the currently-confirmed service scope (D-01/D-45);
-Hunters Hill and The Rocks in this batch closely resemble two existing text-only case studies and
-may be the same jobs. **Balmain, Gladesville and Little Bay carry no flag beyond consent.**
+**Status: consent confirmed by the user 2026-08-25. Detect → Inventory → Verify → Flag → Approve →
+Add to repo → Commit → asset URL → alt text all complete for 6 of the 9 projects** — Balmain,
+Gladesville, Little Bay, Hunters Hill, The Rocks, and Artarmon (bathroom + ensuite). 30 photos
+converted to WebP (≤1400 px, quality 82) into `public/images/projects/{slug}/`, each individually
+viewed before its alt text was written, and added to `lib/projects.ts`. Live at
+`/gallery/{slug}/` once built and deployed.
+
+**3 of the 9 remain held, not published:**
+- **Enmore, and the "North Ryde" laundry project** — both are standalone laundry renovations, no
+  bathroom involved. D-01/D-45 don't currently permit a standalone laundry service claim (D-101).
+- **The "Mosman" folder (doc says Drummoyne) and the "North Ryde" folder (doc says North Sydney)**
+  — folder name and the project's own document disagree on the suburb, and the user could not
+  resolve either. Not published under either label pending confirmation (D-102). (Note: the
+  "North Ryde" laundry project is blocked on both grounds.)
 
 **A second, separate batch (2026-08-25) is recorded in its own section below** — see
 *"2026-08-25 batch — `Projects Before & After (1)/`."* It is a different source folder from the

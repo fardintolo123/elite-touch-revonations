@@ -75,6 +75,12 @@ const ROUTES = [
   '/gallery/hornsby-bathroom/',
   '/gallery/hornsby-ensuite/',
   '/gallery/randwick-bathroom/',
+  '/gallery/balmain-bathroom/',
+  '/gallery/gladesville-bathroom/',
+  '/gallery/little-bay-bathroom/',
+  '/gallery/hunters-hill-bathroom/',
+  '/gallery/the-rocks-bathroom/',
+  '/gallery/artarmon-bathroom-ensuite/',
 ]
 
 function routeToStaticFile(route) {
