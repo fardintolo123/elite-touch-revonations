@@ -1,7 +1,7 @@
 {
   "business": "Elite Touch Renovations",
   "service": "Bathroom Renovations",
-  "lastUpdated": "2026-08-19",
+  "lastUpdated": "2026-08-27",
   "notes": "tier 1 = dedicated page, tier 2 = hub-page-only. slug fields are kebab-case and ready for use in URL paths. Entries flagged isNotASuburb are non-residential/non-suburb locations included for postcode-data completeness only and should not receive individual service-area copy. URLs follow D-71: locations are children of the bathroom service page at /services/bathroom-renovations/{slug}/. A region is only rendered as a page when hubPublished is true - adding a region here does NOT publish it.",
   "regions": [
     {
@@ -867,6 +867,12 @@
           "name": "South Coogee",
           "slug": "south-coogee",
           "postcode": "2034",
+          "tier": 2
+        },
+        {
+          "name": "Little Bay",
+          "slug": "little-bay",
+          "postcode": "2036",
           "tier": 2
         }
       ],

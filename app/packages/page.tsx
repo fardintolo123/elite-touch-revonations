@@ -5,6 +5,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { FaqSchema } from '@/components/FaqSchema'
 import { projects } from '@/lib/projects'
 
 /**
@@ -30,12 +31,26 @@ import { projects } from '@/lib/projects'
  * If a claim is not in the current sheet, it is not in the package. In
  * particular do NOT reintroduce the old sheet's in-wall cistern, 1200mm vanity
  * or 3 downlights — the current sheet does not include them.
+ *
+ * COST-QUESTION SECTIONS (added 2026-08-27, GitHub issue #11 / DECISIONS.md
+ * D-104): this page is the single home for "how much does a bathroom
+ * renovation cost in Sydney" — `bathroom renovation cost sydney` is
+ * GKP-confirmed at 100–1K/mo (`docs/BATHROOM_SITE_STRUCTURE.md`). Folded in
+ * here rather than as a separate URL, per `docs/SEO_CONTENT_GUIDE.md` §3
+ * ("one term, one page" / default to IMPROVE over CREATE) — a standalone cost
+ * page would target the identical searcher as this one. Two objection-
+ * handling angles from the same issue are included:
+ *   - "Is $30,000 the minimum?" — answered honestly: no, Basic starts at
+ *     $18,000. $30,000 is where Premium starts.
+ *   - "What does a $10,000 bathroom renovation include?" — REJECTED as a
+ *     claim (ETR has no $10,000 tier); answered only as an honest
+ *     expectations-setting paragraph, never implying ETR offers one.
  */
 
 export const metadata: Metadata = {
-  title: 'Bathroom Renovation Packages & Pricing',
+  title: 'Bathroom Renovation Cost & Packages',
   description:
-    'Elite Touch Renovations bathroom renovation packages. Basic from $18,000, Standard from $25,000, Premium from $30,000 — each tied to a stated bathroom size, with a fixed-scope written quote.',
+    'How much does a bathroom renovation cost in Sydney? Packages start from $18,000 to $30,000, sized to your bathroom, with a fixed-scope written quote.',
   alternates: { canonical: '/packages/' },
 }
 
@@ -113,6 +128,42 @@ const IN_EVERY_TIER = [
   'Final clean of the bathroom prior to handover',
 ] as const
 
+/**
+ * Visible FAQ block + FAQPage schema (`components/FaqSchema.tsx`). Answers
+ * are self-contained — an AI engine or featured snippet lifts one without
+ * the rest of the page, so each must stand alone and stay true on its own
+ * (docs/CONTENT_QUALITY_CHECKLIST.md §3). Every figure here matches the
+ * tier cards and `lib/businessInfo.ts` exactly — never restate a price or
+ * duration from memory.
+ */
+const FAQS = [
+  {
+    question: 'How much does a bathroom renovation cost in Sydney?',
+    answer:
+      'With Elite Touch, a bathroom renovation starts from $18,000 for a small bathroom (about 1.5 × 1.8 × 2.4 m, our Basic package), from $25,000 for a mid-size bathroom (Standard), or from $30,000 for a larger, fully-specified bathroom (Premium). Every figure is a starting price — you get a fixed-scope written quote after a free on-site measure.',
+  },
+  {
+    question: 'Is $30,000 the minimum for a bathroom renovation?',
+    answer:
+      'No. $30,000 is where our Premium package starts, for a larger bathroom with a freestanding bath and heated flooring. Our Basic package starts from $18,000, for a bathroom around 1.5 × 1.8 × 2.4 m, and still includes full demolition, AS 3740 waterproofing, new tiling and all new fittings.',
+  },
+  {
+    question: "What's included in the price?",
+    answer:
+      'Every package includes demolition, waterproofing to Australian Standards, new tiling, a custom shower screen, all new fittings and a final clean. The tiers differ in how much of the bathroom is tiled and which fittings are included — not the standard of work.',
+  },
+  {
+    question: 'Is the price fixed once work starts?',
+    answer:
+      "Yes. You get a fixed-scope written quote after a free on-site measure, before any work begins. If your bathroom's size or scope differs from a package, we tell you at the measure — never after demolition.",
+  },
+  {
+    question: 'How long does a bathroom renovation take?',
+    answer:
+      'A full renovation on the same footprint usually takes 3–4 weeks. A premium build with natural stone and custom joinery takes 5–6 weeks, and a reconfiguration that moves walls or fixtures takes 5–7 weeks.',
+  },
+] as const
+
 const heroProject = projects.find((p) => p.slug === 'castle-hill-bathroom')!
 
 export default function PackagesPage() {
@@ -124,10 +175,12 @@ export default function PackagesPage() {
           { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
         ]}
       />
+      <FaqSchema items={FAQS} />
       <PageHero
         eyebrow="Packages"
         title="Bathroom renovation packages and pricing."
         leads={[
+          'A bathroom renovation with Elite Touch starts from $18,000 (Basic), $25,000 (Standard) or $30,000 (Premium) — each tied to a stated bathroom size below.',
           'Each package price is tied to a bathroom of a stated size. That is deliberate — a price quoted without the size it assumes is not a price, it is a guess. All three are starting prices; your final figure is fixed in writing after a free on-site measure.',
         ]}
         cta={false}
@@ -144,6 +197,31 @@ export default function PackagesPage() {
         ]}
         image={{ project: heroProject, imageIndex: 1 }}
       />
+
+      <section className="et-section et-band-surface">
+        <div className="et-container">
+          <div className="et-stack">
+            <h2 className="et-h2 et-measure-tight">
+              How much does a bathroom renovation cost in Sydney?
+            </h2>
+            <p className="et-lead et-measure">
+              With Elite Touch, a bathroom renovation starts from $18,000 for
+              a small bathroom around 1.5 × 1.8 × 2.4 m (Basic), from $25,000
+              for a mid-size bathroom around 1.8 × 2.4 × 2.4 m (Standard), or
+              from $30,000 for a larger, fully-specified bathroom around
+              2.4 × 2.4 × 2.4 m (Premium). See the full breakdown below.
+            </p>
+            <p className="et-body-sm et-measure">
+              The price moves with three things: how much of the bathroom is
+              tiled, which fittings you choose, and whether the layout
+              changes. Moving a toilet or wall, or adding a freestanding bath
+              or heated flooring, all add real cost — we tell you which of
+              these apply to your bathroom at the free on-site measure, not
+              after demolition has started.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="et-section et-band-canvas">
         <div className="et-container">
@@ -271,6 +349,80 @@ export default function PackagesPage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="et-section et-band-canvas">
+        <div className="et-container">
+          <div className="et-stack">
+            <h2 className="et-h2 et-measure-tight">
+              Is $30,000 really the minimum for a bathroom renovation?
+            </h2>
+            <p className="et-lead et-measure">
+              No. $30,000 is where our Premium package starts — it isn&rsquo;t
+              a floor under every renovation. Our Basic package starts from
+              $18,000, for a bathroom around 1.5 × 1.8 × 2.4 m, and still
+              includes full demolition, AS 3740 waterproofing, new tiling, a
+              custom semi-frameless shower screen and all new fittings.
+              You&rsquo;ll see $30,000+ quoted as a typical Sydney figure in a
+              lot of places — that&rsquo;s a fair estimate for a larger,
+              fully-specified bathroom, not the minimum to get started.
+            </p>
+
+            <h3
+              className="et-h4"
+              style={{ marginTop: 'var(--et-space-8)' }}
+            >
+              What about a $10,000 bathroom renovation?
+            </h3>
+            <p className="et-body-sm et-measure">
+              You&rsquo;ll sometimes see &ldquo;$10,000 bathroom
+              renovation&rdquo; searched online. In our experience that
+              figure covers cosmetic work — new tapware, a repaint, replacing
+              a vanity — not a full renovation with demolition,
+              re-waterproofing to AS 3740 and new tiling throughout. A
+              compliant, fully waterproofed Sydney bathroom renovation
+              realistically starts from $18,000. If your budget is tighter
+              than that, tell us at the free on-site measure — we&rsquo;ll be
+              straight with you about what&rsquo;s realistic rather than
+              stretch a quote to fit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="et-section et-band-surface">
+        <div className="et-container">
+          <div className="et-stack">
+            <span className="et-eyebrow">FAQ</span>
+            <h2 className="et-h2 et-measure-tight">
+              Frequently asked questions about bathroom renovation cost
+            </h2>
+          </div>
+          <div
+            className="et-stack"
+            style={{ marginTop: 'var(--et-space-8)', gap: 'var(--et-space-4)' }}
+          >
+            {FAQS.map((item) => (
+              <details key={item.question} className="et-card">
+                <summary
+                  className="et-h4"
+                  style={{ cursor: 'pointer' }}
+                >
+                  {item.question}
+                </summary>
+                <p
+                  className="et-body-sm"
+                  style={{
+                    marginTop: 'var(--et-space-4)',
+                    color: 'var(--et-text-secondary)',
+                  }}
+                >
+                  {item.answer}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

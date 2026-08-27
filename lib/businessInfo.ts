@@ -330,6 +330,40 @@ export const services = [
     h1: 'Powder Room Renovations Sydney',
     summary:
       'The smallest room in the house, where every millimetre of the setout shows. Fixture placement and tile setout carry the whole result.',
+    /**
+     * Sourced verbatim/paraphrased from `docs/source-copy/svc-powder.md`
+     * (owner-supplied PDF, GitHub issue #2) — never invented. Added
+     * 2026-08-27 per DECISIONS.md D-107: real GKP-confirmed demand exists
+     * for "small bathroom renovation sydney" (100–1K/mo, High competition —
+     * docs/BATHROOM_SITE_STRUCTURE.md), and powder room is the one
+     * confirmed ETR service that genuinely is a small bathroom. This is an
+     * IMPROVE of the existing page, not a new blog post.
+     */
+    about:
+      'A powder room is a small bathroom — typically 1.5–3 square metres — with a toilet and a hand basin and usually nothing else. Sometimes called a "half bath" or "guest WC", it is the smallest wet area in the house, and normally sits on the ground floor near the living areas so guests never need to enter a bedroom-adjacent bathroom.',
+    faqs: [
+      {
+        question: 'What is the smallest a powder room can be?',
+        answer:
+          'Practically, around 0.8 m wide by 1.5 m deep — enough for a basin, a WC and room for the door to open. Any tighter and the room starts to feel cramped and can struggle to meet the minimum clearances around fixtures.',
+      },
+      {
+        question: 'Do powder rooms really need waterproofing?',
+        answer:
+          'Yes. Under AS 3740-2021, any room with a floor waste and a water-supply fixture is a wet area, so the floor needs a compliant, certified waterproof membrane. The scope is smaller than a full bathroom — no shower walls, no hob — but the floor is not optional.',
+      },
+      {
+        question:
+          'Can a small bathroom renovation like a powder room be done in less than a week?',
+        answer:
+          'A refresh — the same fixtures replaced like-for-like, new paint, new fittings — can be done in three to five working days. A full renovation that needs strip-out and re-waterproofing needs the membrane to cure before tiling, which puts the realistic minimum at around seven working days.',
+      },
+      {
+        question: 'Can a powder room add value to my home?',
+        answer:
+          "A well-designed, well-finished powder room is one of the strongest per-dollar value adds in a Sydney home, particularly if the property doesn't already have a downstairs WC. It gives guests somewhere to go without walking through a bedroom-adjacent bathroom, and adds a design moment to the public part of the house.",
+      },
+    ],
   },
 ] as const
 

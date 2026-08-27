@@ -7,6 +7,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { FaqSchema } from '@/components/FaqSchema'
 import { projects } from '@/lib/projects'
 import {
   LOCATION_PARENT_SLUG,
@@ -103,6 +104,12 @@ export default async function ServicePage({
     ? projects.find((p) => p.slug === heroImageRef.slug)
     : undefined
 
+  // Optional per-service extras (currently: powder-room only — DECISIONS.md
+  // D-107). Not every service has these, so guard with `in` rather than
+  // assuming the field exists on the whole `Service` union.
+  const about = 'about' in service ? service.about : undefined
+  const faqs = 'faqs' in service ? service.faqs : undefined
+
   return (
     <>
       <BreadcrumbSchema
@@ -115,6 +122,7 @@ export default async function ServicePage({
           },
         ]}
       />
+      {faqs && faqs.length > 0 && <FaqSchema items={[...faqs]} />}
       <PageHero
         eyebrow={service.title}
         title={service.h1}
