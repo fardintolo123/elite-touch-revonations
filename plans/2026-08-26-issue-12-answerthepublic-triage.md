@@ -108,7 +108,14 @@ or improving any page is a separate, owner-confirmed next step.
 - [x] Confirmed no `/blog` route exists yet
 - [x] Triaged all 10 clusters individually against real GKP evidence and D-01 service scope
 - [x] Verdict recorded in `DECISIONS.md` (D-106, D-107)
-- [ ] Owner sign-off on which (if any) of the two "moves" above to build/improve
-- [ ] If approved: powder-room page improved and/or priority-7 buyer-support guide(s) built, gated
-      through `CONTENT_QUALITY_CHECKLIST.md` and `SEO_AEO_GEO_CHECKLIST.md`
+- [x] Powder-room page improved (2026-08-27, owner: "go ahead"): real "about" paragraph (small
+      1.5–3 m² footprint) + 4-question FAQ block + `FAQPage` schema, added only to
+      `powder-room-renovations` via new optional `about`/`faqs` fields in `lib/businessInfo.ts` and
+      rendered in `app/services/[slug]/page.tsx`. All content sourced from
+      `docs/source-copy/svc-powder.md` — nothing invented. `npm run build` verified at 30 routes; new
+      copy + schema confirmed present in served HTML on `/services/powder-room-renovations/`; the
+      other three service pages verified unchanged. Recorded as D-107.
+- [ ] Priority-7 buyer-support guide(s) (process / fixed-price-vs-hourly / hiring-a-licensed-renovator)
+      remain a later-priority candidate, not built this session — priorities 1–6 come first per
+      `docs/SEO_CONTENT_GUIDE.md` §2.
 - [ ] Issue #12 closed with a link to this plan and the decision rows

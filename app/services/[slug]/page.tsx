@@ -134,6 +134,14 @@ export default async function ServicePage({
         }
       />
 
+      {about && (
+        <section className="et-section et-band-surface">
+          <div className="et-container">
+            <p className="et-lead et-measure">{about}</p>
+          </div>
+        </section>
+      )}
+
       <section className="et-section et-band-canvas">
         <div className="et-container">
           <div className="et-grid et-grid-2">
@@ -295,6 +303,41 @@ export default async function ServicePage({
           </div>
         </div>
       </section>
+
+      {faqs && faqs.length > 0 && (
+        <section className="et-section et-band-surface">
+          <div className="et-container">
+            <div className="et-stack">
+              <span className="et-eyebrow">FAQ</span>
+              <h2 className="et-h2 et-measure-tight">
+                Frequently asked questions about {service.title.toLowerCase()}
+              </h2>
+            </div>
+            <div
+              className="et-stack"
+              style={{ marginTop: 'var(--et-space-8)', gap: 'var(--et-space-4)' }}
+            >
+              {faqs.map((item) => (
+                <details key={item.question} className="et-card">
+                  <summary className="et-h4" style={{ cursor: 'pointer' }}>
+                    {item.question}
+                  </summary>
+                  <p
+                    className="et-body-sm"
+                    style={{
+                      marginTop: 'var(--et-space-4)',
+                      color: 'var(--et-text-secondary)',
+                    }}
+                  >
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <WorkStrip
         title="Bathrooms we have finished"
         intro="Our own photographs, with the suburb each job was in."
