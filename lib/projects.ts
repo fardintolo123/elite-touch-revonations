@@ -67,7 +67,7 @@ export const projects: readonly Project[] = [
     name: 'Artarmon bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'Brushed gold fixtures with warm, sandy-toned tiles for a rich, easy feel. A freestanding bath makes a calm focal point, and a wall-hung vanity keeps the floor clear and the room open.',
+      'Brushed gold taps and warm, sandy tiles give the room a rich, easy feel. A freestanding bath sits at the centre, calm and simple, and a wall-hung vanity keeps the floor clear and the room open.',
     images: [
       {
         src: `${DIR}/artarmon-bathroom/full-room-shower-toilet.webp`,
@@ -113,7 +113,7 @@ export const projects: readonly Project[] = [
     name: 'Castle Hill bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A bright, modern family bathroom in soft neutral tones and natural textures. Light wood, soft greys and crisp whites, with brushed nickel tapware. Large-format tiles open the space up, with a frameless glass shower.',
+      'A bright, modern family bathroom in soft, neutral tones with real wood and stone textures. Light wood, soft grey and crisp white pair with brushed nickel taps. Large tiles open up the space, with a frameless glass shower.',
     images: [
       {
         src: `${DIR}/castle-hill-bathroom/double-vanity-led-mirror.webp`,
@@ -159,7 +159,7 @@ export const projects: readonly Project[] = [
     name: 'Hornsby bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A bold, timeless black-and-white scheme. Crisp marble-look walls and deep black fixtures make a sharp contrast. A frameless shower and wall-hung vanity keep the room neat, with lots of hidden storage.',
+      'A bold, timeless black-and-white look. Crisp marble-style walls and deep black fittings make a sharp contrast. A frameless shower and wall-hung vanity keep the room neat, with lots of hidden storage.',
     images: [
       {
         src: `${DIR}/hornsby-bathroom/vanity-marble-storage-tower.webp`,
@@ -193,7 +193,7 @@ export const projects: readonly Project[] = [
     name: 'Hornsby ensuite renovation',
     service: 'Ensuite renovation',
     blurb:
-      'The ensuite to the same home carries the black-and-white design through, so both rooms read as one scheme. A frameless shower and a wall-hung vanity keep the small room feeling open.',
+      "This ensuite continues the same home's black-and-white look, so both rooms feel like one. A frameless shower and a wall-hung vanity keep the small room feeling open.",
     images: [
       {
         src: `${DIR}/hornsby-ensuite/vanity-window-greenery.webp`,
@@ -215,7 +215,7 @@ export const projects: readonly Project[] = [
     name: 'Randwick bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A stylish family bathroom in a neutral colour scheme, with matte black fittings for a modern edge. A custom angled shower screen is the standout design feature. The wall-hung vanity keeps the room open, with daily storage.',
+      'A stylish family bathroom in soft, neutral tones, with matte black fittings for a modern look. A custom angled shower screen is the standout feature. The wall-hung vanity keeps the room open, with daily storage.',
     images: [
       {
         src: `${DIR}/randwick-bathroom/shower-vanity-round-mirror.webp`,
@@ -249,7 +249,7 @@ export const projects: readonly Project[] = [
     name: 'Balmain bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A concrete-look bathroom with warm timber-look floors for contrast. A custom vanity with a matching tall storage cabinet keeps everything tidy, and a freestanding bath anchors the room.',
+      'A concrete-look bathroom with warm, timber-look floors for contrast. A custom vanity and a matching tall cabinet keep things tidy, and a freestanding bath anchors the room.',
     images: [
       {
         src: `${DIR}/balmain-bathroom/vanity-bath-window.webp`,
@@ -283,7 +283,7 @@ export const projects: readonly Project[] = [
     name: 'Gladesville bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A crisp white bathroom finished in classic subway tiles, with a frameless glass shower and a floating vanity that keeps the floor open.',
+      'A crisp white bathroom in classic subway tiles. A frameless glass shower and a floating vanity keep the floor clear and the room bright.',
     images: [
       {
         src: `${DIR}/gladesville-bathroom/full-room-toilet-tub-vanity.webp`,
@@ -323,7 +323,7 @@ export const projects: readonly Project[] = [
     name: 'Little Bay bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A bright white bathroom with a statement turquoise vessel basin and a freestanding bath. Timber plantation shutters and a frameless shower keep the room feeling open.',
+      'A bright white bathroom with a bold turquoise basin and a freestanding bath. Timber shutters and a frameless shower keep the room feeling open.',
     images: [
       {
         src: `${DIR}/little-bay-bathroom/shower-vanity-tub-wide.webp`,
@@ -381,7 +381,7 @@ export const projects: readonly Project[] = [
     name: 'Hunters Hill bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'Full-height marble-look tiling, a custom double vanity and a freestanding bath beneath plantation shutters. Matte black fixtures throughout for a sharp, contemporary finish.',
+      'Full-height marble-look tiles, a double vanity and a freestanding bath beneath timber shutters. Matte black fittings throughout give it a sharp, modern finish.',
     images: [
       {
         src: `${DIR}/hunters-hill-bathroom/freestanding-bath-shutters.webp`,
@@ -427,7 +427,7 @@ export const projects: readonly Project[] = [
     name: 'The Rocks heritage bathroom renovation',
     service: 'Bathroom renovation',
     blurb:
-      'A bathroom in a heritage terrace, built around an original leadlight window. A freestanding bath, patterned floor tiles and a frameless shower bring a modern finish without losing the character of the house.',
+      'A bathroom in a heritage terrace, built around an original leadlight window. A freestanding bath, patterned floor tiles and a frameless shower bring a modern finish, but the house still feels like itself.',
     images: [
       {
         src: `${DIR}/the-rocks-bathroom/shower-window-tub-wide.webp`,
@@ -461,7 +461,7 @@ export const projects: readonly Project[] = [
     name: 'Artarmon bathroom and ensuite renovation',
     service: 'Ensuite renovation',
     blurb:
-      'A bathroom and ensuite renovated together for a cohesive, contemporary finish. Charcoal stone-look tiles, a round LED backlit mirror and warm terracotta towels give the double vanity and frameless showers a distinctive touch.',
+      'A bathroom and ensuite done together for one clear, modern look. Charcoal stone-look tiles, a round LED mirror and warm terracotta towels give the double vanity and frameless showers their own style.',
     images: [
       {
         src: `${DIR}/artarmon-bathroom-ensuite/double-vanity-corner-window.webp`,

@@ -172,8 +172,14 @@ export default async function ProjectPage({
                   />
                 </span>
                 <span className="et-badge-suburb">{item.suburb}</span>
+                {/* Short room-type label, not the full project name — the
+                    suburb badge above already carries the location, and
+                    repeating "renovation" ten times on this grid alone was
+                    the single biggest drag on this page's readability score
+                    (docs/CONTENT_QUALITY_CHECKLIST.md §2). The full name is
+                    still the page title and H1 one click away. */}
                 <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
-                  {item.name}
+                  {item.service.replace(/ renovation$/i, '')}
                 </h3>
               </Link>
             ))}
