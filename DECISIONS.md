@@ -300,6 +300,21 @@ other third-party suggestion (D-85–D-92, D-104/D-105). Full detail:
 
 ---
 
+## 3l. Intake of GitHub issue #10 (2026-08-29) — Webflow "AEO Assessment" tool report
+
+Issue #10 ("aeo") is a single screenshot of Webflow's own marketing lead-gen tool
+(webflow.com/aeo — a **"NEW"** product per Webflow's own footer), scoring
+elitetouchrenovations.au "2 out of 5" and listing broken links, thin content, and missing
+Organization schema as top priorities. Applied `docs/SEO_CONTENT_GUIDE.md`'s Report-intake rules,
+same standard as every prior third-party report (D-85–D-92, D-104–D-107). Full detail:
+`plans/2026-08-29-issue-10-webflow-aeo-triage.md`.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-110** | **The report is rejected as written — no fix applied for broken links, missing Organization schema, or thin content, and K4 (analytics) is NOT newly urgent.** | **AGENT** | Every checkable claim was independently re-verified against the live site and the real codebase, not taken on trust: (1) *"Very high broken-link rate"* — a live crawl of all 21 real internal URLs (home, packages, about-us, contact-us, gallery, services, all 11 gallery projects, all 4 service pages) returned **200 on every one**; the only non-200 hits were expected `308` trailing-slash redirects, a deliberate, documented design choice (D-41), not a defect. (2) *"No Organization schema markup"* on `/`, `/packages`, `/about-us`, `/contact-us`, `/gallery` — **false**: `app/layout.tsx` renders `localBusinessSchema` sitewide with `'@type': ['HomeAndConstructionBusiness', 'Organization']`, dual-typed specifically because GitHub issue #8's GEO audit raised this identical false positive before. The report's own "Schema Coverage Percentage" chart elsewhere in the same document shows **100%**, directly contradicting its own per-page "Pages to fix" list — the report is internally inconsistent, not just wrong. (3) *"6 content pages averaging ~190 words"* — **false by 2–10×**: live word counts on the same six flagged pages are 373–1809 words. (4) *"Google Analytics 4 in place, covering about a third of your pages"* — **false**: no analytics tag, GTM snippet, or `@vercel/analytics` dependency exists anywhere in the deployed code; `PROJECT_CONTEXT.md` K4 already tracks analytics as an **open, unresolved** owner+agent decision, and this report's premise that GA4 is already partially deployed is simply wrong for this site. Per `docs/SEO_CONTENT_GUIDE.md` §3 rule 1 ("several 'issues' are deliberate architecture"), and consistent with every prior third-party-report triage in this repo, a report whose specific, checkable claims are this consistently contradicted by the live site is not a basis for new work. **Reopen if:** a future audit tool identifies a *specific, verifiable* broken URL, a page whose served HTML genuinely lacks the schema `<script>` tag, or a genuine word-count regression on a *named* page — checked the same way this one was, not taken on the tool's own summary score. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |
