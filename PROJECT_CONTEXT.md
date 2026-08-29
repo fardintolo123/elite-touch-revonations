@@ -317,17 +317,18 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    when it's unset, `lib/actions.ts` sets its module-level `supabase` client to `null` and the
    insert is skipped (not attempted, not logged as an error). The `enquiries` table has RLS enabled
    with no insert policy, so the `anon` key could not write to it even if used instead.
-18. **`.next/` is a shared build directory and this repo is regularly worked by several agent
-   sessions at once** (Git Workflow's "never `git add -A`" warning is the same fact). A `next start`
-   left running gets its served output silently corrupted the moment another session's `next build`
-   lands underneath it — no crash, no error, just wrong content (a homepage that suddenly measures
-   4,600 words instead of 700) or routes 404ing that build fine moments later. It is NOT evidence
-   your own change broke something. Prefer reading `.next/server/app/**.html` straight off disk
-   (`scripts/check-readability.mjs` does this) over holding a live server open — a single file read
-   right after your own build has a far smaller collision window than a server process sitting
-   there for the next several commands. If you do need `next start`, treat any unexplained 404 or
-   nonsense content as a possible collision and re-build-and-recheck once before debugging your own
-   code.
+20. **`.next/` is a shared build directory and this repo is regularly worked by several agent
+    sessions at once** (Git Workflow's "never `git add -A`" warning is the same fact). A `next start`
+    left running gets its served output silently corrupted the moment another session's `next build`
+    lands underneath it — no crash, no error, just wrong content (a homepage that suddenly measures
+    4,600 words instead of 700) or routes 404ing that build fine moments later. It is NOT evidence
+    your own change broke something. Prefer reading `.next/server/app/**.html` straight off disk
+    (`scripts/check-readability.mjs` does this) over holding a live server open — a single file read
+    right after your own build has a far smaller collision window than a server process sitting
+    there for the next several commands. If you do need `next start`, treat any unexplained 404 or
+    nonsense content as a possible collision and re-build-and-recheck once before debugging your own
+    code.
+21. **Related-projects card labels are shortened to room-types** (e.g. "Bathroom" / "Ensuite") in the "Other work of ours" grid on `/gallery/{slug}/` pages (D-109). This is a deliberate UI/content rule to prevent the 4-syllable word "renovation" from repeating 10 times in the grid on every gallery page, which would single-handedly fail the Flesch readability gate (K15). The full project name is still the page H1, title and meta description, and the suburb badge still sits on the card.
 
 ### How it is verified
 

@@ -62,6 +62,10 @@ delete real content to raise a score.**
 substrate, PC items, back-to-wall pan. Define them the first time in a half-sentence. Precision is a
 trust signal in this trade; vagueness is not.
 
+> [!TIP]
+> **Check shared/repeated elements first when a whole page-class fails the readability gate identically.**
+> A repeated shared component (like a related-projects grid or repeated card links) that contains multi-syllable keywords can single-handedly fail a page class's Flesch gate, even if the unique body prose passes. In such cases, shortening repeated card/list labels (e.g., using a short room-type label like "Bathroom" instead of the full project name) resolves the issue without deleting any real content.
+
 ---
 
 ## 3. Structure
