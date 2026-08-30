@@ -315,6 +315,22 @@ same standard as every prior third-party report (D-85–D-92, D-104–D-107). Fu
 
 ---
 
+## 3m. Intake of GitHub issue #16 (2026-08-30) — GSC "why pages aren't indexed" report
+
+Issue #16 ("fix it") is a pasted ChatGPT (gpt-5) analysis of a Google Search Console
+"Page indexing → not indexed" export of **4 URLs**: `elitetouchrenovations.au/services/` (non-www),
+`/elementor-hf/header/`, `/elementor-hf/footer/`, `/feed/`. ChatGPT's own verdict in the paste:
+don't chase the count 4 → 0, only `/services/` is worth SEO time, the other 3 are normal
+WordPress/Elementor artifacts. Applied `docs/SEO_CONTENT_GUIDE.md` Report-intake rules +
+`docs/SEO_AEO_GEO_CHECKLIST.md` Phases 0 & 2, same standard as every prior third-party report.
+Full detail: `plans/2026-08-30-issue-16-gsc-not-indexed-triage.md`.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-111** | **The report is rejected as written — no code change. `/services/` is fully indexable and correctly configured; the two `/elementor-hf/*` URLs already return a deliberate 410 + `noindex`; `/feed/` returns 404. Nothing is broken.** | **AGENT** | The report's premise is stale: 3 of the 4 URLs only ever existed on the **old WordPress site**, which ETR migrated off (D-40 / D-68). This GSC export shows Google's memory of the old site, not a fault in the current Next.js site — the exact migration-cleanup case `proxy.ts` and `MIGRATION.md` §6 were built for. ChatGPT guessed the URL categories correctly but never fetched them and did not know ETR is no longer on WordPress, so its "check your Elementor/WordPress indexing settings" framing does not apply. Every URL was fetched live (Googlebot UA): (1) **`/services/` → HTTP 200**, `<meta name="robots" content="index, follow">`, self-canonical, in `sitemap.xml`, linked from the main nav on every page, ~1,200 words of unique content (hero + 4 service cards + work strip + contact). Nothing blocks indexation — no noindex, no canonical error, no robots block, not thin, not orphaned. Its GSC "not indexed" status is the normal **"Crawled – currently not indexed"** holding state a migrated domain sits in until Google grants a slot; the remedies are time, internal links (already present) and inbound authority — not a technical fix. The GSC row is the *non-www* form, which correctly **308**s to the www canonical (D-68) — that URL *should* be "not indexed." (2) **`/elementor-hf/header/` and `/elementor-hf/footer/` → HTTP 410 Gone + `X-Robots-Tag: noindex`** — already handled in `proxy.ts` at migration time for exactly these two URLs; 410 is the strongest "drop permanently" signal, and the `elementor-hf-sitemap.xml` that published them now 404s. (3) **`/feed/` → HTTP 404** — the Next.js site has no RSS route; 404 keeps it out of the index. Consistent with D-85–D-92, D-104–D-107, D-110: tool output is checked against the live site, and where the live site is already correct, no work is manufactured. **Reopen if:** `/services/` is still absent from `site:elitetouchrenovations.au/services/` 3+ months from now **and** GSC shows a specific, verifiable technical cause (a real noindex tag, a wrong canonical, a robots block) checked live — not a tool's summary; **or** a *new* crop of machine-generated URLs appears in GSC that is not WordPress legacy and not already 410'd, i.e. something the current Next.js site is actually emitting. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |
