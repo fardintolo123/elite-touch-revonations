@@ -82,6 +82,8 @@ the page is a separate, owner-confirmed next step.
 - [x] Confirmed no `/blog` route or FAQ schema exists yet
 - [x] Triaged each of the three topics individually against real pricing facts and GKP evidence
 - [x] Verdict recorded in `DECISIONS.md` (D-104, D-105)
-- [ ] Owner sign-off to build the cost/pricing guide page
-- [ ] Page built, gated through `CONTENT_QUALITY_CHECKLIST.md` and `SEO_AEO_GEO_CHECKLIST.md`
-- [ ] Issue #11 closed with a link to this plan and the decision rows
+- [x] Owner sign-off — owner said "1" to fold all three topics into `/packages/` rather than a new
+      cost page (session-history `2026-08-29-issue-11-cost-guide-and-gallery-readability.md`)
+- [x] Content shipped into `app/packages/page.tsx` on 2026-08-27 (cost-question sections + FAQ block
+      + `FAQPage` schema); build, typecheck, readability and served-HTML checks run and passed
+- [x] Issue #11 closed 2026-08-31 as completed, with a comment linking this plan and D-104/D-105
