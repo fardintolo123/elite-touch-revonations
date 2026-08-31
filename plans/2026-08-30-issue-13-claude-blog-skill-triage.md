@@ -103,7 +103,8 @@ checked the same way every other content decision on this site has been.
 - [x] Confirmed no `/blog` route in `app/` and no `plans/` line calling for a blog
 - [x] Checked `DECISIONS.md` D-86/D-88/D-104/D-105/D-106/D-107 — blog is a candidate, not a commitment
 - [x] Assessed fabrication risk against the standing Business Rules (legal claims, 19 real reviews)
-- [ ] Verdict recorded in `DECISIONS.md` (next number **D-112** — DECISIONS.md currently has
-      uncommitted D-111 from the issue #16 session; add D-112 once that lands to avoid a merge mess)
-- [ ] Issues #13 and #14 closed (or #13 renamed) with a link to this plan
+- [x] Issues #13 and #14 closed ("not planned", 2026-08-31) with a comment linking this plan;
+      #14 closed as a duplicate of #13
+- [ ] Verdict recorded in `DECISIONS.md` as **D-112** (D-111 from the issue #16 session has now
+      landed in commit `cc5cf3c`, so the tree is clear — true max is D-111)
 - [ ] Owner decision on point 5 (review what `install.ps1` did) — optional

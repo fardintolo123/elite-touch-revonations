@@ -18,7 +18,7 @@ A separate, later-supplied folder (`C:\Users\Administrator\Downloads\Projects Be
 outside the repo) — 9 named projects, 38 photos, each with a written Project Info doc (budget,
 timeframe, scope of works, outcome). Full triage in
 [plans/2026-08-25-new-project-photos-intake.md](../plans/2026-08-25-new-project-photos-intake.md);
-decisions in [DECISIONS.md](../DECISIONS.md) §3i (D-99–D-103); open items in
+decisions in [DECISIONS.md](../DECISIONS.md) §3j (D-99–D-103); open items in
 [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K14.
 
 **Status: consent confirmed by the user 2026-08-25. Detect → Inventory → Verify → Flag → Approve →

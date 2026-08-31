@@ -299,9 +299,24 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 14. **The form's JS is on every route** because `ContactSection` is on every page (D-80). Homepage
    JS is **179 KB gzipped — over the ≤150 KB shared-route budget line.** Accepted deliberately.
    Slim the form if it must come down; do not strip the form from pages.
-15. **Analytics and call tracking are NOT installed** (K4). When they are: one measurement path
-   only (D-32), and every call CTA is already a real `tel:` anchor (D-33) — verified as 4 anchors
-   and 0 `<button>` call CTAs — so a single delegated listener is all that is needed.
+15. **Analytics: GTM-MVGQB9FW is installed** (K4 closed — 2026-08-31). Architecture: Website →
+   GTM → Google tag (G-06GQGHHP0X) → GA4. One measurement path (D-32). The standalone Google
+   tag GT-MBNT4TKH is NOT installed — it would create a duplicate path. GTM container holds:
+   - **Tags:** GA4 - Google tag (Initialization - All Pages) · GA4 Event - phone_call_click
+     (Click - Phone Call) · GA4 Event - email_click (Click - Email) · GA4 Event - generate_lead
+     (Form Submit - Contact)
+   - **Triggers:** Click - Phone Call (Just Links, Click URL starts with tel:) · Click - Email
+     (Just Links, Click URL starts with mailto:) · Form Submit - Contact (Form Submission, Page
+     URL contains /contact-us/)
+   - **Variables:** Click Element · Click URL · Click Text · Form ID (all built-in)
+   GTM snippet is in `app/layout.tsx` (Script strategy="afterInteractive" + noscript iframe).
+   Container ID in `.env.local` as NEXT_PUBLIC_GTM_ID. All call CTAs are real `tel:` anchors
+   (D-33) — verified 4 anchors, 0 button CTAs — so a single delegated listener is all that
+   is needed. **GTM Version 2 published 2026-08-31** — confirmed in Tag Assistant: base tag
+   fires on page load, 2 Google tags detected (GTM-MVGQB9FW + G-06GQGHHP0X), source
+   "On-page gtm.js snippet". Remaining: (1) mark phone_call_click + generate_lead as key
+   events in GA4 console; (2) add NEXT_PUBLIC_GTM_ID=GTM-MVGQB9FW to Vercel environment
+   variables; (3) owner redeploys to Vercel (D-35).
 16. **`.et-hero-media` is a fixed 4/3 ratio at every breakpoint** (D-84). Every source photo in
    `lib/projects.ts` is landscape (~3/2) — do not reintroduce a portrait override for "desktop
    polish"; that exact change was the reported crop bug.

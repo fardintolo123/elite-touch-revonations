@@ -177,20 +177,6 @@ preserved at `docs/source-copy/pdf/topic-gap-report-2026-08-10.pdf`. Applied
 
 ---
 
-## 3g. Intake of GitHub issues #7 and #8 (2026-08-23) — llms.txt and a third-party GEO audit
-
-Full triage in `plans/2026-08-23-issue-8-geo-audit-triage.md`. Issue #8's source PDF is preserved
-at `docs/source-copy/pdf/geo-audit-report-2026-08-20.pdf`. Applied `docs/SEO_CONTENT_GUIDE.md`'s
-Report-intake rules to issue #8; issue #7 is a direct build task, not a report.
-
-| # | Decision | Status | Why · alternatives rejected |
-|---|---|---|---|
-| **D-90** | **`/llms.txt` is deployed** (`app/llms.txt/route.ts`), generated from the same `lib/` data the sitemap reads — never hand-typed. Closes issue #7. | **AGENT** | Issue #7's own body was an unusable AI-generated draft: leftover model chatter ("Please let me know which one to keep"), stray ` ```python ` fences, and repeated Title:/Description: blocks. None of it is real page copy, so none of it shipped (CLAUDE.md: never invent or launder a fact). Instead the route pulls `service.summary`, `project.blurb`, `publishedRegions()` and the four static page descriptions verbatim from what each page's own `metadata.description` already says — an entry here can never claim something the site itself does not. |
-| **D-91** | **Of the GEO audit's four "priority actions," two are adopted (`llms.txt`, `Organization` schema) and two are REJECTED as unreliable — not actioned as written.** | **AGENT** | The report's own Brand Authority section (36/100, the second-largest weight in its scoring formula at 20%) states **"Brand searched: au"** — not "Elite Touch Renovations". The tool mis-parsed the brand entity from the single-label domain `elitetouchrenovations.au`, so every downstream result in that section is a false positive against an unrelated "au" brand: a YouTube channel `@au` that is not ETR's real channel (`@EliteTouchRenovations`, already live in `businessInfo.socialProfiles` and already in the site's `sameAs`), and "5 GitHub repos" that have nothing to do with a bathroom renovation business. **"Create a Wikidata entity" and "Build organic Reddit presence" are rejected** — both rest entirely on that broken query, and both are marketing/resourcing initiatives an SEO report cannot settle by itself in any case (owner question, same principle as service-scope). The report's separate AI Platform Readiness table (all five platforms at 0/100 "Weak") also directly contradicts its own category breakdown two sections earlier (66/100 "Fair" for the same "Platform Readiness" category) — the report explicitly labels both `content_eeat` and `platform` as **"deterministic estimates"** because *"AI analysis was unavailable during this audit."* Not real signal. Its one Core Web Vitals deduction (INP, -2) is separately self-labelled *"estimated from script count — not real field data,"* and D-80 already documents the one known script-count driver and its accepted trade-off — no new evidence here to reopen that. |
-| **D-92** | **`Organization` and `WebSite` schema shipped; `BreadcrumbList` shipped on all 8 non-home page types.** | **AGENT** | These three were the report's *Schema Markup* findings that survived triage — genuinely missing, real, and buildable with zero invented facts. `Organization` is added as a second literal `@type` value alongside the existing `HomeAndConstructionBusiness` node (`app/layout.tsx`) — schema.org already treats one as a subtype of the other, but a validator or AI crawler that string-matches `@type` rather than resolving the class hierarchy will not credit the inheritance, which is exactly what the report flagged. `WebSite` is added **without** a `SearchAction` — the site has no on-site search, and a fabricated search target would misrepresent a capability that does not exist; the report's "WebSite + SearchAction" bundle recommendation was only half-adopted for that reason. `BreadcrumbList` (`components/BreadcrumbSchema.tsx`) is mechanically derived from each page's real position in the existing route tree (D-71's `/services/bathroom-renovations/{region}/` nesting included) — structured data only, no new visible UI added. Verified: all three appear in the served HTML on every route touched, `npm run build` stayed at 24 routes, and all 34 `verify:redirects` checks still pass. |
-
----
-
 ## 3f. Intake of GitHub issue #4 (2026-08-23) — second third-party "topic gap" report
 
 Issue #4 ("gaps"), filed the same day as issue #3, attached a second third-party "Topic Gap
@@ -207,7 +193,22 @@ same `HeyTony.ca` content-strategy pitch). Full triage in
 
 ---
 
-## 3g. Intake of GitHub issue #5 (2026-08-23) — third-party Lighthouse/PageSpeed report
+## 3g. Intake of GitHub issues #7 and #8 (2026-08-23) — llms.txt and a third-party GEO audit
+
+Full triage in `plans/2026-08-23-issue-8-geo-audit-triage.md`. Issue #8's source PDF is preserved
+at `docs/source-copy/pdf/geo-audit-report-2026-08-20.pdf`. Applied `docs/SEO_CONTENT_GUIDE.md`'s
+Report-intake rules to issue #8; issue #7 is a direct build task, not a report. **`D-89` is a
+deliberate gap** — see the reconciliation note at the end of §3h.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-90** | **`/llms.txt` is deployed** (`app/llms.txt/route.ts`), generated from the same `lib/` data the sitemap reads — never hand-typed. Closes issue #7. | **AGENT** | Issue #7's own body was an unusable AI-generated draft: leftover model chatter ("Please let me know which one to keep"), stray ` ```python ` fences, and repeated Title:/Description: blocks. None of it is real page copy, so none of it shipped (CLAUDE.md: never invent or launder a fact). Instead the route pulls `service.summary`, `project.blurb`, `publishedRegions()` and the four static page descriptions verbatim from what each page's own `metadata.description` already says — an entry here can never claim something the site itself does not. |
+| **D-91** | **Of the GEO audit's four "priority actions," two are adopted (`llms.txt`, `Organization` schema) and two are REJECTED as unreliable — not actioned as written.** | **AGENT** | The report's own Brand Authority section (36/100, the second-largest weight in its scoring formula at 20%) states **"Brand searched: au"** — not "Elite Touch Renovations". The tool mis-parsed the brand entity from the single-label domain `elitetouchrenovations.au`, so every downstream result in that section is a false positive against an unrelated "au" brand: a YouTube channel `@au` that is not ETR's real channel (`@EliteTouchRenovations`, already live in `businessInfo.socialProfiles` and already in the site's `sameAs`), and "5 GitHub repos" that have nothing to do with a bathroom renovation business. **"Create a Wikidata entity" and "Build organic Reddit presence" are rejected** — both rest entirely on that broken query, and both are marketing/resourcing initiatives an SEO report cannot settle by itself in any case (owner question, same principle as service-scope). The report's separate AI Platform Readiness table (all five platforms at 0/100 "Weak") also directly contradicts its own category breakdown two sections earlier (66/100 "Fair" for the same "Platform Readiness" category) — the report explicitly labels both `content_eeat` and `platform` as **"deterministic estimates"** because *"AI analysis was unavailable during this audit."* Not real signal. Its one Core Web Vitals deduction (INP, -2) is separately self-labelled *"estimated from script count — not real field data,"* and D-80 already documents the one known script-count driver and its accepted trade-off — no new evidence here to reopen that. |
+| **D-92** | **`Organization` and `WebSite` schema shipped; `BreadcrumbList` shipped on all 8 non-home page types.** | **AGENT** | These three were the report's *Schema Markup* findings that survived triage — genuinely missing, real, and buildable with zero invented facts. `Organization` is added as a second literal `@type` value alongside the existing `HomeAndConstructionBusiness` node (`app/layout.tsx`) — schema.org already treats one as a subtype of the other, but a validator or AI crawler that string-matches `@type` rather than resolving the class hierarchy will not credit the inheritance, which is exactly what the report flagged. `WebSite` is added **without** a `SearchAction` — the site has no on-site search, and a fabricated search target would misrepresent a capability that does not exist; the report's "WebSite + SearchAction" bundle recommendation was only half-adopted for that reason. `BreadcrumbList` (`components/BreadcrumbSchema.tsx`) is mechanically derived from each page's real position in the existing route tree (D-71's `/services/bathroom-renovations/{region}/` nesting included) — structured data only, no new visible UI added. Verified: all three appear in the served HTML on every route touched, `npm run build` stayed at 24 routes, and all 34 `verify:redirects` checks still pass. |
+
+---
+
+## 3h. Intake of GitHub issue #5 (2026-08-23) — third-party Lighthouse/PageSpeed report
 
 Issue #5 ("free-seo-audit") attached two screenshots of a Lighthouse-style report (no URL, no body
 text; a third attachment failed to upload). Four items visible: "Reduce unused JavaScript" (29 KiB),
@@ -221,19 +222,23 @@ Report-intake rules and `docs/PERFORMANCE_BUDGET.md`'s regression process.
 | **D-94** | **Removed `priority` from the header logo (`components/layout/SiteHeader.tsx`) — every page was shipping two high-priority image preloads instead of one.** | **AGENT** | `docs/PERFORMANCE_BUDGET.md` rule 16 caps high-priority preloads at one per page and explicitly names this exact failure mode ("a high-priority preload on a 40 px logo competed with a hero photo and measurably hurt LCP") — it had regressed back into the code. Confirmed via the served HTML: the homepage preloaded both `etr-mark.webp` (header, every page) and the Castle Hill hero photo. ⚠️ **`loading="eager"` alone does not fix this** — verified against `next/image`'s source and then empirically against the built output that `loading="eager"` *without* `priority` still emits the preload link. The only combination with no competing preload is the plain default (no `priority`, no explicit `loading`), which renders as native `loading="lazy"` — harmless here because the logo sits at the very top of the viewport on every page and is fetched immediately in practice. The "LCP request discovery" audit did not reproduce as a failure against a local production build in this session, but this is the one finding in the report that matches a real, previously-flagged architecture rule, so it was fixed regardless of local reproduction. |
 | **D-95** | **First Lighthouse baseline recorded** in `docs/PERFORMANCE_BUDGET.md` §4 — previously empty ("no measurements yet"). | **AGENT** | Measured against a local production build (`next build` + `next start`), not the live Vercel deployment, because that deployment is behind Vercel's own login/SSO (see **O-11**) and could not be audited anonymously. Three runs taken per the runbook's "never trust a single run" rule; the first showed a 420ms TBT spike from shared-VM noise, runs 2–3 (Perf 93–94, TBT 90–100ms) are the representative baseline. All runs clear every `docs/PERFORMANCE_BUDGET.md` §1 gate. **This baseline should be replaced with a real measurement against the live domain once DNS points at Vercel** — a local build cannot capture real CDN/edge latency. |
 
-⚠️ **Pre-existing, unrelated to this triage:** `DECISIONS.md` still contains a duplicate `D-87`/`D-88`
-(the issue #4 gap-report rejection reuses numbers already spent on the issue #7/#8 GEO-audit entries,
-which actually landed at `D-90`–`D-92`). Not renumbered here — that is a wider edit than this issue
-warrants and every existing cross-reference would need checking. Flagged so a future pass doesn't
-assume the highest visible number in a section is the highest number in the file; `D-93`–`D-95`
-above were chosen by grepping the whole file for the true maximum, not by reading the nearest
-section. (The duplicate `D-85` this note used to flag — llms.txt vs. the issue-#3 gap-report
-rejection — has been resolved: the orphaned llms.txt row duplicated what D-90 already documents in
-full, so it was deleted rather than renumbered.)
+⚠️ **Section-letter and numbering reconciliation, 2026-08-31.** Issues #3, #4, #5, #7 and #8 were all
+worked on the same day (2026-08-23) by several concurrent sessions editing this file at once. They
+collided: two different sections ended up both labelled `3g`, and `3f` sat *after* `3g` in the file.
+Fixed by putting the sections back in decision-number order (#3 → #4 → #7/#8 → #5 → #9 → …) and
+relabelling `3f`–`3n` in sequence. **`D-89` is a deliberate gap and is not reassigned** — the issue
+#7/#8 session first drafted its entries as `D-87`–`D-89`, hit a collision with the issue #4 session's
+`D-87`/`D-88`, and renumbered itself up to `D-90`–`D-92`, leaving `D-89` unused. Nothing references
+`D-89`, and renumbering `D-90`–`D-92` down now would touch many live cross-references for no benefit,
+so the gap stays. (The duplicate `D-85` this note used to also flag — llms.txt vs. the issue-#3
+gap-report rejection — was resolved earlier: the orphaned llms.txt row duplicated what D-90 already
+documents in full, so it was deleted.) **Lesson, unchanged:** before adding a `DECISIONS.md` number
+or section letter, grep the whole file for the true maximum — a concurrent session may hold the real
+highest value in a different section.
 
 ---
 
-## 3h. Intake of GitHub issue #9 (2026-08-23) — "make sure readability of each page is 60"
+## 3i. Intake of GitHub issue #9 (2026-08-23) — "make sure readability of each page is 60"
 
 Issue #9's body was a screenshot of a third-party SEO tool scoring `/packages/` at **Flesch Reading
 Ease 51.4** ("Fairly Difficult"), with "Word Complexity" flagged red. This is not a new rule —
@@ -249,7 +254,7 @@ bar. Full detail: `plans/2026-08-23-issue-9-readability.md`.
 
 ---
 
-## 3i. Second project-photo batch intake (2026-08-25)
+## 3j. Second project-photo batch intake (2026-08-25)
 
 A second, separate folder of project photography ("Projects Before & After (1)", outside the
 repo) was supplied: 9 projects, 38 photos, each with a written Project Info document. Full triage:
@@ -266,7 +271,7 @@ See also **PROJECT_CONTEXT.md K14**.
 
 ---
 
-## 3j. Intake of GitHub issue #11 (2026-08-26) — findquestions.com blog topic list
+## 3k. Intake of GitHub issue #11 (2026-08-26) — findquestions.com blog topic list
 
 Issue #11 ("questions for blogs") listed three question titles sourced from `findquestions.com`, a
 third-party "people also ask"-style question tool, with no volume/difficulty data attached to any of
@@ -281,7 +286,7 @@ third-party content suggestion this repo has triaged (D-85–D-92). Full detail:
 
 ---
 
-## 3k. Intake of GitHub issue #12 (2026-08-26) — AnswerThePublic "AI-Suggested Content Ideas" report
+## 3l. Intake of GitHub issue #12 (2026-08-26) — AnswerThePublic "AI-Suggested Content Ideas" report
 
 Issue #12 ("to improve seo") is a single screenshot of AnswerThePublic's Content Studio tool: 10 topic
 clusters, 2 keywords unlocked per cluster (20 of a claimed "50 content ideas"), the rest paywalled.
@@ -300,7 +305,7 @@ other third-party suggestion (D-85–D-92, D-104/D-105). Full detail:
 
 ---
 
-## 3l. Intake of GitHub issue #10 (2026-08-29) — Webflow "AEO Assessment" tool report
+## 3m. Intake of GitHub issue #10 (2026-08-29) — Webflow "AEO Assessment" tool report
 
 Issue #10 ("aeo") is a single screenshot of Webflow's own marketing lead-gen tool
 (webflow.com/aeo — a **"NEW"** product per Webflow's own footer), scoring
@@ -315,7 +320,7 @@ same standard as every prior third-party report (D-85–D-92, D-104–D-107). Fu
 
 ---
 
-## 3m. Intake of GitHub issue #16 (2026-08-30) — GSC "why pages aren't indexed" report
+## 3n. Intake of GitHub issue #16 (2026-08-30) — GSC "why pages aren't indexed" report
 
 Issue #16 ("fix it") is a pasted ChatGPT (gpt-5) analysis of a Google Search Console
 "Page indexing → not indexed" export of **4 URLs**: `elitetouchrenovations.au/services/` (non-www),
@@ -328,6 +333,17 @@ Full detail: `plans/2026-08-30-issue-16-gsc-not-indexed-triage.md`.
 | # | Decision | Status | Why · alternatives rejected |
 |---|---|---|---|
 | **D-111** | **The report is rejected as written — no code change. `/services/` is fully indexable and correctly configured; the two `/elementor-hf/*` URLs already return a deliberate 410 + `noindex`; `/feed/` returns 404. Nothing is broken.** | **AGENT** | The report's premise is stale: 3 of the 4 URLs only ever existed on the **old WordPress site**, which ETR migrated off (D-40 / D-68). This GSC export shows Google's memory of the old site, not a fault in the current Next.js site — the exact migration-cleanup case `proxy.ts` and `MIGRATION.md` §6 were built for. ChatGPT guessed the URL categories correctly but never fetched them and did not know ETR is no longer on WordPress, so its "check your Elementor/WordPress indexing settings" framing does not apply. Every URL was fetched live (Googlebot UA): (1) **`/services/` → HTTP 200**, `<meta name="robots" content="index, follow">`, self-canonical, in `sitemap.xml`, linked from the main nav on every page, ~1,200 words of unique content (hero + 4 service cards + work strip + contact). Nothing blocks indexation — no noindex, no canonical error, no robots block, not thin, not orphaned. Its GSC "not indexed" status is the normal **"Crawled – currently not indexed"** holding state a migrated domain sits in until Google grants a slot; the remedies are time, internal links (already present) and inbound authority — not a technical fix. The GSC row is the *non-www* form, which correctly **308**s to the www canonical (D-68) — that URL *should* be "not indexed." (2) **`/elementor-hf/header/` and `/elementor-hf/footer/` → HTTP 410 Gone + `X-Robots-Tag: noindex`** — already handled in `proxy.ts` at migration time for exactly these two URLs; 410 is the strongest "drop permanently" signal, and the `elementor-hf-sitemap.xml` that published them now 404s. (3) **`/feed/` → HTTP 404** — the Next.js site has no RSS route; 404 keeps it out of the index. Consistent with D-85–D-92, D-104–D-107, D-110: tool output is checked against the live site, and where the live site is already correct, no work is manufactured. **Reopen if:** `/services/` is still absent from `site:elitetouchrenovations.au/services/` 3+ months from now **and** GSC shows a specific, verifiable technical cause (a real noindex tag, a wrong canonical, a robots block) checked live — not a tool's summary; **or** a *new* crop of machine-generated URLs appears in GSC that is not WordPress legacy and not already 410'd, i.e. something the current Next.js site is actually emitting. |
+
+---
+
+## 3o. GTM / GA4 tracking architecture (2026-08-31)
+
+Full GTM + GA4 instrumentation from scratch. Container was empty; no tracking had ever been
+installed. Context: `PROJECT_CONTEXT.md` K4. Plan: `plans/2026-08-31-issue-15-seo-technical-audit.md`.
+
+| # | Decision | Status | Why · alternatives rejected |
+|---|---|---|---|
+| **D-112** | **Architecture: Website → GTM (GTM-MVGQB9FW) → Google tag → GA4 (G-06GQGHHP0X). The standalone Google tag GT-MBNT4TKH is deliberately NOT installed in the Next.js codebase.** GTM snippet added to `app/layout.tsx` (`strategy="afterInteractive"`). Container ID read from `NEXT_PUBLIC_GTM_ID` env var. GTM workspace (11 changes, unpublished as at 2026-08-31) contains: (1) Google Tag base tag firing on Initialization–All Pages; (2) Phone click event tag (`phone_call_click`, fires on `tel:` link clicks); (3) Email click event tag (`email_click`, fires on `mailto:` link clicks); (4) Contact form submit event tag (`generate_lead`, fires on form submission at `/contact-us/`). Built-in variables enabled: Click URL, Click Text, Click Element, Form ID. Triggers: Click–Just Links with "Click URL starts with tel:" / "Click URL starts with mailto:"; Form Submission–Some Forms scoped to Page URL contains `/contact-us/`. | **AGENT** | D-32 established one-measurement-path rule after the sibling site loaded GA4 twice (direct `gtag.js` + GTM), wasting ~161 KB and double-counting every event. Installing the standalone GT-MBNT4TKH tag *in addition* to the GTM snippet would recreate that exact problem. GTM-only is the correct architecture: the GTM snippet is one loader, the Google tag inside GTM is the single GA4 connection. `afterInteractive` (lazy, fires after hydration) is chosen over `beforeInteractive` because analytics is never on the critical render path; this is consistent with D-34's performance-first rule. All CTAs are real `tel:` / `mailto:` anchors (D-33), so "Click–Just Links" covers every CTA without a custom JS listener. **Next required steps (not yet done as at decision date):** GTM Preview / Tag Assistant smoke test on all 4 tags → Publish GTM workspace → mark `phone_call_click` and `generate_lead` as key events in GA4 → owner deploys to Vercel (D-35: no deploy without owner sign-off) → add `NEXT_PUBLIC_GTM_ID=GTM-MVGQB9FW` to Vercel environment variables. |
 
 ---
 
