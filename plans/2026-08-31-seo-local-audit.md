@@ -301,7 +301,7 @@ Ordered Critical → High → Medium → Low. Each notes its dependency. **Nothi
 | **6** | **Medium** | **Schema enrichment**: `geo` (suburb-centroid, 5+ decimals), `priceRange`, `image`/`logo`, `telephone` in `+61` format. Quick wins, all in one node. | — | S | `app/layout.tsx`, `lib/businessInfo.ts` |
 | **7** | **Medium** | **Spread internal links to the hubs.** Add an "Areas we serve" block (links to the 3 live hubs) to the homepage and the other service pages; link hubs to each other and to `/packages/`; from each gallery project page link to its region hub + the bathroom service page. | #2 | M | `app/page.tsx`, `app/services/[slug]/page.tsx`, `app/gallery/[slug]/page.tsx`, `components/WorkStrip.tsx` |
 | **8** | **Medium** | **Claim Bing Places + Apple Business Connect** with byte-identical NAP. Bing Places feeds ChatGPT/Copilot/Alexa. Add both (plus any confirmed directory) to schema `sameAs`. | #1 (NAP baseline) | S–M (owner) | off-site + `lib/businessInfo.ts` |
-| **9** | **Medium** | **Review-generation loop.** A short GBP review link on the enquiry "thank you" state and/or a printed card after handover; keep the ≤18-day review cadence. Optionally surface a "Leave us a review" link in the footer. | #1 | S–M | `components/EnquiryForm.tsx` success state, process |
+| **9** | **Medium** | **Review-generation loop.** A Google review/profile link now appears on the enquiry success state (shipped 2026-08-31). Printed handover card and the ≤18-day review cadence remain owner/process work. | #1 | S–M | `components/EnquiryForm.tsx` success state, process |
 | **10** | **Medium** | **Map**, done cheaply: a static, lazy-loaded map *image* of the Sydney service area on the hubs and `/contact-us/` (not a Google Maps `<iframe>` — that's third-party JS and needs owner sign-off per `docs/PERFORMANCE_BUDGET.md` rule 11). | #4 | M | hub page, `app/contact-us/page.tsx`, `public/` asset |
 | 11 | Low | **Citation audit + build** across the §5 list; fix any NAP drift; add credible ones to `sameAs`. | #1, #8 | M (owner / tool) | off-site |
 | 12 | Low | **Local authority**: pursue "best bathroom renovators Sydney" roundup inclusion (#1 AI-citation factor), HIA member directory link, a local business chamber (Granville is Cumberland LGA), and turn the Greenfleet tree-planting into a small "community" content moment. | — | L (owner / outreach) | off-site + light content |
@@ -364,4 +364,5 @@ a paid tool:
 - [x] Local keyword coverage checked against the GKP-confirmed table
 - [x] Prioritised actions with dependencies; limitations documented
 - [x] No files modified, nothing implemented, committed, or deployed; no implementation issues opened
+- [x] Issue #45 on-site review-generation prompt implemented in `components/EnquiryForm.tsx`
 - [ ] Owner review + consolidation with the technical / GEO / performance / indexation audits

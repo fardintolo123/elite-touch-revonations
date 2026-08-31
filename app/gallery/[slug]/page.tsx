@@ -6,6 +6,10 @@ import { businessInfo } from '@/lib/businessInfo'
 import { projects, projectBySlug } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import {
+  LOCATION_PARENT_SLUG,
+  publishedRegionForSuburb,
+} from '@/lib/locations'
 
 /**
  * One page per photographed project, driven by `lib/projects.ts`.
@@ -59,6 +63,7 @@ export default async function ProjectPage({
   if (!project) notFound()
 
   const others = projects.filter((item) => item.slug !== project.slug)
+  const projectRegion = publishedRegionForSuburb(project.suburb)
 
   return (
     <>
@@ -86,6 +91,16 @@ export default async function ProjectPage({
           <p className="et-lead et-measure">{project.blurb}</p>
         </div>
       </section>
+
+      {project.story ? (
+        <section className="et-section et-band-surface">
+          <div className="et-container et-stack">
+            <span className="et-eyebrow">About this project</span>
+            <h2 className="et-h2 et-measure-tight">What changed on this job</h2>
+            <p className="et-lead et-measure">{project.story}</p>
+          </div>
+        </section>
+      ) : null}
 
       <section className="et-section et-band-canvas">
         <div className="et-container">
@@ -148,6 +163,56 @@ export default async function ProjectPage({
       </section>
 
       <section className="et-section et-band-canvas">
+        <div className="et-container et-stack">
+          <span className="et-eyebrow">Related pages</span>
+          <h2 className="et-h2 et-measure-tight">
+            See more bathroom renovation work by service and area
+          </h2>
+
+          <div
+            className="et-grid et-grid-2"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
+            <Link
+              href={`/services/${LOCATION_PARENT_SLUG}/`}
+              className="et-card et-card-link"
+            >
+              <h3 className="et-h4">Bathroom renovations</h3>
+              <p
+                className="et-body-sm"
+                style={{
+                  marginTop: 'var(--et-space-3)',
+                  color: 'var(--et-text-secondary)',
+                }}
+              >
+                See how we strip out, waterproof, tile and fit off bathrooms
+                across Sydney.
+              </p>
+            </Link>
+
+            {projectRegion && (
+              <Link
+                href={`${projectRegion.hubUrl}/`}
+                className="et-card et-card-link"
+              >
+                <h3 className="et-h4">{projectRegion.name}</h3>
+                <p
+                  className="et-body-sm"
+                  style={{
+                    marginTop: 'var(--et-space-3)',
+                    color: 'var(--et-text-secondary)',
+                  }}
+                >
+                  See bathroom renovation projects and service coverage for
+                  this area.
+                </p>
+              </Link>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="et-section et-band-surface">
         <div className="et-container et-stack">
           <span className="et-eyebrow">More projects</span>
           <h2 className="et-h2 et-measure-tight">Other work of ours</h2>

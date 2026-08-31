@@ -68,12 +68,19 @@ tool that could be added here.
   reviews, prices, credentials, project details or review schema (the standing Business Rules apply
   to tool output exactly as to hand-written copy).
 
-**5. Minor security note.** The install path in #14 —
-`powershell -ExecutionPolicy Bypass -File claude-blog\install.ps1` — runs a script from a personal
-(non-Anthropic-marketplace) GitHub repo with execution policy bypassed. It has already been run.
-The installed skill contents look like ordinary skill files (one `analyze_blog.py`, JSON data,
-templates), but the install method was not vetted before it ran. Worth a quick look at what
-`install.ps1` placed and where, if that record is wanted.
+**5. Minor security note — checked, benign.** The install path in #14
+(`powershell -ExecutionPolicy Bypass -File claude-blog\install.ps1`) runs a script from a personal
+(non-Anthropic-marketplace) GitHub repo. `install.ps1` was read in full afterwards (clone still at
+`d:\tmp\claude-blog`):
+
+- **Pure file-copy installer.** Copies into the **global** `~/.claude/` (not ETR-scoped): `skills/blog`
+  + 31 `blog-*` skill folders; 5 `agents/blog-*.md`; ~20 Python helper scripts into `~/.claude/scripts/`.
+- **One network / third-party step:** `pip install -r requirements.txt` → `textstat` and
+  `beautifulsoup4` only (both mainstream). Heavier optional deps (spacy, scikit-learn, …) are
+  commented out and NOT installed.
+- **Does not** modify `settings.json`, add hooks, add MCP servers, set any autorun, or change
+  PATH/profile — confirmed against the live `~/.claude/settings.json` (no `hooks`, no `mcp`).
+- Scripts execute only when a `/blog` command is explicitly invoked. **Nothing to undo.**
 
 ## Verdict
 
@@ -105,6 +112,7 @@ checked the same way every other content decision on this site has been.
 - [x] Assessed fabrication risk against the standing Business Rules (legal claims, 19 real reviews)
 - [x] Issues #13 and #14 closed ("not planned", 2026-08-31) with a comment linking this plan;
       #14 closed as a duplicate of #13
-- [ ] Verdict recorded in `DECISIONS.md` as **D-112** (D-111 from the issue #16 session has now
-      landed in commit `cc5cf3c`, so the tree is clear — true max is D-111)
-- [ ] Owner decision on point 5 (review what `install.ps1` did) — optional
+- [x] Verdict recorded in `DECISIONS.md` as **D-113**, section 3p (D-112 was taken by the
+      2026-08-31 GTM/GA4 session — true max checked by grepping the whole file)
+- [x] `install.ps1` read in full (point 5) — benign file-copy installer; only third-party step is
+      `pip install textstat beautifulsoup4`; no settings/hooks/MCP/autorun changes; nothing to undo

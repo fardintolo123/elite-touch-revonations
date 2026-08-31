@@ -98,7 +98,8 @@ cannibalisation. So:
 - **Real proof** — a named testimonial from `Customer Reviews.md`, a real project, a real photo.
 - **Pricing guidance where relevant**, always with its size basis, always "firm after a free on-site
   measure". Never invent a figure.
-- **Trust signals** — licence 475204C, AS 3740, family-run since 2023, fixed-scope written quote.
+- **Trust signals** — licence 475204C, AS 3740, family-run since 2022, fixed-scope written quote,
+  10-year workmanship warranty.
 - **An FAQ block** (4–6 real questions) and a clear CTA.
 - **Internal links** to the relevant hub, service and case-study pages.
 - **A real photo that shows the page's subject**, with alt text describing **the photograph**, never

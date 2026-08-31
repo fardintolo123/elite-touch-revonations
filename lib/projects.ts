@@ -54,7 +54,16 @@ export type Project = {
   name: string
   /** Which of the four services this job was. */
   service: string
+  /** Last meaningful content review for the project page and sitemap lastmod. */
+  updated: string
+  /**
+   * Latest evidenced completion year. Exact calendar completion dates are not
+   * recorded in the repo, so page copy says "Completed by {year}".
+   */
+  completedByYear: number
   blurb: string
+  /** Owner-supplied project notes, condensed into one mini case-study paragraph. */
+  story?: string
   images: readonly ProjectImage[]
 }
 
@@ -68,10 +77,12 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'Brushed gold taps and warm, sandy tiles give the room a rich, easy feel. A freestanding bath sits at the centre, calm and simple, and a wall-hung vanity keeps the floor clear and the room open.',
+    story:
+      "The project notes focus on warm sandy-toned floor and wall tiles, brushed gold fixtures and a freestanding bath as the room's calm centrepiece. The wall-hung vanity was used for storage without crowding the floor, and the lighting was kept soft so the gold, timber and stone textures feel balanced.",
     images: [
       {
         src: `${DIR}/artarmon-bathroom/full-room-shower-toilet.webp`,
-        alt: 'Bathroom finished in sandy beige stone-look tiles, with a walk-in shower behind a gold-trimmed glass screen, a wall-hung toilet with a gold flush plate, and three timber floating shelves set into a white tiled recess.',
+        alt: 'Bathroom in sandy beige stone-look tiles, with a walk-in shower behind a gold-trimmed glass screen, wall-hung toilet, gold flush plate and timber shelves in a white tiled recess.',
         width: 1348,
         height: 995,
       },
@@ -114,16 +125,18 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'A bright, modern family bathroom in soft, neutral tones with real wood and stone textures. Light wood, soft grey and crisp white pair with brushed nickel taps. Large tiles open up the space, with a frameless glass shower.',
+    story:
+      'The source notes describe this as a family bathroom, rebuilt around soft greys, crisp whites, light wood finishes and nickel tapware. Large-format tiles were used on the floors and walls to keep the space open, with a frameless glass shower completing the clean, uncluttered finish.',
     images: [
       {
         src: `${DIR}/castle-hill-bathroom/double-vanity-led-mirror.webp`,
-        alt: 'Light oak wall-hung double vanity with a white stone top, two round white vessel basins, brushed nickel wall-mounted mixers, and a wide LED backlit mirror above, against large-format grey stone-look tiles.',
+        alt: 'Light oak wall-hung double vanity with white stone top, two round vessel basins, brushed nickel wall mixers and a wide LED backlit mirror.',
         width: 1127,
         height: 750,
       },
       {
         src: `${DIR}/castle-hill-bathroom/shower-toilet-heated-rail.webp`,
-        alt: 'Frameless glass shower enclosure with a rain head and handheld rail, beside a close-coupled white toilet and a stainless steel ladder-style heated towel rail, all against large-format grey stone-look tiles.',
+        alt: 'Frameless glass shower with rain head and handheld rail beside a white close-coupled toilet and stainless steel ladder heated towel rail.',
         width: 1129,
         height: 751,
       },
@@ -135,7 +148,7 @@ export const projects: readonly Project[] = [
       },
       {
         src: `${DIR}/castle-hill-bathroom/toilet-heated-towel-rail.webp`,
-        alt: 'White close-coupled toilet viewed past the edge of a frameless glass shower screen, with a stainless steel ladder heated towel rail on the wall and a light oak vanity with a round basin in the foreground.',
+        alt: 'White close-coupled toilet beside a frameless shower screen, stainless steel ladder heated towel rail and light oak vanity with round basin.',
         width: 1127,
         height: 748,
       },
@@ -160,16 +173,18 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'A bold, timeless black-and-white look. Crisp marble-style walls and deep black fittings make a sharp contrast. A frameless shower and wall-hung vanity keep the room neat, with lots of hidden storage.',
+    story:
+      'The project notes describe a full change from an outdated bathroom to a black-and-white room with large white tiles, black fittings and hidden storage. The bathroom and ensuite were planned as a matched set, with the frameless shower, wall-hung vanity and dark towel rails carrying the same clean line through both spaces.',
     images: [
       {
         src: `${DIR}/hornsby-bathroom/vanity-marble-storage-tower.webp`,
-        alt: 'Bathroom with white marble-look large-format tiles and grey veining, a black gloss wall-hung vanity with a white stone top and two white rectangular vessel basins, matte black wall mixers, an LED backlit mirror, a tall black gloss storage tower, and black towel rails.',
+        alt: 'Bathroom with white marble-look tiles, black gloss wall-hung vanity, white stone top, two rectangular basins, matte black wall mixers, LED mirror and tall black storage tower.',
         width: 1126,
         height: 748,
       },
       {
         src: `${DIR}/hornsby-bathroom/shower-bath-lit-niche.webp`,
-        alt: 'Walk-in shower behind a black-framed glass screen with a black rain head and handheld shower, an LED-lit horizontal niche in the marble-look tiling, and an inset bath beneath a window looking onto trees and a timber fence.',
+        alt: 'Walk-in shower behind a black-framed glass screen, with black rain head, handheld shower, LED-lit niche and inset bath below a window.',
         width: 1125,
         height: 749,
       },
@@ -194,10 +209,12 @@ export const projects: readonly Project[] = [
     service: 'Ensuite renovation',
     blurb:
       "This ensuite continues the same home's black-and-white look, so both rooms feel like one. A frameless shower and a wall-hung vanity keep the small room feeling open.",
+    story:
+      'The ensuite was written up as part of the same black-and-white design as the main bathroom, so the two rooms read as one. Large white tiles keep the small room bright, while black tapware, towel rails and the frameless shower give the compact space a clear edge.',
     images: [
       {
         src: `${DIR}/hornsby-ensuite/vanity-window-greenery.webp`,
-        alt: 'Ensuite with white marble-look tiling, a black gloss wall-hung vanity with a white top and two white vessel basins, matte black tapware, an LED backlit mirror, three black towel rails on the left wall, and a corner window looking onto dense green foliage.',
+        alt: 'Ensuite with white marble-look tiles, black gloss wall-hung vanity, two white vessel basins, matte black tapware, LED mirror, black towel rails and corner window.',
         width: 1125,
         height: 748,
       },
@@ -216,10 +233,12 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'A stylish family bathroom in soft, neutral tones, with matte black fittings for a modern look. A custom angled shower screen is the standout feature. The wall-hung vanity keeps the room open, with daily storage.',
+    story:
+      'The source notes call out a neutral family bathroom with matte black fittings and a custom angled shower screen as the main feature. The wall-hung vanity keeps the floor open while adding storage, and softer lighting was used to keep the room calm rather than stark.',
     images: [
       {
         src: `${DIR}/randwick-bathroom/shower-vanity-round-mirror.webp`,
-        alt: 'Bathroom in warm grey stone-look tiles with an angled corner shower enclosed by black-framed glass, a black rain head and handheld shower, a timber-look wall-hung vanity with a white basin and black mixer, and a round LED backlit mirror.',
+        alt: 'Warm grey bathroom with an angled black-framed corner shower, black rain head, timber-look wall-hung vanity, white basin and round LED mirror.',
         width: 1130,
         height: 749,
       },
@@ -250,10 +269,12 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'A concrete-look bathroom with warm, timber-look floors for contrast. A custom vanity and a matching tall cabinet keep things tidy, and a freestanding bath anchors the room.',
+    story:
+      'This full bathroom renovation ran for three weeks, with the project notes listing an about $30,000 budget. The work paired full-height concrete-look porcelain wall tiles with timber-look floor tiles, a custom vanity, a matching tall cabinet and a bath. The main challenge was making the custom storage cabinet match the vanity cleanly.',
     images: [
       {
         src: `${DIR}/balmain-bathroom/vanity-bath-window.webp`,
-        alt: 'Bathroom with grey concrete-look wall tiles and timber-look floor tiles, a dark timber wall-hung vanity with a white top and chrome tap, a wall-hung toilet, and the foot of a white built-in bath in the foreground.',
+        alt: 'Bathroom with grey concrete-look wall tiles, timber-look floor tiles, dark timber wall-hung vanity, white top, chrome tap, wall-hung toilet and built-in bath.',
         width: 1180,
         height: 680,
       },
@@ -271,7 +292,7 @@ export const projects: readonly Project[] = [
       },
       {
         src: `${DIR}/balmain-bathroom/before.webp`,
-        alt: "Black-and-white photograph of the bathroom before renovation, showing textured cream wall tiles, dark patterned floor tiles, a built-in bath with two chrome taps, and a white vanity unit beside the toilet.",
+        alt: 'Black-and-white before photo showing cream wall tiles, dark patterned floor tiles, a built-in bath with chrome taps and a white vanity beside the toilet.',
         width: 873,
         height: 508,
       },
@@ -284,10 +305,12 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'A crisp white bathroom in classic subway tiles. A frameless glass shower and a floating vanity keep the floor clear and the room bright.',
+    story:
+      'This full bathroom renovation ran for three weeks, with the project notes listing an about $26,000 budget. The scope included a full strip-out, waterproofing, white subway wall tiling, floor tiling, a new shower, custom vanity storage and upgraded plumbing and electrical work. The challenge was tiling around the existing bath so the finish still looked seamless.',
     images: [
       {
         src: `${DIR}/gladesville-bathroom/full-room-toilet-tub-vanity.webp`,
-        alt: 'White bathroom with subway-tile walls, a frameless glass shower screen, a wall-hung toilet, a built-in bath below a window with patterned blinds, and the edge of a white vanity with a chrome tap in the foreground.',
+        alt: 'White subway-tile bathroom with frameless glass shower screen, wall-hung toilet, built-in bath below patterned blinds and white vanity with chrome tap.',
         width: 1180,
         height: 680,
       },
@@ -324,6 +347,8 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'A bright white bathroom with a bold turquoise basin and a freestanding bath. Timber shutters and a frameless shower keep the room feeling open.',
+    story:
+      'This full bathroom renovation ran for four weeks, with the project notes listing an about $32,000 budget. The work included demolition, waterproofing, plumbing and electrical upgrades, wall and floor tiling, a new shower, custom vanity, toilet, lighting and bespoke bathroom sinks. The key constraint was limited space, so the layout had to work hard without losing daily function.',
     images: [
       {
         src: `${DIR}/little-bay-bathroom/shower-vanity-tub-wide.webp`,
@@ -382,10 +407,12 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'Full-height marble-look tiles, a double vanity and a freestanding bath beneath timber shutters. Matte black fittings throughout give it a sharp, modern finish.',
+    story:
+      'This full bathroom renovation ran for four weeks, with the project notes listing an about $45,000 budget. The scope included full-height marble tiling, a freestanding bath, custom double vanity, integrated basins, frameless shower screen, matte black tapware and a heated towel rail. The detailed part was hand-cutting the marble cleanly around fixtures, corners and fittings.',
     images: [
       {
         src: `${DIR}/hunters-hill-bathroom/freestanding-bath-shutters.webp`,
-        alt: 'White freestanding bath beneath timber plantation shutters looking onto greenery, with full-height white marble-look wall tiles, a matte black ladder towel rail, and the edge of a frameless glass shower.',
+        alt: 'White freestanding bath beneath timber plantation shutters, with marble-look wall tiles, matte black ladder towel rail and frameless glass shower edge.',
         width: 1180,
         height: 680,
       },
@@ -428,16 +455,18 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     blurb:
       'A bathroom in a heritage terrace, built around an original leadlight window. A freestanding bath, patterned floor tiles and a frameless shower bring a modern finish, but the house still feels like itself.',
+    story:
+      'This full bathroom renovation ran for four weeks, with the project notes listing an about $32,000 budget. The work combined large-format wall tiles, encaustic-look floor tiles, matte black fittings, a freestanding bath, a floating vanity and a frameless shower screen. The important constraint was protecting the original heritage window throughout the renovation.',
     images: [
       {
         src: `${DIR}/the-rocks-bathroom/shower-window-tub-wide.webp`,
-        alt: 'Bathroom with a frameless glass shower and black-and-white patterned floor tiles, an original leadlight window with a floral motif, a colourful portrait artwork on the white tiled wall, and a white freestanding bath with a matte black spout.',
+        alt: 'Bathroom with frameless glass shower, patterned floor tiles, original leadlight window, colourful portrait artwork and white freestanding bath with black spout.',
         width: 1180,
         height: 680,
       },
       {
         src: `${DIR}/the-rocks-bathroom/tub-vanity-black-door.webp`,
-        alt: 'White freestanding bath with a matte black wall-mounted spout, a colourful portrait artwork above, a round white vessel basin on a black wall-hung vanity, and a black timber sliding barn door, all on black-and-white patterned floor tiles.',
+        alt: 'White freestanding bath with black wall spout, portrait artwork, round vessel basin on a black wall-hung vanity, sliding barn door and patterned floor tiles.',
         width: 1180,
         height: 680,
       },
@@ -462,10 +491,12 @@ export const projects: readonly Project[] = [
     service: 'Ensuite renovation',
     blurb:
       'A bathroom and ensuite done together for one clear, modern look. Charcoal stone-look tiles, a round LED mirror and warm terracotta towels give the double vanity and frameless showers their own style.',
+    story:
+      'This bathroom and ensuite renovation ran for four weeks, with the project notes listing an about $48,000 budget. The work used 600 x 600 full-height grey porcelain wall tiles, light grey porcelain floor tiles, custom vanities, integrated basins, frameless shower screens and LED backlit mirrors. The challenge was fitting the custom double vanity and oversized LED mirror within the project timeframe.',
     images: [
       {
         src: `${DIR}/artarmon-bathroom-ensuite/double-vanity-corner-window.webp`,
-        alt: 'Bathroom with grey stone-look tiles, a double vanity with two basins and matte black tapware, a wall-hung toilet in a corner window nook, a terracotta towel on a heated rail, and a frameless glass shower.',
+        alt: 'Grey stone-look bathroom with double vanity, two basins, matte black tapware, wall-hung toilet in a corner window nook, terracotta towel and frameless shower.',
         width: 1180,
         height: 680,
       },

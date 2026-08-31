@@ -5,7 +5,7 @@
  *
  *  - Never let a business fact live only in JSX, only in a doc, or only in a
  *    conversation. It lives here, and pages import it.
- *  - The licence number, phone, AS 3740 and "family-run since 2023" are
+ *  - The licence number, phone, AS 3740 and "family-run since 2022" are
  *    load-bearing legal/trust signals. Reproduce exactly. Never approximate.
  *  - Anything not yet supplied by the owner is `null` with a note. A `null`
  *    here must render as *nothing on the page* — never as a guess, a
@@ -32,6 +32,18 @@ export const businessInfo = {
 
   /** Canonical origin. Matches the host in the existing Yoast sitemaps. */
   siteUrl: 'https://www.elitetouchrenovations.au',
+
+  /** Authoritative public sources for checkable regulatory and industry claims. */
+  authorities: {
+    nswLicenceRegister: 'https://verify.licence.nsw.gov.au/home/Trades',
+    nswHomeBuildingContracts:
+      'https://www.nsw.gov.au/housing-and-construction/building-or-renovating-a-home/preparing/contracts',
+    nccWetAreas:
+      'https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-one/f-health-and-amenity/26-waterproofing-and-water-resistance-requirements-building-elements-wet-areas',
+    as3740: 'https://www.abcb.gov.au/ncc-navigator/waterproofing-houses',
+    hiaMembers: 'https://hia.com.au/hia-community/our-members',
+    wels: 'https://www.waterrating.gov.au/about',
+  },
 
   /** NSW Builder Licence, held by Omar Dawood (issue #2). Legally significant — D-04. */
   builderLicence: '475204C',
@@ -126,13 +138,21 @@ export const businessInfo = {
     note: 'Waterproofing is performed within a renovation, to AS 3740, with a certificate. It is not sold as a standalone service (DECISIONS.md D-02).',
     /** Full list from the About + Bathroom service PDFs (issue #2). */
     full: [
-      { code: 'AS 3740-2021', what: 'Wet-area waterproofing' },
+      {
+        code: 'AS 3740-2021',
+        what: 'Wet-area waterproofing',
+        authorityKey: 'as3740',
+      },
       { code: 'AS 4858', what: 'Waterproofing membranes' },
       { code: 'AS/NZS 3500', what: 'Plumbing and drainage' },
       { code: 'AS/NZS 3000', what: 'Electrical wiring rules' },
       { code: 'AS 1288 / AS/NZS 2208', what: 'Glazing and safety glass' },
       { code: 'AS 4586', what: 'Slip resistance for wet-area floor tiles' },
-      { code: 'WELS', what: 'Water-efficient tapware and fixtures' },
+      {
+        code: 'WELS',
+        what: 'Water-efficient tapware and fixtures',
+        authorityKey: 'wels',
+      },
     ],
   },
 
@@ -167,6 +187,13 @@ export const businessInfo = {
     deposit: '30% deposit',
     paymentSchedule: '30% / 40% / 30% progressive schedule',
   },
+
+  /**
+   * Owner-supplied package revision date. Rendered on `/packages/` as a
+   * freshness signal and a stale-price guard. This changes only when the
+   * package content is genuinely reviewed or changed.
+   */
+  packagePricingUpdated: '2026-08-19',
 
   /**
    * RESOLVED 2026-08-19 (D-75) — settles the two conflicting durations.
@@ -252,6 +279,12 @@ export const businessInfo = {
    */
   googleBusinessProfile: {
     url: 'https://share.google/PLJDhhWBCrWAq6GVH',
+    /**
+     * Issue #45 review-generation prompt. This deliberately uses the known
+     * profile URL until the owner supplies a dedicated short review URL.
+     * Do not display rating/count from this object until `verifiedLive` is true.
+     */
+    reviewPromptUrl: 'https://share.google/PLJDhhWBCrWAq6GVH',
     ratingAtLastCheck: 5.0,
     reviewCountAtLastCheck: 17,
     verifiedLive: false,
@@ -300,6 +333,7 @@ export const services = [
     slug: 'bathroom-renovations',
     title: 'Bathroom Renovations',
     h1: 'Bathroom Renovations Sydney',
+    updated: '2026-08-27',
     summary:
       'A full strip-out-to-studs rebuild of the main bathroom. Demolition, waterproofing to AS 3740, tiling, plumbing and electrical — finished to a fixed written scope.',
   },
@@ -307,6 +341,7 @@ export const services = [
     slug: 'ensuite-bathroom-renovations',
     title: 'Ensuite Renovations',
     h1: 'Ensuite Renovations Sydney',
+    updated: '2026-08-27',
     summary:
       'Small-footprint master-suite work. We handle the ventilation and sound-proofing an ensuite needs when it shares a wall with the bedroom.',
   },
@@ -318,9 +353,10 @@ export const services = [
      * "bathroom AND laundry renovations" — two wet areas in one program.
      * ETR has not confirmed standalone laundry work, so the visible title,
      * H1 and copy must never advertise it as a laundry-only service.
-     */
+    */
     title: 'Bathroom + Laundry Renovations',
     h1: 'Bathroom and Laundry Renovations Sydney',
+    updated: '2026-08-27',
     summary:
       'Two wet areas run as a single program. One demolition, one waterproofing stage, one trade sequence — and one disruption to the house instead of two.',
   },
@@ -328,6 +364,7 @@ export const services = [
     slug: 'powder-room-renovations',
     title: 'Powder Room Renovations',
     h1: 'Powder Room Renovations Sydney',
+    updated: '2026-08-27',
     summary:
       'The smallest room in the house, where every millimetre of the setout shows. Fixture placement and tile setout carry the whole result.',
     /**

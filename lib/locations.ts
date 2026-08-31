@@ -51,6 +51,13 @@ export function regionBySlug(slug: string): Region | undefined {
   return publishedRegions().find((region) => region.slug === slug)
 }
 
+export function publishedRegionForSuburb(suburbName: string): Region | undefined {
+  const target = suburbName.toLowerCase()
+  return publishedRegions().find((region) =>
+    region.suburbs.some((suburb) => suburb.name.toLowerCase() === target),
+  )
+}
+
 /**
  * Suburbs shown as service-area copy on a hub.
  * `isNotASuburb` entries exist for postcode completeness only and must never

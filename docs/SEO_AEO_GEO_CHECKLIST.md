@@ -23,6 +23,11 @@ Companion docs: [SEO_CONTENT_GUIDE.md](SEO_CONTENT_GUIDE.md) for *what to write*
       inherited by 404 bodies and creates unbounded soft-404s.
 - [ ] **AI crawlers are allowed** (GPTBot, PerplexityBot, ClaudeBot, Google-Extended) unless the owner
       decides otherwise — for a local trade business, being citable in AI answers is upside.
+- [ ] **`llms.txt` is present if maintained**, generated from the same source data as the site.
+      Google's [AI features guidance](https://developers.google.com/search/docs/appearance/ai-features)
+      and [June 2026 changelog](https://developers.google.com/search/updates) say AI-specific files
+      are not needed for Search and do not improve or harm visibility, so do not invest further in it
+      unless another named system starts using it.
 
 ## Phase 1 — in-code foundations
 
@@ -32,10 +37,13 @@ Companion docs: [SEO_CONTENT_GUIDE.md](SEO_CONTENT_GUIDE.md) for *what to write*
   - [ ] `LocalBusiness` (or `HomeAndConstructionBusiness`) — **declared once sitewide**, not
         re-declared per page. Include the licence number, phone, service area and opening hours.
   - [ ] `Service` on each service page.
-  - [ ] `FAQPage` where a real FAQ block exists.
+  - [ ] `FAQPage` where a real FAQ block exists. Google's
+        [May/June 2026 changelog](https://developers.google.com/search/updates) says FAQ rich
+        results stopped showing in Search on 7 May 2026 and the FAQ rich-result docs were removed;
+        keep the markup for entity clarity and AI/answer extraction, not as a SERP-feature promise.
   - [ ] `Article` on guides and case studies.
   - [ ] `AggregateRating` / `Review` **only if the reviews are real and displayed on the page.**
-        The 18 in `Customer Reviews.md` qualify; nothing else does. **Never emit rating markup for a
+        The 19 in `Customer Reviews.md` qualify; nothing else does. **Never emit rating markup for a
         rating that is not shown, and never invent a count.**
 - [ ] **`og:image`** present, a real 1200×630 crop, not a portrait photo squeezed into the slot.
 
@@ -65,7 +73,9 @@ Companion docs: [SEO_CONTENT_GUIDE.md](SEO_CONTENT_GUIDE.md) for *what to write*
       in an image or a logo.
 - [ ] **A real FAQ block** (4–6 questions) on commercial pages, in always-rendered markup.
 - [ ] **Trust signals visible on the page**, not just in schema: licence number, standards, family-run
-      since 2023, free on-site measure, fixed-scope written quote.
+      since 2022, free on-site measure, fixed-scope written quote, 10-year workmanship warranty.
+- [ ] **RSL 1.0 licensing considered only if relevant.** It is intentionally skipped for ETR while
+      the site has no premium research, data product or original tool to license for AI use.
 
 ## Phase 4 — conversion (a renovation page that ranks but does not enquire has failed)
 

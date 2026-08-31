@@ -104,9 +104,12 @@ each cost more than every image on the page combined.**
     unrotated photo renders sideways.
 19. **Generate a dedicated 1200×630 crop for `og:image`.** Renovation photos are often portrait, and
     social platforms crop portrait images badly.
+20. **Treat 14px body copy as a verification item, not an automatic defect.** `DESIGN.md` is
+    authoritative for type and allows `body-sm` at 14px, but any page with lots of `.et-body-sm` or
+    `.et-caption` copy still needs a real 390px browser check for legibility and line length.
 
 ### Fonts
-20. **Two preloaded woff2 files is the ceiling**, with `font-display: swap`. A third font is a
+21. **Two preloaded woff2 files is the ceiling**, with `font-display: swap`. A third font is a
     regression.
 
 ---

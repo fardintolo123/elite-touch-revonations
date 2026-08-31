@@ -10,6 +10,7 @@ import {
   listableSuburbs,
   projectsInRegion,
   publishedLocationSlugs,
+  publishedRegions,
   regionBySlug,
 } from '@/lib/locations'
 
@@ -77,6 +78,10 @@ export default async function LocationHubPage({
 
   const suburbs = listableSuburbs(region)
   const localProjects = projectsInRegion(region)
+  const publishedLocationSet = new Set(publishedLocationSlugs())
+  const siblingRegions = publishedRegions().filter(
+    (item) => item.slug !== region.slug,
+  )
 
   return (
     <>
@@ -219,7 +224,7 @@ export default async function LocationHubPage({
           >
             {suburbs.map((suburb) => (
               <li key={suburb.slug} className="et-body-sm">
-                {suburb.url ? (
+                {suburb.url && publishedLocationSet.has(suburb.slug) ? (
                   <Link href={`${suburb.url}/`} className="et-link">
                     {suburb.name}
                   </Link>
@@ -232,6 +237,57 @@ export default async function LocationHubPage({
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="et-section et-band-canvas">
+        <div className="et-container et-stack">
+          <span className="et-eyebrow">Plan the next step</span>
+          <h2 className="et-h2 et-measure-tight">
+            Compare areas and package options
+          </h2>
+          <p className="et-lead et-measure">
+            If you are comparing a few Sydney areas or working out the size of
+            the job, these pages sit closest to this one.
+          </p>
+
+          <div
+            className="et-grid et-grid-3"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
+            {siblingRegions.map((item) => (
+              <Link
+                key={item.slug}
+                href={`${item.hubUrl}/`}
+                className="et-card et-card-link"
+              >
+                <h3 className="et-h4">{item.name}</h3>
+                <p
+                  className="et-body-sm"
+                  style={{
+                    marginTop: 'var(--et-space-3)',
+                    color: 'var(--et-text-secondary)',
+                  }}
+                >
+                  See bathroom renovation work and service coverage for this
+                  area.
+                </p>
+              </Link>
+            ))}
+            <Link href="/packages/" className="et-card et-card-link">
+              <h3 className="et-h4">Packages and pricing</h3>
+              <p
+                className="et-body-sm"
+                style={{
+                  marginTop: 'var(--et-space-3)',
+                  color: 'var(--et-text-secondary)',
+                }}
+              >
+                Compare what changes between the Basic, Standard and Premium
+                scopes.
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 

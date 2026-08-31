@@ -4,11 +4,12 @@
 the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds the *facts and the
 "why does it behave like that"*.
 
-> **Status: MVP codebase exists as of 2026-08-17.** Next.js 16 App Router, built and verified
-> locally, **not deployed** (D-35). See §6 for how it is wired and [MIGRATION.md](MIGRATION.md) for
-> the WordPress → Next.js redirect layer. §1–§2 are real, sourced facts. §4 is carried over from a
-> sibling trade-business site that hit each of those traps in production — they are framework
-> behaviour, not that project's quirks. **Never invent a value to fill a gap.**
+> **Status: Next.js 16 App Router codebase exists and the site is live in production on Vercel**
+> at `https://www.elitetouchrenovations.au/` (owner-confirmed 2026-08-24; D-68, D-98). See §6 for
+> how it is wired and [MIGRATION.md](MIGRATION.md) for the WordPress → Next.js redirect layer.
+> §1–§2 are real, sourced facts. §4 is carried over from a sibling trade-business site that hit each
+> of those traps in production — they are framework behaviour, not that project's quirks. **Never
+> invent a value to fill a gap.**
 
 **Sources of the facts below:** the eight page-copy and package PDFs attached to **GitHub issue #2**,
 [docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md), and
@@ -176,10 +177,10 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 |---|---|---|
 | ~~K1~~ | ✅ **RESOLVED 2026-08-17 from GitHub issue #2** — ABN, ACN, email, Granville office, hours, insurances (D-51). Remaining detail: when `info@elitetouchrenovations.au` goes live, and whether a street address should be published | Detail only |
 | K2 | ⚠️ **Mostly resolved 2026-08-17** — profile URL captured, and the issue-#2 PDF states **5.0 across 17 Google reviews**. **Still needed: verify those figures live before displaying them or emitting `aggregateRating` (D-52).** Also note the count settles part of the old question: there are **17 Google reviews but 19 testimonials**, so the two sets are NOT the same and the mapping is unknown | Agent — verify live |
-| K2b | **The warranty term.** Confirmed as offered and to be stated; the number is missing and must not be guessed | Owner |
-| K3 | ⚠️ **Stack resolved 2026-08-17** (Next.js 16 App Router + TypeScript + DESIGN.md CSS tokens — D-40). **Hosting still open.** It must run the Node runtime: `proxy.ts` serves the 410s and is unsupported on a static export | Owner — hosting |
+| ~~K2b~~ | ✅ **RESOLVED 2026-08-19.** Owner confirmed a **10-year workmanship warranty** (D-58). State it as written; do not embellish it or extend it to third-party fittings | Resolved |
+| ~~K3~~ | ✅ **RESOLVED 2026-08-19 / confirmed live 2026-08-24.** Hosting is **Vercel** (D-68) and the production site is publicly live (D-98), so `proxy.ts`, redirects, `next/image` and Server Actions are supported | Resolved |
 | K4 | Analytics + call-tracking approach — settle **before** any tag is added | Owner + agent |
-| K5 | ⚠️ **Superseded in practice by the 2026-08-19 Gallery folder.** 23 attributed photos across five projects are now live (D-64); see §6. The item below concerns the ORIGINAL 33, which remain unattributed and unused. **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root (the ETR logo, not a photo). Detect/Inventory/Verify/Approve are done — see [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — confirmed genuine ETR work with consent (D-38, D-39). **Still open: no suburb, street or project is known for any of them** (O-4) — use as general, unattributed project photography only; never invent or infer an attribution (D-06). **Add to repo / Commit / public asset URL are blocked on K3 + K9.** | Owner + agent |
+| K5 | ⚠️ **Superseded in practice by the 2026-08-19 Gallery folder.** 23 attributed photos across five projects are now live (D-64); see §6. The item below concerns the ORIGINAL 33, which remain unattributed and unused. **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root (the ETR logo, not a photo). Detect/Inventory/Verify/Approve are done — see [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — confirmed genuine ETR work with consent (D-38, D-39). **Still open: no suburb, street or project is known for any of them** (O-4) — use as general, unattributed project photography only; never invent or infer an attribution (D-06). **Add to repo / Commit / public asset URL are unblocked by K3/K9, but still require a fresh shortlist and approval before use.** | Owner + agent |
 | ~~K6~~ | ✅ Customer consent to publish photos of their homes — **confirmed by owner 2026-08-17** (D-39) | Resolved |
 | ~~K7~~ | ✅ **CLOSED 2026-08-19.** The current Packages sheet has **three tiers** — the ORIGINAL tier no longer exists, so there was never a price to find (D-61) | Resolved |
 | ~~K10~~ | ✅ **RESOLVED 2026-08-19 (D-75)** — stated as a breakdown by job type (full renovation 3–5 weeks, premium 5–6, reconfigure 5–7) rather than one flat figure. ⚠️ **Owner should confirm these match how jobs actually run** — they are a customer promise |
@@ -188,7 +189,7 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 | K11 | ⚠️ **Outstanding content asks from the marketing audit** (`docs/source-copy/action-items.md`), none of which exist yet: professional team photos and head shots, on-site photos, finished-bathroom video, a **downloadable sample quote**, and a founder video. The sample quote in particular is a strong, cheap trust asset for a fixed-scope-quote business | Owner |
 | ~~K14~~ | ✅ **Mostly resolved 2026-08-25.** Consent confirmed by the user for the second photo batch (`Projects Before & After (1)/`). **Six of nine projects shipped** as new gallery entries (D-99): Balmain, Gladesville, Little Bay, Hunters Hill, The Rocks, Artarmon bathroom+ensuite. **Three held, still open:** (1) Enmore and the "North Ryde" laundry project are standalone laundry jobs, outside the confirmed service scope — not published (D-101), owner should confirm if ETR wants to advertise standalone laundry work; (2) the "Mosman" folder's doc says Drummoyne, and the "North Ryde" folder's doc says North Sydney — the user didn't know which was correct for either, so both stay unpublished until the true location is confirmed (D-102). Also open: whether the new Hunters Hill/The Rocks photos are the same jobs as the existing text-only case studies — kept unmerged (D-103), same treatment as K13's Artarmon question | Owner |
 | ~~K9~~ | ✅ **RESOLVED 2026-08-19 (D-65).** Project photography lives in **`public/images/projects/{project-slug}/`** as WebP. The repo-root `.jpg` (the logo) and the two original `ETR images*` folders are still unstructured and uncommitted — decide separately whether any of those 33 are still needed now that five attributed projects exist | Agent |
-| K8 | Does the "family-run since 2023" line risk reading as inexperienced? It is true and must stay true — but the *framing* is a copy decision worth making deliberately | Owner |
+| ~~K8~~ | ✅ **CLOSED by D-57.** The correct line is **family-run since 2022**. Earlier 2023 wording is stale source-copy history, not live guidance | Resolved |
 | ~~K15~~ | ✅ **RESOLVED 2026-08-27 (D-109) — 24/24 pages now pass.** The original hypothesis here was wrong: it guessed the shared "What every job includes" trust-signal block was the driver. The real driver was the "Other work of ours" grid repeating each full project name (e.g. "Castle Hill bathroom renovation") across ~10 cards on every page — "renovation" alone landing roughly 10 times per page. Fixed by shortening that grid's heading to a room-type label ("Bathroom"/"Ensuite") plus a D-96/D-97-style word-choice pass on all 11 `blurb`s in `lib/projects.ts`. No fact, material, colour or fixture detail changed. See D-109 for the full before/after and verification. | Resolved |
 
 > ### Image workflow (D-36) — every image, not just the initial 33

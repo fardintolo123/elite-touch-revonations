@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { projects } from '@/lib/projects'
+import { AreasServedLinks } from '@/components/AreasServedLinks'
 
 /**
  * Homepage.
@@ -245,6 +246,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <AreasServedLinks
+        title="Bathroom renovation areas we serve"
+        intro="We work across Sydney. These area pages are live because they have real project proof behind them, not just a suburb list."
+        band="canvas"
+      />
 
       {/* ---------------- Proof ---------------- */}
       <section className="et-section et-band-ink">

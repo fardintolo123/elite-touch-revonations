@@ -270,6 +270,8 @@ hand-edit, don't regex).
   correct 16px. `DESIGN.md` is authoritative for type (`CLAUDE.md` source-of-truth hierarchy), so
   this is **not** asserted as a defect — but it should be eyeballed at 390px against `DESIGN.md` §11
   and the mobile-readability bar, since it interacts with the Flesch work already done (K15/D-109).
+  **Recorded 2026-08-31 via #46:** `docs/PERFORMANCE_BUDGET.md` now treats this as a browser
+  verification item, not an automatic typography change.
 - **L-8 · Live-domain Core Web Vitals have never been measured.** The only baseline
   (`docs/PERFORMANCE_BUDGET.md` §4) is a *local* production build from 2026-08-23, taken while the
   Vercel deployment was still behind Deployment Protection. The domain is now confirmed live and

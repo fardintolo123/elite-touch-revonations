@@ -4,7 +4,7 @@ import { useActionState } from 'react'
 import { useFormStatus } from 'react-dom'
 import { submitEnquiry } from '@/lib/actions'
 import { initialEnquiryState, type EnquiryState } from '@/lib/enquiry'
-import { services } from '@/lib/businessInfo'
+import { businessInfo, services } from '@/lib/businessInfo'
 
 /**
  * WHY THIS FILE IS A CLIENT COMPONENT
@@ -172,7 +172,7 @@ export function EnquiryForm() {
       </div>
 
       {state.status !== 'idle' && state.message && (
-        <p
+        <div
           role="status"
           aria-live="polite"
           className="et-body-sm"
@@ -187,8 +187,22 @@ export function EnquiryForm() {
               state.status === 'success' ? '#07714E' : 'var(--et-danger)',
           }}
         >
-          {state.message}
-        </p>
+          <p>{state.message}</p>
+          {state.status === 'success' && (
+            <p style={{ marginTop: 'var(--et-space-3)' }}>
+              Already worked with us?{' '}
+              <a
+                className="et-link"
+                href={businessInfo.googleBusinessProfile.reviewPromptUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Leave a Google review
+              </a>
+              .
+            </p>
+          )}
+        </div>
       )}
 
       <SubmitButton />

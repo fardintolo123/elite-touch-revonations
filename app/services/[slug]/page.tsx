@@ -8,12 +8,9 @@ import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { FaqSchema } from '@/components/FaqSchema'
+import { ExternalLink } from '@/components/ExternalLink'
 import { projects } from '@/lib/projects'
-import {
-  LOCATION_PARENT_SLUG,
-  listableSuburbs,
-  publishedRegions,
-} from '@/lib/locations'
+import { AreasServedLinks } from '@/components/AreasServedLinks'
 
 /**
  * Which real, suburb-attributed photo (if any) illustrates each service hero.
@@ -75,14 +72,37 @@ export async function generateMetadata({
 
 /** Included in every package tier — PROJECT_CONTEXT.md §2. Do not embellish. */
 const STANDARD_INCLUSIONS = [
-  'Planning and design',
-  'Demolition — floor protection, disconnection and removal of existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
-  'Electrical — safe disconnection, replacement power points and light switch',
-  'Plumbing — safe disconnection and installation of new fittings',
-  'Render or re-sheet walls',
-  'Waterproofing to Australian Standards — primer plus two coats, certificate included',
-  'Tiling — new screed to create falls to drains, all glues, tile trims, grouts and silicone',
-  'Final clean before handover',
+  { key: 'planning', body: 'Planning and design' },
+  {
+    key: 'demolition',
+    body: 'Demolition — floor protection, disconnection and removal of existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
+  },
+  {
+    key: 'electrical',
+    body: 'Electrical — safe disconnection, replacement power points and light switch',
+  },
+  {
+    key: 'plumbing',
+    body: 'Plumbing — safe disconnection and installation of new fittings',
+  },
+  { key: 'walls', body: 'Render or re-sheet walls' },
+  {
+    key: 'waterproofing',
+    body: (
+      <>
+        Waterproofing to{' '}
+        <ExternalLink href={businessInfo.authorities.as3740}>
+          {businessInfo.standards.waterproofing}
+        </ExternalLink>{' '}
+        — primer plus two coats, certificate included
+      </>
+    ),
+  },
+  {
+    key: 'tiling',
+    body: 'Tiling — new screed to create falls to drains, all glues, tile trims, grouts and silicone',
+  },
+  { key: 'clean', body: 'Final clean before handover' },
 ] as const
 
 export default async function ServicePage({
@@ -97,7 +117,6 @@ export default async function ServicePage({
 
   const [review] = featuredReviews(1)
   const others = services.filter((item) => item.slug !== service.slug)
-  const hubs = publishedRegions()
 
   const heroImageRef = SERVICE_HERO_IMAGE[service.slug]
   const heroProject = heroImageRef
@@ -164,8 +183,8 @@ export default async function ServicePage({
             <div className="et-card">
               <ul className="et-checklist">
                 {STANDARD_INCLUSIONS.map((item) => (
-                  <li key={item} className="et-body-sm">
-                    {item}
+                  <li key={item.key} className="et-body-sm">
+                    {item.body}
                   </li>
                 ))}
               </ul>
@@ -232,47 +251,11 @@ export default async function ServicePage({
         </div>
       </section>
 
-      {/* Published regional hubs. Only rendered for the service they hang off
-          (D-71), and only for regions with `hubPublished: true` — a data row
-          must never silently become an internal link to a page that has
-          nothing to say (D-10). */}
-      {service.slug === LOCATION_PARENT_SLUG && hubs.length > 0 && (
-        <section className="et-section et-band-canvas">
-          <div className="et-container et-stack">
-            <span className="et-eyebrow">Where we work</span>
-            <h2 className="et-h2 et-measure-tight">
-              Bathroom renovations by area
-            </h2>
-            <p className="et-lead et-measure">
-              We work {businessInfo.serviceArea.coverage}. These areas have a
-              page of their own, with the projects we have completed there.
-            </p>
-            <div
-              className="et-grid et-grid-3"
-              style={{ marginTop: 'var(--et-space-8)' }}
-            >
-              {hubs.map((region) => (
-                <Link
-                  key={region.slug}
-                  href={`${region.hubUrl}/`}
-                  className="et-card et-card-link"
-                >
-                  <h3 className="et-h4">{region.name}</h3>
-                  <p
-                    className="et-body-sm"
-                    style={{
-                      marginTop: 'var(--et-space-3)',
-                      color: 'var(--et-text-secondary)',
-                    }}
-                  >
-                    {listableSuburbs(region).length} suburbs served
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      <AreasServedLinks
+        title="Sydney areas with published project proof"
+        intro={`${businessInfo.name} works ${businessInfo.serviceArea.coverage}. These area pages stay limited to regions where we can show real local work.`}
+        band="canvas"
+      />
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">

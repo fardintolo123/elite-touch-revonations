@@ -591,6 +591,84 @@ svg {
   transform: translateY(-2px);
 }
 
+/* DESIGN.md §8.11: real comparison tables, with mobile scrolling contained. */
+.et-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--et-border);
+  border-radius: var(--et-radius-lg);
+  background: var(--et-surface);
+  -webkit-overflow-scrolling: touch;
+}
+
+.et-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.et-table caption {
+  padding: var(--et-space-5);
+  text-align: left;
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-caption);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--et-border);
+}
+
+.et-table th,
+.et-table td {
+  padding: var(--et-space-5);
+  text-align: left;
+  vertical-align: top;
+  font-size: var(--et-text-sm);
+  line-height: 1.55;
+}
+
+.et-table thead th {
+  background: var(--et-ink-900);
+  color: #ffffff;
+  font-size: var(--et-text-caption);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.et-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: var(--et-z-header);
+}
+
+.et-table tbody th {
+  position: sticky;
+  left: 0;
+  z-index: var(--et-z-raised);
+  width: 220px;
+  min-width: 220px;
+  background: var(--et-surface);
+  color: var(--et-text);
+  font-weight: 600;
+}
+
+.et-table tbody td {
+  color: var(--et-text-secondary);
+}
+
+.et-table th + th,
+.et-table td + td,
+.et-table tbody th + td {
+  border-left: 1px solid var(--et-border);
+}
+
+.et-table tbody tr + tr th,
+.et-table tbody tr + tr td {
+  border-top: 1px solid var(--et-border);
+}
+
 /* §8.8 Icon tile — the process/feature marker */
 .et-icon-tile {
   display: inline-flex;

@@ -8,7 +8,7 @@ write; this decides *how*. [DESIGN.md](../DESIGN.md) is authoritative for anythi
 ## 1. Voice
 
 Elite Touch is a **family business that does careful work and communicates well.** That is not a
-marketing angle — it is what eighteen independent customers actually wrote about, unprompted:
+marketing angle — it is what 19 independent customers actually wrote about, unprompted:
 communication, responsiveness by phone and SMS, punctuality, cleanliness, precision tiling, honest
 regular updates, fair pricing.
 
@@ -101,10 +101,10 @@ trust signal in this trade; vagueness is not.
 - **Primary CTA is specific:** "Book a free on-site measure" — not "Contact us".
 - **Real proof early** — a named testimonial from [Customer Reviews.md](../Customer%20Reviews.md), or
   the Google rating once a Business Profile exists.
-- **Trust signals stated in text:** NSW Builder Licence 475204C · AS 3740 · family-run since 2023 ·
-  fixed-scope written quote · free on-site measure · **workmanship warranty** (⚠️ the term is not yet
-  supplied — leave the line out entirely rather than writing a number; see
-  [DECISIONS.md](../DECISIONS.md) D-19).
+- **Trust signals stated in text:** NSW Builder Licence 475204C · AS 3740 · family-run since 2022 ·
+  fixed-scope written quote · free on-site measure · **10-year workmanship warranty** (contractual:
+  state it as written, never embellish it or extend it to third-party fittings; see
+  [DECISIONS.md](../DECISIONS.md) D-58).
 - **3-second clarity:** what we do · where · what happens next.
 - **Address the real hesitations.** The owner's own draft copy names them: *"I'll be getting quotes
   that are not really quotes"* · *"I do not trust 'family business' claims"* · *"waterproofing behind

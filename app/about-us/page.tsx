@@ -6,6 +6,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { ExternalLink } from '@/components/ExternalLink'
 import { projects } from '@/lib/projects'
 
 /**
@@ -126,8 +127,11 @@ export default function AboutPage() {
                   color: 'var(--et-text-secondary)',
                 }}
               >
-                Check it on the NSW Fair Trading register before you hire
-                anyone, including us.
+                Check it on the{' '}
+                <ExternalLink href={businessInfo.authorities.nswLicenceRegister}>
+                  NSW Fair Trading register
+                </ExternalLink>{' '}
+                before you hire anyone, including us.
               </p>
             </div>
 
@@ -137,7 +141,9 @@ export default function AboutPage() {
                 className="et-lead"
                 style={{ marginTop: 'var(--et-space-2)', color: 'var(--et-text)' }}
               >
-                {businessInfo.standards.waterproofing}
+                <ExternalLink href={businessInfo.authorities.as3740}>
+                  {businessInfo.standards.waterproofing}
+                </ExternalLink>
               </p>
               <p
                 className="et-body-sm"
@@ -186,7 +192,10 @@ export default function AboutPage() {
               <p className="et-body-sm et-measure">
                 Bathroom renovation is regulated work. Every job meets the
                 licence, insurance and legal rules set by NSW law and the
-                National Construction Code.
+                <ExternalLink href={businessInfo.authorities.nccWetAreas}>
+                  National Construction Code
+                </ExternalLink>
+                .
               </p>
             </div>
 
@@ -215,7 +224,9 @@ export default function AboutPage() {
                 </li>
                 <li className="et-body-sm">
                   <strong>Industry membership:</strong>{' '}
-                  {businessInfo.insurance.memberships.join(', ')}
+                  <ExternalLink href={businessInfo.authorities.hiaMembers}>
+                    {businessInfo.insurance.memberships.join(', ')}
+                  </ExternalLink>
                 </li>
               </ul>
             </div>
@@ -232,7 +243,17 @@ export default function AboutPage() {
             >
               {businessInfo.standards.full.map((standard) => (
                 <div key={standard.code} className="et-card">
-                  <p className="et-h4">{standard.code}</p>
+                  <p className="et-h4">
+                    {'authorityKey' in standard ? (
+                      <ExternalLink
+                        href={businessInfo.authorities[standard.authorityKey]}
+                      >
+                        {standard.code}
+                      </ExternalLink>
+                    ) : (
+                      standard.code
+                    )}
+                  </p>
                   <p
                     className="et-body-sm"
                     style={{
@@ -280,7 +301,13 @@ export default function AboutPage() {
               >
                 On the work we carry out. This is on top of the warranty that
                 comes with the fittings themselves, and the legal defects
-                period under the Home Building Act 1989.
+                period under the{' '}
+                <ExternalLink
+                  href={businessInfo.authorities.nswHomeBuildingContracts}
+                >
+                  Home Building Act 1989
+                </ExternalLink>
+                .
               </p>
             </div>
 
@@ -318,14 +345,11 @@ export default function AboutPage() {
             >
               {businessInfo.sustainability.claim} Greenfleet is an Australian
               not-for-profit that restores native forests.{' '}
-              <a
-                className="et-link"
+              <ExternalLink
                 href={businessInfo.sustainability.partnerUrl}
-                rel="noopener noreferrer"
-                target="_blank"
               >
                 greenfleet.com.au
-              </a>
+              </ExternalLink>
             </p>
           </div>
         </div>

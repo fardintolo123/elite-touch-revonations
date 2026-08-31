@@ -421,6 +421,27 @@ The process/feature-list marker. 48–56px square, `radius-sm`, `magenta-50` bg,
 
 `ink-900`, `space-24` vertical padding. 4 columns above `lg`, stacked below. Headings `caption` uppercase `ink-300`; links `#B9BEC7` → white on hover. Newsletter input uses the on-dark field treatment (`rgba(255,255,255,0.06)` fill, `rgba(255,255,255,0.12)` border).
 
+### 8.11 Comparison table
+
+For package and feature comparisons where the column relationship matters semantically. Use a real
+`<table>` with a visible caption and scoped row/column headers; do not fake tabular data with cards
+alone.
+
+| Part | Treatment |
+|---|---|
+| Wrapper | `overflow-x: auto`, full width, `radius-lg`, `1px ink-100` border, `surface` background |
+| Minimum width | 760px so three tier columns remain scannable; the wrapper scrolls on mobile |
+| Caption | `caption` type, `ink-400`, left-aligned, padded inside the wrapper |
+| Header row | `ink-900` background, white text, `caption` type, uppercase |
+| First column | Sticky on narrow screens, `surface` background, 220px width, `h4`-like weight |
+| Body cells | `body-sm`, `ink-400`, 20px padding, `1px ink-100` dividers |
+| Zebra rows | No. Use plain white rows so detailed inclusions stay calm and readable |
+| Emphasis | Use weight, not extra colour. Magenta stays reserved for primary actions |
+
+Mobile behaviour: the table scrolls inside its own wrapper; the page body must not gain horizontal
+scroll at 390px. Keep the cards if they carry narrative detail, but the table should appear first
+when it is the primary comparison aid.
+
 ---
 
 ## 9. Imagery

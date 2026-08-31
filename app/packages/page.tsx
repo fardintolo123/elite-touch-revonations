@@ -114,6 +114,45 @@ const TIERS = [
   },
 ] as const
 
+const PACKAGE_COMPARISON_ROWS = [
+  {
+    label: 'Starting price and size basis',
+    values: TIERS.map((tier) => `${tier.price}; based on ${tier.size}`),
+  },
+  {
+    label: 'Tiling',
+    values: TIERS.map((tier) => tier.tiling),
+  },
+  {
+    label: 'Electrical',
+    values: TIERS.map((tier) => tier.electrical),
+  },
+  {
+    label: 'Vanity and shaving cabinet',
+    values: [
+      '600 mm pencil edge shaving cabinet and 600 mm vanity',
+      '900 mm pencil edge shaving cabinet and 900 mm vanity',
+      '900 mm pencil edge shaving cabinet and 900 mm vanity',
+    ],
+  },
+  {
+    label: 'Shower screen',
+    values: [
+      'Custom-made semi-frameless shower screen',
+      'Custom-made fully frameless shower screen',
+      'Custom-made fully frameless shower screen',
+    ],
+  },
+  {
+    label: 'Premium-only extras',
+    values: [
+      'Not listed in this tier',
+      'Not listed in this tier',
+      'Freestanding bath, heated towel rail, heated flooring, 2 LED downlights and 1 exhaust fan',
+    ],
+  },
+] as const
+
 /** In all three tiers, per the current sheet. */
 const IN_EVERY_TIER = [
   'Demolition — disconnection and removal of all existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
@@ -225,7 +264,56 @@ export default function PackagesPage() {
 
       <section className="et-section et-band-canvas">
         <div className="et-container">
-          <div className="et-grid et-grid-3">
+          <div className="et-stack">
+            <span className="et-eyebrow">Compare packages</span>
+            <h2 className="et-h2 et-measure-tight">
+              What changes between Basic, Standard and Premium?
+            </h2>
+            <p className="et-lead et-measure">
+              The three packages differ by starting price, bathroom size,
+              tile coverage, electrical allowance and fittings. The table
+              keeps the size basis with each price, because the number is only
+              useful when you know what room it assumes.
+            </p>
+          </div>
+
+          <div
+            className="et-table-wrap"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
+            <table className="et-table">
+              <caption>
+                Elite Touch bathroom renovation package comparison. All prices
+                are starting prices and are fixed in writing after a free
+                on-site measure.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">What changes</th>
+                  {TIERS.map((tier) => (
+                    <th key={tier.name} scope="col">
+                      {tier.name}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {PACKAGE_COMPARISON_ROWS.map((row) => (
+                  <tr key={row.label}>
+                    <th scope="row">{row.label}</th>
+                    {row.values.map((value, index) => (
+                      <td key={`${row.label}-${TIERS[index].name}`}>{value}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            className="et-grid et-grid-3"
+            style={{ marginTop: 'var(--et-space-10)' }}
+          >
             {TIERS.map((tier) => (
               <div key={tier.name} className="et-card">
                 <span className="et-eyebrow">{tier.name}</span>
