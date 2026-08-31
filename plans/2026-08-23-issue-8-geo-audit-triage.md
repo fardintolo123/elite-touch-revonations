@@ -109,4 +109,5 @@ E-E-A-T 20%, Technical SEO 15%, Schema Markup 10%, Platform Readiness 10%). Pres
 - [x] Verified served HTML with `curl` for every changed route (schema + breadcrumbs present)
 - [x] Ran `node scripts/verify-redirects.mjs` — 34/34 passed, nothing broken
 - [x] Recorded the verdict in `DECISIONS.md` (D-90, D-91, D-92, O-10)
-- [ ] Close GitHub issues #7 and #8 with the triage summary as a comment
+- [x] Close GitHub issues #7 and #8 with the triage summary as a comment (issue #7 closed by a
+      concurrent session; issue #8 closed 2026-08-30 with the triage summary comment)
