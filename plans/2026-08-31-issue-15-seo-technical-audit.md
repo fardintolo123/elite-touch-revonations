@@ -1,9 +1,13 @@
 # Technical SEO Audit — Elite Touch Renovations (GitHub issue #15)
 
-**Task:** `/seo-technical` — full technical SEO audit. **Planning only.** No files changed, nothing
-committed or deployed, no implementation issues opened. This document is the deliverable, written to
-be consolidated with the other SEO audits later (issue #5 performance, issue #8 GEO, issue #16
+**Task:** `/seo-technical` — full technical SEO audit. The audit itself was **planning only** — no
+files changed, nothing committed or deployed. This document is the deliverable, written to be
+consolidated with the other SEO audits later (issue #5 performance, issue #8 GEO, issue #16
 indexation).
+
+**Update 2026-08-31:** owner greenlit implementation. The 13 numbered steps below are now GitHub
+issues **#17–#28** — see the **Implementation tracker** section at the end of this file. Each issue
+traces back to its finding + phase/step here and must be closed alongside its tracker checkbox.
 
 **Date:** 2026-08-31
 **Method:** static read of the whole codebase + inspection of the current production build output in
@@ -314,6 +318,38 @@ before/after. Nothing here has been implemented.
 - Build the six Tier-1 suburb pages (`docs/SEO_CONTENT_GUIDE.md` priority 3) — the strategic fix
   behind H-1.
 - **M-3** rewrite of the six long gallery blurbs — belongs with the content-quality pass, not here.
+
+---
+
+## Implementation tracker
+
+Owner greenlit implementation 2026-08-31. Each step below is one GitHub issue. **Execute top to
+bottom.** When an issue ships: tick its box here, add `shipped <date> <commit>` next to the finding
+it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue Workflow).
+
+### Phase 1 — stop the bleeding (code-only, 1 sitting)
+- [ ] **#17 · H-1** — hub pages stop linking to unbuilt Tier-1 suburb URLs. *(Phase 1, step 1. No dep. Do first.)*
+- [ ] **#18 · L-1 + L-4** — drop `Host:` from robots.txt; de-dupe the 404 robots meta. *(Phase 1, steps 2–3. No dep. Parallel with #17.)*
+
+### Phase 2 — the metadata layer (1–2 sittings)
+- [ ] **#19 · H-2** — `lib/metadata.ts` `buildMetadata()`; per-page `og:url` = canonical. *(Phase 2, step 4. No dep. **Blocks #20.**)*
+- [ ] **#20 · H-3** — `og:image` / `twitter:image` sitewide; `summary_large_image`. *(Phase 2, step 5. **Depends on #19.**)*
+- [ ] **#21 · M-5** — trim the two over-length `<title>` tags. *(Phase 2, step 6. Fold into #19 if that lands first.)*
+
+### Phase 3 — structured data + sitemap (1–2 sittings)
+- [ ] **#22 · M-1** — per-page `Service` JSON-LD on the 4 service pages. *(Phase 3, step 7. No dep.)*
+- [ ] **#23 · M-2** — real per-content `lastmod` in `app/sitemap.ts`. *(Phase 3, step 8. No dep.)*
+- [ ] **#24 · L-5 + L-6** — `ImageObject` + `article` type on gallery project pages. *(Phase 3, step 9. Optional / lowest; same sitting as #22–#23.)*
+
+### Phase 4 — hardening + measurement (owner / creds gates)
+- [ ] **#25 · M-4** — report-only CSP + `Permissions-Policy`. *(Phase 4, step 10. **Blocked: owner awareness before enforce.**)*
+- [ ] **#26 · L-3** — enable AVIF; measure LCP + build time before/after. *(Phase 4, step 11.)*
+- [ ] **#27 · L-8** — live-domain PSI + CrUX into `PERFORMANCE_BUDGET.md` §4. *(Phase 4, step 12. **Blocked: Google API creds / interactive.** Do first if the owner wants a "where are we really" number — no code.)*
+- [ ] **#28 · L-2** — IndexNow key + deploy ping. *(Phase 4, step 13. **Blocked: owner decision — do we want Bing/Yandex fast-crawl?**)*
+
+**Not issued** (deliberately — see "Not in this plan" above): the six Tier-1 suburb pages (content
+project behind H-1), the M-3 gallery-blurb rewrites (content-quality pass), and L-7 (14px body copy
+— `DESIGN.md` is authoritative; flagged for an eyeball, not asserted as a defect).
 
 ---
 
