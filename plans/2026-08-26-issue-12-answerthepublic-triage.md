@@ -115,7 +115,16 @@ or improving any page is a separate, owner-confirmed next step.
       `docs/source-copy/svc-powder.md` — nothing invented. `npm run build` verified at 30 routes; new
       copy + schema confirmed present in served HTML on `/services/powder-room-renovations/`; the
       other three service pages verified unchanged. Recorded as D-107.
+- [x] Performance budget re-measured (2026-09-01) per `docs/PERFORMANCE_BUDGET.md` §3 — the D-107
+      powder-room change (about paragraph + 4 FAQs + `FAQPage` JSON-LD) is text-only and adds **zero**
+      JS/image/font/dependency. Isolated local production build of last-green commit `50ca5b7`,
+      Lighthouse mobile: **Perf 96–97, FCP ~1.0s, LCP ~2.2s, TBT ~90ms, CLS 0** with the GTM env var
+      unset (current production reality). Every §1 gate and payload budget passes with margin; the new
+      copy + schema confirmed in served HTML. Two baseline rows added to `PERFORMANCE_BUDGET.md` §4.
+      **Separate finding (not from this issue):** with `NEXT_PUBLIC_GTM_ID` set (D-112), third-party JS
+      is ~317 KB — over the §1 ≤250 KB budget — and TBT rises to ~190–260ms. Flag for D-112's
+      Vercel-env-var step.
 - [ ] Priority-7 buyer-support guide(s) (process / fixed-price-vs-hourly / hiring-a-licensed-renovator)
       remain a later-priority candidate, not built this session — priorities 1–6 come first per
       `docs/SEO_CONTENT_GUIDE.md` §2.
-- [ ] Issue #12 closed with a link to this plan and the decision rows
+- [x] Issue #12 closed (2026-09-01) with a summary comment linking the decision rows
