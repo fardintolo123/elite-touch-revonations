@@ -137,6 +137,12 @@ be scheduled, not forgotten.
 **Files:** `app/services/[slug]/[location]/page.tsx`, `lib/locations.ts`, `service-areas.json`.
 **Effort:** S for the interim gate. **Risk:** low.
 
+**SHIPPED / #17 CLOSED 2026-09-01.** The interim gate landed as a side effect of #40 in commit
+`3d92daa`: the suburb `<Link>` is now `suburb.url && publishedLocationSet.has(suburb.slug)`, and
+`publishedLocationSet` holds *region* slugs, so every Tier-1 suburb renders as plain text until a real
+page exists. Verified against the fresh production build — the 4 dead `href`s are gone, the 4 suburb
+names remain as text. Strategic fix (build the suburb pages) is still a separate content project.
+
 #### H-2 · `og:url` is hard-coded to the homepage on every page
 
 **What.** `app/layout.tsx` sets `openGraph.url: businessInfo.siteUrl` once. Per-page metadata only
@@ -345,7 +351,7 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 > the master plan and this tracker disagree on ordering, the master plan's Phase A–E roadmap wins.
 
 ### Phase 1 — stop the bleeding (code-only, 1 sitting)
-- [x] **#17 · H-1** — hub pages stop linking to unbuilt Tier-1 suburb URLs. **Done as a side effect of #40** in commit `3d92daa` (the `<Link>` is now gated on `publishedLocationSet.has(suburb.slug)`; no published-region slug ever matches a suburb slug, so all four Tier-1 suburbs render as plain text). Verify + close #17 once the build is green again. *(Phase 1, step 1.)*
+- [x] **#17 · H-1 — CLOSED 2026-09-01.** Hub pages stop linking to unbuilt Tier-1 suburb URLs. Fixed as a side effect of #40 in commit `3d92daa` (the `<Link>` is gated on `publishedLocationSet.has(suburb.slug)`; no published-region slug matches a suburb slug, so all four Tier-1 suburbs render as plain text). **Verified** against the fresh production build (`.next`, 2026-09-01 10:47): no `href` to `/services/bathroom-renovations/{baulkham-hills,castle-hill,kellyville,randwick}/` on either published hub; all four suburb names still present as text. Latent follow-up noted at `[location]/page.tsx:227` for when a real Tier-1 suburb page is built. *(Phase 1, step 1.)*
 - [~] **#18 · L-1 + L-4** — **L-4 shipped** (`Host:` line removed from `app/robots.ts`; verified absent from `/robots.txt` via `next dev`). **L-1 traced, deferred**: the 404 carries two `<meta name="robots">` tags — our explicit `noindex, follow` plus a `noindex` Next auto-injects for every 404-status response. Both are noindex (no risk). Collapsing to one needs either dropping the sitewide `index, follow` layout default (touches every page) or a deeper Next metadata change — not the "trivial" fix the finding assumed. Keep #18 open for the L-1 decision. *(Phase 1, steps 2–3.)*
 
 ### Phase 2 — the metadata layer (1–2 sittings)
