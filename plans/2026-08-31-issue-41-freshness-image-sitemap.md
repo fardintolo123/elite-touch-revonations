@@ -3,6 +3,13 @@
 **Issue:** #41 — visible freshness dates, project completion years, image sitemap entries, quarterly review cadence.
 **Date:** 2026-08-31
 
+**Progress note (2026-09-01):** the data-layer half of step 1 is done — all 11 `lib/projects.ts`
+records now carry `updated: '2026-08-31'` and `completedByYear: 2026` (see
+`plans/2026-09-01-restore-green-build-issue-41-data-layer.md`). This was pulled forward on its own
+because commit `3d92daa` had left the type requiring those fields with no record setting them — a
+red build. **Still open on this issue:** visible captions on gallery/packages/hubs, and the
+`app/sitemap.ts` rework (real per-content `lastmod` + image entries), and the quarterly checklist.
+
 ## Implementation plan
 
 1. Add explicit content dates to the source data used by pages and the sitemap.
@@ -14,7 +21,8 @@
 ## Checklist
 
 - [ ] Route and issue brief read; #23 dependency checked.
-- [ ] Static, service, project, and region content dates added.
+- [~] Static, service, project, and region content dates added. *(project + service dates in the
+      data; static-route + region date map still to do — 2026-09-01)*
 - [ ] `/packages/` renders “Package prices current as of August 2026”.
 - [ ] Gallery project pages render a completion-year caption.
 - [ ] Published hubs render a reviewed date.

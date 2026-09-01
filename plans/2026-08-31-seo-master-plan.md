@@ -248,3 +248,8 @@ Recommended solution · Files · Priority · Dependencies · Acceptance criteria
 - **Issues created:** #29–#46 (18 new), each traceable to a finding here; coordination comments
   added to #21, #22, #23, #24, #26, #27.
 - **Not started:** remaining open issues await owner scheduling.
+- **Build health (2026-09-01):** commit `3d92daa` was committed with a known red build (the
+  `Project` type required `updated` / `completedByYear` before any record set them). Cleared
+  2026-09-01 — all 11 project records populated; `tsc` + `next build` green. See
+  `plans/2026-09-01-restore-green-build-issue-41-data-layer.md`. #40–#45 remain partially
+  implemented and in progress on top of a now-green tree.
