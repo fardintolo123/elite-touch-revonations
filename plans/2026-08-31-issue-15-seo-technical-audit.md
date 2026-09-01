@@ -266,9 +266,10 @@ hand-edit, don't regex).
   `docs/PERFORMANCE_BUDGET.md` §3 before/after. Files: `next.config.ts`.
 - **L-4 · `robots.txt` emits a `Host:` directive** (`app/robots.ts` returns `host`). Google ignores
   it; Yandex is the only consumer and it is deprecated there too. Harmless, but noise. Drop `host`
-  from the return. **Shipped 2026-08-31 (#18)** — `host` removed from `app/robots.ts`; `/robots.txt`
-  verified to no longer contain a `Host:` line (`next dev`). Not yet committed against a green build
-  (tree is red on the unrelated #41 `lib/projects.ts` work).
+  from the return. **Shipped 2026-08-31 (#18), commit `b21c322`** — `host` removed from
+  `app/robots.ts`; `/robots.txt` verified to no longer contain a `Host:` line (`next dev`). `tsc
+  --noEmit` green after the parallel #41 fix (`2da16e8`) landed; a full `next build` was skipped to
+  avoid a concurrent-build clash with other sessions.
 - **L-5 · Gallery project pages carry no `ImageObject` and no `Article`/`CreativeWork` schema.**
   They are de-facto case studies (real photos, real suburb, real scope). `ImageObject` per photo
   (with `contentUrl`, `caption` = the alt text) and treating the page as `Article` would strengthen
