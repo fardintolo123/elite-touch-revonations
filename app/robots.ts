@@ -12,6 +12,11 @@ import { businessInfo } from '@/lib/businessInfo'
  * Google from crawling it — which means it never sees the 410 and the URL can
  * linger in the index as a URL-only entry. To remove a page, let it be crawled
  * and let it return 410.
+ *
+ * No `host:` line. The canonical host is already fixed by the `https`/`www`
+ * redirects (D-41) and the per-page canonical tags. `Host:` in robots.txt is a
+ * Yandex-only directive that Yandex itself has deprecated, and Google ignores
+ * it — emitting it was just noise (SEO audit L-4).
  */
 
 export default function robots(): MetadataRoute.Robots {
@@ -24,6 +29,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${businessInfo.siteUrl}/sitemap.xml`,
-    host: businessInfo.siteUrl,
   }
 }

@@ -15,6 +15,14 @@ import { businessInfo } from '@/lib/businessInfo'
  *
  * `follow: true` is intentional: we still want crawlers to follow the links out
  * of this page back into the real site.
+ *
+ * NOTE (SEO audit L-1): the served 404 currently carries *two*
+ * `<meta name="robots">` tags — this one (`noindex, follow`) plus a `noindex`
+ * that Next injects automatically for any 404-status response
+ * (node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/not-found.md).
+ * Both say noindex, so there is no indexation risk. Collapsing to one tag means
+ * either dropping the sitewide `index, follow` layout default (touches every
+ * page) or a deeper Next metadata-merge change — deferred, not a quick fix.
  */
 
 export const metadata: Metadata = {

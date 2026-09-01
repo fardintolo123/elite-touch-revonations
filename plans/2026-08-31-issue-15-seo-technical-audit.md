@@ -250,6 +250,13 @@ hand-edit, don't regex).
   follow`). Both are noindex so there is no indexation risk, but it is untidy and worth tracing
   (likely a Next 16 default for the `/_not-found` segment plus the explicit `metadata` export).
   Files: `app/not-found.tsx`.
+  **Traced 2026-08-31 (#18):** confirmed — Next auto-injects `<meta name="robots" content="noindex">`
+  for *any* 404-status response (`not-found.md` line 187), and `app/not-found.tsx`'s `metadata.robots`
+  adds the second (`noindex, follow`). Removing our export doesn't help: the page then inherits the
+  root layout's sitewide `index, follow`, so the second tag becomes the worse-looking
+  `<meta name="robots" content="index, follow">` on a 404 (verified via `next dev`). A one-tag result
+  needs either dropping the layout-wide `index, follow` default (every page) or a deeper Next
+  metadata-merge change. **Deferred — not the quick fix the finding assumed.** #18 stays open for it.
 - **L-2 · IndexNow not implemented.** Adding an IndexNow key + ping on deploy gets Bing/Yandex/Naver
   to re-crawl changed URLs in hours instead of days. Low value for a Google-first Sydney local
   business; cheap. Files: new `public/{key}.txt` + a deploy hook.
@@ -259,7 +266,9 @@ hand-edit, don't regex).
   `docs/PERFORMANCE_BUDGET.md` §3 before/after. Files: `next.config.ts`.
 - **L-4 · `robots.txt` emits a `Host:` directive** (`app/robots.ts` returns `host`). Google ignores
   it; Yandex is the only consumer and it is deprecated there too. Harmless, but noise. Drop `host`
-  from the return.
+  from the return. **Shipped 2026-08-31 (#18)** — `host` removed from `app/robots.ts`; `/robots.txt`
+  verified to no longer contain a `Host:` line (`next dev`). Not yet committed against a green build
+  (tree is red on the unrelated #41 `lib/projects.ts` work).
 - **L-5 · Gallery project pages carry no `ImageObject` and no `Article`/`CreativeWork` schema.**
   They are de-facto case studies (real photos, real suburb, real scope). `ImageObject` per photo
   (with `contentUrl`, `caption` = the alt text) and treating the page as `Article` would strengthen
@@ -329,9 +338,14 @@ Owner greenlit implementation 2026-08-31. Each step below is one GitHub issue. *
 bottom.** When an issue ships: tick its box here, add `shipped <date> <commit>` next to the finding
 it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue Workflow).
 
+> **Consolidation note (2026-08-31):** a separate pass merged all seven SEO audits into
+> `plans/2026-08-31-seo-master-plan.md` and opened issues **#29–#46**. That plan keeps #17–#28 as-is
+> (its §3 registry marks them ✅ already-issued) and adds cross-reference comments to #21–#27. Where
+> the master plan and this tracker disagree on ordering, the master plan's Phase A–E roadmap wins.
+
 ### Phase 1 — stop the bleeding (code-only, 1 sitting)
-- [ ] **#17 · H-1** — hub pages stop linking to unbuilt Tier-1 suburb URLs. *(Phase 1, step 1. No dep. Do first.)*
-- [ ] **#18 · L-1 + L-4** — drop `Host:` from robots.txt; de-dupe the 404 robots meta. *(Phase 1, steps 2–3. No dep. Parallel with #17.)*
+- [x] **#17 · H-1** — hub pages stop linking to unbuilt Tier-1 suburb URLs. **Done as a side effect of #40** in commit `3d92daa` (the `<Link>` is now gated on `publishedLocationSet.has(suburb.slug)`; no published-region slug ever matches a suburb slug, so all four Tier-1 suburbs render as plain text). Verify + close #17 once the build is green again. *(Phase 1, step 1.)*
+- [~] **#18 · L-1 + L-4** — **L-4 shipped** (`Host:` line removed from `app/robots.ts`; verified absent from `/robots.txt` via `next dev`). **L-1 traced, deferred**: the 404 carries two `<meta name="robots">` tags — our explicit `noindex, follow` plus a `noindex` Next auto-injects for every 404-status response. Both are noindex (no risk). Collapsing to one needs either dropping the sitewide `index, follow` layout default (touches every page) or a deeper Next metadata change — not the "trivial" fix the finding assumed. Keep #18 open for the L-1 decision. *(Phase 1, steps 2–3.)*
 
 ### Phase 2 — the metadata layer (1–2 sittings)
 - [ ] **#19 · H-2** — `lib/metadata.ts` `buildMetadata()`; per-page `og:url` = canonical. *(Phase 2, step 4. No dep. **Blocks #20.**)*
