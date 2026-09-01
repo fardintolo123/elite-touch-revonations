@@ -11,6 +11,7 @@ import { FaqSchema } from '@/components/FaqSchema'
 import { ExternalLink } from '@/components/ExternalLink'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
+import { serviceHeroImages } from '@/lib/serviceHeroImages'
 
 /**
  * Which real, suburb-attributed photo (if any) illustrates each service hero.
@@ -22,13 +23,6 @@ import { AreasServedLinks } from '@/components/AreasServedLinks'
  * (DECISIONS.md D-83, D-06). Those two slugs are deliberately absent from
  * this map, so their hero stays text-only. Do not add a fallback image here.
  */
-const SERVICE_HERO_IMAGE: Partial<
-  Record<(typeof services)[number]['slug'], { slug: string; imageIndex?: number }>
-> = {
-  'bathroom-renovations': { slug: 'randwick-bathroom', imageIndex: 1 },
-  'ensuite-bathroom-renovations': { slug: 'hornsby-ensuite', imageIndex: 0 },
-}
-
 /**
  * One renderer, four pages, driven by `services` in lib/businessInfo.ts.
  * "Content is data" — CLAUDE.md → Architecture Rules. Edit the data, not this
@@ -118,7 +112,7 @@ export default async function ServicePage({
   const [review] = featuredReviews(1)
   const others = services.filter((item) => item.slug !== service.slug)
 
-  const heroImageRef = SERVICE_HERO_IMAGE[service.slug]
+  const heroImageRef = serviceHeroImages[service.slug]
   const heroProject = heroImageRef
     ? projects.find((p) => p.slug === heroImageRef.slug)
     : undefined
@@ -128,6 +122,12 @@ export default async function ServicePage({
   // assuming the field exists on the whole `Service` union.
   const about = 'about' in service ? service.about : undefined
   const faqs = 'faqs' in service ? service.faqs : undefined
+  // Powder-room only (D-107 / blog-analyze F-1): the shared build-durations
+  // block is bathroom-scoped and contradicts that page's own FAQ, so it is
+  // hidden there. Every other service still shows it.
+  const showBuildDurations = !(
+    'hideBuildDurations' in service && service.hideBuildDurations
+  )
 
   return (
     <>
@@ -195,7 +195,10 @@ export default async function ServicePage({
 
       {/* Build durations. Owner-supplied (issue #2 service PDF), settled in
           D-75. These are on-site programs and a real customer promise — do not
-          shorten them to sound more competitive. */}
+          shorten them to sound more competitive. Hidden on powder-room, where
+          the figures are bathroom-scoped and the FAQ carries the real timeline
+          (blog-analyze F-1). */}
+      {showBuildDurations && (
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
           <span className="et-eyebrow">How long it takes</span>
@@ -236,6 +239,7 @@ export default async function ServicePage({
           </div>
         </div>
       </section>
+      )}
 
       <section className="et-section et-band-ink">
         <div className="et-container et-stack">

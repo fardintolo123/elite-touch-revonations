@@ -87,6 +87,7 @@ export default async function ProjectPage({
           <span className="et-eyebrow">
             {project.suburb} · {project.service}
           </span>
+          <p className="et-caption">Completed by {project.completedByYear}</p>
           <h1 className="et-h1 et-measure-tight">{project.name}</h1>
           <p className="et-lead et-measure">{project.blurb}</p>
         </div>

@@ -28,4 +28,8 @@ C-9, F-1, G-4 and L-7.
 - [x] FAQ rich-result status updated from Google Search Central's 2026 changelog.
 - [x] RSL 1.0, `llms.txt` and 14px body-copy notes recorded as considered skips/verification items.
 - [x] Master SEO plan updated to show #46 shipped.
-- [ ] Validation run completed.
+- [x] Stale-text grep checked; remaining hits are historical/source/audit records, not standing
+      guidance.
+- [x] `npm.cmd run typecheck` passed.
+- [ ] `npm.cmd run build` attempted twice; blocked by existing `.next\lock` / another Next build
+      process.

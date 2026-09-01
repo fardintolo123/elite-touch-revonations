@@ -7,6 +7,8 @@ import { PageHero } from '@/components/PageHero'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { FaqSchema } from '@/components/FaqSchema'
 import { projects } from '@/lib/projects'
+import { formatMonthYear } from '@/lib/dateLabels'
+import { ExternalLink } from '@/components/ExternalLink'
 
 /**
  * Packages / pricing.
@@ -155,16 +157,45 @@ const PACKAGE_COMPARISON_ROWS = [
 
 /** In all three tiers, per the current sheet. */
 const IN_EVERY_TIER = [
-  'Demolition — disconnection and removal of all existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
-  'Safe disconnection of existing electrical and plumbing connections',
-  'Installation of new fittings — toilet, vanity, towel rail, toilet roll holder, shower head, shower mixer, vanity mixer',
-  'Waterproofing to Australian Standards using premium waterproofing products',
-  'Aluminium angles supplied and installed around the shower and at the door',
-  'New screed to create appropriate falls to drains',
-  'All glues, tile trims and grouts',
-  'Supply and installation of a custom shower screen',
-  'Painting of bathroom ceilings',
-  'Final clean of the bathroom prior to handover',
+  {
+    key: 'demolition',
+    body: 'Demolition — disconnection and removal of all existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
+  },
+  {
+    key: 'disconnections',
+    body: 'Safe disconnection of existing electrical and plumbing connections',
+  },
+  {
+    key: 'fittings',
+    body: 'Installation of new fittings — toilet, vanity, towel rail, toilet roll holder, shower head, shower mixer, vanity mixer',
+  },
+  {
+    key: 'waterproofing',
+    body: (
+      <>
+        Waterproofing to{' '}
+        <ExternalLink href={businessInfo.authorities.as3740}>
+          Australian Standards
+        </ExternalLink>{' '}
+        using premium waterproofing products
+      </>
+    ),
+  },
+  {
+    key: 'angles',
+    body: 'Aluminium angles supplied and installed around the shower and at the door',
+  },
+  {
+    key: 'screed',
+    body: 'New screed to create appropriate falls to drains',
+  },
+  { key: 'tiling-materials', body: 'All glues, tile trims and grouts' },
+  {
+    key: 'screen',
+    body: 'Supply and installation of a custom shower screen',
+  },
+  { key: 'painting', body: 'Painting of bathroom ceilings' },
+  { key: 'clean', body: 'Final clean of the bathroom prior to handover' },
 ] as const
 
 /**
@@ -204,6 +235,7 @@ const FAQS = [
 ] as const
 
 const heroProject = projects.find((p) => p.slug === 'castle-hill-bathroom')!
+const packagePricingMonth = formatMonthYear(businessInfo.packagePricingUpdated)
 
 export default function PackagesPage() {
   return (
@@ -240,6 +272,9 @@ export default function PackagesPage() {
       <section className="et-section et-band-surface">
         <div className="et-container">
           <div className="et-stack">
+            <p className="et-caption">
+              Package prices current as of {packagePricingMonth}
+            </p>
             <h2 className="et-h2 et-measure-tight">
               How much does a bathroom renovation cost in Sydney?
             </h2>
@@ -431,8 +466,8 @@ export default function PackagesPage() {
             <div className="et-card">
               <ul className="et-checklist">
                 {IN_EVERY_TIER.map((item) => (
-                  <li key={item} className="et-body-sm">
-                    {item}
+                  <li key={item.key} className="et-body-sm">
+                    {item.body}
                   </li>
                 ))}
               </ul>

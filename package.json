@@ -9,7 +9,9 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "verify:redirects": "node scripts/verify-redirects.mjs",
-    "check:readability": "node scripts/check-readability.mjs"
+    "check:readability": "node scripts/check-readability.mjs",
+    "images:xmp": "node scripts/inject-project-image-xmp.mjs",
+    "images:xmp:verify": "node scripts/inject-project-image-xmp.mjs --verify"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",

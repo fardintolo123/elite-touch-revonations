@@ -1,7 +1,12 @@
 import type { MetadataRoute } from 'next'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { projects } from '@/lib/projects'
-import { LOCATION_PARENT_SLUG, publishedRegions } from '@/lib/locations'
+import {
+  LOCATION_PARENT_SLUG,
+  projectsInRegion,
+  publishedRegions,
+} from '@/lib/locations'
+import { serviceHeroImages } from '@/lib/serviceHeroImages'
 
 /**
  * Replaces Yoast's `sitemap_index.xml` / `page-sitemap.xml`.
@@ -21,11 +26,40 @@ import { LOCATION_PARENT_SLUG, publishedRegions } from '@/lib/locations'
  *
  * Publication = content + an internal link from a relevant hub + a sitemap
  * entry (PROJECT_CONTEXT.md §4.7). Adding a route here is not publishing it.
+ *
+ * ⚠️ `lastModified` is a REAL per-content date — never `new Date()`. A build
+ * timestamp marks every page "changed" on every unrelated Vercel deploy, and
+ * Google discounts a sitemap that cries wolf ("fake freshness is a trust
+ * signal spent for nothing" — SEO audit M-2 / issue #23). Sources:
+ *   - service pages → `updated` in `lib/businessInfo.ts`
+ *   - gallery project pages → `updated` in `lib/projects.ts`
+ *   - everything else → `LAST_CONTENT_PASS` below; bump it ONLY when you have
+ *     genuinely reworked those pages, not on a routine deploy.
+ *
+ * `images` lists the photos a crawler finds on that page, as absolute URLs —
+ * the Google image-sitemap extension (issue #41).
  */
+
+/**
+ * Last site-wide content pass. The 2026-08-31 SEO implementation reworked the
+ * homepage, services index, packages, about, gallery index and the contact
+ * form. Applies to routes that do not carry their own tracked `updated` date.
+ * Change this only when you actually change those pages.
+ */
+const LAST_CONTENT_PASS = '2026-08-31'
+
+const absolute = (path: string) => `${businessInfo.siteUrl}${path}`
+
+function serviceHeroImageFor(slug: string): string | undefined {
+  const ref = serviceHeroImages[slug as keyof typeof serviceHeroImages]
+  const project = ref ? projects.find((item) => item.slug === ref.slug) : undefined
+  const image = project?.images[ref?.imageIndex ?? 0]
+
+  return image ? absolute(image.src) : undefined
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = businessInfo.siteUrl
-  const lastModified = new Date()
 
   const staticRoutes: MetadataRoute.Sitemap = (
     [
@@ -36,29 +70,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `${base}/about-us/`, changeFrequency: 'yearly', priority: 0.7 },
       { url: `${base}/contact-us/`, changeFrequency: 'yearly', priority: 0.8 },
     ] satisfies MetadataRoute.Sitemap
-  ).map((entry) => ({ ...entry, lastModified }))
+  ).map((entry) => ({ ...entry, lastModified: LAST_CONTENT_PASS }))
 
-  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
-    url: `${base}/services/${service.slug}/`,
-    lastModified,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => {
+    const heroImage = serviceHeroImageFor(service.slug)
+
+    return {
+      url: `${base}/services/${service.slug}/`,
+      lastModified: service.updated,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      ...(heroImage ? { images: [heroImage] } : {}),
+    }
+  })
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${base}/gallery/${project.slug}/`,
-    lastModified,
+    lastModified: project.updated,
     changeFrequency: 'yearly',
     priority: 0.6,
+    images: project.images.map((image) => absolute(image.src)),
   }))
 
   const locationRoutes: MetadataRoute.Sitemap = publishedRegions().map(
-    (region) => ({
-      url: `${base}/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    })
+    (region) => {
+      const localImages = projectsInRegion(region).map((project) =>
+        absolute(project.images[0].src),
+      )
+      return {
+        url: `${base}/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
+        lastModified: region.updated ?? LAST_CONTENT_PASS,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+        ...(localImages.length > 0 ? { images: localImages } : {}),
+      }
+    },
   )
 
   return [

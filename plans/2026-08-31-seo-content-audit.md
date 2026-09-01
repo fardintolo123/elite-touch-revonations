@@ -23,7 +23,7 @@ answer-first findings those passes did not cover.
 | **Experience** | 21/25 | 61 real project photos, real suburb attribution, genuine matched before/after pairs (2nd batch), first-person process copy ("what it's like to have us in your home"), concrete method detail (AS 3740 primer + 2 coats + certificate, falls to drains, screed). This is the site's strongest asset. | Gallery project pages carry only a 1-sentence blurb — the *story* of each job (scope, what was hard, materials, duration) is missing. The 3 text-only case studies are 2-sentence stubs. |
 | **Expertise** | 18/25 | About page names all four Dawoods with real, checkable credentials (Licensed Builder & Civil Engineer; Licensed Tiler, 25+ yrs; Master's in Architecture, UTS + SJB; Grad Cert Construction PM). Technical specificity throughout. | No author attribution on any page (no blog yet, so low stakes now — but a blocker the moment buyer guides get written). No individual bio depth beyond the team cards. |
 | **Authoritativeness** | 12/25 | HIA membership stated; Greenfleet partnership (with outbound link). | No press, no awards, no "best of" list placements, no external citations, thin local-authority footprint (see local audit §"Local link & authority"). Mostly off-site work. |
-| **Trustworthiness** | 18/25 | HTTPS + HSTS; full NAP; ABN/ACN/licence/insurances on-page; 19 verbatim testimonials; "check our licence on the NSW Fair Trading register" (self-deprecating, good); fixed-scope-quote transparency; honest "older homes need extra days" hedging. | **No privacy policy and no terms page — while running a form that collects name, email, phone, message and writes them to Supabase + Resend.** No visible dates / "last updated" anywhere. Authoritative bodies named but never linked. |
+| **Trustworthiness** | 18/25 | HTTPS + HSTS; full NAP; ABN/ACN/licence/insurances on-page; 19 verbatim testimonials; "check our licence on the NSW Fair Trading register" (self-deprecating, good); fixed-scope-quote transparency; honest "older homes need extra days" hedging. | **No privacy policy and no terms page — while running a form that collects name, email, phone, message and writes them to Supabase + Resend.** No visible dates / "last updated" anywhere. Authority links were added under issue #42; the privacy/freshness gaps remain. |
 
 **E-E-A-T total ≈ 69/100.** Experience and Trust are genuinely good for a small trade site; the drag
 is Authoritativeness (off-site) and the missing privacy policy.
@@ -119,7 +119,7 @@ does this well ("With Elite Touch, a bathroom renovation starts from $18,000 for
 how long, the licence/warranty). Fold into C-2 (service pages) and local audit #4 (hubs).
 **Priority:** Medium. **Effort:** S (per page). **Risk:** low. **Dependency:** C-2, local #4.
 
-### C-4 · Authoritative bodies are named but never linked  ·  MEDIUM
+### C-4 · Authoritative bodies are named but never linked  ·  MEDIUM · CLOSED 2026-09-01 (#42)
 
 **What.** The copy references "NSW Fair Trading register", "AS 3740 / AS 3740-2021", "Home Building
 Act 1989", "National Construction Code", "HIA", "WELS" — and links **none** of them. The only
@@ -136,6 +136,12 @@ page, and NSW Fair Trading's home-building info page. `rel="noopener"`, and deci
 consistently (the Greenfleet link uses it). 4–6 links total, placed where the term first appears.
 **Files:** `app/about-us/page.tsx`, `app/services/[slug]/page.tsx`, possibly `lib/businessInfo.ts`
 (store the URLs). **Priority:** Medium. **Effort:** S. **Risk:** low.
+
+**Implemented 2026-09-01.** Authority URLs now live in `lib/businessInfo.ts`. `/about-us/` links the
+NSW licence register, AS 3740, NCC wet-area rules, HIA membership context, WELS and NSW home-building
+contract/statutory-warranty guidance. Service pages link the AS 3740 waterproofing mention in the
+standard inclusions list. External authority links use `target="_blank"` with
+`rel="noopener noreferrer"`, matching the existing Greenfleet handling.
 
 ### C-5 · No freshness signals anywhere  ·  MEDIUM
 
@@ -193,16 +199,21 @@ Current coverage:
 **Recommended solution.** Work the two unaddressed objections into the service-page FAQ blocks from
 C-2 and/or a short "living through it" section. **Priority:** Low–Medium. **Effort:** S. **Dependency:** C-2.
 
-### C-8 · Gallery project pages are thin on the story  ·  LOW
+### C-8 · Gallery project pages are thin on the story  ·  LOW — CLOSED 2026-09-01
 
 Each `/gallery/{slug}/` page is: H1 + 1-sentence blurb + photos + shared "what every job includes"
-+ related grid. If the owner's per-project "Project Info" documents (referenced in `lib/projects.ts`
+and related grid. If the owner's per-project "Project Info" documents (referenced in `lib/projects.ts`
 and `plans/2026-08-25-new-project-photos-intake.md`) contain more than the trimmed blurb — scope,
 timeline, materials, what was challenging — a 2–3 sentence "About this project" paragraph per page
 would turn these into real mini case studies (Experience signal + long-tail + AI-citable detail).
 **Only** using owner-supplied detail — no invention, no inferring from photos beyond what alt text
 already states (D-06). **Priority:** Low. **Effort:** M (depends on source material). **Dependency:**
 check what's in the Project Info docs first.
+
+**Implemented in issue #44.** All 11 published gallery projects now have a `story` field sourced
+from the owner-supplied project notes and rendered in always-present HTML on the project page. The
+new copy uses only documented scope, timeframe, budget, materials and challenge details; nothing was
+inferred from the photographs beyond the existing alt text.
 
 ### C-9 · `docs/CONTENT_QUALITY_CHECKLIST.md` contains stale facts  ·  LOW (doc hygiene)
 
@@ -244,7 +255,7 @@ and the technical audit's note that `CLAUDE.md`/`DECISIONS.md` still say 2023 in
 | Answer-first on service/hub pages (C-3) | local #4 (hubs) | Fold into C-2 issue (services) + local #4 issue (hubs). |
 | Privacy policy (C-1) | — (new) | **Own issue**, HIGH, no dependency — can ship first. |
 | Freshness dates (C-5) | technical M-2 (sitemap lastmod) | **One issue** covering real content dates → feeds sitemap + visible captions. |
-| External authority links (C-4) | local (authority, off-site) | **Own small issue** — on-site, distinct from off-site link building. |
+| External authority links (C-4) | local (authority, off-site) | ✅ **Closed in #42** — on-site, distinct from off-site link building. |
 | Packages comparison table (C-6) | schema (comparative data for AI) | **Own issue**, needs `DESIGN.md` table decision. |
 | Doc fixes (C-9) | schema F-1, technical (2023 refs) | **One doc-hygiene issue** sweeping all stale-fact doc updates. |
 | Gallery project story depth (C-8) | schema S-2 (ImageObject) | Keep separate — C-8 is copy, S-2 is markup; may share an issue. |

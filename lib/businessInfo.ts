@@ -378,6 +378,19 @@ export const services = [
      */
     about:
       'A powder room is a small bathroom — typically 1.5–3 square metres — with a toilet and a hand basin and usually nothing else. Sometimes called a "half bath" or "guest WC", it is the smallest wet area in the house, and normally sits on the ground floor near the living areas so guests never need to enter a bedroom-adjacent bathroom.',
+    /**
+     * Suppress the shared `businessInfo.buildDurations` block on this page only.
+     *
+     * That block is "3–4 weeks / 5–6 / 5–7", owner-corrected for a full BATHROOM
+     * renovation (D-75). A powder room is not that job, and showing those weeks
+     * here directly contradicts this page's own FAQ ("a full renovation … around
+     * seven working days"). The FAQ carries the accurate, D-107-sourced timeline,
+     * so the generic weeks widget is dropped rather than shown with a wrong
+     * number. Do NOT replace it with invented powder-room week/day figures — if a
+     * per-service duration is wanted here, it needs an owner figure first.
+     * (blog-analyze finding F-1, 2026-09-01 — see plans/2026-09-01-blog-analyze-*.)
+     */
+    hideBuildDurations: true,
     faqs: [
       {
         question: 'What is the smallest a powder room can be?',

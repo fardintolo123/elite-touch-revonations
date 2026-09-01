@@ -369,6 +369,22 @@ environment — neither is a website change, and neither traces to a `plans/` li
 
 ---
 
+## 3r. Authority outbound links (GitHub issue #42)
+
+| # | Decision | Status | Why |
+|---|---|---|---|
+| **D-115** | **Checkable authority URLs live in `lib/businessInfo.ts`, and visible authority links open in a new tab with `rel="noopener noreferrer"`.** | **AGENT - built 2026-09-01** | Issue #42 closed the C-4 trust gap: the site named NSW Fair Trading, AS 3740, the National Construction Code, HIA, WELS and Home Building Act context without linking them. These are not decorative citations; they let homeowners verify load-bearing licence, standards, contract and membership claims. URLs are centralised in `businessInfo.authorities`, and `components/ExternalLink.tsx` keeps external-link handling consistent with the existing Greenfleet link. |
+
+---
+
+## 3s. Gallery project story copy and image metadata (GitHub issue #44)
+
+| # | Decision | Status | Why |
+|---|---|---|---|
+| **D-116** | **Gallery project pages now render owner-sourced "About this project" copy, and project WebPs carry XMP ownership metadata.** | **AGENT - built 2026-09-01** | Issue #44 closed the C-8/I-2/I-3 gallery polish gap. Each published `lib/projects.ts` record has a short `story` paragraph drawn from the owner-supplied project notes and shown in always-rendered markup on `/gallery/{slug}/`; no suburb, budget, challenge, material or before/after claim was invented. The extreme alt strings over 200 characters were hand-trimmed while keeping photo accuracy; the published gallery set now has 55 alts, max 196 characters. `exiftool` was unavailable in this environment, so `scripts/inject-project-image-xmp.mjs` was added as the repeatable project-local fallback. It appends/replaces the WebP `XMP ` chunk and leaves image chunks untouched. It was run across all 60 current files under `public/images/projects/`, including five unreferenced WebPs that received Creator/Credit/Rights only because they have no published alt text to use as a description. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |

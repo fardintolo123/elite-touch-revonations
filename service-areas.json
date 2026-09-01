@@ -1,7 +1,7 @@
 {
   "business": "Elite Touch Renovations",
   "service": "Bathroom Renovations",
-  "lastUpdated": "2026-08-29",
+  "lastUpdated": "2026-09-01",
   "notes": "tier 1 = dedicated page, tier 2 = hub-page-only. slug fields are kebab-case and ready for use in URL paths. Entries flagged isNotASuburb are non-residential/non-suburb locations included for postcode-data completeness only and should not receive individual service-area copy. URLs follow D-71: locations are children of the bathroom service page at /services/bathroom-renovations/{slug}/. A region is only rendered as a page when hubPublished is true - adding a region here does NOT publish it.",
   "regions": [
     {
@@ -183,6 +183,7 @@
         }
       ],
       "hubPublished": true,
+      "updated": "2026-09-01",
       "note": "Published 2026-08-19 (D-74). Has BOTH volume evidence (Tier-1 suburb confirmed by Ahrefs + GKP, D-10) AND a photographed, suburb-attributed project to prove local work."
     },
     {
@@ -877,6 +878,7 @@
         }
       ],
       "hubPublished": true,
+      "updated": "2026-09-01",
       "note": "Published 2026-08-19 (D-74). Has BOTH volume evidence (Tier-1 suburb confirmed by Ahrefs + GKP, D-10) AND a photographed, suburb-attributed project to prove local work."
     },
     {
@@ -884,6 +886,7 @@
       "slug": "north-shore",
       "hubUrl": "/services/bathroom-renovations/north-shore",
       "hubPublished": true,
+      "updated": "2026-09-01",
       "note": "Added 2026-08-19 (D-72). Covers the Lower and Upper North Shore. Justified by real evidence rather than keyword volume: three of the five photographed projects are in this region (Artarmon x1, Hornsby x2). No Tier-1 suburb page here yet - D-10 requires volume evidence and there is none for Hornsby. Hornsby is the first candidate for promotion.",
       "suburbs": [
         {

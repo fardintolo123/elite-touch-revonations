@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { ContactSection } from '@/components/ContactSection'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { ExternalLink } from '@/components/ExternalLink'
 import {
   LOCATION_PARENT_SLUG,
   listableSuburbs,
@@ -13,6 +14,7 @@ import {
   publishedRegions,
   regionBySlug,
 } from '@/lib/locations'
+import { formatMonthYear } from '@/lib/dateLabels'
 
 const parentService = services.find((s) => s.slug === LOCATION_PARENT_SLUG)!
 
@@ -78,6 +80,7 @@ export default async function LocationHubPage({
 
   const suburbs = listableSuburbs(region)
   const localProjects = projectsInRegion(region)
+  const reviewedMonth = formatMonthYear(region.updated ?? '2026-08-31')
   const publishedLocationSet = new Set(publishedLocationSlugs())
   const siblingRegions = publishedRegions().filter(
     (item) => item.slug !== region.slug,
@@ -107,6 +110,7 @@ export default async function LocationHubPage({
             </Link>
           </p>
           <span className="et-eyebrow">{region.name}</span>
+          <p className="et-caption">Reviewed {reviewedMonth}</p>
           <h1 className="et-h1 et-measure-tight">
             Bathroom renovations on Sydney&rsquo;s {region.name}
           </h1>
@@ -312,7 +316,11 @@ export default async function LocationHubPage({
                   Free on-site measure, then a fixed-scope written quote
                 </li>
                 <li className="et-body-sm">
-                  Waterproofing to {businessInfo.standards.waterproofingDated} —
+                  Waterproofing to{' '}
+                  <ExternalLink href={businessInfo.authorities.as3740}>
+                    {businessInfo.standards.waterproofingDated}
+                  </ExternalLink>{' '}
+                  —
                   primer plus two coats, certificate included
                 </li>
                 <li className="et-body-sm">
@@ -335,7 +343,11 @@ export default async function LocationHubPage({
                 style={{ marginTop: 'var(--et-space-5)' }}
               >
                 <li className="et-body-sm">
-                  NSW Builder Licence {businessInfo.builderLicence} —{' '}
+                  NSW Builder Licence{' '}
+                  <ExternalLink href={businessInfo.authorities.nswLicenceRegister}>
+                    {businessInfo.builderLicence}
+                  </ExternalLink>{' '}
+                  —{' '}
                   {businessInfo.builderLicenceHolder}
                 </li>
                 <li className="et-body-sm">ABN {businessInfo.abn}</li>
@@ -343,7 +355,10 @@ export default async function LocationHubPage({
                   Public Liability {businessInfo.insurance.publicLiability}
                 </li>
                 <li className="et-body-sm">
-                  {businessInfo.insurance.memberships.join(', ')} member
+                  <ExternalLink href={businessInfo.authorities.hiaMembers}>
+                    {businessInfo.insurance.memberships.join(', ')}
+                  </ExternalLink>{' '}
+                  member
                 </li>
               </ul>
             </div>

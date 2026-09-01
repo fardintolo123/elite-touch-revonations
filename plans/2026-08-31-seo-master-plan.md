@@ -81,9 +81,9 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | **Gallery meta descriptions: trim the 6 over-length project + the index description** | tech M-3, page P-3b | 🆕 **#39** |
 | **Spread internal links to the hubs + reciprocal gallery→hub links** | local #7, page | 🆕 **#40** (depends #17, #35) |
 | **Visible freshness: render real dates + completion years + image-sitemap entries + quarterly review cadence** | content C-5, geo G-1, images I-1 | 🆕 **#41** (extends #23) |
-| **Link out to authoritative bodies** (NSW Fair Trading, Standards Australia, HIA) | content C-4 | 🆕 **#42** |
+| **Link out to authoritative bodies** (NSW Fair Trading, Standards Australia, HIA) | content C-4 | ✅ **#42** |
 | **Packages: add a comparison `<table>`** | content C-6, schema, geo | ✅ **#43** shipped 2026-08-31 |
-| **Gallery polish: project story paragraphs + IPTC/XMP file metadata + trim over-long alts** | content C-8, images I-2/I-3 | 🆕 **#44** |
+| **Gallery polish: project story paragraphs + IPTC/XMP file metadata + trim over-long alts** | content C-8, images I-2/I-3 | ✅ **#44** shipped 2026-09-01 |
 | **Off-site local program: Bing Places, Apple Business Connect, citations, review loop, local authority** | local #8/#9/#11/#12/#15 | 🆕 **#45** (owner) — on-site review prompt shipped 2026-08-31; external listings still owner-paced |
 | **Doc hygiene sweep** (2023→2022, 18→19 reviews, warranty, FAQ-rich-result note, RSL skip, 14px-font note) | content C-9, schema F-1, geo G-4, tech L-7 | ✅ **#46** shipped 2026-08-31 |
 | Publish Inner West + North-Western hubs | local #13 | ⛔ deferred — gated on #35, owner sign-off (D-76) |
@@ -128,7 +128,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | **#33** show the rating | P1 | **#29** |
 | **#36** homepage FAQ | P2 | — |
 | **#39** gallery meta descriptions | P2 | #19 (soft) |
-| **#42** authority outbound links | P2 | — |
+| ✅ **#42** authority outbound links | P2 | — |
 
 ### Phase D — reinforce & measure
 | Issue | Pri | Depends |
@@ -145,7 +145,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 |---|---|---|
 | **#45** off-site local program | P2 | #29 (NAP baseline); review-prompt code slice shipped 2026-08-31 |
 | **#24** gallery `ImageObject` + `article` | P3 | #30 (soft) |
-| **#44** gallery story copy + image metadata + alt trim | P3 | check source material |
+| ✅ **#44** gallery story copy + image metadata + alt trim | P3 | shipped 2026-09-01 |
 | **#28** IndexNow | P3 | — |
 
 ### Dependency graph (critical paths)
@@ -182,7 +182,8 @@ Every audit recommendation was re-checked against the code before landing in §3
 - **`llms.txt` further investment** (geo) — present and correct; per Google + SE Ranking it is not a
   citation lever. **No further work** (note added in #46).
 - **Alt-text rewrite at scale** (images I-3) — the length is a *documented deliberate trade-off*
-  (D-36 accuracy-first). Only the ~8 most extreme (>200 chars) get a light trim, inside #44.
+  (D-36 accuracy-first). Issue #44 trimmed only the extreme cases over 200 chars; published gallery
+  alts now have 0 over 200 chars and a max of 196.
 - **Blog / topic clusters** — repeatedly rejected (D-86/D-88/D-105/D-106). Not reopened.
 - **`aggregateRating` before GBP verification** — correctly withheld (D-52); it is the *second half*
   of #33, gated on #29.
@@ -199,7 +200,7 @@ Every audit recommendation was re-checked against the code before landing in §3
 | #29, #45 | Owner / off-site local | `seo-local` |
 | #30, #31, #32 | Structured data | `seo-schema` |
 | #33, #35, #40 | Local on-page | `seo-local` |
-| #34, #36, #37, #38, #39, #42, ✅ #43, #44 | Content & on-page | `seo-content` |
+| #34, #36, #37, #38, #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
 | #41 | Freshness (content + technical) | `seo-content` |
 | #46 | Documentation | `documentation` |
 

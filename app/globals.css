@@ -530,6 +530,14 @@ svg {
   color: var(--et-magenta-700);
   text-decoration-color: currentColor;
 }
+.et-band-ink .et-link,
+.et-card-dark .et-link {
+  color: var(--et-magenta-400);
+}
+.et-band-ink .et-link:hover,
+.et-card-dark .et-link:hover {
+  color: #ffffff;
+}
 
 /* §8.5 Eyebrow chip — one per section, above the h2 */
 .et-eyebrow {

@@ -29,6 +29,10 @@ Not yet in `docs/IMAGE_INVENTORY.md`. Routed per `CLAUDE.md` "Photos / images" r
       step 8.
 - [x] Add accurate alt text — every one of the 30 shipped photos individually viewed; alt text
       describes the photograph, not the page topic (D-36 step 9 / PROJECT_CONTEXT.md §4.9).
+- [x] Embed image ownership metadata — `npm run images:xmp` writes WebP XMP `Creator`, `Credit`
+      and `Rights` for every file under `public/images/projects/`. Use
+      `npm run images:xmp:verify` after future image batches. This replaces the originally
+      intended `exiftool` step in environments where `exiftool` is unavailable.
 
 ## Inventory — 9 projects
 

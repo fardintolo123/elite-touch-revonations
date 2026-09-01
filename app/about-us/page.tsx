@@ -203,7 +203,10 @@ export default function AboutPage() {
               <ul className="et-checklist">
                 <li className="et-body-sm">
                   <strong>NSW Builder Licence:</strong>{' '}
-                  {businessInfo.builderLicence} —{' '}
+                  <ExternalLink href={businessInfo.authorities.nswLicenceRegister}>
+                    {businessInfo.builderLicence}
+                  </ExternalLink>{' '}
+                  —{' '}
                   {businessInfo.builderLicenceHolder}
                 </li>
                 <li className="et-body-sm">
@@ -219,7 +222,14 @@ export default function AboutPage() {
                   {businessInfo.insurance.workersCompensation}
                 </li>
                 <li className="et-body-sm">
-                  <strong>Home Building Compensation Cover:</strong>{' '}
+                  <strong>
+                    <ExternalLink
+                      href={businessInfo.authorities.nswHomeBuildingContracts}
+                    >
+                      Home Building Compensation Cover
+                    </ExternalLink>
+                    :
+                  </strong>{' '}
                   {businessInfo.insurance.homeBuildingCompensation}
                 </li>
                 <li className="et-body-sm">

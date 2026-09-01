@@ -33,6 +33,7 @@ export type Region = {
   slug: string
   hubUrl: string
   hubPublished?: boolean
+  updated?: string
   note?: string
   suburbs: Suburb[]
 }

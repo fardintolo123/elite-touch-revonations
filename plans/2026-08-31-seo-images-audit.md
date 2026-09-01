@@ -24,9 +24,9 @@ rendered `<img>` markup in the 2026-08-30 production build.
 | File size | ✅ | Largest source file 96 KB; most 40–80 KB; total `public/images` ≈ 2.8 MB. Within the content-image budget and `docs/PERFORMANCE_BUDGET.md`. |
 | File names | ✅ | Descriptive, hyphenated, lowercase, inside project-slug folders (`castle-hill-bathroom/double-vanity-led-mirror.webp`) |
 | Format | ⚠️ | All WebP, no AVIF variant — **already tracked as technical audit L-3** |
-| Alt text length | ⚠️ | 51 of 55 alts exceed 125 chars (median 177, max 268) — see I-3 |
+| Alt text length | ✅ improved | Extreme alts trimmed in issue #44; published gallery alts now max 196 chars with 0 over 200 — see I-3 |
 | Image sitemap | ❌ | No `<image:image>` entries anywhere — see I-1 |
-| IPTC / XMP metadata | ❌ | Stripped during conversion — no Creator / Credit / Copyright — see I-2 |
+| IPTC / XMP metadata | ✅ fixed | Issue #44 embedded XMP Creator / Credit / Rights on all 60 current project WebPs — see I-2 |
 | `sizes` accuracy | ⚠️ | The gallery-detail lead image claims `100vw` on all breakpoints — see I-4 |
 
 **Image SEO score: 82 / 100.** The *delivery* is genuinely excellent — this is a well-built
@@ -57,7 +57,7 @@ hero photos). Absolute URLs only.
 **Priority:** Medium. **Effort:** S. **Risk:** low. **Dependency:** shares the "real content dates"
 work with technical M-2 / content C-5 (same file).
 
-### I-2 · Project photos carry no IPTC/XMP metadata (Creator / Credit / Copyright)  ·  LOW–MEDIUM
+### I-2 · Project photos carry no IPTC/XMP metadata (Creator / Credit / Copyright)  ·  LOW–MEDIUM — CLOSED 2026-09-01
 
 **What.** The WebP conversion (D-99: quality 82, alpha stripped) stripped all embedded metadata.
 `exiftool` on any project file returns no `Creator`, `Credit`, `Rights`, or `Description`.
@@ -80,7 +80,13 @@ Add it as a step in the image-conversion script so future photos get it automati
 **Priority:** Low–Medium. **Effort:** S (one batch run). **Risk:** low — metadata only; re-verify a
 sample renders identically. **Dependency:** none.
 
-### I-3 · 51 of 55 alt strings exceed the ~125-character comfort limit  ·  LOW
+**Implemented in issue #44.** `exiftool` was not installed in this environment, so a local script
+now handles the same WebP XMP job: `scripts/inject-project-image-xmp.mjs`, exposed as
+`npm run images:xmp` and `npm run images:xmp:verify`. The pass updated all 60 current WebPs under
+`public/images/projects/` with XMP Creator, Credit and Rights. The 55 published images also receive
+their alt text as XMP description; five unreferenced files receive ownership metadata only.
+
+### I-3 · 51 of 55 alt strings exceed the ~125-character comfort limit  ·  LOW — CLOSED 2026-09-01
 
 **What.** Median alt length is 177 chars, max 268 (e.g. Castle Hill's lead image:
 *"Light oak wall-hung double vanity with a white stone top, two round white vessel basins, brushed
@@ -100,6 +106,10 @@ document it and close this.
 
 **Files:** `lib/projects.ts`. **Priority:** Low. **Effort:** S. **Risk:** low (accuracy must be
 preserved — hand edit, per §4.9).
+
+**Implemented in issue #44.** Only the extreme `lib/projects.ts` alts over 200 characters were
+hand-trimmed. The published gallery now has 55 alt strings with 0 over 200 characters and a max of
+196, while the factual photo details remain intact.
 
 ### I-4 · Gallery-detail lead image `sizes` over-claims  ·  MEDIUM (perf)
 
@@ -163,9 +173,9 @@ just add the `minimumCacheTTL` line to that item.
 | AVIF + `minimumCacheTTL` (I-5) | technical L-3 | **Merge into technical L-3 issue**; add the cache-TTL line. |
 | `sizes` accuracy (I-4) | technical L-8 (live CWV), PERFORMANCE_BUDGET rule 15 | **Fold into the live-Lighthouse issue** as a concrete sub-task. |
 | Image sitemap (I-1) | technical M-2 / content C-5 (same `sitemap.ts` file) | **One issue** — "real content dates + image entries in sitemap.xml". |
-| IPTC/XMP metadata (I-2) | — (new) | Small standalone issue, or a sub-task of the image-pipeline script. |
+| IPTC/XMP metadata (I-2) | — (new) | **Closed in #44** — local WebP XMP script plus one-off batch pass. |
 | `ImageObject` schema (schema S-2) | schema audit | Separate — markup, not files. May pair with C-8 (project story copy). |
-| Alt length trim (I-3) | — (new) | Low-priority standalone, or decline and document per D-36. |
+| Alt length trim (I-3) | — (new) | **Closed in #44** — extreme alts trimmed; accuracy-first rule preserved. |
 
 ---
 

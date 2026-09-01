@@ -1,6 +1,6 @@
 # Issue #44 implementation plan - gallery story copy, image metadata, alt trim
 
-**Date:** 2026-08-31
+**Date:** 2026-09-01
 **Issue:** #44 - `[seo-content] Gallery polish: project story copy + image file metadata + alt-length trim`
 **Status:** in progress
 
@@ -25,14 +25,14 @@
 - [x] Task routed; mapped docs read.
 - [x] Issue #44 body read from GitHub.
 - [x] Source project notes checked before writing copy.
-- [ ] Issue-specific implementation plan saved in `plans/`.
-- [ ] Gallery project `story` data added from sourced notes only.
-- [ ] Gallery page renders the story paragraph in served markup.
-- [ ] Alt text over 200 characters trimmed without dropping load-bearing detail.
-- [ ] WebP XMP metadata injection script added.
-- [ ] Current project WebP files updated with XMP Creator, Credit and Rights.
-- [ ] Image conversion process doc updated for future metadata injection.
-- [ ] `DECISIONS.md` records the implementation result.
+- [x] Issue-specific implementation plan saved in `plans/`.
+- [x] Gallery project `story` data added from sourced notes only.
+- [x] Gallery page renders the story paragraph in served markup.
+- [x] Alt text over 200 characters trimmed without dropping load-bearing detail.
+- [x] WebP XMP metadata injection script added.
+- [x] Current project WebP files updated with XMP Creator, Credit and Rights.
+- [x] Image conversion process doc updated for future metadata injection.
+- [x] `DECISIONS.md` records the implementation result.
 - [ ] `npm run build` green.
 - [ ] `npm run check:readability` passes.
 - [ ] Metadata sample check passes.

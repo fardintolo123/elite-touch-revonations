@@ -52,6 +52,9 @@ Companion docs: [SEO_CONTENT_GUIDE.md](SEO_CONTENT_GUIDE.md) for *what to write*
 - [ ] **Sitemap segmented** — pages vs. case studies/guides.
 - [ ] **`lastmod` changes only for meaningful content changes**, not a CSS tweak. Fake freshness is
       a trust signal spent for nothing.
+- [ ] **Quarterly freshness review completed when dates change** — use
+      [`plans/seo-quarterly-review.md`](../plans/seo-quarterly-review.md), and bump visible dates or
+      sitemap `lastmod` only where content was genuinely reviewed or changed.
 - [ ] **No thin location pages.** Only the six Tier-1 suburbs get a URL; every other suburb is a
       *listing* on its regional hub. This is the deliberate guard against the doorway-page pattern —
       see [DECISIONS.md](../DECISIONS.md) D-10.
