@@ -31,5 +31,4 @@ C-9, F-1, G-4 and L-7.
 - [x] Stale-text grep checked; remaining hits are historical/source/audit records, not standing
       guidance.
 - [x] `npm.cmd run typecheck` passed.
-- [ ] `npm.cmd run build` attempted twice; blocked by existing `.next\lock` / another Next build
-      process.
+- [x] `npm.cmd run build` passed after the stale `.next\lock` cleared; route count remained 30.
