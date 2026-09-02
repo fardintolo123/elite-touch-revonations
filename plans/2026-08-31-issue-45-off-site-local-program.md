@@ -25,7 +25,7 @@ exist, and rating/schema work remains blocked by #29.
 - [x] `DECISIONS.md`, `PROJECT_CONTEXT.md`, `DESIGN.md`, `docs/PERFORMANCE_BUDGET.md`, and Next form/action docs read.
 - [x] Add review/profile prompt URL to `lib/businessInfo.ts`.
 - [x] Render success-state review prompt in `components/EnquiryForm.tsx`.
-- [ ] Update master/local audit plan docs with the partial shipped status and blocked owner items.
-- [ ] Run `npm run typecheck`.
-- [ ] Run `npm run build`.
-- [ ] Confirm no `aggregateRating` or unverified directory `sameAs` links were added.
+- [x] Update master/local audit plan docs with the partial shipped status and blocked owner items.
+- [x] Run `npm.cmd run typecheck`.
+- [x] Run `npm.cmd run build`.
+- [x] Confirm no `aggregateRating` or unverified directory `sameAs` links were added.
