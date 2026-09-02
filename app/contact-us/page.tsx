@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { EnquiryForm } from '@/components/EnquiryForm'
 import { businessInfo } from '@/lib/businessInfo'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
@@ -161,6 +162,23 @@ export default function ContactPage() {
                 We will call you back to arrange the measure.
               </p>
               <EnquiryForm />
+
+              {/* Privacy notice — issue #37 / content audit C-1. Server-rendered
+                  copy, kept out of the 'use client' form leaf. */}
+              <p
+                className="et-body-sm"
+                style={{
+                  marginTop: 'var(--et-space-5)',
+                  color: 'var(--et-text-secondary)',
+                }}
+              >
+                We use your details only to arrange your measure and reply to
+                your enquiry. See our{' '}
+                <Link className="et-link" href="/privacy/">
+                  privacy policy
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </div>

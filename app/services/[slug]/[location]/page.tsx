@@ -3,8 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { hubContentFor } from '@/lib/hubContent'
+import { reviewByAuthor } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { FaqSchema } from '@/components/FaqSchema'
 import { ExternalLink } from '@/components/ExternalLink'
 import {
   LOCATION_PARENT_SLUG,
@@ -86,6 +89,17 @@ export default async function LocationHubPage({
     (item) => item.slug !== region.slug,
   )
 
+  // Per-region editorial content (answer-first lead, local detail, FAQ,
+  // testimonial) — issue #35. Not every region has an entry; when it doesn't,
+  // the extra sections simply don't render and the page is the older, thinner
+  // shape. All three currently-published hubs have one.
+  //
+  // ⚠️ Band order below assumes the local-projects section (canvas) sits
+  // between the answer block and the local-detail section (both surface). Every
+  // published hub has projects; a future hub without them needs this revisited.
+  const hub = hubContentFor(region.slug)
+  const testimonial = hub ? reviewByAuthor(hub.testimonialAuthor) : undefined
+
   return (
     <>
       <BreadcrumbSchema
@@ -102,6 +116,7 @@ export default async function LocationHubPage({
           },
         ]}
       />
+      {hub && hub.faqs.length > 0 && <FaqSchema items={hub.faqs} />}
       <section className="et-hero">
         <div className="et-container et-stack">
           <p className="et-body-sm">
@@ -149,6 +164,37 @@ export default async function LocationHubPage({
           </ul>
         </div>
       </section>
+
+      {/* ---- Answer-first lead. A self-contained 134–167 word block an AI answer
+             can lift whole (geo-audit G-2): service, cost + size basis, duration,
+             licence, warranty, one area line. Copy lives in lib/hubContent.ts. ---- */}
+      {hub && (
+        <section className="et-section et-band-surface">
+          <div className="et-container et-stack">
+            <span className="et-eyebrow">In short</span>
+            <h2 className="et-h2 et-measure-tight">
+              What a bathroom renovation here costs and involves
+            </h2>
+            {hub.answer.map((para, index) => (
+              <p
+                key={index}
+                className={
+                  index === 0
+                    ? 'et-lead et-measure'
+                    : 'et-body-sm et-measure'
+                }
+              >
+                {para}
+              </p>
+            ))}
+            <p className="et-body-sm">
+              <Link href="/packages/" className="et-link">
+                See what the Basic, Standard and Premium packages include
+              </Link>
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* ---- Local proof. This is what stops the page being templated filler. ---- */}
       {localProjects.length > 0 && (
@@ -205,6 +251,52 @@ export default async function LocationHubPage({
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ---- Local detail. Truthful, non-invented facts about renovating in
+             THIS region (D-06) — the section that has to fail the swap test.
+             Copy lives in lib/hubContent.ts. ---- */}
+      {hub && (
+        <section className="et-section et-band-surface">
+          <div className="et-container et-stack">
+            <span className="et-eyebrow">Local knowledge</span>
+            <h2 className="et-h2 et-measure-tight">
+              {hub.localAngle.heading}
+            </h2>
+            {hub.localAngle.paragraphs.map((para, index) => (
+              <p
+                key={index}
+                className={
+                  index === 0
+                    ? 'et-lead et-measure'
+                    : 'et-body-sm et-measure'
+                }
+              >
+                {para}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ---- Testimonial. Verbatim from lib/reviews.ts, NOT attributed to the
+             region (local-audit §3: no review names a suburb; D-06). ---- */}
+      {testimonial && (
+        <section className="et-section et-band-ink">
+          <div className="et-container et-stack">
+            <span className="et-eyebrow">Customer review</span>
+            <figure className="et-card et-card-dark">
+              <blockquote className="et-quote">
+                {testimonial.body.split('\n\n').map((para, index) => (
+                  <p key={index}>{para}</p>
+                ))}
+              </blockquote>
+              <figcaption className="et-quote-author">
+                — {testimonial.author}
+              </figcaption>
+            </figure>
           </div>
         </section>
       )}
@@ -294,6 +386,45 @@ export default async function LocationHubPage({
           </div>
         </div>
       </section>
+
+      {/* ---- Local FAQ. Visible <details> AND FAQPage schema (emitted near the
+             top) — the two carry byte-identical text. Copy: lib/hubContent.ts. ---- */}
+      {hub && hub.faqs.length > 0 && (
+        <section className="et-section et-band-surface">
+          <div className="et-container">
+            <div className="et-stack">
+              <span className="et-eyebrow">FAQ</span>
+              <h2 className="et-h2 et-measure-tight">
+                {region.name}: common bathroom renovation questions
+              </h2>
+            </div>
+            <div
+              className="et-stack"
+              style={{
+                marginTop: 'var(--et-space-8)',
+                gap: 'var(--et-space-4)',
+              }}
+            >
+              {hub.faqs.map((item) => (
+                <details key={item.question} className="et-card">
+                  <summary className="et-h4" style={{ cursor: 'pointer' }}>
+                    {item.question}
+                  </summary>
+                  <p
+                    className="et-body-sm"
+                    style={{
+                      marginTop: 'var(--et-space-4)',
+                      color: 'var(--et-text-secondary)',
+                    }}
+                  >
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ---- What every job includes ---- */}
       <section className="et-section et-band-ink">

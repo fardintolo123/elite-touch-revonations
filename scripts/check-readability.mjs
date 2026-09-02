@@ -61,6 +61,8 @@ const ROUTES = [
   '/about-us/',
   '/contact-us/',
   '/packages/',
+  '/privacy/',
+  '/terms/',
   '/services/',
   '/services/bathroom-renovations/',
   '/services/ensuite-bathroom-renovations/',

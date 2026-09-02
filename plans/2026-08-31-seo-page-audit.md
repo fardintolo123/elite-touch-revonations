@@ -36,7 +36,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 
 | Element | State |
 |---|---|
-| Title | ⚠️ ★NEW **P-2** — "Our Services \| Elite Touch Renovations" (38 chars): correct length, **but no keyword** — no "bathroom", no "Sydney". This is an existing indexed URL and a 301 target; it should be e.g. "Bathroom Renovation Services, Sydney \| Elite Touch Renovations". |
+| Title | ✅ **P-2 fixed — #38, 2026-09-02.** Was "Our Services \| Elite Touch Renovations" (no keyword); now "Bathroom Renovations Across Sydney \| Elite Touch Renovations" (60 chars). "Across" keeps it distinct from the `/services/bathroom-renovations/` hub title; "Services" dropped only because the full brand tail leaves no room for it under 60. |
 | Meta description | ✅ 149 chars, lists all four services + AS 3740 |
 | H1 | ✅ "Bathroom renovation services across Sydney." |
 | Headings | ⚠️ the 4 service cards use `<h2>` as link text (works, slightly unusual); + WorkStrip + Contact H2s |
@@ -74,8 +74,8 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 
 | Element | State |
 |---|---|
-| Title | ⚠️ ★NEW **P-3a** — "Our Work \| Elite Touch Renovations" (34): no keyword. Prefer "Bathroom Renovation Gallery, Sydney \| …". |
-| Meta description | ⚠️ ★NEW **P-3b** — **~230 chars** (a 9-suburb list). Will truncate hard in SERPs. Trim to ≤155 with 3–4 representative suburbs, or a benefit-led line. *(Distinct from technical M-3, which is the per-project descriptions.)* |
+| Title | ✅ **P-3a fixed — #38, 2026-09-02.** Was "Our Work \| Elite Touch Renovations" (no keyword); now "Bathroom Renovation Photos, Sydney \| Elite Touch Renovations" (60 chars). "Photos" over "Gallery" — one char shorter, and it is what the page actually is. |
+| Meta description | ✅ **P-3b fixed — #39, 2026-09-02.** Was ~221 chars (9-suburb list); now 150 chars naming 5 representative real projects. *(Distinct from technical M-3, the per-project descriptions — fixed in the same issue.)* |
 | H1 | ✅ "Bathroom renovations we have completed across Sydney." |
 | Schema | ✅ BreadcrumbList; ❌ no `CollectionPage`/`ImageGallery` → schema **S-4** |
 | Content | ✅ 11 project cards + 2 text-only projects; good local breadth |
@@ -86,7 +86,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 | Element | State |
 |---|---|
 | Title | ✅ = `project.name` + template (~35–55 chars) |
-| Meta description | ⚠️ = `project.blurb`; **6 of 11 exceed 160 chars** → technical **M-3** |
+| Meta description | ✅ **fixed — M-3 / #39, 2026-09-02.** Optional `metaDescription` field (≤155) with trimmed-`blurb` fallback; all 11 now 135–147 chars, `blurb` still the visible lead. |
 | H1 | ✅ full project name |
 | Headings | ⚠️ the "Other work" grid renders 10× `<h3>` "Bathroom"/"Ensuite" — deliberate readability fix (D-109), odd in an outline view but acceptable; leave it |
 | Schema | ✅ BreadcrumbList + `og:image` (raw asset, not a 1200×630 crop → technical **H-3**); ❌ no `ImageObject` → schema **S-2** |
@@ -111,7 +111,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 |---|---|
 | Title | ⚠️ "About Us \| …" — no keyword (acceptable for an About page, low priority) |
 | Meta description | ✅ 148 chars, founded 2022, licence |
-| H1 | ⚠️ ★NEW **P-4** — "A family business that only renovates wet areas." — strong, but **no location**. Consider "…in Sydney" for the local signal on a page that carries the NAP, team, and credentials. |
+| H1 | ✅ **P-4 fixed — #38, 2026-09-02.** Was "A family business that only renovates wet areas."; now "A Sydney family business that only renovates wet areas." — local signal added, voice unchanged (`docs/CONTENT_QUALITY_CHECKLIST.md` §1). |
 | Content | ✅ team with real credentials, 19 verbatim reviews, insurances, standards — strong E-E-A-T |
 | Schema | ⚠️ no `AboutPage` type → schema **S-4** |
 | External links | ❌ says "check the NSW Fair Trading register" without linking it → content **C-4** |
@@ -142,9 +142,9 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 | # | Page | Finding | Priority | Effort |
 |---|---|---|---|---|
 | **P-1** | Homepage | No FAQ block on the site's top "near me" target. Add 2–3 AEO FAQs + `FAQPage` schema. | Medium | S |
-| **P-2** | `/services/` | Title "Our Services" has no keyword — no "bathroom", no "Sydney". Rewrite. | Medium | S |
-| **P-3** | `/gallery/` | (a) Title "Our Work" has no keyword. (b) Meta description ~230 chars → truncates. Both need a rewrite. | Medium | S |
-| **P-4** | `/about-us/` | H1 has no location signal on an otherwise strong local/trust page. Minor. | Low | S |
+| ✅ **P-2** | `/services/` | ~~Title "Our Services" has no keyword.~~ **Fixed — #38, 2026-09-02** → "Bathroom Renovations Across Sydney" (60 chars). | Medium | S |
+| **P-3** | `/gallery/` | (a) ✅ **Title fixed — #38, 2026-09-02** → "Bathroom Renovation Photos, Sydney" (60 chars). (b) ✅ **P-3b meta description fixed — #39, 2026-09-02** (221 → 150 chars). | Medium | S |
+| ✅ **P-4** | `/about-us/` | ~~H1 has no location signal.~~ **Fixed — #38, 2026-09-02** → "A Sydney family business that only renovates wet areas." | Low | S |
 
 All four are small copy/metadata edits with no dependencies. They can be bundled into one
 "metadata & on-page copy tidy-up" issue alongside technical **M-5** (long titles).

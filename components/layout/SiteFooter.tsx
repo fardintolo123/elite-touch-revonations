@@ -88,6 +88,12 @@ export function SiteFooter() {
               <li>
                 <Link href="/contact-us/">Contact us</Link>
               </li>
+              <li>
+                <Link href="/privacy/">Privacy policy</Link>
+              </li>
+              <li>
+                <Link href="/terms/">Terms of use</Link>
+              </li>
             </ul>
           </div>
 

@@ -7,6 +7,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
+import { FaqSchema } from '@/components/FaqSchema'
 
 /**
  * Homepage.
@@ -66,6 +67,53 @@ const PROCESS = [
   },
 ] as const
 
+/**
+ * Homepage FAQ — visible `<details>` block + `FAQPage` JSON-LD
+ * (`components/FaqSchema.tsx`), mirroring the `/packages/` pattern. The visible
+ * answer string IS the schema `text` — never emit a question here that isn't
+ * also in the markup (D-31 / invisible-content failure mode).
+ *
+ * Added for GitHub issue #36 / seo-page-audit P-1: the homepage targets
+ * "bathroom renovations near me" (1K–10K/mo, DECISIONS.md D-12) and had no
+ * extractable Q&A for AI-answer surfaces. FAQ rich results are retired
+ * (schema audit F-1 / issue #46) — this is for AEO/AI value, not a SERP feature.
+ *
+ * ⚠️ Every figure below is copied from `app/packages/page.tsx` (TIERS / FAQS)
+ * and `lib/businessInfo.ts` (`buildDurations`, `clientTypes`, `serviceArea`).
+ * Never restate a price or a duration from memory — same rule as the
+ * `/packages/` FAQ. If a package price or a build duration changes, this block
+ * changes with it.
+ */
+const HOME_FAQS = [
+  {
+    question: 'How much does a bathroom renovation cost in Sydney?',
+    answer:
+      'A bathroom renovation with Elite Touch starts from $18,000 for a small bathroom (about 1.5 × 1.8 × 2.4 m, our Basic package), from $25,000 for a mid-size bathroom (Standard), or from $30,000 for a larger, fully-specified bathroom (Premium). Every figure is a starting price — you get a fixed-scope written quote after a free on-site measure.',
+    link: {
+      href: '/packages/',
+      label: 'Compare the Basic, Standard and Premium packages',
+    },
+  },
+  {
+    question: 'How long does a bathroom renovation take?',
+    answer:
+      'Most full renovations on the same footprint take 3–4 weeks. A premium build with natural stone and custom joinery takes 5–6 weeks, and a reconfiguration that moves walls or fixture positions takes 5–7 weeks. You get your on-site program in writing before work starts, not a verbal estimate.',
+    link: {
+      href: '/services/bathroom-renovations/',
+      label: 'See the full bathroom renovation process',
+    },
+  },
+  {
+    question: 'Which areas of Sydney do you cover?',
+    answer:
+      'We cover all of Sydney. Most of our work is in family homes, and we take on both residential and commercial bathrooms. Our area pages cover the parts of Sydney where we have real, photographed local projects, and the free on-site measure is available anywhere across the Sydney metro area.',
+    link: {
+      href: '/services/bathroom-renovations/',
+      label: 'Bathroom renovations across Sydney',
+    },
+  },
+] as const
+
 /* The hero photograph. Castle Hill's double vanity is the strongest single
    image we have and it is genuinely our work, in a Tier-1 suburb. */
 const heroImage =
@@ -76,6 +124,8 @@ export default function HomePage() {
 
   return (
     <>
+      <FaqSchema items={HOME_FAQS} />
+
       {/* ---------------- Hero ---------------- */}
       <section className="et-hero">
         <div className="et-container">
@@ -299,6 +349,49 @@ export default function HomePage() {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- FAQ ---------------- */}
+      <section className="et-section et-band-surface">
+        <div className="et-container">
+          <div className="et-stack">
+            <span className="et-eyebrow">FAQ</span>
+            <h2 className="et-h2 et-measure-tight">
+              Frequently asked questions about bathroom renovations in Sydney
+            </h2>
+          </div>
+          <div
+            className="et-stack"
+            style={{ marginTop: 'var(--et-space-8)', gap: 'var(--et-space-4)' }}
+          >
+            {HOME_FAQS.map((item) => (
+              <details key={item.question} className="et-card">
+                <summary className="et-h4" style={{ cursor: 'pointer' }}>
+                  {item.question}
+                </summary>
+                <p
+                  className="et-body-sm"
+                  style={{
+                    marginTop: 'var(--et-space-4)',
+                    color: 'var(--et-text-secondary)',
+                  }}
+                >
+                  {item.answer}
+                </p>
+                {item.link && (
+                  <p
+                    className="et-body-sm"
+                    style={{ marginTop: 'var(--et-space-3)' }}
+                  >
+                    <Link href={item.link.href} className="et-link">
+                      {item.link.label}
+                    </Link>
+                  </p>
+                )}
+              </details>
+            ))}
           </div>
         </div>
       </section>

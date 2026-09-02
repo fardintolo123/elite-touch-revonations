@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { EnquiryForm } from '@/components/EnquiryForm'
 import { businessInfo } from '@/lib/businessInfo'
 
@@ -87,6 +88,25 @@ export function ContactSection({
               We will get back to you to arrange the measure.
             </p>
             <EnquiryForm />
+
+            {/* Privacy notice — issue #37 / content audit C-1. Lives here in the
+                server component (not the 'use client' form leaf) so it is in
+                the served HTML on every page, and so the form leaf stays
+                minimal (PROJECT_CONTEXT.md §4.14). */}
+            <p
+              className="et-body-sm"
+              style={{
+                marginTop: 'var(--et-space-5)',
+                color: 'var(--et-text-secondary)',
+              }}
+            >
+              We use your details only to arrange your measure and reply to your
+              enquiry. See our{' '}
+              <Link className="et-link" href="/privacy/">
+                privacy policy
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </div>

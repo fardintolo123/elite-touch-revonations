@@ -196,6 +196,15 @@ export const businessInfo = {
   packagePricingUpdated: '2026-08-19',
 
   /**
+   * "Last updated" date shown on `/privacy/` and `/terms/`. A real content
+   * date — bump it ONLY when the wording of those pages actually changes
+   * (e.g. a new data processor, a change to what the form collects), never on
+   * a routine deploy. Same discipline as `packagePricingUpdated` and the
+   * sitemap `lastModified` rule.
+   */
+  legalPagesUpdated: '2026-09-02',
+
+  /**
    * RESOLVED 2026-08-19 (D-75) — settles the two conflicting durations.
    *
    * OWNER-CORRECTED 2026-08-20: a standard full renovation is **3–4 weeks**,

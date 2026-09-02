@@ -44,7 +44,7 @@ export default function AboutPage() {
       />
       <PageHero
         eyebrow="About us"
-        title="A family business that only renovates wet areas."
+        title="A Sydney family business that only renovates wet areas."
         leads={[
           `Elite Touch Renovations was founded in ${businessInfo.foundedYear} by the Dawood family and works across Sydney. We are small on purpose: the people who quote your job are the people who run it.`,
           // Owner confirmed commercial work 2026-08-19 (D-67). Wording is the
@@ -192,6 +192,7 @@ export default function AboutPage() {
               <p className="et-body-sm et-measure">
                 Bathroom renovation is regulated work. Every job meets the
                 licence, insurance and legal rules set by NSW law and the
+                {' '}
                 <ExternalLink href={businessInfo.authorities.nccWetAreas}>
                   National Construction Code
                 </ExternalLink>

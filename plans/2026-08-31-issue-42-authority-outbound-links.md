@@ -2,7 +2,7 @@
 
 **Issue:** [#42](https://github.com/fardintolo123/elite-touch-revonations/issues/42)  
 **Source:** `plans/2026-08-31-seo-master-plan.md` Phase C; `plans/2026-08-31-seo-content-audit.md` C-4  
-**Date:** 2026-09-01
+**Date:** 2026-09-02
 
 ## Plan
 
@@ -16,6 +16,6 @@ Add a small set of authoritative outbound links for the site's load-bearing regu
 - [x] Link the NSW licence check, AS 3740, NCC, HIA, Home Building Act / NSW contracts, and WELS mentions where they are most useful.
 - [x] Update the source audit and master registry for C-4 / #42.
 - [x] Record the implementation decision.
-- [ ] Run `npm run build`.
-- [ ] Verify `/about-us/` and one service page HTML contains the authority links.
-- [ ] Close GitHub issue #42.
+- [x] Run `npm run build`.
+- [x] Verify `/about-us/`, `/packages/`, one service page and one hub page HTML contains the authority links.
+- [ ] Close GitHub issue #42. Blocked in this session: `gh` access was denied by the environment usage-limit guard.

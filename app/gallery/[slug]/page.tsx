@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo } from '@/lib/businessInfo'
-import { projects, projectBySlug } from '@/lib/projects'
+import { projects, projectBySlug, projectMetaDescription } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import {
@@ -40,13 +40,22 @@ export async function generateMetadata({
     return { title: 'Not found', robots: { index: false, follow: false } }
   }
 
+  /**
+   * `blurb` is the visible lead paragraph and runs up to ~220 chars, which
+   * truncates in SERPs. The meta/OG description uses the shorter
+   * `metaDescription` (falling back to a trimmed blurb) instead — issue #39.
+   * `twitter:description` auto-fills from `openGraph.description` in Next's
+   * metadata post-processing, so it follows the same value.
+   */
+  const description = projectMetaDescription(project)
+
   return {
     title: project.name,
-    description: project.blurb,
+    description,
     alternates: { canonical: `/gallery/${project.slug}/` },
     openGraph: {
       title: project.name,
-      description: project.blurb,
+      description,
       images: [project.images[0].src],
     },
   }

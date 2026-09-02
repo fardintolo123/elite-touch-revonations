@@ -62,6 +62,15 @@ export type Project = {
    */
   completedByYear: number
   blurb: string
+  /**
+   * SERP meta description (<=155 chars). Optional: when absent, the page falls
+   * back to the `blurb` trimmed at a word boundary. `blurb` is the visible lead
+   * paragraph and the `/gallery/` card text and is NEVER shortened for display;
+   * this field exists only so the `<meta name="description">` / `og:description`
+   * do not truncate (issue #39 / audit M-3). Every fact here must still trace to
+   * the `blurb` / `story` above or an owner source (D-06).
+   */
+  metaDescription?: string
   /** Owner-supplied project notes, condensed into one mini case-study paragraph. */
   story?: string
   images: readonly ProjectImage[]
@@ -79,6 +88,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'Brushed gold taps and warm, sandy tiles give the room a rich, easy feel. A freestanding bath sits at the centre, calm and simple, and a wall-hung vanity keeps the floor clear and the room open.',
+    metaDescription:
+      'Artarmon bathroom renovation with brushed gold tapware, warm sandy stone-look tiles, a central freestanding bath and a wall-hung vanity.',
     story:
       "The project notes focus on warm sandy-toned floor and wall tiles, brushed gold fixtures and a freestanding bath as the room's calm centrepiece. The wall-hung vanity was used for storage without crowding the floor, and the lighting was kept soft so the gold, timber and stone textures feel balanced.",
     images: [
@@ -129,6 +140,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'A bright, modern family bathroom in soft, neutral tones with real wood and stone textures. Light wood, soft grey and crisp white pair with brushed nickel taps. Large tiles open up the space, with a frameless glass shower.',
+    metaDescription:
+      'A bright, modern Castle Hill family bathroom in soft grey, crisp white and light wood, with brushed nickel taps and a frameless glass shower.',
     story:
       'The source notes describe this as a family bathroom, rebuilt around soft greys, crisp whites, light wood finishes and nickel tapware. Large-format tiles were used on the floors and walls to keep the space open, with a frameless glass shower completing the clean, uncluttered finish.',
     images: [
@@ -179,6 +192,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'A bold, timeless black-and-white look. Crisp marble-style walls and deep black fittings make a sharp contrast. A frameless shower and wall-hung vanity keep the room neat, with lots of hidden storage.',
+    metaDescription:
+      'Hornsby bathroom renovation in a bold black-and-white scheme: marble-look walls, black fittings, a frameless shower and a wall-hung vanity.',
     story:
       'The project notes describe a full change from an outdated bathroom to a black-and-white room with large white tiles, black fittings and hidden storage. The bathroom and ensuite were planned as a matched set, with the frameless shower, wall-hung vanity and dark towel rails carrying the same clean line through both spaces.',
     images: [
@@ -217,6 +232,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       "This ensuite continues the same home's black-and-white look, so both rooms feel like one. A frameless shower and a wall-hung vanity keep the small room feeling open.",
+    metaDescription:
+      "Hornsby ensuite renovation matching the home's black-and-white bathroom, with a frameless shower and a wall-hung vanity to keep it open.",
     story:
       'The ensuite was written up as part of the same black-and-white design as the main bathroom, so the two rooms read as one. Large white tiles keep the small room bright, while black tapware, towel rails and the frameless shower give the compact space a clear edge.',
     images: [
@@ -243,6 +260,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'A stylish family bathroom in soft, neutral tones, with matte black fittings for a modern look. A custom angled shower screen is the standout feature. The wall-hung vanity keeps the room open, with daily storage.',
+    metaDescription:
+      'Randwick family bathroom renovation in soft neutral tones, with matte black fittings, a custom angled shower screen and a wall-hung vanity.',
     story:
       'The source notes call out a neutral family bathroom with matte black fittings and a custom angled shower screen as the main feature. The wall-hung vanity keeps the floor open while adding storage, and softer lighting was used to keep the room calm rather than stark.',
     images: [
@@ -281,6 +300,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'A concrete-look bathroom with warm, timber-look floors for contrast. A custom vanity and a matching tall cabinet keep things tidy, and a freestanding bath anchors the room.',
+    metaDescription:
+      'Balmain bathroom renovation pairing concrete-look walls with warm timber-look floors, a custom vanity, a matching tall cabinet and a bath.',
     story:
       'This full bathroom renovation ran for three weeks, with the project notes listing an about $30,000 budget. The work paired full-height concrete-look porcelain wall tiles with timber-look floor tiles, a custom vanity, a matching tall cabinet and a bath. The main challenge was making the custom storage cabinet match the vanity cleanly.',
     images: [
@@ -425,6 +446,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'Full-height marble-look tiles, a double vanity and a freestanding bath beneath timber shutters. Matte black fittings throughout give it a sharp, modern finish.',
+    metaDescription:
+      'Hunters Hill bathroom renovation with full-height marble-look tiles, a double vanity, a freestanding bath under timber shutters and black fittings.',
     story:
       'This full bathroom renovation ran for four weeks, with the project notes listing an about $45,000 budget. The scope included full-height marble tiling, a freestanding bath, custom double vanity, integrated basins, frameless shower screen, matte black tapware and a heated towel rail. The detailed part was hand-cutting the marble cleanly around fixtures, corners and fittings.',
     images: [
@@ -475,6 +498,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'A bathroom in a heritage terrace, built around an original leadlight window. A freestanding bath, patterned floor tiles and a frameless shower bring a modern finish, but the house still feels like itself.',
+    metaDescription:
+      'Bathroom renovation in a heritage terrace in The Rocks, built around an original leadlight window, with a freestanding bath and a frameless shower.',
     story:
       'This full bathroom renovation ran for four weeks, with the project notes listing an about $32,000 budget. The work combined large-format wall tiles, encaustic-look floor tiles, matte black fittings, a freestanding bath, a floating vanity and a frameless shower screen. The important constraint was protecting the original heritage window throughout the renovation.',
     images: [
@@ -513,6 +538,8 @@ export const projects: readonly Project[] = [
     completedByYear: 2026,
     blurb:
       'A bathroom and ensuite done together for one clear, modern look. Charcoal stone-look tiles, a round LED mirror and warm terracotta towels give the double vanity and frameless showers their own style.',
+    metaDescription:
+      'Artarmon bathroom and ensuite renovation in charcoal stone-look tiles, with custom vanities, frameless showers and LED backlit mirrors.',
     story:
       'This bathroom and ensuite renovation ran for four weeks, with the project notes listing an about $48,000 budget. The work used 600 x 600 full-height grey porcelain wall tiles, light grey porcelain floor tiles, custom vanities, integrated basins, frameless shower screens and LED backlit mirrors. The challenge was fitting the custom double vanity and oversized LED mirror within the project timeframe.',
     images: [
@@ -563,4 +590,29 @@ export function projectBySlug(slug: string) {
 /** One representative image per project, for grids and index pages. */
 export function projectCover(project: Project) {
   return project.images[0]
+}
+
+const META_DESCRIPTION_MAX = 155
+
+/**
+ * SERP-safe meta description for a project page (issue #39 / audit M-3).
+ *
+ * Uses the hand-written `metaDescription` when present. Otherwise falls back to
+ * the `blurb`, trimmed at a word boundary to <= 155 chars so the served
+ * `<meta name="description">` / `og:description` do not truncate. On-page copy
+ * always renders `blurb` directly and is unaffected by this function.
+ */
+export function projectMetaDescription(project: Project): string {
+  if (project.metaDescription) return project.metaDescription
+
+  const blurb = project.blurb.trim()
+  if (blurb.length <= META_DESCRIPTION_MAX) return blurb
+
+  const cut = blurb.slice(0, META_DESCRIPTION_MAX - 1)
+  const lastSpace = cut.lastIndexOf(' ')
+  const body = (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).replace(
+    /[\s.,;:—-]+$/,
+    '',
+  )
+  return `${body}…`
 }

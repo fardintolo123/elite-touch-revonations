@@ -72,6 +72,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ] satisfies MetadataRoute.Sitemap
   ).map((entry) => ({ ...entry, lastModified: LAST_CONTENT_PASS }))
 
+  /**
+   * Privacy + terms (issue #37). Low priority, rarely change. Their own real
+   * content date — `businessInfo.legalPagesUpdated` — not `LAST_CONTENT_PASS`,
+   * because they did not exist at the last site-wide pass and their wording
+   * moves independently of the marketing pages.
+   */
+  const legalRoutes: MetadataRoute.Sitemap = (
+    [
+      { url: `${base}/privacy/`, changeFrequency: 'yearly', priority: 0.3 },
+      { url: `${base}/terms/`, changeFrequency: 'yearly', priority: 0.3 },
+    ] satisfies MetadataRoute.Sitemap
+  ).map((entry) => ({
+    ...entry,
+    lastModified: businessInfo.legalPagesUpdated,
+  }))
+
   const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => {
     const heroImage = serviceHeroImageFor(service.slug)
 
@@ -109,6 +125,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...legalRoutes,
     ...serviceRoutes,
     ...projectRoutes,
     ...locationRoutes,

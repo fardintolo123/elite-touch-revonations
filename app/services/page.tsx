@@ -15,7 +15,12 @@ import { projects } from '@/lib/projects'
  */
 
 export const metadata: Metadata = {
-  title: 'Our Services',
+  // Renders as "Bathroom Renovations Across Sydney | Elite Touch Renovations"
+  // via the root layout's title template — 60 chars, carries the service +
+  // "Sydney" that "Our Services" lacked (issue #38 / page-audit P-2). "Across"
+  // keeps it distinct from the /services/bathroom-renovations/ hub title
+  // ("Bathroom Renovations Sydney").
+  title: 'Bathroom Renovations Across Sydney',
   description:
     'Bathroom, ensuite, bathroom and laundry, and powder room renovations across Sydney. Fixed-scope written quotes and waterproofing to AS 3740.',
   alternates: { canonical: '/services/' },

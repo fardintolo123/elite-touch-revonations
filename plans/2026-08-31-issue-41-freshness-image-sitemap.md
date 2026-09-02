@@ -1,14 +1,12 @@
-# Plan — Issue #41 visible freshness + image sitemap
+# Plan - Issue #41 Visible Freshness + Image Sitemap
 
-**Issue:** #41 — visible freshness dates, project completion years, image sitemap entries, quarterly review cadence.
+**Issue:** #41 - visible freshness dates, project completion years, image sitemap entries, quarterly review cadence.
 **Date:** 2026-08-31
 
-**Progress note (2026-09-01):** the data-layer half of step 1 is done — all 11 `lib/projects.ts`
-records now carry `updated: '2026-08-31'` and `completedByYear: 2026` (see
-`plans/2026-09-01-restore-green-build-issue-41-data-layer.md`). This was pulled forward on its own
-because commit `3d92daa` had left the type requiring those fields with no record setting them — a
-red build. **Still open on this issue:** visible captions on gallery/packages/hubs, and the
-`app/sitemap.ts` rework (real per-content `lastmod` + image entries), and the quarterly checklist.
+**Progress note (2026-09-01):** the data-layer half of step 1 was pulled forward first. All 11
+`lib/projects.ts` records already carry `updated: '2026-08-31'` and `completedByYear: 2026`
+(see `plans/2026-09-01-restore-green-build-issue-41-data-layer.md`). That restored a green build
+after commit `3d92daa` left the type requiring those fields with no record setting them.
 
 ## Implementation plan
 
@@ -20,20 +18,19 @@ red build. **Still open on this issue:** visible captions on gallery/packages/hu
 
 ## Checklist
 
-- [ ] Route and issue brief read; #23 dependency checked.
-- [~] Static, service, project, and region content dates added. *(project + service dates in the
-      data; static-route + region date map still to do — 2026-09-01)*
-- [ ] `/packages/` renders “Package prices current as of August 2026”.
-- [ ] Gallery project pages render a completion-year caption.
-- [ ] Published hubs render a reviewed date.
-- [ ] Sitemap emits stable `lastmod` values from content data, not `new Date()`.
-- [ ] Sitemap emits image entries for gallery pages, published hubs, and evidenced service hero photos.
-- [ ] Quarterly review checklist added under `plans/` and linked from `docs/SEO_AEO_GEO_CHECKLIST.md`.
+- [x] Route and issue brief read; #23 dependency checked.
+- [x] Static, service, project, and region content dates added.
+- [x] `/packages/` renders "Package prices current as of August 2026".
+- [x] Gallery project pages render a completion-year caption.
+- [x] Published hubs render a reviewed date.
+- [x] Sitemap emits stable `lastmod` values from content data, not `new Date()`.
+- [x] Sitemap emits image entries for gallery pages, published hubs, and evidenced service hero photos.
+- [x] Quarterly review checklist added under `plans/` and linked from `docs/SEO_AEO_GEO_CHECKLIST.md`.
 - [ ] Audit/registry docs updated for #23/#41.
 - [ ] Build/typecheck and HTML/sitemap validation completed.
 
 ## Date evidence
 
 - Package prices: owner-supplied package revision from 2026-08-19.
-- Gallery projects: all live gallery records are already evidenced as completed project photography supplied in 2026. Exact project completion dates are not recorded in the repo, so the visible caption uses “Completed by 2026” rather than inventing an exact completion year.
-- Hub review date: reviewed as part of this implementation on 2026-08-31.
+- Gallery projects: all live gallery records are already evidenced as completed project photography supplied in 2026. Exact project completion dates are not recorded in the repo, so the visible caption uses "Completed by 2026" rather than inventing an exact completion year.
+- Hub review date: reviewed as part of this implementation on 2026-09-01.

@@ -27,9 +27,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
  */
 
 export const metadata: Metadata = {
-  title: 'Our Work',
+  // Renders as "Bathroom Renovation Photos, Sydney | Elite Touch Renovations"
+  // via the root layout's title template — 60 chars, carries the keyword +
+  // "Sydney" that "Our Work" lacked (issue #38 / page-audit P-3a). "Photos"
+  // matches what the page actually is (real photographs of completed work).
+  title: 'Bathroom Renovation Photos, Sydney',
+  /**
+   * Kept <= 155 chars so it does not truncate in SERPs (issue #39). The full
+   * suburb list moved to the page's visible lead paragraph; the description now
+   * names five representative real projects, not all nine.
+   */
   description:
-    'Bathroom renovation projects by Elite Touch Renovations across Sydney — including Artarmon, Balmain, Castle Hill, Gladesville, Hornsby, Hunters Hill, Little Bay, Randwick and The Rocks. Real photographs of completed work.',
+    'Photos of bathroom renovations Elite Touch Renovations has completed across Sydney, from Artarmon and Balmain to Hunters Hill, Randwick and The Rocks.',
   alternates: { canonical: '/gallery/' },
 }
 

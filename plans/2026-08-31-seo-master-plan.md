@@ -77,8 +77,8 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | **Hubs: de-template — local content, local FAQ, testimonial, answer-first, packages link** | local #4, content C-3, geo G-2, page | 🆕 **#35** (depends #17) |
 | **Homepage: add an FAQ block** | page P-1, content | 🆕 **#36** |
 | **Add a privacy policy page + form privacy notice** | content C-1 | 🆕 **#37** |
-| **On-page copy tidy: keyword-weak `/services/` + `/gallery/` titles, `/about-us/` H1, gallery `og:type`** | page P-2/P-3a/P-4, coord. #21 | 🆕 **#38** |
-| **Gallery meta descriptions: trim the 6 over-length project + the index description** | tech M-3, page P-3b | 🆕 **#39** |
+| **On-page copy tidy: keyword-weak `/services/` + `/gallery/` titles, `/about-us/` H1, gallery `og:type`** | page P-2/P-3a/P-4, coord. #21 | ✅ **#38** shipped 2026-09-02 (titles + H1; `og:type`/L-6 left to #24) |
+| **Gallery meta descriptions: trim the 6 over-length project + the index description** | tech M-3, page P-3b | ✅ **#39** shipped 2026-09-02 |
 | **Spread internal links to the hubs + reciprocal gallery→hub links** | local #7, page | 🆕 **#40** (depends #17, #35) |
 | **Visible freshness: render real dates + completion years + image-sitemap entries + quarterly review cadence** | content C-5, geo G-1, images I-1 | 🆕 **#41** (extends #23) |
 | **Link out to authoritative bodies** (NSW Fair Trading, Standards Australia, HIA) | content C-4 | ✅ **#42** |
@@ -118,7 +118,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | **#22** per-page `Service` schema | P1 | #30 (needs the `@id` it references) |
 | **#31** hub `Service` + `OfferCatalog` | P2 | #30, #22 |
 | **#21** trim long titles | P2 | coordinate with #19/#38 |
-| **#38** keyword-weak titles/H1 tidy | P2 | #19 |
+| ✅ **#38** keyword-weak titles/H1 tidy | P2 | shipped 2026-09-02 (#19 helper not landed — edited direct; `og:type`/L-6 left to #24) |
 
 ### Phase C — content depth (the biggest organic lever)
 | Issue | Pri | Depends |
@@ -127,7 +127,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | **#35** hub de-templating | P1 | #17 |
 | **#33** show the rating | P1 | **#29** |
 | **#36** homepage FAQ | P2 | — |
-| **#39** gallery meta descriptions | P2 | #19 (soft) |
+| ✅ **#39** gallery meta descriptions | P2 | shipped 2026-09-02 (#19 helper not needed — wired direct) |
 | ✅ **#42** authority outbound links | P2 | — |
 
 ### Phase D — reinforce & measure
@@ -200,7 +200,7 @@ Every audit recommendation was re-checked against the code before landing in §3
 | #29, #45 | Owner / off-site local | `seo-local` |
 | #30, #31, #32 | Structured data | `seo-schema` |
 | #33, #35, #40 | Local on-page | `seo-local` |
-| #34, #36, #37, #38, #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
+| #34, #36, #37, ✅ #38, ✅ #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
 | #41 | Freshness (content + technical) | `seo-content` |
 | #46 | Documentation | `documentation` |
 

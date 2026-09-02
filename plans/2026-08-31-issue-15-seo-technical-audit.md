@@ -27,7 +27,7 @@ L-8.
 | Category | Status | Score | One-line |
 |---|---|---|---|
 | Crawlability | pass | 88 | robots.txt clean, sitemap clean, full SSR, AI crawlers allowed. Dead internal links to unbuilt suburb URLs. |
-| Indexability | warn | 80 | Canonicals perfect, 404 handling correct, trailing-slash consistent. `lastmod` fakes freshness; 4 links 404; 6 meta descriptions overflow. |
+| Indexability | warn | 80 | Canonicals perfect, 404 handling correct, trailing-slash consistent. `lastmod` fakes freshness; 4 links 404; ~~6 meta descriptions overflow~~ **fixed — M-3 / #39, 2026-09-02**. |
 | Security | warn | 72 | HTTPS + HSTS preload + 3 baseline headers. No CSP, no Permissions-Policy. |
 | URL Structure | pass | 94 | Clean, hierarchical, one canonical form, literal 301s (not 308), no chains. |
 | Mobile | pass | 86 | viewport set, responsive, 48px header CTA, 16px base. A lot of 14px body copy — verify vs DESIGN.md. |
@@ -218,6 +218,16 @@ Effort: M. Risk: low.
 
 #### M-3 · Six gallery project meta descriptions exceed 160 characters
 
+**SHIPPED / #39 2026-09-02** (uncommitted at time of writing — shared-tree, see note). `lib/projects.ts`
+gained an optional `metaDescription` field + `projectMetaDescription()` helper (hand-written value,
+else `blurb` trimmed at a word boundary to ≤155). Hand-wrote 9 descriptions (audit named 6; a
+re-count found 3 more at 159–172). `app/gallery/[slug]/page.tsx` `generateMetadata` and
+`app/gallery/page.tsx` `metadata.description` now use ≤155-char copy; `twitter:description` auto-fills
+from `og:description`. Verified against the fresh production build: all 11 detail pages 135–147 chars,
+`/gallery/` 150 chars, all three of `description`/`og:description`/`twitter:description` present; full
+`blurb` paragraphs and gallery cards render unchanged. Every fact traces to the existing
+`blurb`/`story` (D-06). See D-117 and `plans/2026-09-02-issue-39-gallery-meta-descriptions.md`.
+
 `app/gallery/[slug]/page.tsx` uses `project.blurb` verbatim as the meta description,
 `og:description`, and `twitter:description`. Six of eleven blurbs are 172–221 chars (Castle Hill 221,
 Randwick 211, The Rocks 204, Hornsby 199, Artarmon b+e 199, Artarmon 193). They will be truncated in
@@ -371,8 +381,9 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 - [ ] **#28 · L-2** — IndexNow key + deploy ping. *(Phase 4, step 13. **Blocked: owner decision — do we want Bing/Yandex fast-crawl?**)*
 
 **Not issued** (deliberately — see "Not in this plan" above): the six Tier-1 suburb pages (content
-project behind H-1), the M-3 gallery-blurb rewrites (content-quality pass), and L-7 (14px body copy
-— `DESIGN.md` is authoritative; flagged for an eyeball, not asserted as a defect).
+project behind H-1) and L-7 (14px body copy — `DESIGN.md` is authoritative; flagged for an eyeball,
+not asserted as a defect). *(M-3 was later issue-ified by the master plan as #39 and shipped
+2026-09-02 — a metadata-only fix, no visible-blurb rewrite.)*
 
 ---
 

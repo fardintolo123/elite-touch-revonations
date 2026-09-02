@@ -119,7 +119,7 @@ does this well ("With Elite Touch, a bathroom renovation starts from $18,000 for
 how long, the licence/warranty). Fold into C-2 (service pages) and local audit #4 (hubs).
 **Priority:** Medium. **Effort:** S (per page). **Risk:** low. **Dependency:** C-2, local #4.
 
-### C-4 · Authoritative bodies are named but never linked  ·  MEDIUM · CLOSED 2026-09-01 (#42)
+### C-4 · Authoritative bodies are named but never linked  ·  MEDIUM · CLOSED 2026-09-02 (#42)
 
 **What.** The copy references "NSW Fair Trading register", "AS 3740 / AS 3740-2021", "Home Building
 Act 1989", "National Construction Code", "HIA", "WELS" — and links **none** of them. The only
@@ -137,7 +137,7 @@ consistently (the Greenfleet link uses it). 4–6 links total, placed where the 
 **Files:** `app/about-us/page.tsx`, `app/services/[slug]/page.tsx`, possibly `lib/businessInfo.ts`
 (store the URLs). **Priority:** Medium. **Effort:** S. **Risk:** low.
 
-**Implemented 2026-09-01.** Authority URLs now live in `lib/businessInfo.ts`. `/about-us/` links the
+**Implemented 2026-09-02.** Authority URLs now live in `lib/businessInfo.ts`. `/about-us/` links the
 NSW licence register, AS 3740, NCC wet-area rules, HIA membership context, WELS and NSW home-building
 contract/statutory-warranty guidance. Service pages link the AS 3740 waterproofing mention in the
 standard inclusions list. External authority links use `target="_blank"` with

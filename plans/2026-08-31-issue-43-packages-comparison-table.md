@@ -18,6 +18,6 @@ detail, and add the table as the quick comparison before them.
 - [x] Implement package comparison table in `app/packages/page.tsx`.
 - [x] Add responsive table styles in `app/globals.css`.
 - [x] Update the C-6 audit and master plan registry.
-- [ ] Run build and readability checks.
-- [ ] Verify served HTML contains a real table.
-- [ ] Browser check at 390px, 768px, and 1280px.
+- [x] Run build and readability checks.
+- [x] Verify served HTML contains a real table.
+- [x] Browser check at 390px, 768px, and 1280px.

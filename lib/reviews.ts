@@ -106,3 +106,17 @@ export const reviews: readonly Review[] = [
 export function featuredReviews(count: number): readonly Review[] {
   return reviews.slice(0, count)
 }
+
+/**
+ * Look up one review by the reviewer's exact name. Used where a page pins a
+ * specific testimonial (e.g. the regional hubs, `lib/hubContent.ts`). Throws at
+ * build time on a typo rather than silently rendering nothing — a missing
+ * testimonial should fail loudly, not disappear.
+ */
+export function reviewByAuthor(author: string): Review {
+  const match = reviews.find((review) => review.author === author)
+  if (!match) {
+    throw new Error(`No review by "${author}" in Customer Reviews.md / lib/reviews.ts`)
+  }
+  return match
+}
