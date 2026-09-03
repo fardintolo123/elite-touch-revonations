@@ -115,6 +115,10 @@ on the factor that is cheapest to fix.
 **Priority:** High (GEO) / Medium (overall). **Effort:** S for the dates, S for the cadence doc.
 **Risk:** low. **Dependency:** shares the data model with technical M-2 + content C-5 + images I-1.
 
+**SHIPPED / #41 2026-09-03.** Visible freshness now appears on `/packages/`, gallery detail pages,
+and published hubs; `plans/seo-quarterly-review.md` records the quarterly review cadence and is
+linked from the SEO/AEO/GEO workflow checklist.
+
 ### G-2 · Answer blocks are not front-loaded into the first 30% of the page  ·  MEDIUM
 
 **What.** SE Ranking: ~44% of AI citations come from the first 30% of a page, and the optimal
@@ -181,12 +185,12 @@ publishes substantial original research/tools it wants to control.
 | Schema `@graph`/`@id`, per-`Service`, `geo`/`logo`/`image` | = schema F-2 / S-1 / S-3 |
 | Answer-first + question H2s on service/hub pages | = content C-3 + local #4, **refined by G-2** |
 | Comparison `<table>` on packages | = content C-6 |
-| Visible dates | = content C-5 / technical M-2 / images I-1 — **G-1 adds the refresh cadence** |
+| Visible dates | ✅ closed in #41 — content C-5 / technical M-2 / images I-1 plus the G-1 refresh cadence |
 | Author bylines / Person schema | = content C-2 / schema S-5 |
 | External primary-source links | = content C-4 |
 | Bing Places, Reddit, YouTube, off-site mentions | = local audit authority section |
 | IndexNow | = technical L-2 |
-| **Refresh cadence (G-1)** | **net-new — own small issue (doc + data field)** |
+| **Refresh cadence (G-1)** | ✅ **Closed in #41** — `plans/seo-quarterly-review.md` plus data-backed visible dates |
 | **Front-loaded 134–167 word answer blocks (G-2)** | **net-new — folds into the C-3 / local-#4 issue as an explicit spec** |
 | **Cost estimator tool (G-3)** | **net-new — backlog opportunity, not scheduled** |
 

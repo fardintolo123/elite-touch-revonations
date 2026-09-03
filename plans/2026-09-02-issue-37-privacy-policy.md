@@ -38,10 +38,11 @@ Add:
 - [x] `app/sitemap.ts` — add both routes with their own `businessInfo.legalPagesUpdated` date.
 - [x] `scripts/check-readability.mjs` — add both routes.
 - [x] Est. readability (mirror of the scorer): privacy 85, terms 84 — clears ≥ 60 comfortably.
-- [ ] `npm run build` green; route count up by 2. **Blocked:** another session's untracked WIP `lib/hubContent.ts` (issue #35) currently has a syntax error and fails `tsc`. My files typecheck clean in isolation (`npx tsc --noEmit` → only `hubContent.ts` errors). Retrying build in the background until that tree clears.
-- [ ] `npm run check:readability` — `/privacy/` and `/terms/` ≥ 60 (post-build).
-- [ ] `npm run verify:redirects` still passes (not touched; re-run once tree is green).
-- [ ] Served-HTML check: `/privacy/` self-canonical + names Resend/Supabase; privacy notice line in `/` and `/contact-us/` prerendered HTML.
-- [ ] Update `plans/2026-08-31-seo-content-audit.md` C-1 + master-plan registry.
-- [ ] Record the new pages in `PROJECT_CONTEXT.md` §6 and a decision in `DECISIONS.md`.
-- [ ] Close GitHub issue #37.
+- [x] Code shipped in commit `867e30c` (bundled with #35/#36/#39). `lib/hubContent.ts` landed fixed in the same commit; `tsc --noEmit` now clean.
+- [x] `npm run build` green — verified 2026-09-03: `tsc --noEmit` exit 0; fresh `.next` build prerenders `/privacy/` + `/terms/` as static routes; route count 24 → 26 (+2).
+- [x] `npm run check:readability` — 26/26 pages ≥ 60; `/privacy/` Flesch 86.6, `/terms/` Flesch 85.4.
+- [x] `npm run verify:redirects` still passes — 34 passed, 0 failed (routes untouched).
+- [x] Served-HTML check (running server + prerendered `.next/server/app/*.html`): `/privacy/` → 200, `<link rel="canonical" .../privacy/>`, `<meta name="robots" content="index, follow">`, names Resend + Supabase (+ Vercel + Google Analytics/Tag Manager); `/terms/` → 200, self-canonical, `index, follow`; privacy notice line "We use your details only to arrange your measure…" present in served HTML on `/`, `/contact-us/`, and every ContactSection page; footer "Privacy policy" + "Terms of use" links on every page; `/sitemap.xml` lists both with `lastmod 2026-09-02` (26 `<loc>` total).
+- [ ] Update `plans/2026-08-31-seo-content-audit.md` C-1 + master-plan registry — pending: tree currently carries heavy uncommitted concurrent doc edits (#38–#41) in the same files.
+- [ ] Record the new pages in `PROJECT_CONTEXT.md` §6 and a decision in `DECISIONS.md` — pending, same reason.
+- [ ] Close GitHub issue #37 — pending owner sign-off + the two doc updates above.

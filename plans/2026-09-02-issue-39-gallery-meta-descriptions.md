@@ -3,7 +3,7 @@
 **Date:** 2026-09-02
 **Issue:** #39 - `[seo-content] Gallery meta descriptions: trim the 6 over-length project + the index description (M-3)`
 **Source:** `plans/2026-08-31-seo-master-plan.md` §3 / Phase C; `plans/2026-08-31-issue-15-seo-technical-audit.md` M-3; `plans/2026-08-31-seo-page-audit.md` P-3b
-**Status:** implemented + verified 2026-09-02 (uncommitted — shared working tree, see note)
+**Status:** SHIPPED 2026-09-03 — committed in `867e30c` (swept in with the shared-tree "1" commit) and pushed; verified against that build.
 
 ## Problem
 
@@ -43,15 +43,19 @@ cannot just be shortened.
 - [x] `app/gallery/page.tsx` index `metadata.description` rewritten to <=155 chars (150).
 - [x] Visible `blurb` paragraphs and gallery cards unchanged (checked in built HTML).
 - [x] `npm run build` green; 32 static pages, 11 gallery paths — route count not dropped.
-- [x] Built HTML checked: all 11 `/gallery/{slug}/` 135–147 chars, `/gallery/` 150 chars; `description` + `og:description` + `twitter:description` present on every one.
+- [x] Built HTML checked (build `iXdxU0iUw7QGRzycDLHUc`, 2026-09-03): all 11 `/gallery/{slug}/` 135–147 chars, `/gallery/` 150 chars; `description` = `og:description` = `twitter:description` on every one; full `blurb` still the visible lead + index card text.
+- [x] `npx tsc --noEmit` clean.
 - [x] Source plans + master registry updated for M-3 / P-3b.
 - [x] `DECISIONS.md` D-117 recorded.
-- [ ] GitHub issue #39 closed — **deferred: shared working tree.** ~10 concurrent sessions are editing the same files (`app/gallery/page.tsx` and `app/gallery/[slug]/page.tsx` also carry uncommitted #38/#24 hunks). Left uncommitted for a coordinated commit; close #39 when the gallery-metadata commit lands.
+- [x] Code committed in `867e30c` + pushed (shared-tree sweep commit, not this session's doing).
+- [x] GitHub issue #39 closed 2026-09-03 with a verification comment (build `iXdxU0iUw7QGRzycDLHUc`).
 
 ## Note — shared tree
 
-`lib/projects.ts` (field + 9 values + helper) is 100% this issue. The two gallery `page.tsx` files
-contain this issue's `description` wiring **plus** another session's #38 (`title`) / #24 (`og:type:
-'article'`) edits, already present on disk. All build green together. Do not `git add -A`; commit
-`lib/projects.ts` + the two gallery pages + these plan/decision doc edits together, and coordinate the
-gallery-page hunks with whoever owns #38.
+This ran alongside ~10 concurrent `elite-touch-revonations-*` sessions. The issue #39 code
+(`lib/projects.ts` field + helper + 9 values; `app/gallery/[slug]/page.tsx` + `app/gallery/page.tsx`
+wiring) plus D-117 and the M-3 / P-3b / master-plan doc edits were all swept into commit `867e30c`
+("1") by whatever session periodically runs `git add -A && commit && push`. The two gallery
+`page.tsx` files also carry #38 (`title`) / #24 (`og:type: 'article'`) hunks from another session in
+the same commit. Nothing here needs a follow-up commit; the small date-accuracy fixes to D-117 and
+the M-3 note will land on the next sweep.

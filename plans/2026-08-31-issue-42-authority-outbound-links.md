@@ -2,7 +2,7 @@
 
 **Issue:** [#42](https://github.com/fardintolo123/elite-touch-revonations/issues/42)  
 **Source:** `plans/2026-08-31-seo-master-plan.md` Phase C; `plans/2026-08-31-seo-content-audit.md` C-4  
-**Date:** 2026-09-02
+**Date:** 2026-09-03
 
 ## Plan
 
@@ -18,4 +18,4 @@ Add a small set of authoritative outbound links for the site's load-bearing regu
 - [x] Record the implementation decision.
 - [x] Run `npm run build`.
 - [x] Verify `/about-us/`, `/packages/`, one service page and one hub page HTML contains the authority links.
-- [ ] Close GitHub issue #42. Blocked in this session: `gh` access was denied by the environment usage-limit guard.
+- [x] Close GitHub issue #42.

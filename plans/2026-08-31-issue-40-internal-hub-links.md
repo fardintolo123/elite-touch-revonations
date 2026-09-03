@@ -1,7 +1,7 @@
 # Issue 40 — internal links to published hubs
 
 **Date:** 2026-08-31
-**Status:** in progress
+**Status:** complete
 
 ## Implementation plan
 
@@ -21,4 +21,12 @@
 - [x] Homepage and service pages link to published hubs.
 - [x] Regional hubs link to sibling hubs and `/packages/`.
 - [x] Gallery project pages link to the parent service and published hub where available.
-- [ ] Build and HTML checks pass.
+- [x] Build and HTML checks pass.
+
+## Verification
+
+- `npm.cmd run typecheck` passed.
+- `npm.cmd run build` passed; route count is 32 in the current worktree because unrelated `/privacy/` and `/terms/` pages are also present.
+- Served-HTML checks passed against `http://localhost:3210`: published hub links are present on home, service, hub and gallery pages; unpublished Inner West / North-Western links are absent; unbuilt Tier-1 suburb links are absent from hubs.
+- `node scripts/check-readability.mjs http://localhost:3210` passed: 24/24 checked routes are at Flesch 60 or higher.
+- Playwright desktop 1440px and mobile 390px checks passed for home, service, hub and gallery representative pages, with no horizontal overflow.

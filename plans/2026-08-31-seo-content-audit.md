@@ -119,7 +119,7 @@ does this well ("With Elite Touch, a bathroom renovation starts from $18,000 for
 how long, the licence/warranty). Fold into C-2 (service pages) and local audit #4 (hubs).
 **Priority:** Medium. **Effort:** S (per page). **Risk:** low. **Dependency:** C-2, local #4.
 
-### C-4 · Authoritative bodies are named but never linked  ·  MEDIUM · CLOSED 2026-09-02 (#42)
+### C-4 · Authoritative bodies are named but never linked  ·  MEDIUM · CLOSED 2026-09-03 (#42)
 
 **What.** The copy references "NSW Fair Trading register", "AS 3740 / AS 3740-2021", "Home Building
 Act 1989", "National Construction Code", "HIA", "WELS" — and links **none** of them. The only
@@ -137,7 +137,7 @@ consistently (the Greenfleet link uses it). 4–6 links total, placed where the 
 **Files:** `app/about-us/page.tsx`, `app/services/[slug]/page.tsx`, possibly `lib/businessInfo.ts`
 (store the URLs). **Priority:** Medium. **Effort:** S. **Risk:** low.
 
-**Implemented 2026-09-02.** Authority URLs now live in `lib/businessInfo.ts`. `/about-us/` links the
+**Implemented 2026-09-03.** Authority URLs now live in `lib/businessInfo.ts`. `/about-us/` links the
 NSW licence register, AS 3740, NCC wet-area rules, HIA membership context, WELS and NSW home-building
 contract/statutory-warranty guidance. Service pages link the AS 3740 waterproofing mention in the
 standard inclusions list. External authority links use `target="_blank"` with
@@ -161,6 +161,10 @@ year on each project record, rendered as a small caption. Not a fake "updated to
 that only changes when the content does.
 **Files:** `app/packages/page.tsx`, `lib/projects.ts`, `app/gallery/[slug]/page.tsx`.
 **Priority:** Medium. **Effort:** S. **Risk:** low. **Dependency:** shares data with technical M-2.
+
+**SHIPPED / #41 2026-09-03.** `/packages/` renders the package-pricing month, gallery detail
+pages render a completion-year caption, and published hubs render a reviewed month. The captions use
+fixed content data only, never an automatic "today" value.
 
 ### C-6 · Packages tier comparison is not a real table  ·  MEDIUM
 
@@ -254,7 +258,7 @@ and the technical audit's note that `CLAUDE.md`/`DECISIONS.md` still say 2023 in
 | Service-page thin content (C-2) | — (new) | **Own issue**, pairs with schema S-1 + local #4. |
 | Answer-first on service/hub pages (C-3) | local #4 (hubs) | Fold into C-2 issue (services) + local #4 issue (hubs). |
 | Privacy policy (C-1) | — (new) | **Own issue**, HIGH, no dependency — can ship first. |
-| Freshness dates (C-5) | technical M-2 (sitemap lastmod) | **One issue** covering real content dates → feeds sitemap + visible captions. |
+| Freshness dates (C-5) | technical M-2 (sitemap lastmod) | ✅ **Closed in #41** — real content dates feed sitemap + visible captions. |
 | External authority links (C-4) | local (authority, off-site) | ✅ **Closed in #42** — on-site, distinct from off-site link building. |
 | Packages comparison table (C-6) | schema (comparative data for AI) | **Own issue**, needs `DESIGN.md` table decision. |
 | Doc fixes (C-9) | schema F-1, technical (2023 refs) | **One doc-hygiene issue** sweeping all stale-fact doc updates. |

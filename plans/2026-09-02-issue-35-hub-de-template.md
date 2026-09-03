@@ -77,19 +77,24 @@ Page render order after the hero:
 
 ## Checklist
 
-- [ ] Task routed; mapped docs read; `DECISIONS.md` checked (D-06 / D-10 / D-73 / D-107 govern)
-- [ ] `lib/hubContent.ts` created — 3 regions, all content truthful and non-invented (D-06)
-- [ ] Answer block 134–167 words per region; names service, cost+size, duration, licence, warranty, area line
-- [ ] `app/services/[slug]/[location]/page.tsx` renders answer block, local-detail, testimonial, FAQ
-- [ ] FAQ visible `<details>` + `FaqSchema` with byte-identical items
-- [ ] Testimonials verbatim from `lib/reviews.ts`, not attributed to the area
-- [ ] Existing local-project section + suburb list retained
-- [ ] `service-areas.json` `updated` bumped for the 3 published regions + `lastUpdated`
-- [ ] Manual swap test: each `localAngle` reads wrong with another region's name
-- [ ] `npm run build` green; route count holds (30)
-- [ ] `npm run check:readability` — 3 hubs still ≥ 60
-- [ ] `curl` the 3 hubs — answer copy, local-detail copy, testimonial, FAQ markup + `FAQPage` JSON-LD,
+- [x] Task routed; mapped docs read; `DECISIONS.md` checked (D-06 / D-10 / D-73 / D-107 govern)
+- [x] `lib/hubContent.ts` created — 3 regions, all content truthful and non-invented (D-06)
+- [x] Answer block 134–167 words per region (154 / 145 / 158); names service, cost+size, duration, licence, warranty, area line
+- [x] `app/services/[slug]/[location]/page.tsx` renders answer block, local-detail, testimonial, FAQ
+- [x] FAQ visible `<details>` + `FaqSchema` with byte-identical items (5/5, verified in served HTML)
+- [x] Testimonials verbatim from `lib/reviews.ts` via `reviewByAuthor()`, not attributed to the area
+      (Hills → Ken Chen, Eastern → Kieran C, North Shore → Huseyin Sumaktas)
+- [x] Existing local-project section + suburb list retained
+- [x] `service-areas.json` `updated` bumped for the 3 published regions + `lastUpdated`
+- [x] Manual swap test: each `localAngle` reads wrong with another region's name (grep-confirmed
+      distinctive phrases unique per hub)
+- [x] `npm run build` green; route count holds (32, no drop)
+- [x] `npm run check:readability` — 3 hubs 70.2 / 72.2 / 73.0 (all ≥ 60); 26/26 pages pass
+- [x] `curl` the 3 hubs — answer copy, local-detail copy, testimonial, FAQ markup + `FAQPage` JSON-LD,
       `/packages/` link all in the served HTML
-- [ ] Browser check desktop + 390px
-- [ ] `DECISIONS.md` entry; `plans/2026-08-31-seo-local-audit.md` (#4) + master-plan registry updated
+- [x] Browser check desktop + 390px (Playwright — correct H2 order, 5 FAQ cards, right testimonial,
+      2 `/packages/` links, no horizontal scroll)
+- [x] `DECISIONS.md` D-121; `plans/2026-08-31-seo-local-audit.md` (#4) + master-plan registry + `PROJECT_CONTEXT.md` updated
 - [ ] Issue #35 closed with a summary comment
+- [ ] Committed (note: multiple agent sessions active; issue-#35 code already landed in commit 867e30c
+      via the owner's `git add -A`; docs updates remain uncommitted)

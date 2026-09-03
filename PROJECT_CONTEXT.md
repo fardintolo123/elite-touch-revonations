@@ -244,9 +244,10 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `app/` | App Router. `layout.tsx` · `page.tsx` (home) · `about-us/` · `contact-us/` · `services/` + `services/[slug]/` · `gallery/` · `packages/` · `not-found.tsx` · `sitemap.ts` · `robots.ts` · `globals.css` · `fonts/` |
 | `components/` | `layout/SiteHeader.tsx`, `layout/SiteFooter.tsx`, `EnquiryForm.tsx` |
 | `lib/businessInfo.ts` | ⭐ **The single source of truth for business facts and the four services.** Never let a fact live only in JSX. |
-| `lib/reviews.ts` | The 19 testimonials, verbatim (D-03) |
-| `lib/locations.ts` | Reads `service-areas.json`. `publishedRegions()` is the **only** thing that turns a region into a page |
-| `app/services/[slug]/[location]/` | Regional hub renderer (D-71). Builds only `hubPublished` regions |
+| `lib/reviews.ts` | The 19 testimonials, verbatim (D-03). `reviewByAuthor(name)` pins one to a page (hubs) and throws at build on a typo |
+| `lib/locations.ts` | Reads `service-areas.json`. `publishedRegions()` is the **only** thing that turns a region into a page; `publishedRegionForSuburb()` is the safe project-to-hub link helper |
+| `lib/hubContent.ts` | ⭐ **Per-region editorial content for the 3 published hubs** (D-121): answer-first lead, "Renovating a bathroom in {region}" local detail, local FAQ, pinned testimonial author. `Record<regionSlug, HubContent>`, same "content is data" shape as `services[].about/faqs`. A region with no entry renders without the extra sections. All copy is truthful/non-invented (D-06) |
+| `app/services/[slug]/[location]/` | Regional hub renderer (D-71). Builds only `hubPublished` regions. Renders `lib/hubContent.ts` sections when present (D-121) |
 | `lib/projects.ts` | ⭐ **The five photographed projects and every image's alt text.** Alt text describes the PHOTOGRAPH, not the page topic (D-66) |
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
 | `lib/actions.ts` | Enquiry server action — office email (critical) + customer email (best-effort) + Supabase write (best-effort). ⚠️ **Exports async functions ONLY** — see D-77 |
@@ -294,13 +295,17 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    checks for this. Never retype the list into a component.
 12. **Adding a region does NOT publish it.** `hubPublished: true` does. This is deliberate
    (D-73) and is the guard against §4.4 plus D-10's thin-page rule.
-13. **Dark surfaces need `--et-text-inverse`.** `.et-quote` hard-sets the light-mode ink colour;
+13. **Internal links to location hubs follow publication state.** Use `AreasServedLinks` for
+    home/service hub cards and `publishedRegionForSuburb()` for gallery project-to-hub links. Do not
+    hand-code a link to a dark hub or an unbuilt Tier-1 suburb page; that recreates the 404-link
+    defect fixed in D-118.
+14. **Dark surfaces need `--et-text-inverse`.** `.et-quote` hard-sets the light-mode ink colour;
    overrides for `.et-band-ink` / `.et-card-dark` live at the end of `globals.css` (D-81). If you
    add a new component that can sit on an ink band, check its contrast before shipping.
-14. **The form's JS is on every route** because `ContactSection` is on every page (D-80). Homepage
+15. **The form's JS is on every route** because `ContactSection` is on every page (D-80). Homepage
    JS is **179 KB gzipped — over the ≤150 KB shared-route budget line.** Accepted deliberately.
    Slim the form if it must come down; do not strip the form from pages.
-15. **Analytics: GTM-MVGQB9FW is installed** (K4 closed — 2026-08-31). Architecture: Website →
+16. **Analytics: GTM-MVGQB9FW is installed** (K4 closed — 2026-08-31). Architecture: Website →
    GTM → Google tag (G-06GQGHHP0X) → GA4. One measurement path (D-32). The standalone Google
    tag GT-MBNT4TKH is NOT installed — it would create a duplicate path. GTM container holds:
    - **Tags:** GA4 - Google tag (Initialization - All Pages) · GA4 Event - phone_call_click

@@ -57,6 +57,9 @@ hero photos). Absolute URLs only.
 **Priority:** Medium. **Effort:** S. **Risk:** low. **Dependency:** shares the "real content dates"
 work with technical M-2 / content C-5 (same file).
 
+**SHIPPED / #41 2026-09-03.** `sitemap.xml` now includes absolute `<image:image>` entries for
+gallery project photos, published-hub project photos, and the evidenced service-hero photos.
+
 ### I-2 · Project photos carry no IPTC/XMP metadata (Creator / Credit / Copyright)  ·  LOW–MEDIUM — CLOSED 2026-09-01
 
 **What.** The WebP conversion (D-99: quality 82, alpha stripped) stripped all embedded metadata.
@@ -172,7 +175,7 @@ just add the `minimumCacheTTL` line to that item.
 |---|---|---|
 | AVIF + `minimumCacheTTL` (I-5) | technical L-3 | **Merge into technical L-3 issue**; add the cache-TTL line. |
 | `sizes` accuracy (I-4) | technical L-8 (live CWV), PERFORMANCE_BUDGET rule 15 | **Fold into the live-Lighthouse issue** as a concrete sub-task. |
-| Image sitemap (I-1) | technical M-2 / content C-5 (same `sitemap.ts` file) | **One issue** — "real content dates + image entries in sitemap.xml". |
+| Image sitemap (I-1) | technical M-2 / content C-5 (same `sitemap.ts` file) | ✅ **Closed in #41** — real content dates + image entries in `sitemap.xml`. |
 | IPTC/XMP metadata (I-2) | — (new) | **Closed in #44** — local WebP XMP script plus one-off batch pass. |
 | `ImageObject` schema (schema S-2) | schema audit | Separate — markup, not files. May pair with C-8 (project story copy). |
 | Alt length trim (I-3) | — (new) | **Closed in #44** — extreme alts trimmed; accuracy-first rule preserved. |

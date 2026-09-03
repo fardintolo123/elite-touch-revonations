@@ -216,17 +216,21 @@ tells Google all 24 pages changed. Fix: carry a real `updated` date on each cont
 Files: `app/sitemap.ts`, `lib/businessInfo.ts`, `lib/projects.ts`, `service-areas.json`.
 Effort: M. Risk: low.
 
+**SHIPPED / #23 via #41 2026-09-03.** `app/sitemap.ts` now uses real content dates
+from services, projects, published regions, and a fixed static-route content pass date. It no
+longer emits `new Date()` build timestamps.
+
 #### M-3 · Six gallery project meta descriptions exceed 160 characters
 
-**SHIPPED / #39 2026-09-02** (uncommitted at time of writing — shared-tree, see note). `lib/projects.ts`
-gained an optional `metaDescription` field + `projectMetaDescription()` helper (hand-written value,
-else `blurb` trimmed at a word boundary to ≤155). Hand-wrote 9 descriptions (audit named 6; a
-re-count found 3 more at 159–172). `app/gallery/[slug]/page.tsx` `generateMetadata` and
-`app/gallery/page.tsx` `metadata.description` now use ≤155-char copy; `twitter:description` auto-fills
-from `og:description`. Verified against the fresh production build: all 11 detail pages 135–147 chars,
-`/gallery/` 150 chars, all three of `description`/`og:description`/`twitter:description` present; full
-`blurb` paragraphs and gallery cards render unchanged. Every fact traces to the existing
-`blurb`/`story` (D-06). See D-117 and `plans/2026-09-02-issue-39-gallery-meta-descriptions.md`.
+**SHIPPED / #39 2026-09-03.** `lib/projects.ts` gained an optional `metaDescription` field +
+`projectMetaDescription()` helper (hand-written value, else `blurb` trimmed at a word boundary to
+≤155). Hand-wrote 9 descriptions (audit named 6; a re-count found 3 more at 159–172).
+`app/gallery/[slug]/page.tsx` `generateMetadata` and `app/gallery/page.tsx` `metadata.description`
+now use ≤155-char copy; `twitter:description` auto-fills from `og:description`. Verified against the
+fresh production build: all 11 detail pages 135–147 chars, `/gallery/` 150 chars, all three of
+`description`/`og:description`/`twitter:description` present; full `blurb` paragraphs and gallery
+cards render unchanged. Every fact traces to the existing `blurb`/`story` (D-06). See D-117 and
+`plans/2026-09-02-issue-39-gallery-meta-descriptions.md`.
 
 `app/gallery/[slug]/page.tsx` uses `project.blurb` verbatim as the meta description,
 `og:description`, and `twitter:description`. Six of eleven blurbs are 172–221 chars (Castle Hill 221,
@@ -291,6 +295,8 @@ hand-edit, don't regex).
   (with `contentUrl`, `caption` = the alt text) and treating the page as `Article` would strengthen
   image-search and answer-engine eligibility. Files: `app/gallery/[slug]/page.tsx`.
 - **L-6 · `og:type` is `website` on gallery project pages** (could be `article`). Trivial.
+  **SHIPPED / #38 2026-09-03** — `app/gallery/[slug]/page.tsx` `generateMetadata` now sets
+  `openGraph.type: 'article'`. L-5 (`ImageObject` + `Article` JSON-LD) stays with #24.
 - **L-7 · A large share of visible body copy renders at 14px (`.et-body-sm`) or 13px
   (`.et-caption`)** — service summaries, all card descriptions, FAQ answers, footer. The base is a
   correct 16px. `DESIGN.md` is authoritative for type (`CLAUDE.md` source-of-truth hierarchy), so
@@ -333,6 +339,7 @@ before/after. Nothing here has been implemented.
    Results Test.
 8. **M-2** — real per-content `lastmod` in `app/sitemap.ts`.
 9. **L-5 / L-6** — `ImageObject` + `article` type on gallery project pages (optional, same sitting).
+   **L-6 (`og:type: 'article'`) shipped via #38 2026-09-03; L-5 (`ImageObject`) still open in #24.**
 
 ### Phase 4 — hardening + measurement (owner sign-off gates)
 10. **M-4** — report-only CSP + `Permissions-Policy` in `next.config.ts`; observe reports; then
@@ -371,8 +378,8 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 
 ### Phase 3 — structured data + sitemap (1–2 sittings)
 - [ ] **#22 · M-1** — per-page `Service` JSON-LD on the 4 service pages. *(Phase 3, step 7. No dep.)*
-- [ ] **#23 · M-2** — real per-content `lastmod` in `app/sitemap.ts`. *(Phase 3, step 8. No dep.)*
-- [ ] **#24 · L-5 + L-6** — `ImageObject` + `article` type on gallery project pages. *(Phase 3, step 9. Optional / lowest; same sitting as #22–#23.)*
+- [x] **#23 · M-2** — real per-content `lastmod` in `app/sitemap.ts`. *(Shipped 2026-09-03 via #41.)*
+- [ ] **#24 · L-5** — `ImageObject` + `Article` JSON-LD on gallery project pages. *(Phase 3, step 9. Optional / lowest; same sitting as #22–#23.)* **L-6 (`og:type: 'article'`) already shipped via #38 2026-09-03.**
 
 ### Phase 4 — hardening + measurement (owner / creds gates)
 - [ ] **#25 · M-4** — report-only CSP + `Permissions-Policy`. *(Phase 4, step 10. **Blocked: owner awareness before enforce.**)*

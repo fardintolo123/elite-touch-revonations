@@ -26,8 +26,8 @@ after commit `3d92daa` left the type requiring those fields with no record setti
 - [x] Sitemap emits stable `lastmod` values from content data, not `new Date()`.
 - [x] Sitemap emits image entries for gallery pages, published hubs, and evidenced service hero photos.
 - [x] Quarterly review checklist added under `plans/` and linked from `docs/SEO_AEO_GEO_CHECKLIST.md`.
-- [ ] Audit/registry docs updated for #23/#41.
-- [ ] Build/typecheck and HTML/sitemap validation completed.
+- [x] Audit/registry docs updated for #23/#41.
+- [x] Build/typecheck and HTML/sitemap validation completed.
 
 ## Date evidence
 
