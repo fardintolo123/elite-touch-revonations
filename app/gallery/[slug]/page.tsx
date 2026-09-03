@@ -54,6 +54,11 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/gallery/${project.slug}/` },
     openGraph: {
+      // These pages are de-facto case studies — real photos, real suburb,
+      // real scope — so `article` is a truer type than the site-wide
+      // `website` default (issue #38 / tech-audit L-6). The matching
+      // `ImageObject` + `Article` JSON-LD (L-5) is still tracked in #24.
+      type: 'article',
       title: project.name,
       description,
       images: [project.images[0].src],
