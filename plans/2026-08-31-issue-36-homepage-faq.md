@@ -3,9 +3,7 @@
 **Issue:** [#36](https://github.com/fardintolo123/elite-touch-revonations/issues/36)
 **Source:** `plans/2026-08-31-seo-master-plan.md` §4 Phase C · `plans/2026-08-31-seo-page-audit.md` **P-1**
 **Date:** 2026-09-02
-**Status:** code implemented + committed in `867e30c`; verification + doc bookkeeping PENDING (blocked: a
-concurrent agent session was actively editing `DECISIONS.md` / `seo-master-plan.md` and running the
-dev server on :3210 — a competing `next build` or shared-doc edit would have collided).
+**Status:** DONE — code committed 2026-09-02 (`867e30c`), verified + all bookkeeping closed 2026-09-04.
 
 ## Plan
 
@@ -39,22 +37,24 @@ AEO / AI-answer value, not a SERP feature.
       = `app/packages/page.tsx` `TIERS`/`FAQS`; Q2 `3–4`/`5–6`/`5–7 weeks` = `businessInfo.buildDurations`;
       Q3 wording = `businessInfo.clientTypes` + `serviceArea.coverage`. No suburb invented.
 - [x] `npm run typecheck` — clean.
-- [ ] `npm run build` green; route count not dropped; `/` First Load JS unchanged. — NOT RUN
-      (concurrent `next dev` on :3210; a competing build risks corrupting both — CLAUDE.md Testing Workflow).
-- [ ] `npm run check:readability` — `/` still ≥ 60. — NOT RUN (needs the build above).
-- [ ] `curl` / grep served HTML — 3 questions + answers present; `FAQPage` JSON-LD present and matching. — NOT RUN.
-- [ ] Browser check desktop + 390px — `<details>` collapses via native UI, answer text in DOM when collapsed. — NOT RUN.
-- [ ] Update `plans/2026-08-31-seo-page-audit.md` (P-1 ★NEW findings table) + master-plan registry
-      (line ~78 "Homepage: add an FAQ block", line ~129 "#36 homepage FAQ"). — DEFERRED: both files were
-      being edited by the concurrent session (#40/#41 work). Do in the same quiet pass as verification.
-- [ ] Record decision in `DECISIONS.md` — next free number is **D-120** (D-119 taken by the parallel
-      #41 work). Suggested `## 3u.` subsection. — DEFERRED for the same reason.
-- [ ] Close GitHub issue #36 — only after the build/readability/HTML/browser gates pass.
+- [x] `npm run build` green — 32 routes, no drop (run 2026-09-04, once the concurrent session's dev
+      server on :3210 had gone quiet — checked doc mtimes + `git status` first).
+- [x] `npm run check:readability` — 26/26 pages ≥ 60; `/` scored **66.5** (977 words).
+- [x] `curl` / grep served HTML — all 3 questions + answers present in `.next/server/app/index.html`;
+      one `FAQPage` JSON-LD block with 3 `Question` entities, `acceptedAnswer.text` byte-identical to
+      the visible `<p>` for all three; both linked hrefs (`/packages/`, `/services/bathroom-renovations/`)
+      present.
+- [x] Browser check desktop (1280px) + mobile (390px) via Playwright, against an isolated `next start`
+      on port 4321 (not :3210, to avoid the concurrent session's dev server) — accordion opens on click
+      (`<details open>` true), closes again on a second click, no horizontal overflow at 390px, all 3
+      question tap targets ≥ 48px tall, link visible and correctly hrefed inside the expanded answer.
+      Server stopped after the check.
+- [x] Update `plans/2026-08-31-seo-page-audit.md` (P-1 in both the scorecard and the ★NEW findings
+      table) + master-plan registry (`plans/2026-08-31-seo-master-plan.md` lines ~78, ~129, ~203).
+- [x] Record decision in `DECISIONS.md` — **D-123**, new `## 3x.` subsection.
+- [x] Close GitHub issue #36.
 
-## Handoff note
+## Result
 
-The only thing actually done and committed is the `app/page.tsx` change. Everything else waits for a
-window when no other session holds the tree / build dir. The change is low-risk (text + one JSON-LD
-`<script>`, zero JS/dep/image/font added — same class as the D-107 powder-room FAQ, which
-`docs/PERFORMANCE_BUDGET.md` §4 recorded as structurally weightless), so verification should be a
-formality, but it has not been done.
+Shipped. Homepage FAQ live in always-rendered markup with matching `FAQPage` schema; every fact
+sourced, nothing invented; build/readability/HTML/browser gates all pass.

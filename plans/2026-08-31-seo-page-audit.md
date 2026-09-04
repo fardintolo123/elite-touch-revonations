@@ -30,7 +30,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 | Schema | ✅ LocalBusiness + WebSite; no breadcrumb (correct for home) |
 | Content | ✅ answer-ish lead, process steps, proof, ~700 visible words; ⚠️ not a crisp front-loaded answer block → GEO **G-2** |
 | Internal links | ⚠️ links 4 services + gallery (3 via WorkStrip); **links 0 regional hubs** → local **#7** |
-| ★NEW **P-1** | **No FAQ block.** A page targeting "bathroom renovations near me" (1K–10K/mo) should carry 2–3 AEO FAQs ("How much does a bathroom renovation cost in Sydney?", "How long does it take?", "Which areas of Sydney do you cover?"), each answered in 40–60 words, `FAQPage` schema. |
+| ✅ **P-1** | **Fixed — #36, 2026-09-04.** Homepage now carries a 3-question FAQ ("How much does a bathroom renovation cost in Sydney?", "How long does a bathroom renovation take?", "Which areas of Sydney do you cover?") as visible `<details>` + `FAQPage` schema. |
 
 ### 2. Services index `/services/` — 72/100
 
@@ -141,7 +141,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 
 | # | Page | Finding | Priority | Effort |
 |---|---|---|---|---|
-| **P-1** | Homepage | No FAQ block on the site's top "near me" target. Add 2–3 AEO FAQs + `FAQPage` schema. | Medium | S |
+| ✅ **P-1** | Homepage | ~~No FAQ block on the site's top "near me" target.~~ **Fixed — #36, 2026-09-04.** 3-question FAQ added (cost, duration, coverage) as visible `<details>` + `FAQPage` schema; see DECISIONS.md D-123. | Medium | S |
 | ✅ **P-2** | `/services/` | ~~Title "Our Services" has no keyword.~~ **Fixed — #38, 2026-09-02** → "Bathroom Renovations Across Sydney" (60 chars). | Medium | S |
 | **P-3** | `/gallery/` | (a) ✅ **Title fixed — #38, 2026-09-02** → "Bathroom Renovation Photos, Sydney" (60 chars). (b) ✅ **P-3b meta description fixed — #39, 2026-09-02** (221 → 150 chars). | Medium | S |
 | ✅ **P-4** | `/about-us/` | ~~H1 has no location signal.~~ **Fixed — #38, 2026-09-02** → "A Sydney family business that only renovates wet areas." | Low | S |

@@ -75,7 +75,7 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | **Show the Google rating on-site + `aggregateRating`** | local #3 | 🆕 **#33** (depends #29) |
 | **Service pages: real per-service content + FAQ + answer-first** (bathroom/ensuite/laundry) | content C-2/C-3/C-7, local #14, geo G-2, page | 🆕 **#34** |
 | **Hubs: de-template — local content, local FAQ, testimonial, answer-first, packages link** | local #4, content C-3, geo G-2, page | ✅ **#35** shipped 2026-09-03 (D-121); `lib/hubContent.ts` |
-| **Homepage: add an FAQ block** | page P-1, content | 🆕 **#36** |
+| **Homepage: add an FAQ block** | page P-1, content | ✅ **#36** shipped 2026-09-04 |
 | **Add a privacy policy page + form privacy notice** | content C-1 | ✅ **#37** shipped 2026-09-02 (commit `867e30c`), doc-verified 2026-09-03 (D-122) |
 | **On-page copy tidy: keyword-weak `/services/` + `/gallery/` titles, `/about-us/` H1, gallery `og:type`** | page P-2/P-3a/P-4, coord. #21 | ✅ **#38** shipped 2026-09-02 (titles + H1), 2026-09-03 (`og:type`/L-6); L-5 `ImageObject` still in #24 |
 | **Gallery meta descriptions: trim the 6 over-length project + the index description** | tech M-3, page P-3b | ✅ **#39** shipped 2026-09-02 |
@@ -126,7 +126,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | **#34** service-page content + FAQ | P1 | — (pairs with #22) |
 | ✅ **#35** hub de-templating | P1 | shipped 2026-09-03 (D-121); depended #17 (done) |
 | **#33** show the rating | P1 | **#29** |
-| **#36** homepage FAQ | P2 | — |
+| ✅ **#36** homepage FAQ | P2 | shipped 2026-09-04 (D-123) |
 | ✅ **#39** gallery meta descriptions | P2 | shipped 2026-09-02 (#19 helper not needed — wired direct) |
 | ✅ **#42** authority outbound links | P2 | — |
 
@@ -200,7 +200,7 @@ Every audit recommendation was re-checked against the code before landing in §3
 | #29, #45 | Owner / off-site local | `seo-local` |
 | #30, #31, #32 | Structured data | `seo-schema` |
 | #33, ✅ #35, #40 | Local on-page | `seo-local` |
-| #34, #36, ✅ #37, ✅ #38, ✅ #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
+| #34, ✅ #36, ✅ #37, ✅ #38, ✅ #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
 | ✅ #41 | Freshness (content + technical) | `seo-content` |
 | #46 | Documentation | `documentation` |
 

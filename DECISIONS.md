@@ -419,6 +419,14 @@ environment — neither is a website change, and neither traces to a `plans/` li
 
 ---
 
+## 3x. Homepage FAQ block (GitHub issue #36)
+
+| # | Decision | Status | Why |
+|---|---|---|---|
+| **D-123** | **The homepage now carries a 3-question FAQ** ("How much does a bathroom renovation cost in Sydney?", "How long does a bathroom renovation take?", "Which areas of Sydney do you cover?") as visible `<details>` + `FAQPage` JSON-LD (`components/FaqSchema.tsx`), placed after the customer-proof section and before the final work strip / contact CTA. | **AGENT — built 2026-09-02 (commit `867e30c`), verified 2026-09-04** | Closes page-audit finding P-1: the homepage targets "bathroom renovations near me" (1K–10K/mo, D-12) — the largest single opportunity in the project — and had no extractable Q&A for AI-answer surfaces. FAQ rich results are retired sitewide (schema F-1 / issue #46); this is for AEO/AI-citation value, not a SERP feature. Every figure traces to an existing source and was never restated from memory: the $18,000/$25,000/$30,000 starting prices and their size basis come from `app/packages/page.tsx` (`TIERS`/`FAQS`); the 3–4/5–6/5–7 week ranges come from `businessInfo.buildDurations`; the coverage answer uses `businessInfo.serviceArea.coverage` ("across Sydney") and `businessInfo.clientTypes.emphasis` verbatim, with no suburb invented. No new dependency, image, font or `'use client'` — same structurally-weightless class as the D-107 powder-room FAQ. Verified 2026-09-04 against a fresh production build (isolated on port 4321 to avoid colliding with a concurrent session's dev server on :3210, per the multi-session rule in `CLAUDE.md`'s Testing Workflow): `npm run typecheck` clean; `npm run build` green (32 routes, no drop); `npm run check:readability` 26/26 ≥ 60 (`/` 66.5); served HTML has all 3 questions + answers, one `FAQPage` block with 3 `Question` entities whose `text` is byte-identical to the visible `<p>`, and both linked URLs (`/packages/`, `/services/bathroom-renovations/`) present; Playwright pass desktop (1280px) and mobile (390px) — accordion opens/closes on click, no horizontal overflow at 390px, link visible and correctly hrefed inside the expanded answer. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |
