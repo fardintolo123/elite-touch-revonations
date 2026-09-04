@@ -3,9 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { projects, projectBySlug, projectMetaDescription } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { ProjectSchema } from '@/components/ProjectSchema'
 import {
   LOCATION_PARENT_SLUG,
   publishedRegionForSuburb,
@@ -49,21 +51,17 @@ export async function generateMetadata({
    */
   const description = projectMetaDescription(project)
 
-  return {
+  return buildMetadata({
+    path: `/gallery/${project.slug}/`,
     title: project.name,
     description,
-    alternates: { canonical: `/gallery/${project.slug}/` },
-    openGraph: {
-      // These pages are de-facto case studies — real photos, real suburb,
-      // real scope — so `article` is a truer type than the site-wide
-      // `website` default (issue #38 / tech-audit L-6). The matching
-      // `ImageObject` + `Article` JSON-LD (L-5) is still tracked in #24.
-      type: 'article',
-      title: project.name,
-      description,
-      images: [project.images[0].src],
-    },
-  }
+    // These pages are de-facto case studies — real photos, real suburb, real
+    // scope — so `article` is a truer type than the sitewide `website`
+    // default (issue #38 / tech-audit L-6). The matching `ImageObject` +
+    // `Article` JSON-LD (L-5) is still tracked in #24.
+    type: 'article',
+    images: [project.images[0].src],
+  })
 }
 
 export default async function ProjectPage({
@@ -91,6 +89,7 @@ export default async function ProjectPage({
           },
         ]}
       />
+      <ProjectSchema project={project} />
       <section className="et-hero">
         <div className="et-container et-stack">
           <p className="et-body-sm">

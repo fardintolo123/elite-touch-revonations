@@ -32,7 +32,7 @@ L-8.
 | URL Structure | pass | 94 | Clean, hierarchical, one canonical form, literal 301s (not 308), no chains. |
 | Mobile | pass | 86 | viewport set, responsive, 48px header CTA, 16px base. A lot of 14px body copy — verify vs DESIGN.md. |
 | Core Web Vitals | pass | 82 | Local baseline 93–94 mobile (issue #5). LCP image preloaded w/ srcset, one font, zero animation libs. Never measured on the live domain. |
-| Structured Data | warn | 78 | LocalBusiness+Organization, WebSite, BreadcrumbList, FAQPage all valid and in the served HTML. No per-page `Service`; `og:image`/`og:url` broken. |
+| Structured Data | warn | 78 | LocalBusiness+Organization, WebSite, BreadcrumbList, FAQPage all valid and in the served HTML. No per-page `Service`; `og:image`/~~`og:url`~~ broken (`og:url` **fixed — H-2 / #19, 2026-09-04**). |
 | JS Rendering | pass | 96 | Everything SEO-relevant is server-rendered. One tiny client leaf (the form). Canonical/robots/schema all in initial HTML. |
 | IndexNow | warn | 45 | Not implemented. Low value for a Google-first local business, cheap to add for Bing. |
 
@@ -145,11 +145,20 @@ names remain as text. Strategic fix (build the suburb pages) is still a separate
 
 #### H-2 · `og:url` is hard-coded to the homepage on every page
 
+**SHIPPED / #19 2026-09-04.** `lib/metadata.ts` `buildMetadata({ path, title, description, type?,
+images? })` now backs every page's metadata; every built page's `og:url` matches its own canonical
+URL. Also corrects this finding's own note below — the 11 gallery project pages were **not**
+"correct": setting their own `openGraph` REPLACED the layout's object wholesale (Next merges
+metadata shallowly — duplicate keys replace, not deep-merge), so they were shipping no `og:url`, no
+`og:site_name`, no `og:locale`, and an un-templated `og:title` (missing the
+" | Elite Touch Renovations" suffix every other page's `og:title` carries). `buildMetadata()` fixes
+all of that too. See D-124 and `plans/2026-09-04-issue-19-build-metadata-helper.md`.
+
 **What.** `app/layout.tsx` sets `openGraph.url: businessInfo.siteUrl` once. Per-page metadata only
 sets `alternates.canonical` — Next does **not** derive `og:url` from the canonical. So every page
 ships `<meta property="og:url" content="https://www.elitetouchrenovations.au/">`. Verified on
 `/packages/`, `/services/`, `/about-us/`, `/contact-us/`, `/gallery/`, `/services/bathroom-renovations/`,
-the hubs — all wrong. (Gallery project pages set their own `openGraph` and are correct.)
+the hubs — all wrong. (Gallery project pages set their own `openGraph` — see the correction above.)
 
 **Why it matters.** `og:url` is the canonical URL for the social/answer-engine graph. Sharing
 `/packages/` on LinkedIn, Facebook, Slack, or WhatsApp produces a card that links to the homepage,
@@ -294,6 +303,17 @@ hand-edit, don't regex).
   They are de-facto case studies (real photos, real suburb, real scope). `ImageObject` per photo
   (with `contentUrl`, `caption` = the alt text) and treating the page as `Article` would strengthen
   image-search and answer-engine eligibility. Files: `app/gallery/[slug]/page.tsx`.
+  **SHIPPED / #24 2026-09-04.** New `components/ProjectSchema.tsx` renders one `CreativeWork` node
+  per project — `name`, `description`, `dateCreated` (`completedByYear`), and one `ImageObject` per
+  photo (`contentUrl` absolute, `caption` = `image.alt` verbatim, real `width`/`height`,
+  `representativeOfPage: true` on the lead image). `CreativeWork` over `Article`: these are project
+  case studies, not journalism, and `CreativeWork` carries no `datePublished`/`author`/`publisher`
+  expectations this repo cannot back yet (no real byline, no `logo` asset — S-3). `creator` was left
+  out deliberately — cleaner once #30's `@graph`/`@id` lands so it can reference the `LocalBusiness`
+  node instead of duplicating it. Verified against a fresh production build across all 11 project
+  pages: `og:type` stays `article`, one `CreativeWork` block per page, `ImageObject` count matches
+  the rendered photo count exactly (checked on two pages), every `caption` non-empty and every
+  `contentUrl` absolute-https. See D-125.
 - **L-6 · `og:type` is `website` on gallery project pages** (could be `article`). Trivial.
   **SHIPPED / #38 2026-09-03** — `app/gallery/[slug]/page.tsx` `generateMetadata` now sets
   `openGraph.type: 'article'`. L-5 (`ImageObject` + `Article` JSON-LD) stays with #24.
@@ -339,7 +359,8 @@ before/after. Nothing here has been implemented.
    Results Test.
 8. **M-2** — real per-content `lastmod` in `app/sitemap.ts`.
 9. **L-5 / L-6** — `ImageObject` + `article` type on gallery project pages (optional, same sitting).
-   **L-6 (`og:type: 'article'`) shipped via #38 2026-09-03; L-5 (`ImageObject`) still open in #24.**
+   **Both shipped: L-6 (`og:type: 'article'`) via #38 2026-09-03; L-5 (`ImageObject` + `CreativeWork`)
+   via #24 2026-09-04.**
 
 ### Phase 4 — hardening + measurement (owner sign-off gates)
 10. **M-4** — report-only CSP + `Permissions-Policy` in `next.config.ts`; observe reports; then
@@ -372,14 +393,14 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 - [~] **#18 · L-1 + L-4** — **L-4 shipped** (`Host:` line removed from `app/robots.ts`; verified absent from `/robots.txt` via `next dev`). **L-1 traced, deferred**: the 404 carries two `<meta name="robots">` tags — our explicit `noindex, follow` plus a `noindex` Next auto-injects for every 404-status response. Both are noindex (no risk). Collapsing to one needs either dropping the sitewide `index, follow` layout default (touches every page) or a deeper Next metadata change — not the "trivial" fix the finding assumed. Keep #18 open for the L-1 decision. *(Phase 1, steps 2–3.)*
 
 ### Phase 2 — the metadata layer (1–2 sittings)
-- [ ] **#19 · H-2** — `lib/metadata.ts` `buildMetadata()`; per-page `og:url` = canonical. *(Phase 2, step 4. No dep. **Blocks #20.**)*
+- [x] **#19 · H-2** — `lib/metadata.ts` `buildMetadata()`; per-page `og:url` = canonical. *(Phase 2, step 4. Shipped 2026-09-04 — unblocks #20.)*
 - [ ] **#20 · H-3** — `og:image` / `twitter:image` sitewide; `summary_large_image`. *(Phase 2, step 5. **Depends on #19.**)*
 - [ ] **#21 · M-5** — trim the two over-length `<title>` tags. *(Phase 2, step 6. Fold into #19 if that lands first.)*
 
 ### Phase 3 — structured data + sitemap (1–2 sittings)
 - [ ] **#22 · M-1** — per-page `Service` JSON-LD on the 4 service pages. *(Phase 3, step 7. No dep.)*
 - [x] **#23 · M-2** — real per-content `lastmod` in `app/sitemap.ts`. *(Shipped 2026-09-03 via #41.)*
-- [ ] **#24 · L-5** — `ImageObject` + `Article` JSON-LD on gallery project pages. *(Phase 3, step 9. Optional / lowest; same sitting as #22–#23.)* **L-6 (`og:type: 'article'`) already shipped via #38 2026-09-03.**
+- [x] **#24 · L-5** — `ImageObject` + `CreativeWork` JSON-LD on gallery project pages. *(Phase 3, step 9. Shipped 2026-09-04 — `components/ProjectSchema.tsx`. L-6 `og:type` shipped via #38 2026-09-03.)*
 
 ### Phase 4 — hardening + measurement (owner / creds gates)
 - [ ] **#25 · M-4** — report-only CSP + `Permissions-Policy`. *(Phase 4, step 10. **Blocked: owner awareness before enforce.**)*

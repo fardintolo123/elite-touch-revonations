@@ -89,7 +89,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 | Meta description | ✅ **fixed — M-3 / #39, 2026-09-02.** Optional `metaDescription` field (≤155) with trimmed-`blurb` fallback; all 11 now 135–147 chars, `blurb` still the visible lead. |
 | H1 | ✅ full project name |
 | Headings | ⚠️ the "Other work" grid renders 10× `<h3>` "Bathroom"/"Ensuite" — deliberate readability fix (D-109), odd in an outline view but acceptable; leave it |
-| Schema | ✅ BreadcrumbList + `og:image` (raw asset, not a 1200×630 crop → technical **H-3**); ❌ no `ImageObject` → schema **S-2** |
+| Schema | ✅ BreadcrumbList + `og:image` (raw asset, not a 1200×630 crop → technical **H-3**); ✅ **`ImageObject` + `CreativeWork` fixed — #24, 2026-09-04** (schema **S-2** / tech **L-5**) |
 | Content | ⚠️ 1-sentence story per project → content **C-8** |
 | Images | ⚠️ lead-image `sizes="100vw"` over-claims → images **I-4** |
 | Dates | ❌ no completion year → content **C-5** / GEO **G-1** |

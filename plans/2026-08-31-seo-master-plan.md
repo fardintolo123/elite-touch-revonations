@@ -44,8 +44,9 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
   service + hub pages aren't answer-first; no freshness dates anywhere.
 - **Schema:** valid but disconnected (no `@graph`/`@id`); no per-page/per-hub `Service`; business
   node missing `geo`/`priceRange`/`logo`/`image`.
-- **Technical:** `og:url` wrong sitewide, no `og:image`, sitemap `lastmod` fakes freshness, no CSP.
-  *(All already issue-ified — #17–#28.)*
+- **Technical:** ~~`og:url` wrong sitewide~~ fixed via `buildMetadata()` (#19, 2026-09-04); no
+  `og:image`, ~~sitemap `lastmod` fakes freshness~~ fixed (#23/#41), no CSP. *(All already
+  issue-ified — #17–#28.)*
 - **GEO:** brand-new domain with zero freshness signals on the cheapest AI-citation factor.
 
 ---
@@ -58,12 +59,12 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 |---|---|---|
 | Dead hub→Tier-1-suburb links (4→6, 404) | tech H-1, local #2, page | ✅ **#17** |
 | 404 double-robots meta + robots `Host:` | tech L-1/L-4 | ✅ **#18** |
-| `og:url` = homepage sitewide → `buildMetadata()` helper | tech H-2, page | ✅ **#19** |
+| `og:url` = homepage sitewide → `buildMetadata()` helper | tech H-2, page | ✅ **#19** shipped 2026-09-04 |
 | No `og:image` / `twitter:image` sitewide | tech H-3, page | ✅ **#20** |
 | Two `<title>` tags over length | tech M-5 | ✅ **#21** |
 | No per-page `Service` schema (4 service pages) | tech M-1, schema S-1, local #5 | ✅ **#22** (needs 🆕 #29 for the `@id` it references) |
 | Sitemap `lastmod` = build time; add `updated` field | tech M-2 | ✅ **#23** shipped 2026-09-03 via #41 |
-| `ImageObject` + `og:type:article` on gallery pages | tech L-5/L-6, schema S-2 | **L-6 (`og:type`) ✅ via #38 2026-09-03; L-5 (`ImageObject`) → #24** |
+| `ImageObject` + `og:type:article` on gallery pages | tech L-5/L-6, schema S-2 | ✅ **#24** shipped 2026-09-04 (L-6 via #38 2026-09-03, L-5 via #24) |
 | Report-only CSP + `Permissions-Policy` | tech M-4 | ✅ **#25** |
 | Enable AVIF in `next/image` (+ `minimumCacheTTL`) | tech L-3, images I-5 | ✅ **#26** (comment adds cache-TTL line) |
 | Measure live-domain CWV (+ `sizes` accuracy) | tech L-8, images I-4, PERF rule 15 | ✅ **#27** (comment adds `sizes` sub-task) |
@@ -77,7 +78,7 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | **Hubs: de-template — local content, local FAQ, testimonial, answer-first, packages link** | local #4, content C-3, geo G-2, page | ✅ **#35** shipped 2026-09-03 (D-121); `lib/hubContent.ts` |
 | **Homepage: add an FAQ block** | page P-1, content | ✅ **#36** shipped 2026-09-04 |
 | **Add a privacy policy page + form privacy notice** | content C-1 | ✅ **#37** shipped 2026-09-02 (commit `867e30c`), doc-verified 2026-09-03 (D-122) |
-| **On-page copy tidy: keyword-weak `/services/` + `/gallery/` titles, `/about-us/` H1, gallery `og:type`** | page P-2/P-3a/P-4, coord. #21 | ✅ **#38** shipped 2026-09-02 (titles + H1), 2026-09-03 (`og:type`/L-6); L-5 `ImageObject` still in #24 |
+| **On-page copy tidy: keyword-weak `/services/` + `/gallery/` titles, `/about-us/` H1, gallery `og:type`** | page P-2/P-3a/P-4, coord. #21 | ✅ **#38** shipped 2026-09-02 (titles + H1), 2026-09-03 (`og:type`/L-6); L-5 `ImageObject` shipped separately in #24 |
 | **Gallery meta descriptions: trim the 6 over-length project + the index description** | tech M-3, page P-3b | ✅ **#39** shipped 2026-09-02 |
 | **Spread internal links to the hubs + reciprocal gallery→hub links** | local #7, page | 🆕 **#40** (depends #17, #35) |
 | **Visible freshness: render real dates + completion years + image-sitemap entries + quarterly review cadence** | content C-5, geo G-1, images I-1 | ✅ **#41** shipped 2026-09-03 |
@@ -111,14 +112,14 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 ### Phase B — the metadata & schema layer (do together; #19 is the keystone)
 | Issue | Pri | Depends |
 |---|---|---|
-| **#19** `buildMetadata()` + `og:url` | P1 | — (enables #20, #38, #21) |
+| ✅ **#19** `buildMetadata()` + `og:url` | P1 | shipped 2026-09-04 — enables #20, #21 |
 | **#30** schema `@graph` + `@id` | P1 | — (enables #22, #31, #24, #32) |
-| **#20** `og:image` sitewide | P1 | #19 |
+| **#20** `og:image` sitewide | P1 | #19 done — unblocked |
 | **#32** enrich LocalBusiness node | P1 | #30 (soft), #20 (image asset, soft) |
 | **#22** per-page `Service` schema | P1 | #30 (needs the `@id` it references) |
 | **#31** hub `Service` + `OfferCatalog` | P2 | #30, #22 |
-| **#21** trim long titles | P2 | coordinate with #19/#38 |
-| ✅ **#38** keyword-weak titles/H1 tidy | P2 | shipped 2026-09-02–03 (#19 helper not landed — edited direct; incl. `og:type`/L-6; L-5 `ImageObject` still #24) |
+| **#21** trim long titles | P2 | #19 done — unblocked, ready-to-apply fix already drafted in the issue comments |
+| ✅ **#38** keyword-weak titles/H1 tidy | P2 | shipped 2026-09-02–03 (edited direct — #19 landed after; incl. `og:type`/L-6; L-5 `ImageObject` shipped separately in #24) |
 
 ### Phase C — content depth (the biggest organic lever)
 | Issue | Pri | Depends |
@@ -127,7 +128,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | ✅ **#35** hub de-templating | P1 | shipped 2026-09-03 (D-121); depended #17 (done) |
 | **#33** show the rating | P1 | **#29** |
 | ✅ **#36** homepage FAQ | P2 | shipped 2026-09-04 (D-123) |
-| ✅ **#39** gallery meta descriptions | P2 | shipped 2026-09-02 (#19 helper not needed — wired direct) |
+| ✅ **#39** gallery meta descriptions | P2 | shipped 2026-09-02 (wired direct, pre-dates #19; now migrated onto `buildMetadata()` as part of #19, 2026-09-04) |
 | ✅ **#42** authority outbound links | P2 | — |
 
 ### Phase D — reinforce & measure
@@ -144,7 +145,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | Issue | Pri | Depends |
 |---|---|---|
 | **#45** off-site local program | P2 | #29 (NAP baseline); review-prompt code slice shipped 2026-08-31 |
-| **#24** gallery `ImageObject` + `article` | P3 | #30 (soft) |
+| ✅ **#24** gallery `ImageObject` + `article` | P3 | shipped 2026-09-04 — `creator` deferred to #30 (soft dep, `@graph`/`@id` not landed) |
 | ✅ **#44** gallery story copy + image metadata + alt trim | P3 | shipped 2026-09-01 |
 | **#28** IndexNow | P3 | — |
 
@@ -155,7 +156,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
         #35 ──▶ (deferred: publish more hubs)
 #19 ──▶ #20 ──▶ #32(image prop)
 #30 ──▶ #22 ──▶ #31
-#30 ──▶ #24, #32
+#30 ──▶ #32 (✅ #24 shipped 2026-09-04 without waiting — `creator` deferred to #30 instead)
 #23 ──▶ #41
 DESIGN.md decision ──▶ #43
 live domain ──▶ #27 ──▶ #26 (measure order)
