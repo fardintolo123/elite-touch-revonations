@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { featuredReviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
@@ -57,11 +58,11 @@ export async function generateMetadata({
     return { title: 'Not found', robots: { index: false, follow: false } }
   }
 
-  return {
+  return buildMetadata({
+    path: `/services/${service.slug}/`,
     title: service.h1,
     description: service.summary,
-    alternates: { canonical: `/services/${service.slug}/` },
-  }
+  })
 }
 
 /** Included in every package tier — PROJECT_CONTEXT.md §2. Do not embellish. */
@@ -122,9 +123,9 @@ export default async function ServicePage({
   // assuming the field exists on the whole `Service` union.
   const about = 'about' in service ? service.about : undefined
   const faqs = 'faqs' in service ? service.faqs : undefined
-  // Powder-room only (D-107 / blog-analyze F-1): the shared build-durations
-  // block is bathroom-scoped and contradicts that page's own FAQ, so it is
-  // hidden there. Every other service still shows it.
+  // Some service pages carry their own timeline in the FAQ/about copy. When
+  // that timeline describes a different scope than the shared single-bathroom
+  // bands below, hide the shared block to avoid a visible contradiction.
   const showBuildDurations = !(
     'hideBuildDurations' in service && service.hideBuildDurations
   )
@@ -195,9 +196,8 @@ export default async function ServicePage({
 
       {/* Build durations. Owner-supplied (issue #2 service PDF), settled in
           D-75. These are on-site programs and a real customer promise — do not
-          shorten them to sound more competitive. Hidden on powder-room, where
-          the figures are bathroom-scoped and the FAQ carries the real timeline
-          (blog-analyze F-1). */}
+          shorten them to sound more competitive. Hidden when the service
+          record carries its own non-single-bathroom timeline. */}
       {showBuildDurations && (
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">

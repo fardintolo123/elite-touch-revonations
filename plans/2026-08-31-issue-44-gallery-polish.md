@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-01
 **Issue:** #44 - `[seo-content] Gallery polish: project story copy + image file metadata + alt-length trim`
-**Status:** in progress
+**Status:** complete
 
 ## Plan
 
@@ -33,7 +33,8 @@
 - [x] Current project WebP files updated with XMP Creator, Credit and Rights.
 - [x] Image conversion process doc updated for future metadata injection.
 - [x] `DECISIONS.md` records the implementation result.
-- [ ] `npm run build` green.
-- [ ] `npm run check:readability` passes.
-- [ ] Metadata sample check passes.
-- [ ] Served HTML contains story paragraphs on sample gallery pages.
+- [x] `npm run build` green.
+- [x] `npm run check:readability` passes.
+- [x] Metadata sample check passes.
+- [x] Served HTML contains story paragraphs on sample gallery pages.
+- [x] GitHub issue #44 closed with validation summary.

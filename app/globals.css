@@ -599,6 +599,75 @@ svg {
   transform: translateY(-2px);
 }
 
+.et-google-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--et-space-4);
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--et-space-3) var(--et-space-4);
+  background: var(--et-surface);
+  border: 1px solid var(--et-border);
+  border-radius: var(--et-radius-lg);
+  color: var(--et-text);
+  text-decoration: none;
+}
+
+.et-google-rating:hover .et-google-rating-link {
+  color: var(--et-magenta-700);
+  text-decoration-color: currentColor;
+}
+
+.et-google-rating-score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 56px;
+  height: 44px;
+  padding-inline: var(--et-space-3);
+  border-radius: var(--et-radius-pill);
+  background: var(--et-surface-accent);
+  color: var(--et-text-accent);
+  font-size: var(--et-text-h4);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.et-google-rating-copy {
+  display: grid;
+  gap: var(--et-space-1);
+  min-width: 0;
+  font-size: var(--et-text-sm);
+  color: var(--et-text-secondary);
+}
+
+.et-google-rating-copy strong {
+  color: var(--et-text);
+  font-size: var(--et-text-body);
+  font-weight: 600;
+}
+
+.et-google-rating-link {
+  color: var(--et-text-accent);
+  font-size: var(--et-text-sm);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--et-border);
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 479px) {
+  .et-google-rating {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .et-google-rating-link {
+    grid-column: 2;
+  }
+}
+
 /* DESIGN.md §8.11: real comparison tables, with mobile scrolling contained. */
 .et-table-wrap {
   width: 100%;

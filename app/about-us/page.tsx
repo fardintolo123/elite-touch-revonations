@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { reviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
@@ -24,12 +25,12 @@ import { projects } from '@/lib/projects'
  * See docs/ISSUE_FINDINGS.md §B.2.
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/about-us/',
   title: 'About Us',
   description:
     'Elite Touch Renovations is a family-run Sydney bathroom renovation business, founded in 2022 by the Dawood family. NSW Builder Licence 475204C.',
-  alternates: { canonical: '/about-us/' },
-}
+})
 
 const heroProject = projects.find((p) => p.slug === 'artarmon-bathroom')!
 

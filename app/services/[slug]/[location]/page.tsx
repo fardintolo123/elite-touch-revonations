@@ -3,12 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { hubContentFor } from '@/lib/hubContent'
 import { reviewByAuthor } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { FaqSchema } from '@/components/FaqSchema'
+import { ServiceSchema } from '@/components/ServiceSchema'
 import { ExternalLink } from '@/components/ExternalLink'
+import { GoogleRating } from '@/components/GoogleRating'
 import {
   LOCATION_PARENT_SLUG,
   listableSuburbs,
@@ -62,13 +65,11 @@ export async function generateMetadata({
     return { title: 'Not found', robots: { index: false, follow: false } }
   }
 
-  return {
+  return buildMetadata({
+    path: `/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
     title: `Bathroom Renovations ${region.name}`,
     description: `Bathroom renovations across Sydney's ${region.name} by Elite Touch Renovations. Free on-site measure, fixed-scope written quotes, waterproofing to AS 3740 and a ${businessInfo.workmanshipWarrantyYears}-year workmanship warranty.`,
-    alternates: {
-      canonical: `/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
-    },
-  }
+  })
 }
 
 export default async function LocationHubPage({
@@ -116,6 +117,7 @@ export default async function LocationHubPage({
           },
         ]}
       />
+      <ServiceSchema service={parentService} region={region} />
       {hub && hub.faqs.length > 0 && <FaqSchema items={hub.faqs} />}
       <section className="et-hero">
         <div className="et-container et-stack">
@@ -149,6 +151,8 @@ export default async function LocationHubPage({
               Call {businessInfo.phone.display}
             </a>
           </div>
+
+          <GoogleRating />
 
           <ul className="et-facts">
             <li className="et-fact">

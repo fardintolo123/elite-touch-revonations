@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { PageHero } from '@/components/PageHero'
 import { formatMonthYear } from '@/lib/dateLabels'
@@ -27,12 +28,12 @@ import { formatMonthYear } from '@/lib/dateLabels'
  * (D-109). Server component; inherits `index, follow`.
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/terms/',
   title: 'Terms of Use',
   description:
     'The terms for using the Elite Touch Renovations website, including how published package prices, project photos and outbound links should be read.',
-  alternates: { canonical: '/terms/' },
-}
+})
 
 const updated = formatMonthYear(businessInfo.legalPagesUpdated)
 

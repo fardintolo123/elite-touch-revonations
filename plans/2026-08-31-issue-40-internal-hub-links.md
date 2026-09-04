@@ -1,4 +1,4 @@
-# Issue 40 — internal links to published hubs
+# Issue 40 - internal links to published hubs
 
 **Date:** 2026-08-31
 **Status:** complete
@@ -28,5 +28,7 @@
 - `npm.cmd run typecheck` passed.
 - `npm.cmd run build` passed; route count is 32 in the current worktree because unrelated `/privacy/` and `/terms/` pages are also present.
 - Served-HTML checks passed against `http://localhost:3210`: published hub links are present on home, service, hub and gallery pages; unpublished Inner West / North-Western links are absent; unbuilt Tier-1 suburb links are absent from hubs.
-- `node scripts/check-readability.mjs http://localhost:3210` passed: 24/24 checked routes are at Flesch 60 or higher.
+- `node scripts/check-readability.mjs http://localhost:3210` passed: 26/26 checked routes are at Flesch 60 or higher.
+- `npm.cmd run verify:redirects` passed against `http://localhost:3210`: 34 passed, 0 failed.
 - Playwright desktop 1440px and mobile 390px checks passed for home, service, hub and gallery representative pages, with no horizontal overflow.
+- GitHub issue #40 is closed: https://github.com/fardintolo123/elite-touch-revonations/issues/40

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { projects, projectCover } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
@@ -26,7 +27,8 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
  * "rendering eagerly ≠ downloading eagerly" (PROJECT_CONTEXT.md §4.2).
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/gallery/',
   // Renders as "Bathroom Renovation Photos, Sydney | Elite Touch Renovations"
   // via the root layout's title template — 60 chars, carries the keyword +
   // "Sydney" that "Our Work" lacked (issue #38 / page-audit P-3a). "Photos"
@@ -39,8 +41,7 @@ export const metadata: Metadata = {
    */
   description:
     'Photos of bathroom renovations Elite Touch Renovations has completed across Sydney, from Artarmon and Balmain to Hunters Hill, Randwick and The Rocks.',
-  alternates: { canonical: '/gallery/' },
-}
+})
 
 /**
  * Documented projects with no photography supplied. Kept as text so the work is

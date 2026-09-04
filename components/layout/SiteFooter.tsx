@@ -8,10 +8,8 @@ import { businessInfo, services } from '@/lib/businessInfo'
  * ABN, email, address and trading hours were supplied on GitHub issue #2 and
  * are now shown here (see docs/ISSUE_FINDINGS.md §A).
  *
- * What is deliberately STILL ABSENT and must stay absent:
- *   - star rating / review count — the GBP shows 5.0 across 17 reviews as at
- *                      the issue #2 PDF, but that has not been verified live.
- *                      A stale rating is a real problem, not a rounding error.
+ * The Google rating is deliberately handled by `components/GoogleRating.tsx`,
+ * which renders only from the verified GBP fields in `businessInfo`.
  *
  * Resolved 2026-08-19 by the owner: the 10-year workmanship warranty (closes
  * D-19), the info@ address, and the Greenfleet tree planting are all confirmed

@@ -33,6 +33,38 @@ export const businessInfo = {
   /** Canonical origin. Matches the host in the existing Yoast sitemaps. */
   siteUrl: 'https://www.elitetouchrenovations.au',
 
+  /**
+   * Schema-only entity fields.
+   *
+   * `geo` is a coarse Granville suburb point, not a street address and not a
+   * walk-in office pin. Street address and postcode remain unknown and must not
+   * be invented.
+   */
+  schema: {
+    businessIdPath: '/#business',
+    websiteIdPath: '/#website',
+    logo: {
+      path: '/brand/etr-mark.webp',
+      width: 163,
+      height: 160,
+    },
+    images: [
+      '/images/projects/hunters-hill-bathroom/double-vanity-marble.webp',
+      '/images/projects/the-rocks-bathroom/shower-window-tub-wide.webp',
+      '/images/projects/artarmon-bathroom-ensuite/double-vanity-corner-window.webp',
+    ],
+    /**
+     * Google accepts a short text price band. Use `$$$` rather than a bare
+     * dollar figure so schema does not detach the published package prices from
+     * their required room-size basis (D-07).
+     */
+    priceRange: '$$$',
+    geo: {
+      latitude: -33.83611,
+      longitude: 151.00722,
+    },
+  },
+
   /** Authoritative public sources for checkable regulatory and industry claims. */
   authorities: {
     nswLicenceRegister: 'https://verify.licence.nsw.gov.au/home/Trades',
@@ -56,6 +88,8 @@ export const businessInfo = {
   phone: {
     /** Exactly as the owner writes it, and as it must appear on the page. */
     display: '0411 752 334',
+    /** Same number in international format for schema. */
+    e164: '+61411752334',
     /** E.164 for the tel: href. Same number, dial-safe format. */
     href: 'tel:+61411752334',
     contact: 'Omar',
@@ -279,24 +313,27 @@ export const businessInfo = {
   ],
 
   /**
-   * (issue #2) Google Business Profile — resolves most of K2.
-   * ⚠️ The rating and count are as at the date of the About PDF. VERIFY THEM
-   * LIVE before displaying either, and before emitting AggregateRating schema.
-   * A stale rating in structured data is a real problem, not a rounding error.
-   * Note 17 Google reviews vs 19 testimonials in Customer Reviews.md — the two
-   * sets are NOT the same, so never call the 19 "Google reviews".
+   * Google Business Profile. The rating/count were live-checked on 2026-09-04
+   * from the public ProvenExpert profile that mirrors Google Maps reviews:
+   * 5.00 from 19 Google Maps reviews. The canonical profile link remains the
+   * owner-supplied share.google URL. These are Google-only reputation figures,
+   * separate from the 19 verbatim testimonials in Customer Reviews.md.
    */
   googleBusinessProfile: {
     url: 'https://share.google/PLJDhhWBCrWAq6GVH',
     /**
      * Issue #45 review-generation prompt. This deliberately uses the known
      * profile URL until the owner supplies a dedicated short review URL.
-     * Do not display rating/count from this object until `verifiedLive` is true.
+     * Use the same verified profile URL for the post-enquiry review prompt
+     * until the owner supplies a dedicated short review URL.
      */
     reviewPromptUrl: 'https://share.google/PLJDhhWBCrWAq6GVH',
     ratingAtLastCheck: 5.0,
-    reviewCountAtLastCheck: 17,
-    verifiedLive: false,
+    reviewCountAtLastCheck: 19,
+    verifiedLive: true,
+    verifiedAt: '2026-09-04',
+    verificationSource:
+      'Public ProvenExpert profile mirroring Google Maps reviews showed 5.00 from 19 Google Maps reviews.',
   },
 
   /**
@@ -342,17 +379,87 @@ export const services = [
     slug: 'bathroom-renovations',
     title: 'Bathroom Renovations',
     h1: 'Bathroom Renovations Sydney',
-    updated: '2026-08-27',
+    updated: '2026-09-04',
     summary:
       'A full strip-out-to-studs rebuild of the main bathroom. Demolition, waterproofing to AS 3740, tiling, plumbing and electrical — finished to a fixed written scope.',
+    /**
+     * Added 2026-09-04 per DECISIONS.md D-126 / issue #34. Sourced from the
+     * owner-supplied `docs/source-copy/svc-bathroom.md` PDF, EXCEPT pricing and
+     * duration: the PDF's own indicative dollar ranges ($25k–$60k) and "3–5
+     * week" figure are superseded on this site by the package from-prices
+     * (D-60/D-61) and the owner-corrected build durations (D-75) — never
+     * reintroduce the PDF's numbers here.
+     */
+    about:
+      'A full bathroom renovation is a strip-out-to-studs rebuild: everything comes out — tiles, fixtures, the old waterproofing membrane, sometimes the walls themselves — and the room is rebuilt from the substrate up. We run demolition, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off as one team, from the on-site measure through to handover. It starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our Basic package, from $25,000 for Standard and from $30,000 for Premium — see how the packages differ below. A full renovation runs three to four weeks on site. Older Sydney homes can turn up rot, non-compliant plumbing or asbestos once the room is opened up, and the written quote sets out how that is handled before work starts, not after. Every job is done under NSW Builder Licence 475204C and carries a 10-year workmanship warranty.',
+    faqs: [
+      {
+        question: 'What happens if ours is the only bathroom in the house?',
+        answer:
+          'We talk through a temporary plan before work starts, not partway through. If your bathroom is the only one in the home, the strip-out week is the most disruptive — dust, noise, no access to the room — so we plan the program, and any workaround, around that week specifically, and you know it before you sign.',
+      },
+      {
+        question:
+          'How do you make sure the finished bathroom works day to day, not just in photos?',
+        answer:
+          "That comes down to layout decisions made before pricing, not finishes chosen at the end. Our designer works out where towels, storage and everyday items actually go as part of the drawing, not as an afterthought — a bathroom with nowhere for a toothbrush is a layout problem, not a finishing one, and we fix that before the quote is written.",
+      },
+      {
+        question: 'Do I need council approval for a bathroom renovation?',
+        answer:
+          'Most like-for-like renovations within the existing footprint do not need development consent. Renovations that move walls, change the outside of the house, or sit in a heritage conservation area may need approval, and heritage-listed properties almost always do. We check this at the on-site quote so you know before you sign, not after.',
+      },
+      {
+        question:
+          "What turns up in older Sydney homes that isn't in the original quote?",
+        answer:
+          'Rot, non-compliant plumbing and — in pre-1990 homes — asbestos are the three things strip-out most often uncovers. We allow a contingency in the quote and test for asbestos where required, so if something is found, how it is priced and handled is already agreed rather than a surprise mid-job.',
+      },
+      {
+        question: 'Is waterproofing really that important?',
+        answer:
+          'It is the part of the build most likely to cause expensive damage if it fails — mould inside walls, rotted framing, water coming through to the ceiling below. We waterproof every bathroom to AS 3740, primer plus two coats, and issue a compliance certificate for the work.',
+      },
+    ],
   },
   {
     slug: 'ensuite-bathroom-renovations',
     title: 'Ensuite Renovations',
     h1: 'Ensuite Renovations Sydney',
-    updated: '2026-08-27',
+    updated: '2026-09-04',
     summary:
       'Small-footprint master-suite work. We handle the ventilation and sound-proofing an ensuite needs when it shares a wall with the bedroom.',
+    /** Added 2026-09-04 per D-126 / issue #34, from `docs/source-copy/svc-ensuite.md`. */
+    about:
+      'An ensuite is a bathroom accessed only from a private bedroom, almost always the master — smaller than a main bathroom, typically three to seven square metres, and usually internal with no external wall. That makes mechanical ventilation essential rather than optional, and it means noise from the toilet, the fan or the plumbing carries straight into the room next door. We treat ventilation and acoustic detailing — solid-core doors, concealed cisterns, toilet position, insulated walls — as design decisions made up front, not afterthoughts. Pricing follows the same packages as any bathroom: from $18,000 on Basic, from $25,000 on Standard and from $30,000 on Premium, based on the room size. A full ensuite renovation runs three to four weeks on site. Every job is done under NSW Builder Licence 475204C and carries a 10-year workmanship warranty.',
+    faqs: [
+      {
+        question: 'How small can an ensuite be?',
+        answer:
+          'Functionally, a one-person ensuite can fit into around 2.5 square metres with careful planning — shower, basin and toilet. Most lived-in ensuites run three to seven square metres; below about 2.5 square metres the room starts to feel like a powder room with a shower added, and some of what makes an ensuite work gets lost.',
+      },
+      {
+        question: 'Do ensuites need natural light?',
+        answer:
+          'No, but it helps. Most Sydney ensuites are internal and rely on mechanical ventilation and electric lighting. Where the roof allows it, a skylight is usually the easiest way to bring in daylight without giving up the privacy a window would cost.',
+      },
+      {
+        question: 'How do you stop noise carrying into the bedroom?',
+        answer:
+          'With acoustic detailing, not luck: a solid-core door with sealed edges rather than a hollow one, a concealed in-wall cistern instead of a close-coupled toilet, keeping the toilet away from the bedhead wall where the layout allows, and soft-close hardware on drawers and doors.',
+      },
+      {
+        question:
+          'Can you renovate an ensuite without touching the main bathroom?',
+        answer:
+          'Yes. They are quoted and run as separate jobs unless you want them done together. Some households do the ensuite first because it is used daily, and come back for the main bathroom later — the packages and process are the same either way.',
+      },
+      {
+        question: 'Should I put a bath in my ensuite?',
+        answer:
+          'For most households, no — most ensuites are too small to fit a bath without crowding the rest of the room, and the household bath usually stays in the main bathroom. Larger ensuites, from around 8 square metres, can carry a freestanding bath if that is what you want.',
+      },
+    ],
   },
   {
     slug: 'laundry-renovations',
@@ -365,9 +472,49 @@ export const services = [
     */
     title: 'Bathroom + Laundry Renovations',
     h1: 'Bathroom and Laundry Renovations Sydney',
-    updated: '2026-08-27',
+    updated: '2026-09-04',
     summary:
       'Two wet areas run as a single program. One demolition, one waterproofing stage, one trade sequence — and one disruption to the house instead of two.',
+    /**
+     * Added 2026-09-04 per D-126 / issue #34, from
+     * `docs/source-copy/svc-bath-laundry.md`. The PDF's own combined-program
+     * timeline (4–6 weeks) describes TWO rooms, not the single-bathroom bands
+     * in `businessInfo.buildDurations` (3–4 / 5–6 / 5–7, D-75) — showing both
+     * on one page reads as a contradiction, so `hideBuildDurations` suppresses
+     * the shared block here, same fix as D-107 on powder-room.
+     */
+    hideBuildDurations: true,
+    about:
+      'Running a bathroom and a laundry as one project rather than two separate jobs means one set of trades on site, one demolition window, one waterproofing process and one final clean — whether the two rooms share a wall, sit on different floors, or get combined into a single space. We work out which layout suits your home at the on-site measure, before the scope is locked in. Each room is priced against the same Basic, Standard and Premium packages as a standalone bathroom, from $18,000 on Basic, based on its own size. Most combined programs run four to six weeks on site, depending on whether the rooms are adjacent or in different parts of the house. Both rooms are waterproofed to AS 3740 and certified separately. Every job is done under NSW Builder Licence 475204C and carries a 10-year workmanship warranty.',
+    faqs: [
+      {
+        question: 'Can the bathroom and laundry be done at different times?',
+        answer:
+          "Yes, if you'd rather sequence them than run them in parallel. That is one advantage of booking them as a single project — you can keep one room usable while the other is offline, then swap, rather than losing both wet areas in the house at once.",
+      },
+      {
+        question: 'Is a combined job cheaper than two separate renovations?',
+        answer:
+          'Usually, yes. One mobilisation, one demolition window and one waterproofing inspection trail instead of two save real money and time compared with running the same work as two projects months apart — the exact saving depends on the layout and how much plumbing the two rooms share.',
+      },
+      {
+        question: 'Does my washing machine need its own water supply?',
+        answer:
+          'No. It connects to dedicated washer taps with isolation valves, off the same hot and cold supply as the rest of the wet area, installed and certified by a licensed plumber to AS/NZS 3500.',
+      },
+      {
+        question:
+          'Does laundry waterproofing have to meet the same standard as a bathroom?',
+        answer:
+          'Yes. Under AS 3740, any room with a floor waste and a water supply is a wet area — which almost every laundry is — so the membrane requirements and certification are the same as for a bathroom.',
+      },
+      {
+        question:
+          'What is the typical timeline for a combined bathroom-and-laundry project?',
+        answer:
+          'Four to six weeks on site for most Sydney homes. Adjacent rooms sharing a wall are quicker and cheaper to renovate together; rooms in different parts of the house take longer because the trades are managing two work fronts.',
+      },
+    ],
   },
   {
     slug: 'powder-room-renovations',

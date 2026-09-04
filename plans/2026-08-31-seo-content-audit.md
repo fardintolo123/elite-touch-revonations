@@ -74,7 +74,7 @@ from `lib/actions.ts` and `app/layout.tsx`, no invented claims. A one-line priva
 the enquiry form on every page (`ContactSection.tsx` and `contact-us/page.tsx`), and the footer links
 both pages. See `plans/2026-09-02-issue-37-privacy-policy.md` and `DECISIONS.md` D-122.
 
-### C-2 · Three of the four service pages have very little service-specific content  ·  HIGH
+### C-2 · Three of the four service pages have very little service-specific content  ·  HIGH  ·  ✅ DONE 2026-09-04 (issue #34, D-126)
 
 **What.** `app/services/[slug]/page.tsx` is one renderer for four pages. The **only** unique content
 per service is the H1 + a one-sentence `summary`. Everything else — the standard-inclusions list,
@@ -108,7 +108,7 @@ swap-test failure the local audit flagged for the hubs.
 **Priority:** High. **Effort:** M–L (copy). **Risk:** low. **Dependency:** none; pairs naturally
 with the hub de-templating (local audit #4) and the `Service` schema work (schema audit S-1).
 
-### C-3 · Service and hub pages are not answer-first  ·  MEDIUM
+### C-3 · Service and hub pages are not answer-first  ·  MEDIUM  ·  ✅ DONE — hubs via #35 (D-121), services via #34 (D-126)
 
 **What.** `/services/bathroom-renovations/` opens with a hero eyebrow + H1 + the one-sentence
 summary, then the shared "what's included" block. The hubs open with "We strip out, waterproof…

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
 import { ExternalLink } from '@/components/ExternalLink'
 import { PageHero } from '@/components/PageHero'
@@ -33,12 +34,12 @@ import { formatMonthYear } from '@/lib/dateLabels'
  * correct, we want this page found.
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/privacy/',
   title: 'Privacy Policy',
   description:
     'How Elite Touch Renovations collects and uses the details you send through our enquiry form, who else handles them, and how to ask us to correct or delete them.',
-  alternates: { canonical: '/privacy/' },
-}
+})
 
 const updated = formatMonthYear(businessInfo.legalPagesUpdated)
 

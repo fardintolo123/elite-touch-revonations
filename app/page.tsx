@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { featuredReviews } from '@/lib/reviews'
 import Image from 'next/image'
 import { ContactSection } from '@/components/ContactSection'
@@ -8,6 +9,7 @@ import { WorkStrip } from '@/components/WorkStrip'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
 import { FaqSchema } from '@/components/FaqSchema'
+import { GoogleRating } from '@/components/GoogleRating'
 
 /**
  * Homepage.
@@ -37,12 +39,17 @@ import { FaqSchema } from '@/components/FaqSchema'
  * standard code, AS 3740 — already the value of `businessInfo.standards.
  * waterproofing` — which is more concrete, not less accurate.
  */
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/',
+  // The homepage is in the SAME route segment as the root layout, so the
+  // layout's title.template does NOT apply here (Next: "title.template
+  // defined in layout.js will not apply to a title defined in page.js of the
+  // same route segment") — the full " | Elite Touch Renovations" suffix has
+  // to be written out, unlike every other page below the root.
   title: 'Sydney Bathroom Renovations | Elite Touch Renovations',
   description:
     'Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family. NSW-licensed, AS 3740 waterproofing, fixed-scope written quotes.',
-  alternates: { canonical: '/' },
-}
+})
 
 const PROCESS = [
   {
@@ -160,6 +167,8 @@ export default function HomePage() {
                   Call {businessInfo.phone.display}
                 </a>
               </div>
+
+              <GoogleRating />
 
               <ul className="et-facts">
                 <li className="et-fact">

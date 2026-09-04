@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { EnquiryForm } from '@/components/EnquiryForm'
 import { businessInfo } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { GoogleRating } from '@/components/GoogleRating'
 
 /**
  * Contact us.
@@ -21,12 +23,12 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
  * Vercel; until then it fails loudly rather than dropping leads (D-47).
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/contact-us/',
   title: 'Contact Us',
   description:
     'Book a free on-site bathroom renovation measure anywhere in Sydney. Call Elite Touch Renovations on 0411 752 334 or send us your details.',
-  alternates: { canonical: '/contact-us/' },
-}
+})
 
 export default function ContactPage() {
   return (
@@ -71,6 +73,8 @@ export default function ContactPage() {
               >
                 Call {businessInfo.phone.display}
               </a>
+
+              <GoogleRating />
 
               <div className="et-card et-card-tinted">
                 <h3 className="et-h4">What happens after you get in touch</h3>

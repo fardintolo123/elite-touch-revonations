@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
@@ -49,12 +50,12 @@ import { ExternalLink } from '@/components/ExternalLink'
  *     expectations-setting paragraph, never implying ETR offers one.
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/packages/',
   title: 'Bathroom Renovation Cost & Packages',
   description:
     'How much does a bathroom renovation cost in Sydney? Packages start from $18,000 to $30,000, sized to your bathroom, with a fixed-scope written quote.',
-  alternates: { canonical: '/packages/' },
-}
+})
 
 const TIERS = [
   {

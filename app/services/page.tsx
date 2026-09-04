@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
@@ -14,7 +15,8 @@ import { projects } from '@/lib/projects'
  * It is also the 301 destination for `/staging/services/`.
  */
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
+  path: '/services/',
   // Renders as "Bathroom Renovations Across Sydney | Elite Touch Renovations"
   // via the root layout's title template — 60 chars, carries the service +
   // "Sydney" that "Our Services" lacked (issue #38 / page-audit P-2). "Across"
@@ -23,8 +25,7 @@ export const metadata: Metadata = {
   title: 'Bathroom Renovations Across Sydney',
   description:
     'Bathroom, ensuite, bathroom and laundry, and powder room renovations across Sydney. Fixed-scope written quotes and waterproofing to AS 3740.',
-  alternates: { canonical: '/services/' },
-}
+})
 
 const heroProject = projects.find((p) => p.slug === 'hornsby-bathroom')!
 

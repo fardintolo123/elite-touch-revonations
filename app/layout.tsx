@@ -4,6 +4,11 @@ import Script from 'next/script'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { businessInfo } from '@/lib/businessInfo'
+import {
+  buildServiceOfferCatalog,
+  jsonLd,
+  schemaIds,
+} from '@/lib/schema'
 import './globals.css'
 
 /**
@@ -79,13 +84,9 @@ export const metadata: Metadata = {
  * page-copy PDFs on GitHub issue #2 (docs/source-copy/) or PROJECT_CONTEXT.md.
  *
  * STILL DELIBERATELY OMITTED — do not add without closing the item first:
- *   - `aggregateRating` : the GBP shows 5.0 across 17 reviews as at the issue #2
- *                         PDF, but that has NOT been verified live. A stale
- *                         rating in structured data is a real problem. Verify,
- *                         then add.
  *   - `review`          : D-03. The 19 testimonials in Customer Reviews.md are
- *                         real, but only 17 are Google reviews — the two sets
- *                         are not the same and the mapping is unknown.
+ *                         real, but the mapping to the 19 Google reviews is
+ *                         unknown, so do not emit per-review schema.
  *   (D-19 is now CLOSED — the owner confirmed a 10-year workmanship warranty
  *    on 2026-08-19, and it is carried in `warranty` below.)
  *   - a street address  : only "Granville, NSW (by appointment)" is known.
@@ -103,10 +104,22 @@ const localBusinessSchema = {
    * standard practice for closing that gap without a second, redundant node.
    */
   '@type': ['HomeAndConstructionBusiness', 'Organization'],
+  '@id': schemaIds.business,
   name: businessInfo.name,
   legalName: businessInfo.legalName,
   url: businessInfo.siteUrl,
-  telephone: businessInfo.phone.display,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${businessInfo.siteUrl}${businessInfo.schema.logo.path}`,
+    contentUrl: `${businessInfo.siteUrl}${businessInfo.schema.logo.path}`,
+    width: businessInfo.schema.logo.width,
+    height: businessInfo.schema.logo.height,
+  },
+  image: businessInfo.schema.images.map(
+    (path) => `${businessInfo.siteUrl}${path}`,
+  ),
+  priceRange: businessInfo.schema.priceRange,
+  telephone: businessInfo.phone.e164,
   email: businessInfo.email.primary,
   foundingDate: String(businessInfo.foundedYear),
   address: {
@@ -123,6 +136,19 @@ const localBusinessSchema = {
       addressRegion: businessInfo.serviceArea.state,
       addressCountry: businessInfo.serviceArea.country,
     },
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: businessInfo.schema.geo.latitude,
+    longitude: businessInfo.schema.geo.longitude,
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: businessInfo.phone.e164,
+    email: businessInfo.email.primary,
+    contactType: 'sales',
+    areaServed: businessInfo.serviceArea.country,
+    availableLanguage: 'English',
   },
   openingHoursSpecification: [
     {
@@ -153,22 +179,19 @@ const localBusinessSchema = {
     credentialCategory: 'NSW Builder Licence',
     identifier: businessInfo.builderLicence,
   },
-  makesOffer: {
-    '@type': 'Offer',
-    itemOffered: {
-      '@type': 'Service',
-      name: 'Bathroom renovation',
-      areaServed: businessInfo.serviceArea.city,
-    },
-    warranty: {
-      '@type': 'WarrantyPromise',
-      durationOfWarranty: {
-        '@type': 'QuantitativeValue',
-        value: businessInfo.workmanshipWarrantyYears,
-        unitCode: 'ANN',
-      },
-    },
-  },
+  hasOfferCatalog: buildServiceOfferCatalog(),
+  ...(businessInfo.googleBusinessProfile.verifiedLive
+    ? {
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: businessInfo.googleBusinessProfile.ratingAtLastCheck,
+          bestRating: 5,
+          worstRating: 1,
+          reviewCount:
+            businessInfo.googleBusinessProfile.reviewCountAtLastCheck,
+        },
+      }
+    : {}),
   identifier: [
     { '@type': 'PropertyValue', name: 'ABN', value: businessInfo.abn },
     { '@type': 'PropertyValue', name: 'ACN', value: businessInfo.acn },
@@ -189,8 +212,12 @@ const localBusinessSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': schemaIds.website,
   name: businessInfo.name,
   url: businessInfo.siteUrl,
+  publisher: {
+    '@id': schemaIds.business,
+  },
 }
 
 export default function RootLayout({
@@ -242,14 +269,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
+            __html: jsonLd(localBusinessSchema),
           }}
         />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
+            __html: jsonLd(websiteSchema),
           }}
         />
       </body>

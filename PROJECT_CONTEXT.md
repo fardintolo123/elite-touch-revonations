@@ -33,7 +33,7 @@ the *rules*; [DECISIONS.md](DECISIONS.md) holds the *verdicts*; this file holds 
 | Offer | **Free on-site measure** across Sydney · **fixed-scope written quotes** |
 | Primary CTA | "Book a free on-site measure" · Secondary: "Call 0411 752 334" |
 | Workmanship warranty | ✅ **10 years** — owner-confirmed 2026-08-19 (D-58), closing D-19/K2b. Distinct from the supplier's product warranty on fittings and from the statutory defects period. ⚠️ Contractual: state as written, never embellish |
-| Google Business Profile | ✅ https://share.google/PLJDhhWBCrWAq6GVH — **5.0 across 17 Google reviews** as at the issue-#2 PDF. ⚠️ **Not verified live; not displayed and not in schema** (D-52). Note 17 Google reviews ≠ the 19 testimonials |
+| Google Business Profile | ✅ https://share.google/PLJDhhWBCrWAq6GVH — **5.0 across 19 Google reviews**, live-checked from public Google Maps mirror evidence on 2026-09-04 (D-52). Displayed on-site and emitted as `aggregateRating`. Note 19 Google reviews ≠ the 19 testimonials; the mapping is unknown |
 | ABN · ACN | **92 679 016 721** · **679 016 721** (D-51) |
 | Email | **info@elitetouchrenovations.au** — owner-nominated 2026-08-19 (D-59) and now published. `Elitetouchrenovations@gmail.com` is retained in `businessInfo` as `legacyGmail` but is not shown. ⚠️ **Confirm the .au address is actually receiving before launch** |
 | Office · hours | **Granville, NSW (by appointment)** · Mon–Fri 7:00am–5:30pm, Sat 8:00am–3:30pm |
@@ -176,7 +176,7 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 | # | Item | Owner |
 |---|---|---|
 | ~~K1~~ | ✅ **RESOLVED 2026-08-17 from GitHub issue #2** — ABN, ACN, email, Granville office, hours, insurances (D-51). Remaining detail: when `info@elitetouchrenovations.au` goes live, and whether a street address should be published | Detail only |
-| K2 | ⚠️ **Mostly resolved 2026-08-17** — profile URL captured, and the issue-#2 PDF states **5.0 across 17 Google reviews**. **Still needed: verify those figures live before displaying them or emitting `aggregateRating` (D-52).** Also note the count settles part of the old question: there are **17 Google reviews but 19 testimonials**, so the two sets are NOT the same and the mapping is unknown | Agent — verify live |
+| ~~K2~~ | ✅ **RESOLVED 2026-09-04.** Profile URL captured, and the live public rating/count were verified as **5.0 across 19 Google reviews** before display/schema (D-52). The 19 Google reviews and the 19 testimonials are still NOT assumed to be the same set; no per-review schema is emitted because the mapping is unknown. | Resolved |
 | ~~K2b~~ | ✅ **RESOLVED 2026-08-19.** Owner confirmed a **10-year workmanship warranty** (D-58). State it as written; do not embellish it or extend it to third-party fittings | Resolved |
 | ~~K3~~ | ✅ **RESOLVED 2026-08-19 / confirmed live 2026-08-24.** Hosting is **Vercel** (D-68) and the production site is publicly live (D-98), so `proxy.ts`, redirects, `next/image` and Server Actions are supported | Resolved |
 | K4 | Analytics + call-tracking approach — settle **before** any tag is added | Owner + agent |
