@@ -95,6 +95,6 @@ Page render order after the hero:
 - [x] Browser check desktop + 390px (Playwright — correct H2 order, 5 FAQ cards, right testimonial,
       2 `/packages/` links, no horizontal scroll)
 - [x] `DECISIONS.md` D-121; `plans/2026-08-31-seo-local-audit.md` (#4) + master-plan registry + `PROJECT_CONTEXT.md` updated
-- [ ] Issue #35 closed with a summary comment
-- [ ] Committed (note: multiple agent sessions active; issue-#35 code already landed in commit 867e30c
-      via the owner's `git add -A`; docs updates remain uncommitted)
+- [x] Issue #35 closed with a summary comment
+- [x] Committed (note: multiple agent sessions active; issue-#35 code already landed in commit 867e30c
+      via the owner's `git add -A`; final tracker-bookkeeping update committed separately)
