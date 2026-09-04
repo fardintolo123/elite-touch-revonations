@@ -43,6 +43,6 @@ Add:
 - [x] `npm run check:readability` — 26/26 pages ≥ 60; `/privacy/` Flesch 86.6, `/terms/` Flesch 85.4.
 - [x] `npm run verify:redirects` still passes — 34 passed, 0 failed (routes untouched).
 - [x] Served-HTML check (running server + prerendered `.next/server/app/*.html`): `/privacy/` → 200, `<link rel="canonical" .../privacy/>`, `<meta name="robots" content="index, follow">`, names Resend + Supabase (+ Vercel + Google Analytics/Tag Manager); `/terms/` → 200, self-canonical, `index, follow`; privacy notice line "We use your details only to arrange your measure…" present in served HTML on `/`, `/contact-us/`, and every ContactSection page; footer "Privacy policy" + "Terms of use" links on every page; `/sitemap.xml` lists both with `lastmod 2026-09-02` (26 `<loc>` total).
-- [ ] Update `plans/2026-08-31-seo-content-audit.md` C-1 + master-plan registry — pending: tree currently carries heavy uncommitted concurrent doc edits (#38–#41) in the same files.
-- [ ] Record the new pages in `PROJECT_CONTEXT.md` §6 and a decision in `DECISIONS.md` — pending, same reason.
-- [ ] Close GitHub issue #37 — pending owner sign-off + the two doc updates above.
+- [x] Update `plans/2026-08-31-seo-content-audit.md` C-1 + master-plan registry — done 2026-09-03, once the concurrent #38–#41 doc edits had settled onto `main`.
+- [x] Record the new pages in `PROJECT_CONTEXT.md` §6 and a decision in `DECISIONS.md` (D-122) — done 2026-09-03.
+- [x] Close GitHub issue #37 — closed 2026-09-03 with a summary comment linking this verification.

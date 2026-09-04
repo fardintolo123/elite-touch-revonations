@@ -411,6 +411,14 @@ environment — neither is a website change, and neither traces to a `plans/` li
 
 ---
 
+## 3w. Privacy policy + terms of use (GitHub issue #37)
+
+| # | Decision | Status | Why |
+|---|---|---|---|
+| **D-122** | **`/privacy/` and `/terms/` are live, factual, plain-language pages, and a one-line privacy notice is rendered under the enquiry form on every page.** The privacy page names the actual data handlers — **Resend** (office + confirmation email), **Supabase** (best-effort backup copy), **Vercel** (hosting/server logs) and **Google Analytics loaded via Google Tag Manager** — sourced directly from `lib/actions.ts` and `app/layout.tsx` (D-112). The notice line lives in the **server** components (`components/ContactSection.tsx`, `app/contact-us/page.tsx`), not in the `'use client'` `EnquiryForm.tsx` leaf, so it stays in the served HTML independent of the form's client boundary. `lib/businessInfo.ts` gained `legalPagesUpdated` (`2026-09-02`) as the real content date behind the on-page "last updated" line and the `sitemap.ts` `lastmod` for both routes. | **AGENT — built 2026-09-02 (commit `867e30c`), verified 2026-09-03** | Closes content-audit C-1 (HIGH, trust) — the enquiry form was live and collecting name, phone, email, suburb, service and message with no privacy statement anywhere on the site, a rater-visible E-E-A-T gap per Google's QRG and a conversion drag for a cautious renovation buyer. Every claim on both pages traces to what the code actually does — no boilerplate, no invented retention period, no invented legal claim; the terms page explicitly is **not** a renovation contract and points to the real fixed-scope quote / HIA contract for that. Verified 2026-09-03 against a fresh build and the running production server: `tsc --noEmit` clean; `/privacy/` and `/terms/` prerender as static routes (24 → 26, +2); `npm run check:readability` 26/26 ≥ 60 (`/privacy/` 86.6, `/terms/` 85.4); `npm run verify:redirects` 34/34; served HTML confirms `/privacy/` is self-canonical, `index, follow`, and names Resend + Supabase; the notice line appears in the served HTML of `/`, `/contact-us/` and every `ContactSection` page; the footer links both pages on every page; `sitemap.xml` lists both with `lastmod 2026-09-02`. **Note for the owner:** the privacy page discloses Google Analytics as already running — that describes what the code is built to do (D-112), but analytics is not yet live on the production domain until `NEXT_PUBLIC_GTM_ID` is set in Vercel and the site is redeployed; the disclosure is correct in intent and the safer thing to have in place ahead of that deploy. |
+
+---
+
 ## 4. Open — genuinely undecided
 
 | # | Question | Blocked on |

@@ -68,6 +68,12 @@ boilerplate that over-claims.
 needed), `lib/` if the policy references data handling.
 **Priority:** High. **Effort:** M. **Risk:** low. **Dependency:** none.
 
+**SHIPPED / #37 2026-09-03.** `/privacy/` and `/terms/` are both live — factual, plain-language pages
+naming Resend, Supabase, Vercel and Google Analytics/Tag Manager as the actual data handlers, sourced
+from `lib/actions.ts` and `app/layout.tsx`, no invented claims. A one-line privacy notice sits under
+the enquiry form on every page (`ContactSection.tsx` and `contact-us/page.tsx`), and the footer links
+both pages. See `plans/2026-09-02-issue-37-privacy-policy.md` and `DECISIONS.md` D-122.
+
 ### C-2 · Three of the four service pages have very little service-specific content  ·  HIGH
 
 **What.** `app/services/[slug]/page.tsx` is one renderer for four pages. The **only** unique content
@@ -257,7 +263,7 @@ and the technical audit's note that `CLAUDE.md`/`DECISIONS.md` still say 2023 in
 |---|---|---|
 | Service-page thin content (C-2) | — (new) | **Own issue**, pairs with schema S-1 + local #4. |
 | Answer-first on service/hub pages (C-3) | local #4 (hubs) | Fold into C-2 issue (services) + local #4 issue (hubs). |
-| Privacy policy (C-1) | — (new) | **Own issue**, HIGH, no dependency — can ship first. |
+| Privacy policy (C-1) | — (new) | ✅ **Closed in #37** — `/privacy/` + `/terms/` live, notice on every form. |
 | Freshness dates (C-5) | technical M-2 (sitemap lastmod) | ✅ **Closed in #41** — real content dates feed sitemap + visible captions. |
 | External authority links (C-4) | local (authority, off-site) | ✅ **Closed in #42** — on-site, distinct from off-site link building. |
 | Packages comparison table (C-6) | schema (comparative data for AI) | **Own issue**, needs `DESIGN.md` table decision. |

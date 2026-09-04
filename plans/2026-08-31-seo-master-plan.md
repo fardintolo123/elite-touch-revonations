@@ -76,7 +76,7 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | **Service pages: real per-service content + FAQ + answer-first** (bathroom/ensuite/laundry) | content C-2/C-3/C-7, local #14, geo G-2, page | 🆕 **#34** |
 | **Hubs: de-template — local content, local FAQ, testimonial, answer-first, packages link** | local #4, content C-3, geo G-2, page | ✅ **#35** shipped 2026-09-03 (D-121); `lib/hubContent.ts` |
 | **Homepage: add an FAQ block** | page P-1, content | 🆕 **#36** |
-| **Add a privacy policy page + form privacy notice** | content C-1 | 🆕 **#37** |
+| **Add a privacy policy page + form privacy notice** | content C-1 | ✅ **#37** shipped 2026-09-02 (commit `867e30c`), doc-verified 2026-09-03 (D-122) |
 | **On-page copy tidy: keyword-weak `/services/` + `/gallery/` titles, `/about-us/` H1, gallery `og:type`** | page P-2/P-3a/P-4, coord. #21 | ✅ **#38** shipped 2026-09-02 (titles + H1), 2026-09-03 (`og:type`/L-6); L-5 `ImageObject` still in #24 |
 | **Gallery meta descriptions: trim the 6 over-length project + the index description** | tech M-3, page P-3b | ✅ **#39** shipped 2026-09-02 |
 | **Spread internal links to the hubs + reciprocal gallery→hub links** | local #7, page | 🆕 **#40** (depends #17, #35) |
@@ -104,7 +104,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 |---|---|---|
 | **#29** verify GBP | P0 | 15-min owner task; GBP is 25% of local-pack weight; **blocks #33** |
 | **#17** dead hub links | P0 | live 404s + GSC noise; tiny code change |
-| **#37** privacy policy | P1 | trust + conversion + compliance; PII form is live; no deps |
+| ✅ **#37** privacy policy | P1 | shipped 2026-09-02; trust + conversion + compliance; PII form is live |
 | **#18** robots/404 tidy | P2 | trivial, no risk |
 | ✅ **#46** doc hygiene | P3 | shipped 2026-08-31; removes stale-fact landmines before content work starts |
 
@@ -200,7 +200,7 @@ Every audit recommendation was re-checked against the code before landing in §3
 | #29, #45 | Owner / off-site local | `seo-local` |
 | #30, #31, #32 | Structured data | `seo-schema` |
 | #33, ✅ #35, #40 | Local on-page | `seo-local` |
-| #34, #36, #37, ✅ #38, ✅ #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
+| #34, #36, ✅ #37, ✅ #38, ✅ #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
 | ✅ #41 | Freshness (content + technical) | `seo-content` |
 | #46 | Documentation | `documentation` |
 

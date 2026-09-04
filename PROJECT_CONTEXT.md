@@ -252,7 +252,8 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
 | `lib/actions.ts` | Enquiry server action — office email (critical) + customer email (best-effort) + Supabase write (best-effort). ⚠️ **Exports async functions ONLY** — see D-77 |
 | `lib/enquiry.ts` | Enquiry types + initial state. Exists precisely so they are NOT exported from a `'use server'` file |
-| `components/ContactSection.tsx` | The enquiry block on **every** page (D-80) |
+| `components/ContactSection.tsx` | The enquiry block on **every** page (D-80). Renders the privacy notice line under the form (D-122) |
+| `app/privacy/` · `app/terms/` | Privacy policy + website terms of use (issue #37 / content audit C-1, D-122). Factual, plain-language, `index, follow`. Privacy page names the real data handlers — Resend, Supabase, Vercel, GA4-via-GTM — sourced from `lib/actions.ts` and `app/layout.tsx`. `businessInfo.legalPagesUpdated` drives the visible "last updated" line and the sitemap date |
 | `components/WorkStrip.tsx` | Project photos, reusable. Every card is suburb-labelled — never decoration (D-83) |
 | `components/PageHero.tsx` | Shared hero for every page except home. `image` prop is OPTIONAL — only pass it where a real photo exists (D-84) |
 | `public/brand/` | Logo mark + lockup, light and dark variants (D-79). Favicon is `app/icon.png` |
@@ -323,33 +324,42 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    "On-page gtm.js snippet". Remaining: (1) mark phone_call_click + generate_lead as key
    events in GA4 console; (2) add NEXT_PUBLIC_GTM_ID=GTM-MVGQB9FW to Vercel environment
    variables; (3) owner redeploys to Vercel (D-35).
-16. **`.et-hero-media` is a fixed 4/3 ratio at every breakpoint** (D-84). Every source photo in
-   `lib/projects.ts` is landscape (~3/2) — do not reintroduce a portrait override for "desktop
+17. **`.et-hero-media` is a fixed 4/3 ratio at every breakpoint** (D-84). Every source photo in
+   `lib/projects.ts` is landscape (~3/2) - do not reintroduce a portrait override for "desktop
    polish"; that exact change was the reported crop bug.
-17. **`SERVICE_HERO_IMAGE` in `app/services/[slug]/page.tsx` only has two entries.** Only
+18. **`SERVICE_HERO_IMAGE` in `app/services/[slug]/page.tsx` only has two entries.** Only
    `bathroom-renovations` and `ensuite-bathroom-renovations` have real photography. Adding a third
    entry for `laundry-renovations` or `powder-room-renovations` puts an unevidenced photo on a page
-   that has none — check D-83/D-06 before touching this map.
-18. **Only the office notification email is allowed to fail the enquiry submission** (D-85). The
+   that has none - check D-83/D-06 before touching this map.
+19. **Only the office notification email is allowed to fail the enquiry submission** (D-85). The
    customer confirmation email and the Supabase insert are both wrapped in their own try/catch and
-   only `console.error` on failure — never make either of them `return`/`throw` on error, or a
+   only `console.error` on failure - never make either of them `return`/`throw` on error, or a
    Resend or Supabase hiccup would turn a successfully-captured lead into an error page.
-19. **`SUPABASE_SERVICE_ROLE_KEY` must be set in Vercel for the Supabase write to run at all** —
-   when it's unset, `lib/actions.ts` sets its module-level `supabase` client to `null` and the
+20. **`SUPABASE_SERVICE_ROLE_KEY` must be set in Vercel for the Supabase write to run at all** -
+   when it is unset, `lib/actions.ts` sets its module-level `supabase` client to `null` and the
    insert is skipped (not attempted, not logged as an error). The `enquiries` table has RLS enabled
    with no insert policy, so the `anon` key could not write to it even if used instead.
-20. **`.next/` is a shared build directory and this repo is regularly worked by several agent
-    sessions at once** (Git Workflow's "never `git add -A`" warning is the same fact). A `next start`
-    left running gets its served output silently corrupted the moment another session's `next build`
-    lands underneath it — no crash, no error, just wrong content (a homepage that suddenly measures
-    4,600 words instead of 700) or routes 404ing that build fine moments later. It is NOT evidence
-    your own change broke something. Prefer reading `.next/server/app/**.html` straight off disk
-    (`scripts/check-readability.mjs` does this) over holding a live server open — a single file read
-    right after your own build has a far smaller collision window than a server process sitting
-    there for the next several commands. If you do need `next start`, treat any unexplained 404 or
-    nonsense content as a possible collision and re-build-and-recheck once before debugging your own
-    code.
-21. **Related-projects card labels are shortened to room-types** (e.g. "Bathroom" / "Ensuite") in the "Other work of ours" grid on `/gallery/{slug}/` pages (D-109). This is a deliberate UI/content rule to prevent the 4-syllable word "renovation" from repeating 10 times in the grid on every gallery page, which would single-handedly fail the Flesch readability gate (K15). The full project name is still the page H1, title and meta description, and the suburb badge still sits on the card.
+21. **`.next/` is a shared build directory and this repo is regularly worked by several agent
+   sessions at once** (Git Workflow's "never `git add -A`" warning is the same fact). A `next start`
+   left running gets its served output silently corrupted the moment another session's `next build`
+   lands underneath it - no crash, no error, just wrong content (a homepage that suddenly measures
+   4,600 words instead of 700) or routes 404ing that build fine moments later. It is NOT evidence
+   your own change broke something. Prefer reading `.next/server/app/**.html` straight off disk
+   (`scripts/check-readability.mjs` does this) over holding a live server open - a single file read
+   right after your own build has a far smaller collision window than a server process sitting
+   there for the next several commands. If you do need `next start`, treat any unexplained 404 or
+   nonsense content as a possible collision and re-build-and-recheck once before debugging your own
+   code.
+22. **Related-projects card labels are shortened to room-types** (e.g. "Bathroom" / "Ensuite") in
+   the "Other work of ours" grid on `/gallery/{slug}/` pages (D-109). This is a deliberate UI/content
+   rule to prevent the 4-syllable word "renovation" from repeating 10 times in the grid on every
+   gallery page, which would single-handedly fail the Flesch readability gate (K15). The full project
+   name is still the page H1, title and meta description, and the suburb badge still sits on the card.
+23. **The privacy notice under the enquiry form lives in the server components** (`ContactSection.tsx`
+   and `contact-us/page.tsx`), never in `EnquiryForm.tsx` itself (D-122). Keeps the one `'use client'`
+   leaf minimal and matches the existing rule (#5 above) — the form's own copy is fine to be there too
+   since Next server-renders client components on first load, but the notice's home is the server
+   component so it survives even if the form leaf is ever swapped out.
 
 ### How it is verified
 
