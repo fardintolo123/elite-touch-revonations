@@ -7,9 +7,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { hubContentFor } from '@/lib/hubContent'
 import { reviewByAuthor } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
-import { FaqSchema } from '@/components/FaqSchema'
-import { ServiceSchema } from '@/components/ServiceSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
 import { GoogleRating } from '@/components/GoogleRating'
 import {
@@ -128,8 +126,11 @@ export default async function LocationHubPage({
 
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path={`/services/${LOCATION_PARENT_SLUG}/${region.slug}/`}
+        name={`Bathroom Renovations ${region.name}`}
+        description={`Bathroom renovations across Sydney's ${region.name} by Elite Touch Renovations. Free on-site measure, fixed-scope written quotes, waterproofing to AS 3740 and a ${businessInfo.workmanshipWarrantyYears}-year workmanship warranty.`}
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
           {
@@ -141,9 +142,9 @@ export default async function LocationHubPage({
             url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
           },
         ]}
+        hubService={{ service: parentService, region }}
+        faqs={hub?.faqs}
       />
-      <ServiceSchema service={parentService} region={region} />
-      {hub && hub.faqs.length > 0 && <FaqSchema items={hub.faqs} />}
       <section className="et-hero">
         <div className="et-container et-stack">
           <p className="et-body-sm">

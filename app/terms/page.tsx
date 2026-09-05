@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { PageHero } from '@/components/PageHero'
 import { formatMonthYear } from '@/lib/dateLabels'
 
@@ -40,8 +40,11 @@ const updated = formatMonthYear(businessInfo.legalPagesUpdated)
 export default function TermsPage() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path="/terms/"
+        name="Terms of Use"
+        description="The terms for using the Elite Touch Renovations website, including how published package prices, project photos and outbound links should be read."
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Terms of Use', url: `${businessInfo.siteUrl}/terms/` },
         ]}

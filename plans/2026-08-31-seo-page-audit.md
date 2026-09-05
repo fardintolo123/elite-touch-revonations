@@ -63,7 +63,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 
 | Element | State |
 |---|---|
-| Title / meta / H1 | ✅ all carry the region + service + warranty |
+| Title / meta / H1 | ✅ all carry the region + service + warranty. ⚠️ **spotted 2026-09-05:** the served `<title>` runs **61–62 chars** ("Bathroom Renovations Eastern Suburbs \| Elite Touch Renovations" = 62) — a few over the 60 guide, not caught by M-5 / #21 (which was scoped to the two titles the finding named). Low priority: `region.name` + the 26-char brand tail leaves ~8 chars, so a fix means either a per-hub `metaTitle` (as `laundry-renovations` got in #21) or shortening the tail — not worth a change on its own; fold into the next metadata pass. |
 | Schema | ✅ BreadcrumbList; ❌ no per-area `Service` node → schema **S-1** |
 | Content | ⚠️ **largely swappable** — real local *photos* save it, prose doesn't → local **#4** |
 | Local detail / FAQ / map | ❌ none → local **#4 / #10** |
@@ -85,7 +85,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 
 | Element | State |
 |---|---|
-| Title | ✅ = `project.name` + template (~35–55 chars) |
+| Title | ✅ = `project.name` + template. ⚠️ **spotted 2026-09-05:** the two longest render at **64–66 chars** ("Artarmon bathroom and ensuite renovation \| Elite Touch Renovations" = 66) — a few over the 60 guide. Low priority, same disposition as the hub-title note above; the other 9 are 45–58. |
 | Meta description | ✅ **fixed — M-3 / #39, 2026-09-02.** Optional `metaDescription` field (≤155) with trimmed-`blurb` fallback; all 11 now 135–147 chars, `blurb` still the visible lead. |
 | H1 | ✅ full project name |
 | Headings | ⚠️ the "Other work" grid renders 10× `<h3>` "Bathroom"/"Ensuite" — deliberate readability fix (D-109), odd in an outline view but acceptable; leave it |

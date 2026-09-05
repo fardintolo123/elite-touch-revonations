@@ -301,6 +301,13 @@ breadcrumb schema all keep it. The other three services are unaffected — confi
 unchanged. Verified against a fresh build: both titles ≤ 60, `og:title` matches (via #19's
 `buildMetadata()`), `npm run check:readability` 26/26 ≥ 60. See D-127.
 
+**Not covered by #21 (spotted 2026-09-05, low priority):** 4 more titles also run 61–66 chars — the
+2 longest gallery project names ("Artarmon bathroom and ensuite renovation \| …" = 66) and 2 of the
+3 hub region titles ("Bathroom Renovations Eastern Suburbs \| …" = 62). M-5 as written named only
+the `/packages/` and `laundry` titles; these were left untouched. Each needs a per-record `metaTitle`
+(the same pattern `laundry-renovations` now uses) or a shorter brand tail — fold into the next
+metadata pass rather than a standalone change. Flagged in `plans/2026-08-31-seo-page-audit.md` §4/§6.
+
 `Bathroom and Laundry Renovations Sydney | Elite Touch Renovations` = 63 chars (over the 60 guide
 limit); `Bathroom Renovation Cost & Packages | Elite Touch Renovations` = 60 and the `&` widens it
 further. Both risk pixel-truncation in SERPs. Trim the `laundry-renovations` `h1`/title source in
@@ -326,6 +333,15 @@ hand-edit, don't regex).
 - **L-2 · IndexNow not implemented.** Adding an IndexNow key + ping on deploy gets Bing/Yandex/Naver
   to re-crawl changed URLs in hours instead of days. Low value for a Google-first Sydney local
   business; cheap. Files: new `public/{key}.txt` + a deploy hook.
+  **Shipped 2026-09-05 (#28), owner-approved.** Key file `public/cc9872d076b5d91a53ed1e093272b6be.txt`
+  added; `scripts/indexnow-ping.mjs` reads `app/sitemap.ts`'s live output (fetched as `/sitemap.xml`,
+  not imported — same reasoning as `verify-redirects.mjs`) and POSTs the URL list to
+  `api.indexnow.org`, wired as `postbuild` in `package.json`. Guarded to run only when
+  `VERCEL_ENV === 'production'`, so local builds and preview deploys never ping it; any network
+  failure is caught and logged, never fails the build. Verified: key file resolves at
+  `/{key}.txt` (200, exact content) via a local production server, and a forced manual run
+  (`npm run indexnow:ping`) against the live production sitemap returned **202 Accepted**
+  submitting 26 URLs. See DECISIONS.md for the owner sign-off.
 - **L-3 · `next/image` has no `formats` config**, so only WebP is served (source files are already
   WebP). Adding `images: { formats: ['image/avif', 'image/webp'] }` in `next.config.ts` would shave
   ~15–25% off the LCP image and every other photo, at some build-time cost. Measure per
@@ -405,7 +421,7 @@ before/after. Nothing here has been implemented.
 11. **L-3** — enable AVIF; measure LCP before/after per the budget.
 12. **L-8** — live PSI + CrUX run; update `docs/PERFORMANCE_BUDGET.md` §4. **Do this first if the
     owner wants a "where are we really" number** — it needs no code change.
-13. **L-2** — IndexNow, if wanted.
+13. **L-2** — IndexNow, if wanted. **Shipped 2026-09-05 (#28), owner-approved.**
 
 ### Not in this plan (content projects, separate track)
 - Build the six Tier-1 suburb pages (`docs/SEO_CONTENT_GUIDE.md` priority 3) — the strategic fix
@@ -443,7 +459,7 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 - [ ] **#25 · M-4** — report-only CSP + `Permissions-Policy`. *(Phase 4, step 10. **Blocked: owner awareness before enforce.**)*
 - [ ] **#26 · L-3** — enable AVIF; measure LCP + build time before/after. *(Phase 4, step 11.)*
 - [ ] **#27 · L-8** — live-domain PSI + CrUX into `PERFORMANCE_BUDGET.md` §4. *(Phase 4, step 12. **Blocked: Google API creds / interactive.** Do first if the owner wants a "where are we really" number — no code.)*
-- [ ] **#28 · L-2** — IndexNow key + deploy ping. *(Phase 4, step 13. **Blocked: owner decision — do we want Bing/Yandex fast-crawl?**)*
+- [x] **#28 · L-2** — IndexNow key + deploy ping. *(Phase 4, step 13. Owner approved 2026-09-05 — shipped: `public/cc9872d076b5d91a53ed1e093272b6be.txt` + `scripts/indexnow-ping.mjs` as `postbuild`. Verified 202 Accepted against production.)*
 
 **Not issued** (deliberately — see "Not in this plan" above): the six Tier-1 suburb pages (content
 project behind H-1) and L-7 (14px body copy — `DESIGN.md` is authoritative; flagged for an eyeball,

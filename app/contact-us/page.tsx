@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { EnquiryForm } from '@/components/EnquiryForm'
 import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { GoogleRating } from '@/components/GoogleRating'
 
 /**
@@ -33,8 +33,12 @@ export const metadata: Metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path="/contact-us/"
+        name="Contact Us"
+        description="Book a free on-site bathroom renovation measure anywhere in Sydney. Call Elite Touch Renovations on 0411 752 334 or send us your details."
+        pageType="ContactPage"
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Contact Us', url: `${businessInfo.siteUrl}/contact-us/` },
         ]}

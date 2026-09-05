@@ -7,8 +7,7 @@ import { featuredReviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
-import { FaqSchema } from '@/components/FaqSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
@@ -135,8 +134,11 @@ export default async function ServicePage({
 
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path={`/services/${service.slug}/`}
+        name={service.h1}
+        description={service.summary}
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
           {
@@ -144,8 +146,8 @@ export default async function ServicePage({
             url: `${businessInfo.siteUrl}/services/${service.slug}/`,
           },
         ]}
+        faqs={faqs}
       />
-      {faqs && faqs.length > 0 && <FaqSchema items={[...faqs]} />}
       <PageHero
         eyebrow={service.title}
         title={service.h1}

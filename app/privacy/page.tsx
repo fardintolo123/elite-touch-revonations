@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
 import { PageHero } from '@/components/PageHero'
 import { formatMonthYear } from '@/lib/dateLabels'
@@ -46,8 +46,11 @@ const updated = formatMonthYear(businessInfo.legalPagesUpdated)
 export default function PrivacyPage() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path="/privacy/"
+        name="Privacy Policy"
+        description="How Elite Touch Renovations collects and uses the details you send through our enquiry form, who else handles them, and how to ask us to correct or delete them."
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Privacy Policy', url: `${businessInfo.siteUrl}/privacy/` },
         ]}

@@ -11,6 +11,12 @@ export type PageSchemaType =
 
 export type SchemaCrumb = { name: string; url: string }
 export type SchemaFaqItem = { question: string; answer: string }
+export type SchemaImage = {
+  src: string
+  alt: string
+  width: number
+  height: number
+}
 
 export function absoluteUrl(pathOrUrl: string) {
   if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
@@ -91,9 +97,29 @@ export function buildServiceOfferCatalog(): SchemaNode {
 }
 
 /**
- * Site identity graph. Same facts as the former root-layout JSON-LD, now with
- * stable `@id`s so page-level nodes can reference one entity instead of
- * floating as separate blocks.
+ * LocalBusiness schema. Everything here traces to a stated source — the
+ * owner's page-copy PDFs on GitHub issue #2 (docs/source-copy/) or
+ * PROJECT_CONTEXT.md. Formerly two standalone root-layout scripts
+ * (`localBusinessSchema` / `websiteSchema` in `app/layout.tsx`); issue #30
+ * moved them here with stable `@id`s so page-level nodes reference one
+ * entity instead of floating as separate, disconnected blocks.
+ *
+ * STILL DELIBERATELY OMITTED — do not add without closing the item first:
+ *   - `review`          : D-03. The 19 testimonials in Customer Reviews.md are
+ *                         real, but the mapping to the 19 Google reviews is
+ *                         unknown, so do not emit per-review schema.
+ *   (D-19 is now CLOSED — the owner confirmed a 10-year workmanship warranty
+ *    on 2026-08-19, and it is carried in `warranty` on the offer catalog.)
+ *   - a street address  : only "Granville, NSW (by appointment)" is known.
+ *                         `PostalAddress` without a street is honest; inventing
+ *                         one to satisfy a validator is not.
+ *
+ * Both types on one node: `HomeAndConstructionBusiness` IS-A `Organization`
+ * in schema.org's own class hierarchy, but some validators and AI crawlers
+ * pattern-match the literal `@type` string rather than resolving that
+ * inheritance — GitHub issue #8's GEO audit flagged "Organization schema
+ * missing" against this exact node for that reason. Declaring both is
+ * standard practice for closing that gap without a second, redundant node.
  */
 export function buildBusinessNode(): SchemaNode {
   return {
@@ -195,6 +221,13 @@ export function buildBusinessNode(): SchemaNode {
   }
 }
 
+/**
+ * Minimal WebSite node — GitHub issue #8's GEO audit flagged this as missing.
+ * Deliberately WITHOUT a `SearchAction`: that requires a real on-site search
+ * endpoint, which does not exist here, and a `target` pointing at a search
+ * feature that does not work would misrepresent the site rather than
+ * describe it.
+ */
 export function buildWebsiteNode(): SchemaNode {
   return {
     '@id': schemaIds.website,
@@ -220,7 +253,7 @@ export function buildWebPageNode({
   description?: string
   type?: PageSchemaType
   hasBreadcrumb?: boolean
-  primaryImage?: string
+  primaryImage?: SchemaImage
   mainEntityId?: string
   hasPartIds?: string[]
 }): SchemaNode {
@@ -238,7 +271,18 @@ export function buildWebPageNode({
     node.breadcrumb = { '@id': schemaIds.breadcrumb(path) }
   }
   if (primaryImage) {
-    node.primaryImageOfPage = { '@id': schemaIds.image(path, 0) }
+    // Embedded, not a bare `@id` reference — a `project` node (when present)
+    // declares its own `#image-N` nodes at the same path, but a page with no
+    // `project` has nothing else in the graph to declare this node, so it is
+    // defined here rather than left as a dangling reference (issue #30).
+    node.primaryImageOfPage = {
+      '@id': schemaIds.image(path, 0),
+      '@type': 'ImageObject',
+      contentUrl: absoluteUrl(primaryImage.src),
+      caption: primaryImage.alt,
+      width: primaryImage.width,
+      height: primaryImage.height,
+    }
   }
   if (mainEntityId) {
     node.mainEntity = { '@id': mainEntityId }
@@ -325,20 +369,6 @@ export function buildHubServiceNode({
   }
 }
 
-export function buildHubServiceSchema({
-  service,
-  region,
-}: {
-  service: Service
-  region: Region
-}) {
-  return schemaGraph([
-    buildBusinessNode(),
-    buildWebsiteNode(),
-    buildHubServiceNode({ service, region }),
-  ])
-}
-
 export function buildProjectNode({
   path,
   project,
@@ -385,7 +415,7 @@ export function buildPageGraph({
   breadcrumbs?: readonly SchemaCrumb[]
   faqs?: readonly SchemaFaqItem[]
   project?: Project
-  primaryImage?: string
+  primaryImage?: SchemaImage
   hubService?: { service: Service; region: Region }
 }) {
   const hasFaqs = Boolean(faqs && faqs.length > 0)
@@ -401,7 +431,11 @@ export function buildPageGraph({
       description,
       type: pageType,
       hasBreadcrumb: Boolean(breadcrumbs),
-      primaryImage,
+      // A `project` already declares its own lead `ImageObject` (with
+      // `representativeOfPage: true`) at this same `#image-1` id — passing
+      // `primaryImage` too would embed a second, conflicting definition of
+      // that id in one graph, so it's used only when there's no project.
+      primaryImage: project ? undefined : primaryImage,
       mainEntityId: projectId,
       hasPartIds: partIds,
     }),

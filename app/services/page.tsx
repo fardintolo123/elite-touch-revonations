@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { projects } from '@/lib/projects'
 
 /**
@@ -32,8 +32,11 @@ const heroProject = projects.find((p) => p.slug === 'hornsby-bathroom')!
 export default function ServicesPage() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path="/services/"
+        name="Bathroom Renovations Across Sydney"
+        description="Bathroom, ensuite, bathroom and laundry, and powder room renovations across Sydney. Fixed-scope written quotes and waterproofing to AS 3740."
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
         ]}

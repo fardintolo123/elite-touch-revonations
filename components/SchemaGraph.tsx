@@ -1,8 +1,10 @@
 import {
   buildPageGraph,
+  jsonLd,
   type PageSchemaType,
   type SchemaCrumb,
   type SchemaFaqItem,
+  type SchemaImage,
 } from '@/lib/schema'
 import type { Service } from '@/lib/businessInfo'
 import type { Region } from '@/lib/locations'
@@ -26,7 +28,7 @@ export function SchemaGraph({
   breadcrumbs?: readonly SchemaCrumb[]
   faqs?: readonly SchemaFaqItem[]
   project?: Project
-  primaryImage?: string
+  primaryImage?: SchemaImage
   hubService?: { service: Service; region: Region }
 }) {
   const graph = buildPageGraph({
@@ -45,7 +47,7 @@ export function SchemaGraph({
     <script
       type="application/ld+json"
       // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+      dangerouslySetInnerHTML={{ __html: jsonLd(graph) }}
     />
   )
 }

@@ -5,7 +5,7 @@ import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
 import { projects, projectCover } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 
 /**
  * Gallery / our work.
@@ -72,11 +72,16 @@ const TEXT_ONLY_PROJECTS = [
 export default function GalleryPage() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path="/gallery/"
+        name="Bathroom Renovation Photos, Sydney"
+        description="Photos of bathroom renovations Elite Touch Renovations has completed across Sydney, from Artarmon and Balmain to Hunters Hill, Randwick and The Rocks."
+        pageType="CollectionPage"
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
         ]}
+        primaryImage={projectCover(projects[0])}
       />
       <section className="et-hero">
         <div className="et-container et-stack">

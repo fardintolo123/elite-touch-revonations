@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/indexnow-ping.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "verify:redirects": "node scripts/verify-redirects.mjs",
     "check:readability": "node scripts/check-readability.mjs",
     "images:xmp": "node scripts/inject-project-image-xmp.mjs",
-    "images:xmp:verify": "node scripts/inject-project-image-xmp.mjs --verify"
+    "images:xmp:verify": "node scripts/inject-project-image-xmp.mjs --verify",
+    "indexnow:ping": "node scripts/indexnow-ping.mjs --force"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",

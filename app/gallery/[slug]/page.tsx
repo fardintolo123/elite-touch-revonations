@@ -6,8 +6,7 @@ import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
 import { projects, projectBySlug, projectMetaDescription } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
-import { ProjectSchema } from '@/components/ProjectSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import {
   LOCATION_PARENT_SLUG,
   publishedRegionForSuburb,
@@ -92,8 +91,11 @@ export default async function ProjectPage({
 
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path={`/gallery/${project.slug}/`}
+        name={project.name}
+        description={projectMetaDescription(project)}
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
           {
@@ -101,8 +103,8 @@ export default async function ProjectPage({
             url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
           },
         ]}
+        project={project}
       />
-      <ProjectSchema project={project} />
       <section className="et-hero">
         <div className="et-container et-stack">
           <p className="et-body-sm">

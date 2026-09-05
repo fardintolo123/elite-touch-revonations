@@ -216,7 +216,8 @@ const IN_EVERY_TIER = [
 ] as const
 
 /**
- * Visible FAQ block + FAQPage schema (`components/FaqSchema.tsx`). Answers
+ * Visible FAQ block + FAQPage schema, emitted as part of the page's
+ * `<SchemaGraph>` (`lib/schema.ts` `buildFaqNode`). Answers
  * are self-contained — an AI engine or featured snippet lifts one without
  * the rest of the page, so each must stand alone and stay true on its own
  * (docs/CONTENT_QUALITY_CHECKLIST.md §3). Every figure here matches the
@@ -266,7 +267,7 @@ export default function PackagesPage() {
           { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
         ]}
         faqs={FAQS}
-        primaryImage={heroProject.images[1].src}
+        primaryImage={heroProject.images[1]}
       />
       <PageHero
         eyebrow="Packages"

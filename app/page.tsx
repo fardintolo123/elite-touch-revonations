@@ -75,10 +75,11 @@ const PROCESS = [
 ] as const
 
 /**
- * Homepage FAQ — visible `<details>` block + `FAQPage` JSON-LD
- * (`components/FaqSchema.tsx`), mirroring the `/packages/` pattern. The visible
- * answer string IS the schema `text` — never emit a question here that isn't
- * also in the markup (D-31 / invisible-content failure mode).
+ * Homepage FAQ — visible `<details>` block + `FAQPage` JSON-LD, emitted as
+ * part of the page's `<SchemaGraph>` (`lib/schema.ts` `buildFaqNode`),
+ * mirroring the `/packages/` pattern. The visible answer string IS the
+ * schema `text` — never emit a question here that isn't also in the markup
+ * (D-31 / invisible-content failure mode).
  *
  * Added for GitHub issue #36 / seo-page-audit P-1: the homepage targets
  * "bathroom renovations near me" (1K–10K/mo, DECISIONS.md D-12) and had no
@@ -136,7 +137,7 @@ export default function HomePage() {
         name="Sydney Bathroom Renovations"
         description="Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family."
         faqs={HOME_FAQS}
-        primaryImage={heroImage.src}
+        primaryImage={heroImage}
       />
 
       {/* ---------------- Hero ---------------- */}

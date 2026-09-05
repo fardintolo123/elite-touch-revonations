@@ -6,7 +6,7 @@ import { reviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
 import { projects } from '@/lib/projects'
 
@@ -37,8 +37,12 @@ const heroProject = projects.find((p) => p.slug === 'artarmon-bathroom')!
 export default function AboutPage() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path="/about-us/"
+        name="About Us"
+        description="Elite Touch Renovations is a family-run Sydney bathroom renovation business, founded in 2022 by the Dawood family. NSW Builder Licence 475204C."
+        pageType="AboutPage"
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'About Us', url: `${businessInfo.siteUrl}/about-us/` },
         ]}

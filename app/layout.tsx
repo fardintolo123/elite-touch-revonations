@@ -4,11 +4,6 @@ import Script from 'next/script'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { businessInfo } from '@/lib/businessInfo'
-import {
-  buildServiceOfferCatalog,
-  jsonLd,
-  schemaIds,
-} from '@/lib/schema'
 import './globals.css'
 
 /**
@@ -105,146 +100,14 @@ export const metadata: Metadata = {
 }
 
 /**
- * LocalBusiness schema. Everything here traces to a stated source — the owner's
- * page-copy PDFs on GitHub issue #2 (docs/source-copy/) or PROJECT_CONTEXT.md.
- *
- * STILL DELIBERATELY OMITTED — do not add without closing the item first:
- *   - `review`          : D-03. The 19 testimonials in Customer Reviews.md are
- *                         real, but the mapping to the 19 Google reviews is
- *                         unknown, so do not emit per-review schema.
- *   (D-19 is now CLOSED — the owner confirmed a 10-year workmanship warranty
- *    on 2026-08-19, and it is carried in `warranty` below.)
- *   - a street address  : only "Granville, NSW (by appointment)" is known.
- *                         `PostalAddress` without a street is honest; inventing
- *                         one to satisfy a validator is not.
+ * The LocalBusiness (`HomeAndConstructionBusiness` + `Organization`) and
+ * `WebSite` nodes used to live here as two standalone root-layout scripts.
+ * Issue #30 folded them into `lib/schema.ts` (`buildBusinessNode` /
+ * `buildWebsiteNode`) so every page emits them as part of its own connected
+ * `@graph` via `<SchemaGraph>`, instead of as disconnected blocks repeated
+ * outside that graph on every route. See `lib/schema.ts` for the node
+ * definitions and the sourcing/omission notes that used to be here.
  */
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  /**
-   * Both types on one node. `HomeAndConstructionBusiness` IS-A `Organization`
-   * in schema.org's own class hierarchy, but some validators and AI crawlers
-   * pattern-match the literal `@type` string rather than resolving that
-   * inheritance — GitHub issue #8's GEO audit flagged "Organization schema
-   * missing" against this exact node for that reason. Declaring both is
-   * standard practice for closing that gap without a second, redundant node.
-   */
-  '@type': ['HomeAndConstructionBusiness', 'Organization'],
-  '@id': schemaIds.business,
-  name: businessInfo.name,
-  legalName: businessInfo.legalName,
-  url: businessInfo.siteUrl,
-  logo: {
-    '@type': 'ImageObject',
-    url: `${businessInfo.siteUrl}${businessInfo.schema.logo.path}`,
-    contentUrl: `${businessInfo.siteUrl}${businessInfo.schema.logo.path}`,
-    width: businessInfo.schema.logo.width,
-    height: businessInfo.schema.logo.height,
-  },
-  image: businessInfo.schema.images.map(
-    (path) => `${businessInfo.siteUrl}${path}`,
-  ),
-  priceRange: businessInfo.schema.priceRange,
-  telephone: businessInfo.phone.e164,
-  email: businessInfo.email.primary,
-  foundingDate: String(businessInfo.foundedYear),
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: businessInfo.address.suburb,
-    addressRegion: businessInfo.address.state,
-    addressCountry: businessInfo.address.country,
-  },
-  areaServed: {
-    '@type': 'City',
-    name: businessInfo.serviceArea.city,
-    address: {
-      '@type': 'PostalAddress',
-      addressRegion: businessInfo.serviceArea.state,
-      addressCountry: businessInfo.serviceArea.country,
-    },
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: businessInfo.schema.geo.latitude,
-    longitude: businessInfo.schema.geo.longitude,
-  },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: businessInfo.phone.e164,
-    email: businessInfo.email.primary,
-    contactType: 'sales',
-    areaServed: businessInfo.serviceArea.country,
-    availableLanguage: 'English',
-  },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '07:00',
-      closes: '17:30',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Saturday'],
-      opens: '08:00',
-      closes: '15:30',
-    },
-  ],
-  founder: {
-    '@type': 'Person',
-    name: 'Omar Dawood',
-    jobTitle: 'Licensed Builder & Civil Engineer',
-  },
-  employee: businessInfo.principals.map((person) => ({
-    '@type': 'Person',
-    name: person.name,
-    jobTitle: person.role,
-  })),
-  hasCredential: {
-    '@type': 'EducationalOccupationalCredential',
-    credentialCategory: 'NSW Builder Licence',
-    identifier: businessInfo.builderLicence,
-  },
-  hasOfferCatalog: buildServiceOfferCatalog(),
-  ...(businessInfo.googleBusinessProfile.verifiedLive
-    ? {
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: businessInfo.googleBusinessProfile.ratingAtLastCheck,
-          bestRating: 5,
-          worstRating: 1,
-          reviewCount:
-            businessInfo.googleBusinessProfile.reviewCountAtLastCheck,
-        },
-      }
-    : {}),
-  identifier: [
-    { '@type': 'PropertyValue', name: 'ABN', value: businessInfo.abn },
-    { '@type': 'PropertyValue', name: 'ACN', value: businessInfo.acn },
-  ],
-  sameAs: [
-    businessInfo.googleBusinessProfile.url,
-    ...Object.values(businessInfo.socialProfiles),
-  ],
-}
-
-/**
- * Minimal WebSite node — the other schema GitHub issue #8's GEO audit flagged
- * as missing. Deliberately WITHOUT a `SearchAction`: that requires a real
- * on-site search endpoint, which does not exist here, and a `target` pointing
- * at a search feature that does not work would misrepresent the site rather
- * than describe it.
- */
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': schemaIds.website,
-  name: businessInfo.name,
-  url: businessInfo.siteUrl,
-  publisher: {
-    '@id': schemaIds.business,
-  },
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -290,20 +153,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: jsonLd(localBusinessSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: jsonLd(websiteSchema),
-          }}
-        />
       </body>
     </html>
   )
