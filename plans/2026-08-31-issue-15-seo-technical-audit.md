@@ -193,7 +193,10 @@ crawler-fetched `<meta>` tags, never downloaded by a visitor's browser during a 
 typeface) — sharp's bundled SVG renderer has no working custom-font embedding path on this build
 machine (documented in the script's own header comment); "Segoe UI" was used as the closest
 resolvable system sans, a narrow exception scoped to this one static asset, not the rendered site.
-See D-128.
+See D-128. **Follow-up shipped same day:** `/packages/` and the 3 published hubs each got their own
+dedicated image (Hunters Hill / Castle Hill / Randwick / Artarmon — the hub photos are of a suburb
+actually in that region) instead of the sitewide default; only the gallery per-photo 1200x630 crop
+remains undone. See D-129.
 
 **What.** The homepage, services index, all 4 service pages, packages, about, contact, gallery
 index, and all 3 hubs ship **no** `og:image` and **no** `twitter:image`. `twitter:card` is

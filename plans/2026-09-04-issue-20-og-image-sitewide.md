@@ -3,7 +3,8 @@
 **Date:** 2026-09-04
 **Issue:** #20 - `[seo-tech] H-3 · Add og:image / twitter:image sitewide`
 **Source:** `plans/2026-08-31-issue-15-seo-technical-audit.md` H-3; unblocked by #19 (`buildMetadata()`)
-**Status:** SHIPPED 2026-09-04 (partial scope — see "Not done" below)
+**Status:** SHIPPED 2026-09-04, then extended same day with the packages + 3-hub follow-up (see
+"Follow-up, shipped" below) — the gallery per-photo crop is the only item still not done.
 
 ## Problem
 
@@ -65,10 +66,27 @@ share. The 11 gallery project pages had an image but no `og:image:width`/`height
 - [x] `DECISIONS.md` D-128 recorded, including the font exception and the deferred-crop note.
 - [x] GitHub issue #20 closed with verification notes and the two follow-up items named.
 
+## Follow-up, shipped same day (2026-09-04)
+
+Gave 4 pages their own dedicated share image instead of the sitewide default, using
+`scripts/generate-og-image.mjs` (refactored to a config-driven list rather than one hard-coded
+image):
+
+- `/packages/` -> `public/og/packages.jpg` (Hunters Hill photo; subline states the real starting
+  price, "From $18,000," instead of the generic trust line).
+- The 3 published hubs each use a project photo of a suburb genuinely inside that region
+  (`service-areas.json`), not an arbitrary photo: Hills District -> Castle Hill, Eastern Suburbs ->
+  Randwick, North Shore -> Artarmon (a *different* Artarmon project from the one on the sitewide
+  default, so the two aren't identical).
+- `app/services/[slug]/[location]/page.tsx` picks the image via a small `HUB_OG_IMAGE` slug map; a
+  region with no entry still falls back to the sitewide default through `buildMetadata()`.
+- Verified: `npx tsc --noEmit` clean, `npm run build` green (32 routes), all 4 pages carry their own
+  `og:image` + `twitter:image` in the served HTML with the other pages confirmed unchanged on the
+  default, `npm run check:readability` 26/26 >= 60.
+
 ## Not done (documented follow-up, not blocking)
 
-- A dedicated 1200x630 crop of each gallery project's own lead photo — they still use the raw ~3:2
-  asset (now with correct `width`/`height`, which they lacked before).
-- Per-page image overrides for packages / each service / each hub (issue text: "override per-page
-  where a better image exists") — all of them now inherit the sitewide default instead, which is a
-  complete fix for the "bare text card" defect the finding was about.
+- A dedicated 1200x630 crop of each of the 11 gallery projects' own lead photo — they still use the
+  raw ~3:2 asset (now with correct `width`/`height`, which they lacked before). The 4 pages above
+  covered the higher-value "money pages"; the gallery pages already have a real photo each, just not
+  an ideal crop, which is the lowest-urgency part of the original H-3 finding.

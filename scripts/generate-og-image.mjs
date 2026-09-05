@@ -3,17 +3,25 @@ import path from 'node:path'
 import sharp from 'sharp'
 
 /**
- * Builds the sitewide default Open Graph / Twitter share image (issue #20 /
- * tech-audit H-3). Run once at authoring time and commit the output — this is
- * a static asset, not generated per-request, so it costs nothing at runtime
- * (`docs/PERFORMANCE_BUDGET.md` — crawler-fetched weight is still weight, but
- * a single cached 1200x630 file is a one-off, not a per-visit cost).
+ * Builds every Open Graph / Twitter share image the site uses (issue #20 /
+ * tech-audit H-3, plus the packages + 3-hub overrides added as its
+ * documented follow-up). Run once at authoring time and commit the output —
+ * these are static assets, not generated per-request, so they cost nothing
+ * at runtime (`docs/PERFORMANCE_BUDGET.md` — `og:image`/`twitter:image` are
+ * `<meta>` tags a visitor's browser never fetches; only crawlers building a
+ * link preview request the file, out-of-band).
  *
- * Background: the Artarmon bathroom + ensuite project photo, already one of
- * the three `businessInfo.schema.images` (lib/businessInfo.ts) — a real,
- * consented, already-approved photo (D-36/D-83), not a new asset.
+ * Every background photo is an existing, already-approved, consented project
+ * photo from `lib/projects.ts` (D-36/D-83) — no new photography. Region
+ * images use a project actually located in that region (per
+ * `service-areas.json`): Castle Hill -> Hills District, Randwick -> Eastern
+ * Suburbs, Artarmon -> North Shore. The sitewide default uses the Artarmon
+ * bathroom + ensuite photo (also one of `businessInfo.schema.images`); the
+ * North Shore hub deliberately uses a DIFFERENT Artarmon project
+ * (`artarmon-bathroom`, not `artarmon-bathroom-ensuite`) so the two images
+ * are not identical.
  *
- * ⚠️ Font: this does NOT use Jost, DESIGN.md §3's one typeface. sharp's
+ * ⚠️ Font: none of these use Jost, DESIGN.md §3's one typeface. sharp's
  * bundled SVG renderer (librsvg -> Pango -> FreeType) has no working
  * `@font-face` support for embedding a custom font — confirmed by testing:
  * an embedded Jost (both the source WOFF2 and a decompressed static TTF
@@ -26,10 +34,10 @@ import sharp from 'sharp'
  * (`Segoe UI`, `Arial`, `Verdana`) resolved to real glyphs, because libvips
  * on Windows can read those directly from the OS font system, bypassing
  * fontconfig entirely. "Segoe UI" was chosen as the closest clean geometric
- * sans available that way. This is a narrow exception: a server-rendered
- * static image never seen next to real site chrome, not a rendered page —
- * DESIGN.md's typography rule governs the site itself, not this one binary
- * asset. Re-verify this whole font situation if this script is ever run on
+ * sans available that way. This is a narrow exception: server-rendered
+ * static images never seen next to real site chrome, not a rendered page —
+ * DESIGN.md's typography rule governs the site itself, not these binary
+ * assets. Re-verify this whole font situation if this script is ever run on
  * a non-Windows build machine.
  *
  * Usage: node scripts/generate-og-image.mjs
@@ -39,13 +47,8 @@ const root = process.cwd()
 const WIDTH = 1200
 const HEIGHT = 630
 const FONT_FAMILY = 'Segoe UI, Arial, sans-serif'
-
-const backgroundPath = path.join(
-  root,
-  'public/images/projects/artarmon-bathroom-ensuite/double-vanity-corner-window.webp',
-)
-const markPath = path.join(root, 'public/brand/etr-mark-light.webp')
-const outPath = path.join(root, 'public/og/default.jpg')
+const TRUST_LINE =
+  'Free on-site measure  ·  Fixed-scope written quotes  ·  AS 3740 waterproofing'
 
 const MARGIN = 90
 const MARK_SIZE = 72
@@ -55,7 +58,54 @@ const HEADLINE_Y = 514
 const SUBLINE_Y = 558
 const RULE_Y = 580
 
-const svg = `
+const IMAGES = [
+  {
+    out: 'public/og/default.jpg',
+    background:
+      'public/images/projects/artarmon-bathroom-ensuite/double-vanity-corner-window.webp',
+    headline: 'Sydney Bathroom Renovations',
+    sub: TRUST_LINE,
+  },
+  {
+    // Packages / pricing (`/packages/`). Sub reflects the page's own
+    // published starting price and process facts (D-07/D-60) rather than
+    // repeating the generic trust line.
+    out: 'public/og/packages.jpg',
+    background: 'public/images/projects/hunters-hill-bathroom/freestanding-bath-shutters.webp',
+    headline: 'Bathroom Renovation Packages',
+    sub: 'From $18,000  ·  Fixed-scope written quotes  ·  Sized to your bathroom',
+  },
+  {
+    // Hills District hub. Castle Hill is a real Hills District suburb
+    // (service-areas.json) with its own photographed project.
+    out: 'public/og/hills-district.jpg',
+    background: 'public/images/projects/castle-hill-bathroom/shower-toilet-heated-rail.webp',
+    headline: 'Bathroom Renovations, Hills District',
+    sub: TRUST_LINE,
+  },
+  {
+    // Eastern Suburbs hub. Randwick is a real Eastern Suburbs suburb with
+    // its own photographed project.
+    out: 'public/og/eastern-suburbs.jpg',
+    background: 'public/images/projects/randwick-bathroom/shower-vanity-round-mirror.webp',
+    headline: 'Bathroom Renovations, Eastern Suburbs',
+    sub: TRUST_LINE,
+  },
+  {
+    // North Shore hub. Artarmon is a real North Shore suburb — uses the
+    // OTHER Artarmon project (not the ensuite one on the sitewide default)
+    // so the two images are not identical.
+    out: 'public/og/north-shore.jpg',
+    background: 'public/images/projects/artarmon-bathroom/full-room-shower-toilet.webp',
+    headline: 'Bathroom Renovations, North Shore',
+    sub: TRUST_LINE,
+  },
+]
+
+const markPath = path.join(root, 'public/brand/etr-mark-light.webp')
+
+function buildSvg({ headline, sub }) {
+  return `
 <svg width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
@@ -77,36 +127,42 @@ const svg = `
   <text x="${MARGIN + MARK_SIZE + 20}" y="${BRAND_TEXT_Y}" class="brand" font-size="24" fill="#FFFFFF">ELITE TOUCH RENOVATIONS</text>
 
   <!-- headline -->
-  <text x="${MARGIN}" y="${HEADLINE_Y}" class="headline" font-size="56" fill="#FFFFFF">Sydney Bathroom Renovations</text>
+  <text x="${MARGIN}" y="${HEADLINE_Y}" class="headline" font-size="48" fill="#FFFFFF">${headline}</text>
 
   <!-- subline: real, already-published facts only (D-06) -->
-  <text x="${MARGIN}" y="${SUBLINE_Y}" class="sub" font-size="24" fill="#F1F1F2">Free on-site measure  ·  Fixed-scope written quotes  ·  AS 3740 waterproofing</text>
+  <text x="${MARGIN}" y="${SUBLINE_Y}" class="sub" font-size="24" fill="#F1F1F2">${sub}</text>
 
   <!-- accent rule, matches the brand magenta -->
   <rect x="${MARGIN}" y="${RULE_Y}" width="72" height="5" rx="2.5" fill="#DD0880" />
 </svg>
 `
+}
 
-async function main() {
+async function buildOne({ out, background, headline, sub }) {
+  const outPath = path.join(root, out)
   mkdirSync(path.dirname(outPath), { recursive: true })
 
-  const background = await sharp(backgroundPath)
+  const backgroundBuffer = await sharp(path.join(root, background))
     .resize(WIDTH, HEIGHT, { fit: 'cover', position: 'attention' })
     .toBuffer()
 
-  const mark = await sharp(markPath)
-    .resize(MARK_SIZE, MARK_SIZE, { fit: 'inside' })
-    .toBuffer()
+  const mark = await sharp(markPath).resize(MARK_SIZE, MARK_SIZE, { fit: 'inside' }).toBuffer()
 
-  await sharp(background)
+  await sharp(backgroundBuffer)
     .composite([
-      { input: Buffer.from(svg), top: 0, left: 0 },
+      { input: Buffer.from(buildSvg({ headline, sub })), top: 0, left: 0 },
       { input: mark, top: MARK_TOP, left: MARGIN },
     ])
     .jpeg({ quality: 82, mozjpeg: true })
     .toFile(outPath)
 
   console.log(`Wrote ${outPath}`)
+}
+
+async function main() {
+  for (const image of IMAGES) {
+    await buildOne(image)
+  }
 }
 
 main().catch((error) => {

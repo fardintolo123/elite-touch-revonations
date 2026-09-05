@@ -115,7 +115,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 |---|---|---|
 | ✅ **#19** `buildMetadata()` + `og:url` | P1 | shipped 2026-09-04 — enables #20, #21 |
 | **#30** schema `@graph` + `@id` | P1 | — (enables #22, #31, #24, #32) |
-| ✅ **#20** `og:image` sitewide | P1 | shipped 2026-09-04 |
+| ✅ **#20** `og:image` sitewide | P1 | shipped 2026-09-04, incl. dedicated packages + 3-hub images same day |
 | **#32** enrich LocalBusiness node | P1 | #30 (soft), #20 done (image asset, soft) |
 | **#22** per-page `Service` schema | P1 | #30 (needs the `@id` it references) |
 | **#31** hub `Service` + `OfferCatalog` | P2 | #30, #22 |
