@@ -8,7 +8,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
-import { FaqSchema } from '@/components/FaqSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { GoogleRating } from '@/components/GoogleRating'
 
 /**
@@ -131,7 +131,13 @@ export default function HomePage() {
 
   return (
     <>
-      <FaqSchema items={HOME_FAQS} />
+      <SchemaGraph
+        path="/"
+        name="Sydney Bathroom Renovations"
+        description="Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family."
+        faqs={HOME_FAQS}
+        primaryImage={heroImage.src}
+      />
 
       {/* ---------------- Hero ---------------- */}
       <section className="et-hero">

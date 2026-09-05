@@ -1,4 +1,5 @@
-import { businessInfo } from '@/lib/businessInfo'
+import { businessInfo, services, type Service } from '@/lib/businessInfo'
+import type { Region } from '@/lib/locations'
 import type { Project } from '@/lib/projects'
 
 export type SchemaNode = Record<string, unknown>
@@ -22,6 +23,9 @@ export function absoluteUrl(pathOrUrl: string) {
 export const schemaIds = {
   business: absoluteUrl(businessInfo.schema.businessIdPath),
   website: absoluteUrl(businessInfo.schema.websiteIdPath),
+  serviceCatalog: `${businessInfo.siteUrl}/#bathroom-renovation-services`,
+  hubService: (service: Service, region: Region) =>
+    `${absoluteUrl(`/services/${service.slug}/${region.slug}/`)}#service`,
   webpage: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#webpage`,
   breadcrumb: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#breadcrumb`,
   faq: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#faq`,
@@ -30,10 +34,59 @@ export const schemaIds = {
     `${absoluteUrl(pathOrUrl)}#image-${index + 1}`,
 }
 
+export const businessSchemaId = schemaIds.business
+export const websiteSchemaId = schemaIds.website
+
 export function schemaGraph(nodes: SchemaNode[]) {
   return {
     '@context': 'https://schema.org',
     '@graph': nodes,
+  }
+}
+
+export function jsonLd(schema: unknown) {
+  return JSON.stringify(schema).replace(/</g, '\\u003c')
+}
+
+function warrantyPromise() {
+  return {
+    '@type': 'WarrantyPromise',
+    durationOfWarranty: {
+      '@type': 'QuantitativeValue',
+      value: businessInfo.workmanshipWarrantyYears,
+      unitCode: 'ANN',
+    },
+  }
+}
+
+export function buildServiceOfferCatalog(): SchemaNode {
+  return {
+    '@type': 'OfferCatalog',
+    '@id': schemaIds.serviceCatalog,
+    name: 'Bathroom renovation services',
+    itemListElement: services.map((service) => ({
+      '@type': 'Offer',
+      name: service.title,
+      url: absoluteUrl(`/services/${service.slug}/`),
+      itemOffered: {
+        '@type': 'Service',
+        name: service.title,
+        description: service.summary,
+        serviceType: 'Bathroom renovation',
+        provider: { '@id': schemaIds.business },
+        areaServed: {
+          '@type': 'City',
+          name: businessInfo.serviceArea.city,
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: businessInfo.serviceArea.state,
+            addressCountry: businessInfo.serviceArea.country,
+          },
+        },
+        url: absoluteUrl(`/services/${service.slug}/`),
+      },
+      warranty: warrantyPromise(),
+    })),
   }
 }
 
@@ -118,22 +171,19 @@ export function buildBusinessNode(): SchemaNode {
       credentialCategory: 'NSW Builder Licence',
       identifier: businessInfo.builderLicence,
     },
-    makesOffer: {
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Service',
-        name: 'Bathroom renovation',
-        areaServed: businessInfo.serviceArea.city,
-      },
-      warranty: {
-        '@type': 'WarrantyPromise',
-        durationOfWarranty: {
-          '@type': 'QuantitativeValue',
-          value: businessInfo.workmanshipWarrantyYears,
-          unitCode: 'ANN',
-        },
-      },
-    },
+    hasOfferCatalog: buildServiceOfferCatalog(),
+    ...(businessInfo.googleBusinessProfile.verifiedLive
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: businessInfo.googleBusinessProfile.ratingAtLastCheck,
+            bestRating: 5,
+            worstRating: 1,
+            reviewCount:
+              businessInfo.googleBusinessProfile.reviewCountAtLastCheck,
+          },
+        }
+      : {}),
     identifier: [
       { '@type': 'PropertyValue', name: 'ABN', value: businessInfo.abn },
       { '@type': 'PropertyValue', name: 'ACN', value: businessInfo.acn },
@@ -242,6 +292,53 @@ export function buildFaqNode({
   }
 }
 
+export function buildHubServiceNode({
+  service,
+  region,
+}: {
+  service: Service
+  region: Region
+}): SchemaNode {
+  const path = `/services/${service.slug}/${region.slug}/`
+
+  return {
+    '@type': 'Service',
+    '@id': schemaIds.hubService(service, region),
+    name: `${service.title} ${region.name}`,
+    description: service.summary,
+    serviceType: 'Bathroom renovation',
+    provider: { '@id': schemaIds.business },
+    url: absoluteUrl(path),
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: `${region.name}, Sydney`,
+      containedInPlace: {
+        '@type': 'City',
+        name: businessInfo.serviceArea.city,
+        address: {
+          '@type': 'PostalAddress',
+          addressRegion: businessInfo.serviceArea.state,
+          addressCountry: businessInfo.serviceArea.country,
+        },
+      },
+    },
+  }
+}
+
+export function buildHubServiceSchema({
+  service,
+  region,
+}: {
+  service: Service
+  region: Region
+}) {
+  return schemaGraph([
+    buildBusinessNode(),
+    buildWebsiteNode(),
+    buildHubServiceNode({ service, region }),
+  ])
+}
+
 export function buildProjectNode({
   path,
   project,
@@ -279,6 +376,7 @@ export function buildPageGraph({
   faqs,
   project,
   primaryImage,
+  hubService,
 }: {
   path: string
   name: string
@@ -288,6 +386,7 @@ export function buildPageGraph({
   faqs?: readonly SchemaFaqItem[]
   project?: Project
   primaryImage?: string
+  hubService?: { service: Service; region: Region }
 }) {
   const hasFaqs = Boolean(faqs && faqs.length > 0)
   const projectId = project ? schemaIds.creativeWork(path) : undefined
@@ -308,6 +407,7 @@ export function buildPageGraph({
     }),
     ...(breadcrumbs ? [buildBreadcrumbNode({ path, items: breadcrumbs })] : []),
     ...(faqs && faqs.length > 0 ? [buildFaqNode({ path, items: faqs })] : []),
+    ...(hubService ? [buildHubServiceNode(hubService)] : []),
     ...(project ? [buildProjectNode({ path, project })] : []),
   ])
 }

@@ -60,7 +60,10 @@ export async function generateMetadata({
 
   return buildMetadata({
     path: `/services/${service.slug}/`,
-    title: service.h1,
+    // `metaTitle` overrides `h1` only where the full "service + Sydney" H1
+    // would push the templated `<title>` past 60 chars (issue #21 / M-5) —
+    // currently just laundry-renovations. The H1 itself is unaffected.
+    title: 'metaTitle' in service ? service.metaTitle : service.h1,
     description: service.summary,
   })
 }

@@ -5,8 +5,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
-import { BreadcrumbSchema } from '@/components/BreadcrumbSchema'
-import { FaqSchema } from '@/components/FaqSchema'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { projects } from '@/lib/projects'
 import { formatMonthYear } from '@/lib/dateLabels'
 import { ExternalLink } from '@/components/ExternalLink'
@@ -52,7 +51,13 @@ import { ExternalLink } from '@/components/ExternalLink'
 
 export const metadata: Metadata = buildMetadata({
   path: '/packages/',
-  title: 'Bathroom Renovation Cost & Packages',
+  // "Bathroom Renovation Cost & Packages | Elite Touch Renovations" was 61
+  // chars and the "&" widens it further in pixels (tech-audit M-5 / issue
+  // #21). "Bathroom Renovation Cost, Sydney" matches the primary keyword
+  // this page targets ("bathroom renovation cost sydney", GKP-confirmed
+  // 100-1K/mo, D-104) more directly than "& Packages" did anyway — the H1
+  // and every heading on the page still say "packages" throughout.
+  title: 'Bathroom Renovation Cost, Sydney',
   description:
     'How much does a bathroom renovation cost in Sydney? Packages start from $18,000 to $30,000, sized to your bathroom, with a fixed-scope written quote.',
 })
@@ -241,13 +246,17 @@ const packagePricingMonth = formatMonthYear(businessInfo.packagePricingUpdated)
 export default function PackagesPage() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
+      <SchemaGraph
+        path="/packages/"
+        name="Bathroom Renovation Cost & Packages"
+        description="How much does a bathroom renovation cost in Sydney? Packages start from $18,000 to $30,000, sized to your bathroom."
+        breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
         ]}
+        faqs={FAQS}
+        primaryImage={heroProject.images[1].src}
       />
-      <FaqSchema items={FAQS} />
       <PageHero
         eyebrow="Packages"
         title="Bathroom renovation packages and pricing."

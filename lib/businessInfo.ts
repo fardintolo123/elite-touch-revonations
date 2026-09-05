@@ -472,6 +472,17 @@ export const services = [
     */
     title: 'Bathroom + Laundry Renovations',
     h1: 'Bathroom and Laundry Renovations Sydney',
+    /**
+     * `<title>` tag override (tech-audit M-5 / issue #21). `h1` + the
+     * " | Elite Touch Renovations" template tail runs 65 chars — no phrasing
+     * that keeps "Bathroom", "Laundry", "Renovations" AND "Sydney" spelled out
+     * fits the 60-char guide limit (`docs/SEO_AEO_GEO_CHECKLIST.md`) without
+     * inventing an abbreviation ("Reno") not used anywhere else on the site.
+     * Reuses the existing `title` value rather than new copy; the H1, the
+     * meta description and the breadcrumb schema on this page all still carry
+     * "Sydney" — only the `<title>` tag itself drops it here.
+     */
+    metaTitle: 'Bathroom + Laundry Renovations',
     updated: '2026-09-04',
     summary:
       'Two wet areas run as a single program. One demolition, one waterproofing stage, one trade sequence — and one disruption to the house instead of two.',

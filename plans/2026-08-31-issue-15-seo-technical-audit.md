@@ -264,6 +264,21 @@ customer contact details. Files: `next.config.ts`, possibly `proxy.ts`. Effort: 
 
 #### M-5 · A couple of `<title>` tags run long
 
+**SHIPPED / #21 2026-09-04.** `/packages/` `<title>` → "Bathroom Renovation Cost, Sydney | Elite
+Touch Renovations" (58 chars, was 61 with the pixel-widening `&`) — matches the page's actual primary
+keyword (`bathroom renovation cost sydney`, D-104) better than "& Packages" did; the H1 and every
+heading still say "packages" throughout, only the `<title>` changed. `/services/laundry-renovations/`
+`<title>` → "Bathroom + Laundry Renovations | Elite Touch Renovations" (56 chars, was 65) via a new
+optional `metaTitle` field on the `laundry-renovations` service record (`lib/businessInfo.ts`), read
+in `app/services/[slug]/page.tsx`'s `generateMetadata` (`'metaTitle' in service ? service.metaTitle :
+service.h1`) — no phrasing keeping "Bathroom"/"Laundry"/"Renovations"/"Sydney" all spelled out fits
+60 chars without inventing an abbreviation ("Reno") unused elsewhere on the site, so the `<title>`
+drops "Sydney" while the H1 ("Bathroom and Laundry Renovations Sydney"), the meta description and the
+breadcrumb schema all keep it. The other three services are unaffected — confirmed
+`/services/bathroom-renovations/` still renders "Bathroom Renovations Sydney | …" (53 chars)
+unchanged. Verified against a fresh build: both titles ≤ 60, `og:title` matches (via #19's
+`buildMetadata()`), `npm run check:readability` 26/26 ≥ 60. See D-127.
+
 `Bathroom and Laundry Renovations Sydney | Elite Touch Renovations` = 63 chars (over the 60 guide
 limit); `Bathroom Renovation Cost & Packages | Elite Touch Renovations` = 60 and the `&` widens it
 further. Both risk pixel-truncation in SERPs. Trim the `laundry-renovations` `h1`/title source in
@@ -395,7 +410,7 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 ### Phase 2 — the metadata layer (1–2 sittings)
 - [x] **#19 · H-2** — `lib/metadata.ts` `buildMetadata()`; per-page `og:url` = canonical. *(Phase 2, step 4. Shipped 2026-09-04 — unblocks #20.)*
 - [ ] **#20 · H-3** — `og:image` / `twitter:image` sitewide; `summary_large_image`. *(Phase 2, step 5. **Depends on #19.**)*
-- [ ] **#21 · M-5** — trim the two over-length `<title>` tags. *(Phase 2, step 6. Fold into #19 if that lands first.)*
+- [x] **#21 · M-5** — trim the two over-length `<title>` tags. *(Phase 2, step 6. Shipped 2026-09-04, through the #19 `buildMetadata()` helper.)*
 
 ### Phase 3 — structured data + sitemap (1–2 sittings)
 - [ ] **#22 · M-1** — per-page `Service` JSON-LD on the 4 service pages. *(Phase 3, step 7. No dep.)*

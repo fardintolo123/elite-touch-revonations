@@ -20,7 +20,7 @@ Implement the issue #31 slice without claiming the broader #30 `@graph` migratio
 - [x] LocalBusiness node has a stable `@id`.
 - [x] LocalBusiness node uses `hasOfferCatalog` for the four confirmed services.
 - [x] Published hubs emit region-scoped `Service` JSON-LD.
-- [ ] `npm run typecheck` passes.
+- [x] `npm run typecheck` passes.
 - [ ] `npm run build` passes without a route-count drop.
 - [ ] Built HTML check confirms one region-scoped `Service` node on each published hub.
 - [ ] Plans and `DECISIONS.md` updated.

@@ -4,6 +4,8 @@ import {
   type SchemaCrumb,
   type SchemaFaqItem,
 } from '@/lib/schema'
+import type { Service } from '@/lib/businessInfo'
+import type { Region } from '@/lib/locations'
 import type { Project } from '@/lib/projects'
 
 export function SchemaGraph({
@@ -15,6 +17,7 @@ export function SchemaGraph({
   faqs,
   project,
   primaryImage,
+  hubService,
 }: {
   path: string
   name: string
@@ -24,6 +27,7 @@ export function SchemaGraph({
   faqs?: readonly SchemaFaqItem[]
   project?: Project
   primaryImage?: string
+  hubService?: { service: Service; region: Region }
 }) {
   const graph = buildPageGraph({
     path,
@@ -34,6 +38,7 @@ export function SchemaGraph({
     faqs,
     project,
     primaryImage,
+    hubService,
   })
 
   return (

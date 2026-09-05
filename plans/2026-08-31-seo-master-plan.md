@@ -61,7 +61,7 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | 404 double-robots meta + robots `Host:` | tech L-1/L-4 | ✅ **#18** |
 | `og:url` = homepage sitewide → `buildMetadata()` helper | tech H-2, page | ✅ **#19** shipped 2026-09-04 |
 | No `og:image` / `twitter:image` sitewide | tech H-3, page | ✅ **#20** |
-| Two `<title>` tags over length | tech M-5 | ✅ **#21** |
+| Two `<title>` tags over length | tech M-5 | ✅ **#21** shipped 2026-09-04 |
 | No per-page `Service` schema (4 service pages) | tech M-1, schema S-1, local #5 | ✅ **#22** (needs 🆕 #29 for the `@id` it references) |
 | Sitemap `lastmod` = build time; add `updated` field | tech M-2 | ✅ **#23** shipped 2026-09-03 via #41 |
 | `ImageObject` + `og:type:article` on gallery pages | tech L-5/L-6, schema S-2 | ✅ **#24** shipped 2026-09-04 (L-6 via #38 2026-09-03, L-5 via #24) |
@@ -118,7 +118,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | **#32** enrich LocalBusiness node | P1 | #30 (soft), #20 (image asset, soft) |
 | **#22** per-page `Service` schema | P1 | #30 (needs the `@id` it references) |
 | **#31** hub `Service` + `OfferCatalog` | P2 | #30, #22 |
-| **#21** trim long titles | P2 | #19 done — unblocked, ready-to-apply fix already drafted in the issue comments |
+| ✅ **#21** trim long titles | P2 | shipped 2026-09-04 |
 | ✅ **#38** keyword-weak titles/H1 tidy | P2 | shipped 2026-09-02–03 (edited direct — #19 landed after; incl. `og:type`/L-6; L-5 `ImageObject` shipped separately in #24) |
 
 ### Phase C — content depth (the biggest organic lever)

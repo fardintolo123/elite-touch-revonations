@@ -6,13 +6,52 @@ Read the linked docs; do not assume their contents.
 
 > **Golden rule:** before starting any task, (1) find it in **[Task Routing](#task-routing)** and read
 > the mapped docs, (2) obey the **[Source-of-Truth Hierarchy](#source-of-truth-hierarchy)**, (3) follow
-> the **[Per-Task Workflow](#per-task-workflow)**. When a doc names a file, route or flag, **verify it
-> still exists in the code before relying on it** — docs go stale faster than anyone expects.
+> the **[Per-Task Workflow](#per-task-workflow)**, and (4) run the whole thing per
+> **[Autonomy & Session Handoff](#autonomy--session-handoff)** — decide and proceed yourself, don't
+> check in step-by-step, and close the session with a handoff file. When a doc names a file, route or
+> flag, **verify it still exists in the code before relying on it** — docs go stale faster than anyone
+> expects.
 
 > ⚠️ **This file was seeded from a sibling project (4 Elements Painting) that had been through nine
 > performance repairs, three SEO-invisibility bugs and one fabricated-content purge. The rules below
 > are what that cost.** Everything business-specific has been stripped. Lines marked **`TODO:`** need
 > a real answer before they can be trusted — **do not invent them.**
+
+---
+
+## Autonomy & Session Handoff
+
+**Work the task through to done, yourself, without checking in at each step.** Once a task is routed
+and planned, move through implementation → verification → completion on your own judgement. Don't
+pause to confirm routine choices — implementation approach, file layout, wording within `DESIGN.md`'s
+system, which check to run, how to phrase a commit message. Decide, do it, keep moving to the next
+step, and only stop when the task is actually finished (or genuinely blocked — see below).
+
+**Stop and ask the owner only for a genuine decision** — one only they can make:
+- Anything the [Source-of-Truth Hierarchy](#source-of-truth-hierarchy) already says to ask about: a
+  fact that isn't in `Customer Reviews.md`, a business-info file, or a prior owner message (a price,
+  review, location, licence detail, project detail, year in business, staff count).
+- A **[Business Rules](#business-rules)** trade-off — e.g. advertising a service outside the four,
+  or touching a legally significant claim (licence, ABN, warranty, insurance).
+- **Reversing a decision already recorded in `DECISIONS.md`** without new evidence.
+- A **destructive or hard-to-reverse action** — force-push, `git reset --hard`, deleting files or
+  branches, or pushing/deploying. (This project's standing rule: **never push or deploy without
+  explicit owner sign-off** — see [Git Workflow](#git-workflow).)
+- A choice with real money, legal, or brand risk that no doc already settles.
+
+Everything else is yours to decide. If you're unsure whether something clears this bar, treat it as
+**not** clearing it only when getting it wrong would be expensive or hard to undo — otherwise decide,
+proceed, and record what you decided (in `DECISIONS.md` if it should outlive the session, and in the
+Executive Summary either way).
+
+**At the end of every session with non-trivial work, write a session handoff file — automatically,
+without being asked.** Follow the process in
+[session-history/_session-handoff-prompt-template.md](session-history/_session-handoff-prompt-template.md)
+exactly, including its own instruction not to touch `CLAUDE.md` or other permanent documentation while
+writing it. Save it to `session-history/YYYY-MM-DD-[short-descriptive-session-name].md`, confirm the
+file exists, and give its path in the Executive Summary. Skip this only for genuinely trivial
+exchanges (a one-line question, no file or content changes) — anything that touched code, content, or
+made a decision gets a handoff file.
 
 ---
 
@@ -214,6 +253,9 @@ These are framework-level lessons, not preferences. Adjust the names to whatever
 
 ## Per-Task Workflow
 
+Run steps 1–8 yourself, end to end, per [Autonomy & Session Handoff](#autonomy--session-handoff) —
+pause mid-list only for a genuine owner decision, never to check in on routine progress.
+
 1. **Plan first.** Write a short implementation plan, then a checklist. Keep both in `plans/`.
 2. **Route and read** the mapped docs before changing anything.
 3. **Implement** per the standing rules.
@@ -222,6 +264,8 @@ These are framework-level lessons, not preferences. Adjust the names to whatever
    verification · the SEO/AEO/GEO checklist).
 6. **Complete:** build green, docs updated, decisions recorded in `DECISIONS.md`.
 7. **Report** using one Executive Summary — see below.
+8. **Hand off.** Write the session-history file per
+   [Autonomy & Session Handoff](#autonomy--session-handoff) before ending the session.
 
 ## Issue Workflow
 
@@ -318,6 +362,8 @@ what's wrong, what to decide, and exactly what to do next.
       updated alongside it (Issue Workflow).
 - [ ] Decisions and mechanics recorded in the right file.
 - [ ] Response follows the Reporting Format, "What should happen next" last.
+- [ ] Session-history handoff file written (unless the session was genuinely trivial) and its path
+      given in the summary.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

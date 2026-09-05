@@ -10,8 +10,9 @@ export function GoogleRating({ className }: GoogleRatingProps) {
   if (!profile.verifiedLive) return null
 
   const rating = profile.ratingAtLastCheck.toFixed(1)
+  const reviewCount: number = profile.reviewCountAtLastCheck
   const reviewLabel =
-    profile.reviewCountAtLastCheck === 1 ? 'Google review' : 'Google reviews'
+    reviewCount === 1 ? 'Google review' : 'Google reviews'
 
   return (
     <a
@@ -19,13 +20,13 @@ export function GoogleRating({ className }: GoogleRatingProps) {
       href={profile.url}
       rel="noopener noreferrer"
       target="_blank"
-      aria-label={`${businessInfo.name} has a ${rating} out of 5 Google rating from ${profile.reviewCountAtLastCheck} ${reviewLabel}. Open reviews on Google.`}
+      aria-label={`${businessInfo.name} has a ${rating} out of 5 Google rating from ${reviewCount} ${reviewLabel}. Open reviews on Google.`}
     >
       <span className="et-google-rating-score">{rating}</span>
       <span className="et-google-rating-copy">
         <strong>out of 5 on Google</strong>
         <span>
-          {profile.reviewCountAtLastCheck} {reviewLabel}
+          {reviewCount} {reviewLabel}
         </span>
       </span>
       <span className="et-google-rating-link">Reviews on Google</span>
