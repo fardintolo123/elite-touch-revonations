@@ -51,6 +51,8 @@ export async function generateMetadata({
    */
   const description = projectMetaDescription(project)
 
+  const leadImage = project.images[0]
+
   return buildMetadata({
     path: `/gallery/${project.slug}/`,
     title: project.name,
@@ -60,7 +62,18 @@ export async function generateMetadata({
     // default (issue #38 / tech-audit L-6). The matching `ImageObject` +
     // `Article` JSON-LD (L-5) is still tracked in #24.
     type: 'article',
-    images: [project.images[0].src],
+    // Real width/height now included (issue #20 / H-3) — was previously a
+    // bare URL with no size, forcing a small `twitter:card`. Still the raw
+    // project asset (~3:2), not a dedicated 1200x630 crop; that refinement
+    // is noted as follow-up scope on #20, not done here.
+    images: [
+      {
+        url: leadImage.src,
+        width: leadImage.width,
+        height: leadImage.height,
+        alt: leadImage.alt,
+      },
+    ],
   })
 }
 

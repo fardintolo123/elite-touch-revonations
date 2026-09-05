@@ -44,8 +44,9 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
   service + hub pages aren't answer-first; no freshness dates anywhere.
 - **Schema:** valid but disconnected (no `@graph`/`@id`); no per-page/per-hub `Service`; business
   node missing `geo`/`priceRange`/`logo`/`image`.
-- **Technical:** ~~`og:url` wrong sitewide~~ fixed via `buildMetadata()` (#19, 2026-09-04); no
-  `og:image`, ~~sitemap `lastmod` fakes freshness~~ fixed (#23/#41), no CSP. *(All already
+- **Technical:** ~~`og:url` wrong sitewide~~ fixed via `buildMetadata()` (#19, 2026-09-04);
+  ~~no `og:image`~~ fixed (#20, 2026-09-04); ~~sitemap `lastmod` fakes freshness~~ fixed (#23/#41),
+  no CSP. *(All already
   issue-ified — #17–#28.)*
 - **GEO:** brand-new domain with zero freshness signals on the cheapest AI-citation factor.
 
@@ -60,7 +61,7 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | Dead hub→Tier-1-suburb links (4→6, 404) | tech H-1, local #2, page | ✅ **#17** |
 | 404 double-robots meta + robots `Host:` | tech L-1/L-4 | ✅ **#18** |
 | `og:url` = homepage sitewide → `buildMetadata()` helper | tech H-2, page | ✅ **#19** shipped 2026-09-04 |
-| No `og:image` / `twitter:image` sitewide | tech H-3, page | ✅ **#20** |
+| No `og:image` / `twitter:image` sitewide | tech H-3, page | ✅ **#20** shipped 2026-09-04 |
 | Two `<title>` tags over length | tech M-5 | ✅ **#21** shipped 2026-09-04 |
 | No per-page `Service` schema (4 service pages) | tech M-1, schema S-1, local #5 | ✅ **#22** (needs 🆕 #29 for the `@id` it references) |
 | Sitemap `lastmod` = build time; add `updated` field | tech M-2 | ✅ **#23** shipped 2026-09-03 via #41 |
@@ -74,7 +75,7 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | **Schema: `Service` on the 3 hubs + `OfferCatalog`** | schema S-1, local #5 | 🆕 **#31** |
 | **Enrich LocalBusiness node** (geo, priceRange, contactPoint, logo, image, E.164 phone) | schema S-3, local #6 | 🆕 **#32** |
 | **Show the Google rating on-site + `aggregateRating`** | local #3 | 🆕 **#33** (depends #29) |
-| **Service pages: real per-service content + FAQ + answer-first** (bathroom/ensuite/laundry) | content C-2/C-3/C-7, local #14, geo G-2, page | 🆕 **#34** |
+| **Service pages: real per-service content + FAQ + answer-first** (bathroom/ensuite/laundry) | content C-2/C-3/C-7, local #14, geo G-2, page | ✅ **#34** shipped 2026-09-04 (D-126); `lib/businessInfo.ts` |
 | **Hubs: de-template — local content, local FAQ, testimonial, answer-first, packages link** | local #4, content C-3, geo G-2, page | ✅ **#35** shipped 2026-09-03 (D-121); `lib/hubContent.ts` |
 | **Homepage: add an FAQ block** | page P-1, content | ✅ **#36** shipped 2026-09-04 |
 | **Add a privacy policy page + form privacy notice** | content C-1 | ✅ **#37** shipped 2026-09-02 (commit `867e30c`), doc-verified 2026-09-03 (D-122) |
@@ -114,8 +115,8 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 |---|---|---|
 | ✅ **#19** `buildMetadata()` + `og:url` | P1 | shipped 2026-09-04 — enables #20, #21 |
 | **#30** schema `@graph` + `@id` | P1 | — (enables #22, #31, #24, #32) |
-| **#20** `og:image` sitewide | P1 | #19 done — unblocked |
-| **#32** enrich LocalBusiness node | P1 | #30 (soft), #20 (image asset, soft) |
+| ✅ **#20** `og:image` sitewide | P1 | shipped 2026-09-04 |
+| **#32** enrich LocalBusiness node | P1 | #30 (soft), #20 done (image asset, soft) |
 | **#22** per-page `Service` schema | P1 | #30 (needs the `@id` it references) |
 | **#31** hub `Service` + `OfferCatalog` | P2 | #30, #22 |
 | ✅ **#21** trim long titles | P2 | shipped 2026-09-04 |
@@ -124,7 +125,7 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 ### Phase C — content depth (the biggest organic lever)
 | Issue | Pri | Depends |
 |---|---|---|
-| **#34** service-page content + FAQ | P1 | — (pairs with #22) |
+| ✅ **#34** service-page content + FAQ | P1 | shipped 2026-09-04 (D-126) |
 | ✅ **#35** hub de-templating | P1 | shipped 2026-09-03 (D-121); depended #17 (done) |
 | **#33** show the rating | P1 | **#29** |
 | ✅ **#36** homepage FAQ | P2 | shipped 2026-09-04 (D-123) |
@@ -201,7 +202,7 @@ Every audit recommendation was re-checked against the code before landing in §3
 | #29, #45 | Owner / off-site local | `seo-local` |
 | #30, #31, #32 | Structured data | `seo-schema` |
 | #33, ✅ #35, #40 | Local on-page | `seo-local` |
-| #34, ✅ #36, ✅ #37, ✅ #38, ✅ #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
+| ✅ #34, ✅ #36, ✅ #37, ✅ #38, ✅ #39, ✅ #42, ✅ #43, ✅ #44 | Content & on-page | `seo-content` |
 | ✅ #41 | Freshness (content + technical) | `seo-content` |
 | #46 | Documentation | `documentation` |
 

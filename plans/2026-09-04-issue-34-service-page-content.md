@@ -36,9 +36,11 @@ FAQ explicitly answers the two `CONTENT_QUALITY_CHECKLIST.md` §5 objections nam
 - [x] Bathroom FAQ answers both named §5 objections
 - [x] `lib/businessInfo.ts` updated; `app/services/[slug]/page.tsx` unchanged (renders both already)
 - [x] Swap test: service name/detail swapped between pages reads wrong
-- [ ] `npm run build` green; route count holds
-- [ ] `npm run check:readability` — 3 pages ≥ 60
-- [ ] `curl` the 3 pages — `about` + FAQ + `FAQPage` JSON-LD in served HTML; powder-room unchanged
-- [ ] Browser check desktop + 390px
-- [ ] `plans/2026-08-31-seo-content-audit.md` (C-2/C-3/C-7) + master-plan registry + `DECISIONS.md` entry
+- [x] `npm run build` green; route count holds (32)
+- [x] `npm run check:readability` — bathroom 66.4, ensuite 66.6, laundry 66.1 (all ≥ 60); 26/26 pages pass
+- [x] Served-HTML checks — `about` unique per page (swap test), FAQ `<summary>` decode-matches `FAQPage`
+      JSON-LD on all 3 + powder-room, packages link present, durations block hidden on laundry only
+- [x] Browser check desktop + 390px (Playwright — 5 FAQ cards, about paragraph, packages link, no
+      horizontal scroll, no console errors on all 3)
+- [x] `plans/2026-08-31-seo-content-audit.md` (C-2/C-3/C-7) + master-plan registry + `DECISIONS.md` D-126
 - [ ] Issue #34 closed (comment + close, if the write permission allows)

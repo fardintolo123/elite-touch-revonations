@@ -176,6 +176,25 @@ smaller change, but a correct per-page `og:url` is the better outcome.
 
 #### H-3 · No `og:image` / `twitter:image` anywhere except gallery project pages
 
+**SHIPPED / #20 2026-09-04.** `scripts/generate-og-image.mjs` composites a real 1200x630 default
+share image (`public/og/default.jpg`, 64 KB) — the Artarmon bathroom + ensuite project photo
+(already one of `businessInfo.schema.images`), a dark bottom scrim, the light ETR mark, "Sydney
+Bathroom Renovations", and a subline of real published facts (free measure, fixed-scope quotes, AS
+3740). `app/layout.tsx` sets it as the sitewide default `openGraph.images` + `twitter.card:
+'summary_large_image'`; `lib/metadata.ts` `buildMetadata()` (from #19) now defaults every page's
+`images` to that same asset unless a page passes its own, so it needs no per-page wiring. Gallery
+project pages keep their real photo but now pass real `width`/`height`/`alt` objects instead of a
+bare URL string, so `og:image:width`/`height` are populated (the 1200x630 dedicated crop of each
+project's lead photo — the issue's other ask — is noted as follow-up scope, not done here). Verified
+against a fresh build: all 26 checked pages carry `og:image` + `og:image:width`/`height` +
+`twitter:card: summary_large_image`. Zero page-weight impact — `og:image`/`twitter:image` are
+crawler-fetched `<meta>` tags, never downloaded by a visitor's browser during a normal page load; see
+`docs/PERFORMANCE_BUDGET.md` §4 2026-09-04. Font note: the image does NOT use Jost (DESIGN.md's one
+typeface) — sharp's bundled SVG renderer has no working custom-font embedding path on this build
+machine (documented in the script's own header comment); "Segoe UI" was used as the closest
+resolvable system sans, a narrow exception scoped to this one static asset, not the rendered site.
+See D-128.
+
 **What.** The homepage, services index, all 4 service pages, packages, about, contact, gallery
 index, and all 3 hubs ship **no** `og:image` and **no** `twitter:image`. `twitter:card` is
 `summary` (small card) rather than `summary_large_image`. Only the 11 `/gallery/{slug}/` pages have
@@ -409,7 +428,7 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 
 ### Phase 2 — the metadata layer (1–2 sittings)
 - [x] **#19 · H-2** — `lib/metadata.ts` `buildMetadata()`; per-page `og:url` = canonical. *(Phase 2, step 4. Shipped 2026-09-04 — unblocks #20.)*
-- [ ] **#20 · H-3** — `og:image` / `twitter:image` sitewide; `summary_large_image`. *(Phase 2, step 5. **Depends on #19.**)*
+- [x] **#20 · H-3** — `og:image` / `twitter:image` sitewide; `summary_large_image`. *(Phase 2, step 5. Shipped 2026-09-04.)*
 - [x] **#21 · M-5** — trim the two over-length `<title>` tags. *(Phase 2, step 6. Shipped 2026-09-04, through the #19 `buildMetadata()` helper.)*
 
 ### Phase 3 — structured data + sitemap (1–2 sittings)

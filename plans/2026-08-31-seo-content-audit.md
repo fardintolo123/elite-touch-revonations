@@ -194,7 +194,7 @@ framing and the size basis in the price row (D-07/D-60). Must stay responsive �
 real `<table>` above them, with Basic / Standard / Premium as columns and price, size basis, tiling,
 electrical, vanity/cabinet, shower screen and Premium-only extras as rows.
 
-### C-7 · Buyer-objection coverage is incomplete  ·  LOW–MEDIUM
+### C-7 · Buyer-objection coverage is incomplete  ·  LOW–MEDIUM  ·  ✅ DONE 2026-09-04 (issue #34, D-126)
 
 `docs/CONTENT_QUALITY_CHECKLIST.md` §5 names five real hesitations from the owner's own draft copy.
 Current coverage:
@@ -202,12 +202,15 @@ Current coverage:
 - ✅ "waterproofing behind the wall terrifies me" → AS 3740 + primer + 2 coats + certificate is prominent.
 - ⚠️ "I don't trust 'family business' claims" → the About page names all four with credentials, but
   doesn't *directly* answer the skepticism.
-- ❌ "we have nowhere else to wash if it runs long" → build durations are stated; the practical
-  "here's how we minimise the days you're without a bathroom / what to plan for" answer is missing.
-- ❌ "looks like the brochure but feels wrong to live in" → not addressed.
+- ✅ "we have nowhere else to wash if it runs long" → `bathroom-renovations` FAQ: "What happens if
+  ours is the only bathroom in the house?"
+- ✅ "looks like the brochure but feels wrong to live in" → `bathroom-renovations` FAQ: "How do you
+  make sure the finished bathroom works day to day, not just in photos?"
 
 **Recommended solution.** Work the two unaddressed objections into the service-page FAQ blocks from
 C-2 and/or a short "living through it" section. **Priority:** Low–Medium. **Effort:** S. **Dependency:** C-2.
+**Remaining, not in scope of #34:** the "family business" skepticism is still only indirectly answered
+on `/about-us/` — a candidate for a future small pass, not blocking.
 
 ### C-8 · Gallery project pages are thin on the story  ·  LOW — CLOSED 2026-09-01
 

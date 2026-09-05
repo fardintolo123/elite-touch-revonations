@@ -73,6 +73,31 @@ export const metadata: Metadata = {
     locale: 'en_AU',
     siteName: businessInfo.name,
     url: businessInfo.siteUrl,
+    /**
+     * Sitewide default share image (issue #20 / tech-audit H-3). Every page's
+     * `generateMetadata`/`metadata` now goes through `lib/metadata.ts`
+     * `buildMetadata()`, which sets the SAME default on every page unless it
+     * passes its own `images` — this copy only matters as the fallback for
+     * something outside that helper (there is nothing today, but Next
+     * requires a `Metadata` object here regardless).
+     */
+    images: [
+      {
+        url: '/og/default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Elite Touch Renovations — bathroom renovations across Sydney',
+      },
+    ],
+  },
+  /**
+   * `summary_large_image` needs an image to be meaningful — every page has
+   * one now via `buildMetadata()`. `twitter.title`/`description`/`images`
+   * are deliberately left unset so they auto-fill per-page from `openGraph`
+   * (see `lib/metadata.ts`); only `card` needs to be sitewide.
+   */
+  twitter: {
+    card: 'summary_large_image',
   },
   formatDetection: {
     telephone: true,
