@@ -54,7 +54,9 @@ export async function generateMetadata({
 
   return buildMetadata({
     path: `/gallery/${project.slug}/`,
-    title: project.name,
+    // `metaTitle` overrides `name` only where `name` + the template tail would
+    // exceed 60 chars (tech-audit M-5) — the H1 and schema still use `name`.
+    title: 'metaTitle' in project ? project.metaTitle : project.name,
     description,
     // These pages are de-facto case studies — real photos, real suburb, real
     // scope — so `article` is a truer type than the sitewide `website`
@@ -146,10 +148,14 @@ export default async function ProjectPage({
                   alt={image.alt}
                   width={image.width}
                   height={image.height}
+                  /* Measured rendered width live (Playwright, issue #27):
+                     wide (index 0, LCP): 390→350, 768→704, 1024+→1200
+                     (caps at the container max, doesn't stay 100vw).
+                     grid (index 1+): 390→350, 768→340, 1024+→588. */
                   sizes={
                     index === 0
-                      ? '(min-width: 1024px) 100vw, 100vw'
-                      : '(min-width: 1024px) 50vw, 100vw'
+                      ? '(min-width: 1024px) 1200px, 100vw'
+                      : '(min-width: 768px) 588px, 100vw'
                   }
                   /* First image is the LCP candidate. The rest stay lazy —
                      eager MARKUP, lazy DOWNLOADS. */

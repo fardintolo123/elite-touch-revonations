@@ -205,7 +205,10 @@ export default function HomePage() {
                   alt={heroImage.alt}
                   width={heroImage.width}
                   height={heroImage.height}
-                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  /* Measured rendered width live (Playwright, issue #27):
+                     390→350, 768→704, 1024+→483 (caps, doesn't keep
+                     growing with viewport past the 2-col layout split). */
+                  sizes="(min-width: 1024px) 483px, 100vw"
                   priority
                 />
               </div>

@@ -383,6 +383,15 @@ hand-edit, don't regex).
   publicly fetchable (D-98). Run PageSpeed Insights (mobile) + a CrUX check against
   `https://www.elitetouchrenovations.au/` and record it in §4 of the budget doc. Not doable from
   this session (no Google API creds, non-interactive).
+  **Partially actioned 2026-09-07 via #27:** the core PSI/CrUX live-domain run is still blocked
+  (no Google API creds this session; the public `pagespeed.web.dev` report is a JS app that will
+  not render results to a non-interactive fetch). But the issue's cross-referenced sub-scope
+  (`/seo-images` I-4 — the uncapped `100vw`/`40vw`/`33vw` `sizes` attributes on the homepage hero,
+  `/gallery/` cards, and `/gallery/{slug}/` photo grid) was measured live with Playwright and fixed
+  in `app/page.tsx`, `app/gallery/page.tsx`, and `app/gallery/[slug]/page.tsx` — see
+  `docs/PERFORMANCE_BUDGET.md` §4, 2026-09-07 row. The L-7 390px body-text eyeball
+  (`.et-body-sm`/`.et-caption`) was also done in the same pass: both read comfortably, no change
+  needed. Still open: the actual live PSI + CrUX numbers.
 
 ---
 
@@ -458,7 +467,7 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 ### Phase 4 — hardening + measurement (owner / creds gates)
 - [ ] **#25 · M-4** — report-only CSP + `Permissions-Policy`. *(Phase 4, step 10. **Blocked: owner awareness before enforce.**)*
 - [ ] **#26 · L-3** — enable AVIF; measure LCP + build time before/after. *(Phase 4, step 11.)*
-- [ ] **#27 · L-8** — live-domain PSI + CrUX into `PERFORMANCE_BUDGET.md` §4. *(Phase 4, step 12. **Blocked: Google API creds / interactive.** Do first if the owner wants a "where are we really" number — no code.)*
+- [~] **#27 · L-8** — live-domain PSI + CrUX into `PERFORMANCE_BUDGET.md` §4. *(Phase 4, step 12. **PSI/CrUX numbers still blocked: Google API creds / interactive.** Cross-referenced sub-scope shipped 2026-09-07 — `sizes` fix on homepage hero, `/gallery/` cards, `/gallery/{slug}/` photo grid, plus the L-7 390px body-text eyeball; see `PERFORMANCE_BUDGET.md` §4. Issue stays open for the live PSI + CrUX run.)*
 - [x] **#28 · L-2** — IndexNow key + deploy ping. *(Phase 4, step 13. Owner approved 2026-09-05 — shipped: `public/cc9872d076b5d91a53ed1e093272b6be.txt` + `scripts/indexnow-ping.mjs` as `postbuild`. Verified 202 Accepted against production.)*
 
 **Not issued** (deliberately — see "Not in this plan" above): the six Tier-1 suburb pages (content

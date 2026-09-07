@@ -122,7 +122,10 @@ export default function GalleryPage() {
                       alt={cover.alt}
                       width={cover.width}
                       height={cover.height}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      /* Measured rendered width live (Playwright, issue #27):
+                         390→310, 768→664, 1024+→344 (3-col grid caps at
+                         the 1200px container, doesn't keep growing). */
+                      sizes="(min-width: 1024px) 344px, (min-width: 768px) 664px, 100vw"
                       priority={index === 0}
                       loading={index === 0 ? 'eager' : 'lazy'}
                     />
