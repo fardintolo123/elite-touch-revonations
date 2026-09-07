@@ -81,6 +81,13 @@ const nextConfig: NextConfig = {
   // Preserve the trailing-slash URL form the WordPress site is indexed under.
   trailingSlash: true,
 
+  // Prefer AVIF for optimized images; the long TTL keeps generated variants
+  // cached while source assets remain versioned by their URL.
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000,
+  },
+
   // Don't advertise the framework.
   poweredByHeader: false,
 
@@ -109,6 +116,15 @@ const nextConfig: NextConfig = {
           {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Content-Security-Policy-Report-Only',
+            value:
+              "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.googletagmanager.com",
           },
         ],
       },
