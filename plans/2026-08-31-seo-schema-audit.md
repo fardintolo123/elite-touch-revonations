@@ -31,7 +31,7 @@ per-page `Service`/`ImageObject` nodes, and a handful of recommended `Organizati
 | `WebSite` | `app/layout.tsx` → every page | JSON-LD, SSR | ✅ valid | Minimal (name + url). No `SearchAction` — correct, there is no on-site search (D-92). |
 | `BreadcrumbList` | `components/BreadcrumbSchema.tsx` → all 8 non-home page types | JSON-LD, SSR | ✅ valid | `name` + absolute `item` on every `ListItem`, sequential `position`. Google-compliant. Home correctly has none. |
 | `FAQPage` | `components/FaqSchema.tsx` → `/packages/`, `/services/powder-room-renovations/` | JSON-LD, SSR | ⚠️ valid but no longer a rich result | See F-1 below. Question/answer text matches the visible `<details>` block exactly (no hidden-content mismatch). |
-| `Service` (dedicated, per page) | — | — | ❌ missing | Only a generic `{"@type":"Service","name":"Bathroom renovation"}` nested inside the sitewide `makesOffer`, repeated identically on every page. See S-1. |
+| `Service` (dedicated, per page) | `lib/schema.ts` → service and hub routes | JSON-LD, SSR | ✅ shipped | Citywide service nodes ship on the four service pages (#22); region-scoped nodes ship on the three published hubs (#31). |
 | `ImageObject` (gallery photos) | — | — | ❌ missing | 61 project photos, all with hand-written factual alt text ready to use as `caption`. See S-2. |
 | `Review` / `AggregateRating` | — | — | ⛔ deliberately omitted | Correct (D-03 / D-52) — 17 Google reviews vs 19 testimonials, and the 5.0/17 is unverified live. Unblocks once the GBP is verified. |
 | Microdata / RDFa | — | — | ✅ none | JSON-LD only, as Google prefers. |
@@ -93,12 +93,12 @@ single highest-leverage schema improvement available.
 `lib/schema.ts` builder). **Risk:** low — same facts, better wired. Validate with the Rich Results
 Test + Schema.org validator before/after.
 
-### S-1 · No dedicated `Service` schema on the four service pages or the three hubs
+### S-1 · Dedicated `Service` schema on the four service pages and three hubs
 
-Confirmed (technical audit M-1, local audit #5). Schema-specific detail:
+**Shipped 2026-09-07 via #22 and #31 (D-134, D-136).** Schema-specific detail:
 
-- The only `Service` node today is `makesOffer.itemOffered` — generic, name "Bathroom renovation",
-  present on *every* page including the About and Contact pages, which is noise.
+- The business node now uses `hasOfferCatalog` for the four confirmed services; the old generic
+  `makesOffer.itemOffered` structure is gone.
 - **Replace with a cleaner structure:**
   - On the business node, an `hasOfferCatalog: { "@type": "OfferCatalog", "name": "Bathroom
     renovation services", "itemListElement": [ …one Offer per service… ] }` — expresses all four
@@ -110,9 +110,9 @@ Confirmed (technical audit M-1, local audit #5). Schema-specific detail:
     "AdministrativeArea", "name": "North Shore, Sydney"}`) — this is what makes a "Bathroom
     Renovations North Shore" page assert its own geographic scope.
 
-**Priority:** High (it is the #1 local-organic factor's schema backing). **Effort:** M.
-**Files:** new `components/ServiceSchema.tsx` or `lib/schema.ts`, `app/services/[slug]/page.tsx`,
-`app/services/[slug]/[location]/page.tsx`, `app/layout.tsx`.
+**Status:** Complete. `lib/schema.ts` owns the shared builders, and the connected `@graph` emits
+the citywide service nodes and the three region-scoped hub nodes. Served HTML verification confirmed
+one regional node on each published hub and a four-entry `OfferCatalog` on the business node.
 
 ### S-2 · No `ImageObject` on gallery project pages
 
@@ -129,6 +129,11 @@ captioned, attributed images to cite. The alt text is already written — this i
 **Dependency:** cleaner if F-2's `@graph` lands first (so `creator` can reference `#business`).
 
 ### S-3 · `Organization` recommended properties missing
+
+**Shipped 2026-09-07 via issue #32.** The connected business node now emits the
+recommended `logo`, `image`, `priceRange`, `contactPoint`, coarse `geo`, and E.164
+`telephone`, all sourced from `lib/businessInfo.ts`. Street address and review
+schema remain deliberately omitted; the separately verified GBP rating is issue #33.
 
 Confirmed (local audit §6). Schema-specific list — all belong on the one business node:
 

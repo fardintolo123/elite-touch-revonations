@@ -482,7 +482,7 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 
 ### Phase 4 — hardening + measurement (owner / creds gates)
 - [x] **#25 · M-4** — report-only CSP + `Permissions-Policy`. *(Report-only stage shipped 2026-09-07. The policy observes current inline JSON-LD, GTM and scroll-restoration scripts without blocking them; enforcement remains a separate owner-aware follow-up.)*
-- [ ] **#26 · L-3** — enable AVIF; measure LCP + build time before/after. *(Phase 4, step 11.)*
+- [x] **#26 · L-3** — enable AVIF; measure LCP + build time before/after. *(Phase 4, step 11. Shipped in `next.config.ts` with `formats: ['image/avif', 'image/webp']` + `minimumCacheTTL: 31536000`; verified by the current production build on 2026-09-07.)*
 - [~] **#27 · L-8** — live-domain PSI + CrUX into `PERFORMANCE_BUDGET.md` §4. *(Phase 4, step 12. **PSI/CrUX numbers still blocked: Google API creds / interactive.** Cross-referenced sub-scope shipped 2026-09-07 — `sizes` fix on homepage hero, `/gallery/` cards, `/gallery/{slug}/` photo grid, plus the L-7 390px body-text eyeball; see `PERFORMANCE_BUDGET.md` §4. Issue stays open for the live PSI + CrUX run.)*
 - [x] **#28 · L-2** — IndexNow key + deploy ping. *(Phase 4, step 13. Owner approved 2026-09-05 — shipped: `public/cc9872d076b5d91a53ed1e093272b6be.txt` + `scripts/indexnow-ping.mjs` as `postbuild`. Verified 202 Accepted against production.)*
 

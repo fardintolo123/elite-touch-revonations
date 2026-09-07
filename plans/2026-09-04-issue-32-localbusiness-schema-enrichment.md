@@ -1,6 +1,6 @@
 # Issue #32 - LocalBusiness schema enrichment
 
-**Status:** in progress
+**Status:** complete
 **Date:** 2026-09-04
 
 ## Routing
@@ -38,11 +38,11 @@ E.164 phone)" from schema audit S-3 and local audit action #6.
 - [x] Task routed; mapped docs read.
 - [x] `DECISIONS.md` checked.
 - [x] Existing schema audited before editing.
-- [ ] `lib/businessInfo.ts` enriched with schema-only factual fields.
-- [ ] `app/layout.tsx` emits the issue #32 fields.
-- [ ] No invented business facts; street/postcode/rating/reviews still omitted.
-- [ ] Typecheck clean.
-- [ ] Build green; route count does not drop.
-- [ ] Served HTML JSON-LD contains the enriched fields.
-- [ ] Readability check green.
-- [ ] `DECISIONS.md` records the implementation.
+- [x] `lib/businessInfo.ts` enriched with schema-only factual fields.
+- [x] The connected business node emits the issue #32 fields from `lib/schema.ts`.
+- [x] No invented business facts; street/postcode/review schema remain omitted. GBP rating is separately governed by issue #33 and current verified data.
+- [x] Typecheck clean.
+- [x] Build green; route count does not drop (32 routes).
+- [x] Served HTML JSON-LD contains the enriched fields.
+- [x] Readability check green (26/26 pages pass).
+- [x] `DECISIONS.md` records the implementation.

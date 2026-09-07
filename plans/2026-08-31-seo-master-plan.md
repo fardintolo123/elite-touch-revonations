@@ -62,7 +62,7 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | 404 double-robots meta + robots `Host:` | tech L-1/L-4 | ✅ **#18** |
 | `og:url` = homepage sitewide → `buildMetadata()` helper | tech H-2, page | ✅ **#19** shipped 2026-09-04 |
 | No `og:image` / `twitter:image` sitewide | tech H-3, page | ✅ **#20** shipped 2026-09-04 |
-| Two `<title>` tags over length | tech M-5 | ✅ **#21** shipped 2026-09-04 |
+| Two `<title>` tags over length | tech M-5 | ✅ **#21** shipped 2026-09-04 (+ 4 more titles trimmed 2026-09-07, D-133 — M-5 fully done) |
 | No per-page `Service` schema (4 service pages) | tech M-1, schema S-1, local #5 | ✅ **#22** (needs 🆕 #29 for the `@id` it references) |
 | Sitemap `lastmod` = build time; add `updated` field | tech M-2 | ✅ **#23** shipped 2026-09-03 via #41 |
 | `ImageObject` + `og:type:article` on gallery pages | tech L-5/L-6, schema S-2 | ✅ **#24** shipped 2026-09-04 (L-6 via #38 2026-09-03, L-5 via #24) |
@@ -72,8 +72,8 @@ pages ≥ Flesch 60 (D-109); `llms.txt` live (D-90).
 | IndexNow key + deploy ping | tech L-2 | ✅ **#28** |
 | **Verify Google Business Profile** (category, rating, count, NAP) | local #1 | 🆕 **#29** (owner) |
 | **Schema: consolidate into `@graph` + `@id` + page-type nodes** | schema F-2/S-4, local #5, geo | 🆕 **#30** |
-| **Schema: `Service` on the 3 hubs + `OfferCatalog`** | schema S-1, local #5 | 🆕 **#31** |
-| **Enrich LocalBusiness node** (geo, priceRange, contactPoint, logo, image, E.164 phone) | schema S-3, local #6 | 🆕 **#32** |
+| **Schema: `Service` on the 3 hubs + `OfferCatalog`** | schema S-1, local #5 | ✅ **#31** shipped 2026-09-07 (D-136) |
+| **Enrich LocalBusiness node** (geo, priceRange, contactPoint, logo, image, E.164 phone) | schema S-3, local #6 | ✅ **#32** shipped 2026-09-07 |
 | **Show the Google rating on-site + `aggregateRating`** | local #3 | 🆕 **#33** (depends #29) |
 | **Service pages: real per-service content + FAQ + answer-first** (bathroom/ensuite/laundry) | content C-2/C-3/C-7, local #14, geo G-2, page | ✅ **#34** shipped 2026-09-04 (D-126); `lib/businessInfo.ts` |
 | **Hubs: de-template — local content, local FAQ, testimonial, answer-first, packages link** | local #4, content C-3, geo G-2, page | ✅ **#35** shipped 2026-09-03 (D-121); `lib/hubContent.ts` |
@@ -118,8 +118,8 @@ that can run in one focused pass. **P0/P1/P2/P3** is the per-issue priority.
 | ✅ **#20** `og:image` sitewide | P1 | shipped 2026-09-04, incl. dedicated packages + 3-hub images same day |
 | **#32** enrich LocalBusiness node | P1 | #30 (soft), #20 done (image asset, soft) |
 | **#22** per-page `Service` schema | P1 | #30 (needs the `@id` it references) |
-| **#31** hub `Service` + `OfferCatalog` | P2 | #30, #22 |
-| ✅ **#21** trim long titles | P2 | shipped 2026-09-04 |
+| ✅ **#31** hub `Service` + `OfferCatalog` | P2 | shipped 2026-09-07 (D-136); depended on #30, #22 |
+| ✅ **#21** trim long titles | P2 | shipped 2026-09-04; 4 more titles trimmed 2026-09-07 (D-133) |
 | ✅ **#38** keyword-weak titles/H1 tidy | P2 | shipped 2026-09-02–03 (edited direct — #19 landed after; incl. `og:type`/L-6; L-5 `ImageObject` shipped separately in #24) |
 
 ### Phase C — content depth (the biggest organic lever)

@@ -63,8 +63,8 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 
 | Element | State |
 |---|---|
-| Title / meta / H1 | ✅ all carry the region + service + warranty. ⚠️ **spotted 2026-09-05:** the served `<title>` runs **61–62 chars** ("Bathroom Renovations Eastern Suburbs \| Elite Touch Renovations" = 62) — a few over the 60 guide, not caught by M-5 / #21 (which was scoped to the two titles the finding named). Low priority: `region.name` + the 26-char brand tail leaves ~8 chars, so a fix means either a per-hub `metaTitle` (as `laundry-renovations` got in #21) or shortening the tail — not worth a change on its own; fold into the next metadata pass. |
-| Schema | ✅ BreadcrumbList; ❌ no per-area `Service` node → schema **S-1** |
+| Title / meta / H1 | ✅ all carry the region + service + warranty. **Titles trimmed 2026-09-07 (M-5 completion / D-133):** `HUB_META_TITLE` slug map → `"{region} bathroom renovation"` on all 3 — Hills District 60, North Shore 57, Eastern Suburbs 61 (1 over the soft guide, kept deliberately vs. abbreviating "renovation"). H1s unchanged. |
+| Schema | ✅ BreadcrumbList + region-scoped `Service` node (`#31`, D-136) |
 | Content | ⚠️ **largely swappable** — real local *photos* save it, prose doesn't → local **#4** |
 | Local detail / FAQ / map | ❌ none → local **#4 / #10** |
 | Internal links | ❌ **links Tier-1 suburbs that 404** (Hills ×3, Eastern ×1) → **H-1**; links no sibling hubs, no `/packages/` → local **#7** |
@@ -85,7 +85,7 @@ Scores are on-page only (0–100). "Refs" point to the audit + finding ID that o
 
 | Element | State |
 |---|---|
-| Title | ✅ = `project.name` + template. ⚠️ **spotted 2026-09-05:** the two longest render at **64–66 chars** ("Artarmon bathroom and ensuite renovation \| Elite Touch Renovations" = 66) — a few over the 60 guide. Low priority, same disposition as the hub-title note above; the other 9 are 45–58. |
+| Title | ✅ = `project.name` + template. **2 over-length titles trimmed 2026-09-07 (M-5 completion / D-133)** via a new optional `Project.metaTitle`: `the-rocks-bathroom` "The Rocks bathroom renovation" (55, was 64), `artarmon-bathroom-ensuite` "Artarmon bathroom and ensuite" (55, was 66). H1/schema keep `name`. Other 9 are 52–58. |
 | Meta description | ✅ **fixed — M-3 / #39, 2026-09-02.** Optional `metaDescription` field (≤155) with trimmed-`blurb` fallback; all 11 now 135–147 chars, `blurb` still the visible lead. |
 | H1 | ✅ full project name |
 | Headings | ⚠️ the "Other work" grid renders 10× `<h3>` "Bathroom"/"Ensuite" — deliberate readability fix (D-109), odd in an outline view but acceptable; leave it |

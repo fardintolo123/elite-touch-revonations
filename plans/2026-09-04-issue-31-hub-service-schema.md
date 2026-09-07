@@ -5,7 +5,7 @@
 
 ## Plan
 
-Implement the issue #31 slice without claiming the broader #30 `@graph` migration or #22 service-page schema are complete.
+Issue #31 is implemented on top of the now-shipped #30 `@graph` migration and #22 service-page schema.
 
 1. Add stable schema IDs and JSON-LD helpers in a shared schema module.
 2. Replace the sitewide generic `makesOffer` service with a truthful four-service `hasOfferCatalog`.
@@ -21,6 +21,6 @@ Implement the issue #31 slice without claiming the broader #30 `@graph` migratio
 - [x] LocalBusiness node uses `hasOfferCatalog` for the four confirmed services.
 - [x] Published hubs emit region-scoped `Service` JSON-LD.
 - [x] `npm run typecheck` passes.
-- [ ] `npm run build` passes without a route-count drop.
-- [ ] Built HTML check confirms one region-scoped `Service` node on each published hub.
-- [ ] Plans and `DECISIONS.md` updated.
+- [x] `npm run build` passes without a route-count drop.
+- [x] Built HTML check confirms one region-scoped `Service` node on each published hub.
+- [x] Plans and `DECISIONS.md` updated.

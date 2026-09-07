@@ -90,11 +90,11 @@ paragraph. This is materially richer detail than the three existing text-only ca
    mirror, bathroom+ensuite, 4 weeks, $48,000) matches the **case-study** description closely and
    the **gallery** photos not at all. Does not resolve K13 on its own — flagging as new evidence,
    not auto-merging.
-6. **Little Bay and Enmore are not in `service-areas.json` at all** (checked: absent from every
-   region). Not a blocker for a gallery entry (D-64's precedent doesn't require the suburb to be
-   in the file), but Little Bay could be added to the published Eastern Suburbs hub as Tier 2 —
-   optional, needs its postcode (2036) verified the way D-72 verified its own suburb list before
-   being added.
+6. ~~Little Bay and Enmore are not in `service-areas.json` at all~~ — **UPDATE 2026-09-05:** Little
+   Bay is now present (postcode 2036, tier 2, Eastern Suburbs — confirmed against Australia Post's
+   postcode lookup, matching the D-72 verification standard). Added by other work on the repo since
+   this plan was written; not a blocker either way, since a gallery entry never required the suburb
+   to be in this file (D-64 precedent). Enmore is still absent, but it's held regardless per D-101.
 
 ## Recommendation once consent is confirmed
 
