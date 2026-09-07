@@ -36,6 +36,22 @@ const HUB_OG_IMAGE: Record<string, string> = {
 }
 
 /**
+ * `<title>` for each hub (tech-audit M-5). "Bathroom Renovations {region}" +
+ * the 26-char " | Elite Touch Renovations" tail runs 61-62 chars for two of
+ * the three regions — over the 60-char SERP guide. "{region} bathroom
+ * renovation" keeps the region and the primary keyword, reads as one
+ * phrase, and fits 60 for two of three. Eastern Suburbs lands at 61 — one
+ * over the soft guide, kept deliberately rather than abbreviate "renovation"
+ * to "reno" (rejected sitewide in issue #21) or drop the keyword. The H1
+ * ("Bathroom renovations on Sydney's {region}") is unaffected.
+ */
+const HUB_META_TITLE: Record<string, string> = {
+  'hills-district': 'Hills District bathroom renovation',
+  'eastern-suburbs': 'Eastern Suburbs bathroom renovation',
+  'north-shore': 'North Shore bathroom renovation',
+}
+
+/**
  * Regional hub pages: `/services/bathroom-renovations/{region}/`
  *
  * D-71 settled the route collision between D-11 and D-44: locations are
@@ -80,7 +96,7 @@ export async function generateMetadata({
 
   return buildMetadata({
     path: `/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
-    title: `Bathroom Renovations ${region.name}`,
+    title: HUB_META_TITLE[region.slug] ?? `Bathroom Renovations ${region.name}`,
     description: `Bathroom renovations across Sydney's ${region.name} by Elite Touch Renovations. Free on-site measure, fixed-scope written quotes, waterproofing to AS 3740 and a ${businessInfo.workmanshipWarrantyYears}-year workmanship warranty.`,
     images: hubImage
       ? [

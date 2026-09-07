@@ -52,6 +52,15 @@ export type Project = {
   /** Suburb as the owner supplied it. */
   suburb: string
   name: string
+  /**
+   * `<title>` tag override (tech-audit M-5). Optional: when absent, the page
+   * uses `name` + the " | Elite Touch Renovations" template tail. Only set it
+   * where `name` + that 26-char tail would exceed the 60-char SERP guide
+   * (`docs/SEO_AEO_GEO_CHECKLIST.md`) — currently `the-rocks-bathroom` and
+   * `artarmon-bathroom-ensuite`. The H1, the breadcrumb schema and the
+   * `/gallery/` card all keep using `name`; only the `<title>` changes.
+   */
+  metaTitle?: string
   /** Which of the four services this job was. */
   service: string
   /** Last meaningful content review for the project page and sitemap lastmod. */
@@ -493,6 +502,9 @@ export const projects: readonly Project[] = [
     slug: 'the-rocks-bathroom',
     suburb: 'The Rocks',
     name: 'The Rocks heritage bathroom renovation',
+    // `name` + tail = 64 chars; drop "heritage" for the <title> only — the H1
+    // and the "About this project" copy keep it (tech-audit M-5).
+    metaTitle: 'The Rocks bathroom renovation',
     service: 'Bathroom renovation',
     updated: '2026-08-31',
     completedByYear: 2026,
@@ -533,6 +545,9 @@ export const projects: readonly Project[] = [
     slug: 'artarmon-bathroom-ensuite',
     suburb: 'Artarmon',
     name: 'Artarmon bathroom and ensuite renovation',
+    // `name` + tail = 66 chars; drop the trailing "renovation" for the
+    // <title> only — the H1 keeps the full name (tech-audit M-5).
+    metaTitle: 'Artarmon bathroom and ensuite',
     service: 'Ensuite renovation',
     updated: '2026-08-31',
     completedByYear: 2026,

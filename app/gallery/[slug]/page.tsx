@@ -56,7 +56,7 @@ export async function generateMetadata({
     path: `/gallery/${project.slug}/`,
     // `metaTitle` overrides `name` only where `name` + the template tail would
     // exceed 60 chars (tech-audit M-5) — the H1 and schema still use `name`.
-    title: 'metaTitle' in project ? project.metaTitle : project.name,
+    title: project.metaTitle ?? project.name,
     description,
     // These pages are de-facto case studies — real photos, real suburb, real
     // scope — so `article` is a truer type than the sitewide `website`
