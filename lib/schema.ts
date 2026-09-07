@@ -30,6 +30,8 @@ export const schemaIds = {
   business: absoluteUrl(businessInfo.schema.businessIdPath),
   website: absoluteUrl(businessInfo.schema.websiteIdPath),
   serviceCatalog: `${businessInfo.siteUrl}/#bathroom-renovation-services`,
+  service: (service: Service) =>
+    `${absoluteUrl(`/services/${service.slug}/`)}#service`,
   hubService: (service: Service, region: Region) =>
     `${absoluteUrl(`/services/${service.slug}/${region.slug}/`)}#service`,
   webpage: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#webpage`,
@@ -336,6 +338,37 @@ export function buildFaqNode({
   }
 }
 
+/**
+ * Per-service `Service` node for the 4 plain `/services/{slug}/` pages
+ * (issue #22 / tech-audit M-1). `provider` references the business node by
+ * `@id` instead of duplicating it, made possible by issue #30's `@graph`
+ * consolidation. Sibling to `buildHubServiceNode`, which does the same job
+ * for the 3 regional hub pages with a suburb-scoped `areaServed` — this one
+ * is citywide, matching what the un-regioned service page actually offers.
+ */
+export function buildServiceNode({ service }: { service: Service }): SchemaNode {
+  const path = `/services/${service.slug}/`
+
+  return {
+    '@type': 'Service',
+    '@id': schemaIds.service(service),
+    name: service.title,
+    description: service.summary,
+    serviceType: 'Bathroom renovation',
+    provider: { '@id': schemaIds.business },
+    url: absoluteUrl(path),
+    areaServed: {
+      '@type': 'City',
+      name: businessInfo.serviceArea.city,
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: businessInfo.serviceArea.state,
+        addressCountry: businessInfo.serviceArea.country,
+      },
+    },
+  }
+}
+
 export function buildHubServiceNode({
   service,
   region,
@@ -406,6 +439,7 @@ export function buildPageGraph({
   faqs,
   project,
   primaryImage,
+  service,
   hubService,
 }: {
   path: string
@@ -416,11 +450,16 @@ export function buildPageGraph({
   faqs?: readonly SchemaFaqItem[]
   project?: Project
   primaryImage?: SchemaImage
+  service?: Service
   hubService?: { service: Service; region: Region }
 }) {
   const hasFaqs = Boolean(faqs && faqs.length > 0)
   const projectId = project ? schemaIds.creativeWork(path) : undefined
-  const partIds = hasFaqs ? [schemaIds.faq(path)] : []
+  const serviceId = service ? schemaIds.service(service) : undefined
+  const partIds = [
+    ...(hasFaqs ? [schemaIds.faq(path)] : []),
+    ...(serviceId ? [serviceId] : []),
+  ]
 
   return schemaGraph([
     buildBusinessNode(),
@@ -441,6 +480,7 @@ export function buildPageGraph({
     }),
     ...(breadcrumbs ? [buildBreadcrumbNode({ path, items: breadcrumbs })] : []),
     ...(faqs && faqs.length > 0 ? [buildFaqNode({ path, items: faqs })] : []),
+    ...(service ? [buildServiceNode({ service })] : []),
     ...(hubService ? [buildHubServiceNode(hubService)] : []),
     ...(project ? [buildProjectNode({ path, project })] : []),
   ])

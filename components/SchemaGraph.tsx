@@ -19,6 +19,7 @@ export function SchemaGraph({
   faqs,
   project,
   primaryImage,
+  service,
   hubService,
 }: {
   path: string
@@ -29,6 +30,7 @@ export function SchemaGraph({
   faqs?: readonly SchemaFaqItem[]
   project?: Project
   primaryImage?: SchemaImage
+  service?: Service
   hubService?: { service: Service; region: Region }
 }) {
   const graph = buildPageGraph({
@@ -40,6 +42,7 @@ export function SchemaGraph({
     faqs,
     project,
     primaryImage,
+    service,
     hubService,
   })
 

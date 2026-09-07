@@ -147,6 +147,7 @@ export default async function ServicePage({
           },
         ]}
         faqs={faqs}
+        service={service}
       />
       <PageHero
         eyebrow={service.title}

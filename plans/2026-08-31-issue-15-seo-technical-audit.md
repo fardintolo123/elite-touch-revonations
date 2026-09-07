@@ -236,6 +236,16 @@ Sydney, `serviceType` = "Bathroom renovation" — mirroring the existing `Breadc
 `FaqSchema` component pattern. Files: new `components/ServiceSchema.tsx`, `app/services/[slug]/page.tsx`.
 Effort: S. Risk: low.
 
+**SHIPPED / #22 2026-09-07.** `lib/schema.ts` gained `buildServiceNode()` (sibling to the
+existing `buildHubServiceNode`, citywide `areaServed` instead of a region) and a
+`schemaIds.service()` id helper; `buildPageGraph()` / `<SchemaGraph>` gained an optional `service`
+prop; `app/services/[slug]/page.tsx` passes its own service record. `provider` is an `@id`
+reference to the LocalBusiness node (made possible by #30's `@graph` consolidation, D-131), not a
+duplicate. The standalone `components/ServiceSchema.tsx` file this finding originally proposed was
+not recreated — it existed briefly during #31 and was retired by #30 in favour of one shared
+builder pattern in `lib/schema.ts`; that pattern is used here instead, for the same reason. See
+D-134.
+
 #### M-2 · `sitemap.xml` `lastmod` is the build timestamp on every URL
 
 `app/sitemap.ts` sets `const lastModified = new Date()` and applies it to all 24 entries. The
@@ -301,12 +311,17 @@ breadcrumb schema all keep it. The other three services are unaffected — confi
 unchanged. Verified against a fresh build: both titles ≤ 60, `og:title` matches (via #19's
 `buildMetadata()`), `npm run check:readability` 26/26 ≥ 60. See D-127.
 
-**Not covered by #21 (spotted 2026-09-05, low priority):** 4 more titles also run 61–66 chars — the
-2 longest gallery project names ("Artarmon bathroom and ensuite renovation \| …" = 66) and 2 of the
-3 hub region titles ("Bathroom Renovations Eastern Suburbs \| …" = 62). M-5 as written named only
-the `/packages/` and `laundry` titles; these were left untouched. Each needs a per-record `metaTitle`
-(the same pattern `laundry-renovations` now uses) or a shorter brand tail — fold into the next
-metadata pass rather than a standalone change. Flagged in `plans/2026-08-31-seo-page-audit.md` §4/§6.
+**Also SHIPPED 2026-09-07 (M-5 completion, D-133):** the 4 more titles spotted 2026-09-05 running
+61–66 chars are now trimmed. Gallery: `the-rocks-bathroom` → `metaTitle: 'The Rocks bathroom
+renovation'` (55, was 64); `artarmon-bathroom-ensuite` → `metaTitle: 'Artarmon bathroom and ensuite'`
+(55, was 66) — new optional `Project.metaTitle` field, read as `project.metaTitle ?? project.name` in
+`app/gallery/[slug]/page.tsx`, H1/schema unchanged. Hubs: a `HUB_META_TITLE` slug map in
+`app/services/[slug]/[location]/page.tsx` gives all 3 the `"{region} bathroom renovation"` pattern —
+Hills District 60 (was 61), North Shore 57 (was 58), Eastern Suburbs **61** (was 62) — Eastern
+Suburbs kept 1 over the soft guide rather than abbreviate "renovation" → "reno" (rejected sitewide in
+#21) or drop the keyword. Verified against a fresh build: `npx tsc --noEmit` clean, `npm run build`
+green (32 routes), served `<title>`s as stated, all H1s byte-identical, `npm run check:readability`
+26/26 ≥ 60.
 
 `Bathroom and Laundry Renovations Sydney | Elite Touch Renovations` = 63 chars (over the 60 guide
 limit); `Bathroom Renovation Cost & Packages | Elite Touch Renovations` = 60 and the `&` widens it
@@ -418,7 +433,8 @@ before/after. Nothing here has been implemented.
 
 ### Phase 3 — structured data + sitemap (1–2 sittings)
 7. **M-1** — `components/ServiceSchema.tsx`; add to the 4 service pages; validate with the Rich
-   Results Test.
+   Results Test. **Shipped 2026-09-07** (via `lib/schema.ts` `buildServiceNode()` + `<SchemaGraph>`,
+   not a standalone component — see finding write-up and D-134).
 8. **M-2** — real per-content `lastmod` in `app/sitemap.ts`.
 9. **L-5 / L-6** — `ImageObject` + `article` type on gallery project pages (optional, same sitting).
    **Both shipped: L-6 (`og:type: 'article'`) via #38 2026-09-03; L-5 (`ImageObject` + `CreativeWork`)
@@ -457,10 +473,10 @@ it fixes, and close the issue — all in the same change (per `CLAUDE.md` Issue 
 ### Phase 2 — the metadata layer (1–2 sittings)
 - [x] **#19 · H-2** — `lib/metadata.ts` `buildMetadata()`; per-page `og:url` = canonical. *(Phase 2, step 4. Shipped 2026-09-04 — unblocks #20.)*
 - [x] **#20 · H-3** — `og:image` / `twitter:image` sitewide; `summary_large_image`. *(Phase 2, step 5. Shipped 2026-09-04.)*
-- [x] **#21 · M-5** — trim the two over-length `<title>` tags. *(Phase 2, step 6. Shipped 2026-09-04, through the #19 `buildMetadata()` helper.)*
+- [x] **#21 · M-5** — trim the over-length `<title>` tags. *(Phase 2, step 6. `/packages/` + laundry shipped 2026-09-04 via #19's helper (D-127); the 4 more spotted 2026-09-05 — 2 gallery + 3 hubs — shipped 2026-09-07 (D-133). M-5 fully done.)*
 
 ### Phase 3 — structured data + sitemap (1–2 sittings)
-- [ ] **#22 · M-1** — per-page `Service` JSON-LD on the 4 service pages. *(Phase 3, step 7. No dep.)*
+- [x] **#22 · M-1** — per-page `Service` JSON-LD on the 4 service pages. *(Phase 3, step 7. No dep. Shipped 2026-09-07 — D-134.)*
 - [x] **#23 · M-2** — real per-content `lastmod` in `app/sitemap.ts`. *(Shipped 2026-09-03 via #41.)*
 - [x] **#24 · L-5** — `ImageObject` + `CreativeWork` JSON-LD on gallery project pages. *(Phase 3, step 9. Shipped 2026-09-04 — `components/ProjectSchema.tsx`. L-6 `og:type` shipped via #38 2026-09-03.)*
 
