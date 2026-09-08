@@ -9,6 +9,7 @@ import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
+import { GoogleRating } from '@/components/GoogleRating'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
 import { serviceHeroImages } from '@/lib/serviceHeroImages'
@@ -159,6 +160,12 @@ export default async function ServicePage({
             : undefined
         }
       />
+
+        <section className="et-section et-band-surface">
+          <div className="et-container">
+            <GoogleRating />
+          </div>
+        </section>
 
       {about && (
         <section className="et-section et-band-surface">
