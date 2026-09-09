@@ -56,6 +56,7 @@ const HUB_OG_IMAGE: Record<string, string> = {
  */
 const HUB_META_TITLE: Record<string, string> = {
   'hills-district': 'Hills District bathroom renovation',
+  'inner-west': 'Inner West bathroom renovation',
   'eastern-suburbs': 'Eastern Suburbs bathroom renovation',
   'north-shore': 'North Shore bathroom renovation',
   'north-western-sydney': 'North-Western Sydney bathroom renovation',
@@ -340,8 +341,8 @@ export async function generateMetadata({
       path: `/services/${LOCATION_PARENT_SLUG}/${suburb.slug}/`,
       title: `${suburb.name} bathroom renovation`,
       description: project
-        ? `${project.metaDescription ?? project.blurb} Free on-site measure and fixed-scope written quotes from Elite Touch Renovations.`
-        : `Bathroom renovations in ${suburb.name} by Elite Touch Renovations. Free on-site measure and fixed-scope written quotes.`,
+        ? `${project.metaDescription ?? project.blurb} Free on-site measure and fixed-scope quotes from Elite Touch Renovations.`
+        : `Bathroom renovations in ${suburb.name} by Elite Touch Renovations. Free on-site measure and fixed-scope quotes.`,
       images: project
         ? [
             {
@@ -363,7 +364,7 @@ export async function generateMetadata({
   return buildMetadata({
     path: `/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
     title: HUB_META_TITLE[region.slug] ?? `Bathroom Renovations ${region.name}`,
-    description: `Bathroom renovations across Sydney's ${region.name} by Elite Touch Renovations. Free on-site measure, fixed-scope written quotes, waterproofing to AS 3740 and a ${businessInfo.workmanshipWarrantyYears}-year workmanship warranty.`,
+    description: `Bathroom renovations across Sydney's ${region.name} by Elite Touch Renovations. Free on-site measure, fixed-scope quotes and waterproofing to AS 3740.`,
     images: hubImage
       ? [
           {
