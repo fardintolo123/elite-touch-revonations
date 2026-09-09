@@ -56,7 +56,7 @@ Out of scope:
 - [x] Retired the now-dead standalone components (`BreadcrumbSchema.tsx`,
       `FaqSchema.tsx`, `ServiceSchema.tsx`, `ProjectSchema.tsx`) — no
       remaining imports anywhere in `app/` or `components/`.
-- [ ] Record the implementation decision in `DECISIONS.md`.
+- [x] Record the implementation decision in `DECISIONS.md` — D-131.
 
 **Note:** this migration landed in commit `253cd36` from a concurrent
 session (bare "1" commit message, bundled with unrelated issue #28 IndexNow

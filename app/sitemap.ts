@@ -5,6 +5,7 @@ import {
   LOCATION_PARENT_SLUG,
   projectsInRegion,
   publishedRegions,
+  publishedSuburbs,
 } from '@/lib/locations'
 import { serviceHeroImages } from '@/lib/serviceHeroImages'
 
@@ -123,11 +124,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   )
 
+  const suburbs = publishedRegions().flatMap((region) => publishedSuburbs(region))
+  const suburbRoutes: MetadataRoute.Sitemap = suburbs.map((suburb) => {
+      const project = projects.find(
+        (item) => item.suburb.toLowerCase() === suburb.name.toLowerCase(),
+      )
+
+      return {
+        url: `${base}/services/${LOCATION_PARENT_SLUG}/${suburb.slug}/`,
+        lastModified: project?.updated ?? LAST_CONTENT_PASS,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+        ...(project ? { images: [absolute(project.images[0].src)] } : {}),
+      }
+    })
+
   return [
     ...staticRoutes,
     ...legalRoutes,
     ...serviceRoutes,
     ...projectRoutes,
     ...locationRoutes,
+    ...suburbRoutes,
   ]
 }

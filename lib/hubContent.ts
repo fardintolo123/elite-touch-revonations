@@ -3,7 +3,7 @@
  * (`/services/bathroom-renovations/{region}/`).
  *
  * WHY THIS FILE EXISTS
- * Issue #35 / local-audit #4 / content-audit C-3 / geo-audit G-2: the three hub
+ * Issue #35 / local-audit #4 / content-audit C-3 / geo-audit G-2: the published hub
  * pages were swap-test-fragile — the hero line and the "what you get" block read
  * identically with the region name changed, and only the local project photos and
  * the suburb list were genuinely non-swappable. `docs/SEO_CONTENT_GUIDE.md` §5:
@@ -53,7 +53,7 @@ export type HubContent = {
   testimonialAuthor: string
 }
 
-/** Keyed by region slug. Only the three `hubPublished: true` regions appear. */
+/** Keyed by region slug. Only `hubPublished: true` regions appear. */
 export const hubContent: Record<string, HubContent> = {
   'hills-district': {
     answer: [
@@ -93,6 +93,49 @@ export const hubContent: Record<string, HubContent> = {
       },
       {
         question: 'Which Hills District suburbs do you cover?',
+        answer:
+          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway — it is very likely we still cover it.',
+      },
+    ],
+    testimonialAuthor: 'Ken Chen',
+  },
+
+  'inner-west': {
+    answer: [
+      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across the Inner West — Marrickville, Balmain, Leichhardt, Newtown, Five Dock, Drummoyne and the surrounding suburbs. We handle the full job: strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, to a fixed written scope.',
+      'A bathroom renovation here starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our Basic package. Standard starts from $25,000 and Premium from $30,000. Your price is firm after a free on-site measure. A full renovation takes three to four weeks on site, and a premium build in stone or custom joinery takes five to six. Every job runs under NSW Builder Licence 475204C with a 10-year workmanship warranty. Inner West homes can bring tight access, older services and strata rules, so we allow for them in the written scope.',
+    ],
+    localAngle: {
+      heading: 'Renovating a bathroom in Sydney\'s Inner West',
+      paragraphs: [
+        'The Inner West combines older terraces and Federation-era homes with apartments and renovated houses. A bathroom renovation here often has to work within a tight footprint, preserve the useful parts of an older home and plan deliveries around narrow streets or limited parking.',
+        'In Marrickville and the surrounding inner-city suburbs, older plumbing and timber floors can appear once the room is opened up. We check the substrate and existing services before the scope is finalised, then set out the waterproofing, plumbing and finishes in the written quote rather than treating the unknowns as a surprise variation.',
+        'Balmain is a real example of the work we do in the region. The completed bathroom used full-height concrete-look porcelain wall tiles, timber-look floor tiles, a custom vanity, matching tall storage and a bath. The project ran for three weeks, with project notes recording an about $30,000 budget; the main challenge was matching the custom storage cabinet cleanly to the vanity.',
+      ],
+    },
+    faqs: [
+      {
+        question: 'How much does a bathroom renovation cost in the Inner West?',
+        answer:
+          'It starts from $18,000 for a small bathroom around 1.5 by 1.8 by 2.4 metres on our Basic package, from $25,000 for Standard and from $30,000 for Premium. All three are "from" prices tied to that room size. You get a firm figure after a free on-site measure.',
+      },
+      {
+        question: 'How long will an Inner West bathroom renovation take?',
+        answer:
+          'A full renovation runs three to four weeks on site. A premium build with natural stone or custom joinery runs five to six weeks, and a job that moves walls or fixture positions runs five to seven. Older homes can need a few extra days for what appears at strip-out. Your program is in writing before work starts.',
+      },
+      {
+        question: 'Can you renovate a bathroom in an Inner West terrace?',
+        answer:
+          'Yes. We plan the work around the existing footprint, access and structure. Older homes can have timber floors, older plumbing or a bathroom added to a less convenient part of the house, so we check the substrate and services before the written scope is finalised.',
+      },
+      {
+        question: 'Do you renovate bathrooms in Inner West strata apartments?',
+        answer:
+          'Yes. Apartment work needs to follow the owners corporation approval, building hours, lift access and common-property waterproofing rules. We allow for those requirements in the work plan and written scope before the renovation starts.',
+      },
+      {
+        question: 'Which Inner West suburbs do you cover?',
         answer:
           'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway — it is very likely we still cover it.',
       },
@@ -186,6 +229,49 @@ export const hubContent: Record<string, HubContent> = {
       },
     ],
     testimonialAuthor: 'Huseyin Sumaktas',
+  },
+
+  'north-western-sydney': {
+    answer: [
+      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across North-Western Sydney — Hunters Hill, Gladesville, Ryde, North Ryde, Epping, Eastwood and the surrounding suburbs. We handle the full job: strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, to a fixed written scope.',
+      'A bathroom renovation here starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our Basic package. Standard starts from $25,000 and Premium from $30,000. Your price is firm after a free on-site measure. A full renovation takes three to four weeks on site, and a premium build in stone or custom joinery takes five to six. Every job runs under NSW Builder Licence 475204C with a 10-year workmanship warranty. The Gladesville project on this page shows the kind of completed bathroom work we carry out in the region.',
+    ],
+    localAngle: {
+      heading: 'Renovating a bathroom in North-Western Sydney',
+      paragraphs: [
+        'North-Western Sydney covers established suburbs around Hunters Hill, Gladesville and the Ryde area, as well as suburbs further north including Beecroft, Pennant Hills, Epping and Eastwood. The service-area list below shows the suburbs included in this regional hub.',
+        'Gladesville is a real example of the work we do here. The completed bathroom used white subway wall tiles, floor tiles, a frameless shower, a wall-hung toilet and custom vanity storage. The project ran for three weeks and included a full strip-out, waterproofing, plumbing and electrical upgrades. The main challenge was tiling around the existing bath so the finish stayed seamless.',
+        'We confirm the existing room, services and access at the free on-site measure. The written scope then sets out the plumbing, waterproofing, tile work, fittings and price before the renovation starts, with waterproofing completed to AS 3740 and a certificate supplied.',
+      ],
+    },
+    faqs: [
+      {
+        question: 'How much does a bathroom renovation cost in North-Western Sydney?',
+        answer:
+          'It starts from $18,000 for a small bathroom around 1.5 by 1.8 by 2.4 metres on our Basic package, from $25,000 for Standard and from $30,000 for Premium. All three are "from" prices tied to that room size. You get a firm figure after a free on-site measure.',
+      },
+      {
+        question: 'How long will a North-Western Sydney bathroom renovation take?',
+        answer:
+          'A full renovation runs three to four weeks on site. A premium build with natural stone or custom joinery runs five to six weeks, and a job that moves walls or fixture positions runs five to seven. Older homes can need a few extra days for what appears at strip-out. Your program is in writing before work starts.',
+      },
+      {
+        question: 'Have you completed bathroom renovation work in this area?',
+        answer:
+          'Yes. The Gladesville bathroom renovation shown on this page ran for three weeks and included a full strip-out, waterproofing, tiling, a new shower, custom vanity storage and upgraded plumbing and electrical work.',
+      },
+      {
+        question: 'Do you renovate bathrooms in Ryde and the surrounding suburbs?',
+        answer:
+          'Yes. We cover every suburb in the North-Western Sydney list further down this page, including Ryde, Gladesville, Hunters Hill, North Ryde, Epping and Eastwood. If your street is not shown, call us anyway — it is very likely we still cover it.',
+      },
+      {
+        question: 'What does the written bathroom renovation quote include?',
+        answer:
+          'The written scope sets out the work, inclusions and price after a free on-site measure. It covers the agreed strip-out, plumbing, electrical work, waterproofing, tiling, fittings and fit-off. Waterproofing is completed to AS 3740 with a certificate supplied.',
+      },
+    ],
+    testimonialAuthor: 'Ken Chen',
   },
 }
 

@@ -26,6 +26,7 @@
           "slug": "baulkham-hills",
           "postcode": "2153",
           "tier": 1,
+          "pagePublished": false,
           "url": "/services/bathroom-renovations/baulkham-hills"
         },
         {
@@ -51,6 +52,7 @@
           "slug": "castle-hill",
           "postcode": "2154",
           "tier": 1,
+          "pagePublished": true,
           "url": "/services/bathroom-renovations/castle-hill"
         },
         {
@@ -64,6 +66,7 @@
           "slug": "kellyville",
           "postcode": "2155",
           "tier": 1,
+          "pagePublished": false,
           "url": "/services/bathroom-renovations/kellyville"
         },
         {
@@ -442,6 +445,7 @@
           "slug": "marrickville",
           "postcode": "2204",
           "tier": 1,
+          "pagePublished": false,
           "url": "/services/bathroom-renovations/marrickville"
         },
         {
@@ -463,7 +467,9 @@
           "tier": 2
         }
       ],
-      "hubPublished": false
+      "hubPublished": true,
+      "updated": "2026-09-09",
+      "note": "Published 2026-09-09 (D-137 / issue #49). Has Tier-1 volume evidence for Marrickville and a photographed, suburb-attributed Balmain project to prove local work."
     },
     {
       "name": "North-Western Sydney",
@@ -535,6 +541,7 @@
           "slug": "ryde",
           "postcode": "2112",
           "tier": 1,
+          "pagePublished": false,
           "url": "/services/bathroom-renovations/ryde"
         },
         {
@@ -646,7 +653,9 @@
           "tier": 2
         }
       ],
-      "hubPublished": false
+      "hubPublished": true,
+      "updated": "2026-09-09",
+      "note": "Published 2026-09-09 (D-137 / issue #50). Has Tier-1 volume evidence for Ryde and a photographed, suburb-attributed Gladesville project to prove local work."
     },
     {
       "name": "Eastern Suburbs",
@@ -856,6 +865,7 @@
           "slug": "randwick",
           "postcode": "2031",
           "tier": 1,
+          "pagePublished": true,
           "url": "/services/bathroom-renovations/randwick"
         },
         {

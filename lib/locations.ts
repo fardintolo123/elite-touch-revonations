@@ -23,6 +23,7 @@ export type Suburb = {
   slug: string
   postcode: string
   tier: number
+  pagePublished?: boolean
   url?: string
   isNotASuburb?: boolean
   note?: string
@@ -71,6 +72,30 @@ export function listableSuburbs(region: Region): Suburb[] {
     .sort((a, b) => a.name.localeCompare(b.name))
 }
 
+/** Only suburbs with their own completed page may receive an internal link. */
+export function publishedSuburbs(region: Region): Suburb[] {
+  return listableSuburbs(region).filter((suburb) => suburb.pagePublished === true)
+}
+
+/** Every published suburb page, for future suburb route params and hub links. */
+export function publishedSuburbSlugs(): string[] {
+  return publishedRegions().flatMap((region) =>
+    publishedSuburbs(region).map((suburb) => suburb.slug),
+  )
+}
+
+export function publishedSuburbBySlug(slug: string): Suburb | undefined {
+  return publishedRegions()
+    .flatMap((region) => publishedSuburbs(region))
+    .find((suburb) => suburb.slug === slug)
+}
+
+export function publishedRegionForSuburbSlug(slug: string): Region | undefined {
+  return publishedRegions().find((region) =>
+    publishedSuburbs(region).some((suburb) => suburb.slug === slug),
+  )
+}
+
 /**
  * Photographed projects that sit inside a region.
  *
@@ -86,5 +111,8 @@ export function projectsInRegion(region: Region): Project[] {
 
 /** Every published location page, for `generateStaticParams` and the sitemap. */
 export function publishedLocationSlugs(): string[] {
-  return publishedRegions().map((region) => region.slug)
+  return [
+    ...publishedRegions().map((region) => region.slug),
+    ...publishedSuburbSlugs(),
+  ]
 }

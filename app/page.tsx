@@ -46,9 +46,9 @@ export const metadata: Metadata = buildMetadata({
   // defined in layout.js will not apply to a title defined in page.js of the
   // same route segment") — the full " | Elite Touch Renovations" suffix has
   // to be written out, unlike every other page below the root.
-  title: 'Sydney Bathroom Renovations | Elite Touch Renovations',
+  title: 'Bathroom Renovations Near You in Sydney | Elite Touch',
   description:
-    'Sydney bathroom, ensuite, powder room and bathroom-laundry renovations by the Dawood family. NSW-licensed, AS 3740 waterproofing, fixed-scope written quotes.',
+    'Looking for bathroom renovations near you in Sydney? The Dawood family offers NSW-licensed bathroom, ensuite, powder room and bathroom-laundry renovations with AS 3740 waterproofing and fixed-scope written quotes.',
 })
 
 const PROCESS = [
@@ -148,12 +148,14 @@ export default function HomePage() {
               <span className="et-eyebrow">Sydney · Family-run since 2022</span>
 
               <h1 className="et-display et-measure-tight">
-                Bathroom renovations in Sydney, done once and done properly.
+                Bathroom renovations near you in Sydney, done once and done
+                properly.
               </h1>
 
               <p className="et-lead et-measure">
-                Elite Touch Renovations is a family-run bathroom renovation
-                business working across Sydney. We strip out, waterproof to{' '}
+                If you are looking for bathroom renovations near you in Sydney,
+                Elite Touch Renovations is a family-run business that comes to
+                you. We strip out, waterproof to{' '}
                 {businessInfo.standards.waterproofing}, tile and fit off — and
                 we tell you the full scope and price in writing before anyone
                 picks up a tool.
@@ -317,8 +319,8 @@ export default function HomePage() {
       </section>
 
       <AreasServedLinks
-        title="Bathroom renovation areas we serve"
-        intro="We work across Sydney. These area pages are live because they have real project proof behind them, not just a suburb list."
+        title="Need bathroom renovations near you in Sydney?"
+        intro="We work across Sydney, with a free on-site measure available across the metro area. These pages are live because they have real project proof behind them, not just a suburb list."
         band="canvas"
       />
 

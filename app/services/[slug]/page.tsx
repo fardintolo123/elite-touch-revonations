@@ -121,9 +121,8 @@ export default async function ServicePage({
     ? projects.find((p) => p.slug === heroImageRef.slug)
     : undefined
 
-  // Optional per-service extras (currently: powder-room only — DECISIONS.md
-  // D-107). Not every service has these, so guard with `in` rather than
-  // assuming the field exists on the whole `Service` union.
+  // Optional per-service extras. Not every service has these, so guard with
+  // `in` rather than assuming the field exists on the whole `Service` union.
   const about = 'about' in service ? service.about : undefined
   const faqs = 'faqs' in service ? service.faqs : undefined
   // Some service pages carry their own timeline in the FAQ/about copy. When

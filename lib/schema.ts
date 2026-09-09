@@ -1,5 +1,5 @@
 import { businessInfo, services, type Service } from '@/lib/businessInfo'
-import type { Region } from '@/lib/locations'
+import type { Region, Suburb } from '@/lib/locations'
 import type { Project } from '@/lib/projects'
 
 export type SchemaNode = Record<string, unknown>
@@ -34,6 +34,8 @@ export const schemaIds = {
     `${absoluteUrl(`/services/${service.slug}/`)}#service`,
   hubService: (service: Service, region: Region) =>
     `${absoluteUrl(`/services/${service.slug}/${region.slug}/`)}#service`,
+  suburbService: (service: Service, suburb: Suburb) =>
+    `${absoluteUrl(`/services/${service.slug}/${suburb.slug}/`)}#service`,
   webpage: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#webpage`,
   breadcrumb: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#breadcrumb`,
   faq: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#faq`,
@@ -402,6 +404,39 @@ export function buildHubServiceNode({
   }
 }
 
+export function buildSuburbServiceNode({
+  service,
+  suburb,
+}: {
+  service: Service
+  suburb: Suburb
+}): SchemaNode {
+  const path = `/services/${service.slug}/${suburb.slug}/`
+
+  return {
+    '@type': 'Service',
+    '@id': schemaIds.suburbService(service, suburb),
+    name: `${service.title} ${suburb.name}`,
+    description: service.summary,
+    serviceType: 'Bathroom renovation',
+    provider: { '@id': schemaIds.business },
+    url: absoluteUrl(path),
+    areaServed: {
+      '@type': 'Place',
+      name: `${suburb.name}, Sydney`,
+      containedInPlace: {
+        '@type': 'City',
+        name: businessInfo.serviceArea.city,
+        address: {
+          '@type': 'PostalAddress',
+          addressRegion: businessInfo.serviceArea.state,
+          addressCountry: businessInfo.serviceArea.country,
+        },
+      },
+    },
+  }
+}
+
 export function buildProjectNode({
   path,
   project,
@@ -441,6 +476,7 @@ export function buildPageGraph({
   primaryImage,
   service,
   hubService,
+  suburbService,
 }: {
   path: string
   name: string
@@ -452,13 +488,18 @@ export function buildPageGraph({
   primaryImage?: SchemaImage
   service?: Service
   hubService?: { service: Service; region: Region }
+  suburbService?: { service: Service; suburb: Suburb }
 }) {
   const hasFaqs = Boolean(faqs && faqs.length > 0)
   const projectId = project ? schemaIds.creativeWork(path) : undefined
   const serviceId = service ? schemaIds.service(service) : undefined
+  const suburbServiceId = suburbService
+    ? schemaIds.suburbService(suburbService.service, suburbService.suburb)
+    : undefined
   const partIds = [
     ...(hasFaqs ? [schemaIds.faq(path)] : []),
     ...(serviceId ? [serviceId] : []),
+    ...(suburbServiceId ? [suburbServiceId] : []),
   ]
 
   return schemaGraph([
@@ -482,6 +523,7 @@ export function buildPageGraph({
     ...(faqs && faqs.length > 0 ? [buildFaqNode({ path, items: faqs })] : []),
     ...(service ? [buildServiceNode({ service })] : []),
     ...(hubService ? [buildHubServiceNode(hubService)] : []),
+    ...(suburbService ? [buildSuburbServiceNode(suburbService)] : []),
     ...(project ? [buildProjectNode({ path, project })] : []),
   ])
 }

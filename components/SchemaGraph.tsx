@@ -7,7 +7,7 @@ import {
   type SchemaImage,
 } from '@/lib/schema'
 import type { Service } from '@/lib/businessInfo'
-import type { Region } from '@/lib/locations'
+import type { Region, Suburb } from '@/lib/locations'
 import type { Project } from '@/lib/projects'
 
 export function SchemaGraph({
@@ -21,6 +21,7 @@ export function SchemaGraph({
   primaryImage,
   service,
   hubService,
+  suburbService,
 }: {
   path: string
   name: string
@@ -32,6 +33,7 @@ export function SchemaGraph({
   primaryImage?: SchemaImage
   service?: Service
   hubService?: { service: Service; region: Region }
+  suburbService?: { service: Service; suburb: Suburb }
 }) {
   const graph = buildPageGraph({
     path,
@@ -44,6 +46,7 @@ export function SchemaGraph({
     primaryImage,
     service,
     hubService,
+    suburbService,
   })
 
   return (

@@ -4,7 +4,7 @@ import sharp from 'sharp'
 
 /**
  * Builds every Open Graph / Twitter share image the site uses (issue #20 /
- * tech-audit H-3, plus the packages + 3-hub overrides added as its
+ * tech-audit H-3, plus the packages + regional-hub overrides added as its
  * documented follow-up). Run once at authoring time and commit the output —
  * these are static assets, not generated per-request, so they cost nothing
  * at runtime (`docs/PERFORMANCE_BUDGET.md` — `og:image`/`twitter:image` are
@@ -15,11 +15,13 @@ import sharp from 'sharp'
  * photo from `lib/projects.ts` (D-36/D-83) — no new photography. Region
  * images use a project actually located in that region (per
  * `service-areas.json`): Castle Hill -> Hills District, Randwick -> Eastern
- * Suburbs, Artarmon -> North Shore. The sitewide default uses the Artarmon
+ * Suburbs, Artarmon -> North Shore, Gladesville -> North-Western Sydney.
+ * The sitewide default uses the Artarmon
  * bathroom + ensuite photo (also one of `businessInfo.schema.images`); the
  * North Shore hub deliberately uses a DIFFERENT Artarmon project
  * (`artarmon-bathroom`, not `artarmon-bathroom-ensuite`) so the two images
- * are not identical.
+ * are not identical. North-Western Sydney uses the suburb-attributed
+ * Gladesville project.
  *
  * ⚠️ Font: none of these use Jost, DESIGN.md §3's one typeface. sharp's
  * bundled SVG renderer (librsvg -> Pango -> FreeType) has no working
@@ -98,6 +100,14 @@ const IMAGES = [
     out: 'public/og/north-shore.jpg',
     background: 'public/images/projects/artarmon-bathroom/full-room-shower-toilet.webp',
     headline: 'Bathroom Renovations, North Shore',
+    sub: TRUST_LINE,
+  },
+  {
+    // North-Western Sydney hub. Gladesville is a real suburb in this region
+    // with its own photographed project.
+    out: 'public/og/north-western-sydney.jpg',
+    background: 'public/images/projects/gladesville-bathroom/full-room-toilet-tub-vanity.webp',
+    headline: 'Bathroom Renovations, North-Western Sydney',
     sub: TRUST_LINE,
   },
 ]
