@@ -41,6 +41,6 @@ FAQ explicitly answers the two `CONTENT_QUALITY_CHECKLIST.md` §5 objections nam
 - [x] Served-HTML checks — `about` unique per page (swap test), FAQ `<summary>` decode-matches `FAQPage`
       JSON-LD on all 3 + powder-room, packages link present, durations block hidden on laundry only
 - [x] Browser check desktop + 390px (Playwright — 5 FAQ cards, about paragraph, packages link, no
-      horizontal scroll, no console errors on all 3)
+      horizontal scroll, no application errors on all 3; GTM request denied by isolated test environment)
 - [x] `plans/2026-08-31-seo-content-audit.md` (C-2/C-3/C-7) + master-plan registry + `DECISIONS.md` D-126
-- [ ] Issue #34 closed (comment + close, if the write permission allows)
+- [x] Issue #34 closed (already closed in GitHub; implementation and verification completed)

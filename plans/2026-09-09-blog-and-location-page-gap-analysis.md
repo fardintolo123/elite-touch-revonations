@@ -68,7 +68,12 @@ The structure D-10 approved is the structure ranking competitors actually run.
 format that ranks for process questions is an article. **But** ETR already answers that exact
 question on all three hubs (`lib/hubContent.ts`) with owner-corrected durations (D-75: 3–4 / 5–6 /
 5–7 weeks). Per `docs/SEO_CONTENT_GUIDE.md` §3, a topic with an existing home is IMPROVE, not CREATE.
-So this is **not** the clean "no home on an existing page" cluster D-86 asked for.
+This **does not** mean source-backed question research is useless. Issue **#58** (FindQuestions) is a
+real source-attributed list of public Reddit question stems, so it is valid **topic-generation input**
+and, under owner approval recorded in **D-139**, it now authorises a first wave of six articles
+without a GKP/Ahrefs check. The exception is limited to topics that fit ETR's four services and can
+be supported by verified business facts. It does not approve every title in the PDF, create a general
+blog commitment, or change the normal evidence gate for future reports.
 
 ---
 

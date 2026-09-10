@@ -8,6 +8,7 @@ import {
   publishedSuburbs,
 } from '@/lib/locations'
 import { serviceHeroImages } from '@/lib/serviceHeroImages'
+import { blogPosts } from '@/lib/blog'
 
 /**
  * Replaces Yoast's `sitemap_index.xml` / `page-sitemap.xml`.
@@ -109,6 +110,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: project.images.map((image) => absolute(image.src)),
   }))
 
+  const blogRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${base}/blog/`,
+      lastModified: LAST_CONTENT_PASS,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    ...blogPosts.map((post) => ({
+      url: `${base}/blog/${post.slug}/`,
+      lastModified: post.published,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+  ]
+
   const locationRoutes: MetadataRoute.Sitemap = publishedRegions().map(
     (region) => {
       const localImages = projectsInRegion(region).map((project) =>
@@ -144,6 +160,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...legalRoutes,
     ...serviceRoutes,
     ...projectRoutes,
+    ...blogRoutes,
     ...locationRoutes,
     ...suburbRoutes,
   ]

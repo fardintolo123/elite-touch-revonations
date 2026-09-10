@@ -63,8 +63,11 @@ REDIRECT · CREATE**.
 
 - **Check the page does not already exist first**, and that it is actually *published* — content **+**
   an internal link from a hub **+** a sitemap entry. Default to **IMPROVE**, not CREATE.
-- **CREATE only when a specific, evidenced query has no existing home.** "Evidenced" means volume
-  data, not a competitor's page and not intuition.
+- **CREATE only when a specific, evidenced query has no existing home.** "Evidenced" normally means
+  volume data, not a competitor's page and not intuition. The owner-approved issue #58 exception
+  allows a first wave of six source-backed FindQuestions topics to be created without a GKP/Ahrefs
+  check. This exception is recorded in `DECISIONS.md` D-139 and does not automatically apply to
+  later reports.
 - **One term, one page.** Two pages targeting the same query compete with each other. The Tier-1 /
   Tier-2 split exists precisely to prevent this at suburb level.
 - **Never build a page for a service we do not sell** — see [DECISIONS.md](../DECISIONS.md) D-01/D-02.
@@ -77,8 +80,12 @@ fixes.** Acting on them as written would have deleted four healthy pages and man
 cannibalisation. So:
 
 1. **Triage against the existing structure first.** Several "issues" are deliberate architecture.
-2. **A gap report without volume + difficulty per item cannot justify CREATE.** Competitor presence
-   is not demand — it is a list of what another business chose to write about.
+2. **A gap report without volume + difficulty per item cannot normally justify CREATE.** Competitor presence
+   is not demand — it is a list of what another business chose to write about. A report that names
+   its sources and cites real question stems is **approved as directional research** for topic
+  generation and shortlist building. The owner has made a narrow exception for issue #58 D-139:
+  publish the six approved first-wave topics without GKP/Ahrefs data. This is not a standing green
+  light for every third-party report or every topic in the PDF.
 3. **Require the competitor's real URL list**, not topics inferred from their body copy, and require
    gaps in **both** directions. A report finding zero gaps the other way is not credible.
 4. **A hub that summarises and links *down* to its spokes is correct, not duplication.**

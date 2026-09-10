@@ -337,6 +337,40 @@ svg {
 .et-measure-tight {
   max-width: 26ch;
 }
+.et-measure-wide {
+  max-width: 760px;
+}
+
+.et-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--et-space-6);
+}
+
+.et-blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--et-space-4);
+}
+
+.et-blog-card .et-body {
+  flex: 1;
+}
+
+.et-blog-prose {
+  gap: var(--et-space-14);
+}
+
+.et-blog-prose section {
+  display: grid;
+  gap: var(--et-space-4);
+}
+
+@media (max-width: 767px) {
+  .et-blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ==========================================================================
    Layout (DESIGN.md §4)
@@ -966,7 +1000,7 @@ svg {
 
 .et-footer {
   background: var(--et-ink-900);
-  color: var(--et-text-inverse);
+  color: #edf3fa;
   padding-block: var(--et-space-24) var(--et-space-12);
 }
 .et-footer h2,
@@ -978,11 +1012,11 @@ svg {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--et-ink-300);
+  color: #dfe7f2;
   margin-bottom: var(--et-space-5);
 }
 .et-footer a {
-  color: #b9bec7;
+  color: #e8edf5;
   text-decoration: none;
   font-size: var(--et-text-sm);
   transition: color var(--et-duration-instant) var(--et-ease-standard);
@@ -1002,7 +1036,7 @@ svg {
   gap: var(--et-space-3) var(--et-space-6);
   justify-content: space-between;
   font-size: var(--et-text-sm);
-  color: #9098a3;
+  color: #dfe6ef;
 }
 
 /* ==========================================================================

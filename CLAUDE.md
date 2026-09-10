@@ -253,7 +253,7 @@ These are framework-level lessons, not preferences. Adjust the names to whatever
 
 ## Per-Task Workflow
 
-Run steps 1–8 yourself, end to end, per [Autonomy & Session Handoff](#autonomy--session-handoff) —
+Run steps 1–9 yourself, end to end, per [Autonomy & Session Handoff](#autonomy--session-handoff) —
 pause mid-list only for a genuine owner decision, never to check in on routine progress.
 
 1. **Plan first.** Write a short implementation plan, then a checklist. Keep both in `plans/`.
@@ -262,12 +262,41 @@ pause mid-list only for a genuine owner decision, never to check in on routine p
 4. **Keep the checklist live** — tick items as they land, not at the end.
 5. **Gate with the right check** for the task class (build green · performance re-measure · browser
    verification · the SEO/AEO/GEO checklist).
-6. **Complete:** build green, docs updated, decisions recorded in `DECISIONS.md`.
-7. **Report** using one Executive Summary — see below.
-8. **Hand off.** Write the session-history file per
+6. **For issue-driven work:** confirm every issue requirement and acceptance criterion is met,
+  verify the result, and close the issue only after those checks pass. Leave blocked issues open.
+7. **Complete:** build green, docs updated, decisions recorded in `DECISIONS.md`.
+8. **Report** using one Executive Summary — see below.
+9. **Hand off.** Write the session-history file per
    [Autonomy & Session Handoff](#autonomy--session-handoff) before ending the session.
 
 ## Issue Workflow
+
+When the owner asks to **check a GitHub issue and implement what it describes**, treat the issue as
+an end-to-end delivery task. Work autonomously through the complete workflow:
+
+1. **Read the issue in full.** Capture its requirements, acceptance criteria, linked context,
+  screenshots, and any referenced files or routes. Check `DECISIONS.md` and the relevant routed
+  docs before choosing an implementation.
+2. **Inspect before editing.** Verify the issue's assumptions against the current codebase,
+  website structure, design system, and existing implementation. If part of the issue is already
+  implemented, complete or correct it rather than duplicating it.
+3. **Choose the implementation.** Resolve ordinary ambiguity independently using the project's
+  architecture, UX, performance, SEO, maintainability, and consistency requirements. Do not ask
+  the owner to choose between reasonable technical approaches.
+4. **Implement the complete issue.** Cover every requirement and acceptance criterion, including
+  relevant documentation, internal links, metadata, tests, and responsive behaviour where the
+  issue implies them. Keep the scope limited to the issue.
+5. **Verify the result yourself.** Run the narrowest useful checks first, then the appropriate
+  build, type check, lint, browser, responsive, served-HTML, performance, or SEO checks. Inspect
+  the actual result, fix failures, and rerun verification until the issue has no known unresolved
+  problems.
+6. **Close the issue only after verification passes.** Close the GitHub issue yourself once the
+  implementation is complete and verified. Do not leave routine closure for the owner.
+
+Do not close an issue when a genuine blocker remains, verification is incomplete, or completion
+requires an owner-only decision. Report the specific blocker and ask only the necessary question.
+The owner must still approve pushes, deployments, destructive actions, legally significant claims,
+and any other decision listed under **Autonomy & Session Handoff**.
 
 When a task is broken into GitHub issues (rather than executed directly against the plan), each
 issue must:
@@ -360,6 +389,8 @@ what's wrong, what to decide, and exactly what to do next.
 - [ ] Build green; verified in a browser if the UI changed.
 - [ ] If GitHub issues were opened for this task, each traces to a plan/checklist line and was
       updated alongside it (Issue Workflow).
+- [ ] If implementing an existing GitHub issue, every requirement and acceptance criterion was
+  implemented, verified, and the issue was closed; blocked issues remain open.
 - [ ] Decisions and mechanics recorded in the right file.
 - [ ] Response follows the Reporting Format, "What should happen next" last.
 - [ ] Session-history handoff file written (unless the session was genuinely trivial) and its path
