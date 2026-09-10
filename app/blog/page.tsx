@@ -26,6 +26,9 @@ export default function BlogIndexPage() {
       <main>
         <section className="et-section">
           <div className="et-container">
+            <p className="et-lead et-measure" style={{ marginBottom: 'var(--et-space-10)' }}>
+              Start here. Pick the guide that fits your job. Get clear facts, make a short list of questions, then talk to a team that can measure the room and set out the work in plain terms.
+            </p>
             <div className="et-blog-grid">
               {blogPosts.map((post) => (
                 <article key={post.slug} className="et-card et-blog-card">
