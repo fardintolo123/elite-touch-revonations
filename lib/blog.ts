@@ -186,6 +186,58 @@ export const blogPosts: BlogPost[] = [
       { heading: 'Ask for a realistic programme', paragraphs: ['A useful programme identifies dependencies, decision dates and how changes affect timing. It should also allow for the actual room rather than promise a generic number of days.', 'A clear written scope is the best starting point for a realistic conversation about speed.'] },
     ],
   },
+  {
+    slug: 'bathroom-trends-australia-right-now',
+    title: 'Bathroom trends in Australia right now',
+    description: 'A grounded look at the design directions Sydney homeowners are considering without losing practicality or value.',
+    published: '2026-09-12',
+    readTime: '5 min read',
+    category: 'Design and finishes',
+    sections: [
+      { heading: 'The trend is clean and practical', paragraphs: ['Many Australian bathrooms are moving toward calmer palettes, cleaner lines and finishes that are easy to maintain. The emphasis is usually on light, openness and strong everyday function.', 'That can mean durable tiles, quieter tones and material choices that still work with a busy home.'] },
+      { heading: 'The best design still fits the room', paragraphs: ['A trend is only useful if it suits the actual bathroom. A very dark finish can feel heavy in a narrow room, while a high-contrast scheme may feel busy if storage and lighting are not planned well.', 'The most successful updates usually balance appearance, access and ease of cleaning.'] },
+      { heading: 'Make choices based on the room', paragraphs: ['Think about layout, bathroom size, natural light and how the room is used most days. Then choose the trend that supports that decision rather than forcing the room to fit a style idea.', 'A straightforward, well-proportioned bathroom usually feels current longer than a room shaped by one single statement item.'] },
+    ],
+  },
+  {
+    slug: 'small-bathroom-storage-solutions',
+    title: 'Storage solutions for small bathrooms',
+    description: 'How to make a compact bathroom feel lighter, calmer and more useful without adding clutter.',
+    published: '2026-09-12',
+    readTime: '5 min read',
+    category: 'Small bathrooms',
+    sections: [
+      { heading: 'Storage has to do real work', paragraphs: ['In a small bathroom, storage needs to solve a daily problem. Tall mirrored storage, a well-placed vanity and thoughtful shelving can make the room feel better organised without making it crowded.', 'The aim is to keep the essentials close without creating visual clutter.'] },
+      { heading: 'Plan storage before finishes', paragraphs: ['A good storage plan begins with the room and the routines inside it. Ask where towels, products, hair tools and cleaning items will live and choose a setup that supports those habits.', 'When storage is planned early, finishes and fittings are easier to choose in a way that supports the room rather than fight it.'] },
+      { heading: 'Keep the layout clear', paragraphs: ['Storage should not block the shower, vanity or movement through the room. A cleaner, better-used layout often matters more than extra accessories.', 'A compact room feels bigger when it is simpler and easier to use.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-lighting-ideas',
+    title: 'Bathroom lighting ideas that improve function and mood',
+    description: 'Practical lighting choices for bathrooms that need to feel brighter, calmer and more useful at different times of the day.',
+    published: '2026-09-12',
+    readTime: '5 min read',
+    category: 'Design and finishes',
+    sections: [
+      { heading: 'Start with the task', paragraphs: ['Good bathroom lighting solves everyday tasks first: shaving, grooming, applying makeup and cleaning. A room can feel nicer with layered lighting, but it still needs to be usable first.', 'Warm, even light often feels more comfortable than harsh light from a single source.'] },
+      { heading: 'Use lighting to support the room', paragraphs: ['Lighting can improve the feeling of space when it is used well. A ceiling light, a mirror layer and a softer ambient layer can work together without making the room feel busy or over-lit.', 'The right arrangement depends on the room size, mirror position and the finishes in the space.'] },
+      { heading: 'Keep the plan practical', paragraphs: ['Before choosing a lighting scheme, check the electrical plan, placement and ventilation. Light should improve the room without creating glare or making the space feel cramped.', 'Good lighting is not about adding more fixtures. It is about using the right light in the right place.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-tiling-and-finishes-guide',
+    title: 'Choosing bathroom tiles and finishes',
+    description: 'How to pick bathroom tiles, surfaces and fittings that look good, work hard and suit the room.',
+    published: '2026-09-12',
+    readTime: '5 min read',
+    category: 'Design and finishes',
+    sections: [
+      { heading: 'Choose for the room first', paragraphs: ['Tile and finish choices have a big effect on the look and feel of a bathroom. A large-format tile can make a room feel calmer, while smaller tiles can add texture and detail in the right setting.', 'The best finish is the one that suits the room size, how much traffic it gets and how you want to live in it.'] },
+      { heading: 'Balance style with upkeep', paragraphs: ['A finish should be easy to clean and durable enough for daily use. Grout, texture and matte finishes all affect how a room feels and how much upkeep it needs.', 'The right selection makes a room easier to maintain and usually feels more considered over time.'] },
+      { heading: 'Keep the decision in context', paragraphs: ['The best bathroom tile and finish plan is the one that fits the whole room: layout, fixtures, lighting and storage. Good choices support each other, rather than compete with one another.', 'A clear selection plan is easier to quote, order and install without costly change.'] },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {

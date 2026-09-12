@@ -48,7 +48,7 @@ export const metadata: Metadata = buildMetadata({
   // to be written out, unlike every other page below the root.
   title: 'Bathroom Renovations Near You in Sydney | Elite Touch',
   description:
-    'Looking for bathroom renovations near you in Sydney? We deliver NSW-licensed bathroom, ensuite, powder room and bathroom-laundry renovations with AS 3740 waterproofing and fixed-scope written quotes.',
+    'Bathroom renovations in Sydney with AS 3740 waterproofing, fixed-scope quotes and a NSW Builder Licence.',
 })
 
 const PROCESS = [
