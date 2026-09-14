@@ -379,7 +379,7 @@ export const services = [
     slug: 'bathroom-renovations',
     title: 'Bathroom Renovations',
     h1: 'Bathroom Renovations Sydney',
-    updated: '2026-09-04',
+    updated: '2026-09-14',
     summary:
       'A full strip-out-to-studs rebuild of the main bathroom. Demolition, waterproofing to AS 3740, tiling, plumbing and electrical — finished to a fixed written scope.',
     /**
@@ -426,7 +426,7 @@ export const services = [
     slug: 'ensuite-bathroom-renovations',
     title: 'Ensuite Renovations',
     h1: 'Ensuite Renovations Sydney',
-    updated: '2026-09-04',
+    updated: '2026-09-14',
     summary:
       'Small-footprint master-suite work. We handle the ventilation and sound-proofing an ensuite needs when it shares a wall with the bedroom.',
     /** Added 2026-09-04 per D-126 / issue #34, from `docs/source-copy/svc-ensuite.md`. */
@@ -483,7 +483,7 @@ export const services = [
      * "Sydney" — only the `<title>` tag itself drops it here.
      */
     metaTitle: 'Bathroom + Laundry Renovations',
-    updated: '2026-09-04',
+    updated: '2026-09-14',
     summary:
       'Two wet areas run as a single program. One demolition, one waterproofing stage, one trade sequence — and one disruption to the house instead of two.',
     /**
@@ -531,7 +531,7 @@ export const services = [
     slug: 'powder-room-renovations',
     title: 'Powder Room Renovations',
     h1: 'Powder Room Renovations Sydney',
-    updated: '2026-08-27',
+    updated: '2026-09-14',
     summary:
       'The smallest room in the house, where every millimetre of the setout shows. Fixture placement and tile setout carry the whole result.',
     /**

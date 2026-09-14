@@ -93,7 +93,7 @@ export const projects: readonly Project[] = [
     suburb: 'Artarmon',
     name: 'Artarmon bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'Brushed gold taps and warm, sandy tiles give the room a rich, easy feel. A freestanding bath sits at the centre, calm and simple, and a wall-hung vanity keeps the floor clear and the room open.',
@@ -145,7 +145,7 @@ export const projects: readonly Project[] = [
     suburb: 'Castle Hill',
     name: 'Castle Hill bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A bright, modern family bathroom in soft, neutral tones with real wood and stone textures. Light wood, soft grey and crisp white pair with brushed nickel taps. Large tiles open up the space, with a frameless glass shower.',
@@ -197,7 +197,7 @@ export const projects: readonly Project[] = [
     suburb: 'Hornsby',
     name: 'Hornsby bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A bold, timeless black-and-white look. Crisp marble-style walls and deep black fittings make a sharp contrast. A frameless shower and wall-hung vanity keep the room neat, with lots of hidden storage.',
@@ -237,7 +237,7 @@ export const projects: readonly Project[] = [
     suburb: 'Hornsby',
     name: 'Hornsby ensuite renovation',
     service: 'Ensuite renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       "This ensuite continues the same home's black-and-white look, so both rooms feel like one. A frameless shower and a wall-hung vanity keep the small room feeling open.",
@@ -265,7 +265,7 @@ export const projects: readonly Project[] = [
     suburb: 'Randwick',
     name: 'Randwick bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A stylish family bathroom in soft, neutral tones, with matte black fittings for a modern look. A custom angled shower screen is the standout feature. The wall-hung vanity keeps the room open, with daily storage.',
@@ -305,7 +305,7 @@ export const projects: readonly Project[] = [
     suburb: 'Balmain',
     name: 'Balmain bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A concrete-look bathroom with warm, timber-look floors for contrast. A custom vanity and a matching tall cabinet keep things tidy, and a freestanding bath anchors the room.',
@@ -345,7 +345,7 @@ export const projects: readonly Project[] = [
     suburb: 'Gladesville',
     name: 'Gladesville bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A crisp white bathroom in classic subway tiles. A frameless glass shower and a floating vanity keep the floor clear and the room bright.',
@@ -389,7 +389,7 @@ export const projects: readonly Project[] = [
     suburb: 'Little Bay',
     name: 'Little Bay bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A bright white bathroom with a bold turquoise basin and a freestanding bath. Timber shutters and a frameless shower keep the room feeling open.',
@@ -451,7 +451,7 @@ export const projects: readonly Project[] = [
     suburb: 'Hunters Hill',
     name: 'Hunters Hill bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'Full-height marble-look tiles, a double vanity and a freestanding bath beneath timber shutters. Matte black fittings throughout give it a sharp, modern finish.',
@@ -506,7 +506,7 @@ export const projects: readonly Project[] = [
     // and the "About this project" copy keep it (tech-audit M-5).
     metaTitle: 'The Rocks bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A bathroom in a heritage terrace, built around an original leadlight window. A freestanding bath, patterned floor tiles and a frameless shower bring a modern finish, but the house still feels like itself.',
@@ -549,7 +549,7 @@ export const projects: readonly Project[] = [
     // <title> only — the H1 keeps the full name (tech-audit M-5).
     metaTitle: 'Artarmon bathroom and ensuite',
     service: 'Ensuite renovation',
-    updated: '2026-08-31',
+    updated: '2026-09-14',
     completedByYear: 2026,
     blurb:
       'A bathroom and ensuite done together for one clear, modern look. Charcoal stone-look tiles, a round LED mirror and warm terracotta towels give the double vanity and frameless showers their own style.',

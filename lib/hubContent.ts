@@ -199,6 +199,7 @@ export const hubContent: Record<string, HubContent> = {
         'The North Shore is known for leafy, established streets, and the housing stock reflects that. Federation, inter-war and mid-century homes are common, and the Ku-ring-gai suburbs — Roseville, Lindfield, Killara, Pymble and Wahroonga — hold some of the largest heritage conservation areas in Sydney.',
         'Older homes here are often timber-framed on brick piers with a suspended timber floor, sometimes on a sloping bushland block in places like Castlecrag, Northbridge or Roseville Chase. That means subfloor access matters, and the floor structure has to be checked and, where needed, reinforced before tiling and waterproofing. Many of these homes still have one small main bathroom and a separate toilet, so opening the two into a single room is a frequent request.',
         'Closer to the rail line and the town centres — Chatswood, St Leonards, North Sydney, Wollstonecraft, Hornsby and Waitara — there is a lot of apartment stock. As with any strata bathroom, we work to the owners corporation approval, hours and access rules, and the quote reflects them.',
+        'This page is backed by photographed North Shore work, including a Hornsby bathroom, a Hornsby ensuite and two Artarmon bathroom projects. Pymble, Chatswood, Castlecrag, St Ives and Wahroonga are covered through this regional page rather than separate suburb pages.',
       ],
     },
     faqs: [
@@ -216,6 +217,11 @@ export const hubContent: Record<string, HubContent> = {
         question: 'Can you renovate a bathroom in a North Shore strata apartment?',
         answer:
           'Yes. There is a lot of apartment stock around Chatswood, St Leonards, North Sydney and Hornsby. Your owners corporation has to approve the work first, and some buildings also want a building manager sign-off. We work within the building rules on hours, lift access and common-property waterproofing.',
+      },
+      {
+        question: 'Do you have bathroom renovation projects in Hornsby and Artarmon?',
+        answer:
+          'Yes. The gallery includes a Hornsby bathroom, a Hornsby ensuite and two Artarmon bathroom projects, all photographed and suburb-attributed. Those project pages show the actual work; this North Shore page explains the wider service area.',
       },
       {
         question: 'Our home has timber floors — does that change the bathroom renovation?',

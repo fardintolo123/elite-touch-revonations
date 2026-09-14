@@ -1,5 +1,64 @@
 import Link from 'next/link'
+import type { Region, Suburb } from '@/lib/locations'
 import { listableSuburbs, publishedRegions } from '@/lib/locations'
+
+const FEATURED_SUBURB_SLUGS: Record<string, string[]> = {
+  'hills-district': [
+    'castle-hill',
+    'baulkham-hills',
+    'kellyville',
+    'rouse-hill',
+    'cherrybrook',
+  ],
+  'inner-west': [
+    'balmain',
+    'five-dock',
+    'leichhardt',
+    'marrickville',
+    'drummoyne',
+  ],
+  'north-western-sydney': [
+    'gladesville',
+    'hunters-hill',
+    'ryde',
+    'north-ryde',
+    'epping',
+  ],
+  'eastern-suburbs': [
+    'randwick',
+    'rose-bay',
+    'double-bay',
+    'paddington',
+    'bondi',
+  ],
+  'north-shore': [
+    'hornsby',
+    'artarmon',
+    'pymble',
+    'chatswood',
+    'castlecrag',
+    'st-ives',
+    'wahroonga',
+  ],
+}
+
+function featuredSuburbs(region: Region): Suburb[] {
+  const suburbs = listableSuburbs(region)
+  const bySlug = new Map(suburbs.map((suburb) => [suburb.slug, suburb]))
+  const preferred = (FEATURED_SUBURB_SLUGS[region.slug] ?? [])
+    .map((slug) => bySlug.get(slug))
+    .filter((suburb): suburb is Suburb => Boolean(suburb))
+
+  return preferred.length > 0 ? preferred : suburbs.slice(0, 6)
+}
+
+function listNames(suburbs: Suburb[]): string {
+  const names = suburbs.map((suburb) => suburb.name)
+
+  if (names.length <= 1) return names.join('')
+
+  return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+}
 
 export function AreasServedLinks({
   title = 'Bathroom renovations by area',
@@ -44,6 +103,15 @@ export function AreasServedLinks({
                 }}
               >
                 {listableSuburbs(region).length} suburbs served
+              </p>
+              <p
+                className="et-body-sm"
+                style={{
+                  marginTop: 'var(--et-space-3)',
+                  color: 'var(--et-text-secondary)',
+                }}
+              >
+                Includes {listNames(featuredSuburbs(region))}.
               </p>
             </Link>
           ))}

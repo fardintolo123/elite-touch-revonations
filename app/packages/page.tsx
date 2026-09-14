@@ -241,6 +241,11 @@ const FAQS = [
       'Every package includes demolition, waterproofing to Australian Standards, new tiling, a custom shower screen, all new fittings and a final clean. The tiers differ in how much of the bathroom is tiled and which fittings are included — not the standard of work.',
   },
   {
+    question: 'Do you offer complete bathroom renovation packages?',
+    answer:
+      'Yes. The Basic, Standard and Premium packages are complete bathroom renovation starting scopes. Each one includes demolition, waterproofing, tiling, fitting installation and final clean-up. The package is not a fixed quote until the room is measured and the written scope is agreed.',
+  },
+  {
     question: 'Is the price fixed once work starts?',
     answer:
       "Yes. You get a fixed-scope written quote after a free on-site measure, before any work begins. If your bathroom's size or scope differs from a package, we tell you at the measure — never after demolition.",
@@ -314,6 +319,19 @@ export default function PackagesPage() {
               or heated flooring, all add real cost — we tell you which of
               these apply to your bathroom at the free on-site measure, not
               after demolition has started.
+            </p>
+            <h3
+              className="et-h4"
+              style={{ marginTop: 'var(--et-space-8)' }}
+            >
+              Are these bathroom renovation package deals?
+            </h3>
+            <p className="et-body-sm et-measure">
+              They are package starting scopes, not a limited-time deal. That
+              matters because a bathroom price needs the room size, tile
+              coverage, fittings and layout to be clear before it can be fixed.
+              The package gives you a plain starting point; the written quote
+              turns it into the price for your bathroom.
             </p>
           </div>
         </div>

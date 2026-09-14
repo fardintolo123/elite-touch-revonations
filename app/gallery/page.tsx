@@ -6,6 +6,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { projects, projectCover } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
+import { AreasServedLinks } from '@/components/AreasServedLinks'
 
 /**
  * Gallery / our work.
@@ -160,7 +161,13 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <section className="et-section et-band-surface">
+      <AreasServedLinks
+        title="Looking for bathroom renovation work near you?"
+        intro="The gallery shows real projects by suburb. The area pages explain where we work across Sydney and link the project proof to the service coverage."
+        band="surface"
+      />
+
+      <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
           <span className="et-eyebrow">Also completed</span>
           <h2 className="et-h2 et-measure-tight">

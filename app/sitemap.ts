@@ -49,6 +49,7 @@ import { blogPosts } from '@/lib/blog'
  * Change this only when you actually change those pages.
  */
 const LAST_CONTENT_PASS = '2026-08-31'
+const SEARCH_GAP_CONTENT_PASS = '2026-09-14'
 
 const absolute = (path: string) => `${businessInfo.siteUrl}${path}`
 
@@ -63,16 +64,44 @@ function serviceHeroImageFor(slug: string): string | undefined {
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = businessInfo.siteUrl
 
-  const staticRoutes: MetadataRoute.Sitemap = (
-    [
-      { url: `${base}/`, changeFrequency: 'monthly', priority: 1 },
-      { url: `${base}/services/`, changeFrequency: 'monthly', priority: 0.9 },
-      { url: `${base}/packages/`, changeFrequency: 'monthly', priority: 0.9 },
-      { url: `${base}/gallery/`, changeFrequency: 'monthly', priority: 0.8 },
-      { url: `${base}/about-us/`, changeFrequency: 'yearly', priority: 0.7 },
-      { url: `${base}/contact-us/`, changeFrequency: 'yearly', priority: 0.8 },
-    ] satisfies MetadataRoute.Sitemap
-  ).map((entry) => ({ ...entry, lastModified: LAST_CONTENT_PASS }))
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${base}/`,
+      lastModified: SEARCH_GAP_CONTENT_PASS,
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: `${base}/services/`,
+      lastModified: SEARCH_GAP_CONTENT_PASS,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/packages/`,
+      lastModified: SEARCH_GAP_CONTENT_PASS,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/gallery/`,
+      lastModified: SEARCH_GAP_CONTENT_PASS,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${base}/about-us/`,
+      lastModified: LAST_CONTENT_PASS,
+      changeFrequency: 'yearly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/contact-us/`,
+      lastModified: LAST_CONTENT_PASS,
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+  ]
 
   /**
    * Privacy + terms (issue #37). Low priority, rarely change. Their own real

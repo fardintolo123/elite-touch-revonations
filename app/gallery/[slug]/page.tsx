@@ -201,11 +201,16 @@ export default async function ProjectPage({
         <div className="et-container et-stack">
           <span className="et-eyebrow">Related pages</span>
           <h2 className="et-h2 et-measure-tight">
-            See more bathroom renovation work by service and area
+            Planning a bathroom renovation in {project.suburb}?
           </h2>
+          <p className="et-lead et-measure">
+            This gallery page shows one real project in {project.suburb}. If
+            you are planning a similar job, start with the service page, then
+            compare the package scope before booking a free on-site measure.
+          </p>
 
           <div
-            className="et-grid et-grid-2"
+            className="et-grid et-grid-3"
             style={{ marginTop: 'var(--et-space-8)' }}
           >
             <Link
@@ -222,6 +227,20 @@ export default async function ProjectPage({
               >
                 See how we strip out, waterproof, tile and fit off bathrooms
                 across Sydney.
+              </p>
+            </Link>
+
+            <Link href="/packages/" className="et-card et-card-link">
+              <h3 className="et-h4">Packages and pricing</h3>
+              <p
+                className="et-body-sm"
+                style={{
+                  marginTop: 'var(--et-space-3)',
+                  color: 'var(--et-text-secondary)',
+                }}
+              >
+                Compare Basic, Standard and Premium package scopes before the
+                on-site measure.
               </p>
             </Link>
 

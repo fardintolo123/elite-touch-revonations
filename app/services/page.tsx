@@ -7,6 +7,7 @@ import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { projects } from '@/lib/projects'
+import { AreasServedLinks } from '@/components/AreasServedLinks'
 
 /**
  * Services index — an existing indexed URL on the WordPress site (it is in
@@ -85,7 +86,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <WorkStrip band="surface" />
+      <AreasServedLinks
+        title="Bathroom renovations by Sydney area"
+        intro="If you searched by suburb, start with the regional page that covers it. We only publish area pages where the site has real local project proof or a useful regional page, so the coverage stays honest."
+        band="surface"
+      />
+
+      <WorkStrip band="canvas" />
 
       <ContactSection />
     </>
