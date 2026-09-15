@@ -173,6 +173,34 @@ When two sources disagree, the **higher tier wins**:
 
 ---
 
+## Specialist Agents
+
+Use specialists when they improve quality, reduce risk, or let a large task be assessed from the
+right angle. The canonical role definitions live in [docs/SPECIALIST_AGENTS.md](docs/SPECIALIST_AGENTS.md).
+Do not create tool-specific variants that drift from that file.
+
+The main agent remains responsible for routing, coordination, integrating specialist output,
+verification, and completion. Do **not** automatically invoke all specialists for every task; choose
+only the roles that match the work.
+
+| Situation | Specialists to consider |
+|---|---|
+| Visual/UI issue | Designer + Vision Auditor |
+| Technical implementation | Developer |
+| Copy/content issue | Copywriter - eliminate AI-slop |
+| Image/media issue | Media Creator |
+| Complex UI implementation | Designer + Developer + Vision Auditor |
+| Landing-page or conversion work | Relevant combination of Designer + Copywriter + Media Creator + Developer + Vision Auditor |
+
+Tool support differs:
+- **Claude Code:** project subagents live in `.claude/agents/` and can be invoked as real subagents.
+- **OpenAI Codex:** use `AGENTS.md` as the project instruction adapter; do not assume Claude subagent
+  files are loaded by Codex.
+- **GitHub Copilot:** use `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md`;
+  Copilot can follow the specialist roles as instructions, not as Claude Code subagents.
+
+---
+
 ## Business Rules
 
 - **Four services, and only four:** bathroom · ensuite · bathroom-and-laundry · powder room
@@ -311,15 +339,63 @@ issue must:
   cannot be reconciled with it later.
 - **Reference the relevant files** (paths) it expects to touch, so the next session — human or
   agent — does not have to rediscover scope before starting.
+- **Include acceptance criteria and verification scope** so completion is testable. Name the concrete
+  user-visible, code, content, SEO, performance, or documentation result that proves the issue is
+  done, plus the narrowest useful check that can verify it independently.
 - **Be updated together with the plan and checklist during implementation.** When a checklist item
   is ticked, its linked issue is closed or updated in the *same* change, not in a follow-up pass.
   A plan and an issue tracker that drift apart both become unreliable at once.
+- **Include explicit parallelization metadata.** Every issue created from a larger task must state
+  whether it can safely run in parallel, what it depends on, which files it owns, and which files it
+  must not modify while another issue owns them. Use the actual files for that issue; never blindly
+  copy an example.
 
-**Structure the set so issues can be executed one at a time without losing track:** order them by
-dependency (not by discovery order), keep the count of "in progress" issues low, and record a
-blocked issue's blocker explicitly rather than leaving it silently stalled. The plan file is the
-map; each issue is one step on it — if you cannot point at the plan line an issue came from, it is
-not ready to open.
+Prefer independent issues that can be safely executed in separate coding-agent sessions. Each issue
+should have clearly defined scope, file ownership/boundaries, explicit dependencies, clear acceptance
+criteria, and independent verification where practical. Do not recommend concurrent work when issues
+share files unnecessarily or one must land before another.
+
+Use this section in every issue created from a larger task, with the actual relevant files:
+
+```md
+## Parallelization
+- Can run in parallel: YES
+- Depends on: None
+- Files owned:
+  - app/services/bathroom/page.tsx
+  - data/services.ts
+- Must not modify:
+  - app/layout.tsx
+  - components/Header.tsx
+  - globals.css
+- Acceptance criteria:
+  - The issue-specific result that proves this work is complete.
+- Verification:
+  - The narrowest useful check that can be run independently.
+```
+
+If an issue cannot safely run in parallel:
+
+```md
+## Parallelization
+- Can run in parallel: NO
+- Depends on: Issue #XX
+- Reason: Explain the dependency, shared file ownership, or required sequencing.
+- Acceptance criteria:
+  - The issue-specific result that proves this work is complete.
+- Verification:
+  - The narrowest useful check after the dependency lands.
+```
+
+Actively analyze file overlap and dependencies before calling issues independent. If two issues
+necessarily share files or depend on each other, mark the dependency, identify which issue must be
+completed first, and sequence them instead of running them concurrently.
+
+**Structure the set so issues can be executed one at a time or safely in parallel without losing
+track:** order them by dependency (not by discovery order), keep the count of "in progress" issues
+low, and record a blocked issue's blocker explicitly rather than leaving it silently stalled. The
+plan file is the map; each issue is one step on it — if you cannot point at the plan line an issue
+came from, it is not ready to open.
 
 ## Testing Workflow
 
@@ -389,6 +465,8 @@ what's wrong, what to decide, and exactly what to do next.
 - [ ] Build green; verified in a browser if the UI changed.
 - [ ] If GitHub issues were opened for this task, each traces to a plan/checklist line and was
       updated alongside it (Issue Workflow).
+- [ ] If GitHub issues were created from a larger task, each includes actionable Parallelization
+      metadata with file ownership, dependencies, acceptance criteria, and verification scope.
 - [ ] If implementing an existing GitHub issue, every requirement and acceptance criterion was
   implemented, verified, and the issue was closed; blocked issues remain open.
 - [ ] Decisions and mechanics recorded in the right file.
