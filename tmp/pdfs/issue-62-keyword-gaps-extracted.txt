@@ -1,0 +1,82 @@
+Pages: 2
+
+--- PAGE 1 ---
+Elite T ouch Renovations ��� Question-Keyword
+Gaps
+elitetouchrenovations.au — Last 3 Months (Google Search Console)
+Filtered for: 6+ word question-style queries, high impressions relative to this site’s volume,
+and near-zero clicks.
+This site is thin on volume (6.01K impressions / 48 clicks over 3 months, average position 37.3),
+so “high impressions” is relative here. One cluster stands out clearly above the noise.
+The opportunity: “how long does a bathroom renovation take”
+Query Impr. Clicks Position
+how long does a
+bathroom renovation
+take
+15 0 20.5
+how long does it take
+to renovate a
+bathroom
+6 0 25.5
+how long to renovate
+a bathroom
+5 0 20.8
+how long does
+bathroom renovation
+take
+3 0 21.7
+how long does it take
+to remodel a
+bathroom
+3 0 24.7
+how long does it take
+to redo a bathroom
+2 0 21.5
+how long to do
+bathroom renovation
+2 0 29.0
+(7 more
+single-impression
+variants of the same
+question)
+7 0 16–29
+~42 impressions, 0 clicks, across the whole cluster .
+Ranking page: https://www.elitetouchrenovations.au/blog/bathroom-renovation-
+timeline-sydney/ — position 17.8 overall (page 2). The page’s title is a literal match (“How
+long does a bathroom renovation take?”), so it’s getting found — it’s just not converting the
+click.
+1
+--- PAGE 2 ---
+Risk: none. Position 17–29 is deep page 2/3 — nowhere near page 1, so there’s no ranking
+to protect. Edit freely .
+Why it’s not converting
+I opened the page. It deliberately withholds a number — the copy literally says giving “an
+attractive number of days” is less useful than explaining the process. That’s defensible as an
+honest sales philosophy, but it’s the opposite of what wins clicks and featured snippets for a
+“how long does X take” query . Searchers want a ballpark before they’ll click through for the
+nuance.
+Paste-ready fix
+Add this as a new block right under the H1, before the existing “The short answer” section
+(keep that section below it — it’s good supporting content, just needs a number-led opener
+first):
+## Quick answer
+Most bathroom renovations in Sydney take **[X–Y weeks]** from demolition to
+final handover, depending on room size and whether layout or plumbing
+positions are changing. A simple like-for-like refresh sits at the shorter
+end; a full reconfiguration with new waterproofing and custom tiling sits
+at the longer end.
+| Renovation type | Typical duration |
+|---|---|
+| Like-for-like refresh (same layout) | [X–Y weeks] |
+| Standard renovation (new fixtures, same footprint) | [X–Y weeks] |
+| Full renovation (layout change, waterproofing, custom tiling) | [X–Y weeks] |
+Timeframes are on-site working time and assume no unexpected issues once
+walls are opened up. [Get a fixed timeline for your bathroom →]
+You need to fill in the actual week ranges — I didn’t fabricate numbers since this is a
+specific business claim. Once that’s in, this block is also your best shot at the “how long does
+a bathroom renovation take” featured snippet, which is exactly what’s driving the 0% CTR right
+now.
+What to do first
+Add the week-range table to the bathroom timeline page. Zero risk, clear win, just needs your
+real numbers.
+2

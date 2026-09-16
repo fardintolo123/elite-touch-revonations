@@ -103,12 +103,56 @@ const HOME_FAQS = [
     },
   },
   {
+    question: 'Do you provide a fixed quote or just an estimate?',
+    answer:
+      'You receive a fixed-scope written quote before work begins. It sets out what is included, what is not included, and what changes would need approval, so you are not relying on a rough verbal estimate.',
+    link: {
+      href: '/packages/',
+      label: 'See what the package scopes include',
+    },
+  },
+  {
+    question: 'Is the waterproofing certified?',
+    answer:
+      'Yes. Every bathroom is waterproofed to AS 3740, with primer plus two coats, and a compliance certificate is supplied for the waterproofing work.',
+    link: {
+      href: '/services/bathroom-renovations/',
+      label: 'Read about the bathroom renovation process',
+    },
+  },
+  {
     question: 'How long does a bathroom renovation take?',
     answer:
       'Most full renovations on the same footprint take 3–4 weeks. A premium build with natural stone and custom joinery takes 5–6 weeks, and a reconfiguration that moves walls or fixture positions takes 5–7 weeks. You get your on-site program in writing before work starts, not a verbal estimate.',
     link: {
       href: '/services/bathroom-renovations/',
       label: 'See the full bathroom renovation process',
+    },
+  },
+  {
+    question: 'Are you licensed and insured?',
+    answer: `Yes. Elite Touch Renovations works under NSW Builder Licence ${businessInfo.builderLicence}, held by ${businessInfo.builderLicenceHolder}. The business carries Public Liability ${businessInfo.insurance.publicLiability}, Workers Compensation through ${businessInfo.insurance.workersCompensation}, and HBCF certificates are issued for applicable residential projects.`,
+    link: {
+      href: '/about-us/',
+      label: 'Check our licences and protections',
+    },
+  },
+  {
+    question: 'Will one team manage the trades?',
+    answer:
+      'Yes. We run the bathroom renovation as one managed project: strip-out, plumbing and electrical preparation, waterproofing, tiling, fit-off and final clean. You do not have to schedule each trade yourself.',
+    link: {
+      href: '/about-us/',
+      label: 'Meet the Dawood family',
+    },
+  },
+  {
+    question: 'What happens if you find a problem after demolition starts?',
+    answer:
+      'Older bathrooms can reveal rot, non-compliant plumbing or asbestos after strip-out. We inspect before quoting to reduce surprises, and if something hidden appears, the issue, cost and timing effect are discussed before extra work proceeds.',
+    link: {
+      href: '/blog/bathroom-renovation-hidden-costs-sydney/',
+      label: 'Read about hidden bathroom renovation costs',
     },
   },
   {
