@@ -52,6 +52,43 @@ export default async function BlogPostPage({
               <Link href="/blog/" className="et-link">All advice</Link> / {post.category}
             </p>
             <div className="et-stack et-blog-prose">
+              {post.quickAnswer ? (
+                <section className="et-card et-card-tinted et-blog-quick-answer">
+                  <h2 className="et-h2">{post.quickAnswer.heading}</h2>
+                  {post.quickAnswer.paragraphs.map((paragraph) => (
+                    <p key={paragraph} className="et-body">{paragraph}</p>
+                  ))}
+                  <div className="et-table-wrap">
+                    <table className="et-table">
+                      <caption>{post.quickAnswer.table.caption}</caption>
+                      <thead>
+                        <tr>
+                          {post.quickAnswer.table.columns.map((column) => (
+                            <th key={column} scope="col">{column}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {post.quickAnswer.table.rows.map((row) => (
+                          <tr key={row.label}>
+                            <th scope="row">
+                              {row.label}
+                              <span className="et-body-sm et-table-note">{row.detail}</span>
+                            </th>
+                            <td>{row.value}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="et-body-sm">{post.quickAnswer.note}</p>
+                  <p>
+                    <Link href={post.quickAnswer.cta.href} className="et-btn et-btn-primary et-btn-md">
+                      {post.quickAnswer.cta.label}
+                    </Link>
+                  </p>
+                </section>
+              ) : null}
               {post.sections.map((section) => (
                 <section key={section.heading}>
                   <h2 className="et-h2">{section.heading}</h2>

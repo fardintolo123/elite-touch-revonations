@@ -23,10 +23,10 @@ The page already exists and owns the query. Do not create a new page. The reques
 
 ## Checklist
 
-- [ ] Plan written before edits.
-- [ ] Quick answer added to the timeline article using existing duration data.
-- [ ] No unsupported "refresh" service or invented timeline added.
-- [ ] Copy is answer-first and visible in server-rendered HTML.
+- [x] Plan written before edits.
+- [x] Quick answer added to the timeline article using existing duration data.
+- [x] No unsupported "refresh" service or invented timeline added.
+- [x] Copy is answer-first and visible in server-rendered HTML.
 - [ ] Typecheck passes.
 - [ ] Build passes with no route-count drop.
 - [ ] Readability passes.

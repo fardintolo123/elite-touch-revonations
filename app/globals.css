@@ -769,6 +769,13 @@ svg {
   color: var(--et-text-secondary);
 }
 
+.et-table-note {
+  display: block;
+  margin-top: var(--et-space-1);
+  color: var(--et-text-secondary);
+  font-weight: 400;
+}
+
 .et-table th + th,
 .et-table td + td,
 .et-table tbody th + td {

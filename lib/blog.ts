@@ -1,6 +1,27 @@
+import { businessInfo } from './businessInfo'
+
 export type BlogSection = {
   heading: string
   paragraphs: string[]
+}
+
+export type BlogQuickAnswer = {
+  heading: string
+  paragraphs: string[]
+  table: {
+    caption: string
+    columns: [string, string]
+    rows: {
+      label: string
+      detail: string
+      value: string
+    }[]
+  }
+  note: string
+  cta: {
+    href: string
+    label: string
+  }
 }
 
 export type BlogPost = {
@@ -10,6 +31,7 @@ export type BlogPost = {
   published: string
   readTime: string
   category: string
+  quickAnswer?: BlogQuickAnswer
   sections: BlogSection[]
 }
 
@@ -34,6 +56,27 @@ export const blogPosts: BlogPost[] = [
     published: '2026-09-10',
     readTime: '5 min read',
     category: 'Planning and process',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Most bathroom renovations in Sydney take 3-7 weeks on site from demolition to final handover. The shorter end is a full renovation on the same footprint; the longer end is a premium build or a job that moves walls or fixture positions.',
+        'These are on-site working times. Planning, product selections and ordering happen before the build starts, and hidden issues can only be confirmed once the old bathroom is opened up.',
+      ],
+      table: {
+        caption: 'Typical on-site duration for an Elite Touch bathroom renovation.',
+        columns: ['Renovation type', 'Typical duration'],
+        rows: businessInfo.buildDurations.map((duration) => ({
+          label: duration.label,
+          detail: duration.detail,
+          value: duration.weeks,
+        })),
+      },
+      note: 'Your written quote should include the program for your room, not just a verbal estimate.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Get your fixed timeline',
+      },
+    },
     sections: [
       { heading: 'The short answer', paragraphs: ['A bathroom renovation is usually measured in weeks rather than days. The exact timeline depends on the room, the scope, product availability, approvals and what is discovered once the old finishes are removed.', 'A reliable programme should explain the sequence of work and identify decisions that need to be made before the job starts. That is more useful than promising an attractive number of days before the room has been measured.'] },
       { heading: 'The stages that shape the programme', paragraphs: ['Planning covers the measure, selections, scope and written quote. The site work then commonly moves through protection and demolition, plumbing and electrical preparation, waterproofing, tiling, installation of fittings, finishing and clean-up.', 'Some stages depend on the previous one. Waterproofing needs the right preparation, and later finishes depend on completed and properly cured work. A rushed sequence can create more risk than a realistic programme.'] },
