@@ -55,11 +55,12 @@ The PDF recommends:
 - [x] PDF downloaded and text extracted.
 - [x] Existing blog/service/homepage coverage checked.
 - [x] Plan written before implementation.
-- [ ] Homepage FAQ expanded with evidenced answers.
-- [ ] Unsupported PDF claims rejected in `DECISIONS.md`.
-- [ ] TypeScript check passes.
-- [ ] Build passes.
-- [ ] Readability check passes.
-- [ ] Served HTML/schema check confirms new FAQ copy is present.
-- [ ] Session handoff written.
-- [ ] GitHub issue #61 commented and closed if verified.
+- [x] Homepage FAQ expanded with evidenced answers.
+- [x] Unsupported PDF claims rejected in `DECISIONS.md`.
+- [x] TypeScript check passes.
+- [x] Build passes.
+- [x] Readability check passes.
+- [x] Served HTML/schema check confirms new FAQ copy is present.
+- [x] Browser check passes at desktop and 390 px mobile.
+- [x] Session handoff written.
+- [x] GitHub issue #61 commented and closed if verified.

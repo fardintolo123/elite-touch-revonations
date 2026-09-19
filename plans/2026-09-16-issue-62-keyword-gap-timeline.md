@@ -27,10 +27,10 @@ The page already exists and owns the query. Do not create a new page. The reques
 - [x] Quick answer added to the timeline article using existing duration data.
 - [x] No unsupported "refresh" service or invented timeline added.
 - [x] Copy is answer-first and visible in server-rendered HTML.
-- [ ] Typecheck passes.
-- [ ] Build passes with no route-count drop.
-- [ ] Readability passes.
-- [ ] Served/static HTML contains the new answer.
-- [ ] `DECISIONS.md` updated.
-- [ ] Issue #62 closed after verification.
+- [x] Typecheck passes.
+- [x] Build passes with no route-count drop.
+- [x] Readability passes.
+- [x] Served/static HTML contains the new answer.
+- [x] `DECISIONS.md` updated.
+- [x] Issue #62 closed after verification.
 - [ ] Session handoff written.
