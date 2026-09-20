@@ -35,8 +35,8 @@ forms, accessibility, and design.
 - [x] Verify structured data and internal links still use the same data paths.
 - [x] Inspect representative desktop and 390 px mobile pages in a real browser.
 - [x] Review every issue requirement and acceptance criterion against the final site.
-- [ ] Close GitHub issue #64 after verification passes.
-- [ ] Write the required session handoff.
+- [x] Close GitHub issue #64 after verification passes.
+- [x] Write the required session handoff.
 
 ## Audit verdict
 
