@@ -25,7 +25,7 @@ import { GoogleRating } from '@/components/GoogleRating'
 
 export const metadata: Metadata = buildMetadata({
   path: '/contact-us/',
-  title: 'Contact Us',
+  title: 'Book a Free On-Site Measure',
   description:
     'Book a free on-site bathroom renovation measure anywhere in Sydney. Call Elite Touch Renovations on 0411 752 334 or send us your details.',
 })
@@ -35,7 +35,7 @@ export default function ContactPage() {
     <>
       <SchemaGraph
         path="/contact-us/"
-        name="Contact Us"
+        name="Book a Free On-Site Measure"
         description="Book a free on-site bathroom renovation measure anywhere in Sydney. Call Elite Touch Renovations on 0411 752 334 or send us your details."
         pageType="ContactPage"
         breadcrumbs={[
@@ -50,9 +50,10 @@ export default function ContactPage() {
             Book a free on-site measure in Sydney.
           </h1>
           <p className="et-lead et-measure">
-            Tell us about the room and we will come and measure it, at no cost
-            and with no obligation. You will get a fixed-scope written quote
-            back — what is included, what is not, and what it costs.
+            Tell us what is not working in the room. We will come out, measure
+            it and talk through the layout, fittings and scope at no cost. You
+            can then decide from a written quote that shows what is included,
+            what is not and what it costs.
           </p>
         </div>
       </section>
@@ -65,8 +66,9 @@ export default function ContactPage() {
               <span className="et-eyebrow">The fastest way</span>
               <h2 className="et-h2 et-measure-tight">Call or text us.</h2>
               <p className="et-lead et-measure">
-                Our customers consistently say phone and SMS are how they got a
-                fast answer from us. If your job is time-sensitive, start here.
+                Our customers often mention quick replies by phone and SMS. If
+                you want to explain the room or ask whether your plans fit the
+                service, calling is the simplest place to start.
               </p>
 
               {/* Real tel: anchor — D-33. Never a JS click handler. */}
@@ -87,15 +89,16 @@ export default function ContactPage() {
                   style={{ marginTop: 'var(--et-space-5)' }}
                 >
                   <li>
-                    We arrange a time to come and measure — free, anywhere in
-                    Sydney.
+                    We ask what is not working, then arrange a free measure
+                    anywhere in Sydney.
                   </li>
                   <li>
                     We talk through the scope, the fittings and the sequence on
                     site.
                   </li>
                   <li>
-                    You get a fixed-scope written quote. Nothing is verbal.
+                    You get the agreed inclusions, exclusions and price in a
+                    fixed-scope written quote.
                   </li>
                   <li>
                     If you go ahead, we book the demolition date and keep you
@@ -167,7 +170,7 @@ export default function ContactPage() {
                   color: 'var(--et-text-secondary)',
                 }}
               >
-                We will call you back to arrange the measure.
+                We will call to learn about the room and arrange the measure.
               </p>
               <EnquiryForm />
 

@@ -138,6 +138,33 @@ const HOME_FAQS = [
     },
   },
   {
+    question: 'Can you renovate a bathroom in a strata apartment?',
+    answer:
+      'Yes. Apartment and strata bathroom renovations can involve owners corporation approval, building access rules, lift protection, working-hour limits and extra paperwork. Ask your strata manager what applies before work starts, then give those rules to us so the written scope reflects the building.',
+    link: {
+      href: '/blog/strata-bathroom-renovation-sydney/',
+      label: 'Read the strata bathroom renovation guide',
+    },
+  },
+  {
+    question: 'What warranty do you provide?',
+    answer:
+      'Elite Touch Renovations provides a 10-year workmanship warranty. Read the warranty as written in your agreement and ask what is covered before work begins, because product and third-party fitting warranties are separate from workmanship.',
+    link: {
+      href: '/blog/bathroom-renovation-warranty-guide/',
+      label: 'Read the bathroom renovation warranty guide',
+    },
+  },
+  {
+    question: 'Do you offer a free on-site measure?',
+    answer:
+      'Yes. The on-site measure is free across Sydney. We inspect and measure the room, talk through the scope and then prepare a fixed-scope written quote so the price is tied to the actual bathroom, not only photos or a phone call.',
+    link: {
+      href: '/contact-us/',
+      label: 'Book a free on-site measure',
+    },
+  },
+  {
     question: 'Will one team manage the trades?',
     answer:
       'Yes. We run the bathroom renovation as one managed project: strip-out, plumbing and electrical preparation, waterproofing, tiling, fit-off and final clean. You do not have to schedule each trade yourself.',
@@ -192,17 +219,16 @@ export default function HomePage() {
               <span className="et-eyebrow">Sydney · Family-run since 2022</span>
 
               <h1 className="et-display et-measure-tight">
-                Bathroom renovations near you in Sydney, done once and done
-                properly.
+                Bathroom renovations near you in Sydney, with the scope clear
+                before work starts.
               </h1>
 
               <p className="et-lead et-measure">
-                If you are looking for bathroom renovations near you in Sydney,
-                Elite Touch Renovations is a family-run business that comes to
-                you. We strip out, waterproof to{' '}
-                {businessInfo.standards.waterproofing}, tile and fit off — and
-                we tell you the full scope and price in writing before anyone
-                picks up a tool.
+                An awkward layout, poor storage or ageing waterproofing can make
+                the room hard to use and the renovation hard to price. We
+                measure it on site, then put the work, exclusions and price in
+                writing before we strip out, waterproof to{' '}
+                {businessInfo.standards.waterproofing}, tile and fit off.
               </p>
 
               <div className="et-hero-cta">
@@ -330,12 +356,12 @@ export default function HomePage() {
         <div className="et-container et-stack">
           <span className="et-eyebrow">How it works</span>
           <h2 className="et-h2 et-measure-tight">
-            What it is like to have us in your home.
+            Know what happens before the bathroom comes out.
           </h2>
           <p className="et-lead et-measure">
-            A bathroom renovation is a considered purchase and a disruptive one.
-            Knowing the sequence up front is worth more than any adjective we
-            could use about ourselves.
+            You will know the sequence, what each stage covers and when the room
+            will be out of action. We manage the trades and keep the agreed
+            scope in one place from the measure to the final clean.
           </p>
 
           <div style={{ marginTop: 'var(--et-space-10)' }}>
@@ -373,7 +399,7 @@ export default function HomePage() {
         <div className="et-container et-stack">
           <span className="et-eyebrow">In our customers&rsquo; words</span>
           <h2 className="et-h2 et-measure-tight">
-            Communication, punctuality, and a clean site.
+            What customers notice while we are in the house.
           </h2>
           <p className="et-lead et-measure">
             Those three things come up again and again in what our customers
@@ -395,7 +421,7 @@ export default function HomePage() {
             </figure>
 
             <div className="et-card et-card-dark">
-              <h3 className="et-h4">Why people call us back</h3>
+              <h3 className="et-h4">What keeps the job controlled</h3>
               <ul
                 className="et-checklist"
                 style={{ marginTop: 'var(--et-space-5)' }}

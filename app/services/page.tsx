@@ -46,7 +46,7 @@ export default function ServicesPage() {
         eyebrow="Our services"
         title="Bathroom renovation services across Sydney."
         leads={[
-          'Four services, and they are all wet areas. We do not take kitchens, extensions or tiling-only work. The whole business is built around getting the waterproofing and the tile setout right.',
+          'Choose the room that needs work: a main bathroom, ensuite, bathroom and laundry together, or powder room. We plan the layout, scope and trade sequence around that wet area, then put it in writing before work starts.',
         ]}
         image={{ project: heroProject }}
       />

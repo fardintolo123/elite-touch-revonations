@@ -168,8 +168,19 @@ export default async function ServicePage({
 
       {about && (
         <section className="et-section et-band-surface">
-          <div className="et-container">
-            <p className="et-lead et-measure">{about}</p>
+          <div className="et-container et-stack">
+            <span className="et-eyebrow">What this service solves</span>
+            <h2 className="et-h2 et-measure-tight">{about.heading}</h2>
+            {about.paragraphs.map((paragraph, index) => (
+              <p
+                key={paragraph}
+                className={
+                  index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'
+                }
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
         </section>
       )}
@@ -180,11 +191,12 @@ export default async function ServicePage({
             <div className="et-stack">
               <span className="et-eyebrow">What is included</span>
               <h2 className="et-h2 et-measure-tight">
-                What every one of our renovations covers.
+                What does the written scope cover?
               </h2>
               <p className="et-lead et-measure">
-                This is the standard scope across our packages. Fittings and
-                tile coverage change between tiers — the work below does not.
+                These are the core stages across our packages. The fittings and
+                tile coverage change by tier; the sequence and written
+                responsibility for the work do not.
               </p>
               <p className="et-body-sm">
                 <Link href="/packages/" className="et-link">

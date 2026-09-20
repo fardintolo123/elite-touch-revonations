@@ -23,3 +23,21 @@ export function formatMonthYear(date: string): string {
 
   return `${MONTHS[monthIndex]} ${year}`
 }
+
+export function formatDayMonthYear(date: string): string {
+  const [year, month, day] = date.split('-')
+  const monthIndex = Number(month) - 1
+  const dayNumber = Number(day)
+
+  if (
+    !year ||
+    monthIndex < 0 ||
+    monthIndex >= MONTHS.length ||
+    dayNumber < 1 ||
+    dayNumber > 31
+  ) {
+    throw new Error(`Invalid YYYY-MM-DD date: ${date}`)
+  }
+
+  return `${dayNumber} ${MONTHS[monthIndex]} ${year}`
+}

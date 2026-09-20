@@ -11,6 +11,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
 import { GoogleRating } from '@/components/GoogleRating'
+import { LocationHero } from '@/components/LocationHero'
 import {
   LOCATION_PARENT_SLUG,
   listableSuburbs,
@@ -59,7 +60,7 @@ const HUB_META_TITLE: Record<string, string> = {
   'inner-west': 'Inner West bathroom renovation',
   'eastern-suburbs': 'Eastern Suburbs bathroom renovation',
   'north-shore': 'North Shore bathroom renovation',
-  'north-western-sydney': 'North-Western Sydney bathroom renovation',
+  'north-western-sydney': 'North-West bathroom renovation',
 }
 
 function SuburbLocationPage({
@@ -101,48 +102,25 @@ function SuburbLocationPage({
         faqs={content?.faqs}
       />
 
-      <section className="et-hero">
-        <div className="et-container et-stack">
-          <p className="et-body-sm">
-            <Link href={`${region.hubUrl}/`} className="et-link">
-              ← {region.name} bathroom renovations
-            </Link>
-          </p>
-          <span className="et-eyebrow">{suburb.name} · {project.service}</span>
-          <p className="et-caption">A photographed project in {suburb.name}</p>
-          <h1 className="et-h1 et-measure-tight">
-            Bathroom renovations in {suburb.name}
-          </h1>
-          <p className="et-lead et-measure">{project.blurb}</p>
-          <div className="et-hero-cta">
-            <Link
-              href="/contact-us/"
-              className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-            >
-              {businessInfo.offer.primaryCta}
-            </Link>
-            <a
-              href={businessInfo.phone.href}
-              className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-            >
-              Call {businessInfo.phone.display}
-            </a>
-          </div>
-          <GoogleRating />
-          <ul className="et-facts">
-            <li className="et-fact">
-              <strong>NSW Builder Licence</strong> {businessInfo.builderLicence}
-            </li>
-            <li className="et-fact">
-              <strong>{businessInfo.workmanshipWarrantyYears}-year</strong>{' '}
-              workmanship warranty
-            </li>
-            <li className="et-fact">
-              <strong>Free on-site measure</strong> across Sydney
-            </li>
-          </ul>
-        </div>
-      </section>
+      <LocationHero
+        backHref={`${region.hubUrl}/`}
+        backLabel={`${region.name} bathroom renovations`}
+        eyebrow={`${suburb.name} · ${project.service}`}
+        caption={`A photographed project in ${suburb.name}`}
+        title={`Bathroom renovations in ${suburb.name}`}
+        lead={project.blurb}
+        project={project}
+        projectLabel={`${project.suburb} — ${project.name}`}
+        rating={<GoogleRating />}
+        facts={[
+          { label: 'NSW Builder Licence', value: businessInfo.builderLicence },
+          {
+            label: `${businessInfo.workmanshipWarrantyYears}-year`,
+            value: 'workmanship warranty',
+          },
+          { label: 'Free on-site measure', value: 'across Sydney' },
+        ]}
+      />
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
@@ -185,7 +163,7 @@ function SuburbLocationPage({
                 width={project.images[0].width}
                 height={project.images[0].height}
                 sizes="(min-width: 1024px) 960px, 100vw"
-                priority
+                loading="lazy"
               />
             </span>
             <span className="et-badge-suburb">{project.suburb}</span>
@@ -341,7 +319,7 @@ export async function generateMetadata({
       path: `/services/${LOCATION_PARENT_SLUG}/${suburb.slug}/`,
       title: `${suburb.name} bathroom renovation`,
       description: project
-        ? `${project.metaDescription ?? project.blurb} Free on-site measure and fixed-scope quotes from Elite Touch Renovations.`
+        ? `Bathroom renovations in ${suburb.name}, with real local project photos, a free on-site measure and a fixed-scope written quote.`
         : `Bathroom renovations in ${suburb.name} by Elite Touch Renovations. Free on-site measure and fixed-scope quotes.`,
       images: project
         ? [
@@ -456,55 +434,29 @@ export default async function LocationHubPage({
         hubService={{ service: parentService, region }}
         faqs={hub?.faqs}
       />
-      <section className="et-hero">
-        <div className="et-container et-stack">
-          <p className="et-body-sm">
-            <Link href={`/services/${LOCATION_PARENT_SLUG}/`} className="et-link">
-              ← Bathroom renovations
-            </Link>
-          </p>
-          <span className="et-eyebrow">{region.name}</span>
-          <p className="et-caption">Reviewed {reviewedMonth}</p>
-          <h1 className="et-h1 et-measure-tight">
-            Bathroom renovations on Sydney&rsquo;s {region.name}
-          </h1>
-          <p className="et-lead et-measure">
-            We strip out, waterproof to {businessInfo.standards.waterproofing},
-            tile and fit off across the {region.name} — and we put the full
-            scope and price in writing before anyone picks up a tool.
-          </p>
-
-          <div className="et-hero-cta">
-            <Link
-              href="/contact-us/"
-              className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-            >
-              {businessInfo.offer.primaryCta}
-            </Link>
-            <a
-              href={businessInfo.phone.href}
-              className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-            >
-              Call {businessInfo.phone.display}
-            </a>
-          </div>
-
-          <GoogleRating />
-
-          <ul className="et-facts">
-            <li className="et-fact">
-              <strong>NSW Builder Licence</strong> {businessInfo.builderLicence}
-            </li>
-            <li className="et-fact">
-              <strong>{businessInfo.workmanshipWarrantyYears}-year</strong>{' '}
-              workmanship warranty
-            </li>
-            <li className="et-fact">
-              <strong>{suburbs.length} suburbs</strong> served in this area
-            </li>
-          </ul>
-        </div>
-      </section>
+      <LocationHero
+        backHref={`/services/${LOCATION_PARENT_SLUG}/`}
+        backLabel="Bathroom renovations"
+        eyebrow={region.name}
+        caption={`Reviewed ${reviewedMonth}`}
+        title={`Bathroom renovations on Sydney’s ${region.name}`}
+        lead={`We strip out, waterproof to ${businessInfo.standards.waterproofing}, tile and fit off across the ${region.name} — and we put the full scope and price in writing before anyone picks up a tool.`}
+        project={localProjects[0]}
+        projectLabel={
+          localProjects[0]
+            ? `Featured project: ${localProjects[0].suburb} — ${localProjects[0].name}`
+            : undefined
+        }
+        rating={<GoogleRating />}
+        facts={[
+          { label: 'NSW Builder Licence', value: businessInfo.builderLicence },
+          {
+            label: `${businessInfo.workmanshipWarrantyYears}-year`,
+            value: 'workmanship warranty',
+          },
+          { label: `${suburbs.length} suburbs`, value: 'served in this area' },
+        ]}
+      />
 
       {/* ---- Answer-first lead. A self-contained 134–167 word block an AI answer
              can lift whole (geo-audit G-2): service, cost + size basis, duration,
@@ -569,8 +521,7 @@ export default async function LocationHubPage({
                       width={project.images[0].width}
                       height={project.images[0].height}
                       sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      priority={index === 0}
-                      loading={index === 0 ? 'eager' : 'lazy'}
+                      loading="lazy"
                     />
                   </span>
                   <span className="et-badge-suburb">{project.suburb}</span>

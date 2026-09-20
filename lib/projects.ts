@@ -145,10 +145,10 @@ export const projects: readonly Project[] = [
     suburb: 'Castle Hill',
     name: 'Castle Hill bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     completedByYear: 2026,
     blurb:
-      'A bright, modern family bathroom in soft, neutral tones with real wood and stone textures. Light wood, soft grey and crisp white pair with brushed nickel taps. Large tiles open up the space, with a frameless glass shower.',
+      'A family bathroom in soft grey, crisp white and light wood, with brushed nickel taps. Large floor and wall tiles, a double vanity and a frameless glass shower keep the layout open.',
     metaDescription:
       'A bright, modern Castle Hill family bathroom in soft grey, crisp white and light wood, with brushed nickel taps and a frameless glass shower.',
     story:
@@ -197,10 +197,10 @@ export const projects: readonly Project[] = [
     suburb: 'Hornsby',
     name: 'Hornsby bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     completedByYear: 2026,
     blurb:
-      'A bold, timeless black-and-white look. Crisp marble-style walls and deep black fittings make a sharp contrast. A frameless shower and wall-hung vanity keep the room neat, with lots of hidden storage.',
+      'Marble-style walls and black fittings create a clear contrast. A frameless shower and wall-hung vanity keep the floor open, with storage built into the vanity.',
     metaDescription:
       'Hornsby bathroom renovation in a bold black-and-white scheme: marble-look walls, black fittings, a frameless shower and a wall-hung vanity.',
     story:
@@ -265,10 +265,10 @@ export const projects: readonly Project[] = [
     suburb: 'Randwick',
     name: 'Randwick bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     completedByYear: 2026,
     blurb:
-      'A stylish family bathroom in soft, neutral tones, with matte black fittings for a modern look. A custom angled shower screen is the standout feature. The wall-hung vanity keeps the room open, with daily storage.',
+      'A family bathroom in soft neutral tones with matte black fittings. A custom angled shower screen fits the room, while the wall-hung vanity keeps the floor clear and adds daily storage.',
     metaDescription:
       'Randwick family bathroom renovation in soft neutral tones, with matte black fittings, a custom angled shower screen and a wall-hung vanity.',
     story:
@@ -305,10 +305,10 @@ export const projects: readonly Project[] = [
     suburb: 'Balmain',
     name: 'Balmain bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     completedByYear: 2026,
     blurb:
-      'A concrete-look bathroom with warm, timber-look floors for contrast. A custom vanity and a matching tall cabinet keep things tidy, and a freestanding bath anchors the room.',
+      'A concrete-look bathroom with warm, timber-look floors for contrast. A custom vanity and matching tall cabinet add storage, and the built-in bath stays part of the layout.',
     metaDescription:
       'Balmain bathroom renovation pairing concrete-look walls with warm timber-look floors, a custom vanity, a matching tall cabinet and a bath.',
     story:
@@ -451,10 +451,10 @@ export const projects: readonly Project[] = [
     suburb: 'Hunters Hill',
     name: 'Hunters Hill bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     completedByYear: 2026,
     blurb:
-      'Full-height marble-look tiles, a double vanity and a freestanding bath beneath timber shutters. Matte black fittings throughout give it a sharp, modern finish.',
+      'Full-height marble-look tiles, a double vanity and a freestanding bath beneath timber shutters. Matte black fittings create contrast across the bath, basins and shower.',
     metaDescription:
       'Hunters Hill bathroom renovation with full-height marble-look tiles, a double vanity, a freestanding bath under timber shutters and black fittings.',
     story:
@@ -549,10 +549,10 @@ export const projects: readonly Project[] = [
     // <title> only — the H1 keeps the full name (tech-audit M-5).
     metaTitle: 'Artarmon bathroom and ensuite',
     service: 'Ensuite renovation',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     completedByYear: 2026,
     blurb:
-      'A bathroom and ensuite done together for one clear, modern look. Charcoal stone-look tiles, a round LED mirror and warm terracotta towels give the double vanity and frameless showers their own style.',
+      'A bathroom and ensuite completed together with one finish schedule. Charcoal stone-look tiles, round LED mirrors, double vanities and frameless showers link the two rooms.',
     metaDescription:
       'Artarmon bathroom and ensuite renovation in charcoal stone-look tiles, with custom vanities, frameless showers and LED backlit mirrors.',
     story:

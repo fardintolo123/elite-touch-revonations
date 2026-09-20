@@ -50,6 +50,7 @@ import { blogPosts } from '@/lib/blog'
  */
 const LAST_CONTENT_PASS = '2026-08-31'
 const SEARCH_GAP_CONTENT_PASS = '2026-09-14'
+const ISSUE_64_CONTENT_PASS = '2026-09-20'
 
 const absolute = (path: string) => `${businessInfo.siteUrl}${path}`
 
@@ -67,13 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${base}/`,
-      lastModified: SEARCH_GAP_CONTENT_PASS,
+      lastModified: ISSUE_64_CONTENT_PASS,
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: `${base}/services/`,
-      lastModified: SEARCH_GAP_CONTENT_PASS,
+      lastModified: ISSUE_64_CONTENT_PASS,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
@@ -85,7 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/gallery/`,
-      lastModified: SEARCH_GAP_CONTENT_PASS,
+      lastModified: ISSUE_64_CONTENT_PASS,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -97,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/contact-us/`,
-      lastModified: LAST_CONTENT_PASS,
+      lastModified: ISSUE_64_CONTENT_PASS,
       changeFrequency: 'yearly',
       priority: 0.8,
     },
@@ -142,13 +143,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogRoutes: MetadataRoute.Sitemap = [
     {
       url: `${base}/blog/`,
-      lastModified: LAST_CONTENT_PASS,
+      lastModified: ISSUE_64_CONTENT_PASS,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     ...blogPosts.map((post) => ({
       url: `${base}/blog/${post.slug}/`,
-      lastModified: post.published,
+      lastModified: ISSUE_64_CONTENT_PASS,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),

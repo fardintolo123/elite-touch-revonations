@@ -24,7 +24,7 @@ import { businessInfo } from '@/lib/businessInfo'
 
 export function ContactSection({
   title = 'Book a free on-site measure',
-  intro = 'Tell us about the room. We will come and measure it anywhere in Sydney — at no cost, with nothing owed — then send a fixed-scope written quote.',
+  intro = 'Tell us what is not working in the room. We will measure it anywhere in Sydney at no cost, talk through the scope, then send the inclusions, exclusions and price in writing.',
 }: {
   title?: string
   intro?: string
@@ -85,7 +85,7 @@ export function ContactSection({
                 color: 'var(--et-text-secondary)',
               }}
             >
-              We will get back to you to arrange the measure.
+              We will call to learn about the room and arrange the measure.
             </p>
             <EnquiryForm />
 

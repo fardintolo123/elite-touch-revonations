@@ -33,4 +33,4 @@ The page already exists and owns the query. Do not create a new page. The reques
 - [x] Served/static HTML contains the new answer.
 - [x] `DECISIONS.md` updated.
 - [x] Issue #62 closed after verification.
-- [ ] Session handoff written.
+- [x] Session handoff written.

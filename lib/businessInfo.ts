@@ -379,9 +379,9 @@ export const services = [
     slug: 'bathroom-renovations',
     title: 'Bathroom Renovations',
     h1: 'Bathroom Renovations Sydney',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     summary:
-      'A full strip-out-to-studs rebuild of the main bathroom. Demolition, waterproofing to AS 3740, tiling, plumbing and electrical — finished to a fixed written scope.',
+      'Full bathroom renovations in Sydney for awkward layouts, poor storage, worn finishes and ageing waterproofing, from strip-out to handover.',
     /**
      * Added 2026-09-04 per DECISIONS.md D-126 / issue #34. Sourced from the
      * owner-supplied `docs/source-copy/svc-bathroom.md` PDF, EXCEPT pricing and
@@ -390,8 +390,15 @@ export const services = [
      * (D-60/D-61) and the owner-corrected build durations (D-75) — never
      * reintroduce the PDF's numbers here.
      */
-    about:
-      'A full bathroom renovation is a strip-out-to-studs rebuild: everything comes out — tiles, fixtures, the old waterproofing membrane, sometimes the walls themselves — and the room is rebuilt from the substrate up. We run demolition, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off as one team, from the on-site measure through to handover. It starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our Basic package, from $25,000 for Standard and from $30,000 for Premium — see how the packages differ below. A full renovation runs three to four weeks on site. Older Sydney homes can turn up rot, non-compliant plumbing or asbestos once the room is opened up, and the written quote sets out how that is handled before work starts, not after. Every job is done under NSW Builder Licence 475204C and carries a 10-year workmanship warranty.',
+    about: {
+      heading: 'What does a full bathroom renovation solve?',
+      paragraphs: [
+        'A full renovation is for a bathroom that no longer works as it should: the layout wastes space, storage spills into the room, fittings are worn, tiles are cracked or the old waterproofing is a concern. The room is stripped back so the underlying problems can be dealt with, not covered by new finishes.',
+        'We manage demolition, plumbing, electrical work, waterproofing to AS 3740, tiling and fit-off as one job. You do not have to book each trade or work out who comes next.',
+        'A small bathroom around 1.5 by 1.8 by 2.4 metres starts from $18,000 on our Basic package. Standard starts from $25,000 and Premium from $30,000. All three are starting prices tied to a stated room size.',
+        'After the free on-site measure, your written quote sets out what is included, what is not and how hidden conditions will be handled before extra work goes ahead. Every job is carried out under NSW Builder Licence 475204C and has a 10-year workmanship warranty.',
+      ],
+    },
     faqs: [
       {
         question: 'What happens if ours is the only bathroom in the house?',
@@ -426,12 +433,19 @@ export const services = [
     slug: 'ensuite-bathroom-renovations',
     title: 'Ensuite Renovations',
     h1: 'Ensuite Renovations Sydney',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     summary:
-      'Small-footprint master-suite work. We handle the ventilation and sound-proofing an ensuite needs when it shares a wall with the bedroom.',
+      'Ensuite renovations in Sydney for small rooms where ventilation, storage and noise beside the bedroom need to be solved together.',
     /** Added 2026-09-04 per D-126 / issue #34, from `docs/source-copy/svc-ensuite.md`. */
-    about:
-      'An ensuite is a bathroom accessed only from a private bedroom, almost always the master — smaller than a main bathroom, typically three to seven square metres, and usually internal with no external wall. That makes mechanical ventilation essential rather than optional, and it means noise from the toilet, the fan or the plumbing carries straight into the room next door. We treat ventilation and acoustic detailing — solid-core doors, concealed cisterns, toilet position, insulated walls — as design decisions made up front, not afterthoughts. Pricing follows the same packages as any bathroom: from $18,000 on Basic, from $25,000 on Standard and from $30,000 on Premium, based on the room size. A full ensuite renovation runs three to four weeks on site. Every job is done under NSW Builder Licence 475204C and carries a 10-year workmanship warranty.',
+    about: {
+      heading: 'How do you make a small ensuite work?',
+      paragraphs: [
+        'An ensuite has to fit shower access, storage, ventilation and easy movement into a small room beside the bed. A poor layout is felt every morning; weak ventilation or noisy plumbing is felt every night.',
+        'We settle the toilet position, shower clearance, storage and door swing before the scope is priced. Where the room is internal, mechanical ventilation matters. Where it shares a bedroom wall, the door, cistern position and wall build-up can help control noise.',
+        'Pricing follows the same room-size packages as a main bathroom: from $18,000 on Basic, from $25,000 on Standard and from $30,000 on Premium. A full ensuite renovation runs three to four weeks on site.',
+        'The final layout, inclusions and price are set out after the free on-site measure. Every job is carried out under NSW Builder Licence 475204C and has a 10-year workmanship warranty.',
+      ],
+    },
     faqs: [
       {
         question: 'How small can an ensuite be?',
@@ -483,9 +497,9 @@ export const services = [
      * "Sydney" — only the `<title>` tag itself drops it here.
      */
     metaTitle: 'Bathroom + Laundry Renovations',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     summary:
-      'Two wet areas run as a single program. One demolition, one waterproofing stage, one trade sequence — and one disruption to the house instead of two.',
+      'Bathroom and laundry renovations planned as one program, with one trade sequence and one disruption to the home instead of two.',
     /**
      * Added 2026-09-04 per D-126 / issue #34, from
      * `docs/source-copy/svc-bath-laundry.md`. The PDF's own combined-program
@@ -495,8 +509,15 @@ export const services = [
      * the shared block here, same fix as D-107 on powder-room.
      */
     hideBuildDurations: true,
-    about:
-      'Running a bathroom and a laundry as one project rather than two separate jobs means one set of trades on site, one demolition window, one waterproofing process and one final clean — whether the two rooms share a wall, sit on different floors, or get combined into a single space. We work out which layout suits your home at the on-site measure, before the scope is locked in. Each room is priced against the same Basic, Standard and Premium packages as a standalone bathroom, from $18,000 on Basic, based on its own size. Most combined programs run four to six weeks on site, depending on whether the rooms are adjacent or in different parts of the house. Both rooms are waterproofed to AS 3740 and certified separately. Every job is done under NSW Builder Licence 475204C and carries a 10-year workmanship warranty.',
+    about: {
+      heading: 'Why renovate the bathroom and laundry together?',
+      paragraphs: [
+        'Booking the rooms as separate jobs means two rounds of demolition, deliveries, trades and clean-up. Running them as one project lets the plumbing, electrical work, waterproofing and tiling follow one plan.',
+        'At the on-site measure, we work out whether the rooms should run together or one after the other so a wet area can stay usable where the layout allows. The written scope names the sequence before work starts.',
+        'Each room is priced against the same Basic, Standard and Premium room-size packages as a standalone bathroom, starting from $18,000 on Basic. Most combined programs run four to six weeks, depending on whether the rooms are next to each other or in different parts of the home.',
+        'Both rooms are waterproofed to AS 3740 and certified separately. Every job is carried out under NSW Builder Licence 475204C and has a 10-year workmanship warranty.',
+      ],
+    },
     faqs: [
       {
         question: 'Can the bathroom and laundry be done at different times?',
@@ -531,9 +552,9 @@ export const services = [
     slug: 'powder-room-renovations',
     title: 'Powder Room Renovations',
     h1: 'Powder Room Renovations Sydney',
-    updated: '2026-09-14',
+    updated: '2026-09-20',
     summary:
-      'The smallest room in the house, where every millimetre of the setout shows. Fixture placement and tile setout carry the whole result.',
+      'Powder room renovations for tight layouts where the door swing, basin, toilet and tile setout must work within a small footprint.',
     /**
      * Sourced verbatim/paraphrased from `docs/source-copy/svc-powder.md`
      * (owner-supplied PDF, GitHub issue #2) — never invented. Added
@@ -543,8 +564,14 @@ export const services = [
      * confirmed ETR service that genuinely is a small bathroom. This is an
      * IMPROVE of the existing page, not a new blog post.
      */
-    about:
-      'A powder room is a small bathroom — typically 1.5–3 square metres — with a toilet and a hand basin and usually nothing else. Sometimes called a "half bath" or "guest WC", it is the smallest wet area in the house, and normally sits on the ground floor near the living areas so guests never need to enter a bedroom-adjacent bathroom.',
+    about: {
+      heading: 'What matters most in a powder room?',
+      paragraphs: [
+        'A powder room is usually 1.5–3 square metres, with a toilet and hand basin. In that footprint, a poor door swing, an oversized basin or a tight toilet clearance can make the whole room awkward to use.',
+        'We set out the fixtures and tiles around the real room before the scope is fixed. If the room has a floor waste and water supply, its floor still needs compliant waterproofing even though there is no shower.',
+        'The free on-site measure confirms the layout, what can stay and what needs to be rebuilt. You then receive the inclusions and price in writing before work starts. Every job is carried out under NSW Builder Licence 475204C and has a 10-year workmanship warranty.',
+      ],
+    },
     /**
      * Suppress the shared `businessInfo.buildDurations` block on this page only.
      *
@@ -573,7 +600,7 @@ export const services = [
         question:
           'Can a small bathroom renovation like a powder room be done in less than a week?',
         answer:
-          'A refresh — the same fixtures replaced like-for-like, new paint, new fittings — can be done in three to five working days. A full renovation that needs strip-out and re-waterproofing needs the membrane to cure before tiling, which puts the realistic minimum at around seven working days.',
+          'A full powder room renovation that needs strip-out and new waterproofing cannot skip the membrane curing time before tiling. The owner-supplied powder-room scope puts that work at around seven working days; the final program is set after the room has been measured.',
       },
       {
         question: 'Can a powder room add value to my home?',

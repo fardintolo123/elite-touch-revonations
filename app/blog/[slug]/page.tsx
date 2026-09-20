@@ -6,6 +6,7 @@ import { PageHero } from '@/components/PageHero'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { buildMetadata } from '@/lib/metadata'
 import { blogPosts, getBlogPost } from '@/lib/blog'
+import { formatDayMonthYear } from '@/lib/dateLabels'
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }))
@@ -22,7 +23,7 @@ export async function generateMetadata({
 
   return buildMetadata({
     path: `/blog/${post.slug}/`,
-    title: post.title,
+    title: post.metaTitle ?? post.title,
     description: post.description,
     type: 'article',
   })
@@ -43,7 +44,10 @@ export default async function BlogPostPage({
         eyebrow={post.category}
         title={post.title}
         leads={[post.description]}
-        facts={[{ label: 'Published', value: '10 September 2026' }, { label: 'Reading time', value: post.readTime }]}
+        facts={[
+          { label: 'Published', value: formatDayMonthYear(post.published) },
+          { label: 'Reading time', value: post.readTime },
+        ]}
       />
       <main>
         <article className="et-section">

@@ -127,7 +127,9 @@ export default async function ProjectPage({
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
             <span className="et-eyebrow">About this project</span>
-            <h2 className="et-h2 et-measure-tight">What changed on this job</h2>
+            <h2 className="et-h2 et-measure-tight">
+              The scope, constraint and finished work
+            </h2>
             <p className="et-lead et-measure">{project.story}</p>
           </div>
         </section>
@@ -172,7 +174,7 @@ export default async function ProjectPage({
         <div className="et-container et-stack">
           <span className="et-eyebrow">What every job includes</span>
           <h2 className="et-h2 et-measure-tight">
-            The same standard on every job.
+            What sits behind the finished room.
           </h2>
           <ul className="et-checklist" style={{ marginTop: 'var(--et-space-6)' }}>
             <li className="et-body-sm">
