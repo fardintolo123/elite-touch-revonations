@@ -255,7 +255,8 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `components/ContactSection.tsx` | The enquiry block on **every** page (D-80). Renders the privacy notice line under the form (D-122) |
 | `app/privacy/` · `app/terms/` | Privacy policy + website terms of use (issue #37 / content audit C-1, D-122). Factual, plain-language, `index, follow`. Privacy page names the real data handlers — Resend, Supabase, Vercel, GA4-via-GTM — sourced from `lib/actions.ts` and `app/layout.tsx`. `businessInfo.legalPagesUpdated` drives the visible "last updated" line and the sitemap date |
 | `components/WorkStrip.tsx` | Project photos, reusable. Every card is suburb-labelled — never decoration (D-83) |
-| `components/PageHero.tsx` | Shared hero for every page except home. `image` prop is OPTIONAL — only pass it where a real photo exists (D-84) |
+| `components/PageHero.tsx` | Shared side-by-side hero for every page except home. `image` prop is OPTIONAL — only pass it where a real photo exists (D-84) |
+| `components/LocationHero.tsx` | Full-bleed, photo-backed hero for location pages. It uses the page's real project photo as an eager next/image, keeps the location copy, CTAs and facts in an overlaid readable column, and links to the source gallery project (issue #63 / D-146) |
 | `public/brand/` | Logo mark + lockup, light and dark variants (D-79). Favicon is `app/icon.png` |
 | `next.config.ts` | 19 × 301 + `trailingSlash: true` + security headers |
 | `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |

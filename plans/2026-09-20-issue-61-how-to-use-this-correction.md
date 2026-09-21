@@ -29,16 +29,16 @@
 
 ## Checklist
 
-- [ ] Current issue state and prior closure comment checked.
-- [ ] Homepage FAQ includes all ten PDF FAQ topics, rewritten against first-party facts.
-- [ ] Blog coverage includes all ten PDF blog topics as live posts or improved matching posts.
-- [ ] No unsupported strata/slab-scan/core-hole copy published.
-- [ ] No standalone waterproofing service claim published.
-- [ ] `DECISIONS.md` supersedes the earlier partial D-143 outcome.
-- [ ] TypeScript check passes.
-- [ ] Production build passes.
-- [ ] Readability check passes.
-- [ ] Served HTML confirms new FAQ and blog copy are crawlable.
-- [ ] Browser check passes at desktop and 390 px mobile.
-- [ ] Session handoff written.
-- [ ] GitHub issue #61 updated after verification.
+- [x] Current issue state and prior closure comment checked.
+- [x] Homepage FAQ includes all ten PDF FAQ topics, rewritten against first-party facts.
+- [x] Blog coverage includes all ten PDF blog topics as live posts or improved matching posts.
+- [x] No unsupported strata/slab-scan/core-hole copy published.
+- [x] No standalone waterproofing service claim published.
+- [x] `DECISIONS.md` supersedes the earlier partial D-143 outcome.
+- [x] TypeScript check passes.
+- [x] Production build passes.
+- [x] Readability check passes.
+- [x] Served HTML confirms new FAQ and blog copy are crawlable.
+- [x] Browser check passes at desktop and 390 px mobile.
+- [x] Session handoff written.
+- [x] GitHub issue #61 updated after verification.

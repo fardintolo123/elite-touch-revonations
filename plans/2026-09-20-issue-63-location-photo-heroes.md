@@ -10,12 +10,15 @@
 
 ## Checklist
 
-- [ ] Read issue 63 and confirm scope against the current routes and image inventory.
-- [ ] Add the shared location photo hero component and responsive styles.
-- [ ] Apply it to suburb location pages and regional hub pages.
-- [ ] Remove duplicate lower-page image preloads on those pages.
-- [ ] Verify no horizontal overflow and preserve CTA, trust facts, and gallery links at 390px and desktop widths.
-- [ ] Run typecheck and a clean production build; confirm route count does not drop.
-- [ ] Confirm the image and distinctive location copy are present in served HTML.
-- [ ] Update project decision/context notes if the implementation introduces a lasting mechanic.
+- [x] Read issue 63 and confirm scope against the current routes and image inventory.
+- [x] Add the shared location photo hero component and responsive styles.
+- [x] Apply it to suburb location pages and regional hub pages.
+- [x] Remove duplicate lower-page image preloads on those pages.
+- [x] Verify no horizontal overflow and preserve CTA, trust facts, and gallery links at 390px and desktop widths.
+- [x] Run typecheck and a clean production build; confirm route count does not drop.
+- [x] Confirm the image and distinctive location copy are present in served HTML.
+- [x] Update project decision/context notes if the implementation introduces a lasting mechanic.
+- [x] Tighten the location hero spacing after owner visual review: lower the content block, separate CTAs/rating/facts/project link into clearer groups, and verify desktop plus 390px mobile.
 - [ ] Close issue 63 only after all checks pass.
+
+Issue closure is pending authenticated GitHub access; no push or deployment was performed.
