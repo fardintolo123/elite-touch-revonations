@@ -1051,6 +1051,18 @@ svg {
   pointer-events: auto;
   transform: translate(-50%, 0);
 }
+.et-nav-menu-hover[data-enhanced='true'] > .et-nav-panel {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+}
+.et-nav-menu-hover[data-enhanced='true'][data-open='true'] > .et-nav-panel {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
 .et-nav-panel a {
   display: block;
   padding: var(--et-space-3) var(--et-space-3);

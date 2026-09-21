@@ -4,6 +4,7 @@ import { businessInfo, services } from '@/lib/businessInfo'
 import { blogPosts } from '@/lib/blog'
 import { publishedRegions, publishedSuburbs } from '@/lib/locations'
 import { projects } from '@/lib/projects'
+import { HoverNavMenu } from './HoverNavMenu'
 
 /**
  * Server component. No `'use client'` — DECISIONS.md D-31 and the "'use client'
@@ -86,16 +87,9 @@ function ServicesMenu() {
 
 function ServicesHoverMenu() {
   return (
-    <div className="et-nav-menu et-nav-menu-hover">
-      <Link
-        href="/services/"
-        className="et-nav-menu-label"
-        aria-haspopup="true"
-      >
-        Services
-      </Link>
+    <HoverNavMenu href="/services/" label="Services">
       <ServicesPanel />
-    </div>
+    </HoverNavMenu>
   )
 }
 
@@ -125,12 +119,9 @@ function AdviceMenu() {
 
 function AdviceHoverMenu() {
   return (
-    <div className="et-nav-menu et-nav-menu-hover">
-      <Link href="/blog/" className="et-nav-menu-label" aria-haspopup="true">
-        Advice
-      </Link>
+    <HoverNavMenu href="/blog/" label="Advice">
       <AdvicePanel />
-    </div>
+    </HoverNavMenu>
   )
 }
 
@@ -160,12 +151,9 @@ function GalleryMenu() {
 
 function GalleryHoverMenu() {
   return (
-    <div className="et-nav-menu et-nav-menu-hover">
-      <Link href="/gallery/" className="et-nav-menu-label" aria-haspopup="true">
-        Gallery
-      </Link>
+    <HoverNavMenu href="/gallery/" label="Gallery">
       <GalleryPanel />
-    </div>
+    </HoverNavMenu>
   )
 }
 
@@ -190,12 +178,9 @@ function AboutMenu() {
 
 function AboutHoverMenu() {
   return (
-    <div className="et-nav-menu et-nav-menu-hover">
-      <Link href="/about-us/" className="et-nav-menu-label" aria-haspopup="true">
-        About
-      </Link>
+    <HoverNavMenu href="/about-us/" label="About">
       <AboutPanel />
-    </div>
+    </HoverNavMenu>
   )
 }
 
