@@ -167,3 +167,32 @@ None.
 ### Unresolved opinions
 
 - Whether any additional non-location sections would benefit from full-size background imagery was not changed in this issue because their current side-by-side hero treatment already includes image-led presentation.
+
+## 18. Follow-up Spacing Correction
+
+After the original issue-63 implementation, the owner flagged the updated location pages as poorly spaced. A follow-up spacing pass was completed on the shared `LocationHero` styles.
+
+Implemented:
+
+- Updated `app/globals.css` only for the shared location hero rhythm.
+- Increased desktop hero breathing room below the sticky header.
+- Removed the bottom-stretching `margin-top: auto` behavior from the gallery pill and replaced it with token-based spacing.
+- Added explicit spacing between the label/caption/title/lead/CTA/rating/facts/gallery groups.
+- Tightened mobile lower proof spacing so the first viewport carries more useful content without horizontal overflow.
+- Updated `plans/2026-09-20-issue-63-location-photo-heroes.md` to mark the owner-requested spacing correction complete.
+
+Verification:
+
+- `npm.cmd run typecheck` passed.
+- `npm.cmd run build` passed after the spacing updates; 58/58 static pages generated.
+- `git diff --check` passed, with only normal line-ending warnings.
+- Production server was run locally on `http://localhost:3214`.
+- Browser sweep covered all seven location routes at 1280px desktop and 390px mobile.
+- Result: no horizontal overflow on any tested route.
+- Desktop result: the gallery pill remained visible before the fold on all seven location routes.
+- Mobile result: the gallery pill begins before the fold on the long regional titles and is fully visible on the shorter Randwick layout.
+
+Notes:
+
+- No copy, imagery, metadata, schema, or route behavior was changed in this follow-up.
+- No push, deployment, or GitHub issue closure was performed.

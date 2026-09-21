@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { businessInfo } from '@/lib/businessInfo'
+import { businessInfo, services } from '@/lib/businessInfo'
+import { blogPosts } from '@/lib/blog'
+import { publishedRegions, publishedSuburbs } from '@/lib/locations'
+import { projects } from '@/lib/projects'
 
 /**
  * Server component. No `'use client'` — DECISIONS.md D-31 and the "'use client'
@@ -29,17 +32,111 @@ import { businessInfo } from '@/lib/businessInfo'
  * viewport on page load is fetched immediately by the browser regardless.
  */
 
-const NAV_LINKS = [
-  /* "Home" is an explicit link, not just the logo. The logo works, but a
-     visible Home item is what most people look for — reported 2026-08-20. */
-  { href: '/', label: 'Home' },
-  { href: '/services/', label: 'Services' },
-  { href: '/packages/', label: 'Packages' },
-  { href: '/blog/', label: 'Advice' },
-  { href: '/gallery/', label: 'Gallery' },
-  { href: '/about-us/', label: 'About us' },
-  { href: '/contact-us/', label: 'Contact' },
-] as const
+/*
+ * The index routes remain the first link in each disclosure, but the child
+ * routes are listed here too. That makes the whole published content tree
+ * reachable from the sitewide nav without adding a client-side menu or making
+ * visitors guess which pages sit behind a generic section label.
+ */
+function ServicesMenu() {
+  const regions = publishedRegions()
+
+  return (
+    <details className="et-nav-menu" name="primary-nav">
+      <summary>Services</summary>
+      <div className="et-nav-panel et-nav-panel-services">
+        <Link href="/services/" className="et-nav-panel-index">
+          All services
+        </Link>
+        {services.map((service) => (
+          <Link key={service.slug} href={`/services/${service.slug}/`}>
+            {service.title}
+          </Link>
+        ))}
+
+        <p className="et-nav-panel-heading">Service areas</p>
+        {regions.map((region) => (
+          <div key={region.slug} className="et-nav-panel-group">
+            <Link href={`${region.hubUrl}/`}>{region.name}</Link>
+            {publishedSuburbs(region).map((suburb) => (
+              <Link
+                key={suburb.slug}
+                href={`/services/bathroom-renovations/${suburb.slug}/`}
+                className="et-nav-panel-child"
+              >
+                {suburb.name}
+              </Link>
+            ))}
+          </div>
+        ))}
+      </div>
+    </details>
+  )
+}
+
+function AdviceMenu() {
+  return (
+    <details className="et-nav-menu" name="primary-nav">
+      <summary>Advice</summary>
+      <div className="et-nav-panel et-nav-panel-advice">
+        <Link href="/blog/" className="et-nav-panel-index">
+          All advice
+        </Link>
+        {blogPosts.map((post) => (
+          <Link key={post.slug} href={`/blog/${post.slug}/`}>
+            {post.title}
+          </Link>
+        ))}
+      </div>
+    </details>
+  )
+}
+
+function GalleryMenu() {
+  return (
+    <details className="et-nav-menu" name="primary-nav">
+      <summary>Gallery</summary>
+      <div className="et-nav-panel et-nav-panel-gallery">
+        <Link href="/gallery/" className="et-nav-panel-index">
+          All projects
+        </Link>
+        {projects.map((project) => (
+          <Link key={project.slug} href={`/gallery/${project.slug}/`}>
+            {project.name}
+          </Link>
+        ))}
+      </div>
+    </details>
+  )
+}
+
+function AboutMenu() {
+  return (
+    <details className="et-nav-menu" name="primary-nav">
+      <summary>About</summary>
+      <div className="et-nav-panel et-nav-panel-compact">
+        <Link href="/about-us/">About us</Link>
+        <Link href="/privacy/">Privacy policy</Link>
+        <Link href="/terms/">Terms of use</Link>
+      </div>
+    </details>
+  )
+}
+
+function NavigationItems() {
+  return (
+    <>
+      {/* "Home" is an explicit link, not just the logo. */}
+      <Link href="/">Home</Link>
+      <ServicesMenu />
+      <Link href="/packages/">Packages</Link>
+      <AdviceMenu />
+      <GalleryMenu />
+      <AboutMenu />
+      <Link href="/contact-us/">Contact</Link>
+    </>
+  )
+}
 
 export function SiteHeader() {
   return (
@@ -60,11 +157,7 @@ export function SiteHeader() {
           </Link>
 
           <nav className="et-nav" aria-label="Primary">
-            {NAV_LINKS.map((link) => (
-              <Link key={link.href} href={link.href}>
-                {link.label}
-              </Link>
-            ))}
+            <NavigationItems />
           </nav>
 
           <div className="et-header-actions">
@@ -86,11 +179,7 @@ export function SiteHeader() {
         </div>
 
         <nav className="et-nav-mobile" aria-label="Primary, mobile">
-          {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
+          <NavigationItems />
         </nav>
       </div>
     </header>
