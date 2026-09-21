@@ -38,13 +38,12 @@ import { projects } from '@/lib/projects'
  * reachable from the sitewide nav without adding a client-side menu or making
  * visitors guess which pages sit behind a generic section label.
  */
-function ServicesMenu() {
+function ServicesPanel() {
   const regions = publishedRegions()
 
   return (
-    <details className="et-nav-menu" name="primary-nav">
-      <summary>Services</summary>
-      <div className="et-nav-panel et-nav-panel-services">
+    <div className="et-nav-panel et-nav-panel-services">
+      <div className="et-nav-panel-services-list">
         <Link href="/services/" className="et-nav-panel-index">
           All services
         </Link>
@@ -53,8 +52,10 @@ function ServicesMenu() {
             {service.title}
           </Link>
         ))}
+      </div>
 
-        <p className="et-nav-panel-heading">Service areas</p>
+      <p className="et-nav-panel-heading">Service areas</p>
+      <div className="et-nav-panel-regions">
         {regions.map((region) => (
           <div key={region.slug} className="et-nav-panel-group">
             <Link href={`${region.hubUrl}/`}>{region.name}</Link>
@@ -70,7 +71,46 @@ function ServicesMenu() {
           </div>
         ))}
       </div>
+    </div>
+  )
+}
+
+function ServicesMenu() {
+  return (
+    <details className="et-nav-menu" name="primary-nav">
+      <summary>Services</summary>
+      <ServicesPanel />
     </details>
+  )
+}
+
+function ServicesHoverMenu() {
+  return (
+    <div className="et-nav-menu et-nav-menu-hover">
+      <Link
+        href="/services/"
+        className="et-nav-menu-label"
+        aria-haspopup="true"
+      >
+        Services
+      </Link>
+      <ServicesPanel />
+    </div>
+  )
+}
+
+function AdvicePanel() {
+  return (
+    <div className="et-nav-panel et-nav-panel-advice">
+      <Link href="/blog/" className="et-nav-panel-index">
+        All advice
+      </Link>
+      {blogPosts.map((post) => (
+        <Link key={post.slug} href={`/blog/${post.slug}/`}>
+          {post.title}
+        </Link>
+      ))}
+    </div>
   )
 }
 
@@ -78,17 +118,34 @@ function AdviceMenu() {
   return (
     <details className="et-nav-menu" name="primary-nav">
       <summary>Advice</summary>
-      <div className="et-nav-panel et-nav-panel-advice">
-        <Link href="/blog/" className="et-nav-panel-index">
-          All advice
-        </Link>
-        {blogPosts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}/`}>
-            {post.title}
-          </Link>
-        ))}
-      </div>
+      <AdvicePanel />
     </details>
+  )
+}
+
+function AdviceHoverMenu() {
+  return (
+    <div className="et-nav-menu et-nav-menu-hover">
+      <Link href="/blog/" className="et-nav-menu-label" aria-haspopup="true">
+        Advice
+      </Link>
+      <AdvicePanel />
+    </div>
+  )
+}
+
+function GalleryPanel() {
+  return (
+    <div className="et-nav-panel et-nav-panel-gallery">
+      <Link href="/gallery/" className="et-nav-panel-index">
+        All projects
+      </Link>
+      {projects.map((project) => (
+        <Link key={project.slug} href={`/gallery/${project.slug}/`}>
+          {project.name}
+        </Link>
+      ))}
+    </div>
   )
 }
 
@@ -96,17 +153,29 @@ function GalleryMenu() {
   return (
     <details className="et-nav-menu" name="primary-nav">
       <summary>Gallery</summary>
-      <div className="et-nav-panel et-nav-panel-gallery">
-        <Link href="/gallery/" className="et-nav-panel-index">
-          All projects
-        </Link>
-        {projects.map((project) => (
-          <Link key={project.slug} href={`/gallery/${project.slug}/`}>
-            {project.name}
-          </Link>
-        ))}
-      </div>
+      <GalleryPanel />
     </details>
+  )
+}
+
+function GalleryHoverMenu() {
+  return (
+    <div className="et-nav-menu et-nav-menu-hover">
+      <Link href="/gallery/" className="et-nav-menu-label" aria-haspopup="true">
+        Gallery
+      </Link>
+      <GalleryPanel />
+    </div>
+  )
+}
+
+function AboutPanel() {
+  return (
+    <div className="et-nav-panel et-nav-panel-compact">
+      <Link href="/about-us/">About us</Link>
+      <Link href="/privacy/">Privacy policy</Link>
+      <Link href="/terms/">Terms of use</Link>
+    </div>
   )
 }
 
@@ -114,19 +183,40 @@ function AboutMenu() {
   return (
     <details className="et-nav-menu" name="primary-nav">
       <summary>About</summary>
-      <div className="et-nav-panel et-nav-panel-compact">
-        <Link href="/about-us/">About us</Link>
-        <Link href="/privacy/">Privacy policy</Link>
-        <Link href="/terms/">Terms of use</Link>
-      </div>
+      <AboutPanel />
     </details>
   )
 }
 
-function NavigationItems() {
+function AboutHoverMenu() {
+  return (
+    <div className="et-nav-menu et-nav-menu-hover">
+      <Link href="/about-us/" className="et-nav-menu-label" aria-haspopup="true">
+        About
+      </Link>
+      <AboutPanel />
+    </div>
+  )
+}
+
+function DesktopNavigationItems() {
   return (
     <>
       {/* "Home" is an explicit link, not just the logo. */}
+      <Link href="/">Home</Link>
+      <ServicesHoverMenu />
+      <Link href="/packages/">Packages</Link>
+      <AdviceHoverMenu />
+      <GalleryHoverMenu />
+      <AboutHoverMenu />
+      <Link href="/contact-us/">Contact</Link>
+    </>
+  )
+}
+
+function MobileNavigationItems() {
+  return (
+    <>
       <Link href="/">Home</Link>
       <ServicesMenu />
       <Link href="/packages/">Packages</Link>
@@ -157,7 +247,7 @@ export function SiteHeader() {
           </Link>
 
           <nav className="et-nav" aria-label="Primary">
-            <NavigationItems />
+            <DesktopNavigationItems />
           </nav>
 
           <div className="et-header-actions">
@@ -179,7 +269,7 @@ export function SiteHeader() {
         </div>
 
         <nav className="et-nav-mobile" aria-label="Primary, mobile">
-          <NavigationItems />
+          <MobileNavigationItems />
         </nav>
       </div>
     </header>
