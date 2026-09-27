@@ -24,16 +24,27 @@ export type BlogQuickAnswer = {
   }
 }
 
+export type BlogFaqItem = {
+  question: string
+  answer: string
+}
+
 export type BlogPost = {
   slug: string
   title: string
   metaTitle?: string
   description: string
   published: string
+  /** Set only when the post's content was genuinely revised after `published` — never bumped for a rebuild alone. */
+  updated?: string
   readTime: string
   category: string
   quickAnswer?: BlogQuickAnswer
   sections: BlogSection[]
+  /** 4-6 real questions, same pattern as the service-page FAQ (app/services/[slug]/page.tsx). */
+  faq?: BlogFaqItem[]
+  /** A real, evidenced project photo (lib/projects.ts) that actually shows this post's subject — never a stock image. */
+  heroProject?: { slug: string; imageIndex?: number }
 }
 
 export const blogPosts: BlogPost[] = [
@@ -385,12 +396,59 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Bathroom Lighting Ideas',
     description: 'Practical lighting choices for bathrooms that need to feel brighter, calmer and more useful at different times of the day.',
     published: '2026-09-12',
-    readTime: '1 min read',
+    updated: '2026-09-27',
+    readTime: '4 min read',
     category: 'Design and finishes',
+    heroProject: { slug: 'castle-hill-bathroom', imageIndex: 0 },
+    quickAnswer: {
+      heading: 'The short answer',
+      paragraphs: [
+        'Good bathroom lighting uses three layers, not one big fixture: task light for the mirror, ambient light for the whole room, and a softer accent layer for evenings.',
+        'Get those three layers right and the fixture count matters far less than where each light sits.',
+      ],
+      table: {
+        caption: 'The three lighting layers',
+        columns: ['Layer', 'What it does'],
+        rows: [
+          { label: 'Task', detail: 'Beside or above the mirror', value: 'Even, shadow-free light for shaving, make-up and grooming' },
+          { label: 'Ambient', detail: 'Ceiling-mounted', value: 'General light so the room does not feel dim or flat' },
+          { label: 'Accent', detail: 'Niches, shaving cabinets, toe-kicks', value: 'A softer mood layer for evening use' },
+        ],
+      },
+      note: 'Fixture positions and safety ratings still need to be confirmed against your room and wiring before anything is installed.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
     sections: [
-      { heading: 'Start with the task', paragraphs: ['Good bathroom lighting solves everyday tasks first: shaving, grooming, applying makeup and cleaning. A room can feel nicer with layered lighting, but it still needs to be usable first.', 'Warm, even light often feels more comfortable than harsh light from a single source.'] },
-      { heading: 'Use lighting to support the room', paragraphs: ['Lighting can improve the feeling of space when it is used well. A ceiling light, a mirror layer and a softer ambient layer can work together without making the room feel busy or over-lit.', 'The right arrangement depends on the room size, mirror position and the finishes in the space.'] },
-      { heading: 'Keep the plan practical', paragraphs: ['Before choosing a lighting scheme, check the electrical plan, placement and ventilation. Light should improve the room without creating glare or making the space feel cramped.', 'Good lighting is not about adding more fixtures. It is about using the right light in the right place.'] },
+      { heading: 'Start with the task', paragraphs: ['Good bathroom lighting solves everyday tasks first: shaving, grooming, applying makeup and cleaning. A room can feel nicer with layered lighting, but it still needs to be usable first.', 'A single downlight above the door usually throws shadow across the face at the mirror. Light placed either side of the mirror, or built into a mirror itself, lights the face evenly instead.'] },
+      { heading: 'Layer the light instead of relying on one fixture', paragraphs: ['Lighting works best in layers. A ceiling layer for general brightness, a task layer at the mirror, and a softer accent layer in a niche or shaving cabinet can work together without making the room feel busy or over-lit.', 'The right mix depends on the room size, mirror position and the finishes in the space. A small bathroom with light tiles needs less ambient light than a larger, darker-toned room.'] },
+      { heading: 'Get the colour temperature right', paragraphs: ['Warm-to-neutral white light, roughly in the 2700K–3000K range, generally reads as calmer and more flattering to skin tones than a cooler, bluer white. A colder white can feel clinical in a small room.', 'Keep every fixture in the room on the same colour temperature. Mixing warm and cool white light in one bathroom is one of the most common reasons a finished room looks slightly wrong even when every fixture is good quality on its own.'] },
+      { heading: 'Match fixtures to wet areas', paragraphs: ['Fittings near a shower or bath need a higher ingress-protection (IP) rating than fittings elsewhere in the room, because they need to tolerate moisture and spray. Australian wiring rules set out which zones near water need which rating.', 'This is a licensed electrician’s call, not a style choice. Confirm the required rating for each fitting’s position before you fall in love with a look that will not survive its own bathroom.'] },
+      { heading: 'Plan lighting early, not last', paragraphs: ['Lighting positions get locked in once the electrical rough-in is done and the tiles are set. Deciding fixture types and positions during the early planning stage, alongside the waterproofing and tiling plan, avoids a mirror light that ends up in the wrong spot or a switch plate placed somewhere awkward.', 'Good lighting is not about adding more fixtures. It is about using the right light, at the right colour temperature and the right safety rating, in the right place.'] },
+    ],
+    faq: [
+      {
+        question: 'What is the best type of lighting for a small bathroom?',
+        answer: 'Layer it rather than relying on one ceiling fixture: a task light at the mirror, a general ambient light, and an optional soft accent light. A small room usually needs less total brightness than a large one, so avoid over-lighting it just because a bigger room next door has more fixtures.',
+      },
+      {
+        question: 'What colour temperature should bathroom lights be?',
+        answer: 'Most bathrooms suit a warm-to-neutral white in the 2700K–3000K range, which flatters skin tones and feels calmer than a cooler white. Keep every fixture in the room at the same colour temperature so nothing looks mismatched.',
+      },
+      {
+        question: 'Can I choose my own bathroom light fittings?',
+        answer: 'Yes for the style and finish. The placement and the safety rating near water still need to be confirmed against Australian wiring rules by a licensed electrician before installation.',
+      },
+      {
+        question: 'Do LED mirrors count as a light source?',
+        answer: 'Yes. A built-in LED mirror can supply the task-lighting layer on its own, which is useful in a smaller bathroom where there is no room for separate wall lights either side of the mirror.',
+      },
+      {
+        question: 'When should bathroom lighting be decided during a renovation?',
+        answer: 'Early, alongside the waterproofing and tiling plan. Fixture positions and wiring are locked in once the electrical rough-in and tiling are done, so deciding later usually means compromising on where the light actually falls.',
+      },
     ],
   },
   {

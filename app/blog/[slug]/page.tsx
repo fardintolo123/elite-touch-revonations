@@ -7,6 +7,7 @@ import { SchemaGraph } from '@/components/SchemaGraph'
 import { buildMetadata } from '@/lib/metadata'
 import { blogPosts, getBlogPost } from '@/lib/blog'
 import { formatDayMonthYear } from '@/lib/dateLabels'
+import { projectBySlug } from '@/lib/projects'
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }))
@@ -38,6 +39,10 @@ export default async function BlogPostPage({
   const post = getBlogPost(slug)
   if (!post) notFound()
 
+  const heroProject = post.heroProject
+    ? projectBySlug(post.heroProject.slug)
+    : undefined
+
   return (
     <>
       <PageHero
@@ -46,8 +51,16 @@ export default async function BlogPostPage({
         leads={[post.description]}
         facts={[
           { label: 'Published', value: formatDayMonthYear(post.published) },
+          ...(post.updated
+            ? [{ label: 'Updated', value: formatDayMonthYear(post.updated) }]
+            : []),
           { label: 'Reading time', value: post.readTime },
         ]}
+        image={
+          heroProject
+            ? { project: heroProject, imageIndex: post.heroProject?.imageIndex }
+            : undefined
+        }
       />
       <main>
         <article className="et-section">
@@ -99,6 +112,33 @@ export default async function BlogPostPage({
                   {section.paragraphs.map((paragraph) => <p key={paragraph} className="et-body">{paragraph}</p>)}
                 </section>
               ))}
+              {post.faq && post.faq.length > 0 && (
+                <section>
+                  <span className="et-eyebrow">FAQ</span>
+                  <h2 className="et-h2">Frequently asked questions</h2>
+                  <div
+                    className="et-stack"
+                    style={{ marginTop: 'var(--et-space-4)', gap: 'var(--et-space-4)' }}
+                  >
+                    {post.faq.map((item) => (
+                      <details key={item.question} className="et-card">
+                        <summary className="et-h4" style={{ cursor: 'pointer' }}>
+                          {item.question}
+                        </summary>
+                        <p
+                          className="et-body-sm"
+                          style={{
+                            marginTop: 'var(--et-space-4)',
+                            color: 'var(--et-text-secondary)',
+                          }}
+                        >
+                          {item.answer}
+                        </p>
+                      </details>
+                    ))}
+                  </div>
+                </section>
+              )}
             </div>
           </div>
         </article>
@@ -114,6 +154,7 @@ export default async function BlogPostPage({
           { name: 'Advice', url: '/blog/' },
           { name: post.title, url: `/blog/${post.slug}/` },
         ]}
+        faqs={post.faq}
       />
     </>
   )

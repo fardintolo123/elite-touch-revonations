@@ -149,7 +149,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogPosts.map((post) => ({
       url: `${base}/blog/${post.slug}/`,
-      lastModified: ISSUE_64_CONTENT_PASS,
+      // Per-post: reflects only posts genuinely revised since the blanket pass.
+      lastModified: post.updated ?? ISSUE_64_CONTENT_PASS,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
