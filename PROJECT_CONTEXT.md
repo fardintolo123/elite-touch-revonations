@@ -255,7 +255,7 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `lib/schema.ts` · `components/SchemaGraph.tsx` | One JSON-LD `@graph` per page with stable shared IDs. Add page-type nodes through `buildPageGraph()`/`SchemaGraph`; visible FAQ data and FAQ schema must come from the same source |
 | `components/layout/SiteHeader.tsx` | Server-rendered, data-driven navigation. Services, advice, projects, regions and published suburbs come from their canonical data helpers, so a published route is not omitted from discovery |
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
-| `lib/actions.ts` | Enquiry server action — office email (critical) + customer email (best-effort) + Supabase write (best-effort). ⚠️ **Exports async functions ONLY** — see D-77 |
+| `lib/actions.ts` | Enquiry server action — office email (critical) + customer email (best-effort) + Supabase write (best-effort) + up to 2 photo attachments (best-effort, D-150: Supabase Storage `enquiry-photos` bucket + Resend attachment on the office email only). ⚠️ **Exports async functions ONLY** — see D-77 |
 | `lib/enquiry.ts` | Enquiry types + initial state. Exists precisely so they are NOT exported from a `'use server'` file |
 | `components/ContactSection.tsx` | The enquiry block on **every** page (D-80). Renders the privacy notice line under the form (D-122) |
 | `app/privacy/` · `app/terms/` | Privacy policy + website terms of use (issue #37 / content audit C-1, D-122). Factual, plain-language, `index, follow`. Privacy page names the real data handlers — Resend, Supabase, Vercel, GA4-via-GTM — sourced from `lib/actions.ts` and `app/layout.tsx`. `businessInfo.legalPagesUpdated` drives the visible "last updated" line and the sitemap date |
@@ -342,11 +342,15 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 19. **Only the office notification email is allowed to fail the enquiry submission** (D-85). The
    customer confirmation email and the Supabase insert are both wrapped in their own try/catch and
    only `console.error` on failure - never make either of them `return`/`throw` on error, or a
-   Resend or Supabase hiccup would turn a successfully-captured lead into an error page.
+   Resend or Supabase hiccup would turn a successfully-captured lead into an error page. Photo
+   upload and attachment (D-150) follow the same rule — each photo gets its own try/catch, and a
+   photo failure never blocks or fails the office email itself.
 20. **`SUPABASE_SERVICE_ROLE_KEY` must be set in Vercel for the Supabase write to run at all** -
    when it is unset, `lib/actions.ts` sets its module-level `supabase` client to `null` and the
    insert is skipped (not attempted, not logged as an error). The `enquiries` table has RLS enabled
-   with no insert policy, so the `anon` key could not write to it even if used instead.
+   with no insert policy, so the `anon` key could not write to it even if used instead. The same
+   `supabase` client (and therefore the same env var) gates photo Storage uploads — without it,
+   photos still attach to the office email, they just aren't saved to Storage.
 21. **`.next/` is a shared build directory and this repo is regularly worked by several agent
    sessions at once** (Git Workflow's "never `git add -A`" warning is the same fact). A `next start`
    left running gets its served output silently corrupted the moment another session's `next build`
@@ -368,6 +372,15 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    leaf minimal and matches the existing rule (#5 above) — the form's own copy is fine to be there too
    since Next server-renders client components on first load, but the notice's home is the server
    component so it survives even if the form leaf is ever swapped out.
+24. **The enquiry form's optional photo attachments are capped at 2 files, compressed client-side to
+   ≤1.5MB each, because Vercel hard-caps a Function's request body at 4.5MB — non-configurable, and
+   NOT the same thing as `next.config.ts`'s `serverActions.bodySizeLimit`** (D-150). Raising that
+   config value cannot raise Vercel's ceiling; it only changes Next's own 1MB default guard, which
+   exists so Next rejects an oversized request before it would hit Vercel's limit anyway. Do not
+   "fix" a future complaint about the 2-photo cap by just raising `bodySizeLimit` — it will build and
+   pass locally (`next start` has no such cap) and then 413 in production, exactly the class of bug
+   this file exists to prevent. A real fix needs a different architecture (e.g. client uploads
+   directly to Supabase Storage via a signed URL, bypassing the Function body entirely).
 
 ### How it is verified
 

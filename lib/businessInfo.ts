@@ -236,7 +236,7 @@ export const businessInfo = {
    * a routine deploy. Same discipline as `packagePricingUpdated` and the
    * sitemap `lastModified` rule.
    */
-  legalPagesUpdated: '2026-09-02',
+  legalPagesUpdated: '2026-09-28',
 
   /**
    * RESOLVED 2026-08-19 (D-75) — settles the two conflicting durations.

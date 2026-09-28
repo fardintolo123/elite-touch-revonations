@@ -19,7 +19,10 @@ import { formatMonthYear } from '@/lib/dateLabels'
  * boilerplate. Sources:
  *   - `lib/actions.ts` — the enquiry action: office email + customer
  *     confirmation email via RESEND, best-effort copy to SUPABASE (`enquiries`
- *     table). Honeypot field `company` is discarded, not stored.
+ *     table). Honeypot field `company` is discarded, not stored. Up to 2
+ *     optional photos (D-150) are compressed in the browser, uploaded to a
+ *     private SUPABASE Storage bucket and attached to the office email only —
+ *     never to the customer confirmation email.
  *   - `app/layout.tsx` — Google Tag Manager loads Google Analytics 4
  *     (D-112 / D-32). One measurement path, GTM → Google tag → GA4.
  *   - Hosting is VERCEL (D-68), which keeps standard request logs.
@@ -80,6 +83,9 @@ export default function PrivacyPage() {
               which room you want to renovate, if you choose to pick one
             </li>
             <li className="et-body-sm">any message you choose to write</li>
+            <li className="et-body-sm">
+              up to 2 photos of the room, if you choose to attach them
+            </li>
           </ul>
           <p className="et-body-sm et-measure">
             We do not ask for anything else. We do not take payment details on
@@ -99,7 +105,7 @@ export default function PrivacyPage() {
             We use your details for one thing: to reply to your enquiry and
             arrange your free on-site measure. Your phone number and email are
             how we reach you. Your suburb tells us where the job is. Your message
-            helps us come prepared.
+            and any photos help us come prepared.
           </p>
           <p className="et-body-sm et-measure">
             We do not use your details for marketing. We do not sell them or rent
@@ -129,7 +135,8 @@ export default function PrivacyPage() {
                 <ExternalLink href="https://supabase.com">Supabase</ExternalLink>
               </strong>{' '}
               keeps a copy of your enquiry, so we still have it if an email goes
-              missing.
+              missing, and stores any photos you attach in a private area only
+              our office can access.
             </li>
           </ul>
           <p className="et-body-sm et-measure">

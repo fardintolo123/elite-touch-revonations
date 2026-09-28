@@ -20,6 +20,16 @@ import type { NextConfig } from 'next'
  *
  * 410 Gone is NOT handled here. `headers()` can only add headers to a response;
  *    it cannot change the status code. See `proxy.ts`.
+ *
+ * 4. `experimental.serverActions.bodySizeLimit` is raised to 4mb for the enquiry
+ *    form's optional photo attachments (D-150). ⚠️ Vercel hard-caps a Function's
+ *    request body at 4.5 MB and this value CANNOT raise that ceiling — it only
+ *    changes Next's own guard (default 1MB), which would otherwise reject the
+ *    request before it ever reached Vercel's limit. `lib/actions.ts` and
+ *    `EnquiryForm.tsx` keep the real payload (2 photos, compressed client-side to
+ *    ≤1.5MB each) safely under both ceilings. Do not raise this past a few MB —
+ *    it cannot help past 4.5MB and would just make Next accept a request Vercel
+ *    will 413 anyway.
  */
 
 /** Permanent moves. Order matters — specific before catch-all. */
@@ -93,6 +103,15 @@ const nextConfig: NextConfig = {
 
   // Fail the build on type errors rather than shipping them.
   typescript: { ignoreBuildErrors: false },
+
+  // Raised from the 1MB default for the enquiry form's optional photo
+  // attachments (D-150). See note 4 above — Vercel's own 4.5MB Function body
+  // cap is the real ceiling and cannot be changed here.
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '4mb',
+    },
+  },
 
   async redirects() {
     return REDIRECTS_301.map(({ source, destination }) => ({
