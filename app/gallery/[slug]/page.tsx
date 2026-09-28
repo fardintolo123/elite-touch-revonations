@@ -10,6 +10,7 @@ import { SchemaGraph } from '@/components/SchemaGraph'
 import {
   LOCATION_PARENT_SLUG,
   publishedRegionForSuburb,
+  publishedSuburbForName,
 } from '@/lib/locations'
 
 /**
@@ -51,12 +52,19 @@ export async function generateMetadata({
   const description = projectMetaDescription(project)
 
   const leadImage = project.images[0]
+  const publishedSuburb = publishedSuburbForName(project.suburb)
 
   return buildMetadata({
     path: `/gallery/${project.slug}/`,
-    // `metaTitle` overrides `name` only where `name` + the template tail would
-    // exceed 60 chars (tech-audit M-5) — the H1 and schema still use `name`.
-    title: project.metaTitle ?? project.name,
+    // `metaTitle` still handles explicit overrides. Published Tier-1 projects
+    // otherwise get a portfolio-specific title so their corresponding service
+    // pages can own the commercial bathroom-renovation intent. The H1 and
+    // schema keep the factual project name.
+    title:
+      project.metaTitle ??
+      (publishedSuburb
+        ? `${project.suburb} Bathroom Project`
+        : project.name),
     description,
     // These pages are de-facto case studies — real photos, real suburb, real
     // scope — so `article` is a truer type than the sitewide `website`
@@ -90,6 +98,10 @@ export default async function ProjectPage({
 
   const others = projects.filter((item) => item.slug !== project.slug)
   const projectRegion = publishedRegionForSuburb(project.suburb)
+  const projectSuburb = publishedSuburbForName(project.suburb)
+  const serviceHref = projectSuburb
+    ? `/services/${LOCATION_PARENT_SLUG}/${projectSuburb.slug}/`
+    : `/services/${LOCATION_PARENT_SLUG}/`
 
   return (
     <>
@@ -216,10 +228,14 @@ export default async function ProjectPage({
             style={{ marginTop: 'var(--et-space-8)' }}
           >
             <Link
-              href={`/services/${LOCATION_PARENT_SLUG}/`}
+              href={serviceHref}
               className="et-card et-card-link"
             >
-              <h3 className="et-h4">Bathroom renovations</h3>
+              <h3 className="et-h4">
+                {projectSuburb
+                  ? `Bathroom renovations in ${projectSuburb.name}`
+                  : 'Bathroom renovations'}
+              </h3>
               <p
                 className="et-body-sm"
                 style={{
@@ -227,8 +243,9 @@ export default async function ProjectPage({
                   color: 'var(--et-text-secondary)',
                 }}
               >
-                See how we strip out, waterproof, tile and fit off bathrooms
-                across Sydney.
+                {projectSuburb
+                  ? `See the local service, process, package guidance and how to book a free on-site measure in ${projectSuburb.name}.`
+                  : 'See how we strip out, waterproof, tile and fit off bathrooms across Sydney.'}
               </p>
             </Link>
 

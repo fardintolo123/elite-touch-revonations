@@ -411,11 +411,21 @@ The process/feature-list marker. 48–56px square, `radius-sm`, `magenta-50` bg,
 
 ### 8.9 Header / nav
 
-- Height 80px desktop, 64px mobile. `surface` background, transparent over the hero until scrolled.
-- On scroll: background solidifies, `float` shadow appears, height shrinks to 64px, `duration-base`.
-- Contains: logo left, links center, one `md` primary pill CTA right.
-- Below `md`: links collapse to a full-screen sheet; the CTA stays visible in the bar.
-- `z-header`, sticky.
+- Sticky `surface` header with logo left, primary navigation, and one `md` call CTA kept visible in
+  the bar. Use `z-header`; dropdown panels use `z-dropdown` and are one of the few surfaces allowed a
+  shadow.
+- Desktop section labels are real index-page links. Their child panels open on hover **and** focus,
+  with a pointer bridge across any visual gap so the menu does not collapse while the cursor travels
+  from trigger to panel.
+- Desktop panels dismiss after a child-link click, including same-position client-side route changes.
+  Keep that state in the narrow `HoverNavMenu` client wrapper; panel links and route data remain
+  server-rendered.
+- Mobile uses native `<details>` disclosures, not a JavaScript-only sheet. All child links remain in
+  the initial HTML and keyboard/touch access works without hydration.
+- Service, advice, gallery and published-location links come from their canonical data sources; do
+  not hand-maintain a second route list in the header.
+- Verify shared-header changes at desktop and 390px mobile, including hover travel, keyboard focus,
+  click dismissal, wrapping/overflow and successful responses from representative child links.
 
 ### 8.10 Footer
 

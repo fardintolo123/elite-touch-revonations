@@ -115,6 +115,12 @@ source of truth.** Never let a business fact live only in JSX, only in a doc, or
   unconfirmed provenance on several template graphics).
 - [Web Design Research.md](Web%20Design%20Research.md) — background UX/CRO reference. Useful reading,
   **not** a rulebook; where it disagrees with `DESIGN.md`, `DESIGN.md` wins.
+- `plans/` — **active execution checklists only.** A completed, cancelled or superseded plan is not
+  permanent documentation; transfer durable decisions to `DECISIONS.md`, mechanics to
+  `PROJECT_CONTEXT.md`, write the session handoff, then delete the stale plan.
+- `session-history/` — detailed historical handoffs. Use them to find repeated failure patterns and
+  prior reasoning, **not** as current status. Verify every claimed route, flag, count, open item and
+  implementation detail against current code and the higher sources below before acting.
 
 **`docs/` — specialised guides:**
 - [docs/SEO_CONTENT_GUIDE.md](docs/SEO_CONTENT_GUIDE.md) — how to plan and write pages and posts:
@@ -140,8 +146,13 @@ When two sources disagree, the **higher tier wins**:
 2. **The code** for "what IS" — `businessInfo`, the sitemap, the config beat any document.
    **The guides** for "what SHOULD be."
 3. **`docs/` guides** → background research.
+4. **`session-history/` and completed plans** → historical evidence only; never current status by
+   themselves.
 
 - **Docs may be stale.** If a doc references a file, flag or route, `grep` for it before acting.
+- **Counts and status rot fastest.** Prefer the live data helper or generated output over prose such
+  as "five projects", "three hubs" or "issue still open". Correct stale permanent docs in the same
+  task when the current source of truth is clear.
 - **Never invent a fact.** Prices, reviews, locations, licence numbers, project details, years in
   business, staff counts. If it is not in `Customer Reviews.md`, a business-info file, or an owner
   message — **ask.** An invented fact on a trade website is a trust and liability problem, not a
@@ -168,6 +179,7 @@ When two sources disagree, the **higher tier wins**:
 | **Schema / structured data** | `docs/SEO_AEO_GEO_CHECKLIST.md` Phase 1 |
 | **Sitemap / robots / canonicals / indexation** | `docs/SEO_AEO_GEO_CHECKLIST.md` Phases 0 & 2 + [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) |
 | **Third-party SEO tool report** (cannibalisation · gap · audit PDF) | `docs/SEO_CONTENT_GUIDE.md` → *Report intake*. **Do not action one as written** |
+| **Shared navigation / generated route discovery** | `DESIGN.md` + `PROJECT_CONTEXT.md` mechanics. Build links from the existing data helpers; never duplicate service, blog, project, region or published-suburb lists in a component |
 | **Pricing / quotes / cost content** | The **Renovation Packages** PDF on issue #2 is the pricing source of truth; the tiers and their inclusion lists are summarised in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) §2. Always pair a price with its stated bathroom size. A cost/pricing page is a confirmed opportunity (100–1K/mo — `docs/BATHROOM_SITE_STRUCTURE.md`) |
 | **Anything sourced from a competitor site** (incl. issue #1's reference link) | [DECISIONS.md](DECISIONS.md) D-05 — **layout and structure may be used as reference; copy, specifications and claims may not.** |
 
@@ -272,6 +284,13 @@ These are framework-level lessons, not preferences. Adjust the names to whatever
   render; "not rendered" is **not** "not published".
 - **Publication = content + an internal link from a relevant hub + a sitemap entry.** A sitemap entry
   alone is not publication.
+- **A URL, tier or data record is not publication state.** Location routes ship only when the
+  canonical `hubPublished === true` / `pagePublished === true` gates agree with static params,
+  internal links and the sitemap. Use the shared publication helpers everywhere.
+- **Generated route collections have one source.** Navigation, static params, sitemap entries,
+  schema and QA inventories must derive from or be reconciled with the canonical data. When a route
+  is published, update every deliberately hand-maintained QA inventory (currently readability) in
+  the same change.
 - **`'use client'` is contagious.** One shared component with a hook forces every consumer
   client-side. Before adding the directive, find out which import demanded it.
 - **Before enabling any dormant data field or page, audit its copy against the current Business
@@ -284,7 +303,9 @@ These are framework-level lessons, not preferences. Adjust the names to whatever
 Run steps 1–9 yourself, end to end, per [Autonomy & Session Handoff](#autonomy--session-handoff) —
 pause mid-list only for a genuine owner decision, never to check in on routine progress.
 
-1. **Plan first.** Write a short implementation plan, then a checklist. Keep both in `plans/`.
+1. **Plan first.** For multi-step work, write one short implementation plan with a live checklist in
+   `plans/`. For a genuinely small one-file task, a concise in-session plan is enough. Do not create
+   a permanent plan merely to document work that will finish in the same edit.
 2. **Route and read** the mapped docs before changing anything.
 3. **Implement** per the standing rules.
 4. **Keep the checklist live** — tick items as they land, not at the end.
@@ -292,10 +313,25 @@ pause mid-list only for a genuine owner decision, never to check in on routine p
    verification · the SEO/AEO/GEO checklist).
 6. **For issue-driven work:** confirm every issue requirement and acceptance criterion is met,
   verify the result, and close the issue only after those checks pass. Leave blocked issues open.
-7. **Complete:** build green, docs updated, decisions recorded in `DECISIONS.md`.
+7. **Complete:** build green, docs updated, decisions recorded in `DECISIONS.md`, and stale plan
+   state reconciled.
 8. **Report** using one Executive Summary — see below.
 9. **Hand off.** Write the session-history file per
    [Autonomy & Session Handoff](#autonomy--session-handoff) before ending the session.
+
+### Plan lifecycle
+
+- **`plans/` is a work queue, not an archive.** Keep only a recurring checklist or work that is
+  actively in progress, deliberately deferred with a current trigger, or genuinely blocked with a
+  named blocker.
+- Every active plan must say what outcome it owns, its current status, the exact remaining checklist,
+  relevant files, verification, and—when blocked—the event that makes it actionable again.
+- **Never trust an old unchecked box as proof that work remains.** Reconcile it against current code,
+  `DECISIONS.md`, the current issue state and the latest handoff first. Later work often completes or
+  supersedes an earlier checklist without updating it.
+- On completion, cancellation or supersession: close/update the issue, move durable knowledge to the
+  correct permanent document, write the handoff, and delete the plan. Git history and
+  `session-history/` preserve the audit trail without polluting the active queue.
 
 ## Issue Workflow
 
@@ -403,18 +439,34 @@ came from, it is not ready to open.
   pin an exact total.
 - **Never run two builds against the same build directory at once.** Concurrent builds corrupt each
   other and fail with misleading errors that look exactly like code faults.
+- **A server can become stale or corrupt underneath you.** Use a fresh production build and a
+  task-specific unused port. Confirm the port owner before stopping any process, and never assume
+  port `3210` belongs to this task. If output is inexplicable, rebuild once in isolation before
+  diagnosing application code.
+- For Playwright against `next dev`, wait for `load`, not `networkidle`; the HMR WebSocket keeps the
+  network active. Prefer `next start` from a fresh production build for final verification.
 - ⚠️ **Do not trust a background task's exit code.** A wrapped command
   (`build > log 2>&1; echo $?`) reports the wrapper's status, not the build's. **Read the output.**
 - **Verify UI changes in a real browser**, desktop and mobile (390px). Not by reasoning about the code.
 - **Verify SEO copy is in the served HTML** — `curl` the URL and grep for a distinctive phrase.
   If it isn't there, crawlers can't see it.
+- **Verify the whole affected page class.** Check representative desktop/mobile pages visually, then
+  sweep every generated route affected by a shared renderer, navigation, metadata, schema or data
+  change. Source-level presence is not proof that each route emits the result.
+- After copy or route changes, run `npm run check:readability` and confirm its route inventory covers
+  every published customer-facing route; a smaller passing count is not a clean result.
 
 ## Git Workflow
 
+- Assume another session may edit or commit the same worktree. Run `git status --short` and recent
+  `git log` before editing and again before staging; diff every intended path so an empty or changed
+  diff is not mistaken for lost work.
 - Commit with an explicit pathspec: `git commit -m "msg" -- <paths>` (options before `--`).
   **Never `git add -A`** — more than one agent session may be working in the tree.
-- Clear subject + a body explaining *why*. End with:
-  `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` — name the model that did the work.
+- Immediately before adding a `DECISIONS.md` row, search the whole file for the highest decision
+  number; concurrent sessions have previously created duplicate IDs.
+- Clear subject + a body explaining *why*. If a co-author trailer is used, name the agent/model that
+  actually did the work; never copy a stale identity from an example.
 - **Do not push or deploy without explicit owner sign-off.**
 - Prefer hand edits over blind `sed`/regex on copy, titles or metadata.
 
@@ -427,6 +479,9 @@ came from, it is not ready to open.
 - **A written rule is not evidence it was implemented.** Verify against the code, and mark it shipped
   when you implement it.
 - Prefer pointing at a live artefact over hard-coding a number that will rot.
+- Consolidate session-history lessons by pattern, not by copying every incident. Promote only rules
+  that are still true, place implementation mechanics in `PROJECT_CONTEXT.md`, and remove obsolete
+  status statements while doing the consolidation.
 
 ---
 
@@ -469,6 +524,10 @@ what's wrong, what to decide, and exactly what to do next.
       metadata with file ownership, dependencies, acceptance criteria, and verification scope.
 - [ ] If implementing an existing GitHub issue, every requirement and acceptance criterion was
   implemented, verified, and the issue was closed; blocked issues remain open.
+- [ ] Active plan reconciled with current code/decisions; completed or superseded plan removed after
+      its durable knowledge and handoff were recorded.
+- [ ] Generated-route changes are reflected in static params, internal navigation, sitemap/schema,
+      and hand-maintained QA inventories where applicable.
 - [ ] Decisions and mechanics recorded in the right file.
 - [ ] Response follows the Reporting Format, "What should happen next" last.
 - [ ] Session-history handoff file written (unless the session was genuinely trivial) and its path

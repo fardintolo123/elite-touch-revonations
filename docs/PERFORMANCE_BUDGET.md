@@ -95,9 +95,12 @@ each cost more than every image on the page combined.**
 15. **`sizes` must state the *measured* rendered width**, not a convenient `50vw`. Over-claiming
     pushed two images onto a larger rung and cost 26 kB on the sibling site. Measure the real element
     in a browser — and **exclude any blur placeholder**, which is often scaled up ~10 % and gives a
-    wrong reading.
+    wrong reading. Include the container's max-width cap: an uncapped `vw` value keeps growing after
+    the layout stops and makes Next request an image wider than the element can ever render.
 16. **Exactly one high-priority preload per page** — the LCP image. A high-priority preload on a 40 px
-    logo competed with a hero photo and measurably hurt LCP.
+    logo competed with a hero photo and measurably hurt LCP. In this Next 16 codebase,
+    `loading="eager"` alone can still emit a preload; non-LCP images must omit both `priority` and an
+    explicit eager loading prop.
 17. **Check the ladder has a rung near the real width.** A 480 → 768 gap forces a 559 px box onto
     768w. At a mobile DPR of 1.75, a 56 px box needs 98 px — two pixels past a 96w rung.
 18. **Bake EXIF rotation into pixels** when processing phone photos; conversion strips EXIF and an
@@ -158,9 +161,20 @@ Record every run here, newest first.
   misleading errors — missing manifests, missing generated types, socket hang-ups. At least six build
   failures across three sessions were collisions, not code faults. It is **not** antivirus; that
   hypothesis was tested and wrong.
+- **Use an unused task-specific port and record the PID you start.** Do not assume `3210` is safe and
+  do not kill an unknown port owner; other sessions and sibling projects may be using it. A stale
+  `next start` process can serve the wrong build and create false passes or false defects.
+- **For Playwright against `next dev`, wait for `load`, not `networkidle`.** Next's HMR WebSocket keeps
+  the network active, so `networkidle` can time out even when the page is ready. Final performance
+  verification still uses a production build.
 - **Do not trust a background task's exit code.** A wrapped command reports the wrapper's status, so
   a failed build can report success. **Read the output file.**
 - **Measure the canonical URL.** A bare-domain redirect adds a hop and distorts the result.
+- **Use the configured `PAGESPEED_API_KEY` for live PSI.** The anonymous endpoint's shared quota is
+  unreliable. No CrUX result on a low-traffic URL means Google lacks enough 28-day field samples; it
+  is not proof of a performance failure and should not trigger repeated retries.
+- **A curl timing is not a Core Web Vital.** Check `X-Vercel-Cache` and `Age` before interpreting it;
+  a cache hit measures the network/cache path, not origin rendering.
 - **Dismiss any consent banner before a scripted interaction** — an overlay silently swallows clicks.
 - **Lighthouse emulation:** mobile is 412×823 at **DPR 1.75**; desktop 1350×940 at DPR 1. Picking the
   right srcset rung depends on getting the DPR right.

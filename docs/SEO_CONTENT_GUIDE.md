@@ -39,16 +39,18 @@ it supports one:
    all four already exists on **issue #2**; start there rather than from scratch.
 2. **The "near me" target** — the home page / main service page. **1K–10K searches/month, the single
    largest opportunity in the project** ([DECISIONS.md](../DECISIONS.md) D-12).
-3. **The six Tier-1 suburb pages**, each with genuinely local substance.
-4. **The four regional hubs.**
+3. **The approved Tier-1 suburb pages**, but publish only when `pagePublished` is backed by genuinely
+   local substance and the route/link/sitemap gates all agree. The data file may contain approved but
+   deliberately dormant Tier-1 records.
+4. **The five regional hubs**, keeping each differentiated and tied to real local proof.
 5. **Real case studies** — The Rocks, Hunters Hill, Artarmon. Real photos, real decisions, real
    trades, real standards. These are the strongest asset the business has after the reviews, and the
    thing competitors mostly fake or omit.
-6. **The cost/pricing guide and the small-bathroom page** — both GKP-confirmed at 100–1K.
-7. **Buyer-support guides** — choosing a renovator, what a quote should include, how long it takes,
-   what to expect while the bathroom is out of action.
-8. **Design-inspiration content** (colour schemes, tapware) — **fold into existing pages**, not
-   standalone URLs, unless volume says otherwise.
+6. **Cost/pricing and small-bathroom intent** — improve the existing packages/advice homes before
+   proposing another URL; both are GKP-confirmed at 100–1K.
+7. **The existing advice library** — improve buyer-support and design topics when Search Console
+   shows a page/query opportunity; do not reopen a new blog strategy or duplicate an intent the
+   library already owns.
 
 **Search volume alone never justifies a page.** Before approving a new topic, compare it against
 improving an existing service or suburb page, or documenting a real project. Choose whichever has the
@@ -80,14 +82,19 @@ fixes.** Acting on them as written would have deleted four healthy pages and man
 cannibalisation. So:
 
 1. **Triage against the existing structure first.** Several "issues" are deliberate architecture.
+   Verify the report's concrete claims against current code and the live site; stale page counts,
+   contradictory tables and malformed brand queries invalidate the report's framing.
 2. **A gap report without volume + difficulty per item cannot normally justify CREATE.** Competitor presence
    is not demand — it is a list of what another business chose to write about. A report that names
    its sources and cites real question stems is **approved as directional research** for topic
   generation and shortlist building. The owner has made a narrow exception for issue #58 D-139:
   publish the six approved first-wave topics without GKP/Ahrefs data. This is not a standing green
-  light for every third-party report or every topic in the PDF.
+  light for every third-party report or every topic in the PDF. Locked metrics, repeated placeholders
+  such as "Niche", or labels without numeric/source evidence count as **no data**.
 3. **Require the competitor's real URL list**, not topics inferred from their body copy, and require
-   gaps in **both** directions. A report finding zero gaps the other way is not credible.
+   gaps in **both** directions. First confirm the named competitor is genuinely comparable—a
+   multi-trade builder is not valid demand evidence for a bathroom-only specialist. A report finding
+   zero gaps the other way is not credible.
 4. **A hub that summarises and links *down* to its spokes is correct, not duplication.**
 5. **Service scope is an owner question, never an SEO inference.**
 6. **Record the verdict** in `DECISIONS.md` with what new evidence would reopen it.

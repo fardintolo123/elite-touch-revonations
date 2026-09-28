@@ -34,6 +34,10 @@ Companion docs: [SEO_CONTENT_GUIDE.md](SEO_CONTENT_GUIDE.md) for *what to write*
 - [ ] **Metadata**: title **30–60 chars**, description **50–160 chars**, unique across the site.
 - [ ] **One `<h1>` per page**, carrying the service and — on a location page — the suburb.
 - [ ] **JSON-LD for the page type:**
+  - [ ] One `@graph` per page through the shared `SchemaGraph`/`buildPageGraph` path, with stable
+        `@id` references—do not reintroduce standalone schema scripts beside it.
+  - [ ] `Organization` / `WebSite` and `BreadcrumbList` nodes where applicable, connected to the
+        page and business through the shared IDs.
   - [ ] `LocalBusiness` (or `HomeAndConstructionBusiness`) — **declared once sitewide**, not
         re-declared per page. Include the licence number, phone, service area and opening hours.
   - [ ] `Service` on each service page.
@@ -61,6 +65,9 @@ Companion docs: [SEO_CONTENT_GUIDE.md](SEO_CONTENT_GUIDE.md) for *what to write*
 - [ ] **Internal links point at the canonical URL form**, never a redirecting variant.
 - [ ] **Publication is three things:** body content **+** an internal link from a relevant hub **+** a
       sitemap entry. A sitemap entry alone is not publication.
+- [ ] **Publication flags agree everywhere:** `hubPublished === true` / `pagePublished === true`
+      drives static params, navigation/hub links and sitemap entries. A Tier-1 label or URL field is
+      not permission to publish.
 
 ## Phase 3 — on-page, AEO and GEO
 
@@ -97,6 +104,10 @@ Companion docs: [SEO_CONTENT_GUIDE.md](SEO_CONTENT_GUIDE.md) for *what to write*
       or accordion-hidden content is invisible to crawlers and to AI engines.
 - [ ] **Structured data validates** (Rich Results Test / schema validator), with no warnings about
       missing required fields.
+- [ ] **Shared-renderer sweep passes:** inspect representative desktop/mobile pages, then verify every
+      generated route affected by shared metadata, schema, navigation, content or publication data.
+- [ ] **QA route inventories are current.** After publishing or removing a route, reconcile
+      `scripts/check-readability.mjs`; a passing run over a stale subset is a false all-clear.
 - [ ] **Rendered in a real browser**, desktop and 390 px mobile.
 - [ ] **Performance gate met** — [PERFORMANCE_BUDGET.md](PERFORMANCE_BUDGET.md) §6.
 - [ ] **No invented facts.** Every claim traces to the issue-#2 PDFs, `Customer Reviews.md`,

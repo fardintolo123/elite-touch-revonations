@@ -10,10 +10,13 @@ import { HoverNavMenu } from './HoverNavMenu'
  * Server component. No `'use client'` — DECISIONS.md D-31 and the "'use client'
  * is contagious" rule (PROJECT_CONTEXT.md §4.6).
  *
- * The mobile navigation is a plain wrapping list that is ALWAYS in the server
- * HTML and hidden with CSS above `lg`. It is deliberately not a JS toggle:
- * a nav behind a client-side open/close flag renders its closed state into the
- * server HTML, which is what crawlers read.
+ * The mobile navigation uses native `<details>` disclosures that are ALWAYS in
+ * the server HTML and hidden with CSS above `lg`. It is deliberately not a JS
+ * toggle: a nav behind client-only open/close state can omit discoverable links
+ * from the initial HTML crawlers read.
+ *
+ * Desktop dismissal state lives only in the imported `HoverNavMenu` leaf. The
+ * panels and their data-driven links remain server-rendered children.
  *
  * The call CTA is a real `tel:` anchor (D-33). Never a button with a JS handler —
  * anchors cannot double-count in call tracking.

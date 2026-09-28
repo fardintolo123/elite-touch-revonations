@@ -54,11 +54,11 @@ export type Project = {
   name: string
   /**
    * `<title>` tag override (tech-audit M-5). Optional: when absent, the page
-   * uses `name` + the " | Elite Touch Renovations" template tail. Only set it
-   * where `name` + that 26-char tail would exceed the 60-char SERP guide
-   * (`docs/SEO_AEO_GEO_CHECKLIST.md`) — currently `the-rocks-bathroom` and
-   * `artarmon-bathroom-ensuite`. The H1, the breadcrumb schema and the
-   * `/gallery/` card all keep using `name`; only the `<title>` changes.
+   * derives its title from `name` and publication context. Set it when the
+   * template tail would exceed the 60-char SERP guide or when a project page
+   * needs to be distinguished from a dedicated commercial service page. The
+   * H1, breadcrumb schema and `/gallery/` card keep using `name`; only the
+   * `<title>` changes.
    */
   metaTitle?: string
   /** Which of the four services this job was. */
@@ -144,13 +144,14 @@ export const projects: readonly Project[] = [
     slug: 'castle-hill-bathroom',
     suburb: 'Castle Hill',
     name: 'Castle Hill bathroom renovation',
+    metaTitle: 'Castle Hill Bathroom Project',
     service: 'Bathroom renovation',
-    updated: '2026-09-20',
+    updated: '2026-09-28',
     completedByYear: 2026,
     blurb:
       'A family bathroom in soft grey, crisp white and light wood, with brushed nickel taps. Large floor and wall tiles, a double vanity and a frameless glass shower keep the layout open.',
     metaDescription:
-      'A bright, modern Castle Hill family bathroom in soft grey, crisp white and light wood, with brushed nickel taps and a frameless glass shower.',
+      'Project photos from a Castle Hill family bathroom in soft grey, crisp white and light wood, with brushed nickel taps and a frameless glass shower.',
     story:
       'The source notes describe this as a family bathroom, rebuilt around soft greys, crisp whites, light wood finishes and nickel tapware. Large-format tiles were used on the floors and walls to keep the space open, with a frameless glass shower completing the clean, uncluttered finish.',
     images: [
@@ -264,13 +265,14 @@ export const projects: readonly Project[] = [
     slug: 'randwick-bathroom',
     suburb: 'Randwick',
     name: 'Randwick bathroom renovation',
+    metaTitle: 'Randwick Bathroom Project',
     service: 'Bathroom renovation',
-    updated: '2026-09-20',
+    updated: '2026-09-28',
     completedByYear: 2026,
     blurb:
       'A family bathroom in soft neutral tones with matte black fittings. A custom angled shower screen fits the room, while the wall-hung vanity keeps the floor clear and adds daily storage.',
     metaDescription:
-      'Randwick family bathroom renovation in soft neutral tones, with matte black fittings, a custom angled shower screen and a wall-hung vanity.',
+      'Project photos from a Randwick family bathroom in soft neutral tones, with matte black fittings, a custom angled shower screen and wall-hung vanity.',
     story:
       'The source notes call out a neutral family bathroom with matte black fittings and a custom angled shower screen as the main feature. The wall-hung vanity keeps the floor open while adding storage, and softer lighting was used to keep the room calm rather than stark.',
     images: [

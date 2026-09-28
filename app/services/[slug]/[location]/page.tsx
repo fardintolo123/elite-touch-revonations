@@ -63,6 +63,12 @@ const HUB_META_TITLE: Record<string, string> = {
   'north-western-sydney': 'North-West bathroom renovation',
 }
 
+function suburbPageDescription(suburb: Suburb, hasProject: boolean): string {
+  return hasProject
+    ? `Bathroom renovations in ${suburb.name}, with real local project photos, a free on-site measure and a fixed-scope written quote.`
+    : `Bathroom renovations in ${suburb.name} by Elite Touch Renovations. Free on-site measure and fixed-scope quotes.`
+}
+
 function SuburbLocationPage({
   suburb,
   region,
@@ -74,9 +80,7 @@ function SuburbLocationPage({
 }) {
   const path = `/services/${LOCATION_PARENT_SLUG}/${suburb.slug}/`
   const content = suburbContentFor(suburb.slug)
-  const description =
-    project.metaDescription ??
-    `${project.blurb} Bathroom renovations in ${suburb.name} by Elite Touch Renovations.`
+  const description = suburbPageDescription(suburb, true)
 
   return (
     <>
@@ -110,7 +114,7 @@ function SuburbLocationPage({
         title={`Bathroom renovations in ${suburb.name}`}
         lead={project.blurb}
         project={project}
-        projectLabel={`${project.suburb} — ${project.name}`}
+        projectLabel={`View the ${project.suburb} bathroom project`}
         rating={<GoogleRating />}
         facts={[
           { label: 'NSW Builder Licence', value: businessInfo.builderLicence },
@@ -168,7 +172,7 @@ function SuburbLocationPage({
             </span>
             <span className="et-badge-suburb">{project.suburb}</span>
             <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
-              View the full {project.service.toLowerCase()}
+              View the full project
             </h3>
           </Link>
         </div>
@@ -318,9 +322,7 @@ export async function generateMetadata({
     return buildMetadata({
       path: `/services/${LOCATION_PARENT_SLUG}/${suburb.slug}/`,
       title: `${suburb.name} bathroom renovation`,
-      description: project
-        ? `Bathroom renovations in ${suburb.name}, with real local project photos, a free on-site measure and a fixed-scope written quote.`
-        : `Bathroom renovations in ${suburb.name} by Elite Touch Renovations. Free on-site measure and fixed-scope quotes.`,
+      description: suburbPageDescription(suburb, Boolean(project)),
       images: project
         ? [
             {

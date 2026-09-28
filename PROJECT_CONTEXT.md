@@ -124,11 +124,12 @@ Summary:
 - **Routes (D-71, supersedes D-11):** `/services/bathroom-renovations/` →
   `/services/bathroom-renovations/{suburb-or-region}/`. Locations are children of the service page,
   so there is exactly one canonical bathroom page.
-- ⚠️ **Only North Shore is actually published.** The other four are `hubPublished: false` and
-  **404 by design** (D-73) — they have no differentiated content yet. Turning one on is a content
-  job, not a config flip.
-- **Linking rule:** Tier 1 links up to its hub; each hub links down to its Tier 1 pages; the overview
-  links to all four hubs.
+- **Publication is flag-gated and data-driven.** At the latest reconciliation all five regional hubs
+  are published, while only the Tier-1 suburbs with `pagePublished: true` have dedicated pages.
+  `publishedRegions()` and `publishedSuburbs()` in `lib/locations.ts` are authoritative; never infer
+  current publication from this prose, from `tier`, or from the presence of a `url` field.
+- **Linking rule:** a published Tier-1 page links up to its hub; each hub links down only to published
+  Tier-1 pages; the overview and site navigation derive their location links from the same helpers.
 - **Biggest single opportunity: "bathroom renovations near me" / "…contractors near me" at
   1K–10K/month** — bigger than any suburb term. That is a homepage / main-service-page target, not a
   suburb page.
@@ -179,18 +180,18 @@ Applies to any modern React/SSR stack. Read before building the equivalent surfa
 | ~~K2~~ | ✅ **RESOLVED 2026-09-04.** Profile URL captured, and the live public rating/count were verified as **5.0 across 19 Google reviews** before display/schema (D-52). The 19 Google reviews and the 19 testimonials are still NOT assumed to be the same set; no per-review schema is emitted because the mapping is unknown. | Resolved |
 | ~~K2b~~ | ✅ **RESOLVED 2026-08-19.** Owner confirmed a **10-year workmanship warranty** (D-58). State it as written; do not embellish it or extend it to third-party fittings | Resolved |
 | ~~K3~~ | ✅ **RESOLVED 2026-08-19 / confirmed live 2026-08-24.** Hosting is **Vercel** (D-68) and the production site is publicly live (D-98), so `proxy.ts`, redirects, `next/image` and Server Actions are supported | Resolved |
-| K4 | Analytics + call-tracking approach — settle **before** any tag is added | Owner + agent |
-| K5 | ⚠️ **Superseded in practice by the 2026-08-19 Gallery folder.** 23 attributed photos across five projects are now live (D-64); see §6. The item below concerns the ORIGINAL 33, which remain unattributed and unused. **Photos exist — 33 files** in `ETR images/` (19) and `ETR images and reviews/` (14), plus a loose `.jpg` at the repo root (the ETR logo, not a photo). Detect/Inventory/Verify/Approve are done — see [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — confirmed genuine ETR work with consent (D-38, D-39). **Still open: no suburb, street or project is known for any of them** (O-4) — use as general, unattributed project photography only; never invent or infer an attribution (D-06). **Add to repo / Commit / public asset URL are unblocked by K3/K9, but still require a fresh shortlist and approval before use.** | Owner + agent |
+| ~~K4~~ | ✅ **RESOLVED.** GTM → Google tag → GA4 is the single measurement path; phone, email and lead events are configured, and production presence was verified 2026-09-14 (D-112/D-142). Do not add a second direct analytics path. | Resolved |
+| K5 | ⚠️ **The approved, attributed gallery is live and `lib/projects.ts` is the current inventory.** This item now concerns only the original 33 files in `ETR images/` and `ETR images and reviews/`, which have consent but no known suburb, street or project attribution (O-4). Use them only as general, unattributed project photography after a fresh shortlist/approval; never infer an attribution (D-06). | Owner + agent |
 | ~~K6~~ | ✅ Customer consent to publish photos of their homes — **confirmed by owner 2026-08-17** (D-39) | Resolved |
 | ~~K7~~ | ✅ **CLOSED 2026-08-19.** The current Packages sheet has **three tiers** — the ORIGINAL tier no longer exists, so there was never a price to find (D-61) | Resolved |
 | ~~K10~~ | ✅ **RESOLVED 2026-08-19 (D-75)** — stated as a breakdown by job type (full renovation 3–5 weeks, premium 5–6, reconfigure 5–7) rather than one flat figure. ⚠️ **Owner should confirm these match how jobs actually run** — they are a customer promise |
-| K12 | ⚠️ **Partially answered 2026-08-19** — the owner supplied an industry article naming target areas (D-74). It corroborated four existing Tier-1 picks but cites no data, so it is not volume evidence. **Three hubs are now published; Inner West and North-Western Sydney remain dark pending local proof, and Northern Beaches / Western Sydney / Sutherland Shire need keyword research before anything is built (D-76).** Original question: **Which Sydney areas does ETR prefer?** Owner confirmed Sydney-wide *"but we prefer some areas over others"* (D-63). **Still open, and now the main input into which hub gets published next** — four are built as data but deliberately 404 (D-73). ~~Hornsby absent from `service-areas.json`~~ ✅ resolved by D-72. | Owner |
+| K12 | ⚠️ **Partially answered.** The owner confirmed Sydney-wide coverage but has not named the preferred areas (D-63). All five currently modelled regional hubs are now published; Northern Beaches, Western Sydney and Sutherland Shire remain research candidates only and still need demand plus real local proof before any route work (D-76). The next decision is where ETR wants to focus beyond the current published structure—not which existing hub to switch on. | Owner |
 | K13 | ⚠️ **Is the gallery's Artarmon project the same job as the documented "Artarmon bathroom + ensuite" case study?** The case study describes large-format porcelain and LED backlit mirrors over a four-week program; the gallery Artarmon shows gold fixtures and a round gold mirror. They may be two different jobs. **Not merged** (D-06) — owner to confirm. ⚠️ **New evidence 2026-08-25:** a third Artarmon photo set (see K14) matches the case-study description (600×600 porcelain, LED backlit mirror, bathroom+ensuite, 4 weeks) and not the gallery photos — still not enough to merge unilaterally, but worth putting to the owner alongside K14 | Owner |
 | K11 | ⚠️ **Outstanding content asks from the marketing audit** (`docs/source-copy/action-items.md`), none of which exist yet: professional team photos and head shots, on-site photos, finished-bathroom video, a **downloadable sample quote**, and a founder video. The sample quote in particular is a strong, cheap trust asset for a fixed-scope-quote business | Owner |
 | ~~K14~~ | ✅ **Mostly resolved 2026-08-25.** Consent confirmed by the user for the second photo batch (`Projects Before & After (1)/`). **Six of nine projects shipped** as new gallery entries (D-99): Balmain, Gladesville, Little Bay, Hunters Hill, The Rocks, Artarmon bathroom+ensuite. **Three held, still open:** (1) Enmore and the "North Ryde" laundry project are standalone laundry jobs, outside the confirmed service scope — not published (D-101), owner should confirm if ETR wants to advertise standalone laundry work; (2) the "Mosman" folder's doc says Drummoyne, and the "North Ryde" folder's doc says North Sydney — the user didn't know which was correct for either, so both stay unpublished until the true location is confirmed (D-102). Also open: whether the new Hunters Hill/The Rocks photos are the same jobs as the existing text-only case studies — kept unmerged (D-103), same treatment as K13's Artarmon question | Owner |
-| ~~K9~~ | ✅ **RESOLVED 2026-08-19 (D-65).** Project photography lives in **`public/images/projects/{project-slug}/`** as WebP. The repo-root `.jpg` (the logo) and the two original `ETR images*` folders are still unstructured and uncommitted — decide separately whether any of those 33 are still needed now that five attributed projects exist | Agent |
+| ~~K9~~ | ✅ **RESOLVED 2026-08-19 (D-65).** Approved project photography lives in **`public/images/projects/{project-slug}/`** as WebP and is indexed by `lib/projects.ts`. The two original `ETR images*` folders remain a separate unattributed pool covered by K5. | Resolved |
 | ~~K8~~ | ✅ **CLOSED by D-57.** The correct line is **family-run since 2022**. Earlier 2023 wording is stale source-copy history, not live guidance | Resolved |
-| ~~K15~~ | ✅ **RESOLVED 2026-08-27 (D-109) — 24/24 pages now pass.** The original hypothesis here was wrong: it guessed the shared "What every job includes" trust-signal block was the driver. The real driver was the "Other work of ours" grid repeating each full project name (e.g. "Castle Hill bathroom renovation") across ~10 cards on every page — "renovation" alone landing roughly 10 times per page. Fixed by shortening that grid's heading to a room-type label ("Bathroom"/"Ensuite") plus a D-96/D-97-style word-choice pass on all 11 `blurb`s in `lib/projects.ts`. No fact, material, colour or fixture detail changed. See D-109 for the full before/after and verification. | Resolved |
+| ~~K15~~ | ✅ **RESOLVED 2026-08-27 (D-109).** The original 24-route inventory passed after fixing the real cause: the "Other work of ours" grid repeated each full project name across every gallery page. The full project name remains one click away; cards use short room-type labels. Current readability status comes only from `npm run check:readability`, whose route inventory must be updated whenever a customer-facing route is published or removed. | Resolved |
 
 > ### Image workflow (D-36) — every image, not just the initial 33
 >
@@ -246,9 +247,13 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `lib/businessInfo.ts` | ⭐ **The single source of truth for business facts and the four services.** Never let a fact live only in JSX. |
 | `lib/reviews.ts` | The 19 testimonials, verbatim (D-03). `reviewByAuthor(name)` pins one to a page (hubs) and throws at build on a typo |
 | `lib/locations.ts` | Reads `service-areas.json`. `publishedRegions()` is the **only** thing that turns a region into a page; `publishedRegionForSuburb()` is the safe project-to-hub link helper |
-| `lib/hubContent.ts` | ⭐ **Per-region editorial content for the 3 published hubs** (D-121): answer-first lead, "Renovating a bathroom in {region}" local detail, local FAQ, pinned testimonial author. `Record<regionSlug, HubContent>`, same "content is data" shape as `services[].about/faqs`. A region with no entry renders without the extra sections. All copy is truthful/non-invented (D-06) |
-| `app/services/[slug]/[location]/` | Regional hub renderer (D-71). Builds only `hubPublished` regions. Renders `lib/hubContent.ts` sections when present (D-121) |
-| `lib/projects.ts` | ⭐ **The five photographed projects and every image's alt text.** Alt text describes the PHOTOGRAPH, not the page topic (D-66) |
+| `lib/hubContent.ts` | ⭐ **Per-region editorial content for published hubs** (D-121): answer-first lead, local detail, local FAQ, pinned testimonial author. `Record<regionSlug, HubContent>`, same "content is data" shape as `services[].about/faqs`. All copy is truthful/non-invented (D-06) |
+| `app/services/[slug]/[location]/` | Shared renderer for published regional hubs **and** published Tier-1 suburbs. `publishedLocationSlugs()` owns static params; hub/suburb publication helpers must also drive navigation and sitemap entries |
+| `lib/projects.ts` | ⭐ **The canonical photographed-project inventory and every image's alt text.** Alt text describes the PHOTOGRAPH, not the page topic (D-66); do not hard-code a project count in guidance |
+| `lib/blog.ts` | Canonical advice inventory. Optional `faq`, `heroProject` and `updated` fields reuse the shared FAQ/schema, evidenced-project-image and sitemap-freshness patterns (D-148) |
+| `lib/metadata.ts` | `buildMetadata()` is the standard metadata path. It keeps canonical URLs, Open Graph fields and the sitewide social-image defaults aligned; do not hand-roll a competing page metadata shape |
+| `lib/schema.ts` · `components/SchemaGraph.tsx` | One JSON-LD `@graph` per page with stable shared IDs. Add page-type nodes through `buildPageGraph()`/`SchemaGraph`; visible FAQ data and FAQ schema must come from the same source |
+| `components/layout/SiteHeader.tsx` | Server-rendered, data-driven navigation. Services, advice, projects, regions and published suburbs come from their canonical data helpers, so a published route is not omitted from discovery |
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
 | `lib/actions.ts` | Enquiry server action — office email (critical) + customer email (best-effort) + Supabase write (best-effort). ⚠️ **Exports async functions ONLY** — see D-77 |
 | `lib/enquiry.ts` | Enquiry types + initial state. Exists precisely so they are NOT exported from a `'use server'` file |
@@ -276,8 +281,9 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 4. **`services` in `lib/businessInfo.ts` is a URL generator.** Every record becomes a live page.
    `dynamicParams = false` makes unknown slugs 404 rather than render, but adding a fifth record
    ships a fifth service page — and D-01 says there are four.
-5. **`EnquiryForm.tsx` is the only `'use client'` in the app**, and deliberately a leaf. The contact
-   page stays a server component so its copy is in the server HTML. Do not lift the directive up.
+5. **Client boundaries stay as narrow leaves.** `EnquiryForm.tsx` owns form state;
+   `HoverNavMenu.tsx` owns desktop dismissal state. Their parents and link/copy collections remain
+   server-rendered. Do not lift either directive into the page, header or shared data panels.
 6. **The enquiry form sends via Resend** (D-78). Set `RESEND_API_KEY` and `ETR_ENQUIRY_FROM` in
    Vercel, then send a live test before telling anyone it works. Unset, it fails loudly (D-47).
    ⚠️ **Never export a non-function from `lib/actions.ts`** — that exact mistake produced a
@@ -305,8 +311,9 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    overrides for `.et-band-ink` / `.et-card-dark` live at the end of `globals.css` (D-81). If you
    add a new component that can sit on an ink band, check its contrast before shipping.
 15. **The form's JS is on every route** because `ContactSection` is on every page (D-80). Homepage
-   JS is **179 KB gzipped — over the ≤150 KB shared-route budget line.** Accepted deliberately.
-   Slim the form if it must come down; do not strip the form from pages.
+   shared JS has exceeded the preferred budget and was accepted deliberately. Use the latest row in
+   `docs/PERFORMANCE_BUDGET.md` for current measurements. Slim the form if it must come down; do not
+   strip the form from pages.
 16. **Analytics: GTM-MVGQB9FW is installed** (K4 closed — 2026-08-31). Architecture: Website →
    GTM → Google tag (G-06GQGHHP0X) → GA4. One measurement path (D-32). The standalone Google
    tag GT-MBNT4TKH is NOT installed — it would create a duplicate path. GTM container holds:
@@ -318,13 +325,13 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
      URL contains /contact-us/)
    - **Variables:** Click Element · Click URL · Click Text · Form ID (all built-in)
    GTM snippet is in `app/layout.tsx` (Script strategy="afterInteractive" + noscript iframe).
-   Container ID in `.env.local` as NEXT_PUBLIC_GTM_ID. All call CTAs are real `tel:` anchors
+   Container ID is configured as `NEXT_PUBLIC_GTM_ID`. All call CTAs are real `tel:` anchors
    (D-33) — verified 4 anchors, 0 button CTAs — so a single delegated listener is all that
-   is needed. **GTM Version 2 published 2026-08-31** — confirmed in Tag Assistant: base tag
+   is needed. **GTM Version 2 is published and production presence was re-verified 2026-09-14** —
+   Tag Assistant confirmed the base tag
    fires on page load, 2 Google tags detected (GTM-MVGQB9FW + G-06GQGHHP0X), source
-   "On-page gtm.js snippet". Remaining: (1) mark phone_call_click + generate_lead as key
-   events in GA4 console; (2) add NEXT_PUBLIC_GTM_ID=GTM-MVGQB9FW to Vercel environment
-   variables; (3) owner redeploys to Vercel (D-35).
+   "On-page gtm.js snippet". Marking selected events as GA4 key events is an optional owner/account
+   task, not evidence that site tracking is absent.
 17. **`.et-hero-media` is a fixed 4/3 ratio at every breakpoint** (D-84). Every source photo in
    `lib/projects.ts` is landscape (~3/2) - do not reintroduce a portrait override for "desktop
    polish"; that exact change was the reported crop bug.
@@ -364,11 +371,11 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 
 ### How it is verified
 
-`npm run build` must be green, then with the server running:
+`npm run build` must be green, then start that build on an unused task-specific port (example 3310):
 
 ```bash
-npx next start -p 3210
-npm run verify:redirects          # 34 checks: 5 keep · 18 redirect · 2 gone · 7 new · 2 404
+npx next start -p 3310
+npm run verify:redirects -- http://localhost:3310
 ```
 
 The expectation table in that script is transcribed **independently** of `next.config.ts` on
@@ -376,10 +383,10 @@ purpose — a script importing the config would only prove the config equals its
 every 301 to its destination and asserts 200, because a redirect into a 404 destroys the equity it
 exists to preserve.
 
-⚠️ **Stopping the dev/prod server:** killing the background task wrapper does **not** kill the
-`next start` child on Windows. It keeps holding the port, and the next `next start` fails with
-`EADDRINUSE` while your tests quietly pass against the **stale** build. Check the port owner
-(`netstat -ano | grep 3210`) and `Stop-Process` the real PID.
+⚠️ **Ports are shared resources:** do not assume `3210` belongs to ETR or kill a PID just because it
+owns a familiar port. Choose an unused task-specific port, record the child PID you started, and stop
+that exact PID. Killing only a background wrapper may leave `next start` alive; testing against that
+stale server can produce a false pass.
 
 Readability (docs/CONTENT_QUALITY_CHECKLIST.md §2, D-96) needs only a build, no server:
 

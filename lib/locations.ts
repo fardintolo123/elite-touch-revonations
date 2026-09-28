@@ -90,6 +90,21 @@ export function publishedSuburbBySlug(slug: string): Suburb | undefined {
     .find((suburb) => suburb.slug === slug)
 }
 
+/**
+ * Exact-name lookup for content that already carries an owner-supplied suburb
+ * name, such as a photographed project. This returns a suburb only when both
+ * its region and dedicated service page are published.
+ */
+export function publishedSuburbForName(
+  suburbName: string,
+): Suburb | undefined {
+  const target = suburbName.toLowerCase()
+
+  return publishedRegions()
+    .flatMap((region) => publishedSuburbs(region))
+    .find((suburb) => suburb.name.toLowerCase() === target)
+}
+
 export function publishedRegionForSuburbSlug(slug: string): Region | undefined {
   return publishedRegions().find((region) =>
     publishedSuburbs(region).some((suburb) => suburb.slug === slug),
