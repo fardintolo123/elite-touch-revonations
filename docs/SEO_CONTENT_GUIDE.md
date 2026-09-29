@@ -76,6 +76,31 @@ REDIRECT · CREATE**.
 - **MERGE / DELETE / REDIRECT need first-party evidence** (Search Console: one query returning two
   URLs), never a tool's title-similarity guess.
 
+### High-intent keyword gate
+
+"Purchase intent" is a useful prioritisation signal, not permission to manufacture a landing page.
+Before treating a keyword as a new commercial-page opportunity, answer all five questions:
+
+1. **Service fit:** does the query map to one of the four confirmed renovation services? If not,
+   reject it or ask the owner about a genuine scope change.
+2. **Intent:** is the searcher choosing a renovator, comparing a quote/package, or looking for service
+   in a confirmed area? Generic inspiration and broad how-to traffic rank below these needs.
+3. **Existing home:** is there already a service, package, location, project or advice page that owns
+   the intent? If yes, **IMPROVE** that page; do not create a competing URL.
+4. **Evidence and proof:** is there first-party Search Console query-by-page evidence or credible
+   volume/difficulty data, and can the page contain real ETR proof? A keyword tool can show demand;
+   only real projects, photos, reviews and owner-approved facts can justify the page's substance.
+5. **Conversion path:** can the page lead naturally to a free on-site measure, tap-to-call action, or
+   the relevant commercial page, with calls/form submissions measurable in analytics?
+
+Create only when all five pass. Record the target query, intended page, evidence, proof source,
+primary CTA and measurement method before implementation. There is no ideal word count: write the
+shortest page that fully answers the decision and clears the quality/checklist gates.
+
+This is the useful part of the "Compact Keywords" framing (issue #65). It does **not** override the
+location-page gates, the evidence requirement, the four-service boundary, or the owner-approved
+issue-#58 exception in D-139.
+
 ### Report intake — before actioning any third-party SEO tool output
 The sibling project triaged two external reports: between them, **19 recommendations produced 5 real
 fixes.** Acting on them as written would have deleted four healthy pages and manufactured

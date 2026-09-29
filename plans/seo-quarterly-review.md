@@ -13,6 +13,14 @@ Use this every three months before changing any visible freshness date or sitema
 - [ ] `app/sitemap.ts` checked so no `new Date()` or build timestamp is used for `lastModified`.
 - [ ] Served HTML spot-check completed for `/packages/`, one gallery project and one hub.
 - [ ] `/sitemap.xml` spot-check completed for stable `lastmod` and `<image:image>` entries.
+- [ ] Search Console high-intent review completed: inspect query **and page together**, record the
+      commercial queries with impressions/clicks/position, and prefer improving the existing owner
+      before proposing a new URL.
+- [ ] Google Search Console's Generative AI performance report checked for impressions and cited
+      pages. Treat it as another Search surface, not a separate GEO ranking system or a reason to
+      create AI-only pages.
+- [ ] Organic calls and enquiry-form submissions compared with search landing pages in analytics;
+      traffic without an enquiry path is not a win.
 - [ ] Review outcome recorded in the relevant plan, audit, or decision doc.
 
 ## Rule
