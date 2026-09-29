@@ -28,8 +28,8 @@
  * Bay, Hunters Hill, The Rocks, Artarmon (bathroom + ensuite) — added from a
  * separate "Projects Before & After (1)" folder, each with its own written
  * Project Info document and a genuine matched before/after photo pair
- * (consent confirmed by the user 2026-08-25). Full intake triage:
- * plans/2026-08-25-new-project-photos-intake.md. Three projects from that
+ * (consent confirmed by the user 2026-08-25). Full intake triage is preserved in
+ * session-history/2026-09-05-project-photos-intake-and-gallery-expansion.md. Three projects from that
  * same folder were NOT added — see PROJECT_CONTEXT.md K14 for why
  * (unconfirmed location, and two standalone-laundry jobs outside the
  * confirmed service scope). The `before.webp` in each of these six IS

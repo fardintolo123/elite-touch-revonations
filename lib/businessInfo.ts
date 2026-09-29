@@ -582,7 +582,7 @@ export const services = [
      * so the generic weeks widget is dropped rather than shown with a wrong
      * number. Do NOT replace it with invented powder-room week/day figures — if a
      * per-service duration is wanted here, it needs an owner figure first.
-     * (blog-analyze finding F-1, 2026-09-01 — see plans/2026-09-01-blog-analyze-*.)
+     * (blog-analyze finding F-1, 2026-09-01; the completed working plan is retained in git history.)
      */
     hideBuildDurations: true,
     faqs: [

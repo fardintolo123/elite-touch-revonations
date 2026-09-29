@@ -4,11 +4,11 @@
 `ETR images/`, `ETR images and reviews/`, and the repo root, per the image workflow in
 [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K5 (standing rule D-36 in [DECISIONS.md](../DECISIONS.md)).
 
-**Status: Detect + Inventory + Verify + Approve complete for Flags 1, 2 and 4 (owner-confirmed 2026-08-17
-— see D-37, D-38, and the added Kieran C review in `Customer Reviews.md`).** Flags 3, 5 and 6 remain
-standing production notes (not blockers). **Add to repo / Commit / Use public asset URL are still
-blocked** — there is no site, stack, or asset directory yet (K3, K9 in `PROJECT_CONTEXT.md`). Nothing
-here has been committed to the repo or given a public URL.
+**Status:** inventory, provenance review and consent are complete for the original 33 images (plus
+the former repo-root logo); see D-37–D-39. The site and asset pipeline now exist, but these original
+project images still have no reliable suburb/project attribution. They remain an unused source pool:
+shortlist and approve each intended use, describe only what the photograph shows, and never infer a
+location or case-study match. Flags 3, 5 and 6 remain standing production notes.
 
 ---
 
@@ -16,8 +16,8 @@ here has been committed to the repo or given a public URL.
 
 A separate, later-supplied folder (`C:\Users\Administrator\Downloads\Projects Before & After (1)\`,
 outside the repo) — 9 named projects, 38 photos, each with a written Project Info doc (budget,
-timeframe, scope of works, outcome). Full triage in
-[plans/2026-08-25-new-project-photos-intake.md](../plans/2026-08-25-new-project-photos-intake.md);
+timeframe, scope of works, outcome). Full triage is preserved in
+[the project-photo intake handoff](../session-history/2026-09-05-project-photos-intake-and-gallery-expansion.md);
 decisions in [DECISIONS.md](../DECISIONS.md) §3j (D-99–D-103); open items in
 [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K14.
 
@@ -56,8 +56,9 @@ viewed before its alt text was written, and added to `lib/projects.ts`. Live at
    ever used, copy the text from `Customer Reviews.md`, never from the graphic.**
 4. ✅ **RESOLVED 2026-08-17.** All seven "___ Luxe" template graphics with no matching raw photo are
    confirmed genuine ETR project photography, not stock/licensed imagery — owner-confirmed. Recorded as
-   D-38. They may be shortlisted for use, but still need a project/case-study mapping and publish
-   consent (K5/K6, O-4) before anything ships.
+   D-38. Consent is confirmed, but they may be used only as unattributed project photography unless
+   the owner supplies a reliable project/location mapping; each intended use still needs a fresh
+   shortlist and accurate alt text (K5, O-4).
 5. **Standing note, not a blocker.** Two before/after collages are genuine matched pairs (same window,
    same room) but the "after" side is a mid-construction shot, not a finished result — recessed lighting
    and boarding are in, but fixtures, vanities and final tiling are not. Fine to use as *progress*
@@ -65,10 +66,9 @@ viewed before its alt text was written, and added to `lib/projects.ts`. Live at
 6. **A photographer's hand/phone is visible, reflected, in a couple of mirror shots** (raw files
    `7.40.12 AM.jpeg` and `7.40.12 AM (1).jpeg`). Not a consent problem, but crop or choose a different
    angle before using either on the site.
-7. **The repo-root `.jpg` is not a project photo at all — it is the ETR logo file**, and it reveals the
-   business's full legal name: **Elite Touch Renovations Pty Ltd.** Worth capturing in
-   `PROJECT_CONTEXT.md` §1 next to the ABN/ACN open item (K1); the file itself belongs in a brand/logo
-   asset location, not mixed in with project photography.
+7. ✅ **RESOLVED.** The former repo-root `.jpg` was the ETR logo, not a project photo. Its processed
+   brand assets now live in `public/brand/`, and the legal entity details are recorded in the business
+   source of truth (D-79).
 
 ---
 
@@ -78,7 +78,7 @@ viewed before its alt text was written, and added to `lib/projects.ts`. Live at
 |---|---|---|
 | `…7.37.02 AM.jpeg` | Testimonial card — **Peta Grund**, 5★ | Text drifts slightly from `Customer Reviews.md` — see Flag 3 |
 | `…7.37.03 AM.jpeg` | Testimonial card — **Ken Chen**, 5★ | Text drifts slightly from `Customer Reviews.md` — see Flag 3 |
-| `…7.37.03 AM (1).jpeg` | Testimonial card — **"Kieran C"**, 5★, praising Carrara marble tiling | **Not in `Customer Reviews.md` — see Flag 1. Do not use.** |
+| `…7.37.03 AM (1).jpeg` | Testimonial card — **"Kieran C"**, 5★, praising Carrara marble tiling | Owner-confirmed and added to `Customer Reviews.md` (Flag 1). If quoted, copy from the Markdown source—not the graphic. |
 | `…7.37.03 AM (2).jpeg` | "Welcome to Elite Touch" collage — 3 circular crops of finished bathrooms (grey-tile double vanity, light-timber double vanity, teal-tile tub) | Composite promo graphic, not a standalone photo |
 | `…7.37.04 AM.jpeg` | Package pricing promo — Standard/Premium/Basic cards, each with a small finished-bathroom thumbnail | Repeats the package prices already in `PROJECT_CONTEXT.md` §2 — no new figures |
 | `…7.37.04 AM (1).jpeg` | "Meet Our Family Team" graphic — Adam Dawood & Omar Dawood (Projects Managers), **Farah Dawood (Architectural Designer)** | **Undocumented third principal — see Flag 2** |
