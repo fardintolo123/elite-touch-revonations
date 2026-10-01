@@ -226,9 +226,17 @@ export function EnquiryForm() {
           type="email"
           autoComplete="email"
           required
-          aria-describedby={state.errors?.email ? 'email-error' : undefined}
+          aria-describedby={
+            state.errors?.email ? 'email-help email-error' : 'email-help'
+          }
           aria-invalid={state.errors?.email ? true : undefined}
         />
+        <p
+          id="email-help"
+          className="et-field-help"
+        >
+          We use this to reply and send your enquiry confirmation.
+        </p>
         {state.errors?.email && (
           <p
             id="email-error"
@@ -245,7 +253,7 @@ export function EnquiryForm() {
 
       <div className="et-field">
         <label className="et-label" htmlFor="suburb">
-          Suburb
+          Suburb <span>(optional)</span>
         </label>
         <input
           className="et-input"
@@ -257,7 +265,7 @@ export function EnquiryForm() {
 
       <div className="et-field">
         <label className="et-label" htmlFor="service">
-          What are you renovating?
+          What are you renovating? <span>(optional)</span>
         </label>
         <select className="et-select" id="service" name="service" defaultValue="">
           <option value="">Not sure yet</option>
@@ -269,43 +277,55 @@ export function EnquiryForm() {
         </select>
       </div>
 
-      <div className="et-field">
-        <label className="et-label" htmlFor="message">
-          Anything you want us to know
-        </label>
-        <textarea
-          className="et-textarea"
-          id="message"
-          name="message"
-          rows={5}
-        />
-      </div>
-
-      <div className="et-field">
-        <label className="et-label" htmlFor="photos">
-          Photos of the room (optional, up to {MAX_PHOTOS})
-        </label>
-        <input
-          className="et-input"
-          id="photos"
-          name="photos"
-          type="file"
-          accept="image/*"
-          multiple
-          onChange={handlePhotosChange}
-        />
-        {photoNotice && (
-          <p
-            className="et-body-sm"
-            style={{
-              marginTop: 'var(--et-space-2)',
-              color: 'var(--et-text-secondary)',
-            }}
-          >
-            {photoNotice}
+      <details className="et-form-details">
+        <summary>
+          <span>Add notes or photos</span>
+          <span className="et-form-details-note">Optional</span>
+        </summary>
+        <div className="et-stack">
+          <p className="et-field-help">
+            Extra detail can help us understand the room before we call.
           </p>
-        )}
-      </div>
+
+          <div className="et-field">
+            <label className="et-label" htmlFor="message">
+              Anything you want us to know <span>(optional)</span>
+            </label>
+            <textarea
+              className="et-textarea"
+              id="message"
+              name="message"
+              rows={5}
+            />
+          </div>
+
+          <div className="et-field">
+            <label className="et-label" htmlFor="photos">
+              Photos of the room (optional, up to {MAX_PHOTOS})
+            </label>
+            <input
+              className="et-input"
+              id="photos"
+              name="photos"
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handlePhotosChange}
+            />
+            {photoNotice && (
+              <p
+                className="et-body-sm"
+                style={{
+                  marginTop: 'var(--et-space-2)',
+                  color: 'var(--et-text-secondary)',
+                }}
+              >
+                {photoNotice}
+              </p>
+            )}
+          </div>
+        </div>
+      </details>
 
       {state.status !== 'idle' && state.message && (
         <div

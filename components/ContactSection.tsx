@@ -76,7 +76,7 @@ export function ContactSection({
           </div>
 
           <div className="et-card">
-            <h3 className="et-h3">Send us your details</h3>
+            <h3 className="et-h3">Tell us about the room</h3>
             <p
               className="et-body-sm"
               style={{
@@ -85,7 +85,10 @@ export function ContactSection({
                 color: 'var(--et-text-secondary)',
               }}
             >
-              We will call to learn about the room and arrange the measure.
+              Send your contact details and, if helpful, up to two photos. We
+              will call to learn about the room and arrange the free on-site
+              measure. After the visit, we will put the inclusions, exclusions
+              and price in writing.
             </p>
             <EnquiryForm />
 

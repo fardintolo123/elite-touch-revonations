@@ -74,6 +74,22 @@ const PROCESS = [
   },
 ] as const
 
+const TOP_CONCERNS = [
+  {
+    question: 'What is included in the quote?',
+    answer:
+      'The work, exclusions and price are set out in a fixed-scope written quote before work begins.',
+  },
+  {
+    question: 'How is the waterproofing handled?',
+    answer: `We waterproof to ${businessInfo.standards.waterproofing} with primer plus two coats, and provide the compliance certificate.`,
+  },
+  {
+    question: 'How long will the bathroom be out of action?',
+    answer: `Most full renovations on the same footprint take ${businessInfo.buildDurations[0].weeks}. If demolition reveals a hidden problem, we discuss the cost and timing before extra work proceeds.`,
+  },
+] as const
+
 /**
  * Homepage FAQ — visible `<details>` block + `FAQPage` JSON-LD, emitted as
  * part of the page's `<SchemaGraph>` (`lib/schema.ts` `buildFaqNode`),
@@ -219,25 +235,21 @@ export default function HomePage() {
               <span className="et-eyebrow">Sydney · Family-run since 2022</span>
 
               <h1 className="et-display et-measure-tight">
-                Bathroom renovations near you in Sydney, with the scope clear
-                before work starts.
+                Bathroom renovations near you in Sydney.
               </h1>
 
               <p className="et-lead et-measure">
-                An awkward layout, poor storage or ageing waterproofing can make
-                the room hard to use and the renovation hard to price. We
-                measure it on site, then put the work, exclusions and price in
-                writing before we strip out, waterproof to{' '}
-                {businessInfo.standards.waterproofing}, tile and fit off.
+                We measure your bathroom on site, then put the work, exclusions
+                and price in writing before strip-out starts.
               </p>
 
               <div className="et-hero-cta">
-                <Link
-                  href="/contact-us/"
+                <a
+                  href="#enquire"
                   className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
                 >
                   {businessInfo.offer.primaryCta}
-                </Link>
+                </a>
                 {/* Real tel: anchor — never a JS handler (D-33) */}
                 <a
                   href={businessInfo.phone.href}
@@ -312,8 +324,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------------- Services ---------------- */}
+      {/* ---------------- Top concerns ---------------- */}
       <section className="et-section et-band-canvas">
+        <div className="et-container et-stack">
+          <span className="et-eyebrow">Before work starts</span>
+          <h2 className="et-h2 et-measure-tight">
+            The three questions we put in writing.
+          </h2>
+          <p className="et-lead et-measure">
+            Scope, waterproofing and timing should be clear before the bathroom
+            comes out, not explained after the job begins.
+          </p>
+
+          <dl className="et-assurance-list">
+            {TOP_CONCERNS.map((concern) => (
+              <div key={concern.question} className="et-assurance-item">
+                <dt className="et-h4">{concern.question}</dt>
+                <dd className="et-body-sm">{concern.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ---------------- Services ---------------- */}
+      <section className="et-section et-band-surface">
         <div className="et-container et-stack">
           <span className="et-eyebrow">What we do</span>
           <h2 className="et-h2 et-measure-tight">
@@ -352,7 +387,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- Process ---------------- */}
-      <section className="et-section et-band-surface">
+      <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
           <span className="et-eyebrow">How it works</span>
           <h2 className="et-h2 et-measure-tight">
@@ -388,9 +423,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      <WorkStrip
+        title="Recent Sydney bathrooms"
+        intro="Our own photographs of finished work, with the suburb each job was in."
+        band="surface"
+      />
+
       <AreasServedLinks
         title="Need bathroom renovations near you in Sydney?"
-        intro="We work across Sydney, with a free on-site measure available across the metro area. These pages are live because they have real project proof behind them, not just a suburb list."
+        intro="We work across Sydney and offer a free on-site measure throughout the metro area. See our work and bathroom renovation details for your area."
         band="canvas"
       />
 
@@ -402,9 +443,9 @@ export default function HomePage() {
             What customers notice while we are in the house.
           </h2>
           <p className="et-lead et-measure">
-            Those three things come up again and again in what our customers
-            write, independently of each other. They are the parts of the job
-            you actually live through.
+            Customers often mention clear updates, care in the home and
+            attention to detail. They are the parts of the job you actually
+            live through.
           </p>
 
           <div
@@ -435,8 +476,8 @@ export default function HomePage() {
                 <li>Floor protection, drop sheets, and a clean site each day</li>
                 <li>Final clean before handover</li>
                 <li>
-                  A {businessInfo.workmanshipWarrantyYears}-year workmanship
-                  warranty on everything we build
+                  {businessInfo.workmanshipWarrantyYears}-year workmanship
+                  warranty
                 </li>
               </ul>
             </div>
@@ -486,13 +527,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ---------------- CTA ---------------- */}
-      <WorkStrip
-        title="Recent Sydney bathrooms"
-        intro="Our own photographs of finished work, with the suburb each job was in."
-        band="canvas"
-      />
 
       <ContactSection />
     </>

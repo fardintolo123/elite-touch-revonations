@@ -818,6 +818,16 @@ svg {
   color: var(--et-text-secondary);
   margin-bottom: var(--et-space-2);
 }
+.et-label span {
+  color: var(--et-text-muted);
+  font-weight: 400;
+}
+.et-field-help {
+  margin-top: var(--et-space-2);
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-sm);
+  line-height: 1.55;
+}
 .et-input,
 .et-textarea,
 .et-select {
@@ -839,6 +849,44 @@ svg {
   border-radius: var(--et-radius-lg);
   min-height: 160px;
   resize: vertical;
+}
+.et-form-details {
+  padding-block: var(--et-space-2);
+  border-block: 1px solid var(--et-border);
+}
+.et-form-details > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--et-space-3);
+  min-height: 48px;
+  color: var(--et-text);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.et-form-details > summary::-webkit-details-marker {
+  display: none;
+}
+.et-form-details > summary::after {
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  content: '';
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--et-duration-fast) var(--et-ease-standard);
+}
+.et-form-details[open] > summary::after {
+  transform: rotate(225deg) translateY(-1px);
+}
+.et-form-details-note {
+  color: var(--et-text-muted);
+  font-size: var(--et-text-caption);
+  font-weight: 500;
+}
+.et-form-details > .et-stack {
+  padding-block: var(--et-space-3) var(--et-space-5);
 }
 .et-input:hover,
 .et-textarea:hover,
@@ -1160,20 +1208,47 @@ svg {
   }
 }
 
-/* Mobile nav: a plain wrapping list, always in the DOM.
-   Never unmount navigation — collapse with CSS only (DECISIONS.md D-31). */
+/* Native details keeps every mobile link in the served HTML while preventing
+   the sticky header from occupying nearly half the viewport. */
+.et-mobile-navigation {
+  border-top: 1px solid var(--et-border);
+}
+.et-mobile-navigation > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.et-mobile-navigation > summary::-webkit-details-marker {
+  display: none;
+}
+.et-mobile-navigation > summary::after {
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  content: '';
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform var(--et-duration-fast) var(--et-ease-standard);
+}
+.et-mobile-navigation[open] > summary::after {
+  transform: rotate(225deg) translateY(-1px);
+}
+@media (min-width: 1024px) {
+  .et-mobile-navigation {
+    display: none;
+  }
+}
 .et-nav-mobile {
   display: flex;
   flex-wrap: wrap;
   gap: var(--et-space-2) var(--et-space-5);
-  padding-bottom: var(--et-space-3);
-  border-top: 1px solid var(--et-border);
-  padding-top: var(--et-space-3);
-}
-@media (min-width: 1024px) {
-  .et-nav-mobile {
-    display: none;
-  }
+  padding-block: var(--et-space-1) var(--et-space-3);
 }
 .et-nav-mobile > a,
 .et-nav-mobile .et-nav-menu > summary {
@@ -1292,6 +1367,10 @@ svg {
   display: flex;
   flex-wrap: wrap;
   gap: var(--et-space-3);
+}
+
+#enquire {
+  scroll-margin-top: var(--et-space-40);
 }
 
 /* Location hero: a real local project carries the page's visual proof. The
@@ -1485,6 +1564,32 @@ svg {
 }
 .et-step + .et-step {
   margin-top: var(--et-space-8);
+}
+
+.et-assurance-list {
+  display: grid;
+  gap: 0;
+  margin-top: var(--et-space-8);
+  border-block: 1px solid var(--et-border);
+}
+.et-assurance-item {
+  padding-block: var(--et-space-8);
+}
+.et-assurance-item + .et-assurance-item {
+  border-top: 1px solid var(--et-border);
+}
+.et-assurance-item dd {
+  margin-top: var(--et-space-3);
+  color: var(--et-text-secondary);
+}
+@media (min-width: 1024px) {
+  .et-assurance-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--et-space-10);
+  }
+  .et-assurance-item + .et-assurance-item {
+    border-top: 0;
+  }
 }
 
 /* ==========================================================================

@@ -256,9 +256,12 @@ export function SiteHeader() {
           </div>
         </div>
 
-        <nav className="et-nav-mobile" aria-label="Primary, mobile">
-          <MobileNavigationItems />
-        </nav>
+        <details className="et-mobile-navigation">
+          <summary>Menu</summary>
+          <nav className="et-nav-mobile" aria-label="Primary, mobile">
+            <MobileNavigationItems />
+          </nav>
+        </details>
       </div>
     </header>
   )
