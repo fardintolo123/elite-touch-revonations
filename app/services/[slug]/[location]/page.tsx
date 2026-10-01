@@ -150,11 +150,10 @@ function SuburbLocationPage({
             (project ? [project.story ?? project.blurb] : [description])
           ).map((paragraph, index) => (
             <p
-              key={paragraph}
+              key={index}
               className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
-            >
-              {paragraph}
-            </p>
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
           ))}
           <p className="et-body-sm">
             <Link href="/packages/" className="et-link">
@@ -238,11 +237,10 @@ function SuburbLocationPage({
             </h2>
             {content.localAngle.paragraphs.map((paragraph, index) => (
               <p
-                key={paragraph}
+                key={index}
                 className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
-              >
-                {paragraph}
-              </p>
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
             ))}
             <p className="et-body-sm">
               <Link href={`${region.hubUrl}/`} className="et-link">
@@ -529,9 +527,8 @@ export default async function LocationHubPage({
                     ? 'et-lead et-measure'
                     : 'et-body-sm et-measure'
                 }
-              >
-                {para}
-              </p>
+                dangerouslySetInnerHTML={{ __html: para }}
+              />
             ))}
             <p className="et-body-sm">
               <Link href="/packages/" className="et-link">
@@ -618,9 +615,8 @@ export default async function LocationHubPage({
                     ? 'et-lead et-measure'
                     : 'et-body-sm et-measure'
                 }
-              >
-                {para}
-              </p>
+                dangerouslySetInnerHTML={{ __html: para }}
+              />
             ))}
           </div>
         </section>

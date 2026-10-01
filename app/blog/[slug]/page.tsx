@@ -109,7 +109,7 @@ export default async function BlogPostPage({
               {post.sections.map((section) => (
                 <section key={section.heading}>
                   <h2 className="et-h2">{section.heading}</h2>
-                  {section.paragraphs.map((paragraph) => <p key={paragraph} className="et-body">{paragraph}</p>)}
+                  {section.paragraphs.map((paragraph, i) => <p key={i} className="et-body" dangerouslySetInnerHTML={{ __html: paragraph }} />)}
                 </section>
               ))}
               {post.faq && post.faq.length > 0 && (
