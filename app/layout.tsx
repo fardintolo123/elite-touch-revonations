@@ -147,6 +147,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script id="disable-scroll-restoration" strategy="beforeInteractive">
           {`if ('scrollRestoration' in history) { history.scrollRestoration = 'manual' }`}
         </Script>
+        <Script id="visibility-title" strategy="beforeInteractive">
+          {`let originalTitle = document.title;
+let titleInterval;
+const titleMessages = ['Still planning your bathroom?', 'Get your free on-site measure'];
+
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    originalTitle = document.title;
+    clearInterval(titleInterval);
+    let messageIndex = 0;
+    titleInterval = setInterval(function () {
+      document.title = titleMessages[messageIndex];
+      messageIndex = (messageIndex + 1) % titleMessages.length;
+    }, 1000);
+  } else {
+    clearInterval(titleInterval);
+    document.title = originalTitle;
+  }
+});`}
+        </Script>
         <a className="et-skip-link" href="#main">
           Skip to content
         </a>

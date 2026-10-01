@@ -26,8 +26,9 @@
           "slug": "baulkham-hills",
           "postcode": "2153",
           "tier": 1,
-          "pagePublished": false,
-          "url": "/services/bathroom-renovations/baulkham-hills"
+          "pagePublished": true,
+          "url": "/services/bathroom-renovations/baulkham-hills",
+          "note": "Published 2026-10-01 without a photographed local project (owner instruction, issue #54) — see D-153. Photos pending; tracked in the GitHub issue opened for this suburb."
         },
         {
           "name": "Bella Vista",
@@ -66,8 +67,9 @@
           "slug": "kellyville",
           "postcode": "2155",
           "tier": 1,
-          "pagePublished": false,
-          "url": "/services/bathroom-renovations/kellyville"
+          "pagePublished": true,
+          "url": "/services/bathroom-renovations/kellyville",
+          "note": "Published 2026-10-01 without a photographed local project (owner instruction, issue #54) — see D-153. Photos pending; tracked in the GitHub issue opened for this suburb."
         },
         {
           "name": "Kellyville Ridge",
@@ -445,8 +447,9 @@
           "slug": "marrickville",
           "postcode": "2204",
           "tier": 1,
-          "pagePublished": false,
-          "url": "/services/bathroom-renovations/marrickville"
+          "pagePublished": true,
+          "url": "/services/bathroom-renovations/marrickville",
+          "note": "Published 2026-10-01 without a photographed local project (owner instruction, issue #54) — see D-153. Photos pending; tracked in the GitHub issue opened for this suburb."
         },
         {
           "name": "Clemton Park",
@@ -541,8 +544,9 @@
           "slug": "ryde",
           "postcode": "2112",
           "tier": 1,
-          "pagePublished": false,
-          "url": "/services/bathroom-renovations/ryde"
+          "pagePublished": true,
+          "url": "/services/bathroom-renovations/ryde",
+          "note": "Published 2026-10-01 without a photographed local project (owner instruction, issue #54) — see D-153. Photos pending; tracked in the GitHub issue opened for this suburb."
         },
         {
           "name": "Blenheim Road",

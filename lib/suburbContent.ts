@@ -6,7 +6,8 @@ export type SuburbContent = {
   answer: string[]
   localAngle: { heading: string; paragraphs: string[] }
   faqs: SuburbFaq[]
-  projectSlug: string
+  /** Omitted when the suburb has no photographed local project yet (issue #54). */
+  projectSlug?: string
 }
 
 export const suburbContent: Record<string, SuburbContent> = {
@@ -84,12 +85,156 @@ export const suburbContent: Record<string, SuburbContent> = {
       },
     ],
   },
+  'baulkham-hills': {
+    answer: [
+      'Elite Touch Renovations completes bathroom renovations in Baulkham Hills as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+    ],
+    localAngle: {
+      heading: 'Our work near Baulkham Hills',
+      paragraphs: [
+        "We haven't published a photographed Baulkham Hills project yet — we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District — our Castle Hill project — on the regional hub page linked below.',
+      ],
+    },
+    faqs: [
+      {
+        question: 'How much does a bathroom renovation cost in Baulkham Hills?',
+        answer:
+          'It starts from $18,000 for a small bathroom around 1.5 by 1.8 by 2.4 metres on the Basic package, from $25,000 for Standard and from $30,000 for Premium. These are all from-prices tied to that room size. You get a firm figure after a free on-site measure.',
+      },
+      {
+        question: 'What is included in a Baulkham Hills bathroom renovation?',
+        answer:
+          'We can manage the full renovation: strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off. The agreed work is set out in a fixed-scope written quote before work starts.',
+      },
+      {
+        question: 'Do you have a photographed Baulkham Hills bathroom project to view?',
+        answer:
+          "Not yet — we haven't completed a Baulkham Hills job with photos published on this site. You can see a real, photographed project nearby in the Hills District hub, and we'll add Baulkham Hills photos here once a local job is finished and signed off.",
+      },
+      {
+        question: 'How do I get a quote for a bathroom renovation in Baulkham Hills?',
+        answer:
+          'Book a free on-site measure. We assess the room, discuss the work and then provide a fixed-scope written quote. Call 0411 752 334 or use the enquiry form on this page.',
+      },
+    ],
+  },
+  kellyville: {
+    answer: [
+      'Elite Touch Renovations completes bathroom renovations in Kellyville as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+    ],
+    localAngle: {
+      heading: 'Our work near Kellyville',
+      paragraphs: [
+        "We haven't published a photographed Kellyville project yet — we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District — our Castle Hill project — on the regional hub page linked below.',
+      ],
+    },
+    faqs: [
+      {
+        question: 'How much does a bathroom renovation cost in Kellyville?',
+        answer:
+          'It starts from $18,000 for a small bathroom around 1.5 by 1.8 by 2.4 metres on the Basic package, from $25,000 for Standard and from $30,000 for Premium. These are all from-prices tied to that room size. You get a firm figure after a free on-site measure.',
+      },
+      {
+        question: 'What is included in a Kellyville bathroom renovation?',
+        answer:
+          'We can manage the full renovation: strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off. The agreed work is set out in a fixed-scope written quote before work starts.',
+      },
+      {
+        question: 'Do you have a photographed Kellyville bathroom project to view?',
+        answer:
+          "Not yet — we haven't completed a Kellyville job with photos published on this site. You can see a real, photographed project nearby in the Hills District hub, and we'll add Kellyville photos here once a local job is finished and signed off.",
+      },
+      {
+        question: 'How do I get a quote for a bathroom renovation in Kellyville?',
+        answer:
+          'Book a free on-site measure. We assess the room, discuss the work and then provide a fixed-scope written quote. Call 0411 752 334 or use the enquiry form on this page.',
+      },
+    ],
+  },
+  marrickville: {
+    answer: [
+      'Elite Touch Renovations completes bathroom renovations in Marrickville as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+    ],
+    localAngle: {
+      heading: 'Our work near Marrickville',
+      paragraphs: [
+        "We haven't published a photographed Marrickville project yet — we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Inner West — our Balmain project — on the regional hub page linked below.',
+      ],
+    },
+    faqs: [
+      {
+        question: 'How much does a bathroom renovation cost in Marrickville?',
+        answer:
+          'It starts from $18,000 for a small bathroom around 1.5 by 1.8 by 2.4 metres on the Basic package, from $25,000 for Standard and from $30,000 for Premium. These are all from-prices tied to that room size. You get a firm figure after a free on-site measure.',
+      },
+      {
+        question: 'What is included in a Marrickville bathroom renovation?',
+        answer:
+          'We can manage the full renovation: strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off. The agreed work is set out in a fixed-scope written quote before work starts.',
+      },
+      {
+        question: 'Do you have a photographed Marrickville bathroom project to view?',
+        answer:
+          "Not yet — we haven't completed a Marrickville job with photos published on this site. You can see a real, photographed project nearby in the Inner West hub, and we'll add Marrickville photos here once a local job is finished and signed off.",
+      },
+      {
+        question: 'How do I get a quote for a bathroom renovation in Marrickville?',
+        answer:
+          'Book a free on-site measure. We assess the room, discuss the work and then provide a fixed-scope written quote. Call 0411 752 334 or use the enquiry form on this page.',
+      },
+    ],
+  },
+  ryde: {
+    answer: [
+      'Elite Touch Renovations completes bathroom renovations in Ryde as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+    ],
+    localAngle: {
+      heading: 'Our work near Ryde',
+      paragraphs: [
+        "We haven't published a photographed Ryde project yet — we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in North-Western Sydney — our Gladesville project — on the regional hub page linked below.',
+      ],
+    },
+    faqs: [
+      {
+        question: 'How much does a bathroom renovation cost in Ryde?',
+        answer:
+          'It starts from $18,000 for a small bathroom around 1.5 by 1.8 by 2.4 metres on the Basic package, from $25,000 for Standard and from $30,000 for Premium. These are all from-prices tied to that room size. You get a firm figure after a free on-site measure.',
+      },
+      {
+        question: 'What is included in a Ryde bathroom renovation?',
+        answer:
+          'We can manage the full renovation: strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off. The agreed work is set out in a fixed-scope written quote before work starts.',
+      },
+      {
+        question: 'Do you have a photographed Ryde bathroom project to view?',
+        answer:
+          "Not yet — we haven't completed a Ryde job with photos published on this site. You can see a real, photographed project nearby in North-Western Sydney, and we'll add Ryde photos here once a local job is finished and signed off.",
+      },
+      {
+        question: 'How do I get a quote for a bathroom renovation in Ryde?',
+        answer:
+          'Book a free on-site measure. We assess the room, discuss the work and then provide a fixed-scope written quote. Call 0411 752 334 or use the enquiry form on this page.',
+      },
+    ],
+  },
 }
 
 export function suburbContentFor(slug: string): SuburbContent | undefined {
   return suburbContent[slug]
 }
 
-export function projectForSuburb(content: SuburbContent, projects: readonly Project[]) {
+export function projectForSuburb(
+  content: SuburbContent,
+  projects: readonly Project[],
+) {
+  if (!content.projectSlug) return undefined
   return projects.find((project) => project.slug === content.projectSlug)
 }

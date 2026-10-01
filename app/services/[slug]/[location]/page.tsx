@@ -76,11 +76,14 @@ function SuburbLocationPage({
 }: {
   suburb: Suburb
   region: Region
-  project: Project
+  project?: Project
 }) {
   const path = `/services/${LOCATION_PARENT_SLUG}/${suburb.slug}/`
   const content = suburbContentFor(suburb.slug)
-  const description = suburbPageDescription(suburb, true)
+  const description = suburbPageDescription(suburb, Boolean(project))
+  // No local project yet (issue #54, owner instruction 2026-10-01 — D-153):
+  // point to the region's real photographed work instead of inventing local proof.
+  const nearbyProject = project ? undefined : projectsInRegion(region)[0]
 
   return (
     <>
@@ -109,12 +112,22 @@ function SuburbLocationPage({
       <LocationHero
         backHref={`${region.hubUrl}/`}
         backLabel={`${region.name} bathroom renovations`}
-        eyebrow={`${suburb.name} · ${project.service}`}
-        caption={`A photographed project in ${suburb.name}`}
+        eyebrow={`${suburb.name} · ${parentService.title}`}
+        caption={
+          project
+            ? `A photographed project in ${suburb.name}`
+            : `Bathroom renovations in ${suburb.name}`
+        }
         title={`Bathroom renovations in ${suburb.name}`}
-        lead={project.blurb}
-        project={project}
-        projectLabel={`View the ${project.suburb} bathroom project`}
+        lead={project?.blurb ?? content?.answer[0] ?? description}
+        project={project ?? nearbyProject}
+        projectLabel={
+          project
+            ? `View the ${project.suburb} bathroom project`
+            : nearbyProject
+              ? `See our ${nearbyProject.suburb} project nearby`
+              : undefined
+        }
         rating={<GoogleRating />}
         facts={[
           { label: 'NSW Builder Licence', value: businessInfo.builderLicence },
@@ -132,16 +145,17 @@ function SuburbLocationPage({
           <h2 className="et-h2 et-measure-tight">
             What a {suburb.name} bathroom renovation costs and involves
           </h2>
-          {(content?.answer ?? [project.story ?? project.blurb]).map(
-            (paragraph, index) => (
-              <p
-                key={paragraph}
-                className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
-              >
-                {paragraph}
-              </p>
-            ),
-          )}
+          {(
+            content?.answer ??
+            (project ? [project.story ?? project.blurb] : [description])
+          ).map((paragraph, index) => (
+            <p
+              key={paragraph}
+              className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
+            >
+              {paragraph}
+            </p>
+          ))}
           <p className="et-body-sm">
             <Link href="/packages/" className="et-link">
               Compare the Basic, Standard and Premium packages
@@ -150,33 +164,70 @@ function SuburbLocationPage({
         </div>
       </section>
 
-      <section className="et-section et-band-canvas">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">Local proof</span>
-          <h2 className="et-h2 et-measure-tight">
-            A real bathroom renovation completed in {suburb.name}
-          </h2>
-          <Link
-            href={`/gallery/${project.slug}/`}
-            className="et-card et-card-link et-media-card"
-          >
-            <span className="et-media-frame">
-              <Image
-                src={project.images[0].src}
-                alt={project.images[0].alt}
-                width={project.images[0].width}
-                height={project.images[0].height}
-                sizes="(min-width: 1024px) 960px, 100vw"
-                loading="lazy"
-              />
-            </span>
-            <span className="et-badge-suburb">{project.suburb}</span>
-            <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
-              View the full project
-            </h3>
-          </Link>
-        </div>
-      </section>
+      {project ? (
+        <section className="et-section et-band-canvas">
+          <div className="et-container et-stack">
+            <span className="et-eyebrow">Local proof</span>
+            <h2 className="et-h2 et-measure-tight">
+              A real bathroom renovation completed in {suburb.name}
+            </h2>
+            <Link
+              href={`/gallery/${project.slug}/`}
+              className="et-card et-card-link et-media-card"
+            >
+              <span className="et-media-frame">
+                <Image
+                  src={project.images[0].src}
+                  alt={project.images[0].alt}
+                  width={project.images[0].width}
+                  height={project.images[0].height}
+                  sizes="(min-width: 1024px) 960px, 100vw"
+                  loading="lazy"
+                />
+              </span>
+              <span className="et-badge-suburb">{project.suburb}</span>
+              <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
+                View the full project
+              </h3>
+            </Link>
+          </div>
+        </section>
+      ) : (
+        nearbyProject && (
+          <section className="et-section et-band-canvas">
+            <div className="et-container et-stack">
+              <span className="et-eyebrow">Local proof, coming soon</span>
+              <h2 className="et-h2 et-measure-tight">
+                We haven&rsquo;t photographed a {suburb.name} job yet
+              </h2>
+              <p className="et-body-sm et-measure">
+                We add a suburb&rsquo;s own gallery once a local job is finished
+                and signed off. In the meantime, here is real, photographed
+                work we completed nearby in the {region.name}.
+              </p>
+              <Link
+                href={`/gallery/${nearbyProject.slug}/`}
+                className="et-card et-card-link et-media-card"
+              >
+                <span className="et-media-frame">
+                  <Image
+                    src={nearbyProject.images[0].src}
+                    alt={nearbyProject.images[0].alt}
+                    width={nearbyProject.images[0].width}
+                    height={nearbyProject.images[0].height}
+                    sizes="(min-width: 1024px) 960px, 100vw"
+                    loading="lazy"
+                  />
+                </span>
+                <span className="et-badge-suburb">{nearbyProject.suburb}</span>
+                <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
+                  View the full project
+                </h3>
+              </Link>
+            </div>
+          </section>
+        )
+      )}
 
       {content && (
         <section className="et-section et-band-surface">
@@ -376,7 +427,7 @@ export default async function LocationHubPage({
     const project = projects.find(
       (item) => item.suburb.toLowerCase() === suburb.name.toLowerCase(),
     )
-    if (!parentRegion || !project) {
+    if (!parentRegion) {
       notFound()
       return null
     }
