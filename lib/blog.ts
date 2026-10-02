@@ -653,31 +653,31 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'What makes a heritage bathroom renovation different',
         paragraphs: [
-          'An older home brings conditions that a newer house does not. The wall framing may be hardwood, the drainage may be original clay or cast iron, the floor may sit on timber over a subfloor rather than a slab, and there may be services — lead pipe, galvanised water lines, asbestos sheeting — that need to be dealt with once the room is opened up.',
-          'If the home is heritage-listed or sits in a heritage conservation area, there are also approval requirements that do not apply to other renovations. The good news is that most internal bathroom work in an older home does not need heritage consent. The complexity is in the structure and services, not the paperwork.',
+          'An older home brings conditions a newer house does not. The wall framing may be hardwood. The drainage may be clay or cast iron. The floor may sit on timber rather than a slab. Lead pipe, old water lines or asbestos may turn up once the room is opened.',
+          'If the home is heritage-listed or in a heritage area, there are extra approval steps. The good news: most internal bathroom work does not need heritage consent. The real work is in the structure and the services, not the forms.',
         ],
       },
       {
         heading: 'Heritage listing vs heritage conservation area',
         paragraphs: [
-          'A heritage-listed property is individually listed on the NSW Heritage Register or a local council schedule because of its specific significance. A heritage conservation area (HCA) protects the character of a streetscape or precinct — the rules apply to external changes that affect how the area reads from the street.',
-          'The distinction matters for bathroom work. In most cases, a like-for-like internal bathroom renovation — same footprint, same wet area, no structural walls moved — does not need heritage consent under either listing type. Changes that alter the external appearance of the building, move structural walls, or affect heritage-significant internal features may need a heritage impact statement and council approval.',
-          'We check this at the on-site measure so the approval position is clear before the scope is fixed and the quote is written.',
+          'A heritage-listed home is on the NSW Heritage Register or a council list for its own value. A heritage area (HCA) protects the look of a whole street or block. The rules mainly cover changes you can see from outside.',
+          'For bathroom work, the split matters. A like-for-like internal fit-out — same footprint, same wet area, no walls moved — usually needs no heritage consent under either type. Changes to the outside of the building, to load-bearing walls or to heritage features inside may need a statement and council sign-off.',
+          'We check this at the on-site measure so the position is clear before the quote is written.',
         ],
       },
       {
         heading: 'What you usually find behind the walls',
         paragraphs: [
-          'Older Sydney homes — Federation terraces, inter-war semis, California bungalows, post-war fibro — share a common pattern: the bathroom was often added or last renovated decades ago, and the services behind the walls reflect that era.',
-          'Clay drainage lines crack and sag over time. Galvanised water pipes corrode internally and restrict flow. Lead supply lines are still found in some pre-1950s homes. Asbestos-containing materials — fibro sheeting, vinyl flooring, pipe lagging — are common in homes built or renovated before the mid-1980s.',
-          'None of this is unusual, and a licensed builder who works on older homes expects it. The important thing is that the quote accounts for what is likely to be found at strip-out rather than treating it as a surprise variation.',
+          'Older Sydney homes share a pattern. The bathroom was often added or last done up decades ago. The pipes, drains and linings behind the walls are from that era.',
+          'Clay drains crack and sag. Old water pipes corrode and choke flow. Lead lines still turn up in some pre-1950s homes. Fibro sheeting, vinyl tiles and pipe lagging with asbestos are common in homes built before the mid-1980s.',
+          'None of this is unusual. A builder who works on older homes expects it. The key is that the quote allows for what is likely at strip-out, rather than treating it as a surprise.',
         ],
       },
       {
         heading: 'Structural and waterproofing considerations',
         paragraphs: [
-          'A bathroom on a timber floor needs careful preparation before waterproofing. The membrane cannot bridge movement in the subfloor, so the substrate may need to be stiffened, re-sheeted or reinforced before the membrane goes down. This is standard practice on older homes but adds a step that a slab-on-ground bathroom does not need.',
-          'Wall framing in older homes is often irregular. Stud spacing, plumb and level can vary, and the framing may need to be packed or re-lined before tiles go on. This is part of the preparation scope, not a defect — it is how these houses were built.',
+          'A bathroom on a timber floor needs more prep before it can be sealed. The membrane cannot bridge movement in the subfloor. The base may need to be stiffened or re-sheeted first. This is normal on older homes but adds a step a slab bathroom does not need.',
+          'Wall framing in older homes is often uneven. Stud spacing, plumb and level can vary. The framing may need packing or new lining before tiles go on. This is prep work, not a defect — it is how these houses were built.',
           'Every bathroom we renovate is waterproofed to AS 3740 and issued a compliance certificate, regardless of the age of the home.',
         ],
       },
@@ -685,8 +685,8 @@ export const blogPosts: BlogPost[] = [
         heading: 'Designing a bathroom that suits the house',
         paragraphs: [
           'A heritage home does not need a heritage-themed bathroom. What it needs is a bathroom that does not fight the character of the house. The proportions, ceiling height, natural light and architectural language of the home should influence the design — not dictate it.',
-          'A freestanding bath, a frameless shower and contemporary fittings can sit comfortably in a Federation terrace if the scale and material palette are considered. Our Rocks project is an example: large-format wall tiles, encaustic-look floor tiles, matte black fittings and a freestanding bath sit around the original heritage leadlight window.',
-          'Period-style fixtures — pedestal basins, exposed-pipe showers, high-level cisterns — are one approach, but they are not the only one. A clean, modern bathroom that respects the room proportions often ages better than a pastiche of heritage details.',
+          'A freestanding bath, a frameless shower and modern fittings can work well in a terrace if the scale and palette suit the house. Our Rocks project shows this: large wall tiles, patterned floor tiles, matte black fittings and a freestanding bath sit around the original leadlight window.',
+          'Period-style fixtures are one approach, but not the only one. A clean, modern bathroom that suits the room often ages better than a mix of heritage copies.',
         ],
       },
       {
@@ -700,16 +700,16 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Cost considerations for older homes',
         paragraphs: [
-          'A bathroom renovation in an older home can cost more than the same scope in a newer house, and the difference is almost always in the preparation — not the finishes. Replacing old services, reinforcing a timber floor, removing asbestos-containing materials, and bringing the substrate to a state where it can be waterproofed and tiled all add labour and time.',
-          'The best way to manage this is to allow for it in the scope from the start. A quote that assumes the best case behind the walls is a quote that will change at strip-out. We walk through what is likely during the on-site measure and price accordingly.',
+          'A bathroom in an older home can cost more than the same scope in a newer house. The gap is almost always in the prep, not the finishes. Replacing old pipes, fixing a timber floor, removing asbestos and getting the base ready for tiles all add labour and time.',
+          'The best way to manage this is to allow for it from the start. A quote that assumes the best case behind the walls is a quote that will change at strip-out. We walk through what is likely at the on-site measure and price to match.',
           'ETR\'s packages start from $18,000 for a Basic renovation in a small bathroom. Older homes more commonly fall into the Standard (from $25,000) or Premium (from $30,000) range because of the preparation work involved.',
         ],
       },
       {
         heading: 'How ETR handles older and heritage homes',
         paragraphs: [
-          'The on-site measure covers the approval position, the likely condition of services and structure behind the walls, and the design direction. The written quote names the scope, the inclusions and how unexpected finds at strip-out are handled — before work starts, not after.',
-          'Adam Dawood has over 25 years of experience in tiling and project management, and the team works on older Sydney homes regularly. The Rocks heritage bathroom, the Hunters Hill marble bathroom and the Artarmon bathroom-and-ensuite are all completed projects in established homes.',
+          'The on-site measure covers the approval position, what is likely behind the walls, and the design direction. The written quote names every item in the scope and how surprise finds at strip-out are handled — before work starts, not after.',
+          'Adam Dawood has over 25 years in tiling and project management. The team works on older Sydney homes regularly. The Rocks heritage bathroom, the Hunters Hill marble bathroom and the Artarmon bathroom-and-ensuite are all finished projects in older homes.',
           'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, and covered by a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
         ],
       },
@@ -717,11 +717,11 @@ export const blogPosts: BlogPost[] = [
     faq: [
       {
         question: 'Do I need council approval to renovate a bathroom in a heritage-listed home?',
-        answer: 'A like-for-like internal bathroom renovation — same footprint, no structural walls moved, no changes to the building exterior — usually does not need heritage consent. Changes that alter the outside of the building or affect heritage-significant internal features may need approval. We check the approval position at the on-site measure.',
+        answer: 'A like-for-like internal fit-out — same footprint, no walls moved, no changes to the outside — usually does not need heritage consent. Changes to the exterior or to heritage features inside may need approval. We check this at the on-site measure.',
       },
       {
         question: 'Does a heritage bathroom renovation cost more than a standard one?',
-        answer: 'It can. The difference is usually in the preparation — replacing old services, reinforcing timber floors, removing asbestos-containing materials and bringing the substrate to a tiling-ready state. The finishes themselves cost the same. Allowing for this in the quote from the start avoids surprise variations.',
+        answer: 'It can. The gap is usually in the prep — replacing old pipes, fixing timber floors, removing asbestos and getting the base ready for tiles. The finishes cost the same. Allowing for this in the quote from the start avoids surprise extras.',
       },
       {
         question: 'Can I put a modern bathroom in a Federation or Victorian home?',
@@ -1111,58 +1111,58 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Why accessibility is a renovation decision, not a retrofit',
         paragraphs: [
-          'Most people think about bathroom accessibility only after a fall, an injury or a diagnosis. By that point the bathroom is already built, and retrofitting grab bars, a shower seat or a wider doorway means working around existing tiles, plumbing and framing.',
-          'Building accessibility into a renovation from the start costs a fraction of a retrofit and produces a better result. The room is being stripped back and rebuilt anyway — the time to plan for easy, safe use is now, not in five or ten years.',
+          'Most people think about bathroom access only after a fall, an injury or a diagnosis. By then the room is already built. Adding grab bars, a shower seat or a wider door means cutting into finished tiles and walls.',
+          'Building access into a renovation from the start costs far less and works better. The room is being stripped and rebuilt anyway. The time to plan for safe, easy use is now, not in ten years.',
         ],
       },
       {
         heading: 'What makes a bathroom accessible',
         paragraphs: [
-          'Accessibility is not a single feature. It is a combination of layout, entry, fixtures and surfaces that together make the room safe, easy to use and dignified for people of all ages and abilities.',
-          'The key elements are: a step-free shower entry (no hob or raised threshold), grab bars at the shower, toilet and bath, a comfort-height toilet (around 460 to 480 millimetres), non-slip floor tiles, adequate circulation space, good lighting, and lever-style tapware that does not require grip strength to operate.',
-          'None of these features look clinical or institutional when they are designed into the room properly. A curbless shower with a linear drain, a well-placed grab bar in a matching finish, and a wall-hung vanity at a comfortable height all look like contemporary design choices — because they are.',
+          'Access is not a single feature. It is a set of layout, entry, fixture and surface choices that make the room safe, easy to use and dignified for all ages.',
+          'The key items: a step-free shower entry, grab bars at the shower and toilet, a raised-height toilet (460 to 480 mm), non-slip floor tiles, room to move, good lighting, and lever taps that do not need grip strength.',
+          'None of these look clinical when they are built into the design. A curbless shower with a linear drain, a grab bar in a matching finish and a wall-hung vanity at a good height all read as modern choices — because they are.',
         ],
       },
       {
         heading: 'Step-free shower entry',
         paragraphs: [
-          'A curbless or hobless shower is the single most important accessibility feature in a bathroom. Stepping over a hob is a fall risk for older adults, and it is impassable for a wheelchair. A step-free entry with a linear drain or a gentle fall to a central waste removes the barrier entirely.',
-          'The waterproofing and drainage need to be designed for a curbless shower from the start. The floor fall, the drain position and the shower screen placement all matter. This is straightforward in a full renovation but difficult to add later.',
+          'A curbless shower is the most important access feature in a bathroom. Stepping over a hob is a fall risk for older adults and a barrier for a wheelchair. A flat entry with a linear drain removes both problems.',
+          'The sealing and drainage need to be set up for a flat shower from the start. The floor fall, drain position and screen placement all matter. This is simple in a full renovation but hard to add later.',
         ],
       },
       {
         heading: 'Grab bars and structural reinforcement',
         paragraphs: [
-          'Grab bars need to be fixed into solid structure — timber blocking or steel plates behind the wall lining. If the blocking is not installed during the renovation, adding grab bars later means opening the wall, which means removing and replacing tiles.',
-          'The cost of installing blocking during a renovation is minimal — a few offcuts of timber fixed between studs before the cement sheet goes on. The cost of opening a tiled wall to add it later is significant. This is the clearest example of accessibility being a renovation decision, not a retrofit.',
-          'Grab bars are available in finishes that match contemporary tapware — matte black, brushed nickel, brushed brass. They do not have to look like hospital fittings.',
+          'Grab bars need solid timber or steel behind the wall to hold. If that backing is not put in during the build, adding bars later means cutting tiles and opening the wall.',
+          'Putting blocking in during a renovation costs almost nothing — a few timber offcuts fixed between studs before the sheets go on. Doing it later is costly. This is the clearest case for planning access early.',
+          'Grab bars come in finishes that match modern taps — matte black, brushed nickel, brushed brass. They do not have to look like hospital fittings.',
         ],
       },
       {
         heading: 'Toilet height and position',
         paragraphs: [
-          'A standard toilet pan sits around 400 to 410 millimetres high. A comfort-height toilet sits at 460 to 480 millimetres — roughly chair height — which makes sitting down and standing up significantly easier for older adults and anyone with hip or knee issues.',
-          'The toilet position also matters. Enough clear space beside the toilet (at least 450 millimetres on one side) allows someone to transfer from a wheelchair or use a grab bar for support. This is a layout decision made at the planning stage.',
+          'A standard toilet sits around 400 to 410 mm high. A raised-height toilet sits at 460 to 480 mm — roughly chair height. This makes sitting and standing much easier for older adults and anyone with hip or knee problems.',
+          'Position matters too. Clear space beside the toilet (at least 450 mm on one side) lets someone transfer from a chair or use a grab bar. This is a layout call made at the planning stage.',
         ],
       },
       {
         heading: 'Floor surfaces and lighting',
         paragraphs: [
-          'Wet tile is a fall hazard regardless of age. A tile with a higher slip resistance rating (P3 or higher for wet barefoot areas) reduces the risk without sacrificing appearance. Many contemporary tiles are available in slip-resistant finishes that look and feel similar to standard tiles.',
-          'Good lighting matters for safety and usability. A well-lit room with consistent, shadow-free illumination makes it easier to see edges, steps and surfaces. A night light or low-level LED at floor height helps with overnight use without switching on the main light.',
+          'Wet tile is a fall hazard at any age. A tile rated P3 or higher for wet barefoot areas cuts the risk without giving up looks. Many current tiles come in non-slip finishes that look and feel like standard ones.',
+          'Good lighting matters. Even light with no dark spots makes it easier to see edges and surfaces. A low-level LED near the floor helps with overnight use without the main light.',
         ],
       },
       {
         heading: 'Planning for the future without building for a hospital',
         paragraphs: [
-          'Universal design is the principle that a room should work well for the widest range of users without looking like it was built for a specific condition. A bathroom designed with universal principles is comfortable for a 30-year-old, safe for a 70-year-old and usable for someone recovering from surgery.',
-          'The practical approach is to install the structural provisions now — blocking for grab bars, a curbless shower, a comfort-height toilet, adequate circulation space — and add or adjust the visible features as needs change. The room does not need to look like an aged-care facility to be safe.',
+          'Universal design means a room works well for the widest range of people without looking like it was built for one condition. A bathroom planned this way is easy for a 30-year-old, safe for a 70-year-old and usable after surgery.',
+          'The practical approach: put in the structure now — blocking for bars, a flat shower, a raised toilet, room to move — and add the visible features as needs change. The room does not need to look like an aged-care home to be safe.',
         ],
       },
       {
         heading: 'How ETR approaches accessible bathrooms',
         paragraphs: [
-          'At the on-site measure, we discuss how the room is used, who uses it and whether accessibility is a current or future priority. The written scope can include curbless shower entry, grab bar blocking, comfort-height fixtures and non-slip tiling without changing the design language of the room.',
+          'At the on-site measure, we talk through how the room is used, who uses it and whether access is a priority now or for the future. The scope can include a flat shower, grab bar blocking, raised fixtures and non-slip tiles without changing how the room looks.',
           'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
         ],
       },
@@ -1203,60 +1203,60 @@ export const blogPosts: BlogPost[] = [
         heading: 'The biggest difference is who else is involved',
         paragraphs: [
           'In a house, the renovation is between you and the builder. In an apartment, it involves the strata committee, the building manager, and sometimes the neighbours. The building has shared structure, shared plumbing and rules that govern when and how work can be done.',
-          'This does not make apartment bathroom renovations harder — it makes them different. The scope of work is often simpler (smaller rooms, fewer layout options), but the approval, access and scheduling requirements add steps that a house renovation does not need.',
+          'This does not make an apartment renovation harder — it makes it different. The room is often smaller and simpler. But the approvals, access rules and work-hour limits add steps a house does not need.',
         ],
       },
       {
         heading: 'Strata approval: what you need and when',
         paragraphs: [
-          'In NSW, strata renovations are classified as cosmetic, minor or major. A bathroom renovation is almost always minor or major because it involves waterproofing, which affects common property (the slab or the membrane below the tile bed).',
-          'Minor renovations need approval from the strata committee — a majority vote is enough. Major renovations, which include structural changes and waterproofing work, need a special resolution at a general meeting — at least 75 percent of owners must vote in favour.',
-          'The approval process takes time. Allow four to eight weeks for a strata by-law to be drafted, circulated and voted on. Start this before selecting tiles, not after.',
+          'In NSW, strata renovations fall into three classes: cosmetic, minor or major. A bathroom renovation is almost always minor or major, because sealing the wet area affects shared property — the slab and the membrane under the tiles.',
+          'Minor work needs a majority vote from the strata committee. Major work needs a special vote at a general meeting — at least 75 percent of owners in favour.',
+          'Allow four to eight weeks for a by-law to be drafted, sent out and voted on. Start this before choosing tiles, not after.',
         ],
       },
       {
         heading: 'Waterproofing in an apartment',
         paragraphs: [
-          'Waterproofing is more critical in an apartment than in a house, because a failure does not just damage your bathroom — it damages the unit below. Water can travel long distances through a concrete slab, and a leak in a tenth-floor bathroom can show up several floors down and on the other side of the building.',
-          'Most strata schemes require the waterproofing to be inspected and certified before tiling begins. Some require an independent certifier rather than the builder\'s own inspection. The by-law will specify the standard — typically AS 3740 — and the certification process.',
+          'Sealing matters more in an apartment than a house. A failure does not just damage your room — it hits the unit below. Water can travel a long way through a concrete slab. A leak on the tenth floor can show up floors below, on the other side of the building.',
+          'Most strata schemes require the sealing to be checked and certified before tiles go on. Some need a certifier who is not the builder. The by-law names the standard — usually AS 3740 — and the sign-off process.',
           'ETR waterproofs every bathroom to AS 3740 with a compliance certificate, whether it is in a house or an apartment.',
         ],
       },
       {
         heading: 'Plumbing: what can move and what cannot',
         paragraphs: [
-          'In a house, plumbing runs through the floor and walls and can usually be rerouted within the room during a renovation. In an apartment, the plumbing stack — the vertical pipe that carries waste from your bathroom to the building\'s main drain — is common property and cannot be moved.',
-          'This means the toilet position is usually fixed in an apartment. It can sometimes shift a short distance using an offset pan connector, but a large relocation is rarely practical. The shower waste and vanity waste have more flexibility, but they still need to fall to the existing floor waste or stack connection.',
-          'The practical impact: layout options in an apartment are more constrained than in a house. The on-site measure confirms what can change and what has to stay.',
+          'In a house, pipes run through the floor and walls and can usually be moved within the room. In an apartment, the waste stack — the vertical pipe to the building drain — is shared property and stays where it is.',
+          'This means the toilet is usually fixed in place. It can shift a short distance with an offset connector, but a big move is rarely doable. The shower and vanity wastes have more flex, but they still need to drain to the existing floor waste or stack.',
+          'The result: layout options in an apartment are tighter than in a house. The on-site measure shows what can change and what must stay.',
         ],
       },
       {
         heading: 'Noise, access and working hours',
         paragraphs: [
           'Most strata by-laws restrict renovation work to weekdays between 8 am and 5 pm, with no work on weekends or public holidays. Some buildings restrict noisy work (demolition, drilling) to a narrower window within those hours.',
-          'Access matters too. Materials and waste need to move through common areas — lifts, corridors, car parks. The building manager will usually require floor and lift protection, advance notice to affected residents, and a schedule of deliveries.',
-          'Demolition in an apartment generates the same dust as in a house, but in a smaller, more enclosed space. Dust containment at the bathroom door and along the corridor is more important when the next unit is a few metres away.',
+          'Access matters too. Tiles, tools and waste all move through shared spaces — lifts, halls, car parks. The building manager will usually need floor and lift covers, notice to nearby residents, and a delivery plan.',
+          'Demolition in a unit makes the same dust as in a house, but the space is tighter. Dust sealing at the bathroom door and along the hall matters more when the next unit is a few metres away.',
         ],
       },
       {
         heading: 'Acoustic requirements',
         paragraphs: [
-          'Apartment bathroom floors transmit impact noise to the unit below. Many Sydney strata schemes require an acoustic underlay or impact-isolation membrane between the concrete slab and the tile bed. This adds a step to the floor preparation but is a condition of the by-law, not optional.',
-          'The specific requirement varies by building. Some schemes name a product or a minimum impact isolation class (IIC rating). Others leave it to the builder to propose and the committee to approve. The by-law should be read carefully before the scope is finalised.',
+          'Apartment bathroom floors carry impact noise to the unit below. Many Sydney strata schemes need a sound layer between the slab and the tile bed. This adds a step to the floor prep but is a by-law condition, not optional.',
+          'The rule varies by building. Some schemes name a product or a minimum sound rating. Others leave it to the builder to suggest and the committee to approve. Read the by-law carefully before the scope is locked in.',
         ],
       },
       {
         heading: 'Cost differences',
         paragraphs: [
-          'An apartment bathroom renovation does not necessarily cost more than a house renovation for the same room size and finish level. The room is often smaller, which reduces tile and fixture quantities.',
-          'Where apartment renovations add cost is in the logistics: strata application fees, building protection, restricted working hours (which can extend the program), acoustic underlay, and sometimes independent waterproofing certification. These are not large items individually, but they add up.',
+          'An apartment bathroom does not always cost more than a house for the same room size and finish. The room is often smaller, so tile and fixture totals are lower.',
+          'Where apartment work adds cost is in the extras: strata fees, building covers, shorter work hours (which stretch the program), sound underlay, and sometimes outside certification. Each is small. Together they add up.',
           'ETR\'s packages start from $18,000 for a Basic renovation. The on-site measure and the strata by-law together determine the full scope and cost for an apartment.',
         ],
       },
       {
         heading: 'How ETR handles apartment renovations',
         paragraphs: [
-          'We review the strata by-law before quoting so the scope, the certification requirements and the access conditions are known upfront. The written quote accounts for building protection, noise restrictions and any acoustic or waterproofing requirements the by-law specifies.',
+          'We read the strata by-law before quoting so the scope, the sign-off rules and the access conditions are known up front. The written quote covers building covers, noise limits and any sound or sealing rules the by-law names.',
           'Every apartment bathroom is waterproofed to AS 3740 with a compliance certificate. The work is carried out under NSW Builder Licence 475204C with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
         ],
       },
