@@ -3,7 +3,7 @@
 **Outcome:** Double organic traffic within 6 months by publishing 2 blog posts per week targeting
 low-to-medium competition bathroom renovation keywords with genuine search volume.
 
-**Status:** First batch complete — all 10 articles written and building green. Next: extend calendar for weeks 6–10.
+**Status:** First batch complete (10 articles, weeks 1–5). Calendar extended through week 10. Next: write weeks 6–10 articles and add internal links.
 
 ---
 
@@ -52,6 +52,50 @@ in the 20 current blog posts.
 - [x] **Bathroom renovation for apartments vs houses: key differences** — comparison intent.
   Extends strata content without duplicating it.
   Target: "apartment bathroom renovation vs house"
+
+---
+
+## Content Calendar — Next 10 Topics (Weeks 6–10)
+
+### Week 6
+- [ ] **Wet room design: is it right for your bathroom renovation?** — design/decision intent.
+  Growing search trend ("wet room bathroom" 100–1K). Low renovator competition — mostly lifestyle sites.
+  Target: "wet room bathroom renovation australia"
+- [ ] **How to choose bathroom tapware finishes that last** — product/design intent.
+  Complements tiling/finishes guide. PAA-rich topic ("matte black vs brushed nickel", "tapware trends").
+  Target: "bathroom tapware finishes guide"
+
+### Week 7
+- [ ] **Underfloor heating in a bathroom: worth the cost?** — decision/cost intent.
+  Seasonal interest, ties to renovation cost topics. Competitors mostly plumbing sites.
+  Target: "underfloor heating bathroom renovation cost"
+- [ ] **Family-friendly bathroom renovation: designing for kids and adults** — needs-based intent.
+  Extends the accessible topic to young families. Storage, safety, durability angles.
+  Target: "family bathroom renovation ideas"
+
+### Week 8
+- [ ] **How to choose the right bathroom vanity during a renovation** — product/decision intent.
+  High PAA density ("wall-hung vs freestanding", "vanity size guide"). Connects to storage article.
+  Target: "bathroom vanity guide renovation"
+- [ ] **Bathroom renovation permits and approvals in Sydney: what you need** — compliance/process intent.
+  Low competition from renovators. Builds trust and topical authority. CDC/DA angle.
+  Target: "bathroom renovation permits sydney"
+
+### Week 9
+- [ ] **What plumbing gets replaced during a bathroom renovation?** — process/anxiety intent.
+  Addresses a top PAA cluster. Complements demolition article. Real trade detail.
+  Target: "bathroom renovation plumbing replacement"
+- [ ] **Bathroom renovation and home insurance: what to know before you start** — risk/planning intent.
+  Unique angle — almost no renovators cover this. Waterproofing certificate tie-in.
+  Target: "bathroom renovation insurance australia"
+
+### Week 10
+- [ ] **Bathroom renovation project management: what to expect week by week** — process/timeline intent.
+  Extends timeline article into a deeper, week-by-week narrative. Communication-focused (echoes reviews).
+  Target: "bathroom renovation project management timeline"
+- [ ] **Large-format tiles in a bathroom renovation: pros, cons and what to know** — product/design intent.
+  Trending material choice. Ties to tiling guide. Waterproofing and substrate considerations.
+  Target: "large format tiles bathroom renovation"
 
 ---
 

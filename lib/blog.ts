@@ -476,9 +476,9 @@ export const blogPosts: BlogPost[] = [
     sections: [
       { heading: 'The short answer', paragraphs: ['A well-planned bathroom renovation typically returns 60 to 80 percent of its cost at resale. The exact figure depends on the suburb, the property price, and how dated the existing bathroom was before the work.', 'That makes bathroom renovations one of the higher-return improvements you can make to a home in Sydney, alongside kitchens and street appeal. But returns are not guaranteed, and spending more does not automatically mean getting more back.'] },
       { heading: 'Why bathrooms influence buyers', paragraphs: ['Bathrooms signal upkeep. A buyer walking through a home with a tired bathroom starts calculating what it will cost to fix. That mental estimate often runs higher than the actual renovation price, because most buyers overweight the disruption.', 'A clean, functional bathroom with good light, working ventilation and modern fittings removes that objection. It does not need to be luxurious. It needs to feel finished, maintained and ready to use.'] },
-      { heading: 'Refresh vs full renovation', paragraphs: ['A cosmetic refresh — new tapware, a painted vanity, fresh silicone, better lighting — can cost under $5,000 and still shift the impression of a room on sale day. It will not fix layout problems, poor waterproofing or failing plumbing, but it can remove the "dated" label.', 'A full renovation addresses the structure, waterproofing, layout, fixtures and finishes together. ETR package starting points begin at Basic from $18,000 for a roughly 1.5 m × 1.8 m bathroom, Standard from $25,000, and Premium from $30,000, each tied to a stated room size and inclusion list. These are starting prices, not fixed quotes — the final scope follows a free on-site measure.'] },
+      { heading: 'Refresh vs full renovation', paragraphs: ['A cosmetic refresh — new tapware, a painted vanity, fresh silicone, better lighting — can cost under $5,000 and still shift the impression of a room on sale day. It will not fix layout problems, poor waterproofing or failing plumbing, but it can remove the "dated" label.', 'A full renovation addresses the structure, waterproofing, layout, fixtures and finishes together. ETR package starting points begin at Basic from $18,000 for a roughly 1.5 m × 1.8 m bathroom, Standard from $25,000, and Premium from $30,000, each tied to a stated room size and inclusion list. These are starting prices, not fixed quotes — the final scope follows a free on-site measure. Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> walks through how to set and hold a realistic number.'] },
       { heading: 'What actually adds value', paragraphs: ['Focus on what buyers notice and use every day: a working shower with good water pressure, enough storage, clean tiles, proper ventilation and a layout that makes sense for the room.', 'Waterproofing to AS 3740 is not visible after the tiles go on, but the certificate and the confidence it gives a buyer at due diligence can matter more than a statement tile wall.'] },
-      { heading: 'How to avoid overcapitalising', paragraphs: ['A common guideline is to keep a bathroom renovation under 5 to 10 percent of the property value. A $60,000 bathroom in a $700,000 home is unlikely to return its cost, because buyers in that price bracket are not expecting that level of finish.', 'Match the bathroom to the home and the suburb. A solid mid-range renovation with good waterproofing, clean finishes and a sensible layout usually returns more of its cost than a high-end build in a modest property.'] },
+      { heading: 'How to avoid overcapitalising', paragraphs: ['A common guideline is to keep a bathroom renovation under 5 to 10 percent of the property value. A $60,000 bathroom in a $700,000 home is unlikely to return its cost, because buyers in that price bracket are not expecting that level of finish.', 'Match the bathroom to the home and the suburb. A solid mid-range renovation with good waterproofing, clean finishes and a sensible layout usually returns more of its cost than a high-end build in a modest property. We cover this in more detail in our guide to <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">what agents actually look for</a> at resale.'] },
       { heading: 'What should you ask before renovating for resale?', paragraphs: ['Ask whether the bathroom is the weakest room in the home. If the kitchen, exterior or structural issues are worse, fixing the bathroom may not shift the sale price as much as you hope.', 'Ask what level of finish comparable homes in the street already have. A renovation that brings the bathroom up to the local standard is usually the safest return. Going well beyond it is a personal choice, not a financial one.'] },
       { heading: 'What does a good renovation include for resale?', paragraphs: ['Clean layout, modern fittings, waterproofing done to standard, good lighting, proper ventilation, and a neutral finish that suits a broad range of buyers. That combination keeps the room functional without dating it quickly.', 'A fixed-scope written quote with clear inclusions helps you control the spend and compare what you are getting. A free on-site measure is the right starting point if you are weighing up whether the renovation makes financial sense for your home.'] },
     ],
@@ -519,7 +519,7 @@ export const blogPosts: BlogPost[] = [
       { heading: 'Six colour combinations worth considering', paragraphs: ['White and charcoal is a clean, high-contrast pairing that suits most room sizes and does not date quickly. Sage green and white brings warmth without colour risk and works well in homes near bushland or established gardens.', 'Terracotta and beige creates a grounded, earthy feel and pairs with timber and natural stone. Olive and timber accents suit a natural palette and add character without making the room feel busy.', 'Navy and white reads as classic and structured, useful when the vanity or joinery carries the colour. All white with stone keeps the room light and lets the stone do the work, which suits smaller bathrooms where visual simplicity helps.'] },
       { heading: 'How to use the 60-30-10 rule in a bathroom', paragraphs: ['A useful starting point is to divide the room into three layers: 60 percent of the colour comes from the dominant surface, usually the wall and floor tiles. 30 percent comes from a secondary tone, often the vanity, cabinetry or a feature wall. 10 percent comes from the accents, like tapware, accessories and towels.', 'This structure keeps the room balanced. If 60 percent is a warm white tile, the 30 could be an olive vanity and the 10 could be brushed brass fittings. The proportions do the work without needing complicated rules.'] },
       { heading: 'Choose tile colour before paint colour', paragraphs: ['Tiles are the biggest surface in a bathroom and the hardest to change later. Choose the tile colour and format first, then match the paint, grout, fittings and accessories to it.', 'A common mistake is choosing a wall paint and then trying to find a tile that matches. Paint is easy to change. Tile is not. Start with the permanent surface and build outward.'] },
-      { heading: 'Small bathrooms need lighter, simpler schemes', paragraphs: ['A compact bathroom usually works better with fewer colours and lighter tones. Light tiles on walls and floor make the room feel larger, and large-format tiles reduce grout lines, which keeps the visual noise down.', 'That does not mean the room has to be plain. A single well-chosen feature, like a textured tile behind the vanity or a coloured shaving cabinet, can carry the design without crowding a small space.'] },
+      { heading: 'Small bathrooms need lighter, simpler schemes', paragraphs: ['A compact bathroom usually works better with fewer colours and lighter tones. Light tiles on walls and floor make the room feel larger, and large-format tiles reduce grout lines, which keeps the visual noise down.', 'That does not mean the room has to be plain. A single well-chosen feature, like a textured tile behind the vanity or a coloured shaving cabinet, can carry the design without crowding a small space. Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers tile format and material choices in more detail.'] },
       { heading: 'What lasts vs what dates', paragraphs: ['Bold colours in small doses can add character, but a bathroom covered in a trend colour will feel dated faster than one with a neutral base and considered accents. Fittings, towels and accessories are easier to swap than floor tiles.', 'If the bathroom is being renovated for long-term use, a neutral base with colour in the accessories and soft furnishings gives you more room to change the feel later without touching the hard finishes.'] },
       { heading: 'How does ETR handle colour decisions?', paragraphs: ['The colour scheme is part of the selections process during planning, before site work starts. The on-site measure helps confirm what the room can carry, and the written scope ties the selection to the quote.', 'Farah Dawood, ETR\'s architectural designer, works with homeowners on the design direction so that the scheme, layout and fittings work together rather than compete. A free on-site measure is the right starting point.'] },
     ],
@@ -605,7 +605,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'When should the fan run?',
         paragraphs: [
           'The fan should run during every shower and for at least 15 to 20 minutes after the shower stops. A timer switch or a humidity-sensing switch handles this automatically so the fan runs long enough to clear the moisture without relying on someone remembering to leave it on.',
-          'A fan wired directly to the light switch turns off the moment the light goes off, which is usually too soon. A run-on timer is a small addition during the electrical rough-in and makes a measurable difference to how well the room dries.',
+          'A fan wired directly to the light switch turns off the moment the light goes off, which is usually too soon. A run-on timer is a small addition during the electrical rough-in and makes a measurable difference to how well the room dries. The electrical rough-in happens right after <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition</a> — the right time to plan the fan wiring.',
         ],
       },
       {
@@ -670,7 +670,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'Older Sydney homes share a pattern. The bathroom was often added or last done up decades ago. The pipes, drains and linings behind the walls are from that era.',
           'Clay drains crack and sag. Old water pipes corrode and choke flow. Lead lines still turn up in some pre-1950s homes. Fibro sheeting, vinyl tiles and pipe lagging with asbestos are common in homes built before the mid-1980s.',
-          'None of this is unusual. A builder who works on older homes expects it. The key is that the quote allows for what is likely at strip-out, rather than treating it as a surprise.',
+          'None of this is unusual. A builder who works on older homes expects it. The key is that the quote allows for what is likely at strip-out, rather than treating it as a surprise. Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers what the strip-out process looks like step by step.',
         ],
       },
       {
@@ -757,7 +757,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'When a walk-in shower makes the most sense',
         paragraphs: [
           'A walk-in shower suits bathrooms where space is tight, access needs to be easy, or the household simply does not use a bath. In a compact room — say 1.5 by 2.4 metres — removing the bath and fitting a full-width shower opens the floor plan and gives more room to move.',
-          'Walk-in showers are also the stronger choice for accessibility. A curbless entry, a built-in seat and grab bars make the room safer for older adults and anyone with limited mobility. If you are planning to stay in the home long term, this is worth considering now rather than retrofitting later.',
+          'Walk-in showers are also the stronger choice for accessibility. A curbless entry, a built-in seat and grab bars make the room safer for older adults and anyone with limited mobility. If you are planning to stay in the home long term, this is worth considering now rather than retrofitting later — our <a href="/blog/accessible-bathroom-renovation-sydney/" class="et-link">accessible bathroom guide</a> covers the full range of features.',
           'From a cleaning standpoint, a frameless glass shower with wall-to-wall tiling is simpler to maintain than a bath surround with grout joints, silicone seals and hard-to-reach corners.',
         ],
       },
@@ -773,7 +773,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Space and layout considerations',
         paragraphs: [
           'A standard bath takes up roughly 1,700 by 750 millimetres of floor space. A walk-in shower can work in a smaller footprint — as little as 900 by 900 millimetres, though 1,000 by 1,200 or wider is more comfortable.',
-          'In a bathroom under four square metres, the bath often dominates the room and leaves little space for the vanity and toilet. Replacing it with a shower and reclaiming that floor area can make the whole room feel larger and more functional.',
+          'In a bathroom under four square metres, the bath often dominates the room and leaves little space for the vanity and toilet. Replacing it with a shower and reclaiming that floor area can make the whole room feel larger and more functional — see our guide to <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathroom renovations</a> for more layout ideas.',
           'Layout also affects plumbing. Moving the waste position from a bath to a shower (or vice versa) is straightforward in a full renovation where the floor is being stripped and re-waterproofed, but it adds cost if you are trying to do it as a standalone job.',
         ],
       },
@@ -855,13 +855,13 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'In a typical full bathroom renovation, labour and trades account for roughly 40 to 50 percent of the total cost. This covers demolition, plumbing, electrical, waterproofing, tiling and installation of fixtures. Materials — tiles, adhesives, membranes, cement sheet — make up 15 to 20 percent.',
           'Fixtures and fittings — the vanity, tapware, toilet, shower screen, mirror, towel rails — account for 25 to 35 percent. This is where the finish level has the biggest impact. A basic vanity and chrome tapware cost a fraction of a stone-top vanity with brushed brass fittings.',
-          'The remaining 10 to 15 percent is contingency. In practice, this covers the things that only become visible at strip-out: old plumbing that needs replacing, water damage in the subfloor, or non-compliant waterproofing from the previous renovation.',
+          'The remaining 10 to 15 percent is contingency. In practice, this covers the things that only become visible at strip-out: old plumbing that needs replacing, water damage in the subfloor, or non-compliant waterproofing from the previous renovation. We cover these in more detail in our <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">hidden costs guide</a>.',
         ],
       },
       {
         heading: 'How to compare quotes without being misled',
         paragraphs: [
-          'The cheapest quote is not always the cheapest renovation. A low quote that excludes items the others include will cost the same or more once the variations are added. The question is not "which quote is lowest" but "which quote includes the most for what I need."',
+          'The cheapest quote is not always the cheapest renovation. A low quote that excludes items the others include will cost the same or more once the variations are added. The question is not "which quote is lowest" but "which quote includes the most for what I need." Our guide to <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">comparing renovation quotes</a> covers what to look for in detail.',
           'Ask each renovator to itemise what is included: demolition, disposal, plumbing, electrical, waterproofing, tiling, fixtures, painting, clean-up. If an item is missing from one quote, it does not mean it is free — it means it will be an extra.',
           'Check whether the quote is fixed or provisional. A fixed-scope quote names the price for a defined set of inclusions. A provisional quote estimates costs that may change. Both are legitimate, but they manage risk differently, and you need to know which one you are signing.',
         ],
@@ -927,7 +927,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Why the bathroom matters at sale time',
         paragraphs: [
           'Real estate agents consistently name the bathroom as one of the first rooms buyers inspect — and one of the fastest to form a negative impression. A dated, worn or poorly maintained bathroom signals potential problems behind the walls: failed waterproofing, old plumbing, hidden mould. Buyers price that risk in, even if the problems are only assumed.',
-          'A well-finished bathroom does the opposite. It signals that the home has been maintained, that the owner invested in the parts that matter, and that the buyer can move in without planning an immediate renovation.',
+          'A well-finished bathroom does the opposite. It signals that the home has been maintained, that the owner invested in the parts that matter, and that the buyer can move in without planning an immediate renovation. For the numbers behind this, see our guide on whether <a href="/blog/bathroom-renovation-add-value-home/" class="et-link">a bathroom renovation adds value</a>.',
         ],
       },
       {
@@ -995,7 +995,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: 'What is the best colour for a bathroom when selling?',
-        answer: 'Warm neutrals — white, light grey, greige, taupe — appeal to the broadest range of buyers. Avoid bold or polarising colours on permanent surfaces like tiles. Keep colour in items that are easy to change: towels, accessories and paint.',
+        answer: 'Warm neutrals — white, light grey, greige, taupe — appeal to the broadest range of buyers. Avoid bold or polarising colours on permanent surfaces like tiles. Keep colour in items that are easy to change: towels, accessories and paint. Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers the current palette trends in detail.',
       },
       {
         question: 'How much should I spend on a bathroom renovation for resale?',
@@ -1047,7 +1047,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Asbestos: the one that cannot be ignored',
         paragraphs: [
-          'Asbestos-containing materials were widely used in Australian homes until the mid-1980s. Fibro wall linings, vinyl floor tiles, pipe lagging and even some adhesives can contain asbestos. You cannot identify asbestos by looking at it — it requires testing.',
+          'Asbestos-containing materials were widely used in Australian homes until the mid-1980s. Fibro wall linings, vinyl floor tiles, pipe lagging and even some adhesives can contain asbestos. You cannot identify asbestos by looking at it — it requires testing. This is especially common in <a href="/blog/heritage-bathroom-renovation-sydney/" class="et-link">heritage and older-home renovations</a>.',
           'If suspected asbestos is identified, it must be removed by a licensed asbestos removalist. The material is bagged, labelled and disposed of at a licensed facility. The work area is sealed and the air is monitored. This is a regulated process, not something the builder handles informally.',
           'A pre-demolition asbestos inspection is recommended for any home built before 1990. It is a small cost that avoids a larger problem if asbestos is found mid-demolition.',
         ],
@@ -1064,7 +1064,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'Once the room is stripped, the preparation phase begins. The plumber roughs in the new pipe positions, the electrician runs new wiring, and any substrate repair — re-sheeting walls, levelling the floor, reinforcing timber framing — is completed.',
           'The room is then ready for waterproofing. The membrane is applied, allowed to cure, and flood-tested before any tiles go on. This is the stage where the new bathroom starts to take shape.',
-          'Demolition is not the renovation — it is the clearing away of the old room so the new one can be built properly. Understanding that it is a planned, controlled process makes the noise and disruption easier to manage.',
+          'Demolition is not the renovation — it is the clearing away of the old room so the new one can be built properly. Understanding that it is a planned, controlled process makes the noise and disruption easier to manage. Our <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">renovation timeline guide</a> covers what comes after demolition and how long each stage takes.',
         ],
       },
       {
@@ -1126,7 +1126,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Step-free shower entry',
         paragraphs: [
-          'A curbless shower is the most important access feature in a bathroom. Stepping over a hob is a fall risk for older adults and a barrier for a wheelchair. A flat entry with a linear drain removes both problems.',
+          'A curbless shower is the most important access feature in a bathroom. Stepping over a hob is a fall risk for older adults and a barrier for a wheelchair. A flat entry with a linear drain removes both problems. Our <a href="/blog/walk-in-shower-vs-bathtub-renovation/" class="et-link">walk-in shower vs bathtub guide</a> covers the layout and cost trade-offs in detail.',
           'The sealing and drainage need to be set up for a flat shower from the start. The floor fall, drain position and screen placement all matter. This is simple in a full renovation but hard to add later.',
         ],
       },
@@ -1203,7 +1203,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'The biggest difference is who else is involved',
         paragraphs: [
           'In a house, the renovation is between you and the builder. In an apartment, it involves the strata committee, the building manager, and sometimes the neighbours. The building has shared structure, shared plumbing and rules that govern when and how work can be done.',
-          'This does not make an apartment renovation harder — it makes it different. The room is often smaller and simpler. But the approvals, access rules and work-hour limits add steps a house does not need.',
+          'This does not make an apartment renovation harder — it makes it different. The room is often smaller and simpler. But the approvals, access rules and work-hour limits add steps a house does not need. Our <a href="/blog/strata-bathroom-renovation-sydney/" class="et-link">strata renovation guide</a> covers the by-law and approval process in full.',
         ],
       },
       {
