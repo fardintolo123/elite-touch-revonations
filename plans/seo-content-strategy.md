@@ -3,7 +3,7 @@
 **Outcome:** Double organic traffic within 6 months by publishing 2 blog posts per week targeting
 low-to-medium competition bathroom renovation keywords with genuine search volume.
 
-**Status:** Both batches complete — 20 articles written (weeks 1–10), all building green, 68/68 readability pass. Next: extend calendar for weeks 11–15 and continue the 2x/week cadence.
+**Status:** Three batches complete — 30 articles written (weeks 1–15), all building green, 78/78 readability pass. Next: extend calendar for weeks 16–20 and continue the 2x/week cadence.
 
 ---
 
@@ -96,6 +96,50 @@ in the 20 current blog posts.
 - [x] **Large-format tiles in a bathroom renovation: pros, cons and what to know** — product/design intent.
   Trending material choice. Ties to tiling guide. Waterproofing and substrate considerations.
   Target: "large format tiles bathroom renovation"
+
+---
+
+## Content Calendar — Next 10 Topics (Weeks 11–15)
+
+### Week 11
+- [x] **Eco-friendly bathroom renovation: sustainable choices that save water and money** — sustainability/planning intent.
+  Growing consumer priority (77% prioritise water efficiency). WELS scheme, low-flow fixtures, recycled materials.
+  Target: "eco friendly bathroom renovation australia"
+- [x] **Bathroom renovation while living at home: how to manage the disruption** — process/anxiety intent.
+  Addresses a top concern. Dust control, access planning, timeline sequencing. Reviews praise cleanliness.
+  Target: "bathroom renovation living at home disruption"
+
+### Week 12
+- [x] **Shower screens explained: frameless, semi-frameless and framed** — product/decision intent.
+  High search volume ("shower screen types" 1K+). Glass thickness, cost tiers, cleaning trade-offs.
+  Target: "shower screen types bathroom renovation"
+- [x] **Bathroom niches and recessed shelves: design, sizing and waterproofing** — design/practical intent.
+  Good PAA density. Placement, tile matching, waterproofing requirements. Complements storage article.
+  Target: "bathroom niche design ideas renovation"
+
+### Week 13
+- [x] **Freestanding bath in a renovation: space, plumbing and cost** — design/decision intent.
+  Growing trend. Floor-mounted plumbing, room size requirements, cost range ($2,500–$8,000+).
+  Target: "freestanding bath renovation cost australia"
+- [x] **Bathroom mould: why it returns and how a renovation stops it** — problem/solution intent.
+  High emotional intent. Ventilation, waterproofing to AS 3740, material choices. Few renovators cover this.
+  Target: "bathroom mould prevention renovation"
+
+### Week 14
+- [x] **Heated towel rails: types, costs and what to know during a renovation** — product/comfort intent.
+  Electric vs hydronic, running costs ($10–$20/month), installation timing. Complements underfloor heating.
+  Target: "heated towel rail bathroom renovation australia"
+- [x] **Bathroom mirrors: types, sizing and LED options for your renovation** — product/design intent.
+  Backlit LED, anti-fog, sizing to vanity width. Complements lighting and vanity articles.
+  Target: "bathroom mirror guide renovation LED"
+
+### Week 15
+- [x] **Bathroom grout: types, colours and how to keep it clean** — maintenance/product intent.
+  Epoxy vs cement grout, colour choices, mould resistance. Complements tiling and large-format tile articles.
+  Target: "bathroom grout types colours guide"
+- [x] **Bathroom splashback ideas: tiles, glass and panels** — design/material intent.
+  Material options beyond standard tiles. Waterproofing behind splashbacks. Complements colour schemes.
+  Target: "bathroom splashback ideas renovation australia"
 
 ---
 

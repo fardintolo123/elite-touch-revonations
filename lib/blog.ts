@@ -2168,6 +2168,854 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  // ── Weeks 11–15 (content strategy batch 3) ──────────────────────────
+
+  {
+    slug: 'eco-friendly-bathroom-renovation',
+    title: 'Eco-friendly bathroom renovation: sustainable choices that save water and money',
+    metaTitle: 'Eco Friendly Bathroom Renovation Australia',
+    description: 'Practical ways to make your bathroom renovation more sustainable — water-saving fixtures, better materials and design choices that cut bills without cutting comfort.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why sustainability matters in a bathroom',
+        paragraphs: [
+          'Bathrooms use more water than any other room in the house. The average Australian household sends roughly 200 litres per person per day through taps, toilets and showers, and the bathroom accounts for most of it. A renovation is the one chance to change all the fixtures at once.',
+          'Sustainable choices in a bathroom are not about sacrifice. They are about picking products that use less water and energy while doing the same job. In most cases, the swap costs the same or saves money over the life of the fixture.',
+        ],
+      },
+      {
+        heading: 'Water-saving fixtures and the WELS rating',
+        paragraphs: [
+          'The Water Efficiency Labelling and Standards (WELS) scheme rates taps, showers, toilets and washing machines on a star scale. More stars means less water per use. A 3-star showerhead uses about 6 to 7 litres per minute. A 1-star head uses 12 or more.',
+          'Dual-flush toilets are standard in Australia. A 4-star model uses roughly 3 litres on a half flush and 4.5 litres on a full flush. Older single-flush cisterns used 11 litres every time. The swap alone can save thousands of litres a year.',
+          'Low-flow taps with aerators mix air into the water stream. You get the same feel of pressure at the basin, but the tap delivers fewer litres per minute. Our <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware finishes guide</a> covers how to choose a tap that looks right and performs well.',
+        ],
+      },
+      {
+        heading: 'Materials with a lighter footprint',
+        paragraphs: [
+          'Porcelain tiles are fired at high heat and last decades. They do not release chemicals into the room and can be made from partly recycled content. Some Australian tile ranges now use up to 40 percent recycled material in the body of the tile.',
+          'Recycled glass benchtops and panels are another option. They are non-porous, do not need sealing and come in a range of colours. Bamboo is sometimes used for vanity tops or shelving — it grows faster than timber and is hard enough for wet areas when sealed.',
+          'Low-VOC paints and adhesives reduce the chemicals released into the air during and after the renovation. VOC stands for volatile organic compounds — the fumes you smell from fresh paint. Low-VOC products dry with less odour and better indoor air quality.',
+        ],
+      },
+      {
+        heading: 'LED lighting and energy use',
+        paragraphs: [
+          'LED downlights use a fraction of the power of halogen globes and last five to ten times longer. In a bathroom with four to six downlights, the switch from halogen to LED can cut lighting energy by 80 percent.',
+          'Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">bathroom lighting guide</a> covers placement and colour temperature. From a sustainability angle, the main point is simple: LED is the default for any new bathroom, and there is no performance reason to choose anything else.',
+        ],
+      },
+      {
+        heading: 'Ventilation and moisture control',
+        paragraphs: [
+          'Good ventilation is the most underrated sustainability feature in a bathroom. A room that clears steam quickly does not grow mould. A room that traps moisture needs chemical cleaning, replacement of grout and sometimes replacement of wall lining — all of which cost money and materials.',
+          'A timer-controlled exhaust fan that runs for 15 minutes after the shower is off clears moisture before it settles. A humidity-sensing fan does the same thing automatically. Either option extends the life of every surface in the room.',
+        ],
+      },
+      {
+        heading: 'ETR and Greenfleet',
+        paragraphs: [
+          'Elite Touch Renovations plants one tree for every completed project through Greenfleet, an Australian carbon offset provider. It is a small step, but it is real and ongoing.',
+          'The practical sustainability in our work is in the build itself: WELS-rated fixtures as standard, LED lighting, waterproofing to AS 3740 that protects the structure for decades, and a 10-year workmanship warranty that means the bathroom is built to last, not to be redone in five years. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do water-saving showerheads feel weak?',
+        answer: 'No. A modern 3-star WELS showerhead uses about 6 to 7 litres per minute and delivers a pressurised spray. The difference from an older high-flow head is hard to notice in use. Wider shower heads help — they spread the flow over a larger area.',
+      },
+      {
+        question: 'Are eco-friendly materials more expensive?',
+        answer: 'Some are, some are not. WELS-rated taps and toilets are priced the same as non-rated ones in most ranges. Recycled glass benchtops can cost more than standard laminate but less than natural stone. The savings on water and energy bills offset the difference over time.',
+      },
+      {
+        question: 'What is the WELS rating system?',
+        answer: 'WELS stands for Water Efficiency Labelling and Standards. It is an Australian government scheme that rates taps, showers, toilets and appliances on a star scale. More stars means less water per use. The label is mandatory on all new products sold in Australia.',
+      },
+      {
+        question: 'Can I reuse my existing tiles or fixtures?',
+        answer: 'Sometimes. If the existing bath, vanity or toilet is in good condition and meets current standards, it can stay. Tiles are harder to reuse — removing them usually breaks them. The decision is made at the on-site measure, based on what is there.',
+      },
+      {
+        question: 'Does ETR use sustainable building practices?',
+        answer: 'Yes. We specify WELS-rated fixtures as standard, use LED lighting, waterproof to AS 3740 so the structure lasts, and plant a tree for every completed project through Greenfleet. The strongest sustainability move is building a bathroom that does not need redoing in five years.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-living-at-home',
+    title: 'Bathroom renovation while living at home: how to manage the disruption',
+    metaTitle: 'Bathroom Renovation Living at Home Tips',
+    description: 'What to expect when your bathroom is being renovated while you are still living in the house — dust, noise, access and how a good team keeps the disruption short.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Yes, most people stay in the house',
+        paragraphs: [
+          'Most of the families we work with stay at home during their bathroom renovation. It is not always comfortable, but it is normal. The disruption has a shape — a loud week at the start, a quieter build phase in the middle, and a finishing stretch at the end.',
+          'The key is knowing what to expect and planning for it before work starts, not reacting to it once the tiles are off the wall.',
+        ],
+      },
+      {
+        heading: 'The hardest part: the first week',
+        paragraphs: [
+          'Demolition is the loudest and dustiest phase. Tiles, fixtures, wall lining and sometimes framing come out. This usually takes one to two days. After that, the noise drops — plumbing and electrical rough-in are quieter, and waterproofing is silent.',
+          'Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers what happens step by step. The short version: the first three days are the worst, and it gets better from there.',
+        ],
+      },
+      {
+        heading: 'Access to a toilet and shower',
+        paragraphs: [
+          'If the house has a second bathroom, ensuite or powder room, you have a fallback. If the bathroom being renovated is the only one, the toilet is the critical fixture. A good team sequences the work so the toilet is out of action for the shortest window — often less than a day.',
+          'For showers, some households use a gym, a neighbour or a relative for a few days. Others set up a temporary outdoor shower. It is not ideal, but it is temporary, and knowing the exact days helps you plan.',
+        ],
+      },
+      {
+        heading: 'Dust control and protecting the house',
+        paragraphs: [
+          'Dust from a bathroom strip-out travels through the house if it is not contained. Drop sheets over floors, plastic sheeting across doorways and a dedicated path from the bathroom to the front door keep it manageable.',
+          'Kieran C, one of our customers, noted that "they exercised due care at all times including providing drop sheets and surface protection to and from the work area and leaving the site clean and tidy at the end of each day." That standard of housekeeping is part of the job, not an extra.',
+        ],
+      },
+      {
+        heading: 'Noise and working hours',
+        paragraphs: [
+          'In Sydney, residential building work is generally allowed from 7 am to 5 pm on weekdays and 8 am to 1 pm on Saturdays. We follow these hours. The loudest work — cutting tiles, using angle grinders, demolishing walls — happens during the day. Evenings and Sundays are quiet.',
+          'If you work from home, the demolition days are the ones to plan around. Consider working from a cafe or a co-working space for those two to three days. After demolition, noise drops significantly.',
+        ],
+      },
+      {
+        heading: 'Keeping kids and pets safe',
+        paragraphs: [
+          'A bathroom renovation site has sharp edges, open plumbing and exposed wiring. The work area is sealed off from the rest of the house, but children and pets should stay out of it.',
+          'Talk to the team about the household before work starts. If there are small children, a baby gate across the corridor or a locked door is simple. For dogs, keeping them in a different part of the house during work hours avoids stress for the dog and the team.',
+        ],
+      },
+      {
+        heading: 'How long does the disruption last',
+        paragraphs: [
+          'A standard full bathroom renovation runs three to four weeks on site. Of that, the first week is the most disruptive. By week two, the waterproofing is curing and the room is quiet. Weeks three and four are tiling and fit-off — cleaner and quieter.',
+          'Our <a href="/blog/bathroom-renovation-project-management-timeline/" class="et-link">project management guide</a> breaks this down week by week. The main point: the disruption is front-loaded, not spread evenly across the build.',
+        ],
+      },
+      {
+        heading: 'What ETR does to keep it manageable',
+        paragraphs: [
+          'Omar keeps you updated with progress throughout the job. The team works to a fixed program. Drop sheets and surface protection go down before the first tool comes out. The site is cleaned at the end of each working day.',
+          'A free on-site measure anywhere in Sydney is the starting point. Before the quote is written, we talk through the household — how many bathrooms, who is home during the day, any pets — so the program fits the home, not just the room.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I use the bathroom at all during the renovation?',
+        answer: 'Not while the room is being worked on. If the house has a second bathroom or powder room, you can use that. If it is the only bathroom, the team sequences the work so the toilet is disconnected for the shortest time — often less than a day.',
+      },
+      {
+        question: 'How bad is the dust?',
+        answer: 'The worst dust comes during demolition, which lasts one to two days. Drop sheets, plastic sheeting and a sealed doorway contain most of it. After demolition, dust levels drop. The site is cleaned at the end of each working day.',
+      },
+      {
+        question: 'Should I move out during the renovation?',
+        answer: 'Most people stay at home. If the bathroom is the only one in the house and you have young children, a few nights away during the demolition phase can make life easier. But it is not required — the disruption is temporary and manageable with planning.',
+      },
+      {
+        question: 'What time do the tradies start work?',
+        answer: 'Work starts from 7 am on weekdays and 8 am on Saturdays, in line with Sydney residential building hours. The loudest work is during the day. No work happens on Sundays or public holidays.',
+      },
+      {
+        question: 'Will the renovation damage other parts of my house?',
+        answer: 'Not if it is managed properly. Drop sheets protect floors and surfaces. Plastic sheeting contains dust. A dedicated path from the bathroom to the exit keeps traffic away from other rooms. Kieran C noted that ETR provided surface protection and left the site clean daily.',
+      },
+    ],
+  },
+
+  {
+    slug: 'shower-screen-types-bathroom-renovation',
+    title: 'Shower screens explained: frameless, semi-frameless and framed',
+    metaTitle: 'Shower Screen Types Bathroom Renovation',
+    description: 'The three main types of shower screen — frameless, semi-frameless and framed — compared on cost, cleaning, installation and which suits your bathroom renovation.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why the shower screen matters',
+        paragraphs: [
+          'The shower screen is one of the most visible elements in a bathroom. It sits at eye level, it is the first thing you touch in the morning, and it determines how much light passes through the shower recess. The wrong screen makes a small bathroom feel smaller. The right one opens the room up.',
+          'There are three main types: frameless, semi-frameless and framed. Each has a different look, a different price point and different installation needs.',
+        ],
+      },
+      {
+        heading: 'Frameless shower screens',
+        paragraphs: [
+          'A frameless screen uses panels of 10-millimetre toughened safety glass held by minimal brackets and hinges. There is no metal frame around the edges. The result is a clean, open look that lets light through and makes the bathroom feel larger.',
+          'Cleaning is easier because there are no channels or frame edges to trap soap scum. A squeegee after each shower and a weekly wipe keeps the glass clear.',
+          'The trade-off is cost and precision. Frameless screens need walls that are straight and plumb. If the walls are out of square — common in older Sydney homes — the glass panel will not sit flush, and the gap lets water through. Wall preparation before installation adds to the cost.',
+          'Expect to pay $800 to $2,000 or more for a frameless screen, depending on the size and configuration.',
+        ],
+      },
+      {
+        heading: 'Semi-frameless shower screens',
+        paragraphs: [
+          'A semi-frameless screen frames the fixed panels but leaves the door edge largely unframed. It uses 6 to 8-millimetre toughened glass. The frame at the top and bottom provides structure, while the unframed door keeps a clean look.',
+          'This is the middle ground. It costs less than frameless, tolerates walls that are slightly out of square, and still looks current. Most mid-range bathroom renovations in Sydney use a semi-frameless screen.',
+          'Cleaning is a little more work than frameless — the frame channels collect some residue — but less than a fully framed screen.',
+        ],
+      },
+      {
+        heading: 'Framed shower screens',
+        paragraphs: [
+          'A framed screen has an aluminium or steel frame around every panel and uses 4 to 6-millimetre glass. It is the most forgiving on walls that are not perfectly level and the most affordable option.',
+          'The frame channels collect soap scum and mineral deposits. Regular cleaning with a mould-resistant bathroom cleaner keeps them in good condition, but they require more attention than frameless glass.',
+          'Framed screens suit tight budgets and older homes where wall straightening would add too much cost. They are functional, durable and still available in modern finishes — matt black, brushed nickel and chrome.',
+        ],
+      },
+      {
+        heading: 'Sliding, hinged and fixed panels',
+        paragraphs: [
+          'The screen type and the door type are separate choices. A frameless screen can have a hinged door, a pivot door or a fixed panel with an open entry. A framed screen can have a sliding door — useful in small bathrooms where a swinging door would hit the vanity or toilet.',
+          'Sliding doors suit tight spaces. Hinged doors open wider and are easier to clean. Fixed panels with no door at all are used in walk-in and <a href="/blog/wet-room-bathroom-renovation/" class="et-link">wet room designs</a> where the shower is open to the room.',
+        ],
+      },
+      {
+        heading: 'Which screen suits your renovation',
+        paragraphs: [
+          'In a small bathroom, a frameless fixed panel with an open entry makes the room feel bigger than a framed sliding door. In a large bathroom, a frameless hinged door is the clean, premium choice. In a budget renovation, a semi-frameless or framed screen delivers a good result without the wall preparation cost.',
+          'The choice also depends on the tile and tapware finishes. Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how the screen frame colour ties into the room\'s palette — matt black frames with dark tapware, for example, or chrome frames in a lighter scheme.',
+        ],
+      },
+      {
+        heading: 'How ETR handles shower screens',
+        paragraphs: [
+          'The shower screen is selected during the design phase, after the layout is settled. Farah Dawood, our architectural designer, helps choose a screen that suits the room size, tile layout and budget. The screen is measured and ordered after tiling is complete, so the fit is precise.',
+          'Every shower recess is waterproofed to AS 3740 before the screen goes in. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are frameless shower screens worth the extra cost?',
+        answer: 'In a small bathroom, yes — the visual difference is significant. A frameless screen makes the room feel more open and is easier to clean. In a larger bathroom with a separate shower recess, the difference is less noticeable, and a semi-frameless screen may be a better value.',
+      },
+      {
+        question: 'How thick should shower screen glass be?',
+        answer: 'Frameless screens use 10-millimetre toughened safety glass. Semi-frameless screens use 6 to 8-millimetre glass. Framed screens use 4 to 6-millimetre glass. Thicker glass is heavier and more expensive, but it does not flex or rattle.',
+      },
+      {
+        question: 'Can I put a shower screen in a wet room?',
+        answer: 'Yes, but many wet room designs use a fixed glass panel instead of a full screen with a door. The panel acts as a splash guard while keeping the open, walk-in feel. The floor is graded to a drain, so water is managed by the fall, not the screen.',
+      },
+      {
+        question: 'How do I stop water marks on a frameless screen?',
+        answer: 'A squeegee after each shower removes most water before it dries. A weekly clean with white vinegar or a glass cleaner removes mineral deposits. Some screens come with a nano-coating that makes water bead and run off, reducing spots.',
+      },
+      {
+        question: 'What colour frames are available?',
+        answer: 'The most common finishes are chrome, matt black, brushed nickel and brushed gold. Matt black is the most popular in current Sydney renovations. The frame colour should match or complement the tapware and towel rail finishes in the room.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-niche-design-ideas',
+    title: 'Bathroom niches and recessed shelves: design, sizing and waterproofing',
+    metaTitle: 'Bathroom Niche Design Ideas Renovation',
+    description: 'How to plan a bathroom niche — where to place it, what size works, how waterproofing applies and the design choices that make it a feature, not an afterthought.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What a niche does in a bathroom',
+        paragraphs: [
+          'A niche is a recess built into the wall, set back from the surface, that holds bottles, soap and everyday items without a shelf or caddy hanging from the showerhead. It keeps the shower floor clear, makes cleaning easier and gives the room a built-in, finished look.',
+          'Niches have moved from a luxury detail to a standard inclusion in most mid-range and premium bathroom renovations. If you are stripping the walls back anyway, adding one costs little extra in labour and materials.',
+        ],
+      },
+      {
+        heading: 'Where to place a niche',
+        paragraphs: [
+          'The most common spot is in the shower, at a height between chest and eye level — roughly 1,000 to 1,400 millimetres from the floor. This puts everyday items within easy reach without bending.',
+          'A second niche beside the vanity replaces a shelf or cabinet top. It can hold skincare, a toothbrush holder or rolled hand towels. A niche in the wall behind the toilet can store spare rolls without a freestanding holder.',
+          'Avoid placing a niche on an external wall if possible. External walls often carry insulation and may be thinner, making the recess harder to build without cutting into the insulation layer. Internal walls between rooms are usually the easiest to work with.',
+        ],
+      },
+      {
+        heading: 'Sizing and proportions',
+        paragraphs: [
+          'A standard single niche is 300 millimetres wide by 400 millimetres tall by 80 to 100 millimetres deep. That holds most bottles upright. A double-height niche — 300 by 600 or 300 by 800 — gives two shelf levels with a horizontal tile divider in the middle.',
+          'The width and height should align with the tile grid. A niche that cuts a tile in half looks messy. A niche that sits neatly between full tiles looks intentional. Your tiler plans the niche around the tile layout, not the other way around.',
+          'Our <a href="/blog/small-bathroom-storage-solutions/" class="et-link">storage solutions guide</a> covers other ways to add storage in a small bathroom when a niche alone is not enough.',
+        ],
+      },
+      {
+        heading: 'Waterproofing a niche',
+        paragraphs: [
+          'A niche in a shower wall is a wet area within a wet area. Every surface inside the niche — top, bottom, sides and back — must be waterproofed to AS 3740, the same standard as the shower walls. The membrane wraps into the recess and ties into the wall membrane around the opening.',
+          'The most common failure point is the bottom shelf of the niche. Water pools there. If the membrane is not properly detailed at the corners or the shelf does not slope slightly forward, water sits behind the tile and eventually works its way into the wall framing.',
+          'A properly built niche has a slight fall — 2 to 3 millimetres from back to front — so water drains out rather than pooling inside.',
+        ],
+      },
+      {
+        heading: 'Tile and finish options',
+        paragraphs: [
+          'The simplest approach is to tile the niche in the same tile as the surrounding wall. It blends in and looks clean. The alternative is to use a contrasting tile — a different colour, a mosaic or a feature tile — to turn the niche into a design detail.',
+          'A marble or stone-look tile inside a white or grey-tiled shower adds a focal point without overwhelming the room. LED strip lighting behind or above the niche adds depth and makes the recess stand out. The light must be rated for wet areas.',
+          'Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers how to choose tiles that work together across the room.',
+        ],
+      },
+      {
+        heading: 'How ETR builds niches',
+        paragraphs: [
+          'The niche is planned during the design phase, before tiling starts. Farah Dawood works out the placement, size and tile alignment as part of the layout drawing. The niche is framed into the wall stud work, waterproofed with the rest of the shower, and tiled to match or contrast the surrounding wall.',
+          'Adam Dawood, with over 25 years in tiling, sets the niche so it aligns with the tile grid and the shelf slopes forward for drainage. Every niche is waterproofed to AS 3740. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a bathroom niche cost to add?',
+        answer: 'If the walls are already being stripped and rebuilt — as in a full renovation — the extra cost is modest: framing, a small amount of extra waterproofing and tiling. It is far cheaper to add during a renovation than to retrofit later, because the wall is already open.',
+      },
+      {
+        question: 'Can I have more than one niche?',
+        answer: 'Yes. A tall double niche in the shower with a divider shelf is common. A second niche beside the vanity or behind the toilet adds storage elsewhere in the room. The main limit is wall space and stud locations.',
+      },
+      {
+        question: 'Should the niche tile match the wall tile?',
+        answer: 'It depends on the look you want. Matching tiles create a seamless, built-in feel. A contrasting tile — a feature mosaic, a different colour or a stone-look tile — turns the niche into a design feature. Both approaches work; it is a style choice.',
+      },
+      {
+        question: 'Does a niche weaken the wall?',
+        answer: 'Not when it is properly framed. The niche is built into the wall stud work with a header and cripple studs, so the surrounding wall keeps its strength. The recess does not remove a structural member — it fits between existing studs or is framed within them.',
+      },
+      {
+        question: 'Can I add a niche to an existing bathroom without a full renovation?',
+        answer: 'It is possible but rarely practical. Adding a niche means cutting into the wall, exposing and re-doing the waterproofing, re-tiling the area and matching the existing tiles. The cost and disruption often approach a partial renovation anyway.',
+      },
+    ],
+  },
+
+  {
+    slug: 'freestanding-bath-renovation-guide',
+    title: 'Freestanding bath in a renovation: space, plumbing and cost',
+    metaTitle: 'Freestanding Bath Renovation Guide Australia',
+    description: 'What a freestanding bath needs in a bathroom renovation — room size, plumbing changes, floor strength, cost range and whether it suits your household.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'The appeal of a freestanding bath',
+        paragraphs: [
+          'A freestanding bath sits away from the wall on its own feet or base. It becomes the centrepiece of the room. The look is open, sculptural and less built-in than a drop-in or alcove bath.',
+          'Freestanding baths have been the most requested bath style in Sydney renovations for several years. They work in both traditional and modern bathrooms. The practical question is whether your room has the space and plumbing for one.',
+        ],
+      },
+      {
+        heading: 'How much room you need',
+        paragraphs: [
+          'A freestanding bath needs clear space around it. The bath itself is typically 1,500 to 1,700 millimetres long and 700 to 800 millimetres wide. You need at least 150 millimetres of clearance on each side and 600 millimetres at one end for access.',
+          'In practice, the bathroom needs to be roughly 8 square metres or larger to carry a freestanding bath without crowding the rest of the room. A smaller room can hold one, but the shower, vanity and toilet end up squeezed.',
+          'Our <a href="/blog/walk-in-shower-vs-bathtub-renovation/" class="et-link">walk-in shower vs bathtub guide</a> covers how to decide between the two when space is tight.',
+        ],
+      },
+      {
+        heading: 'Plumbing requirements',
+        paragraphs: [
+          'A built-in bath has its taps on the wall. A freestanding bath needs either floor-mounted taps or a wall-mounted spout that reaches over the rim. Floor-mounted tapware means the water pipes come up through the floor, not out of the wall.',
+          'This often requires adjusting pipe locations in the slab or subfloor. In a concrete-slab home, that means cutting the slab to relocate the pipes — an additional cost. In a timber-floor home, it is easier because pipes can be run under the floorboards.',
+          'The waste outlet also moves. A freestanding bath drains through the floor, not through the wall. The drain position must match the bath before the waterproofing is laid.',
+        ],
+      },
+      {
+        heading: 'Floor strength and waterproofing',
+        paragraphs: [
+          'A full bath holds roughly 300 litres of water plus the weight of the person in it and the bath itself. A stone or composite bath can weigh 80 to 150 kilograms empty. The floor needs to carry this load without movement.',
+          'Timber floors may need extra support — additional joists or noggins — under the bath position. Concrete slabs are usually fine. The area under and around the bath is waterproofed to AS 3740, the same standard as the shower and the rest of the wet area.',
+        ],
+      },
+      {
+        heading: 'Material options and cost range',
+        paragraphs: [
+          'Acrylic is the lightest and most affordable material. A standard acrylic freestanding bath starts from around $800 to $1,500. It is warm to the touch, light enough for a timber floor and available in many shapes.',
+          'Stone composite (also called solid surface) is heavier, more durable and retains heat longer. Prices start from $2,000 and run to $5,000 or more. Cast iron is traditional and very heavy — it usually needs a reinforced floor.',
+          'Including the bath, the floor-mounted tapware, the plumbing changes and any floor strengthening, a freestanding bath typically adds $2,500 to $8,000 to a renovation, depending on the model and the site conditions.',
+        ],
+      },
+      {
+        heading: 'Is a freestanding bath right for your household',
+        paragraphs: [
+          'If you have children who need bathing, a freestanding bath is less practical than a built-in bath with a flat rim — the rim is higher, and there is no ledge for toys or a cup. If the bath is for soaking and relaxation, a freestanding model is hard to beat.',
+          'Our <a href="/blog/family-bathroom-renovation-ideas/" class="et-link">family bathroom guide</a> covers how to design a bathroom that works for both adults and children. If the room is large enough, a freestanding bath for the parents and a built-in bath for the children in a separate bathroom is the best of both.',
+        ],
+      },
+      {
+        heading: 'How ETR handles freestanding bath installations',
+        paragraphs: [
+          'The bath model and position are confirmed during the design phase, before the plumbing rough-in. Farah Dawood works out the layout so the bath has clearance, the tapware has access and the waste aligns with the drain.',
+          'The written quote accounts for any slab cutting, floor reinforcing or pipe relocation. Every bathroom is waterproofed to AS 3740 with a compliance certificate. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a freestanding bath add to a renovation?',
+        answer: 'Typically $2,500 to $8,000, including the bath, floor-mounted or wall-mounted tapware, plumbing changes and any floor reinforcement. The range depends on the bath material, the tapware and whether the slab needs cutting.',
+      },
+      {
+        question: 'Can I put a freestanding bath in a small bathroom?',
+        answer: 'It is possible but often not practical. A freestanding bath needs clear space around it. In a room under 8 square metres, it tends to crowd the shower, vanity and toilet. A compact 1,500-millimetre bath may fit, but the room will feel tight.',
+      },
+      {
+        question: 'Does the floor need reinforcing for a freestanding bath?',
+        answer: 'Concrete slabs usually do not. Timber floors may need extra support — additional joists or noggins under the bath position — to carry the weight of the bath, the water and the person in it. This is checked during the on-site measure.',
+      },
+      {
+        question: 'Can I have a freestanding bath without floor-mounted taps?',
+        answer: 'Yes. A wall-mounted spout that reaches over the rim is an alternative. It avoids cutting the floor for pipe access and can look clean in a modern design. The wall behind the bath must have concealed plumbing access.',
+      },
+      {
+        question: 'Is a freestanding bath good for resale value?',
+        answer: 'In a large bathroom, yes — it is a feature that buyers notice. In a small bathroom where the bath crowds the room, it can work against you. The value depends on the room size and the overall design, not the bath alone.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-mould-prevention-renovation',
+    title: 'Bathroom mould: why it returns and how a renovation stops it',
+    metaTitle: 'Bathroom Mould Prevention Renovation',
+    description: 'Why bathroom mould keeps coming back despite cleaning, and how a renovation addresses the root causes — ventilation, waterproofing and material choices.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Mould is a symptom, not the problem',
+        paragraphs: [
+          'Mould grows where moisture sits. In a bathroom, that means grout lines, silicone joints, ceiling corners and behind tiles where water has worked its way in. Cleaning removes the visible growth, but if the conditions stay the same, it comes back.',
+          'The real problems are usually poor ventilation, failed waterproofing, or materials that trap moisture instead of shedding it. A renovation is the chance to fix all three at once.',
+        ],
+      },
+      {
+        heading: 'Poor ventilation is the number one cause',
+        paragraphs: [
+          'Steam from a hot shower fills the room in minutes. If the bathroom has no exhaust fan, a weak fan, or a fan that vents into the roof cavity instead of outside, that moisture settles on every surface. It soaks into grout, collects in corners and feeds mould growth.',
+          'A properly sized exhaust fan that vents to the outside — not into the roof space — clears steam before it settles. A timer or humidity sensor keeps the fan running after you leave the room, which is when most of the drying happens.',
+          'Our <a href="/blog/bathroom-ventilation-sydney-renovation/" class="et-link">ventilation guide</a> covers fan sizing, ducting and the common mistakes that make ventilation fail.',
+        ],
+      },
+      {
+        heading: 'Failed waterproofing lets water behind the tiles',
+        paragraphs: [
+          'Waterproofing is a membrane applied to the walls and floor before tiling. When it is intact, water stays on the surface. When it fails — through age, movement, or poor application — water gets behind the tiles and into the wall framing.',
+          'Behind the tiles, there is no airflow. Moisture sits there permanently. Over months and years, it rots timber framing, degrades plaster and creates a mould colony that is invisible from the outside. The first sign is often a musty smell or discolouration at the base of the wall.',
+          'In a renovation, the old tiles and lining come off, the framing is inspected and repaired, and new waterproofing is applied to AS 3740 — the Australian standard for wet-area waterproofing. A compliance certificate confirms the work.',
+        ],
+      },
+      {
+        heading: 'Material choices that resist mould',
+        paragraphs: [
+          'Cement-based grout absorbs moisture. Epoxy grout does not. In a shower recess, epoxy grout resists staining and mould growth far better than standard grout. It costs a little more and takes longer to apply, but it lasts longer and stays cleaner.',
+          'Large-format tiles reduce the total length of grout joints. A wall covered in 600 by 1,200 tiles has far less grout than the same wall in 100 by 100 mosaics. Less grout means less surface for mould to colonise. Our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> covers the trade-offs.',
+          'Moisture-resistant plasterboard (green board) is rated for wet areas and holds up better than standard plasterboard if any moisture does get past the membrane. It is standard practice in a new bathroom build.',
+        ],
+      },
+      {
+        heading: 'Silicone joints and ongoing maintenance',
+        paragraphs: [
+          'Silicone is used where tile meets a fixture — around the shower base, the bath rim, and where the wall meets the floor. Silicone is flexible, which is why it is used at movement joints, but it is also the first place mould appears because it stays damp.',
+          'Anti-mould silicone contains a fungicide that resists growth for several years. Replacing silicone every five to eight years is normal maintenance. It is a 30-minute job for a professional and keeps the bathroom looking and performing well.',
+        ],
+      },
+      {
+        heading: 'How ETR addresses mould at the source',
+        paragraphs: [
+          'In a renovation, the old surfaces come off. Adam Dawood inspects the framing and substrate for rot, mould damage and waterproofing failure. Damaged framing is replaced. New waterproofing goes on to AS 3740 with a compliance certificate.',
+          'The design includes proper mechanical ventilation, material choices that resist moisture, and grout and silicone specified for wet areas. The result is a bathroom that stays dry, not one that needs constant cleaning to keep mould at bay. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I just clean the mould instead of renovating?',
+        answer: 'You can clean the visible growth, but if the cause is poor ventilation or failed waterproofing, it will come back. Cleaning treats the symptom. A renovation treats the cause — proper ventilation, new waterproofing and materials that resist moisture.',
+      },
+      {
+        question: 'Is bathroom mould dangerous?',
+        answer: 'It can be. Some mould species release spores that irritate airways and trigger allergic reactions, especially in children, older adults and people with asthma. Mould hidden behind walls can grow for years without being seen.',
+      },
+      {
+        question: 'How do I know if the waterproofing has failed?',
+        answer: 'Common signs are discolouration or swelling at the base of tiled walls, a musty smell, soft or spongy patches in the wall, or mould that keeps returning despite cleaning. Water damage to the ceiling of the room below is another indicator.',
+      },
+      {
+        question: 'Does ventilation alone stop mould?',
+        answer: 'Ventilation removes airborne moisture and is the single biggest factor. But it does not fix water getting behind tiles through failed waterproofing. Both need to be right. A renovation addresses both at once.',
+      },
+      {
+        question: 'What is the difference between epoxy and cement grout?',
+        answer: 'Cement grout absorbs moisture and is porous. Epoxy grout is non-porous, water-resistant and far more resistant to mould and staining. Epoxy costs more and takes longer to apply, but it performs better in wet areas over time.',
+      },
+    ],
+  },
+
+  {
+    slug: 'heated-towel-rail-bathroom-guide',
+    title: 'Heated towel rails: types, costs and what to know during a renovation',
+    metaTitle: 'Heated Towel Rail Bathroom Guide Australia',
+    description: 'Electric vs hydronic heated towel rails — how they work, what they cost to buy and run, and why a renovation is the best time to install one.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why heated towel rails are worth considering',
+        paragraphs: [
+          'A heated towel rail does two things: it dries your towels and it warms the bathroom. Dry towels last longer between washes, smell fresher and feel better. A warm bathroom is more pleasant on a cold Sydney winter morning.',
+          'In a renovation, installing a heated towel rail is simple because the walls are open and the electrician is already on site. Retrofitting one later means chasing cables through finished walls or running visible conduit.',
+        ],
+      },
+      {
+        heading: 'Electric heated towel rails',
+        paragraphs: [
+          'Electric models are the most common type in Australian bathrooms. They plug into a power point or are hardwired into the bathroom circuit. Inside the rail, a heating element warms either a dry rod or a sealed liquid that transfers heat to the bars.',
+          'Liquid-filled rails hold heat longer after they are switched off. Dry-element rails heat up faster. Both work well. The choice is usually about the model and finish, not the heating method.',
+          'A basic electric rail starts from around $150. A mid-range stainless steel model with six or seven bars runs about $400 to $600. Premium models with smart controls, timers and brushed finishes can reach $1,500 or more.',
+        ],
+      },
+      {
+        heading: 'Hydronic heated towel rails',
+        paragraphs: [
+          'A hydronic rail connects to the home\'s hot water system. Hot water from the boiler or heat pump circulates through the rail. It works the same way as a hydronic radiator.',
+          'Hydronic rails are less common in Sydney because most homes do not have a hydronic heating system already installed. Adding one just for a towel rail is not cost-effective. If the home already has hydronic heating, connecting a towel rail is straightforward.',
+          'Our <a href="/blog/underfloor-heating-bathroom-renovation/" class="et-link">underfloor heating guide</a> covers a related decision — both add warmth to the bathroom, and the two can work together in a premium build.',
+        ],
+      },
+      {
+        heading: 'Running costs',
+        paragraphs: [
+          'An electric heated towel rail uses about the same power as a standard light globe — roughly 60 to 120 watts. On a timer that runs for a few hours in the morning and evening, the running cost is $10 to $20 per month.',
+          'A timer switch is strongly recommended. Leaving a towel rail on all day wastes energy and does not dry towels any faster once they are dry. A 2-hour morning timer and a 2-hour evening timer is enough for most households.',
+        ],
+      },
+      {
+        heading: 'Sizing and placement',
+        paragraphs: [
+          'The rail should be wide enough to hold two to three towels without bunching. A rail that is too narrow means towels overlap and the inner layers stay damp. Common widths are 500 to 750 millimetres.',
+          'Mount the rail where towels are easy to reach from the shower — usually on the wall adjacent to the shower recess, not across the room. Height should put the bottom bar at least 600 millimetres above the floor.',
+          'In a small bathroom, a vertical ladder-style rail takes up less wall width than a wide horizontal model. Some models double as a robe hook on the top bar.',
+        ],
+      },
+      {
+        heading: 'Installation during a renovation',
+        paragraphs: [
+          'The best time to install a heated towel rail is during the renovation, when the walls are open. The electrician runs the cable to the rail position and installs either a concealed power point behind the rail or a hardwired connection with a switch.',
+          'Hardwired installation looks cleaner — no visible plug or cable — but requires a licensed electrician and a dedicated circuit or connection from the bathroom circuit. A plug-in model is simpler and can be moved if you change the layout later.',
+        ],
+      },
+      {
+        heading: 'How ETR includes heated towel rails',
+        paragraphs: [
+          'Heated towel rails are a common inclusion in our Standard and Premium packages. The rail model, position and power connection are planned during the design phase. The electrician installs the wiring during the rough-in, before the walls are lined and tiled.',
+          'A free on-site measure anywhere in Sydney is the starting point. The written quote sets out what is included, and the rail is one of the items you choose during the selections process.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a heated towel rail cost?',
+        answer: 'A basic electric model starts from about $150. A mid-range stainless steel rail runs $400 to $600. Premium models with brushed finishes and smart timers can reach $1,500 or more. Installation during a renovation is minimal extra cost because the electrician is already on site.',
+      },
+      {
+        question: 'Are heated towel rails expensive to run?',
+        answer: 'No. Most use 60 to 120 watts, about the same as a light globe. On a timer running a few hours per day, the cost is $10 to $20 per month. Leaving it on all day is wasteful but not expensive.',
+      },
+      {
+        question: 'Should I get electric or hydronic?',
+        answer: 'Electric, unless your home already has a hydronic heating system. Adding a hydronic system just for a towel rail is not practical or cost-effective. Electric rails are simple to install, reliable and widely available.',
+      },
+      {
+        question: 'Can I add a heated towel rail to an existing bathroom?',
+        answer: 'Yes, with a plug-in model. It plugs into a standard power point. A hardwired model is better installed during a renovation when the walls are open — retrofitting one into a finished bathroom means chasing cables through the wall or running visible conduit.',
+      },
+      {
+        question: 'Do heated towel rails work in summer?',
+        answer: 'They still dry towels, which is useful even in warm weather — damp towels in a humid bathroom grow musty. You can leave the rail off in summer and use it only in the cooler months if you prefer.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-mirror-guide-renovation',
+    title: 'Bathroom mirrors: types, sizing and LED options for your renovation',
+    metaTitle: 'Bathroom Mirror Guide Renovation LED',
+    description: 'How to choose the right bathroom mirror during a renovation — framed, frameless, LED backlit, anti-fog, sizing to your vanity and what to plan before the walls go up.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why the mirror matters more than you think',
+        paragraphs: [
+          'The mirror is the most-used surface in the bathroom. You face it every morning and every evening. It sets the tone of the room and, in a small space, affects how large the room feels. A well-chosen mirror can make a bathroom look bigger, brighter and more finished.',
+          'In a renovation, the mirror choice should be made during the design phase, not at the end. An LED mirror or a medicine cabinet needs electrical wiring behind the wall, which has to be in place before tiling starts.',
+        ],
+      },
+      {
+        heading: 'Framed mirrors',
+        paragraphs: [
+          'A framed mirror has a visible border — timber, metal or composite — that adds a decorative edge. Timber frames suit traditional and coastal styles. Black metal frames suit modern, industrial and minimalist bathrooms.',
+          'Framed mirrors are the easiest to install because they hang on the wall like a picture. No electrical work is needed unless you add separate wall sconces on either side.',
+        ],
+      },
+      {
+        heading: 'Frameless mirrors',
+        paragraphs: [
+          'A frameless mirror is a sheet of glass with polished edges, mounted flush to the wall. It looks clean and modern and blends with any tile and colour scheme. Frameless mirrors are the default in most contemporary Sydney bathroom renovations.',
+          'They can be cut to any shape — round, arch, pill, rectangle — and are usually glued to the wall with mirror adhesive and supported by concealed clips. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers how mirror width relates to vanity width.',
+        ],
+      },
+      {
+        heading: 'LED backlit mirrors',
+        paragraphs: [
+          'An LED backlit mirror has a strip of LED lights behind the glass, casting a glow around the edges. It provides even, shadow-free light for grooming and adds a feature to the room, especially at night.',
+          'LED mirrors need a power connection behind the wall. This means the electrician must run a cable to the mirror position during the rough-in, before the wall is lined and tiled. This is why the mirror choice should happen during the design phase, not after tiling.',
+          'Most modern LED mirrors include touch controls for brightness and colour temperature — warm white for atmosphere, cool white for grooming. Some include a de-mister pad that keeps the glass clear after a shower.',
+        ],
+      },
+      {
+        heading: 'Medicine cabinets and shaving cabinets',
+        paragraphs: [
+          'A mirrored medicine cabinet combines a mirror with concealed storage. The cabinet recesses into the wall — similar to a niche — and the mirror is the door.',
+          'Recessed cabinets need wall depth. In a timber-framed wall, they fit between studs (typically 70 to 90 millimetres deep). On a masonry wall, a surface-mounted cabinet sits proud of the wall and adds visual depth.',
+          'A recessed cabinet with LED lighting and a power outlet inside covers mirror, light and storage in one element. It must be planned during the design phase because the wall stud framing must accommodate the opening.',
+        ],
+      },
+      {
+        heading: 'Sizing your mirror',
+        paragraphs: [
+          'A general rule: the mirror should be the same width as the vanity or slightly narrower. A mirror wider than the vanity looks oversized. A mirror much narrower looks undersized.',
+          'For a single vanity (typically 600 to 900 millimetres wide), a mirror of 500 to 800 millimetres wide works. For a double vanity (1,200 to 1,500 millimetres), one wide mirror or two individual mirrors above each basin.',
+          'Height depends on the ceiling and the users. The bottom of the mirror should be roughly 1,200 millimetres from the floor. The top should be as close to the ceiling as the proportions allow. Taller mirrors reflect more light and make the room feel higher.',
+        ],
+      },
+      {
+        heading: 'How ETR handles mirror selection',
+        paragraphs: [
+          'The mirror type and size are confirmed during the design phase, alongside the vanity and the lighting layout. If an LED mirror or recessed cabinet is chosen, the electrician runs the wiring during the rough-in.',
+          'Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers how mirror lighting works with the rest of the room\'s lighting plan. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need an electrician for an LED mirror?',
+        answer: 'Yes. An LED mirror must be connected to the electrical circuit by a licensed electrician. The wiring should be installed during the rough-in phase, before the walls are tiled. Plug-in LED mirrors exist but the cable is visible, which looks less finished.',
+      },
+      {
+        question: 'What shape mirror is best for a small bathroom?',
+        answer: 'A round or arch mirror softens the room and works well above a single vanity. A tall rectangular mirror makes the ceiling feel higher. In a small bathroom, a larger mirror makes the room feel more spacious — do not scale the mirror down just because the room is small.',
+      },
+      {
+        question: 'How do anti-fog mirrors work?',
+        answer: 'An anti-fog mirror has a heated pad behind the glass — called a de-mister — that warms the surface enough to prevent condensation forming after a hot shower. It runs on the same electrical connection as the LED lighting. Some models activate automatically when the light is turned on.',
+      },
+      {
+        question: 'Should the mirror match the vanity width exactly?',
+        answer: 'Not exactly, but close. The mirror should be the same width as the vanity or slightly narrower. A mirror wider than the vanity looks unbalanced. A mirror 50 to 100 millimetres narrower than the vanity on each side looks intentional.',
+      },
+      {
+        question: 'Can I use a mirror to make a small bathroom feel bigger?',
+        answer: 'Yes. A large mirror above the vanity reflects light and the opposite wall, creating a sense of depth. Placing the mirror across from a window or the shower screen maximises the reflected light. Frameless edges help the mirror blend into the wall.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-grout-guide-types-maintenance',
+    title: 'Bathroom grout: types, colours and how to keep it clean',
+    metaTitle: 'Bathroom Grout Guide Types Colours',
+    description: 'The difference between cement and epoxy grout, how grout colour changes the look of your tiles, and how to keep grout clean in a wet bathroom.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What grout does in a bathroom',
+        paragraphs: [
+          'Grout fills the joints between tiles. It keeps water from getting behind the tiles, holds the tiles in position, and finishes the look. In a bathroom, grout is exposed to water, steam, soap and cleaning products every day. The type of grout and how it is maintained affects how the bathroom looks and performs over years.',
+          'Most people do not think about grout until it starts to discolour or grow mould. By then, the problem is usually the grout type, not the cleaning.',
+        ],
+      },
+      {
+        heading: 'Cement-based grout',
+        paragraphs: [
+          'Cement grout is the traditional type. It is a mixture of Portland cement, sand and water. It is affordable, easy to work with and available in many colours.',
+          'The downside is that cement grout is porous. It absorbs water, soap residue and dirt. Over time, it stains, darkens and can support mould growth. Sealing the grout after installation helps, but the sealant wears off and needs reapplying every one to two years in a shower.',
+          'Cement grout is fine for dry areas — splashbacks, floor tiles in a powder room. In a shower recess, it needs more maintenance than the alternative.',
+        ],
+      },
+      {
+        heading: 'Epoxy grout',
+        paragraphs: [
+          'Epoxy grout is made from epoxy resin and a hardener. It is non-porous, which means it does not absorb water, does not stain and is highly resistant to mould. It does not need sealing.',
+          'Epoxy costs more than cement grout and is harder to apply — it sets faster and is less forgiving to work with. Not every tiler is experienced with it. But in a wet area, the long-term performance is significantly better.',
+          'Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers how grout type fits into the broader tile specification. If mould in the shower is a concern, our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> covers the full picture.',
+        ],
+      },
+      {
+        heading: 'Grout colour choices',
+        paragraphs: [
+          'Grout colour changes the entire look of a tiled wall. A matching colour — white grout with white tiles — gives a seamless, clean look where the joints almost disappear. A contrasting colour — dark grout with light tiles — highlights the tile pattern and makes each tile stand out.',
+          'In practical terms, lighter grout shows dirt and staining more quickly. Darker grout hides marks but can fade over time. A mid-tone grey is a popular compromise in current Sydney renovations — it complements most tile colours and hides wear better than white.',
+          'The grout colour should be chosen at the same time as the tile, not after. Some tile showrooms provide grout colour samples to test against the tile before the final order.',
+        ],
+      },
+      {
+        heading: 'How wide should grout joints be',
+        paragraphs: [
+          'The tile manufacturer specifies a minimum joint width. Rectified tiles — tiles with precisely cut edges — allow joints as narrow as 1.5 millimetres. Non-rectified tiles typically need 3 to 5 millimetres to account for size variation.',
+          'Narrower joints give a cleaner, more modern look. Wider joints suit traditional or rustic tile styles. In a shower, the joint width affects how much grout is exposed to water — narrower is generally better for maintenance.',
+          'Our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> covers joint widths for bigger tiles, where getting the joint right is even more important.',
+        ],
+      },
+      {
+        heading: 'Keeping grout clean',
+        paragraphs: [
+          'For cement grout: wipe the shower walls with a squeegee after each use to remove water before it dries. Clean weekly with a mild bathroom cleaner — avoid bleach-based products, which break down the sealant. Reseal every one to two years.',
+          'For epoxy grout: a weekly wipe with a damp cloth is usually enough. Epoxy does not absorb stains, so marks sit on the surface and come off easily. No sealing is needed.',
+          'For both types: good ventilation is the best defence. A fan that clears steam from the room stops moisture from sitting on the grout surface for hours.',
+        ],
+      },
+      {
+        heading: 'How ETR specifies grout',
+        paragraphs: [
+          'The grout type, colour and joint width are confirmed during the selections process, alongside the tiles. Adam Dawood, with over 25 years in tiling, advises on the best grout for the tile, the location and the client\'s maintenance preference.',
+          'Epoxy grout is standard in our shower recesses. Cement grout is used in dry areas where the performance difference is not needed. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is epoxy grout worth the extra cost?',
+        answer: 'In a shower, yes. Epoxy grout does not absorb water, does not stain and does not support mould growth. It costs more upfront but saves on cleaning time, resealing and replacement over the life of the bathroom.',
+      },
+      {
+        question: 'Can I change the grout colour without re-tiling?',
+        answer: 'Grout colourants and pens can change the appearance of existing cement grout. They sit on the surface and wear off over time. For a permanent change, the old grout is raked out and new grout applied — a labour-intensive process but cheaper than re-tiling.',
+      },
+      {
+        question: 'Why does my white grout turn yellow?',
+        answer: 'Yellow or brown staining in cement grout is usually caused by mineral deposits from hard water, soap residue or mould growing within the porous grout. Regular sealing and wiping after each shower slows the process. Switching to epoxy grout prevents it.',
+      },
+      {
+        question: 'How long does grout last in a bathroom?',
+        answer: 'Cement grout in a well-ventilated bathroom lasts 10 to 15 years before it needs replacing. Epoxy grout can last the life of the tiles — 20 to 30 years — because it does not break down from water exposure.',
+      },
+      {
+        question: 'Should I choose grout colour to match or contrast the tiles?',
+        answer: 'Matching grout gives a seamless, modern look. Contrasting grout highlights the tile pattern and adds visual interest. In a small bathroom, matching grout makes the room feel larger. In a larger room, contrasting grout can add character.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-splashback-ideas-renovation',
+    title: 'Bathroom splashback ideas: tiles, glass and panels',
+    metaTitle: 'Bathroom Splashback Ideas Renovation',
+    description: 'Splashback options for behind the vanity and around the bath — tiles, glass panels, stone and acrylic — what works, what lasts and what to avoid in a wet bathroom.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What a splashback does in a bathroom',
+        paragraphs: [
+          'A splashback is the section of wall behind the basin, around the bath or beside the toilet that catches water splashes. Without protection, the wall absorbs moisture, stains and eventually grows mould. A splashback is both practical and decorative — it protects the wall and finishes the room.',
+          'In a bathroom renovation, the splashback is an opportunity to add a design detail without committing to a feature wall across the entire room.',
+        ],
+      },
+      {
+        heading: 'Tiles: the most common option',
+        paragraphs: [
+          'Tiles are the standard splashback material in Australian bathrooms. They are waterproof, durable and available in more colours, patterns and sizes than any other material. A tile splashback behind the vanity can match the shower tiles for a unified look or use a feature tile for contrast.',
+          'Subway tiles in a brick pattern are the most popular style for a vanity splashback. Mosaic tiles, Moroccan-pattern tiles and geometric shapes are used for more decorative effects. Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how to choose tiles that work with the rest of the room.',
+          'The main maintenance consideration is grout. A tile splashback behind a basin gets wet daily. Epoxy grout resists staining and mould better than cement grout in this location.',
+        ],
+      },
+      {
+        heading: 'Glass panels',
+        paragraphs: [
+          'A glass panel is a single sheet of toughened glass mounted to the wall. It is seamless — no grout lines, no joints — which makes it easy to clean. A wipe with glass cleaner keeps it clear.',
+          'Glass can be clear, tinted or back-painted in any colour. A back-painted glass panel in a bold colour behind the vanity can be a strong design feature. Clear glass over a feature wallpaper or paint creates a layered look.',
+          'The downside is cost. A custom-cut glass panel, templated to the exact wall dimensions, costs more than tiles. It also needs precise wall preparation — the wall behind the glass must be flat and finished, because any imperfection shows through.',
+        ],
+      },
+      {
+        heading: 'Natural stone',
+        paragraphs: [
+          'A stone slab — marble, granite or engineered stone — as a splashback creates a premium, seamless surface. It is particularly effective behind a freestanding vanity or as a feature behind a bath.',
+          'Stone needs sealing. Marble is porous and stains from soap, toothpaste and water marks if not sealed and wiped regularly. Engineered stone (a composite of quartz and resin) is non-porous and lower maintenance, but it does not have the natural veining of real marble.',
+          'Our <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware guide</a> covers how to match the splashback material with the tap and accessory finishes.',
+        ],
+      },
+      {
+        heading: 'Acrylic and composite panels',
+        paragraphs: [
+          'Acrylic panels are lightweight, waterproof and available in a wide range of colours. They install with adhesive directly to the wall. There are no grout lines and no sealing needed.',
+          'They are the most affordable seamless option and suit budget renovations or rental properties where a premium finish is not required. The surface can scratch more easily than glass or tile, and it does not have the visual depth of stone or glass.',
+        ],
+      },
+      {
+        heading: 'Height and coverage',
+        paragraphs: [
+          'A vanity splashback typically runs from the vanity top to 200 to 400 millimetres up the wall. A full-height splashback runs from the vanity to the ceiling or to the bottom of the mirror. Full-height coverage is easier to maintain because there is no exposed painted wall above the splashback to catch water.',
+          'Behind a bath, the splashback should cover the wall area that gets wet. For a freestanding bath, that may be the wall from floor to 600 millimetres above the bath rim. For an alcove bath, the end wall and the back wall are usually fully tiled.',
+        ],
+      },
+      {
+        heading: 'How ETR designs splashbacks',
+        paragraphs: [
+          'The splashback material, height and tile pattern are part of the design phase. Farah Dawood works out how the splashback relates to the vanity, the mirror and the overall tile layout. The goal is a detail that works with the room, not one that competes with it.',
+          'Every splashback in a wet area is installed over proper waterproofing to AS 3740. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need a splashback behind the bathroom vanity?',
+        answer: 'It is strongly recommended. Water from the basin splashes onto the wall daily. Without a waterproof surface, the paint or plaster absorbs moisture, stains and eventually grows mould. A splashback protects the wall and is far easier to clean.',
+      },
+      {
+        question: 'What is the cheapest splashback option?',
+        answer: 'Acrylic panels are the most affordable seamless option. Standard ceramic tiles are the most affordable tiled option. Both are waterproof and durable. The cheapest overall depends on the size of the area and whether the tiles need grout.',
+      },
+      {
+        question: 'Can I use paint instead of a splashback?',
+        answer: 'Semi-gloss or gloss bathroom paint is water-resistant, not waterproof. It works above a splashback or in areas that get minimal splash, but it will not hold up behind a basin that gets wet every day. A physical splashback is a better long-term solution.',
+      },
+      {
+        question: 'How high should a bathroom splashback be?',
+        answer: 'Behind a vanity, at least 200 millimetres above the basin is the minimum. Full-height — from the vanity to the mirror or ceiling — is better for maintenance and looks more finished. Behind a bath, cover any area that gets wet.',
+      },
+      {
+        question: 'Is glass or tile easier to maintain?',
+        answer: 'Glass is easier to clean because it has no grout lines. A wipe with glass cleaner is all it needs. Tiles with epoxy grout are close — the non-porous grout resists staining. Tiles with cement grout need more regular cleaning and periodic resealing.',
+      },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {
