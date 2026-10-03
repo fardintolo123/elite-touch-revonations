@@ -3016,6 +3016,850 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+
+  // ── Weeks 16–20 (content strategy batch 4) ──────────────────────────
+
+  {
+    slug: 'bathroom-waterproofing-explained',
+    title: 'Bathroom waterproofing explained: what every homeowner should know',
+    metaTitle: 'Bathroom Waterproofing Explained Australia',
+    description: 'How bathroom waterproofing works, why it matters, what AS 3740 requires and what to check before your renovator tiles over the membrane.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'What waterproofing actually is',
+        paragraphs: [
+          'Waterproofing is a liquid membrane applied to the walls and floor of a bathroom before tiling. It dries to form a continuous, flexible barrier that stops water from reaching the building structure behind the tiles.',
+          'Without it, water works through grout joints, around fixtures and into the wall framing and floor substrate. Over months and years, this causes rot, mould, structural damage and — in multi-storey homes — leaks into the rooms below.',
+        ],
+      },
+      {
+        heading: 'Why it is a legal requirement in Australia',
+        paragraphs: [
+          'In NSW, bathroom waterproofing must comply with the Building Code of Australia and Australian Standard AS 3740 — Waterproofing of Domestic Wet Areas. It is not optional and it is not a cosmetic step. A bathroom without compliant waterproofing fails inspection.',
+          'The standard sets minimum requirements: which surfaces must be waterproofed, how high the membrane must extend up the wall, what materials are acceptable, and how the membrane must be tested before tiling. A compliance certificate is issued by the applicator or an inspector to confirm the work meets the standard.',
+        ],
+      },
+      {
+        heading: 'Where the membrane goes',
+        paragraphs: [
+          'The entire floor of a wet area must be waterproofed, including under the bath and behind the toilet. The membrane extends at least 150 millimetres up the walls from the floor. In a shower, the membrane goes at least 1,800 millimetres up the wall — typically to the full height of the tiled area.',
+          'Around penetrations — pipes, drains, taps — the membrane wraps into purpose-made collars that seal the junction between the pipe and the membrane. These junctions are the most common failure points in older bathrooms.',
+          'Our <a href="/blog/bathroom-niche-design-ideas/" class="et-link">niche design guide</a> covers how waterproofing works inside a recessed shelf, which is a wet area within a wet area.',
+        ],
+      },
+      {
+        heading: 'How it is applied',
+        paragraphs: [
+          'The substrate — usually cement sheet or fibre cement board — is cleaned and primed. A primer coat helps the membrane bond to the surface. The first coat of membrane is applied by brush or roller, covering all surfaces.',
+          'After the first coat dries (typically overnight), a second coat is applied at right angles to the first. Two coats ensure there are no thin spots or pinholes. In corners and junctions, a reinforcing fabric tape is embedded into the wet membrane to bridge the joint.',
+          'The membrane cures for at least 24 hours before tiling can begin. Rushing this step risks trapping moisture under the membrane or applying tiles before the membrane has reached its full strength.',
+        ],
+      },
+      {
+        heading: 'What can go wrong',
+        paragraphs: [
+          'The most common failures are at penetrations (pipes and drains), at internal corners (where wall meets floor), and at the shower hob (the step into the shower). These are the points where water pressure is highest and where movement can crack a rigid seal.',
+          'Poor application — too thin, one coat instead of two, rushing the cure time, or missing a corner — creates weak spots that may hold for a year but fail within five. By then, the tiles are on, and the failure is invisible until damage appears.',
+          'Our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> covers what happens when waterproofing fails and moisture gets trapped behind tiles.',
+        ],
+      },
+      {
+        heading: 'The compliance certificate',
+        paragraphs: [
+          'After the membrane is applied and cured, it is inspected. If it meets AS 3740, a compliance certificate is issued. This certificate is a legal document that confirms the waterproofing was done correctly.',
+          'Keep this certificate. It is required for any future insurance claim related to water damage, and it may be requested during a property sale. Our <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate guide</a> covers what the certificate contains and why it matters.',
+        ],
+      },
+      {
+        heading: 'How ETR handles waterproofing',
+        paragraphs: [
+          'Every ETR bathroom is waterproofed to AS 3740 — primer, two coats, reinforced corners, sealed penetrations, full cure before tiling. A compliance certificate is issued for every job.',
+          'Adam Dawood, with over 25 years in the industry, inspects the membrane before tiling starts. The written quote includes waterproofing as a standard line item, not an optional extra. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does bathroom waterproofing last?',
+        answer: 'A properly applied membrane to AS 3740 should last the life of the bathroom — typically 15 to 25 years. Failure usually happens at penetrations or corners due to poor application, not because the membrane material itself wears out.',
+      },
+      {
+        question: 'Can I waterproof my own bathroom?',
+        answer: 'In NSW, waterproofing in a wet area must be done by a licensed waterproofer or under the supervision of a licensed builder. DIY waterproofing will not receive a compliance certificate and may void your home insurance for water damage claims.',
+      },
+      {
+        question: 'How do I know if my existing waterproofing has failed?',
+        answer: 'Common signs are mould that keeps returning despite cleaning, soft or spongy patches in the wall, discolouration at the base of tiled walls, a musty smell, or water damage to the ceiling of the room below. Any of these warrants an inspection.',
+      },
+      {
+        question: 'Is waterproofing included in a renovation quote?',
+        answer: 'It should be. At ETR, waterproofing is a standard line item in every bathroom renovation quote. If a quote does not mention waterproofing, ask — it is not something that can be skipped or done cheaply.',
+      },
+      {
+        question: 'What is the difference between waterproofing and water resistance?',
+        answer: 'Waterproofing is a continuous membrane that stops water completely. Water resistance means a material can tolerate some moisture but is not impervious. Moisture-resistant plasterboard, for example, handles humidity better than standard plasterboard but it is not a waterproof barrier.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-waste-disposal',
+    title: 'Bathroom renovation waste: what gets removed and where it goes',
+    metaTitle: 'Bathroom Renovation Waste Disposal Sydney',
+    description: 'What comes out of a bathroom during a renovation — tiles, fixtures, framing — and how it is sorted, removed and disposed of responsibly in Sydney.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'What comes out of a bathroom',
+        paragraphs: [
+          'A full bathroom strip-out produces tiles, adhesive, cement sheet, plasterboard, timber framing (if damaged), the old bath or shower base, the toilet, the vanity, tapware, the shower screen and sometimes old plumbing and electrical fittings.',
+          'For a standard bathroom of 4 to 6 square metres, this adds up to roughly 1 to 2 cubic metres of waste. A larger bathroom or one with a bath, heavy stone tiles and a full vanity cabinet produces more.',
+        ],
+      },
+      {
+        heading: 'Skip bins and sizing',
+        paragraphs: [
+          'Most bathroom renovations use a 4-cubic-metre skip bin. That holds the waste from a standard bathroom strip-out — roughly 40 heavy-duty bags of rubble. A larger bathroom or a combined bathroom-and-laundry job may need a 6-cubic-metre bin.',
+          'The skip is delivered before demolition starts and collected once the strip-out is complete. In Sydney, skip bin hire for a bathroom renovation runs from $300 to $600 depending on the bin size, the suburb and the hire period.',
+          'Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers what happens during the strip-out itself.',
+        ],
+      },
+      {
+        heading: 'What can be recycled',
+        paragraphs: [
+          'Tiles and concrete rubble go to a construction recycling facility where they are crushed and reused as road base or fill. Metal fittings — copper pipes, brass taps, steel frames — have scrap value and are separated at the depot.',
+          'Old toilets, baths and basins made of vitreous china or cast iron are recyclable. Timber framing that is not treated or painted can be chipped. Glass shower screens can be recycled if they are not laminated.',
+          'Most licensed skip bin operators sort the waste at a transfer station. The recycling rate for bathroom renovation waste is typically 60 to 80 percent by weight.',
+        ],
+      },
+      {
+        heading: 'Asbestos: the one thing that changes everything',
+        paragraphs: [
+          'Homes built before 1990 may contain asbestos in the wall lining, floor tiles, adhesive or behind wet-area sheeting. Asbestos cannot go in a standard skip bin. It must be tested, removed by a licensed asbestos removalist, double-bagged in labelled plastic and taken to a licensed disposal facility.',
+          'ETR tests for asbestos where the home\'s age warrants it. The cost of asbestos removal depends on the area and the type of asbestos (bonded or friable). Our written quote allows for testing, and if asbestos is found, the removal is priced and handled as a separate, documented line item.',
+          'Our <a href="/blog/heritage-bathroom-renovation-sydney/" class="et-link">heritage renovation guide</a> covers how asbestos and lead paint are managed in older Sydney homes.',
+        ],
+      },
+      {
+        heading: 'Plasterboard and paint',
+        paragraphs: [
+          'Plasterboard (gyprock) must be separated from general waste. Most skip bin operators ask for it to be bagged or placed on top of the load for sorting at the depot. Mixing plasterboard through rubble often triggers a surcharge because it contaminates the recycling stream.',
+          'Painted surfaces are generally acceptable in construction waste. Lead-based paint, found in homes built before 1970, requires separate handling — the same principle as asbestos. Testing is cheap and quick.',
+        ],
+      },
+      {
+        heading: 'How ETR manages waste',
+        paragraphs: [
+          'The skip bin is organised as part of the project program. The team separates recyclable materials during demolition rather than after. Drop sheets and dust containment protect the rest of the house from debris during the carry-out.',
+          'Kieran C noted that the team provided "drop sheets and surface protection to and from the work area and leaving the site clean and tidy at the end of each day." Waste management is part of that standard, not an afterthought. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does waste removal cost in a bathroom renovation?',
+        answer: 'Skip bin hire for a standard bathroom renovation in Sydney runs $300 to $600 for a 4 to 6-cubic-metre bin. This is usually included in the renovation quote as a line item. Asbestos removal, if needed, is an additional cost.',
+      },
+      {
+        question: 'Can I keep my old bath or vanity?',
+        answer: 'Yes, if it is in good condition and you want to repurpose or donate it. Let the team know before demolition starts so the item is removed carefully rather than broken out. Charity organisations sometimes collect usable fixtures.',
+      },
+      {
+        question: 'Is bathroom renovation waste recyclable?',
+        answer: 'Most of it is. Tiles and concrete are crushed for road base. Metals are scrapped. Porcelain fixtures are recyclable. Licensed skip bin operators sort the waste at a transfer station, and 60 to 80 percent by weight is typically diverted from landfill.',
+      },
+      {
+        question: 'What if my bathroom has asbestos?',
+        answer: 'Asbestos must be removed by a licensed removalist, not by a general builder. It is tested before work begins, removed under controlled conditions, double-bagged in labelled plastic and taken to a licensed disposal facility. The cost depends on the area and type of asbestos.',
+      },
+      {
+        question: 'Where does the skip bin go?',
+        answer: 'Usually on the driveway or the street verge. If the bin is placed on a public road or footpath, a council permit may be needed. The skip bin operator handles the permit application. The bin is typically on site for the duration of the demolition phase — one to three days.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-investment-property',
+    title: 'Bathroom renovation for investment properties: what to spend and what to skip',
+    metaTitle: 'Bathroom Renovation Investment Property Australia',
+    description: 'How to renovate a bathroom in a rental or investment property — where to spend for durability and tenant appeal, and where to save without cutting quality.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Investment bathrooms are different from owner-occupied ones',
+        paragraphs: [
+          'When you renovate your own bathroom, you choose finishes you love. When you renovate an investment property, you choose finishes that tenants will look after, that last between tenancies, and that add enough value to justify the cost.',
+          'The goal is not the cheapest renovation. A cheap renovation looks cheap, attracts lower rents and needs redoing sooner. The goal is a durable, well-finished bathroom that appeals to good tenants and lasts 10 to 15 years without major work.',
+        ],
+      },
+      {
+        heading: 'Where to spend',
+        paragraphs: [
+          'Waterproofing. This is non-negotiable. A failed membrane causes structural damage that costs multiples of the waterproofing itself. Every investment bathroom should be waterproofed to AS 3740 with a compliance certificate.',
+          'Tiles. Choose porcelain over ceramic. Porcelain is harder, more scratch-resistant and holds up better under heavy use. A neutral colour — white, light grey or warm beige — appeals to the widest range of tenants and does not date quickly.',
+          'Tapware and fixtures. Mid-range brands with Australian Standards compliance last longer than budget fittings. A mixer tap costs a little more than separate hot and cold taps but is more practical and looks more current.',
+          'Ventilation. A properly ducted exhaust fan prevents mould, which is the single most common maintenance issue in rental bathrooms. The cost of a good fan is trivial compared to the cost of mould remediation between tenancies.',
+        ],
+      },
+      {
+        heading: 'Where to save',
+        paragraphs: [
+          'Tile size and pattern. A standard 300 by 600 porcelain tile in a neutral colour costs less per square metre than a boutique tile and is easier to replace if a tile is damaged. Avoid trendy patterns that will look dated in five years.',
+          'Vanity and mirror. A wall-hung vanity with a stone-top basin in white or grey is durable, easy to clean and widely available. A simple frameless mirror is cheaper than an LED backlit model and has no electrical components to fail.',
+          'Shower screen. A semi-frameless screen costs less than frameless and tolerates walls that are not perfectly plumb — common in investment properties that may have had previous cheap renovations.',
+          'Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> covers how to allocate spending across the full scope of a renovation.',
+        ],
+      },
+      {
+        heading: 'Return on investment',
+        paragraphs: [
+          'A mid-range bathroom renovation costing $18,000 to $30,000 typically returns 60 to 75 percent of its cost in added property value. But the financial case for an investment property is broader than resale alone.',
+          'A renovated bathroom justifies a higher weekly rent — often $30 to $60 more per week, which is $1,500 to $3,000 per year. Over 10 years, that added rent alone can cover a significant portion of the renovation cost.',
+          'A good bathroom also reduces vacancy. Tenants are more likely to renew a lease when the bathroom works well. Our <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">resale value guide</a> covers what real estate agents look for in a bathroom.',
+        ],
+      },
+      {
+        heading: 'Durability choices that matter for rentals',
+        paragraphs: [
+          'Epoxy grout in the shower resists mould and staining far better than cement grout. It costs more upfront but eliminates the most common cleaning complaint from tenants and property managers.',
+          'Large-format tiles reduce grout lines and are easier to clean. A wall with four tiles is easier to maintain than a wall with forty. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> covers the maintenance difference in detail.',
+          'Anti-mould silicone at junctions lasts three to five years longer than standard silicone. Replacing silicone between tenancies is a small cost that prevents the larger cost of mould damage.',
+        ],
+      },
+      {
+        heading: 'How ETR works with property investors',
+        paragraphs: [
+          'We renovate bathrooms in investment properties regularly. The process is the same as an owner-occupied renovation — on-site measure, written quote, fixed program — but the selections are guided toward durability and tenant appeal rather than personal taste.',
+          'Packages start from $18,000 on Basic. Every job is waterproofed to AS 3740 with a compliance certificate and carries a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much should I spend on a bathroom renovation for a rental property?',
+        answer: 'A mid-range renovation of $18,000 to $25,000 typically delivers the best return for an investment property. Going cheaper risks a result that does not lift the rent or appeal to good tenants. Going premium rarely adds enough rent to justify the extra cost.',
+      },
+      {
+        question: 'What is the ROI on a bathroom renovation for an investment property?',
+        answer: 'The renovation itself returns roughly 60 to 75 percent in added property value. The ongoing rental increase — often $30 to $60 per week — adds value over time. Reduced vacancy and lower maintenance costs also contribute.',
+      },
+      {
+        question: 'Should I renovate the bathroom before selling an investment property?',
+        answer: 'If the bathroom is dated, damaged or has waterproofing issues, yes. A renovated bathroom creates a "move-in ready" impression that supports a higher sale price and faster sale. If the bathroom is in reasonable condition, a cosmetic refresh may be enough.',
+      },
+      {
+        question: 'What finishes are best for a rental bathroom?',
+        answer: 'Neutral porcelain tiles (white, light grey or beige), a wall-hung vanity with a stone-top basin, chrome or brushed nickel tapware, a semi-frameless shower screen and epoxy grout in the shower. These are durable, widely appealing and easy to maintain.',
+      },
+      {
+        question: 'Can I claim the renovation on tax?',
+        answer: 'Renovations to an investment property are generally a capital improvement, not a repair. Capital improvements are added to the cost base and depreciated over time. Consult your accountant for advice specific to your situation — ETR provides itemised invoices that your accountant can use.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-ceiling-renovation-guide',
+    title: 'Bathroom ceiling renovation: what most people overlook',
+    metaTitle: 'Bathroom Ceiling Renovation Guide',
+    description: 'Why the bathroom ceiling matters more than you think — moisture damage, exhaust fan placement, lighting recesses and whether to tile or paint.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'The ceiling is the most neglected surface in a bathroom',
+        paragraphs: [
+          'Walls get new tiles. Floors get waterproofing. Fixtures get replaced. But the ceiling is often left as is, repainted at most. In many older Sydney bathrooms, the ceiling is the surface most affected by years of steam, and it is the one most likely to hide damage.',
+          'Steam rises. In a bathroom without adequate ventilation, moisture hits the ceiling first and sits there longest. Over years, this causes paint to peel, plasterboard to swell, and mould to colonise the surface and — worse — the cavity above it.',
+        ],
+      },
+      {
+        heading: 'Signs the ceiling needs attention',
+        paragraphs: [
+          'Peeling or bubbling paint is the most visible sign. Yellow or brown staining indicates water damage — either from condensation or from a leak above. Soft or spongy patches in the plasterboard mean the board has absorbed moisture and lost its structural integrity.',
+          'Mould on the ceiling — especially in corners and around the exhaust fan — means moisture is not being cleared fast enough. Cleaning it off treats the symptom. Fixing the ventilation and replacing the damaged board treats the cause.',
+          'Our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> covers why mould keeps returning and what a renovation does to stop it.',
+        ],
+      },
+      {
+        heading: 'Exhaust fan placement and ducting',
+        paragraphs: [
+          'The exhaust fan should be in the ceiling, positioned directly above or near the shower — where the most steam is produced. The fan must duct to the outside of the building, not into the roof cavity. A fan that exhausts into the roof space simply moves the moisture problem from the bathroom to the roof framing.',
+          'During a renovation, the ceiling is open. This is the time to install or upgrade the exhaust fan, run the ducting to an external vent, and seal the penetration. Retrofitting ducting through a finished ceiling is more expensive and disruptive.',
+          'Our <a href="/blog/bathroom-ventilation-sydney-renovation/" class="et-link">ventilation guide</a> covers fan sizing, ducting routes and timer controls in detail.',
+        ],
+      },
+      {
+        heading: 'Lighting recesses and electrical work',
+        paragraphs: [
+          'Recessed downlights sit in the ceiling cavity. In a bathroom, these must be rated for wet areas (IP44 or higher) and installed by a licensed electrician. LED downlights are the standard choice — they use less power, produce less heat in the cavity and last longer than halogen.',
+          'The number and position of downlights are planned during the design phase. Farah Dawood works out the lighting layout alongside the tile plan, vanity position and mirror location. The electrician installs the wiring during the rough-in, before the ceiling is lined.',
+          'Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers how ceiling lights work with mirror lighting and task lighting to light the room evenly.',
+        ],
+      },
+      {
+        heading: 'Paint vs tiles on the ceiling',
+        paragraphs: [
+          'Most bathroom ceilings are painted, not tiled. A good-quality moisture-rated ceiling paint — semi-gloss or satin finish — resists condensation, is easy to clean and does not trap moisture the way a flat paint does.',
+          'Tiling the ceiling is rare and usually reserved for steam rooms or shower recesses with very high ceilings where water runs down from above. In a standard bathroom, paint is the practical and cost-effective choice.',
+          'The ceiling should be lined with moisture-resistant plasterboard (green board), not standard plasterboard. Standard board swells and degrades in a humid room. Green board handles the conditions and provides a stable base for paint.',
+        ],
+      },
+      {
+        heading: 'How ETR handles bathroom ceilings',
+        paragraphs: [
+          'In a full renovation, the ceiling is inspected during the strip-out. Damaged plasterboard is replaced with moisture-resistant board. The exhaust fan is installed with external ducting. Downlights are wired during the electrical rough-in.',
+          'The ceiling is painted with a moisture-rated paint after tiling is complete, so no paint is damaged during the tiling process. Every bathroom is waterproofed to AS 3740 and the ceiling work is part of the overall program. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Should I replace the bathroom ceiling during a renovation?',
+        answer: 'If the plasterboard shows signs of moisture damage — swelling, staining, mould or peeling paint — yes. Replacing it with moisture-resistant board during a renovation is far cheaper than doing it later. If the board is in good condition, repainting with moisture-rated paint is enough.',
+      },
+      {
+        question: 'What type of paint is best for a bathroom ceiling?',
+        answer: 'A moisture-rated interior paint in a semi-gloss or satin finish. These finishes resist condensation and are easier to wipe clean than flat or matt finishes. Some brands offer mould-resistant formulas with added fungicide.',
+      },
+      {
+        question: 'Does the exhaust fan have to go in the ceiling?',
+        answer: 'It is the most common and effective position because steam rises. Wall-mounted fans are an option in some layouts, but ceiling fans positioned above the shower clear steam more efficiently. The key is that the fan ducts to the outside, not into the roof cavity.',
+      },
+      {
+        question: 'Can I use standard plasterboard on a bathroom ceiling?',
+        answer: 'It is not recommended. Standard plasterboard absorbs moisture and degrades in a humid room. Moisture-resistant plasterboard (green board or similar) is rated for wet areas and provides a stable base for paint in a bathroom environment.',
+      },
+      {
+        question: 'How many downlights does a bathroom ceiling need?',
+        answer: 'A standard bathroom of 4 to 6 square metres typically needs three to four LED downlights for even light coverage. The exact number depends on the room shape, ceiling height and whether the vanity mirror has its own lighting.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-electrical-work',
+    title: 'Bathroom renovation electrical work: what changes and what stays',
+    metaTitle: 'Bathroom Renovation Electrical Work Guide',
+    description: 'What electrical work is needed in a bathroom renovation — lighting, exhaust fans, power points, heated towel rails, safety switches and compliance with AS/NZS 3000.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Electrical work is part of every renovation',
+        paragraphs: [
+          'Even if you are keeping the same layout, the electrical work in a bathroom renovation typically includes new lighting, a new or upgraded exhaust fan, relocating or adding power points, and installing a safety switch if the home does not already have one.',
+          'All electrical work in a bathroom must be done by a licensed electrician and must comply with AS/NZS 3000, the Australian wiring rules. The bathroom is classified as a wet area, which means stricter rules about where power points, lights and switches can be placed.',
+        ],
+      },
+      {
+        heading: 'Lighting circuits',
+        paragraphs: [
+          'Most bathroom renovations replace the lighting with LED downlights. These are wired during the rough-in phase — after the walls are framed but before they are lined and tiled. The electrician runs cables through the wall and ceiling cavity to each light position.',
+          'The number, position and type of lights are decided during the design phase. Task lighting above the mirror, ambient lighting from downlights and feature lighting in a niche each need their own cable run. Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers the full layout.',
+        ],
+      },
+      {
+        heading: 'Exhaust fan wiring',
+        paragraphs: [
+          'The exhaust fan is wired to a switch — often a timer switch that keeps the fan running for 10 to 15 minutes after you leave the room. Some fans include a humidity sensor that turns the fan on automatically when moisture levels rise.',
+          'The fan cable runs through the ceiling cavity to the fan position. The ducting (a separate trade) runs from the fan to an external vent. Both the cable and the duct are installed during the rough-in, before the ceiling is lined.',
+        ],
+      },
+      {
+        heading: 'Power points and zones',
+        paragraphs: [
+          'AS/NZS 3000 divides the bathroom into zones based on proximity to water. Power points cannot be installed within 600 millimetres of a shower, bath or basin. In practice, this means the power point is usually beside the mirror or on the wall opposite the shower.',
+          'A shaver socket or a general power point rated for bathroom use is typically installed during the renovation. If an LED mirror, a heated towel rail or underfloor heating is planned, each needs its own power connection — either a dedicated circuit or a connection from the bathroom circuit.',
+          'Our <a href="/blog/heated-towel-rail-bathroom-guide/" class="et-link">heated towel rail guide</a> covers the wiring options for that specific fixture.',
+        ],
+      },
+      {
+        heading: 'Safety switches',
+        paragraphs: [
+          'A safety switch (residual current device or RCD) cuts the power within milliseconds if it detects a fault — such as water bridging a live connection. In NSW, all power and lighting circuits in a bathroom must be protected by a safety switch.',
+          'If the home was built before safety switches became mandatory, the renovation is the right time to install one. The electrician adds the RCD to the switchboard as part of the bathroom circuit work. It protects every outlet and light in the bathroom.',
+        ],
+      },
+      {
+        heading: 'What stays and what goes',
+        paragraphs: [
+          'In most renovations, the existing cables inside the walls are replaced because the wall lining is removed during the strip-out. New cables are run to new positions to match the new layout.',
+          'The switchboard connection usually stays unless the home needs an upgrade — older homes with ceramic fuses or no safety switches may need a switchboard upgrade as part of the renovation. The electrician assesses this during the quoting phase.',
+        ],
+      },
+      {
+        heading: 'How ETR coordinates electrical work',
+        paragraphs: [
+          'The electrical layout is planned during the design phase, alongside the tile plan, lighting layout and fixture positions. The electrician does the rough-in after demolition and framing, before waterproofing. After tiling, the electrician returns for the fit-off — installing lights, switches, power points and the exhaust fan.',
+          'All electrical work is carried out by a licensed electrician to AS/NZS 3000 and is covered by a certificate of compliance. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I do any of the electrical work myself?',
+        answer: 'No. In NSW, all electrical work in a wet area must be done by a licensed electrician. This includes wiring lights, fans, power points and heated towel rails. DIY electrical work is illegal and voids your insurance.',
+      },
+      {
+        question: 'How much does the electrical work cost in a bathroom renovation?',
+        answer: 'The electrical component typically runs $1,500 to $4,000, depending on the number of lights, whether a heated towel rail or underfloor heating is included, and whether the switchboard needs an upgrade. It is included as a line item in the renovation quote.',
+      },
+      {
+        question: 'Do I need a safety switch in the bathroom?',
+        answer: 'Yes. In NSW, all power and lighting circuits in a bathroom must be protected by a safety switch (RCD). If the home does not have one, it should be installed during the renovation. It is a safety requirement, not an optional upgrade.',
+      },
+      {
+        question: 'Can I have a power point in the shower?',
+        answer: 'No. AS/NZS 3000 prohibits power points within 600 millimetres of a shower, bath or basin. Power points are installed outside these zones — typically beside the mirror or on a wall away from water sources.',
+      },
+      {
+        question: 'When does the electrician come during a renovation?',
+        answer: 'Twice. The first visit (rough-in) happens after demolition and framing but before waterproofing and tiling — cables are run to their positions. The second visit (fit-off) happens after tiling — lights, switches, fans and power points are installed and connected.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-flooring-options-renovation',
+    title: 'Bathroom flooring options: tiles, vinyl and what works in wet areas',
+    metaTitle: 'Bathroom Flooring Options Renovation Australia',
+    description: 'The main bathroom flooring options — porcelain tiles, ceramic tiles, vinyl and stone — compared on slip resistance, cost, maintenance and suitability for wet areas.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What makes a bathroom floor different',
+        paragraphs: [
+          'A bathroom floor gets wet. It needs to be waterproof, slip-resistant when wet, durable enough to handle daily foot traffic and easy to clean. Not every flooring material meets all four requirements.',
+          'In Australia, the floor of a wet area must be waterproofed to AS 3740. The flooring material sits on top of the waterproof membrane — the membrane does the waterproofing, and the floor material provides the wearing surface.',
+        ],
+      },
+      {
+        heading: 'Porcelain tiles',
+        paragraphs: [
+          'Porcelain is the most common bathroom floor material in Australian renovations. It is fired at a higher temperature than ceramic, making it denser, harder and less porous. A good porcelain tile absorbs almost no water.',
+          'Porcelain is available in every size, colour and finish. Matt and textured finishes provide grip when wet. Polished porcelain is slippery when wet and is not recommended for bathroom floors unless it is used only in dry areas.',
+          'Slip resistance is rated under AS 4586. For a bathroom floor, look for a tile rated R10 or higher. Our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> covers how tile size affects installation on a bathroom floor.',
+        ],
+      },
+      {
+        heading: 'Ceramic tiles',
+        paragraphs: [
+          'Ceramic tiles are lighter and softer than porcelain. They are fired at a lower temperature and are more porous, which means they absorb more water. In a bathroom, this is usually not a problem because the waterproof membrane is underneath, but ceramic is less durable for heavy use.',
+          'Ceramic costs less than porcelain and comes in a wide range of patterns and colours. It is a reasonable choice for a budget bathroom or a powder room with light foot traffic. For a main bathroom or ensuite that gets daily use, porcelain is the stronger choice.',
+        ],
+      },
+      {
+        heading: 'Vinyl and luxury vinyl tiles',
+        paragraphs: [
+          'Vinyl flooring is waterproof, warm underfoot and softer to walk on than tile. Luxury vinyl tiles (LVT) are thicker, more durable and available in convincing wood and stone-look finishes.',
+          'Vinyl does not need grouting, which eliminates a maintenance surface. It is quieter underfoot and more forgiving if you drop something — a glass bottle on vinyl may survive; on porcelain, it will not.',
+          'The trade-off is durability. Vinyl scratches more easily than tile and can be damaged by heavy furniture or sharp objects. It also does not carry the same premium visual impression as tile, which matters for resale.',
+        ],
+      },
+      {
+        heading: 'Natural stone',
+        paragraphs: [
+          'Marble, limestone, travertine and slate are used in premium bathroom renovations. Natural stone adds a luxury feel that manufactured tiles cannot fully replicate.',
+          'The downside is maintenance. Natural stone is porous and must be sealed regularly to prevent staining and water absorption. Marble stains from soap, toothpaste and cleaning products. Limestone scratches. Slate is harder but irregular in thickness.',
+          'Engineered stone (quartz composite) is an alternative — it looks similar to natural stone but is non-porous and lower maintenance. It is more commonly used for vanity tops and splashbacks than for floors.',
+        ],
+      },
+      {
+        heading: 'Slip resistance matters',
+        paragraphs: [
+          'AS 4586 rates floor surfaces for slip resistance. A wet bathroom floor needs a rating of at least R10 (or P3 for the pendulum test). A shower floor needs a higher rating because it is constantly wet — R11 or R12 is recommended.',
+          'The slip rating depends on the surface texture, not the material. A matt porcelain tile can be R10 or R11. A polished porcelain tile of the same material can be R9 or lower — too slippery for a wet bathroom floor.',
+          'Ask the tile supplier for the slip rating before ordering. Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers how to choose tiles that look right and perform safely.',
+        ],
+      },
+      {
+        heading: 'How ETR selects bathroom flooring',
+        paragraphs: [
+          'The floor tile is chosen during the selections process, alongside the wall tiles, grout and tapware. Adam Dawood advises on slip resistance, tile size and substrate preparation. Every floor is waterproofed to AS 3740 with a compliance certificate before the tiles go down.',
+          'A free on-site measure anywhere in Sydney is the starting point. The written quote includes the floor tile, adhesive, grout and waterproofing as standard line items.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the best flooring for a bathroom?',
+        answer: 'Porcelain tiles with a matt or textured finish rated R10 or higher for slip resistance. They are waterproof, durable, easy to clean and available in a wide range of styles. Porcelain is the standard choice for most Australian bathroom renovations.',
+      },
+      {
+        question: 'Can I use timber flooring in a bathroom?',
+        answer: 'Real timber is not recommended. It swells and warps with moisture exposure. Timber-look porcelain tiles or luxury vinyl tiles give a similar appearance without the water damage risk.',
+      },
+      {
+        question: 'Is vinyl flooring good enough for a bathroom?',
+        answer: 'Luxury vinyl tiles are a viable option, especially for budget renovations or rental properties. They are waterproof, warm underfoot and easy to install. They are less durable than porcelain and do not carry the same premium look for resale.',
+      },
+      {
+        question: 'What slip rating do I need for a bathroom floor?',
+        answer: 'At least R10 under AS 4586 for the general bathroom floor. R11 or R12 for the shower floor, which is wet more often and needs higher grip. Ask the tile supplier for the rating — it depends on the surface texture, not the material.',
+      },
+      {
+        question: 'Does the floor need waterproofing if I use waterproof tiles?',
+        answer: 'Yes. The waterproof membrane under the tiles is what protects the building structure. The tiles protect the membrane and provide the wearing surface. Both layers are required under AS 3740.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-design-process',
+    title: 'The bathroom renovation design process: from first ideas to final plans',
+    metaTitle: 'Bathroom Renovation Design Process Steps',
+    description: 'How a bathroom renovation goes from your first ideas to a finished design — the on-site measure, layout options, material selections and how the plan becomes a quote.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Design happens before pricing',
+        paragraphs: [
+          'A bathroom renovation quote means nothing without a design behind it. Two quotes for "a new bathroom" are not comparable if one includes a layout change, heated towel rail and full-height tiling while the other does not. The design defines the scope, and the scope defines the price.',
+          'At ETR, the design process starts at the on-site measure and finishes when you sign off on the layout, materials and inclusions. The written quote comes from that — not the other way around.',
+        ],
+      },
+      {
+        heading: 'Step 1: the on-site measure',
+        paragraphs: [
+          'Omar Dawood visits the site, measures the room, checks the existing plumbing and electrical positions, notes the wall construction (timber frame or masonry) and photographs the current bathroom.',
+          'This visit is free and takes about 45 minutes. The goal is to understand what is there, what you want to change, and what the room can realistically accommodate. If there are structural constraints — load-bearing walls, plumbing that cannot easily move, low ceiling height — they are identified here.',
+        ],
+      },
+      {
+        heading: 'Step 2: layout options',
+        paragraphs: [
+          'Farah Dawood, our architectural designer, works through layout options based on the measurements and your brief. The layout sets the position of the shower, bath (if included), vanity, toilet and door.',
+          'Even in a small bathroom, there are usually two or three workable layouts. The differences matter — a toilet that faces the door feels different from one beside the door. A shower at the far end of the room opens the entry. A vanity under the window gets natural light.',
+          'The layout is where the biggest design decisions happen. Once the fixture positions are set, the tile plan, lighting and storage follow from them.',
+        ],
+      },
+      {
+        heading: 'Step 3: material selections',
+        paragraphs: [
+          'Selections cover tiles (floor and wall), grout colour, tapware (taps, showerhead, mixer), vanity and basin, toilet, shower screen, mirror, towel rails, and any extras — heated towel rail, niche, underfloor heating.',
+          'You can visit a tile showroom, browse online or work from a mood board. Farah helps narrow the options based on the layout, the room size and your budget. A mood board — a collection of images, colours and materials — helps align everyone before the final choices are locked in.',
+          'Our guides on <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes</a>, <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware finishes</a> and <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity selection</a> cover the main decisions in detail.',
+        ],
+      },
+      {
+        heading: 'Step 4: the written quote',
+        paragraphs: [
+          'The quote is built from the design — the layout, the materials and the scope of work. It lists every inclusion: demolition, waterproofing, plumbing, electrical, tiling, fixtures, painting and clean-up. It also states what is excluded.',
+          'ETR uses a HIA fixed-price renovation contract. The price is fixed to the agreed scope. If something unexpected is found during the strip-out — rot, old plumbing, asbestos — it is discussed and priced before any extra work goes ahead.',
+          'Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing quotes</a> covers what to look for and what questions to ask.',
+        ],
+      },
+      {
+        heading: 'Step 5: sign-off and scheduling',
+        paragraphs: [
+          'Once you approve the design and sign the contract, the job is scheduled. Materials are ordered, the skip bin is booked, and the program is set — demolition, rough-in, waterproofing, tiling, fit-off, handover.',
+          'The program is shared with you before work starts, so you know what is happening each week. Omar provides updates throughout. A standard full renovation runs three to four weeks on site.',
+        ],
+      },
+      {
+        heading: 'Why the design phase matters',
+        paragraphs: [
+          'Skipping or rushing the design phase is how renovations go wrong. A layout that does not work, materials ordered in the wrong finish, a missing power point for the mirror — these problems are cheap to fix on paper and expensive to fix on site.',
+          'The design phase is free at ETR. The on-site measure, the layout options and the selections support are part of the quoting process. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does the design process take?',
+        answer: 'Typically one to two weeks from the on-site measure to a signed-off design and quote. The timeline depends on how quickly material selections are made — some clients decide in a day, others take a few weeks to visit showrooms.',
+      },
+      {
+        question: 'Do I need to choose my tiles before getting a quote?',
+        answer: 'Not necessarily. The quote can be prepared with an allowance for tiles within a price range. Final tile selection can happen after the quote is accepted, as long as it is confirmed before the tiling phase starts.',
+      },
+      {
+        question: 'Can I change the design after the quote is signed?',
+        answer: 'Minor changes — a different tap finish, a different grout colour — are usually straightforward. Changes that affect the layout, the scope of work or the materials may require a revised quote. The earlier a change is made, the less it costs.',
+      },
+      {
+        question: 'Do I need an architect or interior designer?',
+        answer: 'For a standard bathroom renovation, no. Farah Dawood, our architectural designer, handles the layout and material selections as part of the ETR process. If you are working with your own designer or architect, we collaborate with them.',
+      },
+      {
+        question: 'Is the on-site measure really free?',
+        answer: 'Yes. The on-site measure, layout options and quote are free and without obligation. You receive a written quote with a detailed scope of work. If you do not proceed, there is no charge.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-contract-guide',
+    title: 'What to look for in a bathroom renovation contract',
+    metaTitle: 'Bathroom Renovation Contract Guide Australia',
+    description: 'What a good bathroom renovation contract includes — scope, pricing, payment schedule, variations, warranty, insurance and the clauses that protect you.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why the contract matters',
+        paragraphs: [
+          'A bathroom renovation is a significant purchase — $18,000 to $30,000 or more. The contract is the document that protects both you and the builder. It sets out what will be done, what it costs, how changes are handled and what happens if something goes wrong.',
+          'In NSW, a written contract is legally required for residential building work over $5,000. For work over $20,000, the Home Building Act requires specific clauses including a cooling-off period, progress payment schedule and details of the builder\'s insurance.',
+        ],
+      },
+      {
+        heading: 'Scope of work',
+        paragraphs: [
+          'The contract should list every item included in the renovation: strip-out, waterproofing, plumbing, electrical, tiling, fixtures, painting, clean-up and waste removal. Each item should be described clearly enough that there is no ambiguity about what is included and what is not.',
+          'If the quote says "bathroom renovation" without listing the inclusions, ask. A vague scope leads to disputes about what was and was not agreed. Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing quotes</a> covers what a detailed scope looks like.',
+        ],
+      },
+      {
+        heading: 'Fixed price vs cost-plus',
+        paragraphs: [
+          'A fixed-price contract sets the total cost for the agreed scope. You know the price before work starts. If the builder finds a problem — rot, old plumbing — any additional cost is discussed and agreed in writing before the extra work goes ahead.',
+          'A cost-plus contract charges materials at cost plus a margin, and labour at an hourly or daily rate. The final cost is not known until the job is finished. This suits large, complex projects where the full scope cannot be defined in advance, but it carries more financial risk for the homeowner.',
+          'ETR uses a HIA fixed-price renovation contract. The price is tied to the agreed scope and does not change unless a variation is approved in writing.',
+        ],
+      },
+      {
+        heading: 'Payment schedule',
+        paragraphs: [
+          'The contract sets out when payments are due. A standard schedule for a bathroom renovation is a deposit (typically 10 to 30 percent), one or two progress payments tied to milestones (such as completion of waterproofing and completion of tiling), and a final payment on handover.',
+          'In NSW, the Home Building Act caps the deposit for residential work at 10 percent for contracts over $20,000. For contracts under $20,000, a reasonable deposit is agreed between the parties.',
+          'ETR\'s payment schedule is 30 percent deposit, 40 percent at a defined milestone and 30 percent on completion. This is set out in the contract before work starts.',
+        ],
+      },
+      {
+        heading: 'Variations and extras',
+        paragraphs: [
+          'A variation is a change to the agreed scope — a different tile, an additional niche, a wall that needs reframing because of rot. The contract should state that variations must be agreed in writing before the extra work begins, and that the cost of the variation is documented.',
+          'Verbal agreements about extras are hard to prove. A good contract makes variations a formal process — a written description of the change, the cost impact, and both parties\' signatures — so there are no surprises on the final invoice.',
+        ],
+      },
+      {
+        heading: 'Warranty and insurance',
+        paragraphs: [
+          'The contract should state the workmanship warranty period. ETR provides a 10-year workmanship warranty. This covers the builder\'s work — not the products themselves, which carry the manufacturer\'s warranty separately.',
+          'The builder should hold public liability insurance and workers\' compensation insurance. In NSW, for residential work over $20,000, the builder must also provide a Home Building Compensation Fund (HBCF) certificate, which protects the homeowner if the builder cannot complete the work.',
+          'Our <a href="/blog/bathroom-renovation-insurance-australia/" class="et-link">insurance guide</a> covers what insurance means for you during a renovation.',
+        ],
+      },
+      {
+        heading: 'What ETR\'s contract covers',
+        paragraphs: [
+          'ETR uses a HIA fixed-price renovation contract — a standard industry document published by the Housing Industry Association. It covers scope, pricing, payment schedule, variations, warranty, insurance, dispute resolution and cooling-off period.',
+          'The contract is explained before you sign. Every job is carried out under NSW Builder Licence 475204C, with $20 million public liability insurance and a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is a written contract required for a bathroom renovation?',
+        answer: 'In NSW, yes — for residential building work over $5,000, a written contract is required by law. For work over $20,000, the Home Building Act requires specific clauses including a cooling-off period and a progress payment schedule.',
+      },
+      {
+        question: 'What is a HIA contract?',
+        answer: 'A HIA contract is a standard-form building contract published by the Housing Industry Association. It is widely used in residential renovations across Australia. It covers scope, pricing, payments, variations, warranty, insurance and dispute resolution in a format that meets legal requirements.',
+      },
+      {
+        question: 'Can I negotiate the payment schedule?',
+        answer: 'The schedule is usually set by the contract type and legal requirements. In NSW, the deposit is capped at 10 percent for contracts over $20,000. Progress payments are tied to milestones. The final payment is due on completion and handover.',
+      },
+      {
+        question: 'What happens if the builder finds a problem during the renovation?',
+        answer: 'Under a fixed-price contract, the builder discusses the problem with you, describes the extra work needed, provides a cost for the variation and gets your written approval before proceeding. The variation is documented and added to the contract.',
+      },
+      {
+        question: 'What should I do before signing a renovation contract?',
+        answer: 'Read the full document. Check that the scope lists every inclusion. Confirm the payment schedule. Verify the builder\'s licence number on the NSW Fair Trading register. Ask for proof of insurance. Understand how variations are handled. Ask any questions before you sign.',
+      },
+    ],
+  },
+
+  {
+    slug: 'aging-in-place-bathroom-design',
+    title: 'Aging in place: designing a bathroom for the years ahead',
+    metaTitle: 'Aging in Place Bathroom Design Australia',
+    description: 'How to design a bathroom that works now and adapts as you age — grab rail blocking, curbless showers, wider doorways and universal design principles.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What aging in place means for a bathroom',
+        paragraphs: [
+          'Aging in place means staying in your own home as you get older, rather than moving to assisted living or a retirement community. The bathroom is the room most likely to need changes, because it involves wet surfaces, stepping over thresholds, reaching overhead and standing on one leg.',
+          'The smartest time to plan for these changes is during a renovation. Adding structural blocking for grab rails costs almost nothing when the walls are open. Retrofitting them into a finished bathroom costs significantly more and may not be possible without damage.',
+        ],
+      },
+      {
+        heading: 'Curbless showers',
+        paragraphs: [
+          'A curbless (or zero-threshold) shower has no step or hob at the entry. The floor is graded to a drain, and water is contained by the fall of the floor rather than a raised edge. This is safer for anyone with limited mobility, balance concerns or a wheelchair.',
+          'Curbless showers are also easier to clean, look more open and suit the walk-in shower trend. Our <a href="/blog/wet-room-bathroom-renovation/" class="et-link">wet room guide</a> covers the design and waterproofing details for this style of shower.',
+          'The floor gradient must be precise — steep enough to drain water but gentle enough to stand on comfortably. A linear drain along one wall is the most common solution in a curbless shower.',
+        ],
+      },
+      {
+        heading: 'Grab rail blocking',
+        paragraphs: [
+          'Grab rails need a solid mounting point — timber blocking behind the wall lining, fixed between the studs. If the blocking is not there when the wall is built, the grab rail cannot be safely installed later without opening the wall.',
+          'During a renovation, the builder installs timber blocking at standard grab rail heights (800 to 900 millimetres for a horizontal rail beside the toilet, 900 to 1,200 millimetres for a vertical rail in the shower). The blocking is hidden behind the tiles. The rails can be added at any time in the future without disturbing the wall.',
+          'This is the single most cost-effective aging-in-place feature. It costs less than $100 in materials and five minutes of labour when the walls are open. Retrofitting it later can cost $500 to $1,000 or more.',
+        ],
+      },
+      {
+        heading: 'Wider doorways',
+        paragraphs: [
+          'A standard bathroom door is 720 millimetres wide. A wheelchair needs at least 820 millimetres. If the wall is being moved or the door frame replaced during the renovation, widening the doorway to 820 or 870 millimetres is a small extra cost.',
+          'A wider door also makes the room easier to use with a walking frame, crutches or when carrying a child. It is not only about wheelchairs — it is about making the room work for more situations.',
+        ],
+      },
+      {
+        heading: 'Non-slip flooring',
+        paragraphs: [
+          'Slip-and-fall injuries in the bathroom are a leading cause of hospital admissions for older Australians. The floor tile must be slip-resistant when wet — rated R10 or higher under AS 4586.',
+          'Matt and textured porcelain tiles provide good grip without looking clinical. Polished tiles are not suitable for a bathroom floor at any age, but they are especially dangerous for anyone with reduced balance or reaction time.',
+          'Our <a href="/blog/bathroom-flooring-options-renovation/" class="et-link">flooring guide</a> covers slip ratings and material options in detail.',
+        ],
+      },
+      {
+        heading: 'Comfort height toilet and lever taps',
+        paragraphs: [
+          'A comfort-height toilet (also called a raised-height or accessible-height toilet) sits 60 to 80 millimetres higher than a standard model. It is easier to sit down on and stand up from, and it reduces the strain on knees and hips.',
+          'Lever taps are easier to operate than knob taps for anyone with reduced grip strength — arthritis, for example. They are also the standard in most modern tapware ranges, so they do not look institutional.',
+        ],
+      },
+      {
+        heading: 'How ETR designs for the future',
+        paragraphs: [
+          'We install grab rail blocking as standard in every renovation we do. It costs almost nothing during the build and makes a significant difference if rails are needed later. Curbless showers, wider doors and comfort-height toilets are discussed at the design phase.',
+          'Our <a href="/blog/accessible-bathroom-renovation-sydney/" class="et-link">accessible bathroom guide</a> covers the full range of accessibility features. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is aging-in-place design only for older people?',
+        answer: 'No. Universal design works for everyone — families with young children, anyone recovering from an injury, and people who want a bathroom that works long-term without future renovations. A curbless shower and lever taps are good design for any age.',
+      },
+      {
+        question: 'How much extra does aging-in-place design cost?',
+        answer: 'Very little when done during a renovation. Grab rail blocking is under $100 in materials. A curbless shower costs about the same as a hob shower. A wider door frame is a modest extra if the wall is already being framed. The biggest cost savings come from doing it now rather than retrofitting later.',
+      },
+      {
+        question: 'Can I get funding for aging-in-place modifications?',
+        answer: 'In Australia, home modifications may be covered through the Commonwealth Home Support Programme, a Home Care Package, or the NDIS, depending on your eligibility and care needs. Your GP or an occupational therapist can refer you for an assessment.',
+      },
+      {
+        question: 'What is the difference between accessible and aging-in-place design?',
+        answer: 'Accessible design addresses current needs — someone who uses a wheelchair or has a disability now. Aging-in-place design plans for future needs — structural preparation (like grab rail blocking) that makes the bathroom easy to adapt later without a second renovation.',
+      },
+      {
+        question: 'Should I install grab rails now or just the blocking?',
+        answer: 'If you need them now, install them now. If you are planning ahead, the blocking is enough. Modern grab rails come in styles that match contemporary tapware — chrome, matt black, brushed nickel — so they do not look clinical when the time comes.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-paint-guide-renovation',
+    title: 'Bathroom paint: where to use it, what type and when tiles are better',
+    metaTitle: 'Bathroom Paint Guide Renovation Australia',
+    description: 'Where to use paint in a bathroom renovation, what type to choose, how to handle moisture and when tiling is the smarter long-term option.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Paint still has a place in a bathroom',
+        paragraphs: [
+          'Not every surface in a bathroom needs to be tiled. The ceiling, the upper walls above the splash zone and any feature walls away from water are typically painted. Paint is cheaper than tile, faster to apply and easier to change if you want a new colour in a few years.',
+          'The key is choosing the right paint for a wet room and using it only where moisture exposure is manageable. Paint in the wrong place — behind a basin, in a shower recess — fails quickly and leads to peeling, mould and ongoing maintenance.',
+        ],
+      },
+      {
+        heading: 'Where paint works',
+        paragraphs: [
+          'The ceiling. Almost every bathroom ceiling is painted, not tiled. Moisture-rated paint in a semi-gloss or satin finish handles the steam from showers. Our <a href="/blog/bathroom-ceiling-renovation-guide/" class="et-link">ceiling guide</a> covers what to use and when the ceiling board needs replacing.',
+          'Upper walls above the tile line. In many bathrooms, tiles go to 1,200 or 1,800 millimetres on non-shower walls, and paint covers the area from the tile top to the ceiling. This zone gets humidity but not direct water contact.',
+          'Feature walls. A painted feature wall — a dark colour, a textured finish, or a two-tone scheme — adds character to a bathroom without the cost of feature tiles. It works best on walls away from the shower and basin.',
+        ],
+      },
+      {
+        heading: 'Where tiles are better',
+        paragraphs: [
+          'Behind the vanity (the splashback area), behind the bath, inside the shower recess and any surface that gets direct water contact. These areas need a waterproof, durable, easy-to-clean surface that paint cannot provide long-term.',
+          'Our <a href="/blog/bathroom-splashback-ideas-renovation/" class="et-link">splashback guide</a> covers the options for behind the vanity — tiles, glass and panels. In the shower, tiles over a waterproof membrane is the standard.',
+        ],
+      },
+      {
+        heading: 'Choosing the right paint',
+        paragraphs: [
+          'For a bathroom, use a paint rated for wet areas. Most major Australian paint brands — Dulux, Taubmans, Haymes — have a bathroom-specific or kitchen-and-bathroom range formulated with extra mould resistance and moisture tolerance.',
+          'Finish matters. Semi-gloss and satin finishes shed moisture and are easier to wipe clean than flat or matt finishes. A flat finish looks good but absorbs moisture and marks more easily in a humid room.',
+          'Low-VOC paints reduce the chemical fumes during and after painting. In a bathroom with limited ventilation, this is worth the small premium. Our <a href="/blog/eco-friendly-bathroom-renovation/" class="et-link">eco-friendly renovation guide</a> covers low-VOC choices alongside other sustainable options.',
+        ],
+      },
+      {
+        heading: 'Preparation is everything',
+        paragraphs: [
+          'Paint adheres to a clean, dry, properly prepared surface. In a bathroom renovation, the wall is typically new moisture-resistant plasterboard (green board), which needs a primer coat before the paint. Existing walls need sanding, filling and priming to get a smooth base.',
+          'If the existing paint is peeling or there are signs of moisture damage underneath, the wall lining should be replaced rather than painted over. Painting over a damaged surface traps moisture and makes the problem worse.',
+        ],
+      },
+      {
+        heading: 'Colour choices for bathrooms',
+        paragraphs: [
+          'Light colours make a small bathroom feel larger. White, off-white, light grey and soft neutrals are the most popular bathroom paint colours because they reflect light and work with any tile and tapware scheme.',
+          'Dark colours — charcoal, navy, deep green — work as feature walls or in larger bathrooms where the dark colour does not shrink the room. In a small bathroom, a dark ceiling can feel oppressive.',
+          'Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how to coordinate paint, tiles and fixtures into a cohesive palette.',
+        ],
+      },
+      {
+        heading: 'How ETR handles painted surfaces',
+        paragraphs: [
+          'The ceiling and upper walls are painted after tiling is complete, so no paint is splashed during the tile phase. We use moisture-rated paint on all bathroom surfaces and prime new plasterboard before painting.',
+          'The paint colour is chosen during the selections process, alongside the tiles and tapware. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I just paint over the existing bathroom walls?',
+        answer: 'If the walls are in good condition — no peeling, no moisture damage, no mould — yes, with proper preparation (sanding, filling, priming). If there is damage, the wall lining should be replaced before painting. Painting over damage traps moisture and makes it worse.',
+      },
+      {
+        question: 'What paint finish is best for a bathroom?',
+        answer: 'Semi-gloss or satin. These finishes resist moisture and are easy to wipe clean. Flat or matt finishes absorb moisture and mark more easily in a humid room. Semi-gloss is the most common choice for bathroom ceilings and walls.',
+      },
+      {
+        question: 'How often does bathroom paint need redoing?',
+        answer: 'In a well-ventilated bathroom with moisture-rated paint, five to eight years before it needs a fresh coat. In a poorly ventilated bathroom, paint can start peeling or growing mould within two to three years. Good ventilation extends the life of every surface.',
+      },
+      {
+        question: 'Is mould-resistant paint actually effective?',
+        answer: 'It helps, but it is not a substitute for ventilation. Mould-resistant paint contains a fungicide that slows mould growth on the painted surface. If the underlying cause — poor ventilation, failed waterproofing — is not addressed, the paint delays mould but does not prevent it.',
+      },
+      {
+        question: 'Should I tile all the way to the ceiling?',
+        answer: 'In the shower, yes — full-height tiles are standard. On other walls, tiles to 1,200 or 1,800 millimetres with paint above is the most common and cost-effective approach. Full-height tiles on every wall is a premium choice that adds cost.',
+      },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {

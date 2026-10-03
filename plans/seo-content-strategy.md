@@ -3,7 +3,7 @@
 **Outcome:** Double organic traffic within 6 months by publishing 2 blog posts per week targeting
 low-to-medium competition bathroom renovation keywords with genuine search volume.
 
-**Status:** Three batches complete — 30 articles written (weeks 1–15), all building green, 78/78 readability pass. Next: extend calendar for weeks 16–20 and continue the 2x/week cadence.
+**Status:** Four batches complete — 40 articles written (weeks 1–20), all building green, 88/88 readability pass. Blog total: 60 posts. Next: extend calendar for weeks 21–26 and continue toward ~52 new articles.
 
 ---
 
@@ -140,6 +140,50 @@ in the 20 current blog posts.
 - [x] **Bathroom splashback ideas: tiles, glass and panels** — design/material intent.
   Material options beyond standard tiles. Waterproofing behind splashbacks. Complements colour schemes.
   Target: "bathroom splashback ideas renovation australia"
+
+---
+
+## Content Calendar — Next 10 Topics (Weeks 16–20)
+
+### Week 16
+- [x] **Bathroom waterproofing explained: what every homeowner should know** — process/trust intent.
+  High search volume ("bathroom waterproofing" 1K+). Distinct from waterproofing certificate article (process vs document).
+  Target: "bathroom waterproofing explained australia"
+- [x] **Bathroom renovation waste: what gets removed and where it goes** — process/practical intent.
+  Skip bins, recycling, asbestos testing. Complements demolition article with the "what happens to the rubble" angle.
+  Target: "bathroom renovation waste disposal sydney"
+
+### Week 17
+- [x] **Bathroom renovation for investment properties: what to spend and what to skip** — planning/ROI intent.
+  Different from resale article (investor audience, not owner-occupier). Budget allocation, tenant appeal, durability.
+  Target: "bathroom renovation investment property australia"
+- [x] **Bathroom ceiling renovation: what most people overlook** — process/design intent.
+  Moisture damage, exhaust penetrations, paint vs tiles, lighting recesses. Commonly neglected topic.
+  Target: "bathroom ceiling renovation guide"
+
+### Week 18
+- [x] **Bathroom renovation electrical work: what changes and what stays** — process/compliance intent.
+  Lighting circuits, exhaust fans, heated towel rail wiring, safety switches, AS/NZS 3000. Complements plumbing article.
+  Target: "bathroom renovation electrical work guide"
+- [x] **Bathroom flooring options: tiles, vinyl and what works in wet areas** — product/design intent.
+  Slip resistance (AS 4586), porcelain vs ceramic, waterproofing under floors. Broader than large-format guide.
+  Target: "bathroom flooring options renovation australia"
+
+### Week 19
+- [x] **The bathroom renovation design process: from first ideas to final plans** — process intent.
+  How design works at ETR. Farah Dawood's role. Mood boards, layout drawings, selections, approvals.
+  Target: "bathroom renovation design process steps"
+- [x] **What to look for in a bathroom renovation contract** — legal/trust intent.
+  HIA contracts, variations, payment schedules, warranty clauses. Builds trust and credibility.
+  Target: "bathroom renovation contract guide australia"
+
+### Week 20
+- [x] **Aging in place: designing a bathroom for the years ahead** — needs-based/future-proofing intent.
+  Distinct from accessible article. Future-proofing, universal design, grab rail blocking, curbless showers.
+  Target: "aging in place bathroom design australia"
+- [x] **Bathroom paint: where to use it, what type and when tiles are better** — practical/material intent.
+  Ceiling paint, wall areas above tiles, moisture-rated paint, mould-resistant formulas. Practical gap filler.
+  Target: "bathroom paint guide renovation australia"
 
 ---
 
