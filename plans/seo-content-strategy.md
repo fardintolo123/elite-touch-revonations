@@ -3,7 +3,7 @@
 **Outcome:** Double organic traffic within 6 months by publishing 2 blog posts per week targeting
 low-to-medium competition bathroom renovation keywords with genuine search volume.
 
-**Status:** Four batches complete — 40 articles written (weeks 1–20), all building green, 88/88 readability pass. Blog total: 60 posts. Next: extend calendar for weeks 21–26 and continue toward ~52 new articles.
+**Status:** Five batches complete — 52 articles written (weeks 1–26), all building green, 100/100 readability pass. Blog total: 72 posts. Target reached: 52 new articles across 26 weeks.
 
 ---
 
@@ -184,6 +184,58 @@ in the 20 current blog posts.
 - [x] **Bathroom paint: where to use it, what type and when tiles are better** — practical/material intent.
   Ceiling paint, wall areas above tiles, moisture-rated paint, mould-resistant formulas. Practical gap filler.
   Target: "bathroom paint guide renovation australia"
+
+---
+
+## Content Calendar — Final 12 Topics (Weeks 21–26)
+
+### Week 21
+- [x] **How to choose a bathroom renovator in Sydney** — trust/decision intent.
+  High bottom-of-funnel volume ("choose bathroom renovator sydney"). Builds trust. Licence, insurance, portfolio, communication.
+  Target: "how to choose bathroom renovator sydney"
+- [x] **Bathroom accessories and hardware: the finishing touches that matter** — product/design intent.
+  Towel rails, hooks, toilet roll holders, matching finishes. Complements tapware finishes guide.
+  Target: "bathroom accessories hardware guide renovation"
+
+### Week 22
+- [x] **Toilet upgrades during a bathroom renovation: types, costs and what to know** — product/practical intent.
+  Wall-hung, back to wall, close coupled. WELS ratings, cost range. Few renovators cover this topic.
+  Target: "toilet types bathroom renovation australia"
+- [x] **Double vanity vs single vanity: which suits your bathroom?** — comparison/decision intent.
+  Space requirements, plumbing implications, cost difference. Complements vanity guide.
+  Target: "double vanity vs single vanity bathroom"
+
+### Week 23
+- [x] **Bathroom renovation scope: how to manage changes without blowing the budget** — process/planning intent.
+  Scope creep, variations, late changes, contract clauses. Complements budget and contract guides.
+  Target: "bathroom renovation scope creep changes budget"
+- [x] **Shower seats and bench seating: comfort, safety and style** — design/accessibility intent.
+  Built-in vs removable, waterproofing, sizing. Complements accessible bathroom and aging-in-place guides.
+  Target: "shower seat bench bathroom renovation design"
+
+### Week 24
+- [x] **Bathroom layout changes: when to move plumbing and when to keep it** — design/process intent.
+  Cost of moving plumbing, structural walls, common layout improvements. Complements plumbing and design process guides.
+  Target: "bathroom layout changes moving plumbing renovation"
+- [x] **Wall-hung vs floor-mounted bathroom fixtures: pros, cons and cost** — comparison/design intent.
+  Vanities, toilets, basins. Installation requirements, cleaning, modern look. Complements toilet and vanity guides.
+  Target: "wall hung vs floor mounted bathroom fixtures"
+
+### Week 25
+- [x] **How to plan bathroom storage during a renovation** — practical/design intent.
+  Vanity drawers, niches, medicine cabinets, tall boys. Broader than small-bathroom storage article.
+  Target: "bathroom storage planning renovation guide"
+- [x] **Bathroom renovation and your neighbours: managing noise and access** — process/practical intent.
+  Noise hours, access, dust, strata rules, communication. Few renovators address this.
+  Target: "bathroom renovation neighbours noise management"
+
+### Week 26
+- [x] **Ensuite renovation ideas: layout, design and what to prioritise** — design/service intent.
+  Supports the ensuite service page. Space constraints, privacy, ventilation. Distinct from main bathroom articles.
+  Target: "ensuite renovation ideas layout design"
+- [x] **Powder room renovation: making a small space shine** — design/service intent.
+  Supports the powder room service page. Statement walls, compact vanities, lighting, guest impression.
+  Target: "powder room renovation ideas guide"
 
 ---
 

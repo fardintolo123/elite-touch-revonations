@@ -3860,6 +3860,941 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'how-to-choose-bathroom-renovator-sydney',
+    title: 'How to choose a bathroom renovator in Sydney',
+    metaTitle: 'How to Choose a Bathroom Renovator Sydney',
+    description: 'What to check before hiring a bathroom renovator in Sydney. Licence, insurance, portfolio, reviews, quotes and red flags — a practical guide.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why the choice matters more than the price',
+        paragraphs: [
+          'A bathroom renovation costs tens of thousands of dollars and takes weeks. The person you hire controls the quality, the timeline and the outcome. A wrong choice means rework, delays, or a result that does not last.',
+          'Sydney has hundreds of bathroom renovators. Some are licensed builders with decades of trade skill. Others are handymen with a website. The gap between them is not always obvious from a quote or a photo.',
+        ],
+      },
+      {
+        heading: 'Check the licence first',
+        paragraphs: [
+          'In NSW, any home building work over $5,000 must be done by a licensed contractor. The licence is issued by NSW Fair Trading. You can check it on the Fair Trading website in under a minute.',
+          'A licensed builder has passed trade and business tests, holds public liability cover, and is backed by the Home Building Fund for work over $20,000. An unlicensed operator has none of this.',
+          'Elite Touch Renovations holds NSW Builder Licence 475204C. Adam Dawood has over 25 years of tiling and renovation skill. Omar Dawood is the licensed builder and civil engineer who founded the company in 2022.',
+        ],
+      },
+      {
+        heading: 'Cover and warranty',
+        paragraphs: [
+          'Ask for proof of public liability cover — at least $10 million is standard for home work. Workers comp cover is also needed if the business has staff.',
+          'A written warranty protects you after the job is done. ETR provides a 10-year workmanship warranty on every renovation. Our <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">contract guide</a> explains what should be in your contract, including warranty clauses.',
+        ],
+      },
+      {
+        heading: 'Portfolio and reviews',
+        paragraphs: [
+          'Ask to see finished projects — real photos, not stock images. A strong portfolio shows a range of styles, steady quality and care in the details.',
+          'Read reviews from named customers, not unnamed quotes. Kieran C wrote about our work: "The finished tiling was first class with good falls, neat consistent joints, clean cuts and no lippage."',
+          'Ken Chen noted that "Omar, Adam and the team did an excellent job renovating our main bathroom, ensuite and standalone toilet" and that "they were professional, honest and provided us with regular updates throughout the job."',
+        ],
+      },
+      {
+        heading: 'How they talk to you',
+        paragraphs: [
+          'Good updates are the most common praise in renovation reviews — and the most common gripe when missing. Ask how the renovator keeps you in the loop. Do they send daily progress photos? Do they answer calls and messages fast?',
+          'Our <a href="/blog/bathroom-renovation-design-process/" class="et-link">design process guide</a> explains how we handle the journey from first ideas to final plans. Farah Dawood leads the design phase, working with each client to turn their vision into a buildable plan.',
+        ],
+      },
+      {
+        heading: 'The quote and what it should include',
+        paragraphs: [
+          'A proper quote lists every item: demolition, sealing, plumbing, electrical, tiling, fixtures, fittings and clean-up. It states the total price, the payment schedule and the expected timeline.',
+          'ETR provides fixed-scope written quotes after a free on-site measure anywhere in Sydney. Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing quotes</a> shows you how to read and compare them side by side.',
+          'Be wary of quotes that are vague, very cheap, or given without a site visit. A bathroom cannot be quoted well from a phone call or a photo.',
+        ],
+      },
+      {
+        heading: 'Red flags to watch for',
+        paragraphs: [
+          'No licence number on the quote or website. No written contract. Pressure to sign fast. A request for a large upfront deposit with no staged payment plan. No references or portfolio. No fixed address or ABN.',
+          'Our ABN is 92 679 016 721. We are a family-run business — Omar, Adam, Farah and Mohammed Dawood — based in Granville, NSW. We have been renovating bathrooms across Sydney since 2022. Call us on 0411 752 334 for a free on-site measure.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need a licensed builder for a bathroom renovation in Sydney?',
+        answer: 'Yes. Any home building work over $5,000 in NSW must be done by a licensed contractor. The licence can be checked on the NSW Fair Trading website. Unlicensed work is not covered by the Home Building Fund.',
+      },
+      {
+        question: 'How many quotes should I get for a bathroom renovation?',
+        answer: 'Three is the standard advice. More than three makes it harder to compare without adding much clarity. Make sure each quote covers the same scope so you are comparing like for like.',
+      },
+      {
+        question: 'What questions should I ask a bathroom renovator before hiring?',
+        answer: 'Ask for their licence number, proof of cover, a written warranty, a detailed quote with what is and is not included, a timeline, a payment schedule, and references from recent projects.',
+      },
+      {
+        question: 'How do I check a builder licence in NSW?',
+        answer: 'Go to the NSW Fair Trading website and search by licence number or business name. The search shows the licence type, holder name, status and any conditions. It takes under a minute.',
+      },
+      {
+        question: 'What is the Home Building Fund?',
+        answer: 'A government-backed fund that protects homeowners if a licensed builder cannot finish the work or fix defects — for example, if they become insolvent. It applies to home work over $20,000 in NSW. Unlicensed work is not covered.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-accessories-hardware-guide',
+    title: 'Bathroom accessories and hardware: the finishing touches that matter',
+    metaTitle: 'Bathroom Accessories Hardware Guide Renovation',
+    description: 'How to choose bathroom accessories and hardware during a renovation. Towel rails, hooks, toilet roll holders, matching finishes and when to select them.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why hardware matters',
+        paragraphs: [
+          'Tiles, vanity and tapware get the most attention during a bathroom renovation. But the smaller items — towel rails, hooks, toilet roll holders and robe hooks — are what you touch every day. If they wobble, clash or are in the wrong spot, the whole room feels unfinished.',
+          'Hardware is also one of the easiest things to get right, because it is chosen late in the process and costs far less than tiles or fixtures. A full hardware pack for a bathroom costs $200 to $600 depending on finish and brand.',
+        ],
+      },
+      {
+        heading: 'Towel rails and hooks',
+        paragraphs: [
+          'A towel rail (or bar) holds bath towels flat so they dry faster. A hook holds a robe or a towel folded in half. Most bathrooms need at least one rail near the shower and one hook on the door or wall.',
+          'Single rails suit smaller bathrooms. Double rails hold two towels in the same wall space. Heated towel rails combine drying and warming — our <a href="/blog/heated-towel-rail-bathroom-guide/" class="et-link">heated towel rail guide</a> covers types and running costs.',
+          'Place towel rails within arm\'s reach of the shower, at a height that keeps the towel off the floor. Standard height is 900 to 1,200 millimetres above the floor.',
+        ],
+      },
+      {
+        heading: 'Toilet roll holders and brushes',
+        paragraphs: [
+          'A toilet roll holder should be within easy reach of the toilet — 600 to 700 millimetres from the centre of the toilet, at a height of about 660 millimetres. Recessed holders sit flush with the wall and save space in tight rooms.',
+          'A toilet brush holder is a small detail that makes a real difference to the look of the room. Matching it to the towel rail and robe hook creates a clean, finished feel.',
+        ],
+      },
+      {
+        heading: 'Matching finishes to tapware',
+        paragraphs: [
+          'Choose hardware in the same finish as your tapware and shower fittings. If your taps are matte black, your towel rail, hooks and holders should be matte black too. Mixing chrome and black in the same room looks unplanned.',
+          'Common finishes in 2026 are matte black, brushed nickel, brushed brass and chrome. Our <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware finishes guide</a> covers the pros and cons of each finish and how they wear over time.',
+        ],
+      },
+      {
+        heading: 'When to choose hardware',
+        paragraphs: [
+          'Hardware is selected during the fixtures and fittings stage — after tiles and tapware are locked in, but before the final fit-off. This timing matters because the builder needs to know where to place wall mounting points.',
+          'Phil Deayton said about our work: "Would definitely recommend them, especially for their attention to detail. It was 100%." Those small details — level rails, centred hooks, matched finishes — add up to a room that feels complete.',
+        ],
+      },
+      {
+        heading: 'Getting the details right with ETR',
+        paragraphs: [
+          'Hardware placement is part of our design process. During the free on-site measure, we note where towels will hang, where robes will go and which hand reaches for the toilet roll. These details are planned, not guessed.',
+          'Every bathroom renovation starts with a free on-site measure anywhere in Sydney. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What bathroom accessories do I need?',
+        answer: 'At a minimum: one towel rail or bar, one or two hooks (robe or towel), a toilet roll holder and a toilet brush holder. A soap dish or dispenser and a bath shelf are optional but useful. Choose them all in the same finish.',
+      },
+      {
+        question: 'Should bathroom hardware match the tapware?',
+        answer: 'Yes. Matching the finish (matte black, chrome, brushed nickel) across tapware, shower fittings and hardware creates a unified look. Mixing finishes in the same room looks unplanned.',
+      },
+      {
+        question: 'How much do bathroom accessories cost?',
+        answer: 'A basic hardware pack (towel rail, hook, toilet roll holder, brush holder) costs $200 to $400 in chrome or matte black. Premium brands or brushed brass finishes cost $400 to $600 or more.',
+      },
+      {
+        question: 'Can I add accessories after the renovation is finished?',
+        answer: 'Surface-mounted accessories (hooks, rails with visible screws) can be added at any time. Recessed accessories (in-wall holders, niches) must be planned during the renovation because they need a cavity in the wall.',
+      },
+      {
+        question: 'Where should I put the towel rail in a bathroom?',
+        answer: 'Within arm\'s reach of the shower, at a height of 900 to 1,200 millimetres above the floor. If space is tight, a hook on the back of the door works as an alternative.',
+      },
+    ],
+  },
+  {
+    slug: 'toilet-upgrade-guide-bathroom-renovation',
+    title: 'Toilet upgrades during a bathroom renovation: types, costs and what to know',
+    metaTitle: 'Toilet Types Bathroom Renovation Guide Australia',
+    description: 'A guide to toilet types for bathroom renovations in Australia. Back to wall, wall-hung and close coupled — what each costs, how they install and which suits your bathroom.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why the toilet matters in a renovation',
+        paragraphs: [
+          'The toilet is the most-used fixture in the bathroom. Yet it is often the last thing people think about during a renovation. Choosing the right type affects the look of the room, how easy it is to clean, and how much water the household uses.',
+          'A new toilet suite costs $400 to $2,500 depending on the type and brand. The fitting cost is $200 to $600. Given that the toilet will be used ten to fifteen thousand times a year, it is worth getting right.',
+        ],
+      },
+      {
+        heading: 'Back to wall toilets',
+        paragraphs: [
+          'A back to wall toilet sits flush against the wall. The cistern is hidden — either in the wall cavity or inside a furniture unit. The result is a clean, modern look with no exposed pipes or tanks.',
+          'These are the most popular choice in Australian bathroom renovations in 2026. They are easy to clean because there are no gaps behind the pan where dust and grime collect. They suit most bathroom sizes and styles.',
+        ],
+      },
+      {
+        heading: 'Wall-hung toilets',
+        paragraphs: [
+          'A wall-hung toilet is mounted on the wall, with the pan off the floor. The cistern is concealed inside the wall. This creates a floating look and makes it very easy to clean the floor beneath.',
+          'Wall-hung toilets need a strong mounting frame inside the wall cavity, which adds to the fitting cost. They work well in modern, minimal bathrooms and save a small amount of floor space. The pan height can be set to suit the user — a benefit for taller people or those with mobility needs.',
+          'Our <a href="/blog/wall-hung-vs-floor-mounted-fixtures/" class="et-link">wall-hung vs floor-mounted guide</a> compares these options across all bathroom fixtures.',
+        ],
+      },
+      {
+        heading: 'Close coupled toilets',
+        paragraphs: [
+          'A close coupled toilet has the cistern bolted directly on top of the pan. It is the most common type in existing Australian homes and the cheapest to buy and fit. The cistern is visible but sits right against the bowl.',
+          'These are a good budget choice when the plumbing stays in the same place. They are simple to install, easy to repair and widely available. The trade-off is a bulkier look compared to a back to wall or wall-hung model.',
+        ],
+      },
+      {
+        heading: 'Water ratings and WELS',
+        paragraphs: [
+          'Every toilet sold in Australia carries a WELS (Water Efficiency Labelling and Standards) star rating. A 4-star dual-flush toilet uses about 4.5 litres on a full flush and 3 litres on a half flush.',
+          'Replacing an old single-flush toilet with a 4-star dual-flush model can save 30,000 to 50,000 litres of water per year in a four-person household. Our <a href="/blog/eco-friendly-bathroom-renovation/" class="et-link">eco-friendly renovation guide</a> covers WELS ratings for all fixtures.',
+        ],
+      },
+      {
+        heading: 'Cost range and what ETR recommends',
+        paragraphs: [
+          'Budget (close coupled): $400 to $700 supply plus $200 to $400 fitting. Mid-range (back to wall): $600 to $1,200 supply plus $300 to $500 fitting. Premium (wall-hung): $1,000 to $2,500 supply plus $500 to $800 fitting (including the concealed frame).',
+          'Ken Chen said that "Omar, Adam and the team did an excellent job renovating our main bathroom, ensuite and standalone toilet." The right toilet type is chosen during the design phase, based on the layout, budget and style of the room.',
+          'A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Which toilet type is easiest to clean?',
+        answer: 'Wall-hung, because the pan is off the floor and you can mop underneath. Back to wall is a close second — no gaps behind the pan. Close coupled is the hardest because of the join between the cistern and the bowl.',
+      },
+      {
+        question: 'How much does a new toilet cost in a bathroom renovation?',
+        answer: 'Supply plus fitting: $600 to $1,100 for a close coupled, $900 to $1,700 for a back to wall, and $1,500 to $3,300 for a wall-hung with concealed frame. These are typical ranges for mid-quality Australian brands.',
+      },
+      {
+        question: 'Can I change from a close coupled toilet to a wall-hung?',
+        answer: 'Yes, but it requires changes to the plumbing and wall framing. A concealed cistern frame must be installed inside the wall cavity. This is easiest during a full renovation when the walls are already open.',
+      },
+      {
+        question: 'What WELS rating should I look for in a toilet?',
+        answer: 'A 4-star dual-flush model is the current standard. It uses about 4.5 litres on a full flush and 3 litres on a half flush. Some 5-star models use even less water.',
+      },
+      {
+        question: 'Do wall-hung toilets hold the weight of a heavy person?',
+        answer: 'Yes. A properly installed wall-hung toilet with a certified mounting frame holds 400 kilograms or more. The frame is bolted into the wall studs and floor, not just the plasterboard.',
+      },
+    ],
+  },
+  {
+    slug: 'double-vanity-vs-single-bathroom',
+    title: 'Double vanity vs single vanity: which suits your bathroom?',
+    metaTitle: 'Double Vanity vs Single Vanity Bathroom Guide',
+    description: 'Double vanity or single? Space needs, plumbing, cost, storage and style — how to choose the right vanity for your bathroom renovation.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'The vanity decision',
+        paragraphs: [
+          'The vanity is the centre of the bathroom. It holds the basin, stores toiletries and sets the visual tone for the room. Choosing between a single and a double vanity is one of the biggest layout decisions in a renovation.',
+          'The answer depends on room size, who uses the bathroom, and how the plumbing is set up. A double vanity is not always better — and a single vanity is not always a compromise. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers materials, mounting styles and sizing in detail.',
+        ],
+      },
+      {
+        heading: 'When a double vanity works',
+        paragraphs: [
+          'A double vanity suits a bathroom used by two people at the same time — typically a master bathroom or ensuite. It reduces morning bottlenecks and gives each person their own basin, mirror space and storage.',
+          'You need at least 1,500 millimetres of wall width for a comfortable double vanity — 1,800 millimetres is better. Below that, the basins are too close together and the bench space between them is too small to be useful.',
+          'A double vanity also needs two sets of plumbing — hot and cold supply lines and two waste connections. If the existing plumbing has only one set, adding a second adds $500 to $1,500 to the cost.',
+        ],
+      },
+      {
+        heading: 'When a single vanity is the smarter choice',
+        paragraphs: [
+          'In a bathroom under 5 square metres, a single vanity is usually the better option. It leaves more floor space for movement, towel rails and storage. A large single basin (600 to 900 millimetres) feels generous without crowding the room.',
+          'In a powder room or guest bathroom, a single vanity is standard. These rooms are used by one person at a time, so a second basin adds cost without adding function.',
+          'Our <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathroom guide</a> covers other ways to make a compact room feel larger.',
+        ],
+      },
+      {
+        heading: 'Cost difference',
+        paragraphs: [
+          'A quality single vanity (unit, basin, tapware, fitting) costs $1,500 to $4,000. A double vanity costs $2,500 to $7,000. The difference comes from the wider unit, the second basin and tapset, and the extra plumbing.',
+          'If your renovation is on a tight budget, a single vanity with a larger basin often gives a better result than a cramped double vanity where the basins are too small and too close together.',
+        ],
+      },
+      {
+        heading: 'Storage comparison',
+        paragraphs: [
+          'A double vanity is wider, so it has more drawer and cupboard space underneath. But a single vanity frees up wall space for a tall boy, a medicine cabinet, or wall-mounted shelves — which can hold just as much.',
+          'The best approach is to list what needs to be stored (toiletries, cleaning products, spare towels, medications) and then decide which layout accommodates that list better. Our <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage planning guide</a> walks through this step by step.',
+        ],
+      },
+      {
+        heading: 'How to decide',
+        paragraphs: [
+          'Measure the wall. If you have 1,800 millimetres or more and two people use the room at the same time, a double vanity is worth the extra cost. If the wall is under 1,500 millimetres or the room is used by one person at a time, a single vanity will serve you better.',
+          'Lachlan Conaty said: "They listened to what I wanted, offered great suggestions, and completed the project on time." The vanity is chosen during the design phase. A free on-site measure anywhere in Sydney is the starting point — call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How wide does a bathroom need to be for a double vanity?',
+        answer: 'At least 1,500 millimetres of wall width, but 1,800 millimetres or more is best. Below 1,500 millimetres, the basins are too close and the bench space is not useful.',
+      },
+      {
+        question: 'Does a double vanity add value to a home?',
+        answer: 'In a master bathroom or ensuite, yes — it is a feature buyers expect in mid-range to premium homes. In a small family bathroom or powder room, a well-chosen single vanity is a better use of space and money.',
+      },
+      {
+        question: 'Can I retrofit a double vanity where a single was?',
+        answer: 'If the wall is wide enough and the plumbing can be extended, yes. The plumbing work (adding a second supply and waste connection) typically costs $500 to $1,500. The wall width is the main constraint.',
+      },
+      {
+        question: 'What is the standard height for a bathroom vanity?',
+        answer: 'The standard height is 850 to 900 millimetres from the floor to the top of the bench. Wall-hung vanities can be mounted at any height to suit the user. Comfort height (900 millimetres) is becoming the new standard.',
+      },
+      {
+        question: 'Should the vanity match the rest of the bathroom?',
+        answer: 'The vanity should complement the tiles, tapware and overall colour scheme. It does not need to match exactly, but it should feel like it belongs. A timber vanity in a room with cool grey tiles can look striking if the tones are balanced.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-scope-changes',
+    title: 'Bathroom renovation scope: how to manage changes without blowing the budget',
+    metaTitle: 'Bathroom Renovation Scope Changes Budget Guide',
+    description: 'How to manage scope changes during a bathroom renovation. What triggers cost blowouts, how variations work, and how to keep your renovation on track and on budget.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'What scope changes mean for your renovation',
+        paragraphs: [
+          'Scope is the agreed list of work in your contract. A scope change — also called a variation — is anything that adds to, removes from, or alters that list after the contract is signed. Scope changes are the number one cause of budget blowouts in bathroom renovations.',
+          'Not all changes are avoidable. A hidden plumbing fault found during demolition is a genuine surprise. Deciding mid-build that you want a different tile is a choice. The cost of each is very different, and knowing the difference keeps the budget under control.',
+        ],
+      },
+      {
+        heading: 'Common triggers for scope changes',
+        paragraphs: [
+          'The most common triggers are: changing tile or fixture selections after ordering, discovering rotten framing or failed plumbing behind the walls, adding features not in the original scope (such as underfloor heating or a niche), and changing the layout after rough-in plumbing is done.',
+          'Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> explains what is found behind walls and how it affects the scope. Our <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">hidden costs guide</a> covers the financial side of surprises.',
+        ],
+      },
+      {
+        heading: 'Why late changes cost more',
+        paragraphs: [
+          'Every decision made after demolition costs more than the same decision made before it. A tile change after the original tiles have been ordered means a restocking fee, a new lead time, and a delayed site. A layout change after the plumber has done the rough-in means ripping up and redoing the plumbing.',
+          'The rule is simple: the later the change, the higher the cost. The cheapest time to make a change is during the design phase. The most costly time is during the fit-off.',
+        ],
+      },
+      {
+        heading: 'How variations work in a contract',
+        paragraphs: [
+          'A variation is a written change to the contract. Under the NSW Home Building Act, any change to the scope or price must be documented and signed by both parties before the work is done.',
+          'A good builder will present a variation form that states what is changing, why, how much it adds (or saves), and what it does to the timeline. You should never be asked to agree to a price increase verbally or after the fact.',
+          'Our <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">contract guide</a> explains what your contract should say about variations.',
+        ],
+      },
+      {
+        heading: 'How to prevent scope creep',
+        paragraphs: [
+          'Make all design decisions before signing the contract. Lock in tiles, tapware, fixtures, layout and finishes during the design phase. Visit showrooms, compare samples and make final selections before demolition day.',
+          'Set a realistic contingency — 10 to 15 per cent of the contract price — for genuine surprises like hidden damage. This is not a second budget for upgrades. It is a safety net for unknowns.',
+          'Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> walks through how to build a realistic budget with a proper contingency.',
+        ],
+      },
+      {
+        heading: 'How ETR keeps projects on scope',
+        paragraphs: [
+          'Our design process locks in every selection before the contract is signed. Tiles, tapware, fixtures, layout, hardware — all confirmed and ordered before demolition begins. This removes the most common trigger for variations.',
+          'Dinous Bakini said: "They completed the project on time and within budget, and the quality of their work is outstanding." Huseyin Sumaktas added: "The work that Elite Touch Renovations did for me was perfect, well priced, and they had great communication and service."',
+          'A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What is a variation in a bathroom renovation contract?',
+        answer: 'A written change to the agreed scope or price. Under the NSW Home Building Act, any change must be documented and signed by both parties before the work is done. Never agree to a price change verbally.',
+      },
+      {
+        question: 'How much contingency should I set aside for a bathroom renovation?',
+        answer: 'Ten to fifteen per cent of the contract price. This covers genuine surprises like hidden water damage or faulty plumbing. It is not a second budget for design upgrades.',
+      },
+      {
+        question: 'Can I change my tile choice after demolition has started?',
+        answer: 'Yes, but it will cost more. The original tiles may incur a restocking fee, the new tiles may have a lead time that delays the job, and the tiler may need to adjust the layout. The cheapest time to change tiles is before ordering.',
+      },
+      {
+        question: 'What causes bathroom renovation budget blowouts?',
+        answer: 'The most common causes are late design changes, hidden damage found during demolition, adding features not in the original scope, and not having a written contract with clear inclusions.',
+      },
+      {
+        question: 'How do I avoid scope creep during a bathroom renovation?',
+        answer: 'Lock in all design decisions before signing the contract. Visit showrooms, pick your tiles and tapware, confirm the layout and set a contingency for genuine surprises. The more decisions made before demolition, the fewer surprises during the build.',
+      },
+    ],
+  },
+  {
+    slug: 'shower-seat-bench-bathroom-design',
+    title: 'Shower seats and bench seating: comfort, safety and style',
+    metaTitle: 'Shower Seat Bench Bathroom Design Guide',
+    description: 'A guide to shower seats and bench seating in a bathroom renovation. Built-in, fold-down and freestanding options — sizing, waterproofing and universal design benefits.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why add a seat to the shower',
+        paragraphs: [
+          'A shower seat is a practical addition that suits more people than you might think. It is not only for people with limited mobility. A built-in bench makes shaving legs easier, gives children a place to sit, and turns a daily shower into a more relaxed experience.',
+          'Planning a seat during the renovation is far cheaper than adding one later. A built-in bench costs $300 to $800 when installed during the tiling phase. Retrofitting one into a finished shower is costly and may compromise the sealing.',
+        ],
+      },
+      {
+        heading: 'Built-in bench seats',
+        paragraphs: [
+          'A built-in bench is a tiled ledge that forms part of the shower wall. It is fully waterproofed and tiled to match the rest of the shower. The standard size is 400 to 500 millimetres deep, 450 to 500 millimetres high, and at least 600 millimetres wide.',
+          'Built-in benches look seamless and do not take up floor space the way a freestanding stool does. They are the most popular choice in mid-range to premium bathroom renovations. Our <a href="/blog/bathroom-niche-design-ideas/" class="et-link">niche and recess guide</a> covers how built-in elements are waterproofed.',
+        ],
+      },
+      {
+        heading: 'Fold-down and wall-mounted seats',
+        paragraphs: [
+          'A fold-down seat mounts to the wall and folds flat when not in use. It is a good option when the shower is too narrow for a built-in bench. Stainless steel and teak are the most common materials.',
+          'These seats need solid mounting — a stud or timber blocking behind the tiles, not just plasterboard. If the seat is planned during the renovation, the builder installs the blocking while the walls are open. Our <a href="/blog/aging-in-place-bathroom-design/" class="et-link">aging-in-place guide</a> explains blocking in detail.',
+        ],
+      },
+      {
+        heading: 'Freestanding shower stools',
+        paragraphs: [
+          'A freestanding stool or chair can be added to any shower at any time. No building work is needed. Teak, bamboo, and medical-grade plastic are common materials.',
+          'The trade-off is that stools take up floor space, can move when wet, and do not match the look of a tiled shower as well as a built-in bench does. They are best as a short-term solution or in a rental property.',
+        ],
+      },
+      {
+        heading: 'Sizing and placement',
+        paragraphs: [
+          'The shower must be large enough to fit a seat and still have room to stand and move. A shower with a built-in bench should be at least 1,200 by 900 millimetres. The bench is usually placed on the wall opposite the shower head.',
+          'Height matters for comfort. A seat height of 450 to 500 millimetres suits most adults. For someone in a wheelchair who transfers to the seat, 450 millimetres matches the chair height.',
+        ],
+      },
+      {
+        heading: 'Universal design and future-proofing',
+        paragraphs: [
+          'A shower seat is one of the simplest universal design features. It makes the shower safer and more comfortable for people of all ages and abilities, without looking like a medical fixture.',
+          'Ali Hassan said: "The bathroom renovation team was awesome! They listened to what we wanted, gave us great ideas, and did fantastic work." The seat design is discussed during the free on-site measure. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How big does the shower need to be for a built-in bench?',
+        answer: 'At least 1,200 by 900 millimetres. The bench takes up 400 to 500 millimetres of depth, and the remaining space must be wide enough to stand and move comfortably.',
+      },
+      {
+        question: 'How much does a built-in shower bench cost?',
+        answer: 'About $300 to $800 when installed during the tiling phase of a renovation. This includes the frame, sealing and tiling. Adding one after the renovation is finished costs significantly more.',
+      },
+      {
+        question: 'Is a shower seat only for elderly or disabled people?',
+        answer: 'No. A shower seat is useful for shaving legs, bathing children, resting after exercise, and simply relaxing. It is a universal design feature that benefits anyone at any age.',
+      },
+      {
+        question: 'Can I add a shower seat after the renovation is finished?',
+        answer: 'A fold-down seat can be added if there is timber blocking behind the tiles. A freestanding stool needs no building work. A built-in tiled bench cannot be added without opening the walls and redoing the sealing and tiling.',
+      },
+      {
+        question: 'What material is best for a shower seat?',
+        answer: 'For a built-in bench, the same tiles as the shower walls. For a fold-down seat, stainless steel or teak. For a freestanding stool, teak is the most popular because it resists moisture and looks warm.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-layout-changes-renovation',
+    title: 'Bathroom layout changes: when to move plumbing and when to keep it',
+    metaTitle: 'Bathroom Layout Changes Moving Plumbing Renovation',
+    description: 'Should you change your bathroom layout during a renovation? When moving plumbing makes sense, what it costs, and how to get the most from a new layout.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Same layout vs new layout',
+        paragraphs: [
+          'The biggest cost decision in a bathroom renovation is whether to move the plumbing. Keeping the toilet, shower and basin in their current positions is a like-for-like renovation. Moving them is a layout change — and it adds thousands to the bill.',
+          'A like-for-like renovation in a standard bathroom starts from $18,000 with ETR. A renovation with layout changes can add $3,000 to $10,000 or more, depending on how far the fixtures move and whether walls are involved.',
+        ],
+      },
+      {
+        heading: 'When moving plumbing makes sense',
+        paragraphs: [
+          'If the current layout wastes space, blocks natural light, or forces awkward movement, a layout change is worth the cost. Common examples: moving the toilet away from the door so it is not the first thing you see, swapping the shower and bath to free up floor space, or rotating the vanity to face a window.',
+          'Moving the toilet is the most costly fixture to shift because it connects to a 100-millimetre waste pipe in the floor. Moving it more than a metre from the existing waste point often means lifting the floor slab.',
+          'Our <a href="/blog/bathroom-renovation-plumbing-replacement/" class="et-link">plumbing guide</a> explains what gets replaced during a renovation and how plumbing changes affect cost.',
+        ],
+      },
+      {
+        heading: 'What layout changes cost',
+        paragraphs: [
+          'Shifting a basin: $500 to $1,500 depending on the distance from the existing supply and waste points. Shifting a shower: $1,000 to $3,000 including rerouting the hot and cold lines, waste and any screen changes. Shifting a toilet: $1,500 to $5,000 or more if the floor slab needs cutting.',
+          'Wall removal adds $1,000 to $3,000 per wall (more if load-bearing, which requires an engineer\'s beam design). New walls cost $800 to $2,000 each including framing, lining, sealing and tiling.',
+        ],
+      },
+      {
+        heading: 'Structural walls and what you cannot move',
+        paragraphs: [
+          'Load-bearing walls hold up the floor or roof above. They cannot be removed without an engineer\'s design for a replacement beam. Internal non-load-bearing walls can usually be removed or shifted with fewer constraints.',
+          'Wet area walls (around the shower and bath) must be fully sealed to meet AS 3740. Our <a href="/blog/bathroom-waterproofing-explained/" class="et-link">sealing guide</a> explains what AS 3740 requires and why it matters.',
+          'In apartments, the building\'s main waste stack is fixed. You can move fixtures within the apartment floor, but the waste must still connect to the stack at the right fall. Our <a href="/blog/apartment-bathroom-renovation-vs-house/" class="et-link">apartment vs house guide</a> covers strata-specific constraints.',
+        ],
+      },
+      {
+        heading: 'Common layout improvements',
+        paragraphs: [
+          'Replacing a bath with a walk-in shower: frees up 1.5 to 2 square metres of floor space. See our <a href="/blog/walk-in-shower-vs-bathtub-renovation/" class="et-link">shower vs bath guide</a> for the trade-offs.',
+          'Adding a wall niche: creates recessed storage without losing floor space. Moving the door swing from inward to outward (or replacing with a sliding door): opens up the usable area inside.',
+          'Widening the shower from 900 to 1,200 millimetres: transforms a tight shower into a comfortable one, especially for people with larger builds or mobility needs.',
+        ],
+      },
+      {
+        heading: 'How ETR designs a new layout',
+        paragraphs: [
+          'Farah Dawood leads the design process, starting with the existing floor plan and the client\'s priorities. Layout options are drawn to scale so you can see how each change affects the space, the plumbing cost and the daily use of the room.',
+          'Nikki Comensoli said: "Every detail was done with care and attention. Our bathrooms are all great, and our new bathtub is a favourite in our family. Nothing was too difficult."',
+          'A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does it cost to move the toilet in a bathroom renovation?',
+        answer: 'Between $1,500 and $5,000, depending on how far it moves from the existing waste point. Moves over one metre often require cutting into the floor slab, which adds cost.',
+      },
+      {
+        question: 'Can I change the bathroom layout in an apartment?',
+        answer: 'Yes, within limits. Fixtures can be moved within the apartment floor, but the waste must still connect to the building\'s main stack at the correct fall. Strata approval is usually needed. Our apartment vs house guide covers the details.',
+      },
+      {
+        question: 'Is it worth changing the bathroom layout?',
+        answer: 'If the current layout wastes space, blocks light, or forces awkward movement, yes. If the layout works well and you just want new finishes, a like-for-like renovation saves thousands and delivers a great result faster.',
+      },
+      {
+        question: 'How long does a bathroom renovation with layout changes take?',
+        answer: 'Three to five weeks for a standard bathroom, compared to two to three weeks for a like-for-like renovation. The extra time covers plumbing relocation, any structural work and additional sealing inspections.',
+      },
+      {
+        question: 'Do I need council approval to change a bathroom layout?',
+        answer: 'Generally not for internal changes that do not alter the building envelope. However, if you are removing a load-bearing wall, you need an engineer\'s certification. In an apartment, strata approval is separate from council. Our permits guide covers the details.',
+      },
+    ],
+  },
+  {
+    slug: 'wall-hung-vs-floor-mounted-fixtures',
+    title: 'Wall-hung vs floor-mounted bathroom fixtures: pros, cons and cost',
+    metaTitle: 'Wall Hung vs Floor Mounted Bathroom Fixtures Guide',
+    description: 'Wall-hung or floor-mounted? A practical comparison of bathroom vanities, toilets and basins — pros, cons, cost, cleaning and installation for your renovation.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What the difference means',
+        paragraphs: [
+          'Floor-mounted fixtures sit on the floor with their weight carried by the slab or subfloor. Wall-hung fixtures are fixed to the wall with concealed brackets, and the floor beneath is clear. The choice affects the look, the cost, the cleaning and how the room feels.',
+          'Both types are common in Australian bathroom renovations. Floor-mounted is the traditional approach. Wall-hung is the modern, minimal option that has become the default in higher-end projects.',
+        ],
+      },
+      {
+        heading: 'Wall-hung benefits',
+        paragraphs: [
+          'Easier to clean — you can mop the entire floor without moving anything or reaching behind a pedestal. The room looks larger because you can see the floor from wall to wall. The height can be set to suit the user — useful for tall people or those with mobility needs.',
+          'Wall-hung vanities create storage space on the floor beneath them. Wall-hung toilets eliminate the gap between the pan and the wall where dust collects. The plumbing is concealed inside the wall, giving a clean, uncluttered look.',
+          'Jaya Rupan said about our work: "The team was professional, punctual, and skilled, turning my ideas into a beautiful, functional space."',
+        ],
+      },
+      {
+        heading: 'Floor-mounted benefits',
+        paragraphs: [
+          'Cheaper to buy and install. No reinforced wall framing needed. Wider product range and easier to find matching styles. Simpler to repair or replace — the fixture lifts off the floor without opening the wall.',
+          'Floor-mounted vanities are more stable for heavy stone benchtops. Floor-mounted toilets are the simplest to install and the most familiar to plumbers. If budget is tight, floor-mounted fixtures deliver the same function at lower cost.',
+        ],
+      },
+      {
+        heading: 'What wall-hung fixtures need',
+        paragraphs: [
+          'A wall-hung vanity needs a reinforced wall frame or mounting rail behind the tiles, rated for the weight of the unit plus a full basin of water. A wall-hung toilet needs a concealed cistern frame bolted to the studs and floor.',
+          'This framing must be planned during the renovation — it cannot be added easily after the tiles are on the wall. The builder installs it during the rough-in stage, before the wall lining goes up.',
+          'Our <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet guide</a> covers wall-hung toilet frames and mounting in detail.',
+        ],
+      },
+      {
+        heading: 'Cost comparison',
+        paragraphs: [
+          'Wall-hung vanity: $1,800 to $5,000 (unit plus mounting, fitting and plumbing). Floor-mounted vanity: $1,200 to $3,500. Wall-hung toilet: $1,500 to $3,300 (including concealed frame). Floor-mounted toilet: $600 to $1,700.',
+          'The price gap is mainly the mounting hardware and the extra labour for concealed plumbing. Over the life of the bathroom (15 to 20 years), the easier cleaning may offset the higher upfront cost.',
+        ],
+      },
+      {
+        heading: 'Which to choose',
+        paragraphs: [
+          'If you want a clean, modern look and easier cleaning, wall-hung is the way to go — provided the budget allows and the walls can take the weight. If budget is tight or you prefer a classic look, floor-mounted fixtures are reliable, widely available and simpler to install.',
+          'Peta Grund said: "Omar and Adam did a wonderful job on our bathroom renovation. Adam\'s precision and attention to detail with the tiling is second to none." The fixture type is chosen during the design phase. Call 0411 752 334 for a free on-site measure anywhere in Sydney.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are wall-hung vanities strong enough for stone benchtops?',
+        answer: 'Yes, if the wall mounting is properly rated for the weight. A reinforced mounting rail or steel bracket system can support a heavy stone top. The builder specifies this during the design phase.',
+      },
+      {
+        question: 'Do wall-hung toilets leak?',
+        answer: 'No more than floor-mounted toilets. The concealed cistern is a sealed unit with standard plumbing connections. An access panel allows service and repair without opening the wall.',
+      },
+      {
+        question: 'Can I change from floor-mounted to wall-hung during a renovation?',
+        answer: 'Yes — a renovation is the ideal time because the walls are open. The builder installs the concealed frame or mounting rail during the rough-in stage before the wall lining goes up.',
+      },
+      {
+        question: 'Which is easier to clean — wall-hung or floor-mounted?',
+        answer: 'Wall-hung is much easier. The floor beneath is clear, so you can mop from wall to wall without working around pedestals, pans or vanity legs.',
+      },
+      {
+        question: 'Are wall-hung fixtures more expensive to repair?',
+        answer: 'The fixtures themselves are repaired the same way. The concealed plumbing is reached through an access panel (for the toilet cistern) or by removing the vanity. Repair access is designed in, not an afterthought.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-storage-planning-renovation',
+    title: 'How to plan bathroom storage during a renovation',
+    metaTitle: 'Bathroom Storage Planning Renovation Guide',
+    description: 'How to plan storage into your bathroom renovation from the start. Vanity drawers, niches, medicine cabinets, tall boys and wall shelves — what works and what wastes space.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why storage should be planned early',
+        paragraphs: [
+          'Storage is the feature people miss most when it is left out of a renovation. Toiletries pile up on the vanity, cleaning products sit on the floor, and the room that looked perfect in the design photos feels cluttered within weeks.',
+          'The time to plan storage is during the design phase — not after the tiles are on the walls. Built-in storage (niches, recesses, vanity drawers) must be designed before the framing stage. Adding it later means opening finished walls.',
+        ],
+      },
+      {
+        heading: 'Vanity drawers and cupboards',
+        paragraphs: [
+          'The vanity is the primary storage unit in most bathrooms. Drawers are more useful than cupboard doors because you can see and reach everything without bending down and reaching to the back.',
+          'A 900-millimetre single vanity with three drawers holds more accessible storage than a 1,200-millimetre vanity with two cupboard doors. Drawer organisers (dividers, trays) make the most of each drawer. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers sizing and layout in detail.',
+        ],
+      },
+      {
+        heading: 'Niches and recessed shelves',
+        paragraphs: [
+          'A wall niche is a recessed shelf built into the wall, tiled to match the surrounding surface. It stores shampoo, soap and other shower items without a shelf or caddy that collects mould.',
+          'Standard niche sizes are 300 by 300 millimetres or 300 by 600 millimetres. Two smaller niches (one at standing height, one lower) are more useful than one large niche. Our <a href="/blog/bathroom-niche-design-ideas/" class="et-link">niche guide</a> covers sizing, placement and sealing.',
+        ],
+      },
+      {
+        heading: 'Medicine cabinets and mirror cabinets',
+        paragraphs: [
+          'A mirror cabinet combines two functions — a mirror and a cupboard — in a single unit. It stores medicines, grooming items and small bottles behind a mirrored door, keeping the vanity top clear.',
+          'Surface-mounted cabinets sit on the wall. Recessed cabinets sit inside the wall and give a cleaner look but need a deeper wall cavity. Our <a href="/blog/bathroom-mirror-guide-renovation/" class="et-link">mirror guide</a> covers both types.',
+        ],
+      },
+      {
+        heading: 'Tall boys and open shelving',
+        paragraphs: [
+          'A tall boy (tall cupboard or linen tower) is a narrow, floor-to-ceiling unit that stores towels, spare toilet rolls and cleaning products. It fits in corners or beside the vanity where there is not enough width for a wider unit.',
+          'Open shelving (floating shelves, ladder shelves) works in dry areas of the bathroom — above the toilet, beside the mirror, or on a wall away from the shower splash zone. It is best for display items and folded towels, not for small bottles that clutter easily.',
+        ],
+      },
+      {
+        heading: 'Planning your storage list',
+        paragraphs: [
+          'Start by listing everything that needs a home in the bathroom: shampoo, conditioner, soap, toothbrushes, razors, makeup, medicines, cleaning products, spare towels, toilet rolls, hair dryer, straightener. Then assign each item to a storage type — vanity drawer, niche, cabinet, or tall boy.',
+          'Guot Lual said: "My bathroom looks fantastic now — modern and functional." The balance of modern and functional starts with getting the storage right. Call 0411 752 334 for a free on-site measure anywhere in Sydney.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How many niches does a shower need?',
+        answer: 'One or two. A single niche at shoulder height stores daily products. A second niche lower down is useful for children or for leg-shaving items. More than two in a standard shower starts to look busy.',
+      },
+      {
+        question: 'What is the best vanity storage layout?',
+        answer: 'Drawers beat doors. A vanity with three graduated drawers (shallow on top, deep on the bottom) stores more in an accessible way than a vanity with two cupboard doors.',
+      },
+      {
+        question: 'Can I add storage after the renovation is finished?',
+        answer: 'Surface-mounted items (mirror cabinets, floating shelves, hooks) can be added at any time. Built-in items (niches, recessed cabinets) need the wall opened, reframed, sealed and retiled — best done during the renovation.',
+      },
+      {
+        question: 'How deep should a bathroom niche be?',
+        answer: 'About 80 to 100 millimetres — deep enough to hold a standard shampoo bottle without it sticking out past the tile surface. The depth is limited by the wall stud spacing (typically 90 millimetres in a standard timber frame).',
+      },
+      {
+        question: 'Where should I put a tall boy in a bathroom?',
+        answer: 'In a corner, beside the vanity, or next to the toilet. Keep it away from the shower splash zone so the contents stay dry. A tall boy works best against a dry wall, at least 600 millimetres from the shower screen.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-neighbours-noise',
+    title: 'Bathroom renovation and your neighbours: managing noise and access',
+    metaTitle: 'Bathroom Renovation Neighbours Noise Management Guide',
+    description: 'How to manage noise, dust, access and neighbour relations during a bathroom renovation. Work hours, strata rules, dust control and communication tips.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why neighbours matter during a renovation',
+        paragraphs: [
+          'A bathroom renovation is noisy, dusty and disruptive. Demolition, drilling, grinding and hammering produce sound levels that carry through walls, floors and ceilings — especially in apartments and terraces.',
+          'A brief conversation with your neighbours before work starts goes a long way. It sets expectations, avoids complaints, and keeps the relationship intact. Most people are understanding when they know what to expect and how long it will last.',
+        ],
+      },
+      {
+        heading: 'Noise hours and rules',
+        paragraphs: [
+          'In Sydney, residential construction noise is regulated by the EPA (Environment Protection Authority). Standard permitted hours are Monday to Friday 7 am to 6 pm, Saturday 8 am to 1 pm, and no work on Sundays or public holidays.',
+          'Strata buildings often have stricter rules — some limit noisy work to 9 am to 3 pm on weekdays only. Check your strata by-laws before scheduling the renovation. Our <a href="/blog/strata-bathroom-renovation-sydney/" class="et-link">strata renovation guide</a> covers the full approval process.',
+          'Demolition is the noisiest phase and typically lasts one to two days. After that, the noise drops significantly. Tiling and fitting are much quieter than knocking out old tiles and cutting into walls.',
+        ],
+      },
+      {
+        heading: 'Dust and mess',
+        paragraphs: [
+          'Demolition produces dust that travels through the home and can reach neighbouring properties in terraces and apartments. Dust barriers (plastic sheeting over doorways), extraction fans, and regular vacuuming keep it under control.',
+          'Kieran C said about our work: "They exercised due care at all times including providing drop sheets and surface protection to and from the work area and leaving the site clean and tidy at the end of each day. Good housekeeping of this standard is not common practice for the majority of tradespeople in my experience."',
+          'Our <a href="/blog/bathroom-renovation-living-at-home/" class="et-link">living-at-home guide</a> covers dust control and daily cleanup in detail.',
+        ],
+      },
+      {
+        heading: 'Access and parking',
+        paragraphs: [
+          'Renovation teams need access to carry materials in and waste out. In a house, this usually means the driveway and front path. In an apartment, it means the common areas — lift, hallway, loading dock.',
+          'If the renovation team needs to use shared spaces (lifts, car parks, skip bin areas), arrange this with the strata manager before work starts. Some buildings require a bond, a booking for the goods lift, and protective coverings in the corridors.',
+        ],
+      },
+      {
+        heading: 'Talking to your neighbours',
+        paragraphs: [
+          'A quick note or a knock on the door one to two weeks before the start date is enough. Let them know what is happening, when it starts, how long it will take, and what hours the work will run. Offer your phone number in case there is an issue.',
+          'Most complaints happen because neighbours were not told. A simple heads-up prevents almost all of them.',
+        ],
+      },
+      {
+        heading: 'How ETR manages the site',
+        paragraphs: [
+          'Luke Saukilai said: "The team was friendly, showed up on time, and got everything done quickly." We protect floors and surfaces on the path to and from the work area, use dust barriers, and clean the site at the end of each day.',
+          'The renovation timeline, work hours and access plan are agreed before the job starts. A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What are the allowed noise hours for a bathroom renovation in Sydney?',
+        answer: 'Monday to Friday 7 am to 6 pm, Saturday 8 am to 1 pm, no work on Sundays or public holidays. These are the EPA guidelines. Strata buildings often have stricter rules — check the by-laws before scheduling.',
+      },
+      {
+        question: 'Do I need to tell my neighbours about a bathroom renovation?',
+        answer: 'It is not legally required in a house, but it is strongly recommended. In a strata building, the by-laws may require written notice to the strata manager and affected neighbours.',
+      },
+      {
+        question: 'How long is the noisy phase of a bathroom renovation?',
+        answer: 'Demolition is the loudest phase and typically lasts one to two days. After demolition, the noise level drops significantly. Tiling, plumbing and fitting are much quieter.',
+      },
+      {
+        question: 'How do renovation teams control dust?',
+        answer: 'Plastic sheeting over doorways, extraction fans, regular vacuuming, and damp-mopping at the end of each day. Protective coverings on floors and surfaces between the work area and the entry prevent dust tracking.',
+      },
+      {
+        question: 'Can neighbours complain about renovation noise?',
+        answer: 'Yes, if the noise is outside permitted hours or excessively loud. Working within the allowed hours and giving neighbours advance notice prevents most complaints. In a strata building, persistent noise complaints can result in fines.',
+      },
+    ],
+  },
+  {
+    slug: 'ensuite-renovation-ideas-layout',
+    title: 'Ensuite renovation ideas: layout, design and what to prioritise',
+    metaTitle: 'Ensuite Renovation Ideas Layout Design Guide',
+    description: 'Ensuite renovation ideas for layout, design and priorities. Space planning, ventilation, storage and how to make a small ensuite feel spacious and functional.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What makes an ensuite different',
+        paragraphs: [
+          'An ensuite is the private bathroom attached to the master bedroom. It is smaller than the main family bathroom — typically 3 to 5 square metres — and is used by one or two people rather than the whole household.',
+          'Because it is private, the design can be more personal. Bold tiles, premium fixtures and a spa-like feel work well in an ensuite because they suit the couple who uses it, not the needs of children, guests and daily household traffic.',
+        ],
+      },
+      {
+        heading: 'Layout options for a small ensuite',
+        paragraphs: [
+          'The three fixtures in most ensuites are a shower, a vanity and a toilet. In a small room, the layout sequence matters. The most common and space-efficient layout puts the vanity nearest the door, the toilet beside or opposite it, and the shower at the far end.',
+          'A long, narrow ensuite suits a linear layout — all three fixtures along one wall. A wider room allows an L-shaped layout with the shower tucked into a corner. Our <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">layout changes guide</a> covers the cost and process of moving fixtures.',
+          'In some master bedrooms, the ensuite has no external wall and therefore no window. In that case, a quality exhaust fan and good lighting are essential — see ventilation below.',
+        ],
+      },
+      {
+        heading: 'Design priorities',
+        paragraphs: [
+          'In a small ensuite, the shower does the most work. A frameless shower screen opens the room visually and lets light flow through. A walk-in (curbless) shower removes the step and makes the room feel larger. Our <a href="/blog/shower-screen-types-bathroom-renovation/" class="et-link">shower screen guide</a> compares frameless, semi-frameless and framed options.',
+          'The vanity should include as much drawer storage as the width allows — an ensuite has less wall space for hooks and shelves. A mirror cabinet doubles as both mirror and storage. Our <a href="/blog/double-vanity-vs-single-bathroom/" class="et-link">vanity comparison guide</a> helps decide between a single and double vanity.',
+        ],
+      },
+      {
+        heading: 'Ventilation and moisture',
+        paragraphs: [
+          'An ensuite attached to the bedroom needs excellent ventilation to prevent moisture migrating into the bedroom, the wardrobe and the carpet. A ducted exhaust fan rated for the room volume is essential — not optional.',
+          'The exhaust fan should run during and for 15 to 20 minutes after every shower. A humidity-sensing fan turns on and off automatically. Our <a href="/blog/bathroom-ventilation-sydney-renovation/" class="et-link">ventilation guide</a> covers fan sizing, ducting and building code requirements.',
+        ],
+      },
+      {
+        heading: 'Lighting in a windowless ensuite',
+        paragraphs: [
+          'Many ensuites have no external window or only a small one. Layered lighting compensates: a ceiling downlight for general brightness, a backlit mirror or LED strip for task lighting at the vanity, and an accent light (niche LED, under-vanity strip) for atmosphere.',
+          'A skylight or sun tunnel is an option if the ensuite is on the top floor. Natural light transforms a small, internal room. Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers the principles of bathroom lighting design.',
+        ],
+      },
+      {
+        heading: 'Storage in a tight space',
+        paragraphs: [
+          'An ensuite serves one or two people, so the storage needs are smaller than a family bathroom. A vanity with drawers, one or two shower niches and a mirror cabinet usually cover everything. A recessed toilet roll holder saves space on a narrow wall.',
+          'Our <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage planning guide</a> walks through how to list what needs a home and assign each item to the right storage type.',
+        ],
+      },
+      {
+        heading: 'Getting started with ETR',
+        paragraphs: [
+          'Ken Chen said: "Omar, Adam and the team did an excellent job renovating our main bathroom, ensuite and standalone toilet." Ensuite renovations are one of our four services — see our <a href="/services/ensuite-bathroom-renovations/" class="et-link">ensuite renovation service page</a> for examples.',
+          'Every project starts with a free on-site measure anywhere in Sydney. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How small can an ensuite be?',
+        answer: 'A functional ensuite with a shower, vanity and toilet can fit in as little as 2.5 square metres. Below that, the room becomes too tight to use comfortably. Most ensuites are 3 to 5 square metres.',
+      },
+      {
+        question: 'Does an ensuite renovation add value to a home?',
+        answer: 'Yes. A modern ensuite is one of the top features buyers look for in a master bedroom. The return on a well-done ensuite renovation is typically 60 to 80 per cent of the cost.',
+      },
+      {
+        question: 'Should I include a bath in the ensuite?',
+        answer: 'Only if the room is large enough (at least 6 square metres) and you genuinely use a bath. In a small ensuite, a spacious shower is a better use of space. Keep the bath in the family bathroom if the home has one.',
+      },
+      {
+        question: 'How much does an ensuite renovation cost?',
+        answer: 'A like-for-like ensuite renovation starts from about $18,000 with ETR, depending on the size and finishes. Premium finishes, layout changes or a freestanding bath push the price higher. A free on-site measure gives you a fixed-scope quote.',
+      },
+      {
+        question: 'Can I add an ensuite where there was not one before?',
+        answer: 'Yes, if the plumbing can be connected to the existing waste and supply lines. Adding an ensuite typically costs $25,000 to $50,000 depending on whether walls need building, plumbing needs extending and the level of finish.',
+      },
+    ],
+  },
+  {
+    slug: 'powder-room-renovation-guide',
+    title: 'Powder room renovation: making a small space shine',
+    metaTitle: 'Powder Room Renovation Guide Ideas Australia',
+    description: 'How to renovate a powder room. Compact vanities, statement walls, lighting, guest impressions and how to make the smallest room in the house feel special.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What a powder room is — and why it matters',
+        paragraphs: [
+          'A powder room is a small bathroom with a toilet and a basin — no shower, no bath. It is the bathroom guests use. It is the room visitors judge the house by, even if they never see the master bathroom or the ensuite.',
+          'Because it is small (typically 1 to 2 square metres), every choice is amplified. A bold tile, a striking vanity or a feature mirror makes a strong impression. A plain powder room feels like an afterthought.',
+        ],
+      },
+      {
+        heading: 'Design for impact',
+        paragraphs: [
+          'A powder room is the one room where you can take design risks that would be overwhelming in a larger bathroom. A dark, dramatic tile on every wall. A patterned encaustic floor tile. A marble slab behind the basin. A bold wallpaper above a tile dado.',
+          'The room is small, so the material cost of a premium tile or stone is low — you might need only 5 to 8 square metres of tiles. This makes it the most affordable room to finish to a premium standard.',
+          'Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers palettes that work in small spaces, and our <a href="/blog/bathroom-splashback-ideas-renovation/" class="et-link">splashback guide</a> shows material options beyond standard tiles.',
+        ],
+      },
+      {
+        heading: 'Compact vanities and basins',
+        paragraphs: [
+          'A powder room vanity is typically 400 to 600 millimetres wide — much smaller than a bathroom vanity. Wall-hung vanities are the most popular choice because they keep the floor clear and make the room feel bigger.',
+          'Basin options include vessel basins (sitting on top of the vanity), under-mount basins (set into the bench) and wall-mounted basins (no vanity at all). A wall-mounted basin frees the most space but offers no storage — fine for a room where only hand wash and a hand towel are needed.',
+        ],
+      },
+      {
+        heading: 'Lighting and mirrors',
+        paragraphs: [
+          'A powder room often has no window, so lighting is everything. A backlit round mirror creates a warm glow and serves as both a light source and a design feature. A pendant light or a wall sconce beside the mirror adds atmosphere.',
+          'Avoid harsh downlights aimed directly at the mirror — they create unflattering shadows. Soft, diffused light at face height is the most flattering and welcoming choice. Our <a href="/blog/bathroom-mirror-guide-renovation/" class="et-link">mirror guide</a> covers LED options and sizing.',
+        ],
+      },
+      {
+        heading: 'Toilet selection for a powder room',
+        paragraphs: [
+          'A wall-hung or back-to-wall toilet is the best choice for a powder room because it hides the cistern and keeps the room uncluttered. In a very small room, every centimetre counts — a concealed cistern saves 150 to 200 millimetres of depth compared to a close coupled toilet.',
+          'Our <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet upgrade guide</a> compares all three types with costs and fitting details.',
+        ],
+      },
+      {
+        heading: 'Getting started with ETR',
+        paragraphs: [
+          'Powder room renovations are one of our four services — see our <a href="/services/powder-room-renovations/" class="et-link">powder room renovation service page</a> for examples. Alex Mustafa said: "They demonstrated professionalism and expertise throughout, transforming my outdated bathroom into a modern oasis with meticulous attention to detail."',
+          'Every project starts with a free on-site measure anywhere in Sydney. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a powder room renovation cost?',
+        answer: 'A powder room renovation typically costs $8,000 to $15,000 depending on the finishes. The room is small, so even premium tiles and fixtures cost less than they would in a full bathroom. A free on-site measure gives you a fixed-scope quote.',
+      },
+      {
+        question: 'Does a powder room need waterproofing?',
+        answer: 'The floor area around the toilet and basin must be sealed. There is no shower, so the full wet-area sealing requirements of AS 3740 do not apply to the shower zone. The floor and a strip up the wall behind the toilet and basin are the sealed areas.',
+      },
+      {
+        question: 'What size vanity fits a powder room?',
+        answer: 'Most powder room vanities are 400 to 600 millimetres wide. A wall-mounted basin with no vanity works in the tightest rooms. If the room is wide enough, a 750-millimetre vanity with a single drawer provides useful storage.',
+      },
+      {
+        question: 'Can I use bold tiles in a powder room?',
+        answer: 'Yes — the powder room is the best room in the house for bold design choices. The small area means the material cost is low, and the room is used briefly by guests, so a dramatic tile or pattern makes a lasting impression without being overwhelming.',
+      },
+      {
+        question: 'Does a powder room add value to a home?',
+        answer: 'Yes. A ground-floor powder room is a highly sought-after feature for buyers, especially in homes with bedrooms upstairs. It saves guests from using the family bathroom and adds convenience for daily life.',
+      },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {
