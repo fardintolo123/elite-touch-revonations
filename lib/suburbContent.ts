@@ -14,8 +14,8 @@ export const suburbContent: Record<string, SuburbContent> = {
   randwick: {
     projectSlug: 'randwick-bathroom',
     answer: [
-      'Elite Touch Renovations completes bathroom renovations in Randwick as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
-      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+      'Elite Touch Renovations completes bathroom renovations in Randwick as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
       heading: 'Renovating a bathroom in Randwick',
@@ -51,8 +51,8 @@ export const suburbContent: Record<string, SuburbContent> = {
   'castle-hill': {
     projectSlug: 'castle-hill-bathroom',
     answer: [
-      'Elite Touch Renovations completes bathroom renovations in Castle Hill as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
-      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+      'Elite Touch Renovations completes bathroom renovations in Castle Hill as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
       heading: 'A Castle Hill bathroom project',
@@ -87,8 +87,8 @@ export const suburbContent: Record<string, SuburbContent> = {
   },
   'baulkham-hills': {
     answer: [
-      'Elite Touch Renovations completes bathroom renovations in Baulkham Hills as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
-      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+      'Elite Touch Renovations completes bathroom renovations in Baulkham Hills as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
       heading: 'Our work near Baulkham Hills',
@@ -122,8 +122,8 @@ export const suburbContent: Record<string, SuburbContent> = {
   },
   kellyville: {
     answer: [
-      'Elite Touch Renovations completes bathroom renovations in Kellyville as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
-      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+      'Elite Touch Renovations completes bathroom renovations in Kellyville as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
       heading: 'Our work near Kellyville',
@@ -157,8 +157,8 @@ export const suburbContent: Record<string, SuburbContent> = {
   },
   marrickville: {
     answer: [
-      'Elite Touch Renovations completes bathroom renovations in Marrickville as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
-      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+      'Elite Touch Renovations completes bathroom renovations in Marrickville as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
       heading: 'Our work near Marrickville',
@@ -192,8 +192,8 @@ export const suburbContent: Record<string, SuburbContent> = {
   },
   ryde: {
     answer: [
-      'Elite Touch Renovations completes bathroom renovations in Ryde as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, waterproofing to AS 3740, tiling and fit-off, with the full scope and price set out in writing before work starts.',
-      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the Basic package. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a 10-year workmanship warranty.',
+      'Elite Touch Renovations completes bathroom renovations in Ryde as part of our Sydney-wide service. We manage the strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, with the full scope and price set out in writing before work starts.',
+      'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
       heading: 'Our work near Ryde',
