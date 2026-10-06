@@ -54,7 +54,7 @@ export default function TermsPage() {
         title="Website terms of use"
         cta={false}
         leads={[
-          'These terms cover how you use this website. They are not the terms of a renovation contract — the terms of any job are set out in the written quote and building contract you sign with us.',
+          'These terms cover how you use this website. They are not the terms of a renovation contract - the terms of any job are set out in the written quote and building contract you sign with us.',
           `Last updated ${updated}.`,
         ]}
       />
@@ -98,7 +98,7 @@ export default function TermsPage() {
           <p className="et-body-sm et-measure">
             The photos of finished bathrooms are our own projects, shown with the
             customer&rsquo;s consent. They show work we have done. They are not a
-            promise that your bathroom will look the same — every job is quoted
+            promise that your bathroom will look the same - every job is quoted
             and built to its own scope.
           </p>
         </div>

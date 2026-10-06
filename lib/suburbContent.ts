@@ -93,8 +93,8 @@ export const suburbContent: Record<string, SuburbContent> = {
     localAngle: {
       heading: 'Our work near Baulkham Hills',
       paragraphs: [
-        "We haven't published a photographed Baulkham Hills project yet — we add a suburb's local gallery once a job there is finished and signed off.",
-        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District — our Castle Hill project — on the regional hub page linked below.',
+        "We haven't published a photographed Baulkham Hills project yet - we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District - our Castle Hill project - on the regional hub page linked below.',
       ],
     },
     faqs: [
@@ -111,7 +111,7 @@ export const suburbContent: Record<string, SuburbContent> = {
       {
         question: 'Do you have a photographed Baulkham Hills bathroom project to view?',
         answer:
-          "Not yet — we haven't completed a Baulkham Hills job with photos published on this site. You can see a real, photographed project nearby in the Hills District hub, and we'll add Baulkham Hills photos here once a local job is finished and signed off.",
+          "Not yet - we haven't completed a Baulkham Hills job with photos published on this site. You can see a real, photographed project nearby in the Hills District hub, and we'll add Baulkham Hills photos here once a local job is finished and signed off.",
       },
       {
         question: 'How do I get a quote for a bathroom renovation in Baulkham Hills?',
@@ -128,8 +128,8 @@ export const suburbContent: Record<string, SuburbContent> = {
     localAngle: {
       heading: 'Our work near Kellyville',
       paragraphs: [
-        "We haven't published a photographed Kellyville project yet — we add a suburb's local gallery once a job there is finished and signed off.",
-        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District — our Castle Hill project — on the regional hub page linked below.',
+        "We haven't published a photographed Kellyville project yet - we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District - our Castle Hill project - on the regional hub page linked below.',
       ],
     },
     faqs: [
@@ -146,7 +146,7 @@ export const suburbContent: Record<string, SuburbContent> = {
       {
         question: 'Do you have a photographed Kellyville bathroom project to view?',
         answer:
-          "Not yet — we haven't completed a Kellyville job with photos published on this site. You can see a real, photographed project nearby in the Hills District hub, and we'll add Kellyville photos here once a local job is finished and signed off.",
+          "Not yet - we haven't completed a Kellyville job with photos published on this site. You can see a real, photographed project nearby in the Hills District hub, and we'll add Kellyville photos here once a local job is finished and signed off.",
       },
       {
         question: 'How do I get a quote for a bathroom renovation in Kellyville?',
@@ -163,8 +163,8 @@ export const suburbContent: Record<string, SuburbContent> = {
     localAngle: {
       heading: 'Our work near Marrickville',
       paragraphs: [
-        "We haven't published a photographed Marrickville project yet — we add a suburb's local gallery once a job there is finished and signed off.",
-        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Inner West — our Balmain project — on the regional hub page linked below.',
+        "We haven't published a photographed Marrickville project yet - we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Inner West - our Balmain project - on the regional hub page linked below.',
       ],
     },
     faqs: [
@@ -181,7 +181,7 @@ export const suburbContent: Record<string, SuburbContent> = {
       {
         question: 'Do you have a photographed Marrickville bathroom project to view?',
         answer:
-          "Not yet — we haven't completed a Marrickville job with photos published on this site. You can see a real, photographed project nearby in the Inner West hub, and we'll add Marrickville photos here once a local job is finished and signed off.",
+          "Not yet - we haven't completed a Marrickville job with photos published on this site. You can see a real, photographed project nearby in the Inner West hub, and we'll add Marrickville photos here once a local job is finished and signed off.",
       },
       {
         question: 'How do I get a quote for a bathroom renovation in Marrickville?',
@@ -198,8 +198,8 @@ export const suburbContent: Record<string, SuburbContent> = {
     localAngle: {
       heading: 'Our work near Ryde',
       paragraphs: [
-        "We haven't published a photographed Ryde project yet — we add a suburb's local gallery once a job there is finished and signed off.",
-        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in North-Western Sydney — our Gladesville project — on the regional hub page linked below.',
+        "We haven't published a photographed Ryde project yet - we add a suburb's local gallery once a job there is finished and signed off.",
+        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in North-Western Sydney - our Gladesville project - on the regional hub page linked below.',
       ],
     },
     faqs: [
@@ -216,7 +216,7 @@ export const suburbContent: Record<string, SuburbContent> = {
       {
         question: 'Do you have a photographed Ryde bathroom project to view?',
         answer:
-          "Not yet — we haven't completed a Ryde job with photos published on this site. You can see a real, photographed project nearby in North-Western Sydney, and we'll add Ryde photos here once a local job is finished and signed off.",
+          "Not yet - we haven't completed a Ryde job with photos published on this site. You can see a real, photographed project nearby in North-Western Sydney, and we'll add Ryde photos here once a local job is finished and signed off.",
       },
       {
         question: 'How do I get a quote for a bathroom renovation in Ryde?',

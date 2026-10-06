@@ -58,7 +58,7 @@ export async function GET() {
 
   lines.push('## Packages & pricing')
   lines.push(
-    `- [Bathroom Renovation Packages & Pricing](${base}/packages/): Elite Touch Renovations bathroom renovation packages. Basic from $18,000, Standard from $25,000, Premium from $30,000 — each tied to a stated bathroom size, with a fixed-scope written quote.`
+    `- [Bathroom Renovation Packages & Pricing](${base}/packages/): Elite Touch Renovations bathroom renovation packages. Basic from $18,000, Standard from $25,000, Premium from $30,000 - each tied to a stated bathroom size, with a fixed-scope written quote.`
   )
   lines.push('')
 
@@ -75,7 +75,7 @@ export async function GET() {
 
   lines.push('## Our work')
   lines.push(
-    `- [Our Work](${base}/gallery/): Bathroom renovation projects by Elite Touch Renovations across Sydney — including Artarmon, Castle Hill, Hornsby and Randwick. Real photographs of completed work.`
+    `- [Our Work](${base}/gallery/): Bathroom renovation projects by Elite Touch Renovations across Sydney - including Artarmon, Castle Hill, Hornsby and Randwick. Real photographs of completed work.`
   )
   for (const project of projects) {
     lines.push(

@@ -403,13 +403,13 @@ export const services = [
       {
         question: 'What happens if ours is the only bathroom in the house?',
         answer:
-          'We talk through a temporary plan before work starts, not partway through. If your bathroom is the only one in the home, the strip-out week is the most disruptive — dust, noise, no access to the room — so we plan the program, and any workaround, around that week specifically, and you know it before you sign.',
+          'We talk through a temporary plan before work starts, not partway through. If your bathroom is the only one in the home, the strip-out week is the most disruptive - dust, noise, no access to the room - so we plan the program, and any workaround, around that week specifically, and you know it before you sign.',
       },
       {
         question:
           'How do you make sure the finished bathroom works day to day, not just in photos?',
         answer:
-          "That comes down to layout decisions made before pricing, not finishes chosen at the end. Our designer works out where towels, storage and everyday items actually go as part of the drawing, not as an afterthought — a bathroom with nowhere for a toothbrush is a layout problem, not a finishing one, and we fix that before the quote is written.",
+          "That comes down to layout decisions made before pricing, not finishes chosen at the end. Our designer works out where towels, storage and everyday items actually go as part of the drawing, not as an afterthought - a bathroom with nowhere for a toothbrush is a layout problem, not a finishing one, and we fix that before the quote is written.",
       },
       {
         question: 'Do I need council approval for a bathroom renovation?',
@@ -420,12 +420,12 @@ export const services = [
         question:
           "What turns up in older Sydney homes that isn't in the original quote?",
         answer:
-          'Rot, non-compliant plumbing and — in pre-1990 homes — asbestos are the three things strip-out most often uncovers. We allow a contingency in the quote and test for asbestos where required, so if something is found, how it is priced and handled is already agreed rather than a surprise mid-job.',
+          'Rot, non-compliant plumbing and - in pre-1990 homes - asbestos are the three things strip-out most often uncovers. We allow a contingency in the quote and test for asbestos where required, so if something is found, how it is priced and handled is already agreed rather than a surprise mid-job.',
       },
       {
         question: 'Is waterproofing really that important?',
         answer:
-          'It is the part of the build most likely to cause expensive damage if it fails — mould inside walls, rotted framing, water coming through to the ceiling below. We waterproof every bathroom to AS 3740, primer plus two coats, and issue a compliance certificate for the work.',
+          'It is the part of the build most likely to cause expensive damage if it fails - mould inside walls, rotted framing, water coming through to the ceiling below. We waterproof every bathroom to AS 3740, primer plus two coats, and issue a compliance certificate for the work.',
       },
     ],
   },
@@ -450,7 +450,7 @@ export const services = [
       {
         question: 'How small can an ensuite be?',
         answer:
-          'Functionally, a one-person ensuite can fit into around 2.5 square metres with careful planning — shower, basin and toilet. Most lived-in ensuites run three to seven square metres; below about 2.5 square metres the room starts to feel like a powder room with a shower added, and some of what makes an ensuite work gets lost.',
+          'Functionally, a one-person ensuite can fit into around 2.5 square metres with careful planning - shower, basin and toilet. Most lived-in ensuites run three to seven square metres; below about 2.5 square metres the room starts to feel like a powder room with a shower added, and some of what makes an ensuite work gets lost.',
       },
       {
         question: 'Do ensuites need natural light?',
@@ -466,12 +466,12 @@ export const services = [
         question:
           'Can you renovate an ensuite without touching the main bathroom?',
         answer:
-          'Yes. They are quoted and run as separate jobs unless you want them done together. Some households do the ensuite first because it is used daily, and come back for the main bathroom later — the packages and process are the same either way.',
+          'Yes. They are quoted and run as separate jobs unless you want them done together. Some households do the ensuite first because it is used daily, and come back for the main bathroom later - the packages and process are the same either way.',
       },
       {
         question: 'Should I put a bath in my ensuite?',
         answer:
-          'For most households, no — most ensuites are too small to fit a bath without crowding the rest of the room, and the household bath usually stays in the main bathroom. Larger ensuites, from around 8 square metres, can carry a freestanding bath if that is what you want.',
+          'For most households, no - most ensuites are too small to fit a bath without crowding the rest of the room, and the household bath usually stays in the main bathroom. Larger ensuites, from around 8 square metres, can carry a freestanding bath if that is what you want.',
       },
     ],
   },
@@ -522,12 +522,12 @@ export const services = [
       {
         question: 'Can the bathroom and laundry be done at different times?',
         answer:
-          "Yes, if you'd rather sequence them than run them in parallel. That is one advantage of booking them as a single project — you can keep one room usable while the other is offline, then swap, rather than losing both wet areas in the house at once.",
+          "Yes, if you'd rather sequence them than run them in parallel. That is one advantage of booking them as a single project - you can keep one room usable while the other is offline, then swap, rather than losing both wet areas in the house at once.",
       },
       {
         question: 'Is a combined job cheaper than two separate renovations?',
         answer:
-          'Usually, yes. One mobilisation, one demolition window and one waterproofing inspection trail instead of two save real money and time compared with running the same work as two projects months apart — the exact saving depends on the layout and how much plumbing the two rooms share.',
+          'Usually, yes. One mobilisation, one demolition window and one waterproofing inspection trail instead of two save real money and time compared with running the same work as two projects months apart - the exact saving depends on the layout and how much plumbing the two rooms share.',
       },
       {
         question: 'Does my washing machine need its own water supply?',
@@ -538,7 +538,7 @@ export const services = [
         question:
           'Does laundry waterproofing have to meet the same standard as a bathroom?',
         answer:
-          'Yes. Under AS 3740, any room with a floor waste and a water supply is a wet area — which almost every laundry is — so the membrane requirements and certification are the same as for a bathroom.',
+          'Yes. Under AS 3740, any room with a floor waste and a water supply is a wet area - which almost every laundry is - so the membrane requirements and certification are the same as for a bathroom.',
       },
       {
         question:
@@ -589,12 +589,12 @@ export const services = [
       {
         question: 'What is the smallest a powder room can be?',
         answer:
-          'Practically, around 0.8 m wide by 1.5 m deep — enough for a basin, a WC and room for the door to open. Any tighter and the room starts to feel cramped and can struggle to meet the minimum clearances around fixtures.',
+          'Practically, around 0.8 m wide by 1.5 m deep - enough for a basin, a WC and room for the door to open. Any tighter and the room starts to feel cramped and can struggle to meet the minimum clearances around fixtures.',
       },
       {
         question: 'Do powder rooms really need waterproofing?',
         answer:
-          'Yes. Under AS 3740-2021, any room with a floor waste and a water-supply fixture is a wet area, so the floor needs a compliant, certified waterproof membrane. The scope is smaller than a full bathroom — no shower walls, no hob — but the floor is not optional.',
+          'Yes. Under AS 3740-2021, any room with a floor waste and a water-supply fixture is a wet area, so the floor needs a compliant, certified waterproof membrane. The scope is smaller than a full bathroom - no shower walls, no hob - but the floor is not optional.',
       },
       {
         question:

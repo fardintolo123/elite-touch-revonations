@@ -68,7 +68,7 @@ export const metadata: Metadata = buildMetadata({
       url: '/og/packages.jpg',
       width: 1200,
       height: 630,
-      alt: 'Elite Touch Renovations — bathroom renovation packages and pricing',
+      alt: 'Elite Touch Renovations - bathroom renovation packages and pricing',
     },
   ],
 })
@@ -89,7 +89,7 @@ const TIERS = [
       'Shower head with hand rail',
       'Custom-made semi-frameless shower screen',
       'Back-to-wall toilet',
-      'Accessories — towel ring, toilet paper holder, towel rail, floor wastes',
+      'Accessories - towel ring, toilet paper holder, towel rail, floor wastes',
     ],
   },
   {
@@ -107,7 +107,7 @@ const TIERS = [
       'Rain shower head with hand rail',
       'Custom-made fully frameless shower screen',
       'Back-to-wall toilet',
-      'Accessories — towel ring, toilet paper holder, towel rail, floor wastes',
+      'Accessories - towel ring, toilet paper holder, towel rail, floor wastes',
     ],
   },
   {
@@ -176,7 +176,7 @@ const PACKAGE_COMPARISON_ROWS = [
 const IN_EVERY_TIER = [
   {
     key: 'demolition',
-    body: 'Demolition — disconnection and removal of all existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
+    body: 'Demolition - disconnection and removal of all existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
   },
   {
     key: 'disconnections',
@@ -184,7 +184,7 @@ const IN_EVERY_TIER = [
   },
   {
     key: 'fittings',
-    body: 'Installation of new fittings — toilet, vanity, towel rail, toilet roll holder, shower head, shower mixer, vanity mixer',
+    body: 'Installation of new fittings - toilet, vanity, towel rail, toilet roll holder, shower head, shower mixer, vanity mixer',
   },
   {
     key: 'waterproofing',
@@ -228,7 +228,7 @@ const FAQS = [
   {
     question: 'How much does a bathroom renovation cost in Sydney?',
     answer:
-      'With Elite Touch, a bathroom renovation starts from $18,000 for a small bathroom (about 1.5 × 1.8 × 2.4 m, our Basic package), from $25,000 for a mid-size bathroom (Standard), or from $30,000 for a larger, fully-specified bathroom (Premium). Every figure is a starting price — you get a fixed-scope written quote after a free on-site measure.',
+      'With Elite Touch, a bathroom renovation starts from $18,000 for a small bathroom (about 1.5 × 1.8 × 2.4 m, our Basic package), from $25,000 for a mid-size bathroom (Standard), or from $30,000 for a larger, fully-specified bathroom (Premium). Every figure is a starting price - you get a fixed-scope written quote after a free on-site measure.',
   },
   {
     question: 'Is $30,000 the minimum for a bathroom renovation?',
@@ -238,7 +238,7 @@ const FAQS = [
   {
     question: "What's included in the price?",
     answer:
-      'Every package includes demolition, waterproofing to Australian Standards, new tiling, a custom shower screen, all new fittings and a final clean. The tiers differ in how much of the bathroom is tiled and which fittings are included — not the standard of work.',
+      'Every package includes demolition, waterproofing to Australian Standards, new tiling, a custom shower screen, all new fittings and a final clean. The tiers differ in how much of the bathroom is tiled and which fittings are included - not the standard of work.',
   },
   {
     question: 'Do you offer complete bathroom renovation packages?',
@@ -248,7 +248,7 @@ const FAQS = [
   {
     question: 'Is the price fixed once work starts?',
     answer:
-      "Yes. You get a fixed-scope written quote after a free on-site measure, before any work begins. If your bathroom's size or scope differs from a package, we tell you at the measure — never after demolition.",
+      "Yes. You get a fixed-scope written quote after a free on-site measure, before any work begins. If your bathroom's size or scope differs from a package, we tell you at the measure - never after demolition.",
   },
   {
     question: 'How long does a bathroom renovation take?',
@@ -278,8 +278,8 @@ export default function PackagesPage() {
         eyebrow="Packages"
         title="Bathroom renovation packages and pricing."
         leads={[
-          'A bathroom renovation with Elite Touch starts from $18,000 (Basic), $25,000 (Standard) or $30,000 (Premium) — each tied to a stated bathroom size below.',
-          'Each package price is tied to a bathroom of a stated size. That is deliberate — a price quoted without the size it assumes is not a price, it is a guess. All three are starting prices; your final figure is fixed in writing after a free on-site measure.',
+          'A bathroom renovation with Elite Touch starts from $18,000 (Basic), $25,000 (Standard) or $30,000 (Premium) - each tied to a stated bathroom size below.',
+          'Each package price is tied to a bathroom of a stated size. That is deliberate - a price quoted without the size it assumes is not a price, it is a guess. All three are starting prices; your final figure is fixed in writing after a free on-site measure.',
         ]}
         cta={false}
         facts={[
@@ -316,7 +316,7 @@ export default function PackagesPage() {
               The price moves with three things: how much of the bathroom is
               tiled, which fittings you choose, and whether the layout
               changes. Moving a toilet or wall, or adding a freestanding bath
-              or heated flooring, all add real cost — we tell you which of
+              or heated flooring, all add real cost - we tell you which of
               these apply to your bathroom at the free on-site measure, not
               after demolition has started.
             </p>
@@ -400,7 +400,7 @@ export default function PackagesPage() {
                   className="et-caption"
                   style={{ color: 'var(--et-text-muted)' }}
                 >
-                  Starting price — fixed at quote
+                  Starting price - fixed at quote
                 </p>
 
                 {/* The size basis is NOT optional. D-07. */}
@@ -491,7 +491,7 @@ export default function PackagesPage() {
               </h2>
               <p className="et-lead et-measure">
                 The difference between the tiers is tile coverage and the
-                fittings schedule. The work itself does not change — including
+                fittings schedule. The work itself does not change - including
                 the waterproofing, which is where a bathroom is won or lost.
               </p>
               <p className="et-body-sm et-measure">
@@ -523,13 +523,13 @@ export default function PackagesPage() {
               Is $30,000 really the minimum for a bathroom renovation?
             </h2>
             <p className="et-lead et-measure">
-              No. $30,000 is where our Premium package starts — it isn&rsquo;t
+              No. $30,000 is where our Premium package starts - it isn&rsquo;t
               a floor under every renovation. Our Basic package starts from
               $18,000, for a bathroom around 1.5 × 1.8 × 2.4 m, and still
               includes full demolition, AS 3740 waterproofing, new tiling, a
               custom semi-frameless shower screen and all new fittings.
               You&rsquo;ll see $30,000+ quoted as a typical Sydney figure in a
-              lot of places — that&rsquo;s a fair estimate for a larger,
+              lot of places - that&rsquo;s a fair estimate for a larger,
               fully-specified bathroom, not the minimum to get started.
             </p>
 
@@ -542,12 +542,12 @@ export default function PackagesPage() {
             <p className="et-body-sm et-measure">
               You&rsquo;ll sometimes see &ldquo;$10,000 bathroom
               renovation&rdquo; searched online. In our experience that
-              figure covers cosmetic work — new tapware, a repaint, replacing
-              a vanity — not a full renovation with demolition,
+              figure covers cosmetic work - new tapware, a repaint, replacing
+              a vanity - not a full renovation with demolition,
               re-waterproofing to AS 3740 and new tiling throughout. A
               compliant, fully waterproofed Sydney bathroom renovation
               realistically starts from $18,000. If your budget is tighter
-              than that, tell us at the free on-site measure — we&rsquo;ll be
+              than that, tell us at the free on-site measure - we&rsquo;ll be
               straight with you about what&rsquo;s realistic rather than
               stretch a quote to fit.
             </p>

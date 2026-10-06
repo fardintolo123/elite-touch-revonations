@@ -93,7 +93,7 @@ export function LocationHero({
             href={`/gallery/${project.slug}/`}
             className="et-location-hero-project"
           >
-            {projectLabel ?? `${project.suburb} — ${project.name}`} <span aria-hidden="true">↗</span>
+            {projectLabel ?? `${project.suburb} - ${project.name}`} <span aria-hidden="true">↗</span>
           </Link>
         )}
       </div>

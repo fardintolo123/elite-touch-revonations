@@ -46,7 +46,7 @@ export default function NotFound() {
             <Link href="/services/" className="et-link">
               Our services
             </Link>{' '}
-            — bathroom, ensuite, bathroom and laundry, and powder room
+            - bathroom, ensuite, bathroom and laundry, and powder room
             renovations
           </li>
           <li>

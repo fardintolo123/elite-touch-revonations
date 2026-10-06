@@ -190,7 +190,7 @@ export default async function ProjectPage({
           </h2>
           <ul className="et-checklist" style={{ marginTop: 'var(--et-space-6)' }}>
             <li className="et-body-sm">
-              Waterproofing to {businessInfo.standards.waterproofingDated} —
+              Waterproofing to {businessInfo.standards.waterproofingDated} -
               primer plus two coats, certificate included
             </li>
             <li className="et-body-sm">

@@ -57,14 +57,14 @@ export type HubContent = {
 export const hubContent: Record<string, HubContent> = {
   'hills-district': {
     answer: [
-      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms right across the Hills District — Baulkham Hills, Castle Hill, Kellyville, Rouse Hill, Cherrybrook, Bella Vista and the acreage suburbs around Dural and Galston. We run the whole job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, all to a fixed written scope.',
+      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms right across the Hills District - Baulkham Hills, Castle Hill, Kellyville, Rouse Hill, Cherrybrook, Bella Vista and the acreage suburbs around Dural and Galston. We run the whole job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, all to a fixed written scope.',
       'A bathroom renovation here starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. Your price is firm after a free on-site measure. A full renovation takes <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">three to four weeks on site</a>, and a premium build in stone or custom joinery takes five to six. Every job is done under NSW Builder Licence 475204C and carries a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>. Hills homes tend to sit on larger blocks, so there is usually room for a skip and deliveries on site.',
     ],
     localAngle: {
       heading: 'Renovating a bathroom in the Hills District',
       paragraphs: [
-        'The Hills is a low-density, garden-suburb part of Sydney. Most homes are freestanding on generous blocks, which usually means clear space for a skip bin, a materials drop and off-street parking — the tight access of an inner-city terrace rarely applies here.',
-        'The housing splits into two rough groups. Established brick homes in Baulkham Hills, Castle Hill, Winston Hills and Cherrybrook were mostly built between the 1970s and the 1990s; their original bathrooms are often small, with the toilet in a separate room, and opening that up is a common request. The newer estate suburbs — Kellyville Ridge, Rouse Hill, Beaumont Hills, Stanhope Gardens — are largely two-storey homes on a concrete slab, where waste pipes are set into the floor and an upstairs bathroom sits over living space.',
+        'The Hills is a low-density, garden-suburb part of Sydney. Most homes are freestanding on generous blocks, which usually means clear space for a skip bin, a materials drop and off-street parking - the tight access of an inner-city terrace rarely applies here.',
+        'The housing splits into two rough groups. Established brick homes in Baulkham Hills, Castle Hill, Winston Hills and Cherrybrook were mostly built between the 1970s and the 1990s; their original bathrooms are often small, with the toilet in a separate room, and opening that up is a common request. The newer estate suburbs - Kellyville Ridge, Rouse Hill, Beaumont Hills, Stanhope Gardens - are largely two-storey homes on a concrete slab, where waste pipes are set into the floor and an upstairs bathroom sits over living space.',
         'Out on the acreage around Dural, Kenthurst, Galston and Annangrove, some properties run on tank water or a septic system. We check what the site is actually on at the free measure, and the written quote allows for it.',
       ],
     },
@@ -81,7 +81,7 @@ export const hubContent: Record<string, HubContent> = {
       },
       {
         question:
-          'Our house has the toilet in a separate room — can you combine it into the bathroom?',
+          'Our house has the toilet in a separate room - can you combine it into the bathroom?',
         answer:
           'Yes. That is one of the most common changes we make in Hills homes from the 1970s to the 1990s. Moving the dividing wall and the toilet drain puts the job in the reconfigure band, around five to seven weeks on site, and the written quote covers the extra plumbing and framing.',
       },
@@ -94,7 +94,7 @@ export const hubContent: Record<string, HubContent> = {
       {
         question: 'Which Hills District suburbs do you cover?',
         answer:
-          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway — it is very likely we still cover it.',
+          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway - it is very likely we still cover it.',
       },
     ],
     testimonialAuthor: 'Ken Chen',
@@ -102,7 +102,7 @@ export const hubContent: Record<string, HubContent> = {
 
   'inner-west': {
     answer: [
-      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across the Inner West — Marrickville, Balmain, Leichhardt, Newtown, Five Dock, Drummoyne and the surrounding suburbs. We handle the full job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
+      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across the Inner West - Marrickville, Balmain, Leichhardt, Newtown, Five Dock, Drummoyne and the surrounding suburbs. We handle the full job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
       'A bathroom renovation here starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. Your price is firm after a free on-site measure. A full renovation takes <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">three to four weeks on site</a>, and a premium build in stone or custom joinery takes five to six. Every job runs under NSW Builder Licence 475204C with a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>. Inner West homes can bring tight access, older services and strata rules, so we allow for them in the written scope.',
     ],
     localAngle: {
@@ -137,7 +137,7 @@ export const hubContent: Record<string, HubContent> = {
       {
         question: 'Which Inner West suburbs do you cover?',
         answer:
-          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway — it is very likely we still cover it.',
+          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway - it is very likely we still cover it.',
       },
     ],
     testimonialAuthor: 'Ken Chen',
@@ -145,15 +145,15 @@ export const hubContent: Record<string, HubContent> = {
 
   'eastern-suburbs': {
     answer: [
-      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across the Eastern Suburbs — Randwick, Paddington, Woollahra, Bondi, Coogee, Bronte, Rose Bay and Double Bay. We handle the full job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
+      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across the Eastern Suburbs - Randwick, Paddington, Woollahra, Bondi, Coogee, Bronte, Rose Bay and Double Bay. We handle the full job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
       'A bathroom renovation here starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. Your price is firm after a free on-site measure. A full renovation takes <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">three to four weeks on site</a>, and a premium build in stone or custom joinery takes five to six. Every job runs under NSW Builder Licence 475204C with a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>. Many homes here are Federation-era terraces or apartments, so we plan for older pipework, heritage controls and strata rules before we start.',
     ],
     localAngle: {
       heading: 'Renovating a bathroom in the Eastern Suburbs',
       paragraphs: [
         'The Eastern Suburbs mix two very different building types, and each one changes how a bathroom renovation runs.',
-        'The terrace-and-semi belt — Paddington, Woollahra, Randwick, Waverley, Bronte — is largely Victorian and Federation housing, and much of it sits in a heritage conservation area. These homes often still have clay drainage lines, galvanised or lead water pipes, timber floors over a subfloor, and a bathroom that was added to the back of the house at some point. Old services frequently need replacing once the room is opened up, and we allow for that in the quote rather than as a surprise.',
-        'Along the beaches and the ridge — Bondi, Bondi Junction, Rose Bay, Coogee and much of Randwick — a large share of homes are apartments. A strata bathroom needs owners-corporation approval before work starts, sometimes a building manager sign-off, and it has to respect the building rules on work hours, lift use and common-property waterproofing. Streets are narrow and parking is by permit, so we organise skip permits and smaller deliveries.',
+        'The terrace-and-semi belt - Paddington, Woollahra, Randwick, Waverley, Bronte - is largely Victorian and Federation housing, and much of it sits in a heritage conservation area. These homes often still have clay drainage lines, galvanised or lead water pipes, timber floors over a subfloor, and a bathroom that was added to the back of the house at some point. Old services frequently need replacing once the room is opened up, and we allow for that in the quote rather than as a surprise.',
+        'Along the beaches and the ridge - Bondi, Bondi Junction, Rose Bay, Coogee and much of Randwick - a large share of homes are apartments. A strata bathroom needs owners-corporation approval before work starts, sometimes a building manager sign-off, and it has to respect the building rules on work hours, lift use and common-property waterproofing. Streets are narrow and parking is by permit, so we organise skip permits and smaller deliveries.',
       ],
     },
     faqs: [
@@ -182,7 +182,7 @@ export const hubContent: Record<string, HubContent> = {
       {
         question: 'Which suburbs in the Eastern Suburbs do you cover?',
         answer:
-          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway — it is very likely we still cover it.',
+          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway - it is very likely we still cover it.',
       },
     ],
     testimonialAuthor: 'Kieran C',
@@ -190,15 +190,15 @@ export const hubContent: Record<string, HubContent> = {
 
   'north-shore': {
     answer: [
-      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across the North Shore — from Neutral Bay, Mosman and Crows Nest through Chatswood, Lane Cove and Willoughby to Killara, Wahroonga and Hornsby. We run the whole job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
+      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across the North Shore - from Neutral Bay, Mosman and Crows Nest through Chatswood, Lane Cove and Willoughby to Killara, Wahroonga and Hornsby. We run the whole job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
       'A bathroom renovation here starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. Your price is firm after a free on-site measure. A full renovation takes <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">three to four weeks on site</a>, and a premium build in stone or custom joinery takes five to six. Every job runs under NSW Builder Licence 475204C with a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>. Many North Shore homes are older houses with timber floors, or apartments near the rail line, so we allow for subfloor access and strata rules in the quote.',
     ],
     localAngle: {
       heading: 'Renovating a bathroom on the North Shore',
       paragraphs: [
-        'The North Shore is known for leafy, established streets, and the housing stock reflects that. Federation, inter-war and mid-century homes are common, and the Ku-ring-gai suburbs — Roseville, Lindfield, Killara, Pymble and Wahroonga — hold some of the largest heritage conservation areas in Sydney.',
+        'The North Shore is known for leafy, established streets, and the housing stock reflects that. Federation, inter-war and mid-century homes are common, and the Ku-ring-gai suburbs - Roseville, Lindfield, Killara, Pymble and Wahroonga - hold some of the largest heritage conservation areas in Sydney.',
         'Older homes here are often timber-framed on brick piers with a suspended timber floor, sometimes on a sloping bushland block in places like Castlecrag, Northbridge or Roseville Chase. That means subfloor access matters, and the floor structure has to be checked and, where needed, reinforced before tiling and waterproofing. Many of these homes still have one small main bathroom and a separate toilet, so opening the two into a single room is a frequent request.',
-        'Closer to the rail line and the town centres — Chatswood, St Leonards, North Sydney, Wollstonecraft, Hornsby and Waitara — there is a lot of apartment stock. As with any strata bathroom, we work to the owners corporation approval, hours and access rules, and the quote reflects them.',
+        'Closer to the rail line and the town centres - Chatswood, St Leonards, North Sydney, Wollstonecraft, Hornsby and Waitara - there is a lot of apartment stock. As with any strata bathroom, we work to the owners corporation approval, hours and access rules, and the quote reflects them.',
         'This page is backed by photographed North Shore work, including a Hornsby bathroom, a Hornsby ensuite and two Artarmon bathroom projects. Pymble, Chatswood, Castlecrag, St Ives and Wahroonga are covered through this regional page rather than separate suburb pages.',
       ],
     },
@@ -224,14 +224,14 @@ export const hubContent: Record<string, HubContent> = {
           'Yes. The gallery includes a Hornsby bathroom, a Hornsby ensuite and two Artarmon bathroom projects, all photographed and suburb-attributed. Those project pages show the actual work; this North Shore page explains the wider service area.',
       },
       {
-        question: 'Our home has timber floors — does that change the bathroom renovation?',
+        question: 'Our home has timber floors - does that change the bathroom renovation?',
         answer:
           'It can. Many older North Shore homes have a suspended timber floor on brick piers. We check the subfloor and joists, then reinforce or re-sheet where the tiling and waterproofing need a rigid base, and we note it in the quote. It does not stop a full renovation; it is a normal step in these homes.',
       },
       {
         question: 'Which North Shore suburbs do you cover?',
         answer:
-          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway — it is very likely we still cover it.',
+          'We cover every suburb in the list further down this page, and we work right across Sydney. If your street is not shown, call us anyway - it is very likely we still cover it.',
       },
     ],
     testimonialAuthor: 'Huseyin Sumaktas',
@@ -239,7 +239,7 @@ export const hubContent: Record<string, HubContent> = {
 
   'north-western-sydney': {
     answer: [
-      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across North-Western Sydney — Hunters Hill, Gladesville, Ryde, North Ryde, Epping, Eastwood and the surrounding suburbs. We handle the full job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
+      'Elite Touch Renovations is a licensed Sydney builder, and we renovate bathrooms across North-Western Sydney - Hunters Hill, Gladesville, Ryde, North Ryde, Epping, Eastwood and the surrounding suburbs. We handle the full job: strip-out, plumbing, electrical, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling and fit-off, to a fixed written scope.',
       'A bathroom renovation here starts from $18,000 for a small bathroom about 1.5 by 1.8 by 2.4 metres on our <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. Your price is firm after a free on-site measure. A full renovation takes <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">three to four weeks on site</a>, and a premium build in stone or custom joinery takes five to six. Every job runs under NSW Builder Licence 475204C with a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>. The Gladesville project on this page shows the kind of completed bathroom work we carry out in the region.',
     ],
     localAngle: {
@@ -269,7 +269,7 @@ export const hubContent: Record<string, HubContent> = {
       {
         question: 'Do you renovate bathrooms in Ryde and the surrounding suburbs?',
         answer:
-          'Yes. We cover every suburb in the North-Western Sydney list further down this page, including Ryde, Gladesville, Hunters Hill, North Ryde, Epping and Eastwood. If your street is not shown, call us anyway — it is very likely we still cover it.',
+          'Yes. We cover every suburb in the North-Western Sydney list further down this page, including Ryde, Gladesville, Hunters Hill, North Ryde, Epping and Eastwood. If your street is not shown, call us anyway - it is very likely we still cover it.',
       },
       {
         question: 'What does the written bathroom renovation quote include?',

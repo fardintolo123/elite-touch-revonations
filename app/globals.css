@@ -1807,3 +1807,65 @@ svg {
   height: 100%;
   object-fit: cover;
 }
+
+/* ==========================================================================
+   Motion
+
+   Keep the first impression calm: the hero copy settles into place once,
+   while project photography responds to pointer interaction rather than
+   moving continuously or hiding content until a script runs.
+   ========================================================================== */
+
+@keyframes et-hero-copy-arrive {
+  from {
+    opacity: 0.7;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes et-hero-media-arrive {
+  from {
+    opacity: 0.7;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .et-hero-grid > .et-stack:first-child,
+  .et-hero > .et-container > .et-stack,
+  .et-location-hero-content {
+    animation: et-hero-copy-arrive var(--et-duration-deliberate)
+      var(--et-ease-out) both;
+  }
+
+  .et-hero-media {
+    animation: et-hero-media-arrive var(--et-duration-deliberate)
+      var(--et-ease-out) 80ms both;
+  }
+}
+
+.et-btn:active {
+  transform: scale(0.98);
+}
+
+.et-hero-media img,
+.et-band-media img,
+.et-photo img {
+  transition: transform var(--et-duration-slow) var(--et-ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .et-hero-media:hover img,
+  .et-band-media:hover img,
+  .et-photo:hover img {
+    transform: scale(1.025);
+  }
+}

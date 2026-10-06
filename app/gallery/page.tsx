@@ -62,7 +62,7 @@ export const metadata: Metadata = buildMetadata({
 const TEXT_ONLY_PROJECTS = [
   {
     name: 'Heritage bathroom, The Rocks',
-    body: 'A bathroom in a 19th-century terrace, worked around an original timber-framed window that had to stay. Heritage fabric sets the constraints on a job like this — the waterproofing and the setout have to be planned around what cannot be moved.',
+    body: 'A bathroom in a 19th-century terrace, worked around an original timber-framed window that had to stay. Heritage fabric sets the constraints on a job like this - the waterproofing and the setout have to be planned around what cannot be moved.',
   },
   {
     name: 'Marble bathroom, Hunters Hill',
@@ -92,7 +92,7 @@ export default function GalleryPage() {
           </h1>
           <p className="et-lead et-measure">
             Real photographs of finished work across Sydney, from Artarmon and
-            Balmain to Little Bay and The Rocks — different homes, different
+            Balmain to Little Bay and The Rocks - different homes, different
             budgets, the same standard underneath the tiles.
           </p>
         </div>

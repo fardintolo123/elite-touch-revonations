@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
-import { featuredReviews } from '@/lib/reviews'
+import { featuredReviews, formatReviewBody } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
@@ -73,15 +73,15 @@ const STANDARD_INCLUSIONS = [
   { key: 'planning', body: 'Planning and design' },
   {
     key: 'demolition',
-    body: 'Demolition — floor protection, disconnection and removal of existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
+    body: 'Demolition - floor protection, disconnection and removal of existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
   },
   {
     key: 'electrical',
-    body: 'Electrical — safe disconnection, replacement power points and light switch',
+    body: 'Electrical - safe disconnection, replacement power points and light switch',
   },
   {
     key: 'plumbing',
-    body: 'Plumbing — safe disconnection and installation of new fittings',
+    body: 'Plumbing - safe disconnection and installation of new fittings',
   },
   { key: 'walls', body: 'Render or re-sheet walls' },
   {
@@ -92,13 +92,13 @@ const STANDARD_INCLUSIONS = [
         <ExternalLink href={businessInfo.authorities.as3740}>
           {businessInfo.standards.waterproofing}
         </ExternalLink>{' '}
-        — primer plus two coats, certificate included
+        - primer plus two coats, certificate included
       </>
     ),
   },
   {
     key: 'tiling',
-    body: 'Tiling — new screed to create falls to drains, all glues, tile trims, grouts and silicone',
+    body: 'Tiling - new screed to create falls to drains, all glues, tile trims, grouts and silicone',
   },
   { key: 'clean', body: 'Final clean before handover' },
 ] as const
@@ -232,7 +232,7 @@ export default async function ServicePage({
           <p className="et-lead et-measure">
             These are on-site programs, and you get yours in writing before work
             starts. Older Sydney homes can need extra days for what turns up at
-            strip-out — rot, non-compliant plumbing, asbestos — and we tell you
+            strip-out - rot, non-compliant plumbing, asbestos - and we tell you
             how that is handled in the quote, not afterwards.
           </p>
 
@@ -270,10 +270,10 @@ export default async function ServicePage({
           <span className="et-eyebrow">Customer review</span>
           <figure className="et-card et-card-dark">
             <blockquote className="et-quote">
-              <p>{review.body}</p>
+              <p>{formatReviewBody(review.body)}</p>
             </blockquote>
             <figcaption className="et-quote-author">
-              — {review.author}
+              By {review.author}
             </figcaption>
           </figure>
         </div>

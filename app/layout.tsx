@@ -81,7 +81,7 @@ export const metadata: Metadata = {
         url: '/og/default.jpg',
         width: 1200,
         height: 630,
-        alt: 'Elite Touch Renovations — bathroom renovations across Sydney',
+        alt: 'Elite Touch Renovations - bathroom renovations across Sydney',
       },
     ],
   },

@@ -117,7 +117,7 @@ export function PageHero({
               className="et-badge-suburb"
               style={{ display: 'inline-flex', width: 'fit-content' }}
             >
-              {image.project.suburb} — {image.project.name}
+              {image.project.suburb} - {image.project.name}
             </Link>
           </div>
         </div>

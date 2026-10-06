@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
-import { reviews } from '@/lib/reviews'
+import { formatReviewBody, reviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { PageHero } from '@/components/PageHero'
@@ -68,7 +68,7 @@ export default function AboutPage() {
           <h2 className="et-h2 et-measure-tight">The Dawood family</h2>
           <p className="et-lead et-measure">
             Our customers name us by name in their reviews, which is a fair
-            picture of how the business runs — you are not handed to a
+            picture of how the business runs - you are not handed to a
             different team once the quote is signed.
           </p>
 
@@ -212,7 +212,7 @@ export default function AboutPage() {
                   <ExternalLink href={businessInfo.authorities.nswLicenceRegister}>
                     {businessInfo.builderLicence}
                   </ExternalLink>{' '}
-                  —{' '}
+                  -{' '}
                   {businessInfo.builderLicenceHolder}
                 </li>
                 <li className="et-body-sm">
@@ -393,12 +393,12 @@ export default function AboutPage() {
             {reviews.map((review) => (
               <figure key={review.author} className="et-card">
                 <blockquote className="et-quote">
-                  {review.body.split('\n\n').map((paragraph, index) => (
+                  {formatReviewBody(review.body).split('\n\n').map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}
                 </blockquote>
                 <figcaption className="et-quote-author">
-                  — {review.author}
+                  By {review.author}
                 </figcaption>
               </figure>
             ))}

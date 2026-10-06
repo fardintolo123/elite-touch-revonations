@@ -149,7 +149,7 @@ export async function submitEnquiry(
   // Honeypot. A real person never fills this — it is visually hidden.
   if (asTrimmedString(formData.get('company')) !== '') {
     // Silently accept so the bot learns nothing.
-    return { status: 'success', message: 'Thanks — we will be in touch.' }
+    return { status: 'success', message: 'Thanks - we will be in touch.' }
   }
 
   const errors: Record<string, string> = {}
@@ -177,21 +177,21 @@ export async function submitEnquiry(
 
   if (!apiKey || !from) {
     console.error(
-      '[enquiry] not configured — missing RESEND_API_KEY and/or ETR_ENQUIRY_FROM'
+      '[enquiry] not configured - missing RESEND_API_KEY and/or ETR_ENQUIRY_FROM'
     )
     return {
       status: 'error',
-      message: `This form is not connected yet, so your message was not sent. Please call ${businessInfo.phone.display} — that reaches us directly.`,
+      message: `This form is not connected yet, so your message was not sent. Please call ${businessInfo.phone.display} - that reaches us directly.`,
     }
   }
 
   const rows: Array<[string, string]> = [
     ['Name', name],
     ['Phone', phone],
-    ['Email', email || '—'],
-    ['Suburb', suburb || '—'],
+    ['Email', email || 'Not provided'],
+    ['Suburb', suburb || 'Not provided'],
     ['Renovating', service || 'Not sure yet'],
-    ['Message', message || '—'],
+    ['Message', message || 'Not provided'],
   ]
 
   const resend = new Resend(apiKey)
@@ -234,7 +234,7 @@ export async function submitEnquiry(
     const { error } = await resend.emails.send({
       from,
       to: [to],
-      subject: `New enquiry — ${name}${suburb ? `, ${suburb}` : ''}`,
+      subject: `New enquiry - ${name}${suburb ? `, ${suburb}` : ''}`,
       // Reply goes straight back to the customer where we have their address.
       replyTo: email,
       text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
@@ -269,10 +269,10 @@ export async function submitEnquiry(
       from,
       to: [email],
       replyTo: to,
-      subject: 'We have received your enquiry — Elite Touch Renovations',
+      subject: 'We have received your enquiry - Elite Touch Renovations',
       text: `Hi ${name},\n\nThanks for getting in touch with Elite Touch Renovations. We have your details and will be in touch to arrange your free on-site measure.\n\nWhat you sent us:\n${rows
         .map(([k, v]) => `${k}: ${v}`)
-        .join('\n')}\n\nIf anything is urgent, call us on ${businessInfo.phone.display}.\n\n— Elite Touch Renovations`,
+        .join('\n')}\n\nIf anything is urgent, call us on ${businessInfo.phone.display}.\n\n- Elite Touch Renovations`,
       html: `<p>Hi ${escapeHtml(name)},</p><p>Thanks for getting in touch with Elite Touch Renovations. We have your details and will be in touch to arrange your free on-site measure.</p><p><strong>What you sent us</strong></p><table cellpadding="6">${rows
         .map(
           ([k, v]) =>
@@ -283,7 +283,7 @@ export async function submitEnquiry(
         )
         .join(
           ''
-        )}</table><p>If anything is urgent, call us on ${businessInfo.phone.display}.</p><p>— Elite Touch Renovations</p>`,
+        )}</table><p>If anything is urgent, call us on ${businessInfo.phone.display}.</p><p>- Elite Touch Renovations</p>`,
     })
 
     if (error) {
@@ -312,6 +312,6 @@ export async function submitEnquiry(
   return {
     status: 'success',
     message:
-      'Thanks — we have your details and will be in touch to arrange your free on-site measure.',
+      'Thanks - we have your details and will be in touch to arrange your free on-site measure.',
   }
 }

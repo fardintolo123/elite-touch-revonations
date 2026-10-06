@@ -102,6 +102,10 @@ export const reviews: readonly Review[] = [
   },
 ]
 
+export function formatReviewBody(body: string): string {
+  return body.replace(/—/g, ',')
+}
+
 /** Pull a fixed slice for a page. Deterministic — never randomise SEO copy. */
 export function featuredReviews(count: number): readonly Review[] {
   return reviews.slice(0, count)

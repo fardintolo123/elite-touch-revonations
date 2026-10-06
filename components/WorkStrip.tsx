@@ -21,7 +21,7 @@ import { projects } from '@/lib/projects'
 
 export function WorkStrip({
   title = 'Recent work',
-  intro = 'Our own photographs of finished bathrooms across Sydney — not stock images.',
+  intro = 'Our own photographs of finished bathrooms across Sydney - not stock images.',
   limit = 3,
   /** Show these project slugs first, if present. */
   prefer = [] as string[],

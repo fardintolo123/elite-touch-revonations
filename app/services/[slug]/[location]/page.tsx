@@ -6,7 +6,7 @@ import { businessInfo, services } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
 import { hubContentFor } from '@/lib/hubContent'
 import { projects } from '@/lib/projects'
-import { reviewByAuthor } from '@/lib/reviews'
+import { formatReviewBody, reviewByAuthor } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
@@ -400,7 +400,7 @@ export async function generateMetadata({
             url: hubImage,
             width: 1200,
             height: 630,
-            alt: `Elite Touch Renovations — bathroom renovations, ${region.name}`,
+            alt: `Elite Touch Renovations - bathroom renovations, ${region.name}`,
           },
         ]
       : undefined,
@@ -491,11 +491,11 @@ export default async function LocationHubPage({
         eyebrow={region.name}
         caption={`Reviewed ${reviewedMonth}`}
         title={`Bathroom renovations on Sydney’s ${region.name}`}
-        lead={`We strip out, waterproof to ${businessInfo.standards.waterproofing}, tile and fit off across the ${region.name} — and we put the full scope and price in writing before anyone picks up a tool.`}
+        lead={`We strip out, waterproof to ${businessInfo.standards.waterproofing}, tile and fit off across the ${region.name} - and we put the full scope and price in writing before anyone picks up a tool.`}
         project={localProjects[0]}
         projectLabel={
           localProjects[0]
-            ? `Featured project: ${localProjects[0].suburb} — ${localProjects[0].name}`
+            ? `Featured project: ${localProjects[0].suburb} - ${localProjects[0].name}`
             : undefined
         }
         rating={<GoogleRating />}
@@ -630,12 +630,12 @@ export default async function LocationHubPage({
             <span className="et-eyebrow">Customer review</span>
             <figure className="et-card et-card-dark">
               <blockquote className="et-quote">
-                {testimonial.body.split('\n\n').map((para, index) => (
+                {formatReviewBody(testimonial.body).split('\n\n').map((para, index) => (
                   <p key={index}>{para}</p>
                 ))}
               </blockquote>
               <figcaption className="et-quote-author">
-                — {testimonial.author}
+                By {testimonial.author}
               </figcaption>
             </figure>
           </div>
@@ -651,7 +651,7 @@ export default async function LocationHubPage({
           </h2>
           <p className="et-lead et-measure">
             We work {businessInfo.serviceArea.coverage}. These are the{' '}
-            {region.name} suburbs in our regular run — if yours is not listed,
+            {region.name} suburbs in our regular run - if yours is not listed,
             call us anyway, it is very likely we cover it.
           </p>
 
@@ -792,7 +792,7 @@ export default async function LocationHubPage({
                   <ExternalLink href={businessInfo.authorities.as3740}>
                     {businessInfo.standards.waterproofingDated}
                   </ExternalLink>{' '}
-                  —
+                  -
                   primer plus two coats, certificate included
                 </li>
                 <li className="et-body-sm">
@@ -819,7 +819,7 @@ export default async function LocationHubPage({
                   <ExternalLink href={businessInfo.authorities.nswLicenceRegister}>
                     {businessInfo.builderLicence}
                   </ExternalLink>{' '}
-                  —{' '}
+                  -{' '}
                   {businessInfo.builderLicenceHolder}
                 </li>
                 <li className="et-body-sm">ABN {businessInfo.abn}</li>

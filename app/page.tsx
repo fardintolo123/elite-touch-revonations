@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
-import { featuredReviews } from '@/lib/reviews'
+import { featuredReviews, formatReviewBody } from '@/lib/reviews'
 import Image from 'next/image'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
@@ -60,12 +60,12 @@ const PROCESS = [
   {
     step: '2',
     title: 'Fixed-scope written quote',
-    body: 'You get the scope in writing — what is included, what is not, and what it costs. No verbal estimates.',
+    body: 'You get the scope in writing - what is included, what is not, and what it costs. No verbal estimates.',
   },
   {
     step: '3',
     title: 'Demolition and waterproofing',
-    body: 'Floor protection, strip-out, off-site rubbish removal, then waterproofing to AS 3740 — primer plus two coats, certificate included.',
+    body: 'Floor protection, strip-out, off-site rubbish removal, then waterproofing to AS 3740 - primer plus two coats, certificate included.',
   },
   {
     step: '4',
@@ -112,7 +112,7 @@ const HOME_FAQS = [
   {
     question: 'How much does a bathroom renovation cost in Sydney?',
     answer:
-      'A bathroom renovation with Elite Touch starts from $18,000 for a small bathroom (about 1.5 × 1.8 × 2.4 m, our Basic package), from $25,000 for a mid-size bathroom (Standard), or from $30,000 for a larger, fully-specified bathroom (Premium). Every figure is a starting price — you get a fixed-scope written quote after a free on-site measure.',
+      'A bathroom renovation with Elite Touch starts from $18,000 for a small bathroom (about 1.5 × 1.8 × 2.4 m, our Basic package), from $25,000 for a mid-size bathroom (Standard), or from $30,000 for a larger, fully-specified bathroom (Premium). Every figure is a starting price - you get a fixed-scope written quote after a free on-site measure.',
     link: {
       href: '/packages/',
       label: 'Compare the Basic, Standard and Premium packages',
@@ -304,9 +304,9 @@ export default function HomePage() {
                 className="et-quote"
                 style={{ marginTop: 'var(--et-space-5)' }}
               >
-                <p>{firstReview.body}</p>
+                <p>{formatReviewBody(firstReview.body)}</p>
               </blockquote>
-              <p className="et-quote-author">— {firstReview.author}</p>
+              <p className="et-quote-author">By {firstReview.author}</p>
               <p
                 className="et-body-sm"
                 style={{
@@ -454,10 +454,10 @@ export default function HomePage() {
           >
             <figure className="et-card et-card-dark">
               <blockquote className="et-quote">
-                <p>{secondReview.body}</p>
+                <p>{formatReviewBody(secondReview.body)}</p>
               </blockquote>
               <figcaption className="et-quote-author">
-                — {secondReview.author}
+                By {secondReview.author}
               </figcaption>
             </figure>
 
@@ -469,7 +469,7 @@ export default function HomePage() {
               >
                 <li>Fixed-scope written quotes, not verbal estimates</li>
                 <li>
-                  Waterproofing to {businessInfo.standards.waterproofing} —
+                  Waterproofing to {businessInfo.standards.waterproofing} -
                   primer plus two coats, certificate included
                 </li>
                 <li>Regular updates by phone and SMS while the job runs</li>
