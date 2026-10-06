@@ -66,7 +66,7 @@ export default async function BlogPostPage({
         <article className="et-section">
           <div className="et-container et-measure-wide">
             <p className="et-body-sm" style={{ marginBottom: 'var(--et-space-8)', color: 'var(--et-text-secondary)' }}>
-              <Link href="/blog/" className="et-link">All advice</Link> / {post.category}
+              <Link href="/blog/" className="et-link">All blogs</Link> / {post.category}
             </p>
             <div className="et-stack et-blog-prose">
               {post.quickAnswer ? (
@@ -151,7 +151,7 @@ export default async function BlogPostPage({
         pageType="WebPage"
         breadcrumbs={[
           { name: 'Home', url: '/' },
-          { name: 'Advice', url: '/blog/' },
+          { name: 'Blogs', url: '/blog/' },
           { name: post.title, url: `/blog/${post.slug}/` },
         ]}
         faqs={post.faq}

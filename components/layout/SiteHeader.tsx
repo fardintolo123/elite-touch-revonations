@@ -96,11 +96,11 @@ function ServicesHoverMenu() {
   )
 }
 
-function AdvicePanel() {
+function BlogsPanel() {
   return (
-    <div className="et-nav-panel et-nav-panel-advice">
+    <div className="et-nav-panel et-nav-panel-blogs">
       <Link href="/blog/" className="et-nav-panel-index">
-        All advice
+        All blogs
       </Link>
       {blogPosts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}/`}>
@@ -111,19 +111,19 @@ function AdvicePanel() {
   )
 }
 
-function AdviceMenu() {
+function BlogsMenu() {
   return (
     <details className="et-nav-menu" name="primary-nav">
-      <summary>Advice</summary>
-      <AdvicePanel />
+      <summary>Blogs</summary>
+      <BlogsPanel />
     </details>
   )
 }
 
-function AdviceHoverMenu() {
+function BlogsHoverMenu() {
   return (
-    <HoverNavMenu href="/blog/" label="Advice">
-      <AdvicePanel />
+    <HoverNavMenu href="/blog/" label="Blogs">
+      <BlogsPanel />
     </HoverNavMenu>
   )
 }
@@ -194,7 +194,7 @@ function DesktopNavigationItems() {
       <Link href="/">Home</Link>
       <ServicesHoverMenu />
       <Link href="/packages/">Packages</Link>
-      <AdviceHoverMenu />
+      <BlogsHoverMenu />
       <GalleryHoverMenu />
       <AboutHoverMenu />
       <Link href="/contact-us/">Contact</Link>
@@ -208,7 +208,7 @@ function MobileNavigationItems() {
       <Link href="/">Home</Link>
       <ServicesMenu />
       <Link href="/packages/">Packages</Link>
-      <AdviceMenu />
+      <BlogsMenu />
       <GalleryMenu />
       <AboutMenu />
       <Link href="/contact-us/">Contact</Link>
@@ -221,7 +221,7 @@ export function SiteHeader() {
     <header className="et-header">
       <div className="et-container">
         <div className="et-header-inner">
-          <Link href="/" className="et-logo" aria-label={`${businessInfo.name} — home`}>
+          <Link href="/" className="et-logo" aria-label={`${businessInfo.name} - home`}>
             <Image
               className="et-logo-mark"
               src="/brand/etr-mark.webp"

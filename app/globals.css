@@ -1145,23 +1145,35 @@ svg {
   width: min(640px, calc(100vw - (var(--et-gutter) * 2)));
   grid-template-columns: 1fr;
 }
-.et-nav-panel-services-list,
-.et-nav-panel-regions {
+.et-nav-panel-services-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: var(--et-space-5);
-}
-.et-nav-panel-services-list {
   row-gap: var(--et-space-1);
 }
+.et-nav-panel-services-list > a,
+.et-nav-panel-group > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+/* Regions vary from 0 to several suburbs each, so a row-locked 2-col grid
+   stalls the shorter column at the tallest row's height and leaves the final
+   odd item stranded (e.g. "North Shore" alone under empty space). A
+   multi-column flow lets each group keep its natural height and balances
+   across the two columns like justified text, so nothing look misaligned. */
 .et-nav-panel-regions {
-  row-gap: var(--et-space-4);
-  align-items: start;
+  columns: 2;
+  column-gap: var(--et-space-5);
 }
 .et-nav-panel-group {
   display: grid;
   align-content: start;
-  min-height: 76px;
+  break-inside: avoid;
+  margin-bottom: var(--et-space-4);
+}
+.et-nav-panel-group:last-child {
+  margin-bottom: 0;
 }
 .et-nav-panel-group .et-nav-panel-child {
   padding-top: var(--et-space-2);
@@ -1169,7 +1181,7 @@ svg {
   color: var(--et-text-muted);
   font-size: var(--et-text-caption);
 }
-.et-nav-panel-advice {
+.et-nav-panel-blogs {
   width: min(720px, calc(100vw - (var(--et-gutter) * 2)));
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1283,12 +1295,11 @@ svg {
   transform: none;
   grid-template-columns: 1fr;
 }
-.et-nav-mobile .et-nav-panel-services-list,
-.et-nav-mobile .et-nav-panel-regions {
+.et-nav-mobile .et-nav-panel-services-list {
   grid-template-columns: 1fr;
 }
-.et-nav-mobile .et-nav-panel-group {
-  min-height: 0;
+.et-nav-mobile .et-nav-panel-regions {
+  columns: 1;
 }
 .et-nav-mobile .et-nav-panel .et-nav-panel-index,
 .et-nav-mobile .et-nav-panel .et-nav-panel-heading {
