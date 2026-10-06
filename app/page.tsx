@@ -325,7 +325,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------- Top concerns ---------------- */}
-      <section className="et-section et-band-canvas">
+      <section className="et-section et-band-accent">
         <div className="et-container et-stack">
           <span className="et-eyebrow">Before work starts</span>
           <h2 className="et-h2 et-measure-tight">

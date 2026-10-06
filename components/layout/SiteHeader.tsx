@@ -63,15 +63,17 @@ function ServicesPanel() {
         {regions.map((region) => (
           <div key={region.slug} className="et-nav-panel-group">
             <Link href={`${region.hubUrl}/`}>{region.name}</Link>
-            {publishedSuburbs(region).map((suburb) => (
-              <Link
-                key={suburb.slug}
-                href={`/services/bathroom-renovations/${suburb.slug}/`}
-                className="et-nav-panel-child"
-              >
-                {suburb.name}
-              </Link>
-            ))}
+            <div className="et-nav-panel-suburbs">
+              {publishedSuburbs(region).map((suburb) => (
+                <Link
+                  key={suburb.slug}
+                  href={`/services/bathroom-renovations/${suburb.slug}/`}
+                  className="et-nav-panel-child"
+                >
+                  {suburb.name}
+                </Link>
+              ))}
+            </div>
           </div>
         ))}
       </div>

@@ -2,44 +2,53 @@
 
 ## 1. Session Objective
 
-Improve the site's animations because the owner currently does not notice any, then offer grounded design and photography/background suggestions based on the attached pale blush reference image.
+Improve animations across the site's sections and pages after the owner noted that a hero-only pass did not satisfy the request, then apply the owner's choice to try a subtle blush background on one section.
 
 ## 2. Work Completed
 
 - Added a one-time, CSS-only hero-copy entrance and a short staggered hero-media entrance.
+- Added a one-time CSS reveal for all main-content sections across page types, including nested article sections and blog article wrappers. A small `IntersectionObserver` trigger adds a class for the CSS animation and unobserves each section after it enters view.
+- Added a `MutationObserver` so sections introduced by client-side route navigation are also observed.
 - Added a pressed-state scale response to buttons.
 - Added subtle image zoom on hover for hero, image-band, and project-detail photography, gated to pointer devices.
-- Kept the effects inside the existing reduced-motion rules and existing design-system motion tokens.
-- Reviewed the homepage at desktop and mobile sizes and checked the hero animation and reduced-motion state in the browser.
-- Kept the real project photo as foreground imagery; no backgrounds, images, or dependencies were added.
+- Kept the effects inside existing reduced-motion preferences and design-system motion tokens. Content remains visible if the observers are unavailable or JavaScript does not run.
+- Verified the production build in a browser across representative home, about, packages, services, location, blog listing/article, gallery listing/project, privacy and contact routes; all returned HTTP 200 and section targets received the reveal animation. Also verified client-side navigation to Packages initializes the observer for new sections.
+- Confirmed a revealed section stays revealed after scrolling back up.
+- Checked production at desktop and mobile sizes and verified reduced motion disables the section animation while headings remain visible.
+- Added the existing `surface-accent` blush as a full-width band behind the homepage's "Before work starts" section only. Documented the accent-band use in `DESIGN.md`.
+- Kept the real project photo as foreground imagery; no background images, new photos, or dependencies were added.
 
 ## 3. Important Decisions
 
 - **Use restrained CSS animation rather than add a library.** The work uses existing motion tokens and avoids a dependency or client-side boundary.
-- **Animate the hero once, not every section on scroll.** The entrance establishes hierarchy without making a photo-led renovation site feel busy.
+- **Apply a restrained reveal to every content section, not a uniform entrance on initial page load.** An observer triggers CSS animation once per section; content is never hidden while waiting for JavaScript.
 - **Keep the attached blush look as a possible accent, not a site-wide background.** Existing DESIGN.md defines the light canvas, white surfaces, and magenta-50 accent. A faint blush can support a single section, but a persistent pink wash would weaken the existing band rhythm.
+- **Place the blush on the homepage "Before work starts" section.** This gives the practical scope/waterproofing/timing answers a distinct but quiet backdrop, between the white hero and the following surface band; use the current `surface-accent` token.
 - **Keep project photos as real, labeled images rather than CSS background images.** This preserves the site's honest project proof, image sizing, and accessible alt text.
 
 ## 4. Permanent Rules / Lessons
 
 - Continue to honor `DESIGN.md` motion tokens and its `prefers-reduced-motion` treatment.
-- Prefer a small number of purposeful entrance and interaction effects over uniform scroll reveals.
+- Prefer purposeful scroll reveals to uniform entrance choreography on every item.
 - Keep hover movement gated behind fine-pointer/hover capability and keep image movement clipped by its existing frame.
 - Do not use unverified project photos as decorative backgrounds or imply work not evidenced by the project data.
 
 ## 5. Things We Explicitly Decided NOT To Do
 
-- No animation library, JavaScript scroll animation, or new client component.
-- No continuous/parallax motion, site-wide section reveal choreography, or background video.
+- No animation library, JavaScript-driven animation, or new client component.
+- No continuous/parallax motion or background video.
 - No global pale-pink canvas and no use of the attached screenshot as a full-site background.
 - No changes to the unrelated modified source files already present in the worktree.
 
 ## 6. Current Project State
 
 - The CSS motion changes are implemented in `app/globals.css`.
-- The homepage loaded in the local development browser. The computed hero animation was `et-hero-copy-arrive`; with reduced motion enabled, the animation was `none` and the heading remained visible.
-- The shared bathroom service route also loaded, but the mobile viewport check on that route did not report the requested 390px viewport, so mobile verification is strongest for the homepage.
-- Production build and TypeScript validation are blocked by an existing TypeScript diagnostic at `lib/projects.ts:631`: `TS1517: Range out of order in character class`. That file was already modified before this task, and was not changed to avoid taking ownership of unrelated work.
+- The homepage top-concerns section now uses the blush accent band.
+- `DESIGN.md` §4.4 now documents the accent band as a deliberate, sparing option.
+- The production browser confirms the section background is `rgb(255, 240, 248)` on desktop and mobile; the following section remains white.
+- `npm run build` passed after the accent change and generated 114 routes.
+- Production browser checks confirmed the `et-section-enter` animation on representative page types and after client-side navigation. Revealed sections remain revealed on scroll-up. Reduced motion disables the section animation while all sections and headings remain visible.
+- At 390px mobile width, page content width was 375px (viewport scrollbar excluded) with no horizontal overflow.
 - Lighthouse and before/after performance metrics were not measured.
 - The working tree contained numerous unrelated modifications before this task. Do not revert or overwrite them.
 
@@ -47,7 +56,10 @@ Improve the site's animations because the owner currently does not notice any, t
 
 | File | Change | Reason |
 |------|--------|--------|
-| `app/globals.css` | Added restrained hero entrance, a short stagger for hero media, button press feedback, and fine-pointer photo hover zoom. | Make the current site motion visible and intentional without JavaScript or a dependency. |
+| `app/globals.css` | Added one-time section reveals, hero entrance, a short stagger for hero media, button press feedback, and fine-pointer photo hover zoom. | Make motion visible throughout the site while retaining the existing motion rules. |
+| `app/layout.tsx` | Added a small after-interactive observer trigger that covers server-rendered and client-navigated sections. | Start the CSS reveal once when each section enters view without hiding content. |
+| `app/page.tsx` | Applied the blush accent background to the homepage "Before work starts" section. | Try the requested background treatment in one contained location. |
+| `DESIGN.md` | Added accent band to the section recipes. | Record how this existing accent token may be used as a full-width section background. |
 
 ## 8. Files Created
 
@@ -59,19 +71,20 @@ Improve the site's animations because the owner currently does not notice any, t
 
 ## 10. Tests and Validation
 
-- `npm run build` — failed before producing a production build because of `lib/projects.ts:631` (`TS1517`).
-- `npm run typecheck` — same pre-existing diagnostic.
+- `npm run build` — passed; 114 routes generated. The postbuild IndexNow step was skipped because this was not a production deploy.
+- TypeScript — passed as part of the production build.
 - Editor diagnostics for `app/globals.css` — no errors.
 - `git diff --check -- app/globals.css` — passed.
-- Local browser: homepage rendered; hero entrance and media animation names were present; reduced motion disabled the animation and left the heading visible.
-- Local browser: homepage checked at 1440px desktop and 390px mobile; mobile document width was 375px (no horizontal overflow).
-- Lighthouse was not run because the production build is blocked.
+- Production browser: 11 representative route types returned HTTP 200; section reveal animation was present.
+- Production browser: reduced motion disabled the animation and headings remained visible; mobile checked at 390px.
+- Production browser: checked the homepage blush band at 1440px and 390px; no horizontal overflow at mobile width.
+- Lighthouse was not run, so performance metrics are unknown.
 
 ## 11. Performance Impact
 
-- No baseline/after Lighthouse measurements were available.
-- No dependency, script, font, asset, or client boundary was added.
-- Motion is CSS-based and limited to opacity and transforms.
+- No baseline/after Lighthouse measurements were available; Lighthouse was not run.
+- No dependency, third-party script, font, asset, or client boundary was added. A small first-party inline observer initializer was added to the root layout.
+- The section motion itself is CSS-based and limited to opacity and transforms.
 
 ## 12. SEO Impact
 
@@ -82,12 +95,11 @@ Improve the site's animations because the owner currently does not notice any, t
 
 ### High Priority
 
-- Resolve the existing TypeScript error in `lib/projects.ts:631` in coordination with the work that owns that pre-existing change, then rerun build and typecheck.
+- None.
 
 ### Medium Priority
 
-- Once a production build succeeds, review the entrance motion and measure mobile performance against `docs/PERFORMANCE_BUDGET.md`.
-- Repeat service-page visual verification at 390px after ensuring the browser viewport remains set at that size.
+- Measure mobile performance against `docs/PERFORMANCE_BUDGET.md` in Lighthouse and compare with a recorded baseline.
 
 ### Low Priority
 
@@ -101,9 +113,8 @@ Improve the site's animations because the owner currently does not notice any, t
 
 ## 15. Next Session Handoff
 
-- First inspect `git status --short` and coordinate ownership of the already-modified `lib/projects.ts`; do not overwrite unrelated dirty work.
-- Fix or arrange resolution of the range error only with the owning change, then run `npm run typecheck` and `npm run build`.
-- Review the hero motion in a production build, including reduced motion and 390px behavior.
+- First inspect `git status --short`; do not overwrite unrelated dirty work.
+- Measure mobile performance against `docs/PERFORMANCE_BUDGET.md`.
 - Do not add a site-wide blush background or use client project photos as background decoration without a separately verified design decision.
 
 ## 16. Potential Documentation Updates

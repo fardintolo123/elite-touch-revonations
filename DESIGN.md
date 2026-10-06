@@ -222,6 +222,7 @@ The page is composed from these bands, alternated:
 |---|---|---|
 | **Hero** | Full-bleed image + ink scrim | Display headline (left, bottom-aligned), supporting line, primary pill CTA, floating white info card overhanging the image edge |
 | **Trust strip** | `canvas` | `eyebrow` label centered + row of grayscale logos, `space-16` vertical |
+| **Accent band** | `magenta-50` / `surface-accent` | One restrained blush band to distinguish a high-value section; use sparingly and keep text at the standard ink contrast |
 | **Split feature** | `surface` | 50/50 — copy + checklist on one side, rounded image on the other, alternating side each instance |
 | **Image band** | Full-bleed image | Centered heading over scrim + a floating white card of badges/logos crossing the band's lower edge |
 | **Process** | `canvas` | `eyebrow` → `h2` → numbered rows, each: icon tile + `h4` + one line of `body-sm` |
@@ -231,7 +232,7 @@ The page is composed from these bands, alternated:
 | **Contact** | `canvas` | Rounded image left, form card (`surface`) right |
 | **Footer** | `ink-900` | 4 columns + newsletter, `space-24` vertical |
 
-Rule: never place two same-background bands adjacent. If two light sections must follow each other, insert a divider or switch one to `surface`.
+Rule: never place two same-background bands adjacent. Use an accent band sparingly; if two light sections must follow each other, insert a divider or switch one to `surface`.
 
 ---
 

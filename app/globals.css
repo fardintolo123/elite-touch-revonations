@@ -405,6 +405,9 @@ svg {
 .et-band-canvas {
   background: var(--et-canvas);
 }
+.et-band-accent {
+  background: var(--et-surface-accent);
+}
 .et-band-surface {
   background: var(--et-surface);
 }
@@ -1157,27 +1160,30 @@ svg {
   align-items: center;
   min-height: 44px;
 }
-/* Regions vary from 0 to several suburbs each, so a row-locked 2-col grid
-   stalls the shorter column at the tallest row's height and leaves the final
-   odd item stranded (e.g. "North Shore" alone under empty space). A
-   multi-column flow lets each group keep its natural height and balances
-   across the two columns like justified text, so nothing look misaligned. */
+/* Keep every region label on the same left edge and every suburb group on
+   the same right edge; flowing whole groups into newspaper columns staggered
+   the region labels and made the two sides hard to scan. */
 .et-nav-panel-regions {
-  columns: 2;
-  column-gap: var(--et-space-5);
+  display: grid;
+  gap: var(--et-space-2) 0;
 }
 .et-nav-panel-group {
   display: grid;
-  align-content: start;
-  break-inside: avoid;
-  margin-bottom: var(--et-space-4);
+  grid-template-columns: minmax(185px, 1fr) minmax(0, 2fr);
+  align-items: center;
+  column-gap: var(--et-space-4);
 }
-.et-nav-panel-group:last-child {
-  margin-bottom: 0;
+.et-nav-panel-suburbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--et-space-1) var(--et-space-2);
 }
 .et-nav-panel-group .et-nav-panel-child {
-  padding-top: var(--et-space-2);
-  padding-left: var(--et-space-6);
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--et-space-2) var(--et-space-3);
   color: var(--et-text-muted);
   font-size: var(--et-text-caption);
 }
@@ -1299,7 +1305,18 @@ svg {
   grid-template-columns: 1fr;
 }
 .et-nav-mobile .et-nav-panel-regions {
-  columns: 1;
+  grid-template-columns: 1fr;
+}
+.et-nav-mobile .et-nav-panel-group {
+  grid-template-columns: 1fr;
+  row-gap: var(--et-space-1);
+}
+.et-nav-mobile .et-nav-panel-suburbs {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.et-nav-mobile .et-nav-panel-group .et-nav-panel-child {
+  padding-left: var(--et-space-6);
 }
 .et-nav-mobile .et-nav-panel .et-nav-panel-index,
 .et-nav-mobile .et-nav-panel .et-nav-panel-heading {
@@ -1811,9 +1828,9 @@ svg {
 /* ==========================================================================
    Motion
 
-   Keep the first impression calm: the hero copy settles into place once,
-   while project photography responds to pointer interaction rather than
-   moving continuously or hiding content until a script runs.
+   Keep motion purposeful: hero content settles once, page sections reveal
+   as they enter view, and project photography responds to pointer interaction.
+   Content remains visible when the observer is unavailable or motion is reduced.
    ========================================================================== */
 
 @keyframes et-hero-copy-arrive {
@@ -1849,6 +1866,22 @@ svg {
   .et-hero-media {
     animation: et-hero-media-arrive var(--et-duration-deliberate)
       var(--et-ease-out) 80ms both;
+  }
+
+  .et-section-revealed {
+    animation: et-section-enter var(--et-duration-deliberate)
+      var(--et-ease-out) both;
+  }
+}
+
+@keyframes et-section-enter {
+  from {
+    opacity: 0.55;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

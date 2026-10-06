@@ -13,6 +13,7 @@ Rename the navigation label “Advice” to “Blogs” and improve the alignmen
 - Renamed the dropdown's CSS class from `et-nav-panel-advice` to `et-nav-panel-blogs`.
 - Confirmed no old Advice navigation component/class names or “All advice” labels remain in the header and blog article files.
 - **(Follow-up, same session)** Found the real cause of the "Services nav items not aligned" complaint once a working dev server became available: `.et-nav-panel-regions` used a row-locked 2-column CSS grid. Regions have between 0 and 3 suburbs each, so a tall region (e.g. "Hills District") forced its row height onto the shorter region beside it, leaving a visual gap before the next row, and the final odd region ("North Shore") was stranded alone under empty space. Replaced the row-locked grid with a balanced CSS multi-column flow (`columns: 2` + `break-inside: avoid` per region group) so columns balance naturally regardless of per-region suburb count. Updated the mobile override (`.et-nav-mobile .et-nav-panel-regions { columns: 1; }`) to match.
+- **(Owner follow-up, 2026-10-06)** The owner reported that the menu still looked misaligned and supplied a screenshot. The multi-column flow did not solve the actual visual problem: it balanced whole region groups at different vertical positions. Replaced it with a single column of region rows. Every region name now occupies the same left column and its published suburb links share a common right column; suburb links wrap within that right column if needed. On mobile, each region remains a stacked heading followed by its suburb links.
 
 ## 3. Important Decisions
 
@@ -24,6 +25,8 @@ Rename the navigation label “Advice” to “Blogs” and improve the alignmen
   - **Reason:** The screenshots show a dense, two-column dropdown with links whose visual alignment can improve while retaining the data-driven layout.
   - **Alternatives considered:** Redesigning the menu or changing its service/region ordering.
   - **Why chosen:** Small CSS-only changes preserve the current menu structure and existing touch-target standard.
+
+**Correction:** Do not use CSS multi-column flow for these variable-height groups. The browser balances whole groups at different vertical positions, which staggers region headings and suburb links. Use explicit shared columns per region row instead; mobile switches to a one-column stack.
 
 ## 4. Permanent Rules / Lessons
 
@@ -40,21 +43,23 @@ Rename the navigation label “Advice” to “Blogs” and improve the alignmen
 
 ## 6. Current Project State
 
-- The requested navigation wording and CSS alignment changes are present in the working tree and have been verified live in a browser.
-- TypeScript validation passes (`npm run typecheck`, exit code 0) as of the final check in this session.
-- A concurrent session appears to have resolved the previously-blocking `lib/projects.ts` invalid-regex issue; a dev server at `http://localhost:3218/` now renders the homepage and the Services/Blogs menus successfully.
-- Verified in-browser at desktop (1440px) and mobile (390px):
-  - The primary nav shows "Blogs" (desktop hover menu and mobile `<details>` disclosure), and the blog breadcrumb/schema label reads "Blogs".
-  - The Services dropdown's "Service areas" two-column region list now balances evenly across both columns with no orphaned trailing item, at both desktop and mobile (single column) widths.
-- The repository has many additional modified files from other concurrent session(s); they were not reverted, staged, or edited as part of this task.
+- The "Blogs" wording change is committed, and the latest Services alignment correction is in the working tree in `components/layout/SiteHeader.tsx` and `app/globals.css`.
+- TypeScript validation passes (`npm run typecheck`, exit code 0) after the corrective layout.
+- The shared dev server was not running, so a fresh `next dev` server was started at `http://localhost:3218/` for browser verification.
+- Verified in-browser:
+  - Desktop at 1440px: all five region labels share the same x-position (254px), and all suburb groups with published suburbs share the same x-position (469px). North Shore has no published suburb links and correctly leaves the right column empty.
+  - Mobile at 390px: the Services disclosure shows each region in a single stacked column with its suburb links indented below it.
+  - The Blogs nav label remains visible.
+- `problems` reported no errors for the two changed source files; `git diff --check` passed. No full production build was run.
+- Other unrelated work in the shared repository was left untouched.
 
 ## 7. Files Changed
 
 | File | Change | Reason |
 |------|--------|--------|
-| `components/layout/SiteHeader.tsx` | Renamed Advice menu components, text, and CSS class to Blogs. | Match the requested navigation name. |
+| `components/layout/SiteHeader.tsx` | Renamed Advice menu components, text, and CSS class to Blogs; wraps each region's published suburb links in a dedicated container. | Match the requested navigation name and enable consistent row alignment. |
 | `app/blog/[slug]/page.tsx` | Changed visible and structured-data breadcrumb labels to Blogs. | Keep article navigation labels consistent. |
-| `app/globals.css` | Added 44px minimum rows and vertical centering for Services menu links; renamed the Blogs panel class; replaced the row-locked Services region grid with a balanced multi-column flow. | Improve link alignment, fix the uneven/orphaned region-column layout, and preserve usable target sizing. |
+| `app/globals.css` | Added 44px minimum rows and vertical centering for Services menu links; renamed the Blogs panel class; styles region rows with a shared label/suburb column layout and a stacked mobile override. | Align region headings and their links consistently at desktop and mobile sizes. |
 
 ## 8. Files Created
 
@@ -67,10 +72,10 @@ Rename the navigation label “Advice” to “Blogs” and improve the alignmen
 ## 10. Tests and Validation
 
 - `npm.cmd run typecheck` — passed (both at the end of initial edits and again after the follow-up CSS fix).
-- `git diff --check` for the three task files — passed (Git emitted existing LF-to-CRLF conversion warnings).
+- `git diff --check` — passed (Git emitted existing LF-to-CRLF conversion warnings).
 - Live browser verification at `http://localhost:3218/` (dev server, after a concurrent session resolved the `lib/projects.ts` blocker):
-  - Desktop (1440px): homepage renders; primary nav shows "Blogs"; Services dropdown opens with "All services", the four service links, and a balanced two-column "Service areas" list (no orphaned trailing region, no uneven column gaps).
-  - Mobile (390px): mobile menu opens; "Blogs" label correct; Services `<details>` disclosure expands to a single clean column with all services and regions in document order.
+  - Desktop (1440px): all region headings share x=254px and all suburb groups share x=469px. Services and Blogs links remain present.
+  - Mobile (390px): mobile menu and Services disclosure open; each region and its suburbs are rendered as a clean single-column stack.
 - `npm.cmd run build` was not re-run this session (only `typecheck`, which is a strict subset relevant to these three files, plus live browser confirmation); recommend a full `npm run build` before the next deploy to catch anything outside these files.
 
 ## 11. Performance Impact
@@ -98,11 +103,12 @@ No URLs, canonical paths, metadata, indexation rules, or article content were ch
 ## 14. Open Questions
 
 - None about the requested label or layout change.
-- Both the label rename and the dropdown alignment are now verified live in a browser at desktop and mobile widths.
+- The initial CSS multi-column Services-area layout still looked staggered to the owner. The correction now uses shared columns per region row, verified in the desktop and mobile browser layouts.
 
 ## 15. Next Session Handoff
 
-- The Blogs rename and Services dropdown alignment fix are complete and browser-verified; no further action is needed on them.
+- The Blogs rename and corrected Services-area alignment are browser-verified at desktop and mobile widths.
+- If another alignment concern is raised, inspect the live rendered dropdown at the viewport the owner indicates before changing the layout again.
 - Before the next deploy, run a full `npm run build` to confirm the whole repo (including files touched by other concurrent sessions) builds cleanly.
 - Keep `/blog/` routes and the article inventory intact unless the owner explicitly requests a URL migration.
 
@@ -116,6 +122,7 @@ No URLs, canonical paths, metadata, indexation rules, or article content were ch
 
 - The navigation section should be named “Blogs” rather than “Advice”.
 - The existing `/blog/` URL structure remains.
+- The owner still saw alignment problems after the previous multi-column CSS flow; the accepted alignment is now a stable left column for region names and a shared right column for suburb links.
 
 ### Strong recommendations
 

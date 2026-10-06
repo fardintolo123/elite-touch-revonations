@@ -167,6 +167,40 @@ document.addEventListener('visibilitychange', function () {
   }
 });`}
         </Script>
+        <Script id="section-motion" strategy="afterInteractive">
+          {`(() => {
+  const main = document.querySelector('main#main');
+  if (!main || !('IntersectionObserver' in window)) return;
+
+  const selector = 'section:not(.et-hero):not(.et-location-hero), article.et-section';
+  const pending = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      pending.delete(entry.target);
+      observer.unobserve(entry.target);
+      entry.target.classList.add('et-section-revealed');
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+
+  const observeSections = () => {
+    pending.forEach((section) => {
+      if (section.isConnected) return;
+      pending.delete(section);
+      observer.unobserve(section);
+    });
+
+    main.querySelectorAll(selector).forEach((section) => {
+      if (pending.has(section) || section.classList.contains('et-section-revealed')) return;
+      pending.add(section);
+      observer.observe(section);
+    });
+  };
+
+  observeSections();
+  new MutationObserver(observeSections).observe(main, { childList: true, subtree: true });
+})();`}
+        </Script>
         <a className="et-skip-link" href="#main">
           Skip to content
         </a>
