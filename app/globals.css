@@ -1835,8 +1835,8 @@ svg {
 
 @keyframes et-hero-copy-arrive {
   from {
-    opacity: 0.7;
-    transform: translateY(16px);
+    opacity: 0;
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -1846,8 +1846,8 @@ svg {
 
 @keyframes et-hero-media-arrive {
   from {
-    opacity: 0.7;
-    transform: translateY(16px);
+    opacity: 0;
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -1868,16 +1868,41 @@ svg {
       var(--et-ease-out) 80ms both;
   }
 
+  .et-pending {
+    opacity: 0;
+  }
+
   .et-section-revealed {
-    animation: et-section-enter var(--et-duration-deliberate)
-      var(--et-ease-out) both;
+    animation: et-section-enter 700ms var(--et-ease-out) both;
+  }
+
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > *,
+  .et-section-revealed .et-media-frame,
+  .et-section-revealed .et-photo,
+  .et-section-revealed details {
+    animation: et-child-enter 650ms var(--et-ease-out) both;
+  }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(2) { animation-delay: 90ms; }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(3) { animation-delay: 180ms; }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(4) { animation-delay: 270ms; }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(n + 5) { animation-delay: 360ms; }
+}
+
+@keyframes et-child-enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
 @keyframes et-section-enter {
   from {
-    opacity: 0.55;
-    transform: translateY(16px);
+    opacity: 0;
+    transform: translateY(40px);
   }
   to {
     opacity: 1;

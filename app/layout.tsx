@@ -179,9 +179,10 @@ document.addEventListener('visibilitychange', function () {
       if (!entry.isIntersecting) return;
       pending.delete(entry.target);
       observer.unobserve(entry.target);
+      entry.target.classList.remove('et-pending');
       entry.target.classList.add('et-section-revealed');
     });
-  }, { rootMargin: '0px 0px -8% 0px' });
+  }, { rootMargin: '0px 0px -12% 0px' });
 
   const observeSections = () => {
     pending.forEach((section) => {
@@ -193,6 +194,7 @@ document.addEventListener('visibilitychange', function () {
     main.querySelectorAll(selector).forEach((section) => {
       if (pending.has(section) || section.classList.contains('et-section-revealed')) return;
       pending.add(section);
+      if (section.getBoundingClientRect().top > window.innerHeight * 0.85) section.classList.add('et-pending');
       observer.observe(section);
     });
   };

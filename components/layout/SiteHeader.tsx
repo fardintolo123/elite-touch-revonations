@@ -43,7 +43,9 @@ import { HoverNavMenu } from './HoverNavMenu'
  * visitors guess which pages sit behind a generic section label.
  */
 function ServicesPanel() {
-  const regions = publishedRegions()
+  const regions = [...publishedRegions()].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  )
 
   return (
     <div className="et-nav-panel et-nav-panel-services">

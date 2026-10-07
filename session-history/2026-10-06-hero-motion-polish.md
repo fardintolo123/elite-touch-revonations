@@ -140,3 +140,6 @@ Improve animations across the site's sections and pages after the owner noted th
 ### Unresolved opinions
 
 - The owner has not chosen a broader background-color or image-as-background direction.
+
+## Update 2026-10-07 - stronger reveal
+Reveal now starts at opacity 0 with a 40px rise (700ms). Below-fold sections get a JS-added et-pending class so they do not flash. Cards, steps, lists, facts, photos and FAQ items stagger in (90ms steps). Hero entrance starts at opacity 0 and 32px. Production build passes; served HTML and CSS confirmed to contain the new rules. Interactive mid-animation capture was not completed (browser tool hung).
