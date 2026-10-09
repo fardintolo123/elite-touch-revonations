@@ -51,7 +51,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title="A Sydney family business that only renovates wet areas."
         leads={[
-          `Elite Touch Renovations was founded in ${businessInfo.foundedYear} by the Dawood family and works across Sydney. We are small on purpose: the people who quote your job are the people who run it.`,
+          `The Dawood family started Elite Touch Renovations in ${businessInfo.foundedYear}. We work across Sydney. We are small on purpose: the people who quote your job are the people who run it.`,
           // Owner confirmed commercial work 2026-08-19 (D-67). Wording is the
           // owner's own from the About PDF — it widens the CLIENT TYPE only.
           // The four services are unchanged (D-01), and no commercial-specific
@@ -67,9 +67,8 @@ export default function AboutPage() {
           <span className="et-eyebrow">Who you will deal with</span>
           <h2 className="et-h2 et-measure-tight">The Dawood family</h2>
           <p className="et-lead et-measure">
-            Our customers name us by name in their reviews, which is a fair
-            picture of how the business runs - you are not handed to a
-            different team once the quote is signed.
+            Customers use our names in reviews. That shows how we work: the
+            people you meet stay with your job after you sign.
           </p>
 
           <div
@@ -157,8 +156,8 @@ export default function AboutPage() {
                   color: 'var(--et-text-secondary)',
                 }}
               >
-                Primer plus two coats, to current Australian Standards, with a
-                certificate included in every package.
+                We use primer and two coats to meet current Australian
+                Standards. Every package includes a certificate.
               </p>
             </div>
 
@@ -195,13 +194,12 @@ export default function AboutPage() {
                 Licences, insurance and protections
               </h3>
               <p className="et-body-sm et-measure">
-                Bathroom renovation is regulated work. Every job meets the
-                licence, insurance and legal rules set by NSW law and the
+                Bathroom work must meet NSW law and the
                 {' '}
                 <ExternalLink href={businessInfo.authorities.nccWetAreas}>
                   National Construction Code
                 </ExternalLink>
-                .
+                . Our jobs meet the rules for licences and insurance.
               </p>
             </div>
 
@@ -359,8 +357,8 @@ export default function AboutPage() {
                 color: 'var(--et-text-secondary)',
               }}
             >
-              {businessInfo.sustainability.claim} Greenfleet is an Australian
-              not-for-profit that restores native forests.{' '}
+              {businessInfo.sustainability.claim} Greenfleet is a not-for-profit
+              in Australia. It helps restore native forests.{' '}
               <ExternalLink
                 href={businessInfo.sustainability.partnerUrl}
               >
@@ -383,7 +381,7 @@ export default function AboutPage() {
             What our customers have written about us.
           </h2>
           <p className="et-lead et-measure">
-            Reproduced word for word, with the names as they were given.
+            These are the reviews, word for word, with the names given.
           </p>
 
           <div

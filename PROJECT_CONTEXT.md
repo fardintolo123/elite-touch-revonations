@@ -253,7 +253,7 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `lib/blog.ts` | Canonical advice inventory. Optional `faq`, `heroProject` and `updated` fields reuse the shared FAQ/schema, evidenced-project-image and sitemap-freshness patterns (D-148) |
 | `lib/metadata.ts` | `buildMetadata()` is the standard metadata path. It keeps canonical URLs, Open Graph fields and the sitewide social-image defaults aligned; do not hand-roll a competing page metadata shape |
 | `lib/schema.ts` · `components/SchemaGraph.tsx` | One JSON-LD `@graph` per page with stable shared IDs. Add page-type nodes through `buildPageGraph()`/`SchemaGraph`; visible FAQ data and FAQ schema must come from the same source |
-| `components/layout/SiteHeader.tsx` | Server-rendered, data-driven navigation. Services, advice, projects, regions and published suburbs come from their canonical data helpers, so a published route is not omitted from discovery |
+| `components/layout/SiteHeader.tsx` | Server-rendered navigation. Services, regions and published suburbs come from canonical data helpers. Blog and gallery use short index links; those indexes list every published article and project, so child routes remain discoverable without repeating their full titles in both desktop and mobile headers |
 | `public/images/projects/` | Project photography as WebP, one folder per project slug (D-65) |
 | `lib/actions.ts` | Enquiry server action — office email (critical) + customer email (best-effort) + Supabase write (best-effort) + up to 2 photo attachments (best-effort, D-150: Supabase Storage `enquiry-photos` bucket + Resend attachment on the office email only). ⚠️ **Exports async functions ONLY** — see D-77 |
 | `lib/enquiry.ts` | Enquiry types + initial state. Exists precisely so they are NOT exported from a `'use server'` file |
@@ -267,7 +267,7 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `proxy.ts` | The 410s. Next 16 renamed `middleware.ts` → `proxy.ts` |
 | `scripts/verify-redirects.mjs` | `npm run verify:redirects` |
 | `app/llms.txt/route.ts` | Served at `/llms.txt` (D-90). Generated from `services`, `projects` and `publishedRegions()` — same data `sitemap.ts` reads — so it can never state a fact the rest of the site doesn't |
-| `scripts/check-readability.mjs` | `npm run check:readability` — Flesch Reading Ease per page, read straight from `.next/server/app/**.html` (D-96) |
+| `scripts/check-readability.mjs` | `npm run check:readability` — Flesch Reading Ease for `p`, `li` and `dd` prose within each page's `<main>`, read straight from `.next/server/app/**.html`. Reviews count; headings and UI labels do not. It checks the hardcoded route list against the built HTML files so newly published pages cannot go unscored. A whole-DOM score from a third-party tool can differ because it also counts navigation text (D-96) |
 
 ### Things that will bite you
 

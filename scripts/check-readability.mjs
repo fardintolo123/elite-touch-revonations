@@ -8,18 +8,17 @@
  * gap the same way scripts/verify-redirects.mjs closed the redirect one.
  *
  * WHAT IT MEASURES
- * Only the text inside `<main id="main">…</main>` — header/footer nav chrome
- * is shared boilerplate, not the "body copy" the checklist means. Script and
- * style blocks (including the JSON-LD block) are stripped. Image `alt` text
- * is never counted, because it lives in an attribute, not element content.
+ * Only prose blocks (`p`, `li`, `dd`) inside `<main id="main">…</main>` are
+ * scored. Header/footer nav, headings, buttons, form labels, and other UI
+ * labels are not sentences and do not belong in a Flesch test of body copy.
+ * Customer review paragraphs inside main DO count and remain verbatim.
  *
  * METHOD
  * Standard Flesch Reading Ease: 206.835 - 1.015*(words/sentences) -
  * 84.6*(syllables/words). Syllables use the common vowel-group heuristic
- * (silent-e aware). Every tag boundary is treated as a soft sentence break
- * before stripping tags, so short elements (headings, list items, badges)
- * are not run together into one artificially long "sentence" — that would
- * silently inflate the score.
+ * (silent-e aware). Each prose block ends a sentence when the author has
+ * not supplied punctuation; this keeps list items distinct without treating
+ * every HTML tag as a sentence break.
  *
  * This is an approximation, like every Flesch tool including the one that
  * produced the issue-#9 screenshot. Use it for before/after comparison on
@@ -44,7 +43,7 @@
  *   node scripts/check-readability.mjs http://localhost:3210   # fetch a live server instead
  */
 
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 
 const arg = process.argv[2]
 const BASE = arg && arg.startsWith('http') ? arg : null
@@ -66,6 +65,10 @@ const ROUTES = [
   '/blog/',
   '/blog/bathroom-renovation-cost-sydney/',
   '/blog/bathroom-renovation-timeline-sydney/',
+  '/blog/bathroom-waterproofing-certificate-sydney/',
+  '/blog/first-time-bathroom-renovation-sydney/',
+  '/blog/ensuite-vs-bathroom-vs-powder-room-renovation/',
+  '/blog/bathroom-laundry-combo-renovation-worth-it/',
   '/blog/how-to-compare-bathroom-renovation-quotes/',
   '/blog/questions-to-ask-a-bathroom-renovator/',
   '/blog/bathroom-renovation-checklist-sydney/',
@@ -145,6 +148,10 @@ const ROUTES = [
   '/services/bathroom-renovations/north-western-sydney/',
   '/services/bathroom-renovations/castle-hill/',
   '/services/bathroom-renovations/randwick/',
+  '/services/bathroom-renovations/baulkham-hills/',
+  '/services/bathroom-renovations/kellyville/',
+  '/services/bathroom-renovations/ryde/',
+  '/services/bathroom-renovations/marrickville/',
   '/gallery/',
   '/gallery/artarmon-bathroom/',
   '/gallery/castle-hill-bathroom/',
@@ -162,6 +169,19 @@ const ROUTES = [
 function routeToStaticFile(route) {
   const trimmed = route.replace(/^\/|\/$/g, '')
   return trimmed === '' ? 'index.html' : `${trimmed}.html`
+}
+
+async function findHtmlFiles(directory, prefix = '') {
+  const entries = await readdir(directory, { withFileTypes: true })
+  const files = []
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      files.push(...await findHtmlFiles(new URL(`${entry.name}/`, directory), `${prefix}${entry.name}/`))
+    } else if (entry.name.endsWith('.html')) {
+      files.push(`${prefix}${entry.name}`)
+    }
+  }
+  return files
 }
 
 const ENTITIES = {
@@ -185,24 +205,20 @@ function extractMain(html) {
 }
 
 function htmlToSentenceBlob(mainHtml) {
-  let html = mainHtml
+  const html = mainHtml
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<svg[\s\S]*?<\/svg>/gi, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ')
-    // Soft break before every tag so adjacent block elements don't fuse
-    // into one run-on "sentence" once tags are stripped.
-    .replace(/</g, '\n<')
 
-  const text = decodeEntities(html.replace(/<[^>]+>/g, ''))
+  const proseBlocks = [...html.matchAll(/<(p|li|dd)\b[^>]*>([\s\S]*?)<\/\1>/gi)]
+    .map((match) => decodeEntities(match[2].replace(/<[^>]+>/g, ' '))
+      .replace(/\s+/g, ' ')
+      .trim())
+    .filter((block) => /[a-zA-Z0-9]/.test(block))
 
-  const lines = text
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => /[a-zA-Z0-9]/.test(line))
-
-  return lines
-    .map((line) => (/[.!?]["')]?$/.test(line) ? line : `${line}.`))
+  return proseBlocks
+    .map((block) => (/[.!?]["')]?$/.test(block) ? block : `${block}.`))
     .join(' ')
 }
 
@@ -269,6 +285,17 @@ async function main() {
       ? `Checking ${ROUTES.length} routes against ${BASE}\n`
       : `Checking ${ROUTES.length} routes against .next/server/app/**.html (run npm run build first)\n`,
   )
+
+  if (!BASE) {
+    const htmlFiles = await findHtmlFiles(new URL('../.next/server/app/', import.meta.url))
+    const listedFiles = new Set(ROUTES.map(routeToStaticFile))
+    const internalPages = new Set(['_global-error.html', '_not-found.html'])
+    const unlisted = htmlFiles.filter((file) => !internalPages.has(file) && !listedFiles.has(file))
+    if (unlisted.length > 0) {
+      console.error(`Unlisted built pages: ${unlisted.join(', ')}`)
+      process.exitCode = 1
+    }
+  }
 
   const results = []
   for (const route of ROUTES) {

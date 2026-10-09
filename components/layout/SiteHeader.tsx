@@ -1,9 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
-import { blogPosts } from '@/lib/blog'
 import { publishedRegions, publishedSuburbs } from '@/lib/locations'
-import { projects } from '@/lib/projects'
 import { HoverNavMenu } from './HoverNavMenu'
 
 /**
@@ -37,10 +35,9 @@ import { HoverNavMenu } from './HoverNavMenu'
  */
 
 /*
- * The index routes remain the first link in each disclosure, but the child
- * routes are listed here too. That makes the whole published content tree
- * reachable from the sitewide nav without adding a client-side menu or making
- * visitors guess which pages sit behind a generic section label.
+ * Services and service areas remain in the menu for quick access. The blog and
+ * gallery indexes list all their child pages, so linking to each index here
+ * keeps the main nav short and easy to scan.
  */
 function ServicesPanel() {
   const regions = [...publishedRegions()].sort((a, b) =>
@@ -100,70 +97,6 @@ function ServicesHoverMenu() {
   )
 }
 
-function BlogsPanel() {
-  return (
-    <div className="et-nav-panel et-nav-panel-blogs">
-      <Link href="/blog/" className="et-nav-panel-index">
-        All blogs
-      </Link>
-      {blogPosts.map((post) => (
-        <Link key={post.slug} href={`/blog/${post.slug}/`}>
-          {post.title}
-        </Link>
-      ))}
-    </div>
-  )
-}
-
-function BlogsMenu() {
-  return (
-    <details className="et-nav-menu" name="primary-nav">
-      <summary>Blogs</summary>
-      <BlogsPanel />
-    </details>
-  )
-}
-
-function BlogsHoverMenu() {
-  return (
-    <HoverNavMenu href="/blog/" label="Blogs">
-      <BlogsPanel />
-    </HoverNavMenu>
-  )
-}
-
-function GalleryPanel() {
-  return (
-    <div className="et-nav-panel et-nav-panel-gallery">
-      <Link href="/gallery/" className="et-nav-panel-index">
-        All projects
-      </Link>
-      {projects.map((project) => (
-        <Link key={project.slug} href={`/gallery/${project.slug}/`}>
-          {project.name}
-        </Link>
-      ))}
-    </div>
-  )
-}
-
-function GalleryMenu() {
-  return (
-    <details className="et-nav-menu" name="primary-nav">
-      <summary>Gallery</summary>
-      <GalleryPanel />
-    </details>
-  )
-}
-
-function GalleryHoverMenu() {
-  return (
-    <HoverNavMenu href="/gallery/" label="Gallery">
-      <GalleryPanel />
-    </HoverNavMenu>
-  )
-}
-
 function AboutPanel() {
   return (
     <div className="et-nav-panel et-nav-panel-compact">
@@ -198,8 +131,8 @@ function DesktopNavigationItems() {
       <Link href="/">Home</Link>
       <ServicesHoverMenu />
       <Link href="/packages/">Packages</Link>
-      <BlogsHoverMenu />
-      <GalleryHoverMenu />
+      <Link href="/blog/">Blogs</Link>
+      <Link href="/gallery/">Gallery</Link>
       <AboutHoverMenu />
       <Link href="/contact-us/">Contact</Link>
     </>
@@ -212,8 +145,8 @@ function MobileNavigationItems() {
       <Link href="/">Home</Link>
       <ServicesMenu />
       <Link href="/packages/">Packages</Link>
-      <BlogsMenu />
-      <GalleryMenu />
+      <Link href="/blog/">Blogs</Link>
+      <Link href="/gallery/">Gallery</Link>
       <AboutMenu />
       <Link href="/contact-us/">Contact</Link>
     </>

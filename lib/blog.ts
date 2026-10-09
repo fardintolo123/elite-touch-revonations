@@ -114,10 +114,10 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min read',
     category: 'Quotes and decisions',
     sections: [
-      { heading: 'Compare scope before price', paragraphs: ['Two quotes can have different totals because they describe different work. Read the scope first: layout, demolition, waterproofing, tiling, fittings, electrical work, plumbing, waste removal and clean-up should be clear.', 'If a line is vague, ask for it to be clarified in writing. A lower number is not necessarily lower cost if important work has been left for later.'] },
+      { heading: 'Compare scope before price', paragraphs: ['Two quotes can have different totals because they list different work. Read the scope first: layout, demolition, waterproofing, tiling, fittings, electrical work, plumbing, waste removal and clean-up should be clear.', 'If a line is vague, ask for it to be made clear in writing. A lower price may cost more if key work has been left for later.'] },
       { heading: 'What is the risk with a verbal estimate?', paragraphs: ['A verbal estimate can be useful for an early conversation, but it is not enough to sign on. It may not define the tile allowance, fixture choices, access, waste removal, waterproofing, electrical work or what happens if hidden damage is found.', 'The problem is not that every estimate is dishonest. The problem is that an estimate leaves too many assumptions outside the decision, and those assumptions can turn into extra cost once your bathroom is already out of action.'] },
       { heading: 'What should a fixed-scope quote include?', paragraphs: ['A fixed-scope written quote should say what room is being renovated, what work is included, what is excluded, which selections are allowed for and how variations are approved. It should also show the payment schedule and any program assumptions.', 'For a bathroom, look closely for demolition, plumbing and electrical preparation, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling, fit-off, rubbish removal and final clean. If one quote names those items and another does not, you are not comparing the same thing.'] },
-      { heading: 'Check the assumptions', paragraphs: ['Look for assumptions about the room size, tile format, fitting allowances, access, working hours and the condition of the existing walls and floor. These assumptions can materially change the final result.', 'Ask how variations are priced and approved. You should know who can authorise a change and how the change will be recorded before work proceeds.'] },
+      { heading: 'Check the assumptions', paragraphs: ['Look for assumptions about the room size, tile format, fitting allowances, access, work hours and the state of the walls and floor. These details can change the final result.', 'Ask how changes are priced and approved. You should know who can approve a change and how it will be recorded before work goes ahead.'] },
       { heading: 'Ask these questions before you sign', paragraphs: ['Ask whether the quote is based on an on-site measure, which items are provisional, who manages the trades, when you will receive the program and what certificate or handover documents are supplied.', 'Ask what happens if the old bathroom reveals rot, asbestos, non-compliant plumbing or another issue after demolition. You want the variation process clear before the pressure of a half-demolished room is in the room with you.'] },
       { heading: 'Choose accountability as well as value', paragraphs: ['Ask who will manage the project, how communication will work and what protection is included after completion. ETR is family-run, holds NSW Builder Licence 475204C and offers a 10-year workmanship warranty as stated in its terms.', 'A free on-site measure and fixed-scope written quote give you a better basis for comparing the actual room, not just an estimate made from photographs.'] },
       { heading: 'When is the cheapest quote not the cheapest job?', paragraphs: ['The cheapest quote can become the dearer job if important work has been left out or pushed into variations. A bathroom renovation has too many connected stages to price on a single headline number.', 'Choose the quote that makes the work easy to understand. If you cannot explain what is included after reading it, ask for the scope to be rewritten before you sign.'] },
@@ -153,9 +153,9 @@ export const blogPosts: BlogPost[] = [
     readTime: '2 min read',
     category: 'Planning and process',
     sections: [
-      { heading: 'Before requesting quotes', paragraphs: ['Write down what is not working in the current room and what you want to change. Note storage needs, shower and bath preferences, lighting, ventilation, accessibility needs and any layout constraints.', 'Take measurements and photographs for an initial conversation, but use an on-site measure before relying on a price. Existing conditions are part of the decision.'] },
-      { heading: 'Before accepting a quote', paragraphs: ['Confirm the scope, room size basis, inclusions, exclusions, selections, programme assumptions and variation process. Keep the final scope and agreed selections together in writing.', 'Check the builder licence details and ask who is responsible for coordinating the work. Make sure the quote says what happens to waste, protection and final clean-up.'] },
-      { heading: 'Before work starts', paragraphs: ['Complete the selections that affect ordering and confirm access arrangements. Decide where materials can be stored and how the team will move through the home.', 'Keep a simple record of decisions and changes. Clear written communication helps keep the project aligned when the room is temporarily out of action.'] },
+      { heading: 'Before requesting quotes', paragraphs: ['Write down what is not working in the room and what you want to change. Note storage needs, shower and bath choices, lighting, ventilation, access needs and any limits on the layout.', 'Take room measurements and photos for the first talk, but get an on-site measure before you rely on a price. The state of the room matters.'] },
+      { heading: 'Before accepting a quote', paragraphs: ['Check the scope, room size, what is in and out, your choices, the work plan and how changes are agreed. Keep the final scope and choices together in writing.', 'Check the builder licence and ask who will manage the work. Make sure the quote covers waste, floor protection and the final clean.'] },
+      { heading: 'Before work starts', paragraphs: ['Choose items that must be ordered and confirm site access. Decide where materials can be stored and how the team will move through the home.', 'Keep a simple record of choices and changes. Clear notes help keep the job on track while the room is out of use.'] },
     ],
   },
   {
@@ -259,9 +259,9 @@ export const blogPosts: BlogPost[] = [
     category: 'Planning and process',
     sections: [
       { heading: 'The short version', paragraphs: ['Plan the room. Set the scope. Ask clear questions. Keep each change in writing.'] },
-      { heading: 'Starting without a measured scope', paragraphs: ['A photograph can start a conversation, but it cannot show every condition that affects a renovation. Decisions about layout, access, plumbing, electrical work and finishes should follow an on-site measure.', 'A clear scope gives the homeowner and renovator the same starting point. It also makes later changes easier to identify.'] },
-      { heading: 'Choosing finishes before solving the room', paragraphs: ['Tiles and fittings matter, but they should follow the layout and practical requirements. A beautiful selection does not fix a poor door swing, awkward storage or an impractical shower position.', 'Settle movement, storage, ventilation and cleaning needs before finalising decorative choices.'] },
-      { heading: 'Accepting a vague quote', paragraphs: ['A total without inclusions is difficult to compare. Ask for the work, assumptions, exclusions and variation process in writing.', 'The best quote is the one that lets you understand the decision, not simply the one with the smallest headline number.'] },
+      { heading: 'Starting without a measured scope', paragraphs: ['A photo can start a talk, but it cannot show every issue that affects the job. Choices about layout, access, plumbing, electrical work and finishes should follow an on-site measure.', 'A clear scope gives you and the renovator the same starting point. It also makes later changes easier to spot.'] },
+      { heading: 'Choosing finishes before solving the room', paragraphs: ['Tiles and fittings matter, but they should follow the layout and how you use the room. Nice tiles do not fix a poor door swing, awkward storage or a shower that is hard to use.', 'Settle movement, storage, ventilation and cleaning needs before you pick finishes.'] },
+      { heading: 'Accepting a vague quote', paragraphs: ['A price with no list of work is hard to compare. Ask what is in, what the price assumes, what is left out and how changes are agreed.', 'The best quote is one you can understand, not just the one with the lowest price.'] },
     ],
   },
   {
@@ -289,11 +289,11 @@ export const blogPosts: BlogPost[] = [
     sections: [
       { heading: 'The short version', paragraphs: ['Check the rules first. Plan the move in and out. Keep the paper trail.'] },
       { heading: 'Check the building rules first', paragraphs: ['Apartment renovations can involve strata by-laws, approval steps, building access rules and limits on working hours. Ask your strata manager or owners corporation what applies before booking site work.', 'Do not assume approval is automatic because the work is inside your apartment. The building may have requirements for waterproofing, plumbing, noise, lifts and protection of common areas.'] },
-      { heading: 'What should you ask strata before the quote?', paragraphs: ['Ask whether the owners corporation needs a renovation application, which documents they expect, what working hours apply, how lift bookings work and whether common areas need special protection.', 'Ask for the rules in writing. A verbal summary from a neighbour may be useful, but the renovator needs the actual building requirements before the programme and quote assumptions are final.'] },
-      { heading: 'Plan access and protection', paragraphs: ['Confirm how materials and waste can move through the building, where deliveries can stop and how shared areas must be protected. These details belong in the programme and quote assumptions.', 'Give the renovation team the building rules early so the site plan reflects the actual property.'] },
+      { heading: 'What should you ask strata before the quote?', paragraphs: ['Ask if the owners corporation needs a renovation application, which forms they need, what work hours apply, how to book the lift and whether shared areas need special care.', 'Ask for the rules in writing. A neighbour may help, but the renovator needs the building rules before the work plan and quote are final.'] },
+      { heading: 'Plan access and protection', paragraphs: ['Check how materials and waste can move through the building, where trucks can stop and how shared areas must be kept safe. These details belong in the work plan and quote.', 'Give the team the building rules early so the site plan fits the property.'] },
       { heading: 'Why access can affect timing', paragraphs: ['Apartment work can take longer when lifts, loading zones, parking, concierge rules or waste removal windows are tight. None of those details changes the quality of the bathroom, but they can change the way the job is staged.', 'This is why a strata renovation should not be priced as if it were a freestanding house with easy driveway access. The access plan is part of the scope.'] },
       { heading: 'Waterproofing paperwork matters', paragraphs: ['Strata buildings can pay close attention to wet-area work because one bathroom can affect another lot. Ask what proof the building wants for waterproofing and keep the certificate with the final paperwork.', 'ETR waterproofs bathroom renovation work to <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">AS 3740</a> and supplies a compliance certificate for the waterproofing work. If your building has its own document process, raise it at the measure.'] },
-      { heading: 'Keep the paperwork together', paragraphs: ['Keep approvals, the written scope, selections, certificates and variation records in one place. Clear documentation helps everyone understand what was agreed.', 'A free on-site measure is a useful starting point before a strata quote is prepared.'] },
+      { heading: 'Keep the paperwork together', paragraphs: ['Keep approvals, the written scope, choices, certificates and records of changes in one place. Clear records help everyone see what was agreed.', 'A free on-site measure is a good first step before we write a strata quote.'] },
       { heading: 'What should not be assumed?', paragraphs: ['Do not assume the work can start just because the renovation is inside your apartment. Also do not assume every building has the same approval steps. Older blocks, newer buildings and tightly managed strata schemes can all handle wet-area work differently.', 'Bring the building rules to the first serious quote conversation. That gives the renovator a fair basis for scope, timing and access, and it gives you fewer surprises once the bathroom is open.'] },
       { heading: 'How should neighbours and common areas be handled?', paragraphs: ['A strata bathroom renovation is not only about your apartment. Noise, lift use, hallway protection and waste movement can affect neighbours and common property.', 'Ask how notices, access windows and protection are handled in your building. The smoother those details are, the less likely the job is to stall over something that was known before work started.'] },
       { heading: 'What should you give the renovator?', paragraphs: ['Give the renovator the by-laws, approval conditions, contact details for the building manager and any forms the building wants completed. Those documents shape access and timing as much as the bathroom design does.', 'If the building changes a rule after the quote, ask for the timing and cost effect to be recorded before the plan changes.'] },
@@ -343,8 +343,8 @@ export const blogPosts: BlogPost[] = [
     category: 'Choosing a renovator',
     sections: [
       { heading: 'The short version', paragraphs: ['Read the terms. Ask what is covered. Keep the final papers. A clear warranty leaves less room for doubt. Clear terms help.'] },
-      { heading: 'Read the wording, not just the number', paragraphs: ['A warranty should explain what is covered, how long it applies, how to notify the renovator and what exclusions apply. Ask for the terms before accepting the quote.', 'A headline warranty period does not tell you whether fixtures, products or third-party work are included.'] },
-      { heading: 'Separate workmanship from products', paragraphs: ['Workmanship and manufacturer warranties are different responsibilities. Ask who handles a product fault and who handles a problem with the installation.', 'Keep invoices, product information, the final scope and handover documents together after the work is complete.'] },
+      { heading: 'Read the wording, not just the number', paragraphs: ['A warranty should say what it covers, how long it lasts, how to make a claim and what it leaves out. Ask for the terms before you accept the quote.', 'A headline warranty term does not tell you if it covers fittings, products or work by other trades.'] },
+      { heading: 'Separate workmanship from products', paragraphs: ['Workmanship and product warranties cover different things. Ask who handles a product fault and who handles a fault with the fitting work.', 'Keep invoices, product details, the final scope and handover papers together when the job is done.'] },
       { heading: 'ETR warranty wording', paragraphs: ['Elite Touch Renovations offers a 10-year workmanship warranty. It should be read as written in the agreement and does not automatically extend to third-party fittings.', 'Ask questions before work begins so the protection you expect matches the written terms.'] },
     ],
   },
@@ -357,9 +357,9 @@ export const blogPosts: BlogPost[] = [
     readTime: '1 min read',
     category: 'Planning and process',
     sections: [
-      { heading: 'Speed starts before demolition', paragraphs: ['The fastest projects are not necessarily rushed projects. They are projects where the room has been measured, the scope is agreed, selections are ready and access is clear before site work begins.', 'Late decisions and unavailable products can add more time than careful planning takes.'] },
-      { heading: 'Do not remove the necessary sequence', paragraphs: ['Protection, demolition, preparation, plumbing and electrical work, waterproofing, tiling, fitting installation and finishing each have a place in the programme.', 'Compressing a programme by skipping preparation or curing time creates risk. Ask how the proposed timeline protects the quality of the work.'] },
-      { heading: 'Ask for a realistic programme', paragraphs: ['A useful programme identifies dependencies, decision dates and how changes affect timing. It should also allow for the actual room rather than promise a generic number of days.', 'A clear written scope is the best starting point for a realistic conversation about speed.'] },
+      { heading: 'Speed starts before demolition', paragraphs: ['The fastest jobs are not rushed. The room has been measured, the scope is agreed, your choices are ready and access is clear before site work starts.', 'Late choices and products that are out of stock can add more time than a good plan takes.'] },
+      { heading: 'Do not remove the necessary sequence', paragraphs: ['Floor protection, demolition, prep, plumbing and electrical work, waterproofing, tiling, fitting work and final clean each have a place in the plan.', 'Cutting prep or curing time adds risk. Ask how the plan leaves enough time for each stage.'] },
+      { heading: 'Ask for a realistic programme', paragraphs: ['A useful work plan shows what must happen first, when you need to make choices and how changes affect timing. It should fit the room rather than promise the same number of days for every job.', 'A clear written scope is the best way to start a fair talk about timing.'] },
     ],
   },
   {
@@ -475,12 +475,12 @@ export const blogPosts: BlogPost[] = [
     category: 'Planning and cost',
     sections: [
       { heading: 'The short answer', paragraphs: ['A well-planned bathroom renovation typically returns 60 to 80 percent of its cost at resale. The exact figure depends on the suburb, the property price, and how dated the existing bathroom was before the work.', 'That makes bathroom renovations one of the higher-return improvements you can make to a home in Sydney, alongside kitchens and street appeal. But returns are not guaranteed, and spending more does not automatically mean getting more back.'] },
-      { heading: 'Why bathrooms influence buyers', paragraphs: ['Bathrooms signal upkeep. A buyer walking through a home with a tired bathroom starts calculating what it will cost to fix. That mental estimate often runs higher than the actual renovation price, because most buyers overweight the disruption.', 'A clean, functional bathroom with good light, working ventilation and modern fittings removes that objection. It does not need to be luxurious. It needs to feel finished, maintained and ready to use.'] },
+      { heading: 'Why bathrooms influence buyers', paragraphs: ['Bathrooms show how well a home has been kept. A buyer who sees a worn bathroom starts to price the work. That guess can run higher than the real cost because buyers also weigh the upheaval.', 'A clean bathroom with good light, working ventilation and sound fittings eases that concern. It does not need to be lavish. It needs to feel cared for and ready to use.'] },
       { heading: 'Refresh vs full renovation', paragraphs: ['A cosmetic refresh - new tapware, a painted vanity, fresh silicone, better lighting - can cost under $5,000 and still shift the impression of a room on sale day. It will not fix layout problems, poor waterproofing or failing plumbing, but it can remove the "dated" label.', 'A full renovation addresses the structure, waterproofing, layout, fixtures and finishes together. ETR package starting points begin at Basic from $18,000 for a roughly 1.5 m × 1.8 m bathroom, Standard from $25,000, and Premium from $30,000, each tied to a stated room size and inclusion list. These are starting prices, not fixed quotes - the final scope follows a free on-site measure. Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> walks through how to set and hold a realistic number.'] },
-      { heading: 'What actually adds value', paragraphs: ['Focus on what buyers notice and use every day: a working shower with good water pressure, enough storage, clean tiles, proper ventilation and a layout that makes sense for the room.', 'Waterproofing to AS 3740 is not visible after the tiles go on, but the certificate and the confidence it gives a buyer at due diligence can matter more than a statement tile wall.'] },
+      { heading: 'What actually adds value', paragraphs: ['Focus on what buyers use each day: a shower with good water pressure, enough storage, clean tiles, good airflow and a layout that suits the room.', 'You cannot see AS 3740 waterproofing once the tiles go on. The certificate can give a buyer more peace of mind than a bold tile wall.'] },
       { heading: 'How to avoid overcapitalising', paragraphs: ['A common guideline is to keep a bathroom renovation under 5 to 10 percent of the property value. A $60,000 bathroom in a $700,000 home is unlikely to return its cost, because buyers in that price bracket are not expecting that level of finish.', 'Match the bathroom to the home and the suburb. A solid mid-range renovation with good waterproofing, clean finishes and a sensible layout usually returns more of its cost than a high-end build in a modest property. We cover this in more detail in our guide to <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">what agents actually look for</a> at resale.'] },
       { heading: 'What should you ask before renovating for resale?', paragraphs: ['Ask whether the bathroom is the weakest room in the home. If the kitchen, exterior or structural issues are worse, fixing the bathroom may not shift the sale price as much as you hope.', 'Ask what level of finish comparable homes in the street already have. A renovation that brings the bathroom up to the local standard is usually the safest return. Going well beyond it is a personal choice, not a financial one.'] },
-      { heading: 'What does a good renovation include for resale?', paragraphs: ['Clean layout, modern fittings, waterproofing done to standard, good lighting, proper ventilation, and a neutral finish that suits a broad range of buyers. That combination keeps the room functional without dating it quickly.', 'A fixed-scope written quote with clear inclusions helps you control the spend and compare what you are getting. A free on-site measure is the right starting point if you are weighing up whether the renovation makes financial sense for your home.'] },
+      { heading: 'What does a good renovation include for resale?', paragraphs: ['A clear layout, sound fittings, waterproofing done to standard, good light and airflow, and plain finishes that suit many buyers. That mix keeps the room useful for years.', 'A fixed-scope written quote that lists the work helps you plan the spend. Start with a free on-site measure if you are weighing up the cost for your home.'] },
     ],
     faq: [
       {
@@ -558,8 +558,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Why ventilation matters more than most finishes',
         paragraphs: [
-          'A bathroom generates moisture every time the shower runs. Without a clear path for that moisture to leave the room, it settles on surfaces, seeps into wall cavities and creates the conditions for mould, timber rot and peeling paint. Most of the damage happens where you cannot see it.',
-          'Good ventilation is not a luxury add-on. It is a building requirement, and getting it right during a renovation is far easier and cheaper than fixing moisture damage after the fact.',
+          'A shower fills the bathroom with damp air. If that air cannot leave, it settles on walls, gets into wall spaces and can lead to mould, wood rot and peeling paint. Most of the harm stays out of sight.',
+          'The building code calls for good ventilation. It is easier and cheaper to get it right during the job than to fix damp damage later.',
         ],
       },
       {
@@ -573,8 +573,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Natural ventilation vs mechanical ventilation',
         paragraphs: [
-          'A window that opens provides natural ventilation and can meet the code on its own if it is large enough. But in practice, most people do not leave bathroom windows open in winter, at night, or when privacy is a concern. A window alone is not always reliable ventilation.',
-          'A mechanical exhaust fan runs on demand and removes moisture consistently regardless of the weather or the time of day. In most Sydney renovations, an exhaust fan is installed even when there is a window, because the fan gives the room a reliable moisture-removal path.',
+          'A window can meet the code on its own if it opens wide enough. But most people shut bathroom windows in winter, at night or for privacy. A window alone may not clear the damp air each time.',
+          'An exhaust fan runs when needed and clears damp air in any weather. In most Sydney renovations, a fan goes in even when there is a window, to give the room a steady path for damp air to leave.',
         ],
       },
       {
@@ -3196,26 +3196,26 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Investment bathrooms are different from owner-occupied ones',
         paragraphs: [
-          'When you renovate your own bathroom, you choose finishes you love. When you renovate an investment property, you choose finishes that tenants will look after, that last between tenancies, and that add enough value to justify the cost.',
-          'The goal is not the cheapest renovation. A cheap renovation looks cheap, attracts lower rents and needs redoing sooner. The goal is a durable, well-finished bathroom that appeals to good tenants and lasts 10 to 15 years without major work.',
+          'In your own home, you may pick finishes you love. In a rental, you need finishes that tenants can care for, that last between leases and that earn their cost.',
+          'The goal is not the lowest price. Cheap work can look cheap, draw lower rents and need redoing sooner. Aim for a sound bathroom that suits tenants and lasts 10 to 15 years without major work.',
         ],
       },
       {
         heading: 'Where to spend',
         paragraphs: [
-          'Waterproofing. This is non-negotiable. A failed membrane causes structural damage that costs multiples of the waterproofing itself. Every investment bathroom should be waterproofed to AS 3740 with a compliance certificate.',
-          'Tiles. Choose porcelain over ceramic. Porcelain is harder, more scratch-resistant and holds up better under heavy use. A neutral colour - white, light grey or warm beige - appeals to the widest range of tenants and does not date quickly.',
-          'Tapware and fixtures. Mid-range brands with Australian Standards compliance last longer than budget fittings. A mixer tap costs a little more than separate hot and cold taps but is more practical and looks more current.',
-          'Ventilation. A properly ducted exhaust fan prevents mould, which is the single most common maintenance issue in rental bathrooms. The cost of a good fan is trivial compared to the cost of mould remediation between tenancies.',
+          'Waterproofing. This is vital. If the membrane fails, water can harm the home and cost far more to fix. Each rental bathroom should be waterproofed to AS 3740 with a compliance certificate.',
+          'Tiles. Choose porcelain over ceramic. Porcelain is harder, resists scratches and holds up well with heavy use. White, light grey or warm beige suits many tenants and ages well.',
+          'Tapware and fixtures. Mid-range brands that meet Australian Standards last longer than cheap fittings. A mixer tap may cost more than separate hot and cold taps, but is easier to use.',
+          'Ventilation. A fan that vents outside helps stop mould, a common upkeep issue in rental bathrooms. A good fan costs far less than mould clean-up between leases.',
         ],
       },
       {
         heading: 'Where to save',
         paragraphs: [
-          'Tile size and pattern. A standard 300 by 600 porcelain tile in a neutral colour costs less per square metre than a boutique tile and is easier to replace if a tile is damaged. Avoid trendy patterns that will look dated in five years.',
-          'Vanity and mirror. A wall-hung vanity with a stone-top basin in white or grey is durable, easy to clean and widely available. A simple frameless mirror is cheaper than an LED backlit model and has no electrical components to fail.',
-          'Shower screen. A semi-frameless screen costs less than frameless and tolerates walls that are not perfectly plumb - common in investment properties that may have had previous cheap renovations.',
-          'Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> covers how to allocate spending across the full scope of a renovation.',
+          'Tile size and pattern. A standard 300 by 600 porcelain tile in a plain colour costs less per square metre than a boutique tile. It is easier to replace if one breaks. Skip trends that may date in five years.',
+          'Vanity and mirror. A wall-hung vanity with a stone-top basin in white or grey lasts well, is easy to clean and is easy to find. A plain frameless mirror costs less than an LED model and has no wiring to fail.',
+          'Shower screen. A semi-frameless screen costs less than frameless and can fit walls that are not quite plumb, as can happen in older rentals.',
+          'Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> shows how to plan the spend across the full job.',
         ],
       },
       {
@@ -3223,22 +3223,22 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'A mid-range bathroom renovation costing $18,000 to $30,000 typically returns 60 to 75 percent of its cost in added property value. But the financial case for an investment property is broader than resale alone.',
           'A renovated bathroom justifies a higher weekly rent - often $30 to $60 more per week, which is $1,500 to $3,000 per year. Over 10 years, that added rent alone can cover a significant portion of the renovation cost.',
-          'A good bathroom also reduces vacancy. Tenants are more likely to renew a lease when the bathroom works well. Our <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">resale value guide</a> covers what real estate agents look for in a bathroom.',
+          'A good bathroom can also mean less time with no tenant. Tenants may renew a lease when the room works well. Our <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">resale value guide</a> covers what agents look for in a bathroom.',
         ],
       },
       {
         heading: 'Durability choices that matter for rentals',
         paragraphs: [
-          'Epoxy grout in the shower resists mould and staining far better than cement grout. It costs more upfront but eliminates the most common cleaning complaint from tenants and property managers.',
-          'Large-format tiles reduce grout lines and are easier to clean. A wall with four tiles is easier to maintain than a wall with forty. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> covers the maintenance difference in detail.',
-          'Anti-mould silicone at junctions lasts three to five years longer than standard silicone. Replacing silicone between tenancies is a small cost that prevents the larger cost of mould damage.',
+          'Epoxy grout in the shower resists mould and stains better than cement grout. It costs more at first but cuts a common cleaning complaint from tenants and property managers.',
+          'Large tiles mean fewer grout lines and less cleaning. A wall with four tiles is easier to care for than a wall with forty. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> covers how upkeep differs.',
+          'Anti-mould silicone at joints lasts three to five years longer than standard silicone. New silicone between leases costs less than fixing mould damage later.',
         ],
       },
       {
         heading: 'How ETR works with property investors',
         paragraphs: [
           'We renovate bathrooms in investment properties regularly. The process is the same as an owner-occupied renovation - on-site measure, written quote, fixed program - but the selections are guided toward durability and tenant appeal rather than personal taste.',
-          'Packages start from $18,000 on Basic. Every job is waterproofed to AS 3740 with a compliance certificate and carries a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+          'The Basic package starts from $18,000 for a bathroom about 1.5 × 1.8 × 2.4 m. Every job is waterproofed to AS 3740 with a compliance certificate and carries a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
         ],
       },
     ],
@@ -3615,23 +3615,23 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Why the contract matters',
         paragraphs: [
-          'A bathroom renovation is a significant purchase - $18,000 to $30,000 or more. The contract is the document that protects both you and the builder. It sets out what will be done, what it costs, how changes are handled and what happens if something goes wrong.',
+          'Our Basic package starts from $18,000 for a bathroom about 1.5 × 1.8 × 2.4 m. Premium starts from $30,000 for a room about 2.4 × 2.4 × 2.4 m. The contract sets out the work, price and how changes are handled.',
           'In NSW, a written contract is legally required for residential building work over $5,000. For work over $20,000, the Home Building Act requires specific clauses including a cooling-off period, progress payment schedule and details of the builder\'s insurance.',
         ],
       },
       {
         heading: 'Scope of work',
         paragraphs: [
-          'The contract should list every item included in the renovation: strip-out, waterproofing, plumbing, electrical, tiling, fixtures, painting, clean-up and waste removal. Each item should be described clearly enough that there is no ambiguity about what is included and what is not.',
-          'If the quote says "bathroom renovation" without listing the inclusions, ask. A vague scope leads to disputes about what was and was not agreed. Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing quotes</a> covers what a detailed scope looks like.',
+          'The contract should list the work: strip-out, waterproofing, plumbing, electrical work, tiling, fittings, paint, clean-up and waste removal. Each item should be clear, so you know what is in and what is out.',
+          'If the quote says "bathroom renovation" but does not list the work, ask. A vague scope can lead to disputes. Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to quotes</a> shows what to look for.',
         ],
       },
       {
         heading: 'Fixed price vs cost-plus',
         paragraphs: [
-          'A fixed-price contract sets the total cost for the agreed scope. You know the price before work starts. If the builder finds a problem - rot, old plumbing - any additional cost is discussed and agreed in writing before the extra work goes ahead.',
-          'A cost-plus contract charges materials at cost plus a margin, and labour at an hourly or daily rate. The final cost is not known until the job is finished. This suits large, complex projects where the full scope cannot be defined in advance, but it carries more financial risk for the homeowner.',
-          'ETR uses a HIA fixed-price renovation contract. The price is tied to the agreed scope and does not change unless a variation is approved in writing.',
+          'A fixed-price contract sets the cost for the agreed work. You know the price before work starts. If the builder finds rot or old plumbing, any extra cost is talked through and agreed in writing before more work goes ahead.',
+          'A cost-plus contract charges for materials at cost plus a margin, and for labour by the hour or day. You do not know the final price until the job is done. This can suit a large job whose full scope is hard to set at the start, but the owner takes on more cost risk.',
+          'ETR uses a HIA fixed-price renovation contract. The price is tied to the agreed work and changes only if you approve a variation in writing.',
         ],
       },
       {
@@ -3645,14 +3645,14 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Variations and extras',
         paragraphs: [
-          'A variation is a change to the agreed scope - a different tile, an additional niche, a wall that needs reframing because of rot. The contract should state that variations must be agreed in writing before the extra work begins, and that the cost of the variation is documented.',
-          'Verbal agreements about extras are hard to prove. A good contract makes variations a formal process - a written description of the change, the cost impact, and both parties\' signatures - so there are no surprises on the final invoice.',
+          'A variation is a change to the agreed work: a new tile choice, an extra niche or a wall that needs work due to rot. The contract should say that you must agree to each change and its cost in writing before the extra work starts.',
+          'Verbal deals about extras are hard to prove. A good contract calls for a written note of the change, the cost and both sides\' signatures. That helps prevent a shock in the final bill.',
         ],
       },
       {
         heading: 'Warranty and insurance',
         paragraphs: [
-          'The contract should state the workmanship warranty period. ETR provides a 10-year workmanship warranty. This covers the builder\'s work - not the products themselves, which carry the manufacturer\'s warranty separately.',
+          'The contract should state the workmanship warranty term. ETR provides a 10-year workmanship warranty. Product warranties are separate from the builder\'s work.',
           'The builder should hold public liability insurance and workers\' compensation insurance. In NSW, for residential work over $20,000, the builder must also provide a Home Building Compensation Fund (HBCF) certificate, which protects the homeowner if the builder cannot complete the work.',
           'Our <a href="/blog/bathroom-renovation-insurance-australia/" class="et-link">insurance guide</a> covers what insurance means for you during a renovation.',
         ],
@@ -3660,8 +3660,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'What ETR\'s contract covers',
         paragraphs: [
-          'ETR uses a HIA fixed-price renovation contract - a standard industry document published by the Housing Industry Association. It covers scope, pricing, payment schedule, variations, warranty, insurance, dispute resolution and cooling-off period.',
-          'The contract is explained before you sign. Every job is carried out under NSW Builder Licence 475204C, with $20 million public liability insurance and a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+          'ETR uses a HIA fixed-price renovation contract from the Housing Industry Association. It covers the work, price, payment plan, variations, warranty, insurance, dispute process and cooling-off period.',
+          'We talk you through the contract before you sign. Every job is carried out under NSW Builder Licence 475204C, with $20 million public liability insurance and a 10-year workmanship warranty. Start with a free on-site measure in Sydney.',
         ],
       },
     ],
