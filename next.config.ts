@@ -87,6 +87,31 @@ const REDIRECTS_301 = [
   { source: '/staging/:path*', destination: '/' },
 ] as const
 
+const isDevelopment = process.env.NODE_ENV === 'development'
+
+/**
+ * Keep the current enforcing policy while applying the low-risk hardening
+ * that does not change GTM/GA4 endpoints. React's development tooling needs
+ * `unsafe-eval`; production does not. Inline event-handler attributes are not
+ * used by the app and are blocked separately. The remaining `unsafe-inline`
+ * is a known follow-up for a nonce/hash migration because the root layout and
+ * JSON-LD currently contain inline scripts.
+ */
+const cspHeader = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "form-action 'self'",
+  `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com`,
+  "script-src-attr 'none'",
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com",
+  "img-src 'self' data: blob: https:",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self'",
+  "frame-src https://www.googletagmanager.com",
+  "frame-ancestors 'none'",
+].join('; ')
+
 const nextConfig: NextConfig = {
   // Preserve the trailing-slash URL form the WordPress site is indexed under.
   trailingSlash: true,
@@ -142,8 +167,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value:
-              "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.googletagmanager.com; frame-ancestors 'none';",
+            value: cspHeader,
           },
           {
             key: 'Cross-Origin-Opener-Policy',

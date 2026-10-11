@@ -14,8 +14,10 @@ Read the linked docs; do not assume their contents.
 
 > ⚠️ **This file was seeded from a sibling project (4 Elements Painting) that had been through nine
 > performance repairs, three SEO-invisibility bugs and one fabricated-content purge. The rules below
-> are what that cost.** Everything business-specific has been stripped. Lines marked **`TODO:`** need
-> a real answer before they can be trusted — **do not invent them.**
+> are what that cost.** The workflow rules were adapted for this repository, and the business facts
+> below are included for routing and guardrails; their canonical values still live in the sources named
+> in the hierarchy. If a line is ever marked **`TODO:`**, it needs a real answer before it can be
+> trusted — **do not invent it.**
 
 ---
 
@@ -81,9 +83,9 @@ Next.js 16 site, **live in production on Vercel** at https://www.elitetouchrenov
 | Email · office | **info@elitetouchrenovations.au** · Granville, NSW (by appointment) |
 | Tech stack | **Next.js 16 App Router + TypeScript + DESIGN.md CSS tokens** (D-40). **Hosting is Vercel** (D-68) — runs Node, so `proxy.ts` can serve the 410s |
 
-Sources: the page-copy and package PDFs on **issue #2**, and
-[docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md). Full detail, including every
-package inclusion, is in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
+Sources: the checked-in page-copy and package source files in `docs/source-copy/` (originally supplied
+through **issue #2**), and [docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md). Full
+detail, including every package inclusion, is in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
 
 **Once the site exists, put all of this in `src/data/businessInfo.ts` (or equivalent) — one file, one
 source of truth.** Never let a business fact live only in JSX, only in a doc, or only in a conversation.
@@ -104,15 +106,17 @@ source of truth.** Never let a business fact live only in JSX, only in a doc, or
 - [service-areas.json](service-areas.json) — ⭐ **machine-readable service areas:** every suburb with
   slug, postcode, tier and Tier-1 URL. **Generate location routes from this file; never retype the
   list.** Entries flagged `isNotASuburb` exist for postcode completeness and get no service-area copy.
-- `ETR images/` · `ETR images and reviews/` — **33 project photos, uncommitted.** Every image — these
-  33 and any added later — follows one standing pipeline before it ships: **Detect → Inventory →
-  Verify → Flag issues → Approve → Add to repo → Commit → Use public asset URL → Add accurate alt
-  text** (decision record D-36 in [DECISIONS.md](DECISIONS.md)). This is automatic — don't wait to be
-  told to run it again.
+- `ETR images/` · `ETR images and reviews/` — **33 original image files (19 + 14), tracked in the
+  repository but not approved for production use.** They include raw/mostly raw room images and
+  marketing graphics. Every image — these 33 and any added later — follows one standing pipeline
+  before it ships: **Detect → Inventory → Verify → Flag issues → Approve → Add to repo → Commit →
+  Use public asset URL → Add accurate alt text** (decision record D-36 in [DECISIONS.md](DECISIONS.md)).
+  This is automatic — don't wait to be told to run it again.
 - [docs/IMAGE_INVENTORY.md](docs/IMAGE_INVENTORY.md) — ⭐ **Detect/Inventory/Verify are done for all 34
-  files** (the 33 plus the root logo). **Approve is not** — read the flags before shortlisting anything
-  from it (an unverified testimonial not in `Customer Reviews.md`, an undocumented family member,
-  unconfirmed provenance on several template graphics).
+  files in the original batch** (the 33 plus the root logo). **Approve is not** for that batch — read
+  the flags before shortlisting anything from it (an unverified testimonial not in `Customer Reviews.md`,
+  an undocumented family member, unconfirmed provenance on several template graphics). The later
+  2026-08-25 project-photo batch is documented separately; do not conflate the two inventories.
 - [Web Design Research.md](Web%20Design%20Research.md) — background UX/CRO reference. Useful reading,
   **not** a rulebook; where it disagrees with `DESIGN.md`, `DESIGN.md` wins.
 - `plans/` — **active execution checklists only.** A completed, cancelled or superseded plan is not
@@ -148,6 +152,9 @@ When two sources disagree, the **higher tier wins**:
 3. **`docs/` guides** → background research.
 4. **`session-history/` and completed plans** → historical evidence only; never current status by
    themselves.
+
+`CLAUDE.md` and `AGENTS.md` govern agent workflow and safety. They do not override the owner's live
+instruction, settled decisions, or the code-level source of truth for what is currently implemented.
 
 - **Docs may be stale.** If a doc references a file, flag or route, `grep` for it before acting.
 - **Counts and status rot fastest.** Prefer the live data helper or generated output over prose such
@@ -359,8 +366,11 @@ an end-to-end delivery task. Work autonomously through the complete workflow:
 
 Do not close an issue when a genuine blocker remains, verification is incomplete, or completion
 requires an owner-only decision. Report the specific blocker and ask only the necessary question.
-The owner must still approve pushes, deployments, destructive actions, legally significant claims,
-and any other decision listed under **Autonomy & Session Handoff**.
+Implementing an issue does **not** by itself authorize changing external issue state: close the
+GitHub issue only when the owner explicitly asked for issue closure or the task scope explicitly
+includes it. Otherwise report that it is ready to close and leave it open. The owner must still
+approve pushes, deployments, destructive actions, legally significant claims, and any other decision
+listed under **Autonomy & Session Handoff**.
 
 When a task is broken into GitHub issues (rather than executed directly against the plan), each
 issue must:
@@ -443,6 +453,10 @@ came from, it is not ready to open.
   task-specific unused port. Confirm the port owner before stopping any process, and never assume
   port `3210` belongs to this task. If output is inexplicable, rebuild once in isolation before
   diagnosing application code.
+- **`npm run build` runs the `postbuild` IndexNow hook.** It skips local and preview builds unless
+  `VERCEL_ENV=production`, but use `npm run build --ignore-scripts` for a strictly local build when
+  the postbuild hook is not part of the test. Do not use `--force` unless explicitly testing the
+  IndexNow submission.
 - For Playwright against `next dev`, wait for `load`, not `networkidle`; the HMR WebSocket keeps the
   network active. Prefer `next start` from a fresh production build for final verification.
 - ⚠️ **Do not trust a background task's exit code.** A wrapped command
