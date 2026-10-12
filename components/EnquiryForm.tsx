@@ -1,10 +1,11 @@
 'use client'
 
-import { useActionState, useState, type ChangeEvent } from 'react'
+import { useActionState, useEffect, useRef, useState, type ChangeEvent } from 'react'
 import { useFormStatus } from 'react-dom'
 import { submitEnquiry } from '@/lib/actions'
 import { initialEnquiryState, type EnquiryState } from '@/lib/enquiry'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { trackEvent } from '@/lib/analytics'
 
 /**
  * Photo attachments (D-150). MUST stay in sync with the server-side caps in
@@ -111,6 +112,41 @@ export function EnquiryForm() {
   const [preparingPhotos, setPreparingPhotos] = useState(false)
   const [photoNotice, setPhotoNotice] = useState<string | null>(null)
 
+  // Tracks whether the user has focused any field (fires form_start once).
+  const startedRef = useRef(false)
+  // Tracks whether a submit is in flight, so the state-change effect below
+  // only fires after an actual submission, not on initial render.
+  const submittedRef = useRef(false)
+
+  function handleFormFocus() {
+    if (!startedRef.current) {
+      startedRef.current = true
+      trackEvent('form_start')
+    }
+  }
+
+  function handleFormSubmit() {
+    submittedRef.current = true
+    trackEvent('form_submit_attempt')
+  }
+
+  // Fire generate_lead (success) or form_submit_error after the server action
+  // returns. This is more reliable than GTM's Form Submit trigger, which fires
+  // at submit-time — before the server action result is known — and may not
+  // fire at all on React-intercepted form submissions.
+  useEffect(() => {
+    if (!submittedRef.current) return
+    if (state.status === 'success') {
+      trackEvent('generate_lead')
+      submittedRef.current = false
+    } else if (state.status === 'error') {
+      trackEvent('form_submit_error', {
+        error_code: state.errors ? 'validation' : 'server_error',
+      })
+      submittedRef.current = false
+    }
+  }, [state])
+
   // Replaces the file input's own FileList with compressed versions before
   // the form ever submits, via the DataTransfer API — so the native form
   // action (and useActionState's progressive enhancement) needs no changes
@@ -152,7 +188,13 @@ export function EnquiryForm() {
   }
 
   return (
-    <form action={formAction} className="et-stack" noValidate>
+    <form
+      action={formAction}
+      className="et-stack"
+      noValidate
+      onFocus={handleFormFocus}
+      onSubmit={handleFormSubmit}
+    >
       {/* Honeypot — hidden from people, irresistible to bots. */}
       <div className="et-visually-hidden" aria-hidden="true">
         <label htmlFor="company">Company</label>
