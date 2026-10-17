@@ -7,6 +7,8 @@ reporting, and session handoff.
 
 Also read `docs/SPECIALIST_AGENTS.md` when a task may benefit from specialist review.
 
+For WebMCP work, use the project skill at `.claude/skills/webmcp/SKILL.md`. Claude Code and GitHub Copilot can discover the project skill from that location; Codex should read it when the task matches.
+
 ## Specialist Roles
 
 Use the same five specialist roles defined in `docs/SPECIALIST_AGENTS.md`:

@@ -189,6 +189,7 @@ instruction, settled decisions, or the code-level source of truth for what is cu
 | **Shared navigation / generated route discovery** | `DESIGN.md` + `PROJECT_CONTEXT.md` mechanics. Build links from the existing data helpers; never duplicate service, blog, project, region or published-suburb lists in a component |
 | **Pricing / quotes / cost content** | The **Renovation Packages** PDF on issue #2 is the pricing source of truth; the tiers and their inclusion lists are summarised in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) §2. Always pair a price with its stated bathroom size. A cost/pricing page is a confirmed opportunity (100–1K/mo — `docs/BATHROOM_SITE_STRUCTURE.md`) |
 | **Anything sourced from a competitor site** (incl. issue #1's reference link) | [DECISIONS.md](DECISIONS.md) D-05 — **layout and structure may be used as reference; copy, specifications and claims may not.** |
+| **WebMCP / browser-agent tools** | Use the project skill at `.claude/skills/webmcp/SKILL.md`; re-check its linked official docs before relying on current APIs or browser rollout |
 
 ---
 
