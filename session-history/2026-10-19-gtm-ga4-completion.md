@@ -37,18 +37,13 @@ Rewrote the Analytics section (§16) to accurately describe the current state:
 | form_submit_attempt | ✅ Custom Event trigger + code push |
 | form_submit_error (with error_code) | ✅ Custom Event trigger + code push + DLV |
 | generate_lead | ✅ Custom Event trigger + code push |
-| GA4 custom dimension for error_code | ❌ Pending owner (GA4 editor access required) |
-| GA4 key events starred | ❌ Pending owner (GA4 editor access + real traffic required) |
+| GA4 custom dimension for error_code | ✅ Created 2026-10-19 (Event scope, parameter: error_code) |
+| GA4 key events starred | ❌ Pending — needs real traffic first so events appear in the Events list |
 
 ## Pending owner actions (GA4 editor account required)
 
-### 1. Create GA4 custom dimension for error_code
-Go to: GA4 → Admin → Data display → Custom definitions → Create custom dimension
-- Name: `error_code`
-- Scope: Event
-- Event parameter: `error_code`
-
-Register this NOW — GA4 does not backfill. Every `form_submit_error` event that fires before this is registered loses its `error_code` parameter value in reports.
+### ~~1. Create GA4 custom dimension for error_code~~ — DONE 2026-10-19
+Created via GA4 Admin → Custom definitions: Name `error_code`, Scope Event, parameter `error_code`. Visible in the Custom dimensions table, last changed 19 Oct 2026.
 
 ### 2. Star key events
 Go to: GA4 → Admin → Events
