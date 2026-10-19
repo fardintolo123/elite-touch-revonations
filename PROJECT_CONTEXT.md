@@ -316,22 +316,28 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
    strip the form from pages.
 16. **Analytics: GTM-MVGQB9FW is installed** (K4 closed — 2026-08-31). Architecture: Website →
    GTM → Google tag (G-06GQGHHP0X) → GA4. One measurement path (D-32). The standalone Google
-   tag GT-MBNT4TKH is NOT installed — it would create a duplicate path. GTM container holds:
-   - **Tags:** GA4 - Google tag (Initialization - All Pages) · GA4 Event - phone_call_click
-     (Click - Phone Call) · GA4 Event - email_click (Click - Email) · GA4 Event - generate_lead
-     (Form Submit - Contact)
-   - **Triggers:** Click - Phone Call (Just Links, Click URL starts with tel:) · Click - Email
-     (Just Links, Click URL starts with mailto:) · Form Submit - Contact (Form Submission, Page
-     URL contains /contact-us/)
-   - **Variables:** Click Element · Click URL · Click Text · Form ID (all built-in)
+   tag GT-MBNT4TKH is NOT installed — it would create a duplicate path.
+   **GTM Version 3 "Form funnel tracking" published 2026-10-13** (7 tags, 7 triggers, 10 variables):
+   - **Tags:** GA4 - Google tag (All Pages) · GA4 Event - phone_call_click (native Click trigger) ·
+     GA4 Event - email_click (native Click trigger) · GA4 Event - generate_lead (Custom Event) ·
+     GA4 Event - Form_start (Custom Event) · GA4 Event - form_submit_attempt (Custom Event) ·
+     GA4 Event - form_submit_error (Custom Event, param: `error_code = {{DLV - error_code}}`)
+   - **Custom Event triggers:** form_start · form_submit_attempt · form_submit_error · generate_lead
+   - **Native click triggers (from v2):** Click - Phone Call (Just Links, tel:) · Click - Email
+     (Just Links, mailto:)
+   - **Variables:** DLV - error_code (Data Layer Variable, key `error_code`) + built-ins
    GTM snippet is in `app/layout.tsx` (Script strategy="afterInteractive" + noscript iframe).
    Container ID is configured as `NEXT_PUBLIC_GTM_ID`. All call CTAs are real `tel:` anchors
-   (D-33) — verified 4 anchors, 0 button CTAs — so a single delegated listener is all that
-   is needed. **GTM Version 2 is published and production presence was re-verified 2026-09-14** —
-   Tag Assistant confirmed the base tag
-   fires on page load, 2 Google tags detected (GTM-MVGQB9FW + G-06GQGHHP0X), source
-   "On-page gtm.js snippet". Marking selected events as GA4 key events is an optional owner/account
-   task, not evidence that site tracking is absent.
+   (D-33). `lib/analytics.ts` exports `trackEvent(name, params)` — the only helper for dataLayer
+   pushes. `components/EnquiryForm.tsx` pushes form_start, form_submit_attempt, form_submit_error,
+   generate_lead. `app/layout.tsx` (commit 43c2933) also pushes phone_call_click and email_click
+   via a delegated click listener — these pushes are currently inert in GTM (no Custom Event trigger
+   exists for them); the native click triggers remain the active path for phone/email tracking.
+   **Pending owner actions (GA4 editor access required):**
+   - Create custom dimension: Admin → Data display → Custom definitions → name `error_code`,
+     scope Event, parameter `error_code`. Register before real traffic builds up — not backfilled.
+   - Star GA4 key events: generate_lead and phone_call_click (after events appear in GA4 Admin →
+     Events, which requires real traffic and the owner's GA4 editor account).
 17. **`.et-hero-media` is a fixed 4/3 ratio at every breakpoint** (D-84). Every source photo in
    `lib/projects.ts` is landscape (~3/2) - do not reintroduce a portrait override for "desktop
    polish"; that exact change was the reported crop bug.
