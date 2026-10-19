@@ -21,6 +21,19 @@ Read the linked docs; do not assume their contents.
 
 ---
 
+## Task Depth: Deeper, Not Bigger
+
+When shaping or rewriting a task, deepen the work while preserving the owner's objective, scope, constraints, and deliverables.
+
+Before rewriting it:
+
+1. Say what a top professional in this field would do here that the owner is not asking for.
+2. Name the rawest material they would start from instead of what has already been digested for the owner: original artifacts, primary records, source data, or direct observations relevant to this task.
+3. Name the specific methods and tools they would use, and what each would establish. Choose tools for the actual task rather than listing generic capabilities.
+4. Say what, other than the agent's or owner's opinion, would show the result is right. Define observable acceptance criteria and the independent evidence, repeatable checks, or authoritative sources that would support or disprove success.
+
+Then rewrite the owner's prompt to ask for exactly that. Produce one self-contained prompt that connects the professional approach, primary inputs, named methods/tools, and independent verification to the original outcome. Depth must come from better evidence, reasoning, and validation; do not expand the task with unrelated features, deliverables, or research. If the underlying task is missing, provide a reusable prompt with an explicit task placeholder rather than inventing a field. Identify missing inputs or unavailable checks honestly; do not present proposed verification as completed.
+
 ## Autonomy & Session Handoff
 
 **Work the task through to done, yourself, without checking in at each step.** Once a task is routed
