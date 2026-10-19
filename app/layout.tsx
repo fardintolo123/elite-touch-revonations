@@ -167,6 +167,25 @@ document.addEventListener('visibilitychange', function () {
   }
 });`}
         </Script>
+        {/*
+         * Single delegated listener for tel: and mailto: anchors — fires
+         * phone_call_click / email_click once per click, no per-element
+         * handlers, no double-count risk (D-33 / CLAUDE.md Conversion Rules).
+         * Must live here, not in a per-page component, so every call CTA on
+         * every route is covered from one place.
+         */}
+        <Script id="click-tracking" strategy="afterInteractive">
+          {`document.addEventListener('click', function(e) {
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if (!a || !a.href) return;
+  window.dataLayer = window.dataLayer || [];
+  if (a.href.startsWith('tel:')) {
+    window.dataLayer.push({ event: 'phone_call_click' });
+  } else if (a.href.startsWith('mailto:')) {
+    window.dataLayer.push({ event: 'email_click' });
+  }
+});`}
+        </Script>
         <Script id="section-motion" strategy="afterInteractive">
           {`(() => {
   const main = document.querySelector('main#main');
