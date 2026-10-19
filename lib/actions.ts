@@ -18,8 +18,9 @@ import type { EnquiryState } from './enquiry'
  * -----------------------------------------------------------------------
  * The customer submits → this runs on the server → THREE things happen:
  *
- *   1. An email to ETR (`ETR_ENQUIRY_TO`) with the full enquiry. This is the
- *      CRITICAL path — if it fails, the action fails loudly (see below).
+ *   1. An email to ETR (`ETR_ENQUIRY_TO`) and the additional office recipient
+ *      `fardintolo123@gmail.com` with the full enquiry. This is the CRITICAL
+ *      path — if it fails, the action fails loudly (see below).
  *   2. A best-effort confirmation email back to the customer. If this fails,
  *      the submission still succeeds — the business already has the lead
  *      from step 1, and a missing confirmation email is a poor experience,
@@ -60,8 +61,9 @@ import type { EnquiryState } from './enquiry'
  * Environment variables, set in Vercel → Settings → Environment Variables:
  *
  *   RESEND_API_KEY               required for email. From resend.com → API Keys.
- *   ETR_ENQUIRY_TO                where the office notification lands. Defaults
- *                                  to the published address.
+ *   ETR_ENQUIRY_TO                the primary office recipient. Defaults to
+ *                                  the published address. The office notification
+ *                                  also goes to `fardintolo123@gmail.com`.
  *   ETR_ENQUIRY_FROM              the sender for BOTH emails. MUST be on a
  *                                  domain verified in Resend.
  *   SUPABASE_URL                  optional — defaults to the project above.
@@ -173,6 +175,9 @@ export async function submitEnquiry(
 
   const apiKey = process.env.RESEND_API_KEY
   const to = process.env.ETR_ENQUIRY_TO || businessInfo.email.primary
+  const officeRecipients = Array.from(
+    new Set([to, 'fardintolo123@gmail.com'])
+  )
   const from = process.env.ETR_ENQUIRY_FROM
 
   if (!apiKey || !from) {
@@ -233,7 +238,7 @@ export async function submitEnquiry(
   try {
     const { error } = await resend.emails.send({
       from,
-      to: [to],
+      to: officeRecipients,
       subject: `New enquiry - ${name}${suburb ? `, ${suburb}` : ''}`,
       // Reply goes straight back to the customer where we have their address.
       replyTo: email,
