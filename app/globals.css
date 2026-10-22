@@ -1401,6 +1401,25 @@ svg {
   scroll-margin-top: var(--et-space-40);
 }
 
+.et-room-starter {
+  display: grid;
+  gap: var(--et-space-3);
+}
+.et-room-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--et-space-2);
+}
+.et-room-choices .et-btn {
+  white-space: normal;
+  line-height: 1.4;
+  padding: var(--et-space-3) var(--et-space-4);
+}
+#enquiry-form,
+form [role='status'] {
+  scroll-margin-top: var(--et-space-40);
+}
+
 /* Location hero: a real local project carries the page's visual proof. The
    image remains a next/image element (rather than a CSS background) so it can
    be sized, preloaded, and described accessibly. */

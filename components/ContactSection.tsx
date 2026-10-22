@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { EnquiryForm } from '@/components/EnquiryForm'
+import { GoogleRating } from '@/components/GoogleRating'
 import { businessInfo } from '@/lib/businessInfo'
 
 /**
@@ -25,9 +26,11 @@ import { businessInfo } from '@/lib/businessInfo'
 export function ContactSection({
   title = 'Book a free on-site measure',
   intro = 'Tell us what is not working in the room. We will measure it anywhere in Sydney at no cost, talk through the scope, then send the inclusions, exclusions and price in writing.',
+  showReviewProof = false,
 }: {
   title?: string
   intro?: string
+  showReviewProof?: boolean
 }) {
   return (
     <section className="et-section et-band-canvas" id="enquire">
@@ -76,7 +79,7 @@ export function ContactSection({
           </div>
 
           <div className="et-card">
-            <h3 className="et-h3">Tell us about the room</h3>
+            <h3 className="et-h3" id="enquiry-form" tabIndex={-1}>Tell us about the room</h3>
             <p
               className="et-body-sm"
               style={{
@@ -90,6 +93,11 @@ export function ContactSection({
               measure. After the visit, we will put the inclusions, exclusions
               and price in writing.
             </p>
+            {showReviewProof && (
+              <div style={{ marginBottom: 'var(--et-space-6)' }}>
+                <GoogleRating />
+              </div>
+            )}
             <EnquiryForm />
 
             {/* Privacy notice — issue #37 / content audit C-1. Lives here in the

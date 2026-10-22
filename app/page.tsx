@@ -10,6 +10,7 @@ import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { GoogleRating } from '@/components/GoogleRating'
+import { HomeEnquiryStarter } from '@/components/EnquiryForm'
 
 /**
  * Homepage.
@@ -243,13 +244,11 @@ export default function HomePage() {
                 and price in writing before strip-out starts.
               </p>
 
+              <GoogleRating />
+
+              <HomeEnquiryStarter services={services.map((service) => service.title)} />
+
               <div className="et-hero-cta">
-                <a
-                  href="#enquire"
-                  className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-                >
-                  {businessInfo.offer.primaryCta}
-                </a>
                 {/* Real tel: anchor — never a JS handler (D-33) */}
                 <a
                   href={businessInfo.phone.href}
@@ -258,8 +257,6 @@ export default function HomePage() {
                   Call {businessInfo.phone.display}
                 </a>
               </div>
-
-              <GoogleRating />
 
               <ul className="et-facts">
                 <li className="et-fact">
@@ -528,7 +525,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ContactSection />
+      <ContactSection showReviewProof />
     </>
   )
 }

@@ -269,6 +269,47 @@ Built 2026-08-17. Decisions and their reasoning are D-40 … D-48 in
 | `app/llms.txt/route.ts` | Served at `/llms.txt` (D-90). Generated from `services`, `projects` and `publishedRegions()` — same data `sitemap.ts` reads — so it can never state a fact the rest of the site doesn't |
 | `scripts/check-readability.mjs` | `npm run check:readability` — Flesch Reading Ease for `p`, `li` and `dd` prose within each page's `<main>`, read straight from `.next/server/app/**.html`. Reviews count; headings and UI labels do not. It checks the hardcoded route list against the built HTML files so newly published pages cannot go unscored. A whole-DOM score from a third-party tool can differ because it also counts navigation text (D-96) |
 
+### Homepage room-to-enquiry entry (D-155)
+
+Owner workflow update, 20 October 2026: review one owner-supplied reel link at a
+time. The canonical cross-site learning/status register is
+[4 Elements reel library](https://github.com/fardintolo123/4ElementsPainting/blob/main/docs/reel-library/README.md).
+Save the URL/ID and lesson, distinguish demonstration from claims, and track each
+site's local test, push, live verification and measured outcome separately. The
+old whole-profile inventory is history, not a review queue. Elite Touch remains
+local until its publication is separately authorised.
+
+`HomeEnquiryStarter` is exported through the existing `EnquiryForm.tsx` client
+boundary; the homepage and `ContactSection` stay server-rendered. A separate client
+entry was measured to duplicate the form chunk, so do not reintroduce it casually.
+The homepage passes only the four canonical service titles. Native links target
+`#enquiry-form`; with JavaScript, `lib/enquiryStarter.ts` parks and consumes a
+validated one-shot choice, then the existing form selects the service and focuses
+its heading. The existing select remains editable. Not sure preserves an entered
+service. Pending/sent states ignore replacement choices and a sent status prevents
+another submit until reload.
+
+The form cancels automatic resets so uncontrolled inputs and the FileList survive
+returned validation/delivery errors. Optional notes/photos remain native disclosure;
+the server action, required fields and photo limits are unchanged. `form_start`
+still means first actual input/select/textarea focus, not hero/heading focus. No new
+event or GTM tag was added. The original reel's conversion uplift is unmeasured;
+use a matched production homepage cohort's unique `generate_lead` users divided by
+eligible homepage users, with phone clicks and submit errors as guardrails. See
+`docs/reel-enquiry-starter-review-2026-10-20.md` for observations and limits.
+
+### Homepage contact proof (D-156)
+
+The homepage passes `showReviewProof` to the existing server-rendered
+`ContactSection`; default false keeps other shared contact sections unchanged.
+It reuses `GoogleRating` above the first field, including its existing native
+Google link, accessible label and canonical `businessInfo.googleBusinessProfile`
+snapshot. No new client boundary, event, dependency or media. Focusing the rating
+does not count as `form_start`. Script gzip sum stayed 191,234 B in the matched
+before/after inventory. The conversion effect remains an untested hypothesis.
+Local evidence/rollback: `docs/reel-proof-placement-2026-10-22.md`. Elite Touch
+remains unpushed; the earlier performance gate is still open.
+
 ### Things that will bite you
 
 1. **`trailingSlash: true` is load-bearing** (D-41). Every canonical, every sitemap entry and every

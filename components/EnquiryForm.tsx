@@ -1,11 +1,16 @@
 'use client'
 
-import { useActionState, useEffect, useRef, useState, type ChangeEvent } from 'react'
+import { useActionState, useEffect, useRef, useState, type ChangeEvent, type FocusEvent, type FormEvent } from 'react'
 import { useFormStatus } from 'react-dom'
 import { submitEnquiry } from '@/lib/actions'
 import { initialEnquiryState, type EnquiryState } from '@/lib/enquiry'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { trackEvent } from '@/lib/analytics'
+import { listenForEnquiryStart } from '@/lib/enquiryStarter'
+
+// Both homepage entry and form use this existing client boundary. A separate
+// entry makes Turbopack duplicate the shared form chunk on the homepage.
+export { HomeEnquiryStarter } from './HomeEnquiryStarter'
 
 /**
  * Photo attachments (D-150). MUST stay in sync with the server-side caps in
@@ -87,16 +92,18 @@ async function compressPhoto(file: File): Promise<File | null> {
  * in here, so none of it depends on client hydration to reach a crawler.
  */
 
-function SubmitButton({ waitingOnPhotos }: { waitingOnPhotos: boolean }) {
+function SubmitButton({ waitingOnPhotos, sent }: { waitingOnPhotos: boolean; sent: boolean }) {
   const { pending } = useFormStatus()
   return (
     <button
       type="submit"
       className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-      disabled={pending || waitingOnPhotos}
+      disabled={pending || waitingOnPhotos || sent}
     >
       {pending
         ? 'Sending…'
+        : sent
+          ? 'Request sent'
         : waitingOnPhotos
           ? 'Preparing photos…'
           : 'Request my free measure'}
@@ -105,12 +112,29 @@ function SubmitButton({ waitingOnPhotos }: { waitingOnPhotos: boolean }) {
 }
 
 export function EnquiryForm() {
-  const [state, formAction] = useActionState<EnquiryState, FormData>(
+  const [state, formAction, isPending] = useActionState<EnquiryState, FormData>(
     submitEnquiry,
     initialEnquiryState
   )
   const [preparingPhotos, setPreparingPhotos] = useState(false)
   const [photoNotice, setPhotoNotice] = useState<string | null>(null)
+  const serviceRef = useRef<HTMLSelectElement>(null)
+  const statusRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => listenForEnquiryStart((service) => {
+    if (service !== '' && !services.some((item) => item.title === service)) return
+    if (!isPending && state.status !== 'success' && service && serviceRef.current) {
+      serviceRef.current.value = service
+    }
+    const target = state.status === 'success'
+      ? statusRef.current
+      : document.getElementById('enquiry-form')
+    target?.focus({ preventScroll: true })
+    target?.scrollIntoView({
+      block: 'start',
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    })
+  }), [isPending, state.status])
 
   // Tracks whether the user has focused any field (fires form_start once).
   const startedRef = useRef(false)
@@ -118,14 +142,19 @@ export function EnquiryForm() {
   // only fires after an actual submission, not on initial render.
   const submittedRef = useRef(false)
 
-  function handleFormFocus() {
+  function handleFormFocus(event: FocusEvent<HTMLFormElement>) {
+    if (!(event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement || event.target instanceof HTMLTextAreaElement)) return
     if (!startedRef.current) {
       startedRef.current = true
       trackEvent('form_start')
     }
   }
 
-  function handleFormSubmit() {
+  function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
+    if (isPending || preparingPhotos || state.status === 'success') {
+      event.preventDefault()
+      return
+    }
     submittedRef.current = true
     trackEvent('form_submit_attempt')
   }
@@ -194,6 +223,9 @@ export function EnquiryForm() {
       noValidate
       onFocus={handleFormFocus}
       onSubmit={handleFormSubmit}
+      // React resets uncontrolled inputs even when an action returns validation
+      // errors. Keep the answers and FileList so the customer can correct/retry.
+      onReset={(event) => event.preventDefault()}
     >
       {/* Honeypot — hidden from people, irresistible to bots. */}
       <div className="et-visually-hidden" aria-hidden="true">
@@ -309,7 +341,7 @@ export function EnquiryForm() {
         <label className="et-label" htmlFor="service">
           What are you renovating? <span>(optional)</span>
         </label>
-        <select className="et-select" id="service" name="service" defaultValue="">
+        <select ref={serviceRef} className="et-select" id="service" name="service" defaultValue="">
           <option value="">Not sure yet</option>
           {services.map((service) => (
             <option key={service.slug} value={service.title}>
@@ -371,6 +403,8 @@ export function EnquiryForm() {
 
       {state.status !== 'idle' && state.message && (
         <div
+          ref={statusRef}
+          tabIndex={-1}
           role="status"
           aria-live="polite"
           className="et-body-sm"
@@ -403,7 +437,7 @@ export function EnquiryForm() {
         </div>
       )}
 
-      <SubmitButton waitingOnPhotos={preparingPhotos} />
+      <SubmitButton waitingOnPhotos={preparingPhotos} sent={state.status === 'success'} />
     </form>
   )
 }
