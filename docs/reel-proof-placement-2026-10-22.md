@@ -66,7 +66,8 @@ and desktop/mobile landing screenshots. Baseline placement:
 
 ## Publication and outcome
 
-Implemented and locally verified only. No Elite Touch commit/push/deploy or live
+Implemented and locally verified; source saved in local commit `ee74a0e` together
+with the first-reel handoff/retention work. No Elite Touch push/deploy or live
 delivery verification is claimed. Publication requires separate owner authority
 and resolution of the earlier performance gate. No matched first-party homepage
 funnel was available for this site; the obstacle's conversion cost is unknown.
