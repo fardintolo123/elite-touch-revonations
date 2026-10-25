@@ -51,3 +51,9 @@ Read the plan file first. Do not edit the enquiry form before `ee74a0e` is resol
 ## 17. Conversation-Derived Insights
 - Owner goal: more impressions, clicks, calls. Biggest lever remains GBP reviews/verification and the
   deferred citation work (D-142).
+
+## Addendum — owner answers (same day)
+- Push: owner said "push to live branch" — plan + handoff + D-155 pushed to `main`.
+- Calendly: "it doesnt" → #69 offers no booking.
+- Budget band: "what you suggest" → rejected (D-155); #70 is timing only.
+- Reply time: "as fast as possible" → no timeframe is published (D-155).

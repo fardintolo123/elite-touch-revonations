@@ -27,8 +27,8 @@ impressions, clicks, calls and enquiries. The 4 Elements Painting verdicts are i
 |---|---|
 | Multi-step questionnaire | Not now. Form is already short, one screen, mostly optional; a step split would be untestable at current traffic |
 | "What can you see?" visual selector | Not now. Customers renovating a bathroom know the room; service select already covers it |
-| Post-submission engagement | **E2** — real next steps; calendar only if the owner still uses one (legacy `/calendly/` URL exists) |
-| Budget + timeline | **E3** timing chips; budget band only on owner approval (it is a positioning call vs the $18k floor) |
+| Post-submission engagement | **E2** — real next steps; no calendar (owner: Calendly not used) and no reply-time figure (D-155) |
+| Budget + timeline | **E3** timing chips; budget field rejected (D-155 — owner delegated) |
 | Interlinking | Already done (D-118, generated hub links) |
 | Location + service pages | **E5** — evidence test only (D-10) |
 | Form drop-off tracking | **E1** — make `error_code` say which field failed; no GTM change needed |
