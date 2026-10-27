@@ -316,6 +316,26 @@ These are framework-level lessons, not preferences. Adjust the names to whatever
   client-side. Before adding the directive, find out which import demanded it.
 - **Before enabling any dormant data field or page, audit its copy against the current Business
   Rules.** Dormant content carries stale claims.
+- **Metadata merges shallowly, not deeply, between layout and page.** A page-level `openGraph` object
+  **replaces** the layout default wholesale — setting it just to change `og:type` silently drops
+  `og:site_name`, `og:locale` and `og:url`. Leave `openGraph.title`/`description` unset in a shared
+  metadata helper; Next fills both from the page's own already-templated title/description, and
+  setting them explicitly bypasses the title template. Also: `title.template` on the root layout does
+  **not** apply to `app/page.tsx` in the same route segment — only pages one level deeper inherit it.
+  This has caused real regressions more than once; verify rendered `<head>` output, don't assume.
+- **File/image uploads must design around Vercel's hard, non-configurable 4.5MB request-body cap** on
+  Server Actions and API routes. `next.config.ts`'s `bodySizeLimit` is a smaller, separate ceiling —
+  raising it cannot fix a Vercel 413. Compress client-side or upload direct-to-storage with a signed
+  URL; don't treat the config value as the real limit.
+- **FAQ answer fields (`faq[].answer` / `faqs[].answer`) must stay plain text, never HTML.** They feed
+  FAQPage JSON-LD directly. Other data-driven paragraph fields may use `dangerouslySetInnerHTML` to
+  allow inline links from the internal-linking system — FAQ answers are the one exception, because
+  embedded markup there corrupts structured data silently (it won't fail the build).
+- **An owner override can waive a publishing gate; it can never waive the no-invented-facts rule.**
+  These are different categories. "Publish these suburb pages without local photos yet" is a strategy
+  call the owner can make — render honest copy pointing to a real nearby project instead. Fabricating
+  a local project, testimonial or suburb detail to fill the gap is never authorised by that kind of
+  override.
 
 ---
 
@@ -467,6 +487,16 @@ came from, it is not ready to open.
   task-specific unused port. Confirm the port owner before stopping any process, and never assume
   port `3210` belongs to this task. If output is inexplicable, rebuild once in isolation before
   diagnosing application code.
+- **Multi-session concurrency is routine here, not an edge case.** Expect, repeatedly: another session
+  mid-edit on the same files right now; an ambient process auto-committing the whole tree under a
+  generic message (bundling unrelated work from multiple sessions); a shared dev server already bound
+  on the port you expected to use. A file that changed since you last read it, or a surprising
+  `git status`, is very likely another session's legitimate work — verify by content before reverting
+  or killing anything. Before `taskkill`-ing a PID found via `netstat`/`Get-NetTCPConnection`, confirm
+  it isn't a server another session still needs.
+- **One-off directory inventories are a one-time read, not an authority to recheck.** Prefer reading
+  the actual built output (e.g. `.next/server/app/**.html`) over holding a long-running local dev
+  server open across a whole measurement task.
 - **`npm run build` runs the `postbuild` IndexNow hook.** It skips local and preview builds unless
   `VERCEL_ENV=production`, but use `npm run build --ignore-scripts` for a strictly local build when
   the postbuild hook is not part of the test. Do not use `--force` unless explicitly testing the
@@ -482,7 +512,27 @@ came from, it is not ready to open.
   sweep every generated route affected by a shared renderer, navigation, metadata, schema or data
   change. Source-level presence is not proof that each route emits the result.
 - After copy or route changes, run `npm run check:readability` and confirm its route inventory covers
-  every published customer-facing route; a smaller passing count is not a clean result.
+  every published customer-facing route; a smaller passing count is not a clean result. The script's
+  `ROUTES` array is hand-maintained and has repeatedly omitted newly published pages (projects, hubs,
+  suburb pages, blog posts), producing a false "all pass." After publishing anything, diff the
+  inventory against `.next/server/app/**.html` rather than trusting a green run.
+- **When a readability failure looks identical across otherwise-different pages, suspect a shared
+  component before the unique prose.** A repeated element — a related-items grid, nav, card list —
+  can single-handedly tank the score by repeating a long word many times; this has been misdiagnosed
+  as a body-copy problem more than once.
+- **Legal/compliance/insurance-adjacent copy will reliably fail the Flesch readability gate** unless
+  vocabulary is deliberately simplified while writing (e.g. "waterproofing" → "sealing",
+  "development application" → "DA"), not fixed afterward. Syllables-per-word drives the score more
+  than sentence structure does.
+- **Exactly one `priority` image per page, and `loading="eager"` is not a safe middle ground** — in
+  this Next version it still emits a preload link even without `priority`. The only way to get a
+  non-preloaded image is the plain default (no `priority`, no `loading` prop). A shared component
+  (e.g. the header logo) competing for `priority` with the page's real LCP image has regressed this
+  more than once despite a code comment; treat it as a check to run, not just a convention to recall.
+- **Measure `sizes` attributes against the actual rendered width, not the raw vw fraction.** A layout
+  container's own max-width (e.g. `--et-container-max`) can cap content well below what
+  `(min-width: 1024px) 40vw` implies, causing Next to request a wider `srcset` rung than ever displays.
+  Verify with real `boundingBox()` measurements (Playwright) at each breakpoint when setting `sizes`.
 
 ## Git Workflow
 
@@ -492,11 +542,20 @@ came from, it is not ready to open.
 - Commit with an explicit pathspec: `git commit -m "msg" -- <paths>` (options before `--`).
   **Never `git add -A`** — more than one agent session may be working in the tree.
 - Immediately before adding a `DECISIONS.md` row, search the whole file for the highest decision
-  number; concurrent sessions have previously created duplicate IDs.
+  number; concurrent sessions have previously created duplicate IDs. Re-check this number again
+  right before the write itself, not only once at task start — the number can be claimed mid-task
+  by another session.
 - Clear subject + a body explaining *why*. If a co-author trailer is used, name the agent/model that
   actually did the work; never copy a stale identity from an example.
 - **Do not push or deploy without explicit owner sign-off.**
 - Prefer hand edits over blind `sed`/regex on copy, titles or metadata.
+- For a long or special-character-heavy commit message, write it to a file and use
+  `git commit -F <file> -- <paths>` instead of inline `-m`; a long `-m` string with symbols has been
+  mis-parsed by the shell before, with git misreading message words as pathspecs.
+- **If the owner pastes a live API key or secret in chat, treat it with full secret-handling rigor
+  before writing anything.** Confirm the target file (e.g. `.env.local`) is actually gitignored
+  *before* writing the key, and after committing, grep the actual commit (`git show HEAD`) to
+  positively confirm no leak — don't assume gitignore worked.
 
 ## Documentation Workflow
 

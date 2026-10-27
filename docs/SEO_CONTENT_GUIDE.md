@@ -123,6 +123,10 @@ cannibalisation. So:
 4. **A hub that summarises and links *down* to its spokes is correct, not duplication.**
 5. **Service scope is an owner question, never an SEO inference.**
 6. **Record the verdict** in `DECISIONS.md` with what new evidence would reopen it.
+7. **A GSC export's separate Query tab and Page tab do not prove a query caused that page's
+   performance.** Treat the two as correlation only unless you have an actual query-by-page export
+   (a real join, not two side-by-side screenshots). Without it, frame a finding as a hypothesis to
+   investigate, not a confirmed cause — this has nearly caused a false cannibalisation claim before.
 
 ---
 
