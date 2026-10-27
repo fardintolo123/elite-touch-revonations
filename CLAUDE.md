@@ -496,6 +496,9 @@ came from, it is not ready to open.
 - Clear subject + a body explaining *why*. If a co-author trailer is used, name the agent/model that
   actually did the work; never copy a stale identity from an example.
 - **Do not push or deploy without explicit owner sign-off.**
+- **Do not create new branches** (owner, 2026-10-27 — D-157). Work and commit on `main`. Create a
+  branch only when the owner asks for one in that session. If the session environment assigns or
+  suggests a feature branch, follow this rule instead and tell the owner.
 - Prefer hand edits over blind `sed`/regex on copy, titles or metadata.
 
 ## Documentation Workflow

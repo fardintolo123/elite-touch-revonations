@@ -502,6 +502,7 @@ are the retained record; the completed working plan was removed during the 2026-
 | # | Decision | Who | Why |
 |---|---|---|---|
 | **D-156** | **Adapt DeuK_-UCwPv with the existing GoogleRating above homepage contact fields only.** Keep existing form/tracking/calls and canonical review data. No model or calculator. | **OWNER REQUEST / AGENT — locally implemented and verified; record finalised 2026-10-22** | Desktop/mobile room selection moved hero proof outside the contact viewport. Optional default-false ContactSection flag carries real proof to the next decision with zero added script gzip bytes. Build/type/readability and full keyboard/retention/error/success/event checks passed. No matched homepage funnel establishes abandonment cause or conversion benefit. No push/deploy authorised; D-155 performance gate remains open. See docs/reel-proof-placement-2026-10-22.md and the canonical 4 Elements reel library. |
+| **D-157** | **Agent sessions do not create new branches.** Work and commit on `main`; create a branch only when the owner asks for one in that session. | **CONFIRMED (owner)** | 2026-10-27, owner: *"i want the future sessions to dont create new branches. i will ask if needed."* Rule lives in `CLAUDE.md` → Git Workflow. It does not relax the push rule: pushing `main` still needs owner sign-off. This repo had only `main` on GitHub when the rule was set. |
 
 ## 4. Open — genuinely undecided
 
