@@ -14,6 +14,10 @@ Tokens are the foundation; the brand, voice, and layouts here are our own.
 - **Every value is on the 4px grid.** If you need something between two steps, you're probably solving a layout problem the wrong way.
 - **Contrast ratios in §2 are computed, not estimated.** If you introduce a color, compute its ratio before shipping it.
 - Section §11 is a copy-pasteable `:root` block. Start there.
+- **Using the system correctly is not enough on its own.** Every page and section must also pass
+  [docs/DISTINCTIVE_DESIGN_CHECKLIST.md](docs/DISTINCTIVE_DESIGN_CHECKLIST.md) (D-158). Pick the recipe
+  that fits the content, keep one or two signature elements per page, and judge the rendered result at
+  390px and 1440px. A page built entirely from correct tokens can still read as a template.
 
 ---
 

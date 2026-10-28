@@ -9,6 +9,17 @@ Also read `docs/SPECIALIST_AGENTS.md` when a task may benefit from specialist re
 
 For WebMCP work, use the project skill at `.claude/skills/webmcp/SKILL.md`. Claude Code and GitHub Copilot can discover the project skill from that location; Codex should read it when the task matches.
 
+## Design Standard: Must Not Look AI-Generated
+
+Before building or modifying any UI, define the business-specific visual direction: which real
+project photo, verbatim review or verifiable fact leads, and which `DESIGN.md` recipe fits the
+content. Avoid generic AI-default patterns unless one serves the content. Inspect the rendered page
+at 390px and 1440px, have it critiqued by a reviewer that did not build it, and refine until it looks
+deliberately designed for Elite Touch Renovations, not templated. Preserve authentic content,
+conversion paths, SEO, accessibility and speed. Full standard, section test and evidence gate:
+`docs/DISTINCTIVE_DESIGN_CHECKLIST.md` (DECISIONS.md D-158). `DESIGN.md` stays authoritative for
+the design system itself.
+
 ## Specialist Roles
 
 Use the same five specialist roles defined in `docs/SPECIALIST_AGENTS.md`:

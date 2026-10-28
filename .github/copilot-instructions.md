@@ -21,6 +21,14 @@ modes and apply only the relevant ones.
 Do not apply all five roles automatically. The main agent remains responsible for integrating the
 work and verifying the final result.
 
+## Design Standard
+
+Before building or modifying any UI, define the business-specific visual direction and avoid generic
+AI-default patterns. Inspect the rendered page at 390px and 1440px and refine until it looks
+deliberately designed for this business, not templated. Preserve authentic content, conversion paths,
+SEO, accessibility and speed. Full standard: `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` (DECISIONS.md
+D-158); `DESIGN.md` remains authoritative for tokens and components.
+
 ## Parallel Issue Planning
 
 When breaking larger work into GitHub issues, prefer independent issues that can safely be executed
