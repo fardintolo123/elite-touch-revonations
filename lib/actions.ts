@@ -151,7 +151,7 @@ export async function submitEnquiry(
   // Honeypot. A real person never fills this — it is visually hidden.
   if (asTrimmedString(formData.get('company')) !== '') {
     // Silently accept so the bot learns nothing.
-    return { status: 'success', message: 'Thanks - we will be in touch.' }
+    return { status: 'success', message: 'Thanks — we have your enquiry.' }
   }
 
   const errors: Record<string, string> = {}
@@ -316,7 +316,6 @@ export async function submitEnquiry(
 
   return {
     status: 'success',
-    message:
-      'Thanks - we have your details and will be in touch to arrange your free on-site measure.',
+    message: 'Thanks — we have your enquiry.',
   }
 }

@@ -423,18 +423,39 @@ export function EnquiryForm() {
         >
           <p>{state.message}</p>
           {state.status === 'success' && (
-            <p style={{ marginTop: 'var(--et-space-3)' }}>
-              Already worked with us?{' '}
-              <a
-                className="et-link"
-                href={businessInfo.googleBusinessProfile.reviewPromptUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+            <>
+              <p
+                id="enquiry-next-steps"
+                style={{
+                  marginTop: 'var(--et-space-4)',
+                  fontWeight: 600,
+                }}
               >
-                Leave a Google review
+                What happens next
+              </p>
+              <ol
+                aria-labelledby="enquiry-next-steps"
+                style={{
+                  display: 'grid',
+                  gap: 'var(--et-space-2)',
+                  marginTop: 'var(--et-space-2)',
+                  paddingLeft: 'var(--et-space-5)',
+                }}
+              >
+                <li>We review your enquiry.</li>
+                <li>We call you to book your free on-site measure.</li>
+                <li>
+                  After the measure, we send you a fixed-scope written quote.
+                </li>
+              </ol>
+              <a
+                className="et-btn et-btn-md et-btn-secondary et-btn-block-mobile"
+                href={businessInfo.phone.href}
+                style={{ marginTop: 'var(--et-space-4)' }}
+              >
+                Call {businessInfo.phone.display}
               </a>
-              .
-            </p>
+            </>
           )}
         </div>
       )}

@@ -56,7 +56,7 @@ impressions, clicks, calls and enquiries. The 4 Elements Painting verdicts are i
 
 - [x] Triage
 - [ ] E1 #68 — implemented and verified locally 2026-10-28; tick after the commit is pushed and the issue closes
-- [ ] E2 #69
+- [ ] E2 #69 — implemented and verified locally 2026-10-28; tick after the commit is pushed and the issue closes
 - [ ] E3 #70
 - [ ] E4 #71
 - [ ] E5 #72
