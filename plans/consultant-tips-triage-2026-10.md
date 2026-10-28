@@ -10,17 +10,17 @@ impressions, clicks, calls and enquiries. The 4 Elements Painting verdicts are i
 ## Evidence used
 - `components/EnquiryForm.tsx`: one-screen form; name/phone/email required; suburb, service, notes and
   up to 2 photos optional; button "Request my free measure"; events `form_start`,
-  `form_submit_attempt`, `form_submit_error` (`error_code` = `validation` | `server_error`),
-  `generate_lead`. Success copy (`lib/actions.ts:154`): "Thanks - we will be in touch." plus a
-  "Leave a Google review" link.
+  `form_submit_attempt`, field-level `form_submit_error` codes, and `generate_lead`. The success
+  state confirms receipt, lists the free-measure/fixed-quote next steps, and provides a tracked call
+  link. E1/E2 shipped as `d46fd39` / `cf50660`.
 - D-10/D-140 (Tier-1 suburb rule; GSC 2026-09-14 showed Hornsby, Artarmon, Pymble, Five Dock, Balmain
   but did not reopen D-10), D-12 + D-138 ("near me" handled by homepage + main service page), D-02 (leak
   repair is not a service), D-06 (no invented budgets/durations), D-30 (no animation libraries),
   D-60/D-61 (package prices), D-80 (form on every page), D-142 (new domain; ranking positions 20–90 are
   the bottleneck; citations deferred by owner), D-152 (hero CTA jumps to the form).
-- `docs/reel-library/DeuK_-UCwPv.md` in the 4 Elements repo: local commit `ee74a0e` (hero room
-  handoff + review proof in the contact card) is **on the owner's machine and not on GitHub**. GitHub
-  `main` is `906c506`. Any form issue must start after that commit is pushed or abandoned.
+- `docs/reel-library/DeuK_-UCwPv.md` in the 4 Elements repo: the earlier local commit `ee74a0e`
+  (hero room handoff + review proof in the contact card) landed on `main` as rebased commit
+  `0ee561b`, clearing the form-file dependency.
 
 ## Verdicts
 | Tip | Verdict |
@@ -55,8 +55,8 @@ impressions, clicks, calls and enquiries. The 4 Elements Painting verdicts are i
 | E5 | [SEO] Query-by-page GSC test for Hornsby/Artarmon/Pymble | YES (owner export) | Owner GSC export | `docs/BATHROOM_SITE_STRUCTURE.md`, `DECISIONS.md` (append); `service-areas.json` only if promoted, and not while #67 edits it |
 
 - [x] Triage
-- [ ] E1 #68 — implemented and verified locally 2026-10-28; tick after the commit is pushed and the issue closes
-- [ ] E2 #69 — implemented and verified locally 2026-10-28; tick after the commit is pushed and the issue closes
+- [x] E1 #68 — shipped as `d46fd39`; closed 2026-10-28
+- [x] E2 #69 — shipped as `cf50660`; closed 2026-10-28
 - [ ] E3 #70
 - [ ] E4 #71
 - [ ] E5 #72
