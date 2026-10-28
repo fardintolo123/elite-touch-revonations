@@ -170,7 +170,9 @@ export function EnquiryForm() {
       submittedRef.current = false
     } else if (state.status === 'error') {
       trackEvent('form_submit_error', {
-        error_code: state.errors ? 'validation' : 'server_error',
+        error_code: state.errors
+          ? `validation_${Object.keys(state.errors).sort().join('_')}`
+          : 'server_error',
       })
       submittedRef.current = false
     }

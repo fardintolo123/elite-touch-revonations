@@ -48,13 +48,19 @@ impressions, clicks, calls and enquiries. The 4 Elements Painting verdicts are i
 ## Checklist / issue map
 | Id | Issue | Parallel | Depends on | Owns |
 |---|---|---|---|---|
-| E1 | [Analytics] Field-level `error_code` on `form_submit_error` | NO | `ee74a0e` pushed or abandoned | `components/EnquiryForm.tsx` |
+| E1 | [Analytics] Field-level `error_code` on `form_submit_error` | NO | None — prerequisite landed as `0ee561b` | `components/EnquiryForm.tsx` |
 | E2 | [Conversion] "What happens next" success message | NO | E1 (same file) | `components/EnquiryForm.tsx` (success block), `lib/actions.ts:154` |
 | E3 | [Conversion] Optional start-timing chips | NO | E2 (same files) | `components/EnquiryForm.tsx`, `lib/actions.ts`, `lib/enquiry.ts` |
 | E4 | [Content] Price range + duration on gallery projects | YES (owner data) | Owner figures | `lib/projects.ts`, `app/gallery/[slug]/page.tsx` |
 | E5 | [SEO] Query-by-page GSC test for Hornsby/Artarmon/Pymble | YES (owner export) | Owner GSC export | `docs/BATHROOM_SITE_STRUCTURE.md`, `DECISIONS.md` (append); `service-areas.json` only if promoted, and not while #67 edits it |
 
 - [x] Triage
-- [ ] E1 #68  - [ ] E2 #69  - [ ] E3 #70  - [ ] E4 #71  - [ ] E5 #72 (all opened 2026-10-25; tick when closed)
+- [ ] E1 #68 — implemented and verified locally 2026-10-28; tick after the commit is pushed and the issue closes
+- [ ] E2 #69
+- [ ] E3 #70
+- [ ] E4 #71
+- [ ] E5 #72
+
+All opened 2026-10-25; tick each item when its issue closes.
 
 **Biggest lever, owner-side:** GBP reviews and verification, and the deferred citation work (D-142).

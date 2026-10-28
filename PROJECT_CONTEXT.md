@@ -371,7 +371,10 @@ remains unpushed; the earlier performance gate is still open.
    Container ID is configured as `NEXT_PUBLIC_GTM_ID`. All call CTAs are real `tel:` anchors
    (D-33). `lib/analytics.ts` exports `trackEvent(name, params)` — the only helper for dataLayer
    pushes. `components/EnquiryForm.tsx` pushes form_start, form_submit_attempt, form_submit_error,
-   generate_lead. `app/layout.tsx` (commit 43c2933) also pushes phone_call_click and email_click
+   generate_lead. Validation failures use deterministic field-level codes built only from sorted
+   error keys (for example, `validation_phone` or `validation_email_name_phone`); typed values are
+   never sent. Delivery/configuration failures remain `server_error`. `app/layout.tsx` (commit
+   43c2933) also pushes phone_call_click and email_click
    via a delegated click listener — these pushes are currently inert in GTM (no Custom Event trigger
    exists for them); the native click triggers remain the active path for phone/email tracking.
    **Pending owner actions (GA4 editor access required):**
