@@ -278,8 +278,8 @@ export default function PackagesPage() {
         eyebrow="Packages"
         title="Bathroom renovation packages and pricing."
         leads={[
-          'A bathroom renovation with Elite Touch starts from $18,000 (Basic), $25,000 (Standard) or $30,000 (Premium) - each tied to a stated bathroom size below.',
-          'Each package price is tied to a bathroom of a stated size. That is deliberate - a price quoted without the size it assumes is not a price, it is a guess. All three are starting prices; your final figure is fixed in writing after a free on-site measure.',
+          'If you are a Sydney homeowner pricing a full bathroom renovation, Elite Touch packages start from $18,000 (Basic, approx. 1.5 × 1.8 × 2.4 m), $25,000 (Standard, approx. 1.8 × 2.4 × 2.4 m) or $30,000 (Premium, approx. 2.4 × 2.4 × 2.4 m).',
+          'All three are from-prices, and the final number is fixed in writing after a free on-site measure. The package gives you the starting scope for your room, while the quote turns it into the final price for your bathroom.',
         ]}
         cta={false}
         facts={[
@@ -324,14 +324,14 @@ export default function PackagesPage() {
               className="et-h4"
               style={{ marginTop: 'var(--et-space-8)' }}
             >
-              Are these bathroom renovation package deals?
+              Is a package a fixed price?
             </h3>
             <p className="et-body-sm et-measure">
-              They are package starting scopes, not a limited-time deal. That
-              matters because a bathroom price needs the room size, tile
-              coverage, fittings and layout to be clear before it can be fixed.
-              The package gives you a plain starting point; the written quote
-              turns it into the price for your bathroom.
+              No. The package is a starting scope based on a stated bathroom
+              size, not a fixed final price. We set the final number in writing
+              after the free on-site measure, when the room size, layout,
+              fittings and site conditions are all confirmed. That is why the
+              published package pricing is always shown as a from-price.
             </p>
           </div>
         </div>

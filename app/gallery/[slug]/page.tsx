@@ -130,6 +130,30 @@ export default async function ProjectPage({
             {project.suburb} · {project.service}
           </span>
           <p className="et-caption">Completed by {project.completedByYear}</p>
+          {(project.priceRange || project.weeksOnSite) && (
+            <div
+              className="et-body-sm"
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: 'var(--et-space-3)',
+                marginTop: 'var(--et-space-2)',
+                color: 'var(--et-color-text-muted)',
+              }}
+            >
+              {project.priceRange ? (
+                <span>
+                  <strong>Budget:</strong> {project.priceRange}
+                </span>
+              ) : null}
+              {project.weeksOnSite ? (
+                <span>
+                  <strong>On site:</strong> {project.weeksOnSite} week
+                  {project.weeksOnSite === 1 ? '' : 's'}
+                </span>
+              ) : null}
+            </div>
+          )}
           <h1 className="et-h1 et-measure-tight">{project.name}</h1>
           <p className="et-lead et-measure">{project.blurb}</p>
         </div>

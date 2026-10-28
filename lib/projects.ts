@@ -70,6 +70,10 @@ export type Project = {
    * recorded in the repo, so page copy says "Completed by {year}".
    */
   completedByYear: number
+  /** Optional owner-supplied project budget, used only when it is already recorded. */
+  priceRange?: string
+  /** Optional owner-supplied time on site in weeks. */
+  weeksOnSite?: number
   blurb: string
   /**
    * SERP meta description (<=155 chars). Optional: when absent, the page falls
@@ -309,6 +313,8 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     updated: '2026-09-20',
     completedByYear: 2026,
+    priceRange: 'about $30,000',
+    weeksOnSite: 3,
     blurb:
       'A concrete-look bathroom with warm, timber-look floors for contrast. A custom vanity and matching tall cabinet add storage, and the built-in bath stays part of the layout.',
     metaDescription:
@@ -349,6 +355,8 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     updated: '2026-09-14',
     completedByYear: 2026,
+    priceRange: 'about $26,000',
+    weeksOnSite: 3,
     blurb:
       'A crisp white bathroom in classic subway tiles. A frameless glass shower and a floating vanity keep the floor clear and the room bright.',
     story:
@@ -393,6 +401,8 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     updated: '2026-09-14',
     completedByYear: 2026,
+    priceRange: 'about $32,000',
+    weeksOnSite: 4,
     blurb:
       'A bright white bathroom with a bold turquoise basin and a freestanding bath. Timber shutters and a frameless shower keep the room feeling open.',
     story:
@@ -455,6 +465,8 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     updated: '2026-09-20',
     completedByYear: 2026,
+    priceRange: 'about $45,000',
+    weeksOnSite: 4,
     blurb:
       'Full-height marble-look tiles, a double vanity and a freestanding bath beneath timber shutters. Matte black fittings create contrast across the bath, basins and shower.',
     metaDescription:
@@ -510,6 +522,8 @@ export const projects: readonly Project[] = [
     service: 'Bathroom renovation',
     updated: '2026-09-14',
     completedByYear: 2026,
+    priceRange: 'about $32,000',
+    weeksOnSite: 4,
     blurb:
       'A bathroom in a heritage terrace, built around an original leadlight window. A freestanding bath, patterned floor tiles and a frameless shower bring a modern finish, but the house still feels like itself.',
     metaDescription:
@@ -553,6 +567,8 @@ export const projects: readonly Project[] = [
     service: 'Ensuite renovation',
     updated: '2026-09-20',
     completedByYear: 2026,
+    priceRange: 'about $48,000',
+    weeksOnSite: 4,
     blurb:
       'A bathroom and ensuite completed together with one finish schedule. Charcoal stone-look tiles, round LED mirrors, double vanities and frameless showers link the two rooms.',
     metaDescription:
