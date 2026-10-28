@@ -30,6 +30,9 @@ communicates clearly, takes pride in finished work, and treats a customer's home
 - Glossy property-showroom pages that hide scope, process, pricing context, or contact details.
 - Repeated template cards, decorative image treatments, and visual effects that make real project
   photography harder to trust or understand.
+- Anything that reads as AI-generated (`docs/DISTINCTIVE_DESIGN_CHECKLIST.md`): the same
+  eyebrow-heading-grid stack repeated down a page, effects in every section instead of one or two
+  signature elements, and headlines that could belong to any renovator.
 
 ## Design Principles
 

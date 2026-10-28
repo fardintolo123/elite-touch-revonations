@@ -16,6 +16,10 @@ Use only the specialists that fit the task:
 - Complex UI: Designer + Developer + Vision Auditor.
 - Landing-page or conversion: combine only the relevant specialists.
 
+For any visual work, apply `docs/DISTINCTIVE_DESIGN_CHECKLIST.md`: state the visual direction
+first, judge rendered 390px and 1440px screenshots rather than source, and report findings in its §6
+format.
+
 When creating GitHub issues from a larger task, include a `## Parallelization` section that states
 whether the issue can run concurrently, what it depends on, which files it owns, which files it must
 not modify, what acceptance criteria prove completion, how it can be verified independently, and why

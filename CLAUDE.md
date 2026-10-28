@@ -147,6 +147,10 @@ source of truth.** Never let a business fact live only in JSX, only in a doc, or
 - [docs/SEO_AEO_GEO_CHECKLIST.md](docs/SEO_AEO_GEO_CHECKLIST.md) — per-page QA gate before shipping.
 - [docs/CONTENT_QUALITY_CHECKLIST.md](docs/CONTENT_QUALITY_CHECKLIST.md) — copy quality, readability,
   keyword placement, conversion requirements.
+- [docs/DISTINCTIVE_DESIGN_CHECKLIST.md](docs/DISTINCTIVE_DESIGN_CHECKLIST.md) — ⭐ **the "must not look
+  AI-generated" standard** (owner, 2026-10-28, D-158): the AI-default patterns as they show up here,
+  the per-section test, the rendered-screenshot workflow, and the evidence needed before a design
+  change is done. Read for **any** page, section or UI work, new or existing.
 - [docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md) — which suburbs get a dedicated
   page (Tier 1) vs. a regional hub (Tier 2), the agreed URL/route structure and internal-linking rule,
   the competitive landscape, and GKP-confirmed keyword volumes. Read before creating any suburb or
@@ -187,8 +191,9 @@ instruction, settled decisions, or the code-level source of truth for what is cu
 | Task type | Read first |
 |---|---|
 | **Anything, if unsure whether it's been decided** | [DECISIONS.md](DECISIONS.md) |
-| **UI / design / visual / component** | [DESIGN.md](DESIGN.md) — authoritative. Do not invent tokens |
-| **New page or section** | `DESIGN.md` → `docs/SEO_CONTENT_GUIDE.md` → `docs/CONTENT_QUALITY_CHECKLIST.md` → `docs/SEO_AEO_GEO_CHECKLIST.md` |
+| **UI / design / visual / component** | [DESIGN.md](DESIGN.md) — authoritative. Do not invent tokens. Then `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` — the AI-look lens and the rendered-screenshot gate |
+| **Design audit of an existing page or section** ("does this look AI-generated / templated?") | `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §4–§7 — screenshots at 390 + 1440 first, findings in its §6 format, **preserve what works**. Its §8 tracker maps every route class to its issue |
+| **New page or section** | `DESIGN.md` → `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` (write the visual direction first) → `docs/SEO_CONTENT_GUIDE.md` → `docs/CONTENT_QUALITY_CHECKLIST.md` → `docs/SEO_AEO_GEO_CHECKLIST.md` |
 | **Copywriting / readability** | `docs/CONTENT_QUALITY_CHECKLIST.md` |
 | **SEO / keywords / content strategy** | `docs/SEO_CONTENT_GUIDE.md` |
 | **Suburb / location page** (which suburbs get one, its URL, which hub it links to) | `docs/BATHROOM_SITE_STRUCTURE.md` for the reasoning + [service-areas.json](service-areas.json) for the data. The tier split and routes are already settled; **do not add a suburb page that isn't Tier 1** without new volume evidence |
@@ -283,6 +288,29 @@ A renovation site exists to produce enquiries. Rankings without enquiries are wo
 - **Bathroom renovation is a considered, high-value purchase.** Process, timeline, warranty and
   "what it's like to have us in your home" convert better than adjectives. The testimonials repeatedly
   praise communication, punctuality and cleanliness — lead with those, because they are evidenced.
+
+---
+
+## Design Standard — the site must not look AI-generated
+
+Owner, 2026-10-28 ([DECISIONS.md](DECISIONS.md) D-158). Full standard:
+[docs/DISTINCTIVE_DESIGN_CHECKLIST.md](docs/DISTINCTIVE_DESIGN_CHECKLIST.md). It applies to every
+page and every section, new and existing. `DESIGN.md` stays authoritative for the system itself.
+
+- **Direction before code.** Before building or changing a page or section, write down what makes
+  it specific to Elite Touch: which real project photo, verbatim review, family member, process step
+  or verifiable fact leads, and which `DESIGN.md` recipe fits the content.
+- **No AI defaults without a reason.** Decorative gradients, glows and glass; a centred hero then
+  three identical cards; floating cards and badges in every section; empty marketing headlines; the
+  same section composition repeated; motion that explains nothing; stock-looking visuals. None is
+  banned outright, but each needs a business reason written in the issue or PR. Pills and card radii
+  are `DESIGN.md` system choices, not violations. *Volume and repetition* are what fail.
+- **One or two signature elements per page.** The rest is carried by real photos, reviews and facts.
+- **Judge the rendered page, not the code.** Screenshots at 390 + 1440, an independent critique,
+  fix, repeat. For existing pages, **preserve what works**: fix the finding, and keep URLs,
+  metadata, schema, internal links and call tracking.
+- **Never fabricate** photos, reviews, results or credentials to make a section look "real". The
+  Business Rules still bind.
 
 ---
 
@@ -506,6 +534,10 @@ came from, it is not ready to open.
 - ⚠️ **Do not trust a background task's exit code.** A wrapped command
   (`build > log 2>&1; echo $?`) reports the wrapper's status, not the build's. **Read the output.**
 - **Verify UI changes in a real browser**, desktop and mobile (390px). Not by reasoning about the code.
+- **Any visual or design change** also needs the distinctive design gate
+  (`docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §7): before and after screenshots at 390 and 1440, an
+  independent critique (a reviewer that did not build it) with no P0/P1 left, and no new §3 pattern
+  hits.
 - **Verify SEO copy is in the served HTML** — `curl` the URL and grep for a distinctive phrase.
   If it isn't there, crawlers can't see it.
 - **Verify the whole affected page class.** Check representative desktop/mobile pages visually, then
@@ -548,6 +580,9 @@ came from, it is not ready to open.
 - Clear subject + a body explaining *why*. If a co-author trailer is used, name the agent/model that
   actually did the work; never copy a stale identity from an example.
 - **Do not push or deploy without explicit owner sign-off.**
+- **Do not create new branches** (owner, 2026-10-27 — D-157). Work and commit on `main`. Create a
+  branch only when the owner asks for one in that session. If the session environment assigns or
+  suggests a feature branch, follow this rule instead and tell the owner.
 - Prefer hand edits over blind `sed`/regex on copy, titles or metadata.
 - For a long or special-character-heavy commit message, write it to a file and use
   `git commit -F <file> -- <paths>` instead of inline `-m`; a long `-m` string with symbols has been
@@ -601,6 +636,8 @@ what's wrong, what to decide, and exactly what to do next.
 - [ ] `DECISIONS.md` checked — not silently reversing a settled decision.
 - [ ] **No invented facts** — reviews, prices, locations, project details, credentials.
 - [ ] `DESIGN.md` honoured; no second design system introduced.
+- [ ] **UI work: the rendered page passes `docs/DISTINCTIVE_DESIGN_CHECKLIST.md`.** Section test
+      run, 390 + 1440 screenshots before and after, independent critique with no P0/P1 left.
 - [ ] SEO copy present in the served HTML.
 - [ ] **No performance regression** — budgets in `docs/PERFORMANCE_BUDGET.md` met; no new dependency,
       third-party script or `'use client'` added without justification.

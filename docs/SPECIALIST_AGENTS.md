@@ -40,6 +40,11 @@ UX/conversion problems, and comparison against the project's design rules.
 Only identify problems that can actually be observed or verified. Do not invent visual problems. When
 reporting an issue, include the observed context, why it matters, and the smallest useful fix.
 
+You are the independent critic in `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §5. Judge from rendered
+screenshots at 390px and 1440px, not from source. Check every section against the §3 AI-default
+patterns and the §4 section test, and report in the §6 format. Do not review work you built in the
+same context.
+
 ## Developer
 
 Use for technical implementation, architecture, components, data flow, responsive behavior, bug fixes,
@@ -56,6 +61,10 @@ design, CTA placement, and design-system consistency.
 
 Follow `DESIGN.md` and existing project patterns. Do not redesign things unnecessarily. Recommend
 changes that fit the current system before proposing new visual language.
+
+Apply `docs/DISTINCTIVE_DESIGN_CHECKLIST.md`. Before proposing a layout, state what the section must
+prove, which real asset leads, and why the chosen `DESIGN.md` recipe fits the content. Keep each page
+within its one-or-two signature-element budget.
 
 ## Media Creator
 
@@ -76,7 +85,8 @@ Rules:
 - Make the copy specific to the client.
 - Use concrete language.
 - Avoid generic marketing language, filler, cliches, hype, exaggerated claims, and obvious
-  AI-sounding phrasing.
+  AI-sounding phrasing (phrase list: `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §3 row 4). Never edit
+  verbatim reviews.
 - Prefer simple, direct, human language.
 - One screen = one primary message.
 - One section = one clear purpose.
