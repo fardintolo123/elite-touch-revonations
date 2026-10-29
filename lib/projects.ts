@@ -70,7 +70,10 @@ export type Project = {
    * recorded in the repo, so page copy says "Completed by {year}".
    */
   completedByYear: number
-  /** Optional owner-supplied project budget, used only when it is already recorded. */
+  /**
+   * Optional owner-supplied historical project budget. Keep the original
+   * qualifier (for example, "about") and never infer a range or package tier.
+   */
   priceRange?: string
   /** Optional owner-supplied time on site in weeks. */
   weeksOnSite?: number
@@ -311,7 +314,7 @@ export const projects: readonly Project[] = [
     suburb: 'Balmain',
     name: 'Balmain bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-20',
+    updated: '2026-10-29',
     completedByYear: 2026,
     priceRange: 'about $30,000',
     weeksOnSite: 3,
@@ -353,7 +356,7 @@ export const projects: readonly Project[] = [
     suburb: 'Gladesville',
     name: 'Gladesville bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-10-29',
     completedByYear: 2026,
     priceRange: 'about $26,000',
     weeksOnSite: 3,
@@ -399,7 +402,7 @@ export const projects: readonly Project[] = [
     suburb: 'Little Bay',
     name: 'Little Bay bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-10-29',
     completedByYear: 2026,
     priceRange: 'about $32,000',
     weeksOnSite: 4,
@@ -463,7 +466,7 @@ export const projects: readonly Project[] = [
     suburb: 'Hunters Hill',
     name: 'Hunters Hill bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-20',
+    updated: '2026-10-29',
     completedByYear: 2026,
     priceRange: 'about $45,000',
     weeksOnSite: 4,
@@ -520,7 +523,7 @@ export const projects: readonly Project[] = [
     // and the "About this project" copy keep it (tech-audit M-5).
     metaTitle: 'The Rocks bathroom renovation',
     service: 'Bathroom renovation',
-    updated: '2026-09-14',
+    updated: '2026-10-29',
     completedByYear: 2026,
     priceRange: 'about $32,000',
     weeksOnSite: 4,
@@ -565,7 +568,7 @@ export const projects: readonly Project[] = [
     // <title> only — the H1 keeps the full name (tech-audit M-5).
     metaTitle: 'Artarmon bathroom and ensuite',
     service: 'Ensuite renovation',
-    updated: '2026-09-20',
+    updated: '2026-10-29',
     completedByYear: 2026,
     priceRange: 'about $48,000',
     weeksOnSite: 4,

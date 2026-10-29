@@ -102,6 +102,19 @@ export default async function ProjectPage({
   const serviceHref = projectSuburb
     ? `/services/${LOCATION_PARENT_SLUG}/${projectSuburb.slug}/`
     : `/services/${LOCATION_PARENT_SLUG}/`
+  const projectFacts = [
+    ...(project.priceRange
+      ? [{ label: 'Project budget', value: project.priceRange }]
+      : []),
+    ...(project.weeksOnSite
+      ? [
+          {
+            label: 'Time on site',
+            value: `${project.weeksOnSite} week${project.weeksOnSite === 1 ? '' : 's'}`,
+          },
+        ]
+      : []),
+  ]
 
   return (
     <>
@@ -130,32 +143,29 @@ export default async function ProjectPage({
             {project.suburb} · {project.service}
           </span>
           <p className="et-caption">Completed by {project.completedByYear}</p>
-          {(project.priceRange || project.weeksOnSite) && (
-            <div
-              className="et-body-sm"
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: 'var(--et-space-3)',
-                marginTop: 'var(--et-space-2)',
-                color: 'var(--et-color-text-muted)',
-              }}
-            >
-              {project.priceRange ? (
-                <span>
-                  <strong>Budget:</strong> {project.priceRange}
-                </span>
-              ) : null}
-              {project.weeksOnSite ? (
-                <span>
-                  <strong>On site:</strong> {project.weeksOnSite} week
-                  {project.weeksOnSite === 1 ? '' : 's'}
-                </span>
-              ) : null}
-            </div>
-          )}
           <h1 className="et-h1 et-measure-tight">{project.name}</h1>
           <p className="et-lead et-measure">{project.blurb}</p>
+          {projectFacts.length > 0 ? (
+            <div className="et-stack-tight">
+              <ul className="et-facts" aria-label="Project facts">
+                {projectFacts.map((fact) => (
+                  <li key={fact.label} className="et-fact">
+                    <strong>{fact.label}</strong> {fact.value}
+                  </li>
+                ))}
+              </ul>
+              {project.priceRange ? (
+                <p
+                  className="et-body-sm et-measure"
+                  style={{ color: 'var(--et-text-secondary)' }}
+                >
+                  This was the budget for this completed project. Your price is
+                  firm after a free on-site measure and is set out in a
+                  fixed-scope written quote.
+                </p>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </section>
 
