@@ -98,20 +98,22 @@ change.
   and arrow-key behavior.
 - No new dependency, animation, image, icon, route, analytics event, or client boundary.
 - No live Resend email or production Supabase test lead.
-- No Lighthouse run: the measured 343-byte gzip increase adds no new render-path resource and the
-  form remains below the primary content.
+- Matched mobile Lighthouse runs were added after the original implementation pass; results are in
+  `docs/PERFORMANCE_BUDGET.md` and show no repeatable regression.
 - No push, deployment, or issue closure; those still require owner authorisation/current workflow.
 
 ## 6. Current Project State
 
-- The issue #70 implementation is complete in the working tree and all scoped checks pass.
+- The issue #70 implementation and its spacing refinement are committed locally and all scoped
+  checks pass.
 - Issue #70 remains open. The consultant-tips plan says it is locally verified and should be ticked
   only after the code is pushed and the issue closes.
 - The four exact labels are rendered from the server-validated allowlist.
 - Selected, omitted and tampered submissions all succeed; only allowlisted timing reaches email or
   Supabase.
 - The final screenshots show a balanced 2×2 group at 390px and 1440px with no overflow.
-- The independent reviewer reports no remaining P0, P1 or P2 issue.
+- The first independent reviewer found one P2 field-spacing issue. Commit `977ed74` corrected it;
+  the exact-final reviewer returned ACCEPT with no P0/P1 finding.
 - Unrelated issue #71 and sitewide design-audit changes/temporary evidence coexist in the worktree and
   must not be included in the issue #70 commit.
 
@@ -122,17 +124,19 @@ change.
 | `components/EnquiryForm.tsx` | Rendered the optional native radio-chip group | Add timing without custom interaction code |
 | `lib/enquiry.ts` | Added fixed options, validation and Supabase-message helper | Share trusted values outside the Server Action module |
 | `lib/actions.ts` | Read validated timing, added email row, stored timing in `message` | Complete delivery/storage scope without schema change |
-| `components/EnquiryForm.module.css` | Added accessible, responsive chip states/layout | Match DESIGN.md and D-158 at 390/1440 |
+| `components/EnquiryForm.module.css` | Added accessible, responsive chip states/layout; restored normal field spacing | Match DESIGN.md and D-158 at 390/1440 |
 | `app/privacy/page.tsx` | Added timing to the collected-data and purpose disclosures | Keep the policy exactly true to the form |
 | `lib/businessInfo.ts` | Updated `legalPagesUpdated` to 2026-10-29 | Drive the legal page date/sitemap after policy change |
 | `PROJECT_CONTEXT.md` | Documented the allowlist and storage mechanic | Preserve the implementation rule |
 | `docs/PERFORMANCE_BUDGET.md` | Recorded the +343-byte gzip measurement and QA | Preserve regression evidence |
+| `docs/evidence/issue-70/` | Added full-page before/after evidence at 390px and 1440px | Make the D-158 visual gate reviewable from the repository |
 | `plans/consultant-tips-triage-2026-10.md` | Recorded local implementation/verification status | Keep the active plan honest while issue stays open |
 | `session-history/2026-10-29-issue-70-enquiry-start-timing.md` | Added this handoff | Preserve the session context |
 
 ## 8. Files Created
 
 - `components/EnquiryForm.module.css` — component-scoped radio-chip styles.
+- `docs/evidence/issue-70/` — before/after screenshots and the independent-review summary.
 - `session-history/2026-10-29-issue-70-enquiry-start-timing.md` — this handoff.
 - Disposable build, mock, Playwright and screenshot artifacts under `D:\1\etr-issue70-*` and
   `C:\tmp\issue70-*`; these are not repository deliverables.
@@ -163,9 +167,12 @@ None.
   - selected timing appeared as `Within 3 months` in email and Supabase;
   - omitted timing appeared as `Not selected` in email and left Supabase message `null`;
   - tampered timing was absent from both and the customer message remained unchanged.
-- Before/after full-page screenshots and chip crops saved under `C:\tmp\issue70-*`.
-- Independent Vision Auditor follow-up — no P0, P1 or P2 remains after recapture from scroll position
-  zero.
+- Before/after full-page screenshots saved under `docs/evidence/issue-70/`; working crops and raw
+  PNGs remain under `C:\tmp\issue70-*`.
+- Independent Vision Auditor found one P2 spacing issue. After the one-line CSS correction and exact
+  recapture, the final reviewer returned ACCEPT with no P0/P1 finding.
+- Matched detached mobile Lighthouse, two runs each: baseline performance 98/98 and final 97/99;
+  accessibility 100 throughout; median LCP 2.303s → 2.268s; final TBT 36/59ms; CLS 0.0005.
 
 ## 11. Performance Impact
 
@@ -173,8 +180,9 @@ None.
 - Enquiry-form client chunk after: 7,958 bytes gzip.
 - Delta: +343 bytes gzip.
 - New dependencies, scripts, fonts, images, routes, requests and client boundaries: none.
-- Lighthouse, LCP, FCP, TBT/INP and CLS were not remeasured; the reason is recorded in
-  `docs/PERFORMANCE_BUDGET.md`.
+- Matched mobile Lighthouse was run twice on detached before/final production builds. Median
+  performance remained 98, median LCP improved slightly, TBT remained below the 200ms target, CLS
+  held at 0.0005 and accessibility remained 100. Full samples are in `docs/PERFORMANCE_BUDGET.md`.
 - No known performance regression.
 
 ## 12. SEO Impact
