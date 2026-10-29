@@ -8,7 +8,7 @@ closes. The standard itself is permanent.
 **2026-10-29:** sitewide audit + two art directions done
 (`.impeccable/critique/2026-10-29-sitewide-design-audit.md`; screenshots in untracked
 `tmp/design-audit-2026-10-29/`). The owner chose **Direction A now, B later (D-159)**; O-12 is resolved.
-The homepage (#74) is rebuilt and committed with the X-ray lens (D-160). It is not deployed.
+The homepage (#74) is rebuilt with the X-ray lens (D-160), deployed and verified live on 2026-10-29.
 Next route classes: #75, #76, #77, then #78 for the shared findings listed in the audit.
 
 ## Why it is shaped this way
@@ -36,7 +36,7 @@ Next route classes: #75, #76, #77, then #78 for the shared findings listed in th
 - [ ] #77 blog
 - [x] O-12 answered and recorded (D-159, 2026-10-29: Direction A now, B later; eyebrows only where they carry a fact)
 - [x] X-ray lens tested (D-160, 2026-10-29): The Rocks passes (worst 3.0 px), Hunters Hill fails; lens ships in the homepage then / now section
-- [ ] #74 homepage: built, verified and committed 2026-10-29 (two independent critiques, no P0/P1 left; evidence in untracked `tmp/design-audit-2026-10-29/home-74/`). Still to do: deploy (owner sign-off), post the evidence to #74, close #74 once the owner asks. Shared findings go to #78
+- [x] #74 homepage: deployed 2026-10-29 (9a0bda4, pushed with owner sign-off) and verified live: copy and schema unchanged, lens, call tracking, form handoff, PSI mobile 90/92. Results posted to #74 and shared findings to #78. #74 stays open until the owner asks to close it
 - [ ] #73 closed; this plan deleted
 
 ## Files

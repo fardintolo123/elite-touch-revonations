@@ -141,7 +141,7 @@ Each issue edits only its own row below. Status: `open` → `audited` → `fixed
 
 | Route class | Routes | Issue | Status |
 |---|---|---|---|
-| Homepage | `/` | #74 | fixed + verified on a local production build 2026-10-29 (two independent critiques, no P0/P1 left); uncommitted, not deployed |
+| Homepage | `/` | #74 | verified: deployed 2026-10-29 (9a0bda4), checked live at 390 + 1440, two independent critiques with no P0/P1 left |
 | Service + location pages | `/services`, 4 × `/services/[slug]`, 11 published `/services/bathroom-renovations/[location]` | #75 | open |
 | Proof + company pages | `/gallery`, 11 × `/gallery/[slug]`, `/packages`, `/about-us`, `/contact-us` | #76 | open |
 | Blog | `/blog`, `/blog/[slug]` | #77 | open |

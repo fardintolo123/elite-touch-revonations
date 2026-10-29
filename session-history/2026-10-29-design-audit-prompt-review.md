@@ -308,3 +308,21 @@ deploy.
   running), typecheck clean, readability 108/108 (home 63.4).
 - Not committed on purpose: `tmp/design-audit-2026-10-29/` (≈ 55 MB of screenshots and evidence).
 - The GA4 CSP fix is proposed as a separate session ("Unblock GA4 collection in the site's CSP").
+
+## Part 6: pushed with owner sign-off and verified live
+- History cleanup before the push: the VS Code "1" commits (1352b5b with 135 `tmp/` files, then
+  9ea7ed6 with `.gitignore`) were folded into the clean commit 9a0bda4 with a guarded
+  `git reset --soft`, after the owner asked to stop the VS Code push (stopped before GitHub
+  changed). `/tmp/` is now in `.gitignore`.
+- The owner said "Push and check live". `git push origin main` sent 4c1d106..9a0bda4 (6 commits,
+  including the other session's #70/#71 work). Vercel served the new homepage about 60 s later.
+- **Live checks passed:** title, description, canonical and 11,390-char JSON-LD unchanged; 4 tel
+  links; 108 sitemap URLs; key pages 200; lens hover, toggle, tap and keyboard; one tel click = one
+  `phone_call_click`; room-starter handoff; no horizontal scroll at 390.
+- **Live PSI mobile:** 90 and 92 (91 before), LCP 2.10 s (1.35 s before; the element is now the
+  photo by design), TBT 333–380 ms (358 before, GTM-driven), CLS 0. This breaks the +300 ms LCP
+  gate against the morning single run, but meets the 2.5 s target. Recorded and accepted in
+  PERFORMANCE_BUDGET.
+- Console on live: a 403 on the background `/contact-us/?_rsc=` prefetch. That is the Cloudflare
+  non-AU challenge (pre-existing, outside Australia only), plus the known GA4 CSP blocks.
+- Posted results to #74 (left open for the owner) and shared findings to #78.
