@@ -3,10 +3,15 @@
 import { useActionState, useEffect, useRef, useState, type ChangeEvent, type FocusEvent, type FormEvent } from 'react'
 import { useFormStatus } from 'react-dom'
 import { submitEnquiry } from '@/lib/actions'
-import { initialEnquiryState, type EnquiryState } from '@/lib/enquiry'
+import {
+  ENQUIRY_START_TIMING_OPTIONS,
+  initialEnquiryState,
+  type EnquiryState,
+} from '@/lib/enquiry'
 import { businessInfo, services } from '@/lib/businessInfo'
 import { trackEvent } from '@/lib/analytics'
 import { listenForEnquiryStart } from '@/lib/enquiryStarter'
+import styles from './EnquiryForm.module.css'
 
 // Both homepage entry and form use this existing client boundary. A separate
 // entry makes Turbopack duplicate the shared form chunk on the homepage.
@@ -352,6 +357,32 @@ export function EnquiryForm() {
           ))}
         </select>
       </div>
+
+      <fieldset className={styles.timingFieldset}>
+        <legend className={`et-label ${styles.timingLegend}`}>
+          When would you like to start? <span>(optional)</span>
+        </legend>
+        <div className={styles.timingOptions}>
+          {ENQUIRY_START_TIMING_OPTIONS.map((option) => {
+            const id = `start-timing-${option.value}`
+
+            return (
+              <div className={styles.timingChoice} key={option.value}>
+                <input
+                  className={styles.timingInput}
+                  id={id}
+                  name="startTiming"
+                  type="radio"
+                  value={option.value}
+                />
+                <label className={styles.timingChoiceLabel} htmlFor={id}>
+                  {option.label}
+                </label>
+              </div>
+            )
+          })}
+        </div>
+      </fieldset>
 
       <details className="et-form-details">
         <summary>

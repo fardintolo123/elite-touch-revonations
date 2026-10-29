@@ -3,7 +3,11 @@
 import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
 import { businessInfo } from './businessInfo'
-import type { EnquiryState } from './enquiry'
+import {
+  buildStoredEnquiryMessage,
+  getEnquiryStartTiming,
+  type EnquiryState,
+} from './enquiry'
 
 /**
  * Enquiry submission.
@@ -147,6 +151,7 @@ export async function submitEnquiry(
   const suburb = asTrimmedString(formData.get('suburb'))
   const service = asTrimmedString(formData.get('service'))
   const message = asTrimmedString(formData.get('message'))
+  const startTiming = getEnquiryStartTiming(formData.get('startTiming'))
 
   // Honeypot. A real person never fills this — it is visually hidden.
   if (asTrimmedString(formData.get('company')) !== '') {
@@ -196,6 +201,7 @@ export async function submitEnquiry(
     ['Email', email || 'Not provided'],
     ['Suburb', suburb || 'Not provided'],
     ['Renovating', service || 'Not sure yet'],
+    ['Preferred start', startTiming || 'Not selected'],
     ['Message', message || 'Not provided'],
   ]
 
@@ -307,7 +313,7 @@ export async function submitEnquiry(
       email,
       suburb: suburb || null,
       service: service || null,
-      message: message || null,
+      message: buildStoredEnquiryMessage(message, startTiming),
     })
     if (error) {
       console.error('[enquiry] supabase insert failed', error)

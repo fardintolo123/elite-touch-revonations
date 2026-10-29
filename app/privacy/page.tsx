@@ -11,9 +11,10 @@ import { formatMonthYear } from '@/lib/dateLabels'
  * Privacy policy.
  *
  * Issue #37 / content audit C-1: the site runs a live enquiry form that
- * collects name, phone, email, suburb, service and a message, and there was no
- * privacy page and no notice near the form. Google's QRG lists a privacy policy
- * as a trust signal for any site collecting personal information.
+ * collects name, phone, email, suburb, service, preferred start timing and a
+ * message, and there was no privacy page and no notice near the form. Google's
+ * QRG lists a privacy policy as a trust signal for any site collecting personal
+ * information.
  *
  * ⚠️ EVERY LINE HERE MUST STAY TRUE TO WHAT THE CODE ACTUALLY DOES. It is not
  * boilerplate. Sources:
@@ -82,6 +83,9 @@ export default function PrivacyPage() {
             <li className="et-body-sm">
               which room you want to renovate, if you choose to pick one
             </li>
+            <li className="et-body-sm">
+              when you would like to start, if you choose to pick a time
+            </li>
             <li className="et-body-sm">any message you choose to write</li>
             <li className="et-body-sm">
               up to 2 photos of the room, if you choose to attach them
@@ -104,8 +108,9 @@ export default function PrivacyPage() {
           <p className="et-body-sm et-measure">
             We use your details for one thing: to reply to your enquiry and
             arrange your free on-site measure. Your phone number and email are
-            how we reach you. Your suburb tells us where the job is. Your message
-            and any photos help us come prepared.
+            how we reach you. Your suburb tells us where the job is. Your room
+            choice and preferred start help us understand what you need. Your
+            message and any photos help us come prepared.
           </p>
           <p className="et-body-sm et-measure">
             We do not use your details for marketing. We do not sell them or rent

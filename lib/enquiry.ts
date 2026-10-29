@@ -24,6 +24,46 @@ export type EnquiryState = {
   errors?: Record<string, string>
 }
 
+export const ENQUIRY_START_TIMING_OPTIONS = [
+  { value: 'within-3-months', label: 'Within 3 months' },
+  { value: '3-to-6-months', label: '3–6 months' },
+  { value: '6-plus-months', label: '6+ months' },
+  { value: 'just-researching', label: 'Just researching' },
+] as const
+
+export type EnquiryStartTiming =
+  (typeof ENQUIRY_START_TIMING_OPTIONS)[number]['label']
+
+/**
+ * Converts the untrusted form value into the office-facing label. Unknown or
+ * tampered values are deliberately dropped so this optional field can never
+ * block a genuine enquiry.
+ */
+export function getEnquiryStartTiming(
+  value: FormDataEntryValue | null
+): EnquiryStartTiming | null {
+  if (typeof value !== 'string') return null
+
+  return (
+    ENQUIRY_START_TIMING_OPTIONS.find((option) => option.value === value)
+      ?.label ?? null
+  )
+}
+
+/**
+ * Supabase has no timing column. Keep the queryable backup complete without a
+ * schema change by appending a validated timing line to its existing message.
+ */
+export function buildStoredEnquiryMessage(
+  message: string,
+  startTiming: EnquiryStartTiming | null
+): string | null {
+  if (!startTiming) return message || null
+
+  const timingLine = `Preferred start: ${startTiming}`
+  return message ? `${message}\n\n${timingLine}` : timingLine
+}
+
 export const initialEnquiryState: EnquiryState = {
   status: 'idle',
   message: '',

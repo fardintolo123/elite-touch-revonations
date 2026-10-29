@@ -1,0 +1,97 @@
+.timingFieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.timingLegend {
+  padding: 0;
+}
+
+.timingOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--et-space-2);
+  margin-top: var(--et-space-2);
+}
+
+.timingChoice {
+  position: relative;
+  min-inline-size: 0;
+}
+
+.timingInput {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.timingChoiceLabel {
+  display: flex;
+  min-block-size: 44px;
+  block-size: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: var(--et-space-3);
+  border: 1px solid var(--et-border);
+  border-radius: var(--et-radius-pill);
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    color var(--et-duration-base) var(--et-ease-standard),
+    background-color var(--et-duration-base) var(--et-ease-standard),
+    border-color var(--et-duration-base) var(--et-ease-standard);
+}
+
+.timingChoiceLabel:hover {
+  border-color: var(--et-border-strong);
+}
+
+.timingInput:checked + .timingChoiceLabel {
+  border-color: var(--et-accent);
+  background: var(--et-accent);
+  color: var(--et-on-accent);
+  font-weight: 600;
+}
+
+.timingInput:checked + .timingChoiceLabel:hover {
+  border-color: var(--et-accent-hover);
+  background: var(--et-accent-hover);
+}
+
+.timingInput:focus-visible + .timingChoiceLabel {
+  outline: 3px solid color-mix(in srgb, var(--et-accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.timingInput:checked:focus-visible + .timingChoiceLabel {
+  outline-color: color-mix(in srgb, var(--et-ink-900) 60%, transparent);
+}
+
+@media (min-width: 480px) {
+  .timingOptions {
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  .timingChoiceLabel {
+    padding-inline: var(--et-space-6);
+  }
+}
+
+@media (prefers-contrast: more) {
+  .timingChoiceLabel {
+    border-color: var(--et-text-secondary);
+  }
+}
