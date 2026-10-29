@@ -1,0 +1,292 @@
+/* Homepage layout (Direction A, DECISIONS.md D-159; issue #74). Page-only composition built from
+   DESIGN.md tokens. Shared components keep their own styles in globals.css (#78). */
+
+/* ---------- Hero: on phones the photo comes first, then the promise and the proof ----------
+   Desktop keeps the previous column ratio so the display H1 stays on two lines and the licence
+   row stays above the fold (2026-10-29 independent critique, findings 1 and 7). */
+.heroSection:global(.et-hero) {
+  padding-top: var(--et-space-8);
+}
+.hero {
+  display: grid;
+  gap: var(--et-space-6);
+}
+.heroMedia {
+  margin: 0;
+  min-width: 0;
+}
+/* No entrance animation here: the photo and heading are the first thing a visitor should see, and
+   an opacity fade keeps them out of the LCP measurement (DESIGN.md §6 reveals are for sections). */
+.heroPhoto {
+  overflow: hidden;
+  border-radius: var(--et-radius-xl);
+  aspect-ratio: 4 / 3;
+  background: var(--et-ink-50);
+}
+.heroPhoto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.caption {
+  margin-top: var(--et-space-3);
+  font-size: var(--et-text-sm);
+  color: var(--et-text-secondary);
+}
+.heroAct :global(.et-room-choices .et-btn) {
+  border-width: 1.5px;
+  border-color: var(--et-ink-200);
+  font-weight: 600;
+}
+/* Phones: a 16:9 photo and a one-line rating keep the proof and the first room choices inside the
+   first 844 px screen. The GoogleRating component is shared (#78), so only its layout changes here. */
+@media (max-width: 479px) {
+  .heroPhoto {
+    aspect-ratio: 16 / 9;
+  }
+}
+@media (max-width: 1023px) {
+  .hero .heroIntro > * + *,
+  .hero .heroAct > * + * {
+    margin-top: var(--et-space-4);
+  }
+  .heroAct :global(.et-google-rating) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--et-space-1) var(--et-space-3);
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+  .heroAct :global(.et-google-rating-score) {
+    min-width: 0;
+    height: auto;
+    padding: 2px var(--et-space-3);
+    font-size: var(--et-text-body);
+  }
+  .heroAct :global(.et-google-rating-copy) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 var(--et-space-2);
+  }
+}
+@media (min-width: 1024px) {
+  .heroSection:global(.et-hero) {
+    padding-top: var(--et-space-24);
+  }
+  .hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    /* Three rows so each column flows on its own: the picker follows the lead directly and the
+       review follows the photo, instead of both waiting for the taller item in a shared row. */
+    grid-template-areas:
+      'intro media'
+      'act media'
+      'act review';
+    column-gap: var(--et-space-16);
+    row-gap: var(--et-space-8);
+    align-items: start;
+  }
+  .heroMedia {
+    grid-area: media;
+  }
+  .heroIntro {
+    grid-area: intro;
+  }
+  .heroAct {
+    grid-area: act;
+  }
+  .heroReview {
+    grid-area: review;
+  }
+  .heroPhoto {
+    border-radius: var(--et-radius-2xl);
+  }
+}
+
+/* ---------- Then / now: lens beside the project facts ---------- */
+.thenNow {
+  display: grid;
+  gap: var(--et-space-8);
+  grid-template-areas:
+    'copy'
+    'lens'
+    'facts';
+}
+.thenNowCopy {
+  grid-area: copy;
+}
+.thenNowLens {
+  grid-area: lens;
+  min-width: 0;
+}
+.thenNowFacts {
+  grid-area: facts;
+}
+@media (min-width: 1024px) {
+  .thenNow {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-areas:
+      'lens copy'
+      'lens facts';
+    grid-template-rows: auto 1fr;
+    column-gap: var(--et-space-16);
+    align-items: start;
+  }
+}
+
+/* A ruled fact table: label over value, rules between rows, no card. */
+.ruled {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1.5px solid var(--et-text);
+  margin: 0;
+}
+.ruled > div {
+  padding-block: var(--et-space-3);
+  border-bottom: 1px solid var(--et-border);
+}
+.ruled > div:nth-child(odd) {
+  padding-right: var(--et-space-4);
+}
+.ruled dt {
+  font-size: var(--et-text-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--et-text-muted);
+}
+.ruled dd {
+  margin: var(--et-space-1) 0 0;
+  font-size: var(--et-text-body);
+  font-weight: 500;
+  color: var(--et-text);
+}
+
+/* ---------- Services: one real photo beside a ruled list of the four services ---------- */
+.services {
+  display: grid;
+  gap: var(--et-space-10);
+}
+.servicesPhoto {
+  margin: 0;
+  min-width: 0;
+}
+.servicesPhoto > div {
+  overflow: hidden;
+  border-radius: var(--et-radius-xl);
+  aspect-ratio: 3 / 2;
+  background: var(--et-ink-50);
+}
+.servicesPhoto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.serviceList {
+  list-style: none;
+  margin: var(--et-space-8) 0 0;
+  padding: 0;
+  border-top: 1.5px solid var(--et-text);
+}
+.serviceList li {
+  border-bottom: 1px solid var(--et-border);
+}
+.serviceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--et-space-1) var(--et-space-4);
+  padding-block: var(--et-space-5);
+  color: inherit;
+  text-decoration: none;
+}
+.serviceRow p {
+  grid-column: 1;
+  color: var(--et-text-secondary);
+}
+.serviceArrow {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--et-text-accent);
+  font-weight: 600;
+  transition: transform var(--et-duration-fast) var(--et-ease-standard);
+}
+.serviceRow:hover .serviceArrow,
+.serviceRow:focus-visible .serviceArrow {
+  transform: translateX(2px);
+}
+.serviceRow:hover h3 {
+  color: var(--et-text-accent);
+}
+/* Photo on the right at desktop: the then / now section above it is photo-left, and DESIGN.md §4.4
+   alternates split sides. */
+@media (min-width: 1024px) {
+  .services {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: var(--et-space-16);
+    align-items: center;
+  }
+  .servicesPhoto {
+    order: 2;
+  }
+}
+
+/* ---------- Process: numbered steps, then the real week ranges ---------- */
+.process {
+  display: grid;
+  gap: var(--et-space-10);
+  margin-top: var(--et-space-10);
+}
+.durations {
+  margin: 0;
+  border-top: 1.5px solid var(--et-text);
+}
+.durations > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--et-space-1) var(--et-space-4);
+  padding-block: var(--et-space-4);
+  border-bottom: 1px solid var(--et-border);
+}
+.durations dt {
+  font-weight: 600;
+}
+.durations dt span {
+  display: block;
+  font-weight: 400;
+  font-size: var(--et-text-sm);
+  color: var(--et-text-secondary);
+}
+.durations dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+@media (min-width: 1024px) {
+  .process {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: var(--et-space-16);
+    align-items: start;
+  }
+}
+
+/* ---------- FAQ: a divided list. <details> stays, so answers remain in the server HTML ---------- */
+.faqList {
+  margin-top: var(--et-space-8);
+  border-top: 1.5px solid var(--et-text);
+}
+.faqItem {
+  border-bottom: 1px solid var(--et-border);
+  padding-block: var(--et-space-5);
+}
+/* The disclosure marker hangs outside, so wrapped questions line up under their first word. */
+.faqItem summary {
+  cursor: pointer;
+  list-style-position: outside;
+  margin-left: 1.1em;
+}

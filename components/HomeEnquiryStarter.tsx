@@ -10,7 +10,8 @@ export function HomeEnquiryStarter({ services }: { services: string[] }) {
 
   return (
     <div className="et-room-starter" role="group" aria-labelledby="room-starter-label">
-      <p id="room-starter-label" className="et-label">What are you renovating?</p>
+      {/* Says what a tap does: the room choice is the hero's primary action (D-155, F13). */}
+      <p id="room-starter-label" className="et-label">Choose your room to book a free on-site measure</p>
       <div className="et-room-choices">
         {services.map((service) => (
           <a

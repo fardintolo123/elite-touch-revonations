@@ -11,6 +11,10 @@ import { AreasServedLinks } from '@/components/AreasServedLinks'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { GoogleRating } from '@/components/GoogleRating'
 import { HomeEnquiryStarter } from '@/components/EnquiryForm'
+import { XRayLens } from '@/components/XRayLens'
+import { THE_ROCKS_WINDOW } from '@/lib/beforeAfterPairs'
+import { projectBySlug } from '@/lib/projects'
+import styles from './page.module.css'
 
 /**
  * Homepage.
@@ -212,8 +216,18 @@ const HOME_FAQS = [
 
 /* The hero photograph. Castle Hill's double vanity is the strongest single
    image we have and it is genuinely our work, in a Tier-1 suburb. */
-const heroImage =
-  projects.find((p) => p.slug === 'castle-hill-bathroom')!.images[0]
+const heroProject = projects.find((p) => p.slug === 'castle-hill-bathroom')!
+const heroImage = heroProject.images[0]
+
+/* Then / now: The Rocks is the one pair whose window wall lines up between
+   the before and after photos (D-160). Facts come from lib/projects.ts. */
+const theRocks = projectBySlug('the-rocks-bathroom')!
+
+/* Services photo: a real ensuite, named in its caption so it never reads as
+   a photo of every service (there are no approved powder-room or laundry
+   photos yet). */
+const servicesProject = projectBySlug('hornsby-ensuite')!
+const servicesImage = servicesProject.images[0]
 
 export default function HomePage() {
   const [firstReview, secondReview] = featuredReviews(2)
@@ -228,11 +242,36 @@ export default function HomePage() {
         primaryImage={heroImage}
       />
 
-      {/* ---------------- Hero ---------------- */}
-      <section className="et-hero">
+      {/* ---------------- Hero ----------------
+          Direction A (D-159): on phones the real photo comes first, then the
+          promise, then the room picker. DOM order = visual order on phones. */}
+      <section className={`et-hero ${styles.heroSection}`}>
         <div className="et-container">
-          <div className="et-hero-grid">
-            <div className="et-stack">
+          <div className={styles.hero}>
+            <figure className={styles.heroMedia}>
+              {/* LCP candidate: eager + high priority. Our own photograph,
+                  with alt text describing the photo (D-66). Rendered width
+                  measured with Playwright: 390→350, 1440→483 (the desktop
+                  column keeps its previous 0.85fr share). */}
+              <div className={styles.heroPhoto}>
+                <Image
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  width={heroImage.width}
+                  height={heroImage.height}
+                  sizes="(min-width: 1024px) 483px, 100vw"
+                  priority
+                />
+              </div>
+              <figcaption className={styles.caption}>
+                {heroProject.name} ·{' '}
+                <Link href={`/gallery/${heroProject.slug}/`} className="et-link">
+                  See this project
+                </Link>
+              </figcaption>
+            </figure>
+
+            <div className={`et-stack ${styles.heroIntro}`}>
               <span className="et-eyebrow">Sydney · Family-run since 2022</span>
 
               <h1 className="et-display et-measure-tight">
@@ -243,7 +282,9 @@ export default function HomePage() {
                 We measure your bathroom on site, then put the work, exclusions
                 and price in writing before strip-out starts.
               </p>
+            </div>
 
+            <div className={`et-stack ${styles.heroAct}`}>
               <GoogleRating />
 
               <HomeEnquiryStarter services={services.map((service) => service.title)} />
@@ -277,30 +318,9 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <div className="et-stack">
-              {/* LCP candidate: eager + high priority. Our own photograph,
-                  with alt text describing the photo (D-66). */}
-              <div className="et-hero-media">
-                <Image
-                  src={heroImage.src}
-                  alt={heroImage.alt}
-                  width={heroImage.width}
-                  height={heroImage.height}
-                  /* Measured rendered width live (Playwright, issue #27):
-                     390→350, 768→704, 1024+→483 (caps, doesn't keep
-                     growing with viewport past the 2-col layout split). */
-                  sizes="(min-width: 1024px) 483px, 100vw"
-                  priority
-                />
-              </div>
-
-            {/* Social proof above the fold — verbatim, attributed as written */}
-            <aside className="et-card et-card-tinted">
-              <span className="et-eyebrow">What our customers say</span>
-              <blockquote
-                className="et-quote"
-                style={{ marginTop: 'var(--et-space-5)' }}
-              >
+            {/* Social proof early — verbatim, attributed as written */}
+            <aside className={`et-card et-card-tinted ${styles.heroReview}`}>
+              <blockquote className="et-quote">
                 <p>{formatReviewBody(firstReview.body)}</p>
               </blockquote>
               <p className="et-quote-author">By {firstReview.author}</p>
@@ -316,6 +336,67 @@ export default function HomePage() {
                 </Link>
               </p>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- Then / now ----------------
+          The one genuine before/after pair whose window wall lines up (D-160).
+          The copy and facts are server HTML; only the lens is a client island. */}
+      <section className="et-section et-band-canvas" aria-labelledby="then-now-heading">
+        <div className="et-container">
+          <div className={styles.thenNow}>
+            <div className={`et-stack ${styles.thenNowCopy}`}>
+              <span className="et-eyebrow">
+                {theRocks.suburb} · {theRocks.service}
+              </span>
+              <h2 id="then-now-heading" className="et-h2 et-measure-tight">
+                The same leadlight window, before and after.
+              </h2>
+              <p className="et-lead et-measure">{theRocks.blurb}</p>
+            </div>
+
+            <div className={styles.thenNowLens}>
+              <XRayLens pair={THE_ROCKS_WINDOW} />
+            </div>
+
+            <div className={`et-stack ${styles.thenNowFacts}`}>
+              <dl className={styles.ruled}>
+                {/* Same labels and qualification as the gallery project page (#71). */}
+                {theRocks.priceRange && (
+                  <div>
+                    <dt>Project budget</dt>
+                    <dd>{theRocks.priceRange}</dd>
+                  </div>
+                )}
+                {theRocks.weeksOnSite && (
+                  <div>
+                    <dt>Time on site</dt>
+                    <dd>{theRocks.weeksOnSite} weeks</dd>
+                  </div>
+                )}
+                <div>
+                  {/* Only the year is recorded, so it reads "Completed by", as on the project page. */}
+                  <dt>Completed by</dt>
+                  <dd>{theRocks.completedByYear}</dd>
+                </div>
+                <div>
+                  <dt>Waterproofing</dt>
+                  <dd>{businessInfo.standards.waterproofing} + certificate</dd>
+                </div>
+              </dl>
+              {theRocks.priceRange && (
+                <p className="et-body-sm et-measure" style={{ color: 'var(--et-text-secondary)' }}>
+                  This was the budget for this completed project. Your price is
+                  firm after a free on-site measure and is set out in a
+                  fixed-scope written quote.
+                </p>
+              )}
+              <p className="et-body-sm">
+                <Link href={`/gallery/${theRocks.slug}/`} className="et-link">
+                  See all photos of this bathroom
+                </Link>
+              </p>
             </div>
           </div>
         </div>
@@ -324,7 +405,6 @@ export default function HomePage() {
       {/* ---------------- Top concerns ---------------- */}
       <section className="et-section et-band-accent">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Before work starts</span>
           <h2 className="et-h2 et-measure-tight">
             The three questions we put in writing.
           </h2>
@@ -344,78 +424,110 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------------- Services ---------------- */}
+      {/* ---------------- Services ----------------
+          A real photo beside a ruled list: the services are links, so each row
+          is clickable, but they are rows, not four look-alike cards (F6). */}
       <section className="et-section et-band-surface">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">What we do</span>
-          <h2 className="et-h2 et-measure-tight">
-            Four services. Wet areas are all we do.
-          </h2>
-          <p className="et-lead et-measure">
-            We are not a general building company that also does bathrooms.
-            Every job we take is a wet area, which is why the waterproofing and
-            the tile setout are the parts we are hardest on.
-          </p>
+        <div className="et-container">
+          <div className={styles.services}>
+            <figure className={styles.servicesPhoto}>
+              <div>
+                <Image
+                  src={servicesImage.src}
+                  alt={servicesImage.alt}
+                  width={servicesImage.width}
+                  height={servicesImage.height}
+                  sizes="(min-width: 1280px) 472px, (min-width: 1024px) 37vw, 100vw"
+                />
+              </div>
+              <figcaption className={styles.caption}>
+                {servicesProject.name} ·{' '}
+                <Link href={`/gallery/${servicesProject.slug}/`} className="et-link">
+                  See this project
+                </Link>
+              </figcaption>
+            </figure>
 
-          <div
-            className="et-grid et-grid-2"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
-            {services.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}/`}
-                className="et-card et-card-link"
-              >
-                <h3 className="et-h3">{service.title}</h3>
-                <p
-                  className="et-body-sm"
-                  style={{
-                    marginTop: 'var(--et-space-3)',
-                    color: 'var(--et-text-secondary)',
-                  }}
-                >
-                  {service.summary}
-                </p>
-              </Link>
-            ))}
+            <div>
+              <h2 className="et-h2 et-measure-tight">
+                Four services. Wet areas are all we do.
+              </h2>
+              <p className="et-lead et-measure" style={{ marginTop: 'var(--et-space-5)' }}>
+                We are not a general building company that also does bathrooms.
+                Every job we take is a wet area, which is why the waterproofing and
+                the tile setout are the parts we are hardest on.
+              </p>
+
+              <ul className={styles.serviceList}>
+                {services.map((service) => (
+                  <li key={service.slug}>
+                    <Link href={`/services/${service.slug}/`} className={styles.serviceRow}>
+                      <h3 className="et-h4">{service.title}</h3>
+                      <p className="et-body-sm">{service.summary}</p>
+                      <span className={styles.serviceArrow} aria-hidden="true">
+                        →
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ---------------- Process ---------------- */}
       <section className="et-section et-band-canvas">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">How it works</span>
-          <h2 className="et-h2 et-measure-tight">
-            Know what happens before the bathroom comes out.
-          </h2>
-          <p className="et-lead et-measure">
-            You will know the sequence, what each stage covers and when the room
-            will be out of action. We manage the trades and keep the agreed
-            scope in one place from the measure to the final clean.
-          </p>
+        <div className="et-container">
+          <div className="et-stack">
+            <h2 className="et-h2 et-measure-tight">
+              Know what happens before the bathroom comes out.
+            </h2>
+            <p className="et-lead et-measure">
+              You will know the sequence, what each stage covers and when the room
+              will be out of action. We manage the trades and keep the agreed
+              scope in one place from the measure to the final clean.
+            </p>
+          </div>
 
-          <div style={{ marginTop: 'var(--et-space-10)' }}>
-            {PROCESS.map((item) => (
-              <div key={item.step} className="et-step">
-                <span className="et-icon-tile" aria-hidden="true">
-                  {item.step}
-                </span>
-                <div>
-                  <h3 className="et-h4">{item.title}</h3>
-                  <p
-                    className="et-body-sm et-measure"
-                    style={{
-                      marginTop: 'var(--et-space-2)',
-                      color: 'var(--et-text-secondary)',
-                    }}
-                  >
-                    {item.body}
-                  </p>
+          <div className={styles.process}>
+            <div>
+              {PROCESS.map((item) => (
+                <div key={item.step} className="et-step">
+                  <span className="et-icon-tile" aria-hidden="true">
+                    {item.step}
+                  </span>
+                  <div>
+                    <h3 className="et-h4">{item.title}</h3>
+                    <p
+                      className="et-body-sm et-measure"
+                      style={{
+                        marginTop: 'var(--et-space-2)',
+                        color: 'var(--et-text-secondary)',
+                      }}
+                    >
+                      {item.body}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* The owner-confirmed build durations (D-75), from businessInfo. */}
+            <div>
+              <h3 className="et-h4">How long the room is out of action</h3>
+              <dl className={styles.durations} style={{ marginTop: 'var(--et-space-4)' }}>
+                {businessInfo.buildDurations.map((duration) => (
+                  <div key={duration.label}>
+                    <dt>
+                      {duration.label}
+                      <span>{duration.detail}</span>
+                    </dt>
+                    <dd>{duration.weeks}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
       </section>
@@ -426,16 +538,9 @@ export default function HomePage() {
         band="surface"
       />
 
-      <AreasServedLinks
-        title="Need bathroom renovations near you in Sydney?"
-        intro="We work across Sydney and offer a free on-site measure throughout the metro area. See our work and bathroom renovation details for your area."
-        band="canvas"
-      />
-
       {/* ---------------- Proof ---------------- */}
       <section className="et-section et-band-ink">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">In our customers&rsquo; words</span>
           <h2 className="et-h2 et-measure-tight">
             What customers notice while we are in the house.
           </h2>
@@ -482,21 +587,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Areas sit after the review band, not straight after the work strip:
+          both shared components are rows of white cards, and two consecutive
+          sections must not share a composition (checklist §4). */}
+      <AreasServedLinks
+        title="Need bathroom renovations near you in Sydney?"
+        intro="We work across Sydney and offer a free on-site measure throughout the metro area. See our work and bathroom renovation details for your area."
+        band="canvas"
+      />
+
       {/* ---------------- FAQ ---------------- */}
       <section className="et-section et-band-surface">
         <div className="et-container">
-          <div className="et-stack">
-            <span className="et-eyebrow">FAQ</span>
-            <h2 className="et-h2 et-measure-tight">
-              Frequently asked questions about bathroom renovations in Sydney
-            </h2>
-          </div>
-          <div
-            className="et-stack"
-            style={{ marginTop: 'var(--et-space-8)', gap: 'var(--et-space-4)' }}
-          >
+          <h2 className="et-h2 et-measure-tight">
+            Frequently asked questions about bathroom renovations in Sydney
+          </h2>
+          {/* A divided list, not eleven cards (F5). <details> keeps every
+              answer in the server HTML for the FAQPage schema. */}
+          <div className={styles.faqList}>
             {HOME_FAQS.map((item) => (
-              <details key={item.question} className="et-card">
+              <details key={item.question} className={styles.faqItem}>
                 <summary className="et-h4" style={{ cursor: 'pointer' }}>
                   {item.question}
                 </summary>

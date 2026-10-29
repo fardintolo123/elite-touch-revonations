@@ -31,3 +31,7 @@ yarn-error.log*
 
 # local verification output
 /scripts/.redirect-report.json
+
+# scratch evidence: screenshots, mocks, Lighthouse JSON. Every tmp/ file in history arrived through
+# an automatic "1" commit, never on purpose. Files already tracked stay tracked until removed.
+/tmp/

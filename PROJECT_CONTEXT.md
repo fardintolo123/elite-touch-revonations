@@ -310,6 +310,35 @@ before/after inventory. The conversion effect remains an untested hypothesis.
 Local evidence/rollback: `docs/reel-proof-placement-2026-10-22.md`. Elite Touch
 remains unpushed; the earlier performance gate is still open.
 
+### Homepage before/after X-ray lens (D-160)
+
+- **What it is:** `components/XRayLens.tsx` (client island) + `components/XRayLens.module.css`, fed by
+  `lib/beforeAfterPairs.ts` (`THE_ROCKS_WINDOW`). The homepage then / now section in `app/page.tsx`
+  is server HTML (heading, blurb, ruled facts from `lib/projects.ts`); only the lens hydrates.
+- **Two photos, one plane.** The before photo (872×515) and after photo (1180×680) differ in size and
+  camera position. `homography` maps before-photo pixels to after-photo pixels for points on the
+  window wall only. The browser applies it as `matrix3d()` (S·H·S⁻¹ for the display scale), and
+  `wall` clips the reveal to that wall. Off-plane things (vanity, bath, tap, the burned-in "BEFORE"
+  label) can never line up, so they must stay outside `wall`.
+- **The frame shows a crop** (`crop`: x, y, w, h in after pixels). Both photos sit on a "stage" sized
+  in container units (`cqw`, the frame is the container), so the crop is correct in the server HTML
+  before any script runs. JS only sets the lens radius, the counter-layer size and the matrix.
+- **Moves by `transform` only.** A round window slides while the layer inside it counter-slides.
+  Do not "simplify" it to a moving mask, `clip-path` or custom property: 4EP measured ~30 fps on a
+  throttled phone with that approach.
+- **Loading:** the before `<img>` renders only once the frame is within one screen
+  (IntersectionObserver, `rootMargin: 100%`). At 1440 that is on load, because the section sits
+  right under the hero. The lens appears only after the photo has loaded.
+- **Inputs:** mouse/pen hover, touch tap or drag handle, and a toggle button (`aria-pressed`) that
+  shows the whole before view for keyboard and screen-reader users. `prefers-reduced-motion` makes
+  the lens jump instead of ease.
+- **Adding a pair:** list matched points on one flat surface in a JSON file like
+  `scripts/before-after-pairs/the-rocks.json`, run `python scripts/fit_before_after_pair.py <json>
+  <out-prefix>` (needs numpy + Pillow), and check the blend and composite images by eye before
+  trusting the numbers. Read points off zoomed crops with a pixel grid; leadlight details, pane
+  corners and fixtures fixed to the wall make good points. Keep `wall` inside the before photo's
+  coverage: map its edges through the homography first.
+
 ### Things that will bite you
 
 1. **`trailingSlash: true` is load-bearing** (D-41). Every canonical, every sitemap entry and every

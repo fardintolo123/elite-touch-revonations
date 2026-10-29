@@ -5,6 +5,11 @@ new AI-look patterns are caught by `npm run check:design`.
 **Status:** standard adopted 2026-10-28; issues open under tracker #73. Delete this plan when #73
 closes. The standard itself is permanent.
 **Blocked items:** O-12 (eyebrow per section) waits on #74/#75 screenshots, then the owner.
+**2026-10-29:** sitewide audit + two art directions done
+(`.impeccable/critique/2026-10-29-sitewide-design-audit.md`; screenshots in untracked
+`tmp/design-audit-2026-10-29/`). The owner chose **Direction A now, B later (D-159)**; O-12 is resolved.
+The homepage (#74) is rebuilt and committed with the X-ray lens (D-160). It is not deployed.
+Next route classes: #75, #76, #77, then #78 for the shared findings listed in the audit.
 
 ## Why it is shaped this way
 - **The PDF was adapted, not pasted.** DESIGN.md already owns the system. The checklist adds the
@@ -29,7 +34,9 @@ closes. The standard itself is permanent.
 - [ ] #75 service + location pages
 - [ ] #76 proof + company pages
 - [ ] #77 blog
-- [ ] O-12 answered and recorded
+- [x] O-12 answered and recorded (D-159, 2026-10-29: Direction A now, B later; eyebrows only where they carry a fact)
+- [x] X-ray lens tested (D-160, 2026-10-29): The Rocks passes (worst 3.0 px), Hunters Hill fails; lens ships in the homepage then / now section
+- [ ] #74 homepage: built, verified and committed 2026-10-29 (two independent critiques, no P0/P1 left; evidence in untracked `tmp/design-audit-2026-10-29/home-74/`). Still to do: deploy (owner sign-off), post the evidence to #74, close #74 once the owner asks. Shared findings go to #78
 - [ ] #73 closed; this plan deleted
 
 ## Files

@@ -1,0 +1,188 @@
+/* X-ray lens (components/XRayLens.tsx, DECISIONS.md D-160). Mechanics: PROJECT_CONTEXT.md.
+   Moves by transform only; never animate the mask, clip-path or a custom property per frame. */
+
+.figure {
+  margin: 0;
+  min-width: 0;
+}
+
+/* The frame is the container the stage sizes against (cqw), so the crop renders in server HTML. */
+.frame {
+  position: relative;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: var(--et-radius-xl);
+  background: var(--et-ink-50);
+  touch-action: pan-y;
+}
+
+.stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.window {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--r) * 2);
+  height: calc(var(--r) * 2);
+  overflow: hidden;
+  border-radius: var(--et-radius-pill);
+  /* A 2px feather only: a wide soft edge reads as a dark rim over the before photo. */
+  mask-image: radial-gradient(circle closest-side, #000 calc(100% - 2px), transparent);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Sized to the frame (set by JS on resize) so the stage inside it lines up with the photo. */
+.counter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--fw);
+  height: var(--fh);
+  will-change: transform;
+}
+
+.before {
+  position: absolute;
+  inset: 0;
+}
+
+.plane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+}
+
+.beforePhoto {
+  display: block;
+  max-width: none;
+}
+
+/* "Show the whole before photo": the unwarped photo covers the frame, labelled, and the lens hides. */
+.whole {
+  position: absolute;
+  inset: 0;
+  background: var(--et-ink-50);
+}
+.whole img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wholeTag {
+  position: absolute;
+  left: var(--et-space-3);
+  top: var(--et-space-3);
+  padding: 2px var(--et-space-3);
+  border-radius: var(--et-radius-pill);
+  background: var(--et-surface);
+  color: var(--et-text);
+  font-size: var(--et-text-caption);
+  font-weight: 600;
+  line-height: 18px;
+}
+.frame[data-before='true'] .window {
+  display: none;
+}
+
+.ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--r) * 2);
+  height: calc(var(--r) * 2);
+  border-radius: var(--et-radius-pill);
+  pointer-events: none;
+  /* A plain two-tone ring, no drop shadow: it must not darken the photo it frames. */
+  box-shadow:
+    0 0 0 1.5px rgba(255, 255, 255, 0.95),
+    0 0 0 3px var(--et-ink-900);
+  will-change: transform;
+}
+
+.tag {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2px var(--et-space-3);
+  border-radius: var(--et-radius-pill);
+  background: var(--et-surface);
+  color: var(--et-text);
+  font-size: var(--et-text-caption);
+  font-weight: 600;
+  line-height: 18px;
+  box-shadow: var(--et-shadow-float);
+}
+
+/* Touch has no hover, so a handle under the lens drags it. Only the handle blocks scrolling. */
+.handle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, 50%);
+  border-radius: var(--et-radius-pill);
+  background: var(--et-surface);
+  box-shadow: 0 0 0 2px var(--et-ink-900), var(--et-shadow-float);
+  pointer-events: auto;
+  touch-action: none;
+  cursor: grab;
+}
+.handle::before {
+  content: '';
+  position: absolute;
+  inset: 15px 13px;
+  border-block: 2px solid var(--et-ink-900);
+  border-radius: 1px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--et-space-2) var(--et-space-4);
+  margin-top: var(--et-space-4);
+}
+.controls[hidden] {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .handle {
+    display: none;
+  }
+}
+
+/* A touchscreen laptop reports a fine primary pointer but can also be touched: keep the handle. */
+@media (hover: hover) and (pointer: fine) and (any-pointer: coarse) {
+  .handle {
+    display: block;
+  }
+}
+
+/* The window only renders once the frame is near, and stays invisible until the before photo has
+   arrived, so nobody sees an empty circle. */
+.frame[data-failed='true'] .window,
+.frame[data-failed='true'] .ring,
+.frame:not([data-near='true']) .window,
+.frame:not([data-loaded='true']) .ring,
+.frame[data-before='true'] .ring {
+  display: none;
+}
+.frame:not([data-loaded='true']) .window {
+  opacity: 0;
+}
