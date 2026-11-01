@@ -1160,18 +1160,18 @@ svg {
   align-items: center;
   min-height: 44px;
 }
-/* Keep every region label on the same left edge and every suburb group on
-   the same right edge; flowing whole groups into newspaper columns staggered
-   the region labels and made the two sides hard to scan. */
+/* Continue the services list's two-column rhythm: region labels stay on the
+   first grid line and their published suburbs start on the same second grid
+   line as the service links above. */
 .et-nav-panel-regions {
   display: grid;
   gap: var(--et-space-2) 0;
 }
 .et-nav-panel-group {
   display: grid;
-  grid-template-columns: minmax(185px, 1fr) minmax(0, 2fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  column-gap: var(--et-space-4);
+  column-gap: var(--et-space-5);
 }
 .et-nav-panel-suburbs {
   display: flex;
