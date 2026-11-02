@@ -56,25 +56,36 @@ One page per region. Each briefly covers the whole area, links out to that regio
 
 The supplied `Queries.csv` contains query-level results, while `Pages.csv` contains page-level
 totals. They are separate aggregates, not a query-by-page export, so they do not show which page
-ranked for each suburb query. The export also does not include Google Keyword Planner volumes. The
-figures below are therefore useful as a preliminary signal, but they are not enough to complete the
-D-10 test or promote a suburb.
+ranked for each suburb query. The export does not identify its date range, and it does not include
+Google Keyword Planner volumes. The figures below are preliminary signals, not enough to complete
+the D-10 test or promote a suburb.
 
-| Query | Impressions | Avg position | GKP volume |
-|---|---:|---:|---|
-| `bathroom renovations hornsby` | 176 | 26.45 | Not supplied |
-| `bathroom renovations artarmon` | 73 | 25.51 | Not supplied |
-| `bathroom renovations pymble` | 66 | 46.74 | Not supplied |
-| `bathroom renovations five dock` | 43 | 44.74 | Not supplied |
-| `bathroom renovations balmain` | 65 | 25.15 | Not supplied |
+| Suburb | Search Console query | Clicks | Impressions | CTR | Avg position | GKP volume | Current status |
+|---|---|---:|---:|---:|---:|---|---|
+| Hornsby | `bathroom renovations hornsby` | 0 | 511 | 0% | 30.85 | Not supplied | Re-test; keep current hub |
+| Hornsby | `bathroom renovation hornsby` | 0 | 62 | 0% | 24.97 | Not supplied | Re-test; keep current hub |
+| Artarmon | `bathroom renovations artarmon` | 1 | 355 | 0.28% | 24.84 | Not supplied | Re-test; keep current hub |
+| Artarmon | `bathroom renovation artarmon` | 0 | 25 | 0% | 15.56 | Not supplied | Re-test; keep current hub |
+| Pymble | `bathroom renovations pymble` | 0 | 225 | 0% | 58.59 | Not supplied | Re-test; keep current hub |
+| Pymble | `bathroom renovation pymble` | 0 | 67 | 0% | 57.75 | Not supplied | Re-test; keep current hub |
+| Pymble | `bathroom renovations west pymble` | 0 | 7 | 0% | 40.71 | Not supplied | Re-test; keep current hub |
+| Five Dock | `bathroom renovations five dock` | 0 | 157 | 0% | 51.31 | Not supplied | Re-test; keep current hub |
+| Five Dock | `bathroom renovation five dock` | 0 | 3 | 0% | 44.33 | Not supplied | Re-test; keep current hub |
+| Balmain | `bathroom renovations balmain` | 0 | 173 | 0% | 32.04 | Not supplied | Re-test; keep current hub |
 
-Separately, `Pages.csv` reports the North Shore hub at 382 impressions (average position 39.52) and
-the Inner West hub at 195 impressions (average position 37.50). These totals cannot be attributed
-to any one query. Both hub pages already show their relevant photographed local projects and link
-to those project pages; the North Shore hub covers Hornsby, Artarmon and Pymble, while the Inner
-West hub covers Five Dock and Balmain. Keep the current hub structure in place; do not promote a
-suburb until a true query-by-page export and the required Keyword Planner volume checks are
-available.
+The separate `Pages.csv` reports the North Shore hub at 678 impressions, 0 clicks and average
+position 41.25; the Inner West hub has 370 impressions, 0 clicks and average position 39.68. It
+also shows the Artarmon gallery page at 215 impressions / position 17.96, the Hornsby bathroom
+gallery page at 594 / 28.53, the Hornsby ensuite gallery page at 108 / 27.36, and the Balmain
+gallery page at 131 / 31.76. These page totals still cannot be attributed to individual queries:
+the two CSVs are separate dimension exports, not a joined query-by-page report.
+
+**Preliminary status:** keep the existing North Shore and Inner West hub coverage while the test is
+incomplete; no suburb is promoted or demoted from these figures alone. Both hubs already show local
+projects and link to their gallery pages. The issue's final D-10 decision still needs a true
+query-by-page export and Keyword Planner volumes for the top three candidates (Hornsby, Artarmon
+and Pymble). Until those arrive, assign each candidate "re-test" rather than treating hub coverage
+as a completed volume-based verdict.
 
 ## Recommended URL / route structure
 

@@ -358,7 +358,10 @@ export default function PackagesPage() {
       <section className="et-section et-band-canvas">
         <div className="et-container">
           <div className="et-stack">
-            <h2 className="et-h2 et-measure-tight">
+            <h2
+              id="package-comparison-heading"
+              className="et-h2 et-measure-tight"
+            >
               What changes between Basic, Standard and Premium?
             </h2>
             <p className="et-lead et-measure">
@@ -369,9 +372,23 @@ export default function PackagesPage() {
             </p>
           </div>
 
+          <p
+            id="package-comparison-scroll-hint"
+            className="et-caption"
+            style={{
+              marginTop: 'var(--et-space-6)',
+              color: 'var(--et-text-secondary)',
+            }}
+          >
+            Swipe or scroll horizontally to compare all three tiers.
+          </p>
           <div
             className="et-table-wrap"
-            style={{ marginTop: 'var(--et-space-8)' }}
+            role="region"
+            aria-labelledby="package-comparison-heading"
+            aria-describedby="package-comparison-scroll-hint"
+            tabIndex={0}
+            style={{ marginTop: 'var(--et-space-3)' }}
           >
             <table className="et-table">
               <caption>

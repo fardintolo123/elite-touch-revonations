@@ -33,7 +33,7 @@ Next route classes: #75, #76, #77, then #78 for the shared findings listed in th
 - [ ] #74 homepage (+ O-12 evidence)
 - [ ] #75 service + location pages
 - [ ] #76 proof + company pages
-- [ ] #77 blog
+- [ ] #77 blog — index and post template visually refined; no P0/P1 remain. Copy/readability gates remain open until the concurrent `lib/blog.ts` edits can be safely reconciled.
 - [x] O-12 answered and recorded (D-159, 2026-10-29: Direction A now, B later; eyebrows only where they carry a fact)
 - [x] X-ray lens tested (D-160, 2026-10-29): The Rocks passes (worst 3.0 px), Hunters Hill fails; lens ships in the homepage then / now section
 - [x] #74 homepage: deployed 2026-10-29 (9a0bda4, pushed with owner sign-off) and verified live: copy and schema unchanged, lens, call tracking, form handoff, PSI mobile 90/92. Results posted to #74 and shared findings to #78. #74 stays open until the owner asks to close it

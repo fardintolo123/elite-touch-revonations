@@ -7,10 +7,10 @@ Continue implementation of GitHub issue #81, which determines whether `/packages
 ## 2. Work Completed
 
 - Read `CLAUDE.md`, issue #81, the long-tail query tracker, and the SEO/content quality guidance.
-- The owner supplied `D:\downloads\Pages.csv` and `D:\downloads\Queries.csv`. They are separate aggregates, not a query-by-page join; the issue's required overlap evidence is still unavailable.
+- The owner supplied an earlier separate Pages/Queries pair, followed by a refreshed export folder (`D:\downloads\elitetouchrenovations.au-Performance-on-Search-2026-11-02`). Its Filters confirms Web, Last 3 months, with chart dates 2026-08-01–2026-10-31. Pages and Queries remain separate reports, not a query-by-page join.
 - Updated `/packages/` opening to name a Sydney homeowner pricing a full bathroom; kept all three from-prices paired with their room dimensions. Removed unsubstantiated market-price copy, added dimensions to the visible and schema FAQ price answers, and removed bare prices from the page description.
 - Reframed the cost article's title and metadata around what changes renovation costs, added the `/packages/` link in its opening paragraph, completed package size dimensions, and recorded the genuine update date.
-- Recorded `/packages/` as the primary cost/package page based on the existing D-104 decision and the comparative page-level results. D-163 explicitly says this does not prove query overlap or cannibalisation.
+- Recorded `/packages/` as the primary cost/package page based on D-104 and the refreshed comparative page-level results. D-163/D-165 explicitly say the exports do not prove query overlap or cannibalisation.
 - Updated the long-tail query tracker with the selected page roles and the remaining verification gate.
 
 ## 3. Important Decisions
@@ -35,8 +35,11 @@ Continue implementation of GitHub issue #81, which determines whether `/packages
 - `/packages/` contains the situation-led opening, size-based from-prices, fixed-price clarification, and FAQ/schema answers with dimensions for each ETR package price.
 - The cost blog post has a distinct cost-driver title/description and links to `/packages/` in its opening paragraph.
 - The page-role verdict is recorded in D-163, but a query-by-page overlap conclusion is not possible with the supplied separate exports.
+- The latest export reports `/packages/` 657 impressions / 1 click (27.95), the cost article 36 / 0 (19.33), and `/packages-deals/` 147 / 1 (31.01). The latter is a legacy URL redirecting to `/packages/`. Query aggregates: packages/fixed 21 queries, 557 impressions, 1 click; cost/price/budget 29 queries, 134 impressions, 0 clicks.
 - The dev server on port 33177 returned HTTP 200 for both routes. The package page included the situation-led line and fixed-price answer; the blog included its distinct title and packages link.
+- Browser checks at 390 px and 1440 px found no horizontal overflow on either route (document widths 375 px and 1425 px respectively).
 - A production build remains unverified. It failed to complete because Next reported another build process while a shared `next dev --port 33177` process was present; that server was not stopped.
+- While this work was in progress, HEAD advanced to local commit `e7922ea` (`1`), authored as `fardintolo123`. It includes the issue files alongside concurrent work. I did not create that commit or push it.
 - The worktree contains other parallel issue work across pages, components, docs, scripts, and plans. These changes were preserved; inspect `git status` and stage only explicit paths.
 
 ## 7. Files Changed
@@ -45,8 +48,8 @@ Continue implementation of GitHub issue #81, which determines whether `/packages
 |------|--------|--------|
 | `app/packages/page.tsx` | Clarified the Sydney homeowner situation, stated dimensions wherever ETR package prices appear, and removed an unsourced external price benchmark. | Meet issue acceptance criteria and retain one clear price owner. |
 | `lib/blog.ts` | Re-angled title/description, added the package link to the first paragraph, completed dimensions and recorded the genuine update date. | Keep the article useful as a supporting cost-driver page. |
-| `DECISIONS.md` | Added D-163 with the page-role decision and evidence limitations. | Record the choice without overstating Search Console attribution. |
-| `plans/long-tail-buyer-queries-2026-10.md` | Updated cluster figures and the remaining build/served-output gate. | Keep the tracker aligned with the supplied exports and verification state. |
+| `DECISIONS.md` | Added D-163/D-165 with the page-role decision, refreshed metrics, and evidence limitations. | Record the choice without overstating Search Console attribution. |
+| `plans/long-tail-buyer-queries-2026-10.md` | Added refreshed metrics and retained the original report's dated cluster totals. | Keep the tracker aligned with the supplied exports and verification state. |
 
 ## 8. Files Created
 
@@ -109,5 +112,6 @@ No performance measurements were taken. No dependency change was made by this wo
 
 - **Confirmed:** separate page and query aggregates do not prove which page returned for a given query.
 - **Decision:** retain `/packages/` as the primary cost/package page based on D-104 and stronger page-level results; keep the blog as a cost-driver support article.
+- **Refreshed evidence:** latest three-month export reports 657 `/packages/` impressions versus 36 on the post; the old `/packages-deals/` path is a redirect to `/packages/`.
 - **Implemented:** the cost post’s first paragraph links to `/packages/`.
 - **Unresolved:** whether the pages overlap on specific queries requires a real query-by-page report.

@@ -285,6 +285,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Strata Bathroom Renovation Sydney | Apartment Approval Guide',
     description: 'Bathroom renovations in Sydney apartments and strata units need owners corporation approval, by-law checks and wet-area sign-off before work starts.',
     published: '2026-09-10',
+    updated: '2026-11-02',
     readTime: '4 min read',
     category: 'Planning and process',
     sections: [
@@ -297,8 +298,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Does a strata bathroom renovation need approval?',
         paragraphs: [
-          'Yes. The NSW Government says work that needs waterproofing is not cosmetic work. In a strata building, that means the owners corporation usually needs to approve the job, and a by-law may be needed if the work touches common property or a building-wide wet-area system.',
-          'The NSW Government guidance is clear: bathroom work that involves waterproofing is treated as a renovation with building approval, not a minor cosmetic fix. See the <a href="https://www.nsw.gov.au/housing-and-construction/strata/renovations" class="et-link" target="_blank" rel="noreferrer">NSW Government strata renovations page</a> before you lock in the scope or timetable.',
+          'Yes. NSW Government guidance says a renovation that requires waterproofing cannot be treated as minor cosmetic work, so get the owners corporation\'s approval before work starts. Depending on the scope, approval may need a special resolution; work that changes common property may also need a by-law.',
+          'Check your scheme\'s rules and approval path before setting a start date. Read the <a href="https://www.nsw.gov.au/housing-and-construction/strata/renovations" class="et-link" target="_blank" rel="noopener noreferrer">NSW Government strata renovations guidance</a> and confirm the requirements with your strata manager.',
         ],
       },
       {

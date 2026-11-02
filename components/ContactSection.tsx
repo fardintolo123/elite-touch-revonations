@@ -25,7 +25,7 @@ import { businessInfo } from '@/lib/businessInfo'
 
 export function ContactSection({
   title = 'Book a free on-site measure',
-  intro = 'Tell us what is not working in the room. We will measure it anywhere in Sydney at no cost, talk through the scope, then send the inclusions, exclusions and price in writing.',
+  intro = 'Tell us what is not working in the room. We will measure it anywhere in Sydney at no cost, talk through the work, then send a written quote.',
   showReviewProof = false,
 }: {
   title?: string
@@ -38,7 +38,9 @@ export function ContactSection({
         <div className="et-grid et-grid-2 et-grid-align-center">
           <div className="et-stack">
             <h2 className="et-h2 et-measure-tight">{title}</h2>
-            <p className="et-lead et-measure">{intro}</p>
+            <p className="et-lead et-measure">
+              {intro} It will list what is included, what is not, and the price.
+            </p>
 
             {/* Real tel: anchor — D-33. Never a JS click handler. */}
             <a
