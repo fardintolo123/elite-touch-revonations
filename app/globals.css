@@ -1575,10 +1575,6 @@ svg {
 .et-hero-backdrop-content {
   position: relative;
 }
-/* Literal white, not `--et-text-inverse`, and for the same reason
-   `.et-location-hero-content .et-h1` is: that token flips to near-black under
-   `prefers-color-scheme: dark`, but a photo behind an ink scrim is dark in
-   BOTH schemes, so the token would put dark text on a dark hero. */
 .et-hero-backdrop .et-h1 {
   color: #ffffff;
   text-wrap: balance;
