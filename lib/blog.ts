@@ -5381,7 +5381,7 @@ export function getBlogTopicId(category: string) {
  * deliberately lists the seven categories, not all `blogPosts.length` titles —
  * the per-title version was removed in `ad6d3fa` because repeating 78 long
  * headlines in sitewide chrome tanked the readability gate on every page, and
- * restoring it verbatim would reintroduce that regression (D-168).
+ * restoring it verbatim would reintroduce that regression (D-173).
  */
 export const blogTopics = (() => {
   const topicMap = new Map<string, BlogPost[]>()

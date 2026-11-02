@@ -126,7 +126,7 @@ function AboutHoverMenu() {
 }
 
 /*
- * Blogs menu (D-168). The owner reported hovering "Blogs" and seeing nothing:
+ * Blogs menu (D-173). The owner reported hovering "Blogs" and seeing nothing:
  * there was no panel at all — `ad6d3fa` deleted the per-post version because
  * repeating 78 long headlines in sitewide chrome failed the readability gate
  * on every page.
