@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reason": "Initialize per-file pattern counts, including zero-use route eyebrow counts; exempt quoted reviews and existing literal copy as required by the checklist.",
+  "reason": "Initial baseline from existing source patterns. After the first CI run, synced the app/globals.css hard-coded-hex count to the pushed main source: it contains four additional existing white-color literals beyond the earlier local baseline.",
   "patterns": {
     "decorative-gradient": {
       "app/globals.css": 2,
@@ -25,7 +25,7 @@
       "lib/blog.ts": 3
     },
     "hard-coded-hex": {
-      "app/globals.css": 29,
+      "app/globals.css": 33,
       "components/EnquiryForm.tsx": 1,
       "components/layout/SiteFooter.tsx": 3,
       "components/XRayLens.module.css": 1

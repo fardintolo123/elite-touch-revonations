@@ -17,7 +17,11 @@ Actions workflow, and the requested documentation updates.
 - Added the npm script to `package.json`.
 - Updated §7 and the #79 row in `docs/DISTINCTIVE_DESIGN_CHECKLIST.md`, and added the check to
   `CLAUDE.md`'s Testing Workflow.
-- Left issue #79 open. No commit or push was made.
+- Committed and pushed the scanner as `b946341` on `main`. The first workflow run found a baseline
+  mismatch; corrected the baseline locally and confirmed the scanner passes.
+- A separate concurrent commit `e7922ea` reached `origin/main` independently. The correction can
+  now be committed and pushed without including that unrelated work.
+- Left issue #79 open pending a green workflow run.
 
 ## 3. Important Decisions
 
@@ -29,8 +33,9 @@ Actions workflow, and the requested documentation updates.
   verbatim; literal tiling use of “seamless” is not in the generic phrase list.
 - **Require a non-empty reason for every baseline update.** The reason is stored in the JSON so
   baseline changes have an audit explanation.
-- **Do not push.** The repository requires explicit owner approval before pushing. As a result, the
-  newly added GitHub Actions workflow has not yet run remotely.
+- **Push only the approved task scope.** The initial issue #79 commit was pushed after owner approval.
+  A concurrent commit was not included in that push; it reached `origin/main` separately before the
+  baseline correction was ready.
 
 ## 4. Permanent Rules / Lessons
 
@@ -44,11 +49,13 @@ Actions workflow, and the requested documentation updates.
 - Did not fix existing signal hits; issue #79 explicitly keeps fixes out of scope.
 - Did not add dependencies or change `package-lock.json`.
 - Did not build the site or run browser checks; no UI behavior was changed.
-- Did not commit, push, or close issue #79.
+- Did not close issue #79; the follow-up CI check must pass first.
 
 ## 6. Current Project State
 
-- The scanner and baseline check pass locally.
+- The scanner and baseline check pass locally after a baseline correction for four existing
+  `app/globals.css` hex hits that were present on the pushed `main` source but absent when the
+  original local baseline was measured.
 - A temporary `backdrop-filter` probe in `app/globals.css` was detected with a `file:line` report
   and then removed. The file has no net change.
 - A temporary lowered phrase baseline reported the expected non-quoted phrase at
@@ -56,7 +63,11 @@ Actions workflow, and the requested documentation updates.
   restored.
 - The worktree had unrelated concurrent edits during this task, including `lib/blog.ts` and plan
   files. They were not changed or reverted.
-- Remote workflow status is unknown until an authorized push triggers GitHub Actions.
+- The first GitHub Actions run (41395768808) failed because the pushed source had four more existing
+  `app/globals.css` hard-coded-hex hits than the baseline. This was source drift between the original
+  scan and the `main` commit, not a scanner execution error. The baseline was corrected to 33.
+- Another local session added commit `e7922ea` after the issue #79 push. It contains unrelated work
+  across issues #75/#76 and screenshots; it has since reached `origin/main` separately.
 
 ## 7. Files Changed
 
@@ -89,9 +100,12 @@ None.
 - Missing baseline-update reason — expected failure with exit code 1.
 - Temporary phrase baseline check — expected failure at `lib/blog.ts:1210`; the quoted review text
   did not appear as a hit. Baseline restored and final scanner check passed.
+- First GitHub Actions run 41395768808 — failed due to four additional existing `app/globals.css`
+  color literals on the pushed source; baseline corrected afterward. A follow-up remote run is still
+  required.
 - `git diff --check` on the edited documentation and package manifest — passed.
 - `package-lock.json` and `app/globals.css` have no net changes.
-- No build, type check, browser test, or remote GitHub Actions run was performed.
+- No build, type check, or browser test was performed.
 
 ## 11. Performance Impact
 
@@ -106,8 +120,9 @@ None. No pages, copy, metadata, schema, links, or indexation settings were chang
 
 ### High Priority
 
-- After explicit owner approval to push, verify that the GitHub Actions workflow completes
-  successfully. Do not push without that approval.
+- Push the corrected baseline and this updated handoff. Concurrent commit `e7922ea` is already on
+  `origin/main`, so the correction can be pushed without including unpushed unrelated commits.
+- Verify that the follow-up GitHub Actions run passes.
 
 ### Medium Priority
 
@@ -120,13 +135,13 @@ None.
 
 ## 14. Open Questions
 
-- Whether the owner authorizes a push so the workflow can receive its first remote run.
+None. The owner authorized proceeding with the commit and push.
 
 ## 15. Next Session Handoff
 
 - First inspect `git status --short` and preserve concurrent work.
 - Run `npm run check:design` after any scanner or baseline changes.
-- If an authorized push occurs, inspect the #79 workflow run and report its result.
+- Inspect the workflow run triggered by the baseline correction and report its result.
 - Do not alter the baseline without a reason, or edit the existing unrelated `lib/blog.ts` and plan
   changes unless separately requested.
 - Do not close issue #79 without explicit owner instruction.
