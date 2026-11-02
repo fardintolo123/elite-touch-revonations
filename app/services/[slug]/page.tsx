@@ -13,6 +13,7 @@ import { GoogleRating } from '@/components/GoogleRating'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
 import { serviceHeroImages } from '@/lib/serviceHeroImages'
+import { FaqList } from '@/components/FaqList'
 
 /**
  * Which real, suburb-attributed photo (if any) illustrates each service hero.
@@ -158,6 +159,10 @@ export default async function ServicePage({
             ? { project: heroProject, imageIndex: heroImageRef?.imageIndex }
             : undefined
         }
+        /* Backdrop only where a real evidenced photo exists (D-171). Laundry and
+           powder-room have none, so they keep the text-only hero rather than
+           borrowing a bathroom photo. */
+        backdrop={Boolean(heroProject)}
       />
 
         <section className="et-section et-band-canvas">
@@ -310,26 +315,8 @@ export default async function ServicePage({
                 Frequently asked questions about {service.title.toLowerCase()}
               </h2>
             </div>
-            <div
-              className="et-stack"
-              style={{ marginTop: 'var(--et-space-8)', gap: 'var(--et-space-4)' }}
-            >
-              {faqs.map((item) => (
-                <details key={item.question} className="et-card">
-                  <summary className="et-h4" style={{ cursor: 'pointer' }}>
-                    {item.question}
-                  </summary>
-                  <p
-                    className="et-body-sm"
-                    style={{
-                      marginTop: 'var(--et-space-4)',
-                      color: 'var(--et-text-secondary)',
-                    }}
-                  >
-                    {item.answer}
-                  </p>
-                </details>
-              ))}
+            <div style={{ marginTop: 'var(--et-space-8)' }}>
+              <FaqList items={faqs} />
             </div>
           </div>
         </section>

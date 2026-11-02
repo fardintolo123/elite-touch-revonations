@@ -49,6 +49,7 @@ export default function ServicesPage() {
           'Choose the room that needs work: a main bathroom, ensuite, bathroom and laundry together, or powder room. We plan the layout, scope and trade sequence around that wet area, then put it in writing before work starts.',
         ]}
         image={{ project: heroProject }}
+        backdrop
       />
 
       <section className="et-section et-band-canvas">

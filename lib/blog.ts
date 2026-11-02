@@ -112,6 +112,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Fixed Quote vs Verbal Estimate',
     description: 'How to compare a fixed-scope bathroom renovation quote with a rough verbal estimate before you choose a renovator.',
     published: '2026-09-10',
+    updated: '2026-11-02',
     readTime: '4 min read',
     category: 'Quotes and decisions',
     sections: [
@@ -119,7 +120,7 @@ export const blogPosts: BlogPost[] = [
       { heading: 'What is the risk with a verbal estimate?', paragraphs: ['A verbal estimate can be useful for an early conversation, but it is not enough to sign on. It may not define the tile allowance, fixture choices, access, waste removal, waterproofing, electrical work or what happens if hidden damage is found.', 'The problem is not that every estimate is dishonest. The problem is that an estimate leaves too many assumptions outside the decision, and those assumptions can turn into extra cost once your bathroom is already out of action.'] },
       { heading: 'What should a fixed-scope quote include?', paragraphs: ['A fixed-scope written quote should say what room is being renovated, what work is included, what is excluded, which selections are allowed for and how variations are approved. It should also show the payment schedule and any program assumptions.', 'For a bathroom, look closely for demolition, plumbing and electrical preparation, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling, fit-off, rubbish removal and final clean. If one quote names those items and another does not, you are not comparing the same thing.'] },
       { heading: 'Check the assumptions', paragraphs: ['Look for assumptions about the room size, tile format, fitting allowances, access, work hours and the state of the walls and floor. These details can change the final result.', 'Ask how changes are priced and approved. You should know who can approve a change and how it will be recorded before work goes ahead.'] },
-      { heading: 'Ask these questions before you sign', paragraphs: ['Ask whether the quote is based on an on-site measure, which items are provisional, who manages the trades, when you will receive the program and what certificate or handover documents are supplied.', 'Ask what happens if the old bathroom reveals rot, asbestos, non-compliant plumbing or another issue after demolition. You want the variation process clear before the pressure of a half-demolished room is in the room with you.'] },
+      { heading: 'Ask these questions before you sign', paragraphs: ['Ask whether the quote is based on an on-site measure, which items are provisional, who manages the trades, when you will receive the program and what certificate or handover documents are supplied. Our guide to <a href="/blog/fixed-scope-quote-vs-provisional-sums-bathroom/" class="et-link">fixed-scope quotes, provisional sums and PC items</a> explains each term.', 'Ask what happens if the old bathroom reveals rot, asbestos, non-compliant plumbing or another issue after demolition. You want the variation process clear before the pressure of a half-demolished room is in the room with you.'] },
       { heading: 'Choose accountability as well as value', paragraphs: ['Ask who will manage the project, how communication will work and what protection is included after completion. ETR is family-run, holds NSW Builder Licence 475204C and offers a 10-year workmanship warranty as stated in its terms.', 'A free on-site measure and fixed-scope written quote give you a better basis for comparing the actual room, not just an estimate made from photographs.'] },
       { heading: 'When is the cheapest quote not the cheapest job?', paragraphs: ['The cheapest quote can become the dearer job if important work has been left out or pushed into variations. A bathroom renovation has too many connected stages to price on a single headline number.', 'Choose the quote that makes the work easy to understand. If you cannot explain what is included after reading it, ask for the scope to be rewritten before you sign.'] },
       { heading: 'What should be agreed before the deposit?', paragraphs: ['Before paying a deposit, check the scope, payment schedule, start assumptions and <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">variation process</a>. Confirm who orders the main selections and what happens if a product is unavailable.', 'The aim is simple: after you sign, both sides should be working from the same document. If a promise matters, it belongs in the quote or contract rather than in a phone call you have to remember later.'] },
@@ -204,7 +205,7 @@ export const blogPosts: BlogPost[] = [
     description: 'How the scope changes between an ensuite, full bathroom and powder room renovation, and what that means for pricing.',
     published: '2026-09-20',
     readTime: '4 min read',
-    category: 'Planning and cost',
+    category: 'Compare your options',
     sections: [
       { heading: 'The short answer', paragraphs: ['A full bathroom, ensuite and powder room are all wet-area renovations, but they do not carry the same scope. The right comparison is not just room size; it is what the room must do each day.', 'A main bathroom often has the most users. An ensuite has to work beside a bedroom, often in a small footprint. A powder room may have no shower, but the fixture setout and waterproofing still matter if it has a water supply and floor waste.'] },
       { heading: 'What changes in a full bathroom?', paragraphs: ['A <a href="/services/bathroom-renovations/" class="et-link">full bathroom renovation</a> usually needs the broadest scope: shower, toilet, vanity, storage, waterproofing, tiling, ventilation, lighting and often a bath. It may also be the only bathroom in the home, so disruption planning matters.', 'ETR <a href="/packages/" class="et-link">package starting points</a> for bathroom-sized work begin at Basic from $18,000 for an approximately 1.5 m x 1.8 m bathroom, Standard from $25,000 and Premium from $30,000, each tied to its stated room size and inclusion list.'] },
@@ -518,11 +519,12 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Bathroom Tiles and Finishes',
     description: 'How to pick bathroom tiles, surfaces and fittings that look good, work hard and suit the room.',
     published: '2026-09-12',
+    updated: '2026-11-02',
     readTime: '2 min read',
     category: 'Design and finishes',
     sections: [
       { heading: 'Choose for the room first', paragraphs: ['Tile and finish choices have a big effect on the look and feel of a bathroom. A <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tile</a> can make a room feel calmer, while smaller tiles can add texture and detail in the right setting.', 'The best finish is the one that suits the room size, how much traffic it gets and how you want to live in it.'] },
-      { heading: 'Balance style with upkeep', paragraphs: ['A finish should be easy to clean and durable enough for daily use. <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">Grout</a>, texture and matte finishes all affect how a room feels and how much upkeep it needs.', 'The right selection makes a room easier to maintain and usually feels more considered over time.'] },
+      { heading: 'Balance style with upkeep', paragraphs: ['A finish should be easy to clean and durable enough for daily use. <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">Grout</a>, texture and matte finishes all affect how a room feels and how much upkeep it needs.', 'The right selection makes a room easier to maintain and usually feels more considered over time. Two common choices are covered side by side: <a href="/blog/porcelain-vs-ceramic-tiles-bathroom/" class="et-link">porcelain vs ceramic</a> and <a href="/blog/matt-vs-gloss-bathroom-tiles/" class="et-link">matt vs gloss</a>.'] },
       { heading: 'Keep the decision in context', paragraphs: ['The best bathroom tile and finish plan is the one that fits the whole room: layout, fixtures, lighting and storage. Good choices support each other, rather than compete with one another.', 'A clear selection plan is easier to quote, order and install without costly change.'] },
     ],
   },
@@ -805,7 +807,7 @@ export const blogPosts: BlogPost[] = [
     description: 'How to decide between a walk-in shower and a bathtub when you are renovating - what suits your space, your household and your resale position.',
     published: '2026-10-02',
     readTime: '4 min read',
-    category: 'Planning and cost',
+    category: 'Compare your options',
     sections: [
       {
         heading: 'Why this decision matters more than most fixture choices',
@@ -1259,7 +1261,7 @@ export const blogPosts: BlogPost[] = [
     description: 'The practical differences between renovating a bathroom in an apartment and a house - strata approvals, shared plumbing, noise rules, access and cost.',
     published: '2026-10-02',
     readTime: '4 min read',
-    category: 'Planning and cost',
+    category: 'Compare your options',
     sections: [
       {
         heading: 'The biggest difference is who else is involved',
@@ -2407,6 +2409,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Shower Screen Types Bathroom Renovation',
     description: 'The three main types of shower screen - frameless, semi-frameless and framed - compared on cost, cleaning, installation and which suits your bathroom renovation.',
     published: '2026-10-03',
+    updated: '2026-11-02',
     readTime: '4 min read',
     category: 'Design and finishes',
     sections: [
@@ -2414,7 +2417,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Why the shower screen matters',
         paragraphs: [
           'The shower screen is one of the most visible elements in a bathroom. It sits at eye level, it is the first thing you touch in the morning, and it determines how much light passes through the shower recess. The wrong screen makes a small bathroom feel smaller. The right one opens the room up.',
-          'There are three main types: frameless, semi-frameless and framed. Each has a different look, a different price point and different installation needs.',
+          'There are three main types: frameless, semi-frameless and framed. Each has a different look, a different price point and different installation needs. If you are down to two, see our <a href="/blog/frameless-vs-semi-frameless-shower-screen/" class="et-link">frameless vs semi-frameless comparison</a>.',
         ],
       },
       {
@@ -4091,6 +4094,7 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Toilet Types Bathroom Renovation Guide Australia',
     description: 'A guide to toilet types for bathroom renovations in Australia. Back to wall, wall-hung and close coupled - what each costs, how they install and which suits your bathroom.',
     published: '2026-10-03',
+    updated: '2026-11-02',
     readTime: '4 min read',
     category: 'Design and finishes',
     sections: [
@@ -4113,7 +4117,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'A wall-hung toilet is mounted on the wall, with the pan off the floor. The cistern is concealed inside the wall. This creates a floating look and makes it very easy to clean the floor beneath.',
           'Wall-hung toilets need a strong mounting frame inside the wall cavity, which adds to the fitting cost. They work well in modern, minimal bathrooms and save a small amount of floor space. The pan height can be set to suit the user - a benefit for taller people or those with mobility needs.',
-          'Our <a href="/blog/wall-hung-vs-floor-mounted-fixtures/" class="et-link">wall-hung vs floor-mounted guide</a> compares these options across all bathroom fixtures.',
+          'Our <a href="/blog/wall-hung-vs-floor-mounted-fixtures/" class="et-link">wall-hung vs floor-mounted guide</a> compares these options across all bathroom fixtures. For a head-to-head on the two concealed-cistern styles, read <a href="/blog/wall-hung-vs-back-to-wall-toilet/" class="et-link">wall-hung vs back-to-wall toilet</a>.',
         ],
       },
       {
@@ -4169,7 +4173,7 @@ export const blogPosts: BlogPost[] = [
     description: 'Double vanity or single? Space needs, plumbing, cost, storage and style - how to choose the right vanity for your bathroom renovation.',
     published: '2026-10-03',
     readTime: '4 min read',
-    category: 'Design and finishes',
+    category: 'Compare your options',
     sections: [
       {
         heading: 'The vanity decision',
@@ -4477,8 +4481,9 @@ export const blogPosts: BlogPost[] = [
     metaTitle: 'Wall Hung vs Floor Mounted Bathroom Fixtures Guide',
     description: 'Wall-hung or floor-mounted? A practical comparison of bathroom vanities, toilets and basins - pros, cons, cost, cleaning and installation for your renovation.',
     published: '2026-10-03',
+    updated: '2026-11-02',
     readTime: '4 min read',
-    category: 'Design and finishes',
+    category: 'Compare your options',
     sections: [
       {
         heading: 'What the difference means',
@@ -4507,7 +4512,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'A wall-hung vanity needs a reinforced wall frame or mounting rail behind the tiles, rated for the weight of the unit plus a full basin of water. A wall-hung toilet needs a concealed cistern frame bolted to the studs and floor.',
           'This framing must be planned during the renovation - it cannot be added easily after the tiles are on the wall. The builder installs it during the rough-in stage, before the wall lining goes up.',
-          'Our <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet guide</a> covers wall-hung toilet frames and mounting in detail.',
+          'Our <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet guide</a> covers wall-hung toilet frames and mounting in detail, and our <a href="/blog/wall-hung-vs-back-to-wall-toilet/" class="et-link">wall-hung vs back-to-wall toilet comparison</a> puts the two toilet styles side by side.',
         ],
       },
       {
@@ -4859,8 +4864,538 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'wall-hung-vs-back-to-wall-toilet',
+    title: 'Wall-hung vs back-to-wall toilet: which should you choose?',
+    metaTitle: 'Wall-Hung vs Back-to-Wall Toilet',
+    description: 'Wall-hung or back-to-wall toilet? How they differ on cleaning, wall depth, fitting and repairs, and which suits your Sydney bathroom renovation.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Choose a wall-hung toilet if you want a clear floor and a pan set at a height that suits you. Choose a back-to-wall toilet if you want a clean look and a simpler fit. Most back-to-wall setups hide the cistern in the wall or a cabinet, so both can look tidy.',
+        'The real difference is how the pan is held. A wall-hung pan hangs from a frame in the wall. A back-to-wall pan stands on the floor and sits against the wall.',
+      ],
+      table: {
+        caption: 'Wall-hung and back-to-wall toilets compared on the points that decide most choices.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'Easy floor cleaning', detail: 'You can mop straight under a wall-hung pan.', value: 'Wall-hung' },
+          { label: 'Pan height to suit you', detail: 'A wall-hung pan is fixed at the height you choose.', value: 'Wall-hung' },
+          { label: 'A tight room that feels bigger', detail: 'Seeing more floor makes a small room feel open.', value: 'Wall-hung' },
+          { label: 'Less change to the pipes and wall', detail: 'A wall-hung toilet moves the waste pipe into the wall.', value: 'Back-to-wall' },
+          { label: 'A simpler, usually lower-cost fit', detail: 'The floor carries the pan, so the frame has less to do.', value: 'Back-to-wall' },
+        ],
+      },
+      note: 'Confirm the frame, wall depth and pipe position at the on-site measure before you buy a pan.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is the difference between a wall-hung and a back-to-wall toilet?',
+        paragraphs: [
+          'A wall-hung toilet has no floor contact. The pan is bolted to a steel frame inside the wall, and the flush cistern sits in that same frame. A back-to-wall toilet has a pan that stands on the floor with its back pushed against the wall.',
+          'Both hide the cistern, so the room looks clean and there is no tank to dust. Our wider <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet types guide</a> also covers the close-coupled toilet. This page sticks to the two that people compare most.',
+        ],
+      },
+      {
+        heading: 'Why choose a wall-hung toilet?',
+        paragraphs: [
+          'The big win is cleaning. With nothing on the floor under the pan, one pass with the mop does the job. There is no foot, no base and no gap where grime collects.',
+          'You also pick the pan height when the frame is fixed. Taller people often like a higher pan. The open floor lets a small ensuite read as larger, which helps in a tight room.',
+          'The trade-off is that the whole pan hangs from the wall, so the fixing is only as good as the frame and the wall behind it. That is why the build-up matters more than the pan itself.',
+        ],
+      },
+      {
+        heading: 'Why choose a back-to-wall toilet?',
+        paragraphs: [
+          'A back-to-wall pan stands on the floor, so the floor carries its weight. The wall frame, where there is one, only has to hold the cistern. That is usually simpler to build and simpler to service.',
+          'It also suits rooms where moving the waste pipe is hard. If the pipe already comes out of the floor in the right spot, a back-to-wall pan can often use it. Our guide to <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">moving fixtures in a layout change</a> explains why pipe position drives cost.',
+          'The trade-off is the join where the pan meets the floor. It is tidy, but it is one more line to wipe.',
+        ],
+      },
+      {
+        heading: 'What does a wall-hung toilet need inside the wall?',
+        paragraphs: [
+          'A wall-hung toilet needs a carrier frame. It is fixed to the floor and the wall structure and holds the pan and the cistern. The frame needs more wall depth than a plain stud wall, so the wall is often built out.',
+          'This work happens early, at rough-in, before the wall lining, the waterproofing and the tiles go on. It cannot be added later without opening the wall. The flush plate on the front is also your access to the cistern for future repairs.',
+          'The frame maker states its load rating. Ask to see it, and make sure the frame is installed the way the maker directs. Our <a href="/blog/bathroom-renovation-plumbing-replacement/" class="et-link">plumbing replacement guide</a> shows where this fits in the sequence of work.',
+        ],
+      },
+      {
+        heading: 'Where does a close-coupled toilet fit in?',
+        paragraphs: [
+          'A close-coupled toilet has the cistern sitting on the back of the pan. It is the most common type in older homes. It is simple, easy to repair and easy to find parts for.',
+          'It is a sound choice when the plumbing stays where it is and the budget is tight. If you want a cleaner look, the two toilets on this page are the step up. You can also compare other fixtures in our <a href="/blog/wall-hung-vs-floor-mounted-fixtures/" class="et-link">wall-hung vs floor-mounted fixtures</a> guide, which covers vanities as well.',
+        ],
+      },
+      {
+        heading: 'Which toilet suits your renovation?',
+        paragraphs: [
+          'If you are rebuilding the wall anyway and want the easiest floor to clean, a wall-hung toilet is worth pricing. If the layout is fixed and you want the simplest build, a back-to-wall toilet is the safer pick.',
+          'Neither is wrong. The right answer depends on the wall, the waste pipe and the way the room is used. We check those on site at the free measure, then put the chosen toilet and frame in your fixed-scope written quote.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are wall-hung toilets harder to repair?',
+        answer: 'The parts you use most, the flush button and the cistern workings, are reached through the flush plate on the wall. The pan can be unbolted from the frame. Repairs are usually fine, but any fault inside the wall is harder to reach than on a floor-standing toilet.',
+      },
+      {
+        question: 'Does a wall-hung toilet need a special wall?',
+        answer: 'It needs a carrier frame fixed to the floor and the wall structure, and enough wall depth to hold the frame. The wall is often built out to fit. This is planned at rough-in, before the tiles go on.',
+      },
+      {
+        question: 'How much weight can a wall-hung toilet hold?',
+        answer: 'The load rating comes from the frame maker. Ask to see the rating on the data sheet, and have the frame installed exactly as the maker directs.',
+      },
+      {
+        question: 'Is a wall-faced toilet the same as a back-to-wall toilet?',
+        answer: 'Both names describe a pan that sits against the wall instead of out from it. Some suppliers use the two names for the same pan. Check the product sheet before you order.',
+      },
+      {
+        question: 'Can I swap a close-coupled toilet for a wall-hung one?',
+        answer: 'Yes, but it is not a simple swap. The waste pipe moves into the wall and a frame is fitted, so it works best in a full renovation while the wall is open.',
+      },
+    ],
+  },
+  {
+    slug: 'porcelain-vs-ceramic-tiles-bathroom',
+    title: 'Porcelain vs ceramic tiles for a bathroom: which is better?',
+    metaTitle: 'Porcelain vs Ceramic Bathroom Tiles',
+    description: 'Porcelain or ceramic tiles for your bathroom? How they differ on water absorption, toughness, cutting, cost and where each works best in a Sydney renovation.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Porcelain is the safer pick for bathroom floors and wet shower areas. It is denser, absorbs very little water and takes knocks well. Ceramic is a good choice for walls. It is usually cheaper and easier to cut.',
+        'Neither tile makes the bathroom waterproof. The waterproofing membrane under the tile does that job, and it is laid to AS 3740.',
+      ],
+      table: {
+        caption: 'Porcelain and ceramic tiles compared on the points that matter in a bathroom.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'Floors and wet areas', detail: 'Denser tile that absorbs very little water.', value: 'Porcelain' },
+          { label: 'Wear and knocks', detail: 'Harder body that resists chips and scuffs.', value: 'Porcelain' },
+          { label: 'A lower tile cost', detail: 'Ceramic is usually cheaper per square metre.', value: 'Ceramic' },
+          { label: 'Easy cutting and fitting', detail: 'Softer body, so less cutting time on site.', value: 'Ceramic' },
+          { label: 'Bathroom walls', detail: 'No foot traffic, so ceramic does the job well.', value: 'Ceramic' },
+        ],
+      },
+      note: 'Compare the actual tile you like, not the label. Both groups have a wide range in price and quality.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is the difference between porcelain and ceramic tiles?',
+        paragraphs: [
+          'Both are made from clay and fired in a kiln. Porcelain uses a finer clay and a higher heat, so the tile comes out denser and harder. By the usual industry definition, a porcelain tile absorbs 0.5 percent water or less. Ceramic is more porous and softer.',
+          'In a bathroom that gap shows up in three places: how the tile handles water, how it handles wear and how it behaves when it is cut and laid.',
+        ],
+      },
+      {
+        heading: 'Which is better for a bathroom floor?',
+        paragraphs: [
+          'Porcelain, in most cases. A bathroom floor takes water, soap, dropped bottles and daily foot traffic. A dense, hard tile copes with that better than a porous one.',
+          'Slip resistance matters as much as the material. Ask your supplier for the slip rating of any floor tile. It is shown as a P rating from the wet pendulum test or an R rating from the ramp test. A matt or textured finish usually grips better than a polished one. Our <a href="/blog/matt-vs-gloss-bathroom-tiles/" class="et-link">matt vs gloss tile guide</a> covers that choice.',
+        ],
+      },
+      {
+        heading: 'Which is better for bathroom walls?',
+        paragraphs: [
+          'Ceramic is a good, cost-sensible choice on walls. Nobody walks on it, and the tile is lighter and easier to cut around niches, windows and fixtures. If you have a low budget, putting ceramic on the walls and porcelain on the floor is a common way to keep the cost down.',
+          'Porcelain also works well on walls, especially in large sizes. Large porcelain panels are heavy, though, so the wall behind them must be flat and strong. Read our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> before you commit to big sizes.',
+        ],
+      },
+      {
+        heading: 'What do cutting, fitting and cost look like?',
+        paragraphs: [
+          'Porcelain is harder to cut and drill. It needs a diamond blade and more time, which can lift the labour cost. Ceramic cuts faster. The tile price also tends to be lower, but both groups range from cheap to very high, so a premium ceramic can cost more than a budget porcelain.',
+          'Compare the exact tile and its fitting needs. The cheapest tile per square metre is not always the cheapest finished wall. Our <a href="/blog/bathroom-renovation-cost-sydney/" class="et-link">guide to what changes the cost</a> shows how tile choice sits inside the whole scope.',
+        ],
+      },
+      {
+        heading: 'Does the tile make the bathroom waterproof?',
+        paragraphs: [
+          'No. Water gets through the grout lines and, in a ceramic tile, can pass through the tile body. The seal that protects the room is the waterproofing membrane laid under the tile. We lay it to AS 3740 and supply the certificate. See our guide to <a href="/blog/bathroom-waterproofing-explained/" class="et-link">how bathroom waterproofing works</a>.',
+          'That is why a good tile alone does not fix a leaking bathroom, and why a great membrane does not make up for poor tiling.',
+        ],
+      },
+      {
+        heading: 'Who lays the tile matters as much as which tile you pick',
+        paragraphs: [
+          'Adam Dawood is our licensed tiler. Kieran C described our finished tiling this way: "good falls, neat consistent joints, clean cuts and no lippage."',
+          'Falls, straight joints and flat edges depend on the person laying the tile, whichever type you choose. We talk through the tile at the free measure, then record your choice in the fixed-scope written quote.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is porcelain always better than ceramic for a bathroom?',
+        answer: 'Not always. Porcelain is the stronger choice for floors and wet areas. On walls, ceramic works well and often costs less. The best plan can use both.',
+      },
+      {
+        question: 'Is porcelain more expensive than ceramic?',
+        answer: 'Usually, but not always. Porcelain is harder to cut, so labour can also cost more. Both groups range from budget to premium, so compare the exact tile.',
+      },
+      {
+        question: 'Can I use ceramic tiles on a bathroom floor?',
+        answer: 'You can, if the tile is rated for floors and has a suitable slip rating. Porcelain is the more common choice because it is harder and absorbs less water.',
+      },
+      {
+        question: 'What is a through-body porcelain tile?',
+        answer: 'It is a porcelain tile with the same colour all the way through. A chip shows the same colour as the surface, so damage is less obvious than on a glazed tile with a different body colour.',
+      },
+      {
+        question: 'Do porcelain tiles need sealing?',
+        answer: 'Many glazed porcelain tiles do not need sealing, but the grout and some natural-look or unglazed tiles may. Follow the maker advice for the exact product you choose.',
+      },
+    ],
+  },
+  {
+    slug: 'matt-vs-gloss-bathroom-tiles',
+    title: 'Matt vs gloss bathroom tiles: which finish should you choose?',
+    metaTitle: 'Matt vs Gloss Bathroom Tiles',
+    description: 'Matt or gloss bathroom tiles? How the two finishes differ on grip, cleaning, light, water marks and wall flaws, and which suits your floor, walls and shower.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Choose matt tiles for the floor and shower base, where grip counts most. Choose gloss tiles for walls if you want more light in the room. A mix of both is common and works well.',
+        'Matt hides water marks and grips better. Gloss bounces light around and wipes clean fast, but it shows every flaw in the wall and can be slippery when wet.',
+      ],
+      table: {
+        caption: 'Matt and gloss tiles compared on the points that decide the choice.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'Grip underfoot', detail: 'Check the slip rating on any floor tile.', value: 'Matt' },
+          { label: 'Hiding water marks', detail: 'Gloss shows drips, soap film and fingerprints.', value: 'Matt' },
+          { label: 'A brighter small room', detail: 'Gloss reflects light from the window and lights.', value: 'Gloss' },
+          { label: 'Wiping clean fast', detail: 'A smooth surface has no texture to trap soap scum.', value: 'Gloss' },
+          { label: 'Hiding a wavy wall', detail: 'Gloss shows every ripple in its reflection.', value: 'Matt' },
+        ],
+      },
+      note: 'Texture varies a lot between products. Ask for a sample and check it wet.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'Which finish is better for a bathroom floor?',
+        paragraphs: [
+          'Matt, in most cases. A wet floor is where a slip can happen, and a polished surface gives your feet less grip. Ask the supplier for the slip rating of any floor tile. It is shown as a P rating from the wet pendulum test or an R rating from the ramp test.',
+          'In the shower base, many people choose a matt tile or a small tile. The extra grout lines give more grip underfoot. A matt floor also hides footprints and water spots between cleans.',
+        ],
+      },
+      {
+        heading: 'Which finish is better for bathroom walls?',
+        paragraphs: [
+          'Either can work. Gloss wall tiles brighten the room, which helps in a bathroom with little natural light. They also wipe clean quickly, so soap film comes off with one pass.',
+          'Matt wall tiles give a softer, calmer look. They hide water marks and fingerprints, so the wall looks neat for longer. Some textured matt tiles hold a little soap scum in the surface, so a soft brush now and then keeps them fresh.',
+        ],
+      },
+      {
+        heading: 'How does the finish change the light in the room?',
+        paragraphs: [
+          'Gloss throws light back into the room. It can make a small ensuite feel larger and brighter, especially with a mirror and a window. Matt absorbs and softens the light, so the room feels warmer and quieter.',
+          'Your lighting plan matters here. Strong lights over a glossy wall can bring glare. Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">bathroom lighting guide</a> shows how to place lights so the finish looks its best.',
+        ],
+      },
+      {
+        heading: 'Why does gloss show wall flaws?',
+        paragraphs: [
+          'A glossy tile acts like a mirror. If the wall behind it is slightly wavy, or one tile edge sits higher than the next, you see it in the reflection. A matt tile hides small flaws.',
+          'This is why careful prep and laying matter more with gloss. Straight walls, even joints and flat edges let the finish shine. Kieran C wrote of our tiling: "good falls, neat consistent joints, clean cuts and no lippage."',
+        ],
+      },
+      {
+        heading: 'How do you clean each finish?',
+        paragraphs: [
+          'Gloss shows marks sooner, so you wipe it more often, but each wipe is quick. Matt shows marks less, but a textured matt surface needs a soft brush to lift soap scum out of the grain.',
+          'Grout is part of the cleaning job, whichever finish you pick. See our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> for types and upkeep, and our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> for airflow and damp control.',
+        ],
+      },
+      {
+        heading: 'Can you mix matt and gloss in one bathroom?',
+        paragraphs: [
+          'Yes, and many good bathrooms do. A common plan is a matt floor for grip with gloss or satin on the walls for light. Keep the colours close so the room stays calm.',
+          'Our wider <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiles and finishes guide</a> and <a href="/blog/porcelain-vs-ceramic-tiles-bathroom/" class="et-link">porcelain vs ceramic comparison</a> help you narrow the rest. Bring your sample tiles to the free on-site measure and we will check them against the room.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are matt tiles easier to clean than gloss tiles?',
+        answer: 'It depends on the tile. Smooth gloss wipes clean quickly but shows marks sooner. Matt hides marks, but a textured matt surface can need a soft brush.',
+      },
+      {
+        question: 'Are gloss tiles slippery in a bathroom?',
+        answer: 'Polished gloss tiles can be slippery when wet, so they are better on walls than floors. Always check the slip rating of a floor tile with the supplier.',
+      },
+      {
+        question: 'What finish is best for a small bathroom?',
+        answer: 'Gloss walls reflect light and can make a small room feel bigger. A matt floor adds grip. A light colour on the walls helps most.',
+      },
+      {
+        question: 'Do matt tiles show water marks?',
+        answer: 'Much less than gloss. Water spots and soap film are easy to see on a glossy surface and far less visible on a matt one.',
+      },
+      {
+        question: 'What finish should I use in the shower?',
+        answer: 'Many people use a matt or small tile on the shower floor for grip and a finish of their choice on the shower walls. Ask for the slip rating before you order the floor tile.',
+      },
+    ],
+  },
+  {
+    slug: 'frameless-vs-semi-frameless-shower-screen',
+    title: 'Frameless vs semi-frameless shower screen: which is better?',
+    metaTitle: 'Frameless vs Semi-Frameless Shower Screen',
+    description: 'Frameless or semi-frameless shower screen? How they differ on glass, wall tolerance, cleaning, look and cost, and which suits your Sydney bathroom renovation.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Choose a frameless screen for the cleanest look and the easiest glass to clean. Choose a semi-frameless screen if your walls are not perfectly straight or you want to keep the cost down. A semi-frameless screen still looks current.',
+        'Frameless uses thicker glass with minimal hardware. Semi-frameless frames the fixed panels and leaves the door edge largely open.',
+      ],
+      table: {
+        caption: 'Frameless and semi-frameless shower screens compared on the points that decide the choice.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'The cleanest, most open look', detail: 'No metal frame around the edges.', value: 'Frameless' },
+          { label: 'Easy glass cleaning', detail: 'No channels to trap soap scum.', value: 'Frameless' },
+          { label: 'Walls that are slightly out of square', detail: 'The frame takes up small gaps.', value: 'Semi-frameless' },
+          { label: 'A lower screen cost', detail: 'Thinner glass and simpler fitting.', value: 'Semi-frameless' },
+          { label: 'A look that still feels current', detail: 'Clean door edge with a light frame.', value: 'Semi-frameless' },
+        ],
+      },
+      note: 'Order the glass after tiling, once the real opening is measured.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is the difference between frameless and semi-frameless?',
+        paragraphs: [
+          'A frameless screen uses panels of 10-millimetre toughened safety glass held by small brackets and hinges. There is no metal frame around the edges. A semi-frameless screen uses 6 to 8-millimetre toughened glass. It frames the fixed panels but leaves the door edge largely unframed.',
+          'Our wider <a href="/blog/shower-screen-types-bathroom-renovation/" class="et-link">shower screen types guide</a> also covers the fully framed screen. This page puts the two most popular choices side by side.',
+        ],
+      },
+      {
+        heading: 'Why choose a frameless screen?',
+        paragraphs: [
+          'The look is the main draw. With no frame, light passes through and the shower feels part of the room. It suits small bathrooms, where an open view makes the space feel larger.',
+          'Cleaning is easier too. There are no frame channels to collect soap scum, so a squeegee after each shower and a weekly wipe keeps the glass clear.',
+          'The cost is higher. Frameless glass is thicker and the fitting must be precise.',
+        ],
+      },
+      {
+        heading: 'Why choose a semi-frameless screen?',
+        paragraphs: [
+          'It is the middle ground. The frame on the fixed panels gives structure and hides small gaps. That makes it more forgiving if the walls are slightly out of square, which is common in older Sydney homes.',
+          'It usually costs less than frameless and still looks clean. The frame channels collect a little residue, so it needs a bit more cleaning than frameless, but far less than a fully framed screen.',
+        ],
+      },
+      {
+        heading: 'How do wall and floor tolerances affect the choice?',
+        paragraphs: [
+          'A frameless panel must sit flush against the wall. If the wall is out of square, the glass cannot close the gap and water gets through. Fixing the wall first adds cost to a frameless job.',
+          'A semi-frameless frame can take up some of that error. If your walls are in poor shape, ask us at the measure whether straightening them is worth it for a frameless screen, or whether semi-frameless is the sensible call.',
+        ],
+      },
+      {
+        heading: 'What about the door: hinged or sliding?',
+        paragraphs: [
+          'The screen type and the door type are separate choices. Both screen types can take a hinged or pivot door. A sliding door suits a tight room where a swinging door would hit the vanity or toilet. A hinged door opens wider and is easier to clean.',
+          'If the shower is open to the room, a fixed panel with no door is another option. See our <a href="/blog/wet-room-bathroom-renovation/" class="et-link">wet room guide</a> for how that works.',
+        ],
+      },
+      {
+        heading: 'How do we handle shower screens?',
+        paragraphs: [
+          'The screen is chosen in the design phase, after the layout is settled. Farah Dawood, our architectural designer, helps pick a screen that suits the room, the tile layout and the budget.',
+          'The glass is measured and ordered after tiling is done, so the fit is exact. Every shower recess is waterproofed to AS 3740 before the screen goes in. Your screen choice goes in the fixed-scope written quote after a free on-site measure.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is a frameless shower screen worth the extra cost?',
+        answer: 'It can be, if you want the cleanest look and the easiest glass to clean. If your walls are out of square or the budget is tight, a semi-frameless screen is a sound alternative.',
+      },
+      {
+        question: 'Are semi-frameless shower screens less likely to leak?',
+        answer: 'The frame helps cover small gaps, so a semi-frameless screen is more forgiving on walls that are not perfectly straight. Either type seals well when it is measured and fitted properly.',
+      },
+      {
+        question: 'How thick is the glass in a frameless shower screen?',
+        answer: 'Frameless screens commonly use 10-millimetre toughened safety glass. Semi-frameless screens use 6 to 8-millimetre toughened glass.',
+      },
+      {
+        question: 'Which shower screen is easiest to clean?',
+        answer: 'Frameless, because there are no frame channels to collect soap scum. A squeegee after each shower keeps either type looking good.',
+      },
+      {
+        question: 'When is the shower screen ordered?',
+        answer: 'After tiling is complete. That lets the glass be measured against the finished opening, so the fit is exact.',
+      },
+    ],
+  },
+  {
+    slug: 'fixed-scope-quote-vs-provisional-sums-bathroom',
+    title: 'Fixed-scope quote vs provisional sums and PC items: what each means',
+    metaTitle: 'Fixed-Scope Quote vs Provisional Sums',
+    description: 'What a fixed-scope bathroom quote, a provisional sum and a prime cost (PC) item mean, how each can change your final price and what to ask before you sign.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'A fixed-scope quote sets one price for a defined list of work. A prime cost (PC) item is an allowance for something you have not picked yet, such as tapware or tiles. A provisional sum is an allowance for work that cannot be priced until the room is open.',
+        'The fewer allowances a quote carries, the less the final price can move. Your job is to find out which items are fixed and which are allowances.',
+      ],
+      table: {
+        caption: 'How each quote term works and what can change the price.',
+        columns: ['Quote term', 'Can the price move?'],
+        rows: [
+          { label: 'Fixed-scope item', detail: 'A set price for a defined list of work.', value: 'Only if you change the scope in writing' },
+          { label: 'PC item (prime cost)', detail: 'An allowance for an item you pick later.', value: 'Yes, if your pick costs more or less than the allowance' },
+          { label: 'Provisional sum', detail: 'An allowance for work that cannot be priced yet.', value: 'Yes, once the real work is known' },
+        ],
+      },
+      note: 'Ask for the list of allowances in writing before you accept any quote.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is a fixed-scope quote?',
+        paragraphs: [
+          'A fixed-scope quote names the work, lists what is included and gives a price for that scope. The price changes only if you change the scope, and the change is agreed in writing first. That is how Elite Touch quotes: a free on-site measure, then a fixed-scope written quote.',
+          'It does not mean nothing is ever unknown. It means the unknowns are named, and the quote says how each is handled.',
+        ],
+      },
+      {
+        heading: 'What is a PC item?',
+        paragraphs: [
+          'PC stands for prime cost. A PC item is an allowance for a product you have not chosen yet. The quote sets aside an amount for it, such as the tiles, the tapware or the basin.',
+          'If you pick something that costs more than the allowance, you pay the difference. If you pick something cheaper, the difference should come off. The risk is a low allowance that makes the quote look cheap, then grows when you shop. We lock in PC items before fit-off, and allowances are stated in writing so the budget for each tile, tap and basin is on the page.',
+        ],
+      },
+      {
+        heading: 'What is a provisional sum?',
+        paragraphs: [
+          'A provisional sum is an allowance for work whose cost cannot be known until the job starts. The classic case is damage hidden behind the old finishes, such as rot in the floor or a failed pipe.',
+          'The final cost depends on what is found. A fair quote says what the sum covers, who decides when it is used and how any leftover is returned. Read <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">our guide to hidden costs</a> for the usual causes.',
+        ],
+      },
+      {
+        heading: 'How do they change the final price?',
+        paragraphs: [
+          'Two quotes with the same total can carry very different risk. One may be nearly all fixed. The other may have a low tile allowance, a low fixture allowance and a small sum for the unknowns.',
+          'To compare quotes fairly, list every allowance and ask what a realistic figure would be. Our guide to <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">comparing bathroom renovation quotes</a> gives a step-by-step method.',
+        ],
+      },
+      {
+        heading: 'What should you ask before you sign?',
+        paragraphs: [
+          'Ask which items are fixed and which are allowances. Ask how each allowance was set and what happens if you pick above or below it. Ask what the contingency covers and how a variation is approved.',
+          'We allow a contingency in every quote and inspect the floor and wall surfaces as soon as the room is open. Asbestos in older homes is tested before quoting and, if found, priced separately. Our <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">contract guide</a> and <a href="/blog/bathroom-renovation-scope-changes/" class="et-link">scope changes guide</a> cover what the paperwork should say.',
+        ],
+      },
+      {
+        heading: 'Which approach is better for you?',
+        paragraphs: [
+          'A mostly fixed quote suits you if you want to know your cost early and have made most choices. A quote with PC items suits you if you want to shop for tiles and fittings, as long as the allowances are realistic.',
+          'Either way, the answer is the same: get it in writing and compare like with like. Our <a href="/packages/" class="et-link">package prices and size bases</a> show how we publish our starting points.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What does PC mean in a bathroom quote?',
+        answer: 'PC means prime cost. It is the amount set aside for an item you have not chosen yet, such as tapware, tiles or a basin. If your choice costs more or less, the price changes by the difference.',
+      },
+      {
+        question: 'What is a provisional sum?',
+        answer: 'A provisional sum is an allowance for work that cannot be priced until the job starts, such as repairs hidden behind the old finishes. The final amount depends on what is found.',
+      },
+      {
+        question: 'Is a fixed-price quote the same as a fixed-scope quote?',
+        answer: 'Close. A fixed-scope quote fixes the price for a defined list of work. The price moves only if you change the scope in writing.',
+      },
+      {
+        question: 'Can I ask for fewer allowances in my quote?',
+        answer: 'Yes. Make your choices early and ask for those items to be priced as fixed. The more you settle before the quote, the fewer allowances are needed.',
+      },
+      {
+        question: 'Who decides when a provisional sum is used?',
+        answer: 'The quote should say. Ask for the rule in writing, including how the work is priced and how any unused amount is returned.',
+      },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug)
 }
+
+/**
+ * Anchor id for a category section on `/blog/`. The blog index renders these
+ * as the `id` of each topic group, so anything linking to a topic (currently
+ * the index's own jump list and the header's Blogs menu) must derive the id
+ * from here rather than re-deriving the slug rule.
+ */
+export function getBlogTopicId(category: string) {
+  return `blog-topic-${category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`
+}
+
+/**
+ * The blog grouped by `category`, in first-published order within each group
+ * and in the order the categories first appear in `blogPosts`.
+ *
+ * ONE SOURCE (CLAUDE.md "Generated route collections have one source"): the
+ * blog index page and the header's Blogs menu both read this. The header menu
+ * deliberately lists the seven categories, not all `blogPosts.length` titles —
+ * the per-title version was removed in `ad6d3fa` because repeating 78 long
+ * headlines in sitewide chrome tanked the readability gate on every page, and
+ * restoring it verbatim would reintroduce that regression (D-168).
+ */
+export const blogTopics = (() => {
+  const topicMap = new Map<string, BlogPost[]>()
+  for (const post of blogPosts) {
+    const topicPosts = topicMap.get(post.category)
+    if (topicPosts) {
+      topicPosts.push(post)
+    } else {
+      topicMap.set(post.category, [post])
+    }
+  }
+  return Array.from(topicMap, ([category, posts]) => ({
+    category,
+    id: getBlogTopicId(category),
+    posts,
+  }))
+})()

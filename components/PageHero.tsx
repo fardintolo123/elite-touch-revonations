@@ -18,6 +18,20 @@ import type { Project } from '@/lib/projects'
  *
  * The image is this page's LCP candidate, so it always loads eager + high
  * priority — never pass more than one PageHero per page.
+ *
+ * TWO LAYOUTS (D-171). The default puts the photo in a column beside the copy.
+ * `backdrop` instead renders DESIGN.md §4.4's own hero recipe — full-bleed
+ * photo, ink scrim, headline and CTA over it — which the owner asked for
+ * ("images as background in some places like heros") and which the side-by-side
+ * layout had quietly replaced. Only pass `backdrop` where `image` is a real
+ * evidenced photo: a scrimmed backdrop makes the photo the page's main claim,
+ * so an unrelated bathroom behind a powder-room H1 would read as proof of work
+ * we cannot show (D-83/D-06).
+ *
+ * Contrast is NOT assumed from the scrim token alone. Bathroom photography is
+ * mostly white tile, so the backdrop stacks a flat 48% ink wash under
+ * DESIGN.md §9's directional scrim and was checked against the lightest part
+ * of each photo actually used, per §9's own instruction.
  */
 
 type PageHeroFact = { label: string; value: ReactNode }
@@ -35,6 +49,7 @@ export function PageHero({
   cta = true,
   facts,
   image,
+  backdrop = false,
 }: {
   eyebrow: string
   title: string
@@ -42,6 +57,7 @@ export function PageHero({
   cta?: boolean
   facts?: PageHeroFact[]
   image?: PageHeroImage
+  backdrop?: boolean
 }) {
   const copy = (
     <div className="et-stack">
@@ -93,6 +109,28 @@ export function PageHero({
 
   const photo = image.project.images[image.imageIndex ?? 0]
 
+  if (backdrop) {
+    return (
+      <section className="et-hero et-hero-backdrop et-band-ink">
+        {/* LCP candidate. `fill` + `sizes="100vw"` is the truth here — unlike
+            the column layout, this photo really does span the viewport. Same
+            shape as `LocationHero`, which already does this. */}
+        <div className="et-hero-backdrop-photo">
+          <Image src={photo.src} alt={photo.alt} fill sizes="100vw" priority />
+        </div>
+        <div className="et-hero-backdrop-scrim" aria-hidden="true" />
+        <div className="et-container et-hero-backdrop-content">
+          {copy}
+          <p className="et-body-sm et-hero-backdrop-credit">
+            <Link href={`/gallery/${image.project.slug}/`} className="et-link">
+              See the {image.project.name}
+            </Link>
+          </p>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="et-hero">
       <div className="et-container">
@@ -102,7 +140,7 @@ export function PageHero({
           <div className="et-stack">
             {/* LCP candidate: eager + high priority, our own photograph,
                 alt text describing the photo, not the page topic (D-66). */}
-            <div className="et-hero-media">
+            <div className="et-hero-media et-image-fade" data-fade="left">
               <Image
                 src={photo.src}
                 alt={photo.alt}

@@ -239,6 +239,18 @@ in the 20 current blog posts.
 
 ---
 
+## "X vs Y" comparison batch (2026-11-02, D-166)
+
+- [x] Wall-hung vs back-to-wall toilet — `wall-hung-vs-back-to-wall-toilet`
+- [x] Porcelain vs ceramic tiles for a bathroom — `porcelain-vs-ceramic-tiles-bathroom`
+- [x] Matt vs gloss bathroom tiles — `matt-vs-gloss-bathroom-tiles`
+- [x] Frameless vs semi-frameless shower screen — `frameless-vs-semi-frameless-shower-screen`
+- [x] Fixed-scope quote vs provisional sums and PC items — `fixed-scope-quote-vs-provisional-sums-bathroom`
+- [ ] Re-export Search Console about 2026-12-02 and check these five (and the three parent posts they link to) for clicks, position and any cannibalisation.
+- [ ] Candidates only if the data supports them: epoxy vs cement grout (grout guide ranks 51 for "grout for bathroom"), freestanding vs built-in bath (extend the freestanding guide first), tiles vs wall panels (needs owner confirmation of what ETR installs).
+
+---
+
 ## Workflow per article
 
 1. **Keyword confirmation** — verify volume/competition in GKP or via SERP analysis.

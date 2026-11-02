@@ -11,7 +11,7 @@ Correct the visible alignment mistake in the shared Services navigation panel wi
 - Confirmed that the service links above used two equal columns while service-area rows switched to a bespoke `185px / 2fr` split. This moved the suburb alignment line 102 px left of the second service column at 1440 px.
 - Replaced the bespoke split with the same two-column track definition and token gap already used by the service links. Region labels remain in the first column; published suburbs now begin on the shared second grid line.
 - Preserved `components/layout/SiteHeader.tsx`, all canonical service/location helpers, link order, copy, URLs, hover/focus behavior, mobile disclosures, 44 px targets, and client boundaries.
-- Captured before/after full-page and open-menu evidence at 390 px and 1440 px in `session-history/evidence/2026-10-30-services-menu/`.
+- Captured final before/after full-page and open-menu evidence at 390 px and 1440 px in `session-history/evidence/2026-11-02-services-menu-closeout/`.
 - Used reduced-motion full-page captures for static QA so reveal-on-scroll motion could not hide valid content. Open-menu crops separately show the changed desktop state and unchanged mobile hierarchy.
 - Ran independent Designer, Developer/mechanical, and Vision Auditor passes. The final component review found the intended desktop alignment correction and no regression in the mobile hierarchy.
 
@@ -61,6 +61,7 @@ Correct the visible alignment mistake in the shared Services navigation panel wi
 - Keyboard navigation: the Services trigger opens on focus; every service, region, and suburb link enters tab order with a visible focus outline.
 - Representative service and location links return HTTP 200.
 - No content, SEO, schema, metadata, analytics, or performance architecture changed.
+- Other agent sessions added unrelated worktree changes after this repair was built and verified. This task did not stage, revert, or rebuild over those in-progress edits. Its exact CSS declarations remain present.
 
 ## 7. Files Changed
 
@@ -70,15 +71,17 @@ Correct the visible alignment mistake in the shared Services navigation panel wi
 
 ## 8. Files Created
 
-- `session-history/evidence/2026-10-30-services-menu/before-1440-full.png`
-- `session-history/evidence/2026-10-30-services-menu/before-390-full.png`
-- `session-history/evidence/2026-10-30-services-menu/before-1440-menu.png`
-- `session-history/evidence/2026-10-30-services-menu/before-390-menu.png`
-- `session-history/evidence/2026-10-30-services-menu/after-1440-full.png`
-- `session-history/evidence/2026-10-30-services-menu/after-390-full.png`
-- `session-history/evidence/2026-10-30-services-menu/after-1440-menu.png`
-- `session-history/evidence/2026-10-30-services-menu/after-390-menu.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/before-1440-full.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/before-390-full.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/before-1440-menu.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/before-390-menu.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/after-1440-full.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/after-390-full.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/after-1440-menu.png`
+- `session-history/evidence/2026-11-02-services-menu-closeout/after-390-menu.png`
 - `session-history/2026-11-02-services-menu-alignment.md` — this handoff.
+
+The earlier `session-history/evidence/2026-10-30-services-menu/` capture is superseded. Its first closeout pass exposed a sticky-header screenshot bug in which the desktop element crop captured the hero behind the menu. Do not use that folder as the final alignment proof.
 
 ## 9. Files Deleted
 
@@ -86,7 +89,7 @@ None.
 
 ## 10. Tests and Validation
 
-- `npm run build --ignore-scripts` — passed; Next.js 16.3.1 built 114 static/dynamic route entries with no route-count drop, and its integrated TypeScript phase passed.
+- `npm run build --ignore-scripts` — passed on the task snapshot; Next.js 16.3.1 built 114 static/dynamic route entries with no route-count drop, and its integrated TypeScript phase passed. Concurrent unrelated worktree changes appeared later and were deliberately not rebuilt by this task.
 - Impeccable layout detector on the changed CSS — `[]` (no findings).
 - `git diff --check` — passed.
 - Playwright visible-browser render at 1440×900 and 390×844 — passed.
@@ -95,7 +98,7 @@ None.
 - Keyboard traversal — Services opens from keyboard focus; all 16 panel links are visible and focusable with a solid focus outline.
 - Representative link requests — `/services/`, `/services/bathroom-renovations/`, `/services/bathroom-renovations/hills-district/`, and `/services/bathroom-renovations/baulkham-hills/` all returned 200.
 - Independent layout assessment — confirmed the data/source order was correct and the defect was structural CSS alignment.
-- Independent visual review — verified the desktop alignment correction and unchanged mobile parent/child hierarchy. Initial false positives were traced to an invalid full-page capture state; evidence was recaptured in the normal page state with reduced motion.
+- Independent final visual review — PASS, with no P0/P1 remaining. It verified the shared desktop axis and unchanged mobile parent/child hierarchy. Initial false positives were traced to invalid capture states; evidence was recaptured in the normal page state with reduced motion and a fixed live-panel clip.
 
 ## 11. Performance Impact
 
@@ -133,7 +136,7 @@ None.
 - Preserve the shared equal-column relationship between top-level service links and service-area suburb links.
 - Do not reintroduce whole-group newspaper columns or a fixed 185 px first track without new rendered evidence.
 - Keep `SiteHeader.tsx` server-rendered and the existing canonical data helpers/client boundary intact.
-- Use the evidence folder for the exact before/after comparison.
+- Use `session-history/evidence/2026-11-02-services-menu-closeout/` for the exact before/after comparison; the older evidence folder is superseded.
 
 ## 16. Potential Documentation Updates
 

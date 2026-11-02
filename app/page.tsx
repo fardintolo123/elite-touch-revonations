@@ -431,7 +431,9 @@ export default function HomePage() {
         <div className="et-container">
           <div className={styles.services}>
             <figure className={styles.servicesPhoto}>
-              <div>
+              {/* The photo sits to the RIGHT of the service list on desktop, so
+                  its left edge is the shared one and gets the fade (D-170). */}
+              <div className="et-image-fade" data-fade="left">
                 <Image
                   src={servicesImage.src}
                   alt={servicesImage.alt}

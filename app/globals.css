@@ -822,6 +822,30 @@ svg {
   border-top: 1px solid var(--et-border);
 }
 
+/* The blog quick-answer table has two columns, so on a phone it fits the
+   card instead of scrolling the answer column off-screen. Wider tables
+   (packages, services) keep the §8.11 scroll behaviour. */
+@media (max-width: 767px) {
+  .et-blog-quick-answer .et-table {
+    min-width: 0;
+  }
+
+  .et-blog-quick-answer .et-table thead th:first-child,
+  .et-blog-quick-answer .et-table tbody th {
+    position: static;
+  }
+
+  .et-blog-quick-answer .et-table tbody th {
+    width: 58%;
+    min-width: 0;
+  }
+
+  .et-blog-quick-answer .et-table th,
+  .et-blog-quick-answer .et-table td {
+    padding: var(--et-space-4);
+  }
+}
+
 /* §8.8 Icon tile — the process/feature marker */
 .et-icon-tile {
   display: inline-flex;
@@ -1234,15 +1258,97 @@ svg {
   color: var(--et-text-muted);
   font-size: var(--et-text-caption);
 }
+/* Eight short topic rows, not 78 headlines (D-168) — one narrow column reads
+   faster than a wide two-column grid of two-word labels. */
 .et-nav-panel-blogs {
-  width: min(720px, calc(100vw - (var(--et-gutter) * 2)));
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(320px, calc(100vw - (var(--et-gutter) * 2)));
+  grid-template-columns: minmax(0, 1fr);
+}
+.et-nav-panel-blogs a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--et-space-4);
+}
+/* The count is a fact (how many guides are in this group), not decoration —
+   DISTINCTIVE_DESIGN_CHECKLIST.md §3 pattern 3. */
+.et-nav-panel-count {
+  color: var(--et-text-muted);
+  font-size: var(--et-text-caption);
+  font-variant-numeric: tabular-nums;
 }
 .et-nav-panel-gallery {
   width: min(400px, calc(100vw - (var(--et-gutter) * 2)));
 }
 .et-nav-panel-compact {
   width: 220px;
+}
+
+/* ==========================================================================
+   FAQ accordion (components/FaqList.tsx, D-169)
+   One tightened row per question instead of a card per question. The question
+   sits at body size with 600 weight — it is a control, not a heading, and at
+   `et-h4` it fought the section's own H2 on /packages/. Rows are separated by
+   a hairline rather than by card padding, so eight questions read as one list.
+   ========================================================================== */
+
+.et-faq {
+  display: grid;
+  border-top: 1px solid var(--et-border);
+}
+.et-faq-item {
+  border-bottom: 1px solid var(--et-border);
+}
+.et-faq-question {
+  display: flex;
+  min-height: 44px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--et-space-4);
+  padding-block: var(--et-space-4);
+  color: var(--et-text-primary);
+  font-size: var(--et-text-body);
+  font-weight: 600;
+  line-height: 1.45;
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--et-duration-instant) var(--et-ease-standard);
+}
+.et-faq-question::-webkit-details-marker {
+  display: none;
+}
+.et-faq-question:hover {
+  color: var(--et-text-accent);
+}
+/* Chevron, drawn from the same two borders the nav disclosures use so the
+   whole site has one disclosure affordance. */
+.et-faq-question::after {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.25em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: '';
+  opacity: 0.55;
+  transform: rotate(45deg);
+  transition: transform var(--et-duration-fast) var(--et-ease-standard);
+}
+.et-faq-item[open] > .et-faq-question::after {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+.et-faq-answer {
+  max-width: 68ch;
+  padding-bottom: var(--et-space-5);
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-sm);
+  line-height: 1.6;
+}
+@media (prefers-reduced-motion: reduce) {
+  .et-faq-question::after {
+    transition: none;
+  }
 }
 
 .et-header-actions {
@@ -1419,6 +1525,84 @@ svg {
     padding-block: var(--et-space-24) var(--et-space-30);
   }
 }
+/* ==========================================================================
+   Backdrop hero (DESIGN.md §4.4 "Hero": full-bleed image + ink scrim) — D-171.
+   Breaks the container to span 100vw while its CONTENT stays on
+   `container-max`, per DESIGN.md §3's full-bleed rule.
+   ========================================================================== */
+
+.et-hero-backdrop {
+  position: relative;
+  display: grid;
+  isolation: isolate;
+  min-height: 420px;
+  align-items: end;
+  overflow: hidden;
+  background: var(--et-ink-900);
+  padding-block: var(--et-space-16) var(--et-space-12);
+}
+@media (min-width: 1024px) {
+  .et-hero-backdrop {
+    min-height: 560px;
+    padding-block: var(--et-space-24) var(--et-space-16);
+  }
+}
+.et-hero-backdrop-photo {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+}
+.et-hero-backdrop-photo img {
+  object-fit: cover;
+  object-position: center;
+}
+/* The SAME scrim the suburb heroes already use (`.et-location-hero-media::after`),
+   deliberately not a second recipe. A 90deg wash that is heaviest on the left
+   suits left-aligned copy over white tile far better than DESIGN.md §9's
+   bottom-up gradient, and §9's instruction is to test against the lightest
+   point of the real asset — which is what set these stops. */
+.et-hero-backdrop-scrim {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 20, 22, 0.96) 0%,
+    rgba(20, 20, 22, 0.82) 42%,
+    rgba(20, 20, 22, 0.38) 100%
+  );
+}
+.et-hero-backdrop-content {
+  position: relative;
+}
+/* Literal white, not `--et-text-inverse`, and for the same reason
+   `.et-location-hero-content .et-h1` is: that token flips to near-black under
+   `prefers-color-scheme: dark`, but a photo behind an ink scrim is dark in
+   BOTH schemes, so the token would put dark text on a dark hero. */
+.et-hero-backdrop .et-h1 {
+  color: #ffffff;
+  text-wrap: balance;
+}
+.et-hero-backdrop .et-lead {
+  color: rgba(255, 255, 255, 0.92);
+  text-wrap: pretty;
+}
+.et-hero-backdrop .et-fact {
+  color: rgba(255, 255, 255, 0.92);
+}
+.et-hero-backdrop .et-fact strong {
+  color: #ffffff;
+}
+.et-hero-backdrop-credit {
+  margin-top: var(--et-space-6);
+}
+/* The hero's own photo is the page's evidence, so the "see the project" link
+   must stay legible on the scrim rather than inheriting muted body colour. */
+.et-hero-backdrop .et-hero-backdrop-credit .et-link {
+  color: var(--et-text-inverse);
+  text-decoration-color: color-mix(in srgb, var(--et-text-inverse) 55%, transparent);
+}
+
 .et-hero-grid {
   display: grid;
   gap: var(--et-space-12);
@@ -1515,12 +1699,14 @@ form [role='status'] {
 .et-location-hero-back:hover {
   text-decoration-color: #ffffff;
 }
-.et-location-hero .et-eyebrow-on-image {
+.et-location-hero .et-eyebrow-on-image,
+.et-hero-backdrop .et-eyebrow {
   margin-top: var(--et-space-7);
   background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
 }
-.et-location-hero .et-eyebrow-on-image::before {
+.et-location-hero .et-eyebrow-on-image::before,
+.et-hero-backdrop .et-eyebrow::before {
   background: var(--et-magenta-400);
 }
 .et-location-hero-caption {
@@ -1536,12 +1722,14 @@ form [role='status'] {
   margin-top: var(--et-space-5);
   gap: var(--et-space-4);
 }
-.et-location-hero .et-btn-secondary {
+.et-location-hero .et-btn-secondary,
+.et-hero-backdrop .et-btn-secondary {
   border-color: rgba(255, 255, 255, 0.6);
   background: rgba(20, 20, 22, 0.28);
   color: #ffffff;
 }
-.et-location-hero .et-btn-secondary:hover {
+.et-location-hero .et-btn-secondary:hover,
+.et-hero-backdrop .et-btn-secondary:hover {
   border-color: #ffffff;
   background: rgba(20, 20, 22, 0.55);
 }
@@ -1868,6 +2056,59 @@ form [role='status'] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ==========================================================================
+   Image surface fade (D-170) — ported from 4 Elements Painting's
+   `ImageSurfaceFade`, which the owner asked for by name.
+   Blends only the edge a photo SHARES with an adjacent content column, so the
+   photograph itself is untouched and dissolves into the band instead of
+   stopping at a hard rectangle.
+
+   Not a decorative gradient (DISTINCTIVE_DESIGN_CHECKLIST.md §3 pattern 1):
+   it has no colour of its own. `--et-image-fade-to` must be set to the band's
+   own background by the use site, or the seam shows. Default is `surface`
+   because both current use sites sit on `.et-band-surface`.
+
+   Desktop only. Below 1024px these layouts stack, the shared edge no longer
+   exists, and a fade would just erase a third of the photo on a phone — the
+   same `lg:` gate 4EP uses.
+   ========================================================================== */
+
+.et-image-fade {
+  position: relative;
+  isolation: isolate;
+}
+.et-image-fade::after {
+  position: absolute;
+  z-index: 1;
+  inset-block: 0;
+  width: 33%;
+  content: '';
+  pointer-events: none;
+}
+.et-image-fade[data-fade='left']::after {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--et-image-fade-to, var(--et-surface)),
+    color-mix(in srgb, var(--et-image-fade-to, var(--et-surface)) 70%, transparent),
+    transparent
+  );
+}
+.et-image-fade[data-fade='right']::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--et-image-fade-to, var(--et-surface)),
+    color-mix(in srgb, var(--et-image-fade-to, var(--et-surface)) 70%, transparent),
+    transparent
+  );
+}
+@media (max-width: 1023px) {
+  .et-image-fade::after {
+    content: none;
+  }
 }
 
 /* Full-bleed image band (DESIGN.md §4.4 "Image band") */

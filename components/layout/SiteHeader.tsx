@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo, services } from '@/lib/businessInfo'
+import { blogTopics } from '@/lib/blog'
 import { publishedRegions, publishedSuburbs } from '@/lib/locations'
 import { HoverNavMenu } from './HoverNavMenu'
 
@@ -124,6 +125,49 @@ function AboutHoverMenu() {
   )
 }
 
+/*
+ * Blogs menu (D-168). The owner reported hovering "Blogs" and seeing nothing:
+ * there was no panel at all — `ad6d3fa` deleted the per-post version because
+ * repeating 78 long headlines in sitewide chrome failed the readability gate
+ * on every page.
+ *
+ * This lists the seven topic groups instead, each linking to that group's
+ * existing anchor on `/blog/`. Short interface labels, no new routes, and the
+ * groups come from `blogTopics` so the menu cannot drift from the index.
+ */
+function BlogsPanel() {
+  return (
+    <div className="et-nav-panel et-nav-panel-blogs">
+      <Link href="/blog/" className="et-nav-panel-index">
+        All guides
+      </Link>
+      {blogTopics.map((topic) => (
+        <Link key={topic.id} href={`/blog/#${topic.id}`}>
+          {topic.category}
+          <span className="et-nav-panel-count">{topic.posts.length}</span>
+        </Link>
+      ))}
+    </div>
+  )
+}
+
+function BlogsMenu() {
+  return (
+    <details className="et-nav-menu" name="primary-nav">
+      <summary>Blogs</summary>
+      <BlogsPanel />
+    </details>
+  )
+}
+
+function BlogsHoverMenu() {
+  return (
+    <HoverNavMenu href="/blog/" label="Blogs">
+      <BlogsPanel />
+    </HoverNavMenu>
+  )
+}
+
 function DesktopNavigationItems() {
   return (
     <>
@@ -131,7 +175,7 @@ function DesktopNavigationItems() {
       <Link href="/">Home</Link>
       <ServicesHoverMenu />
       <Link href="/packages/">Packages</Link>
-      <Link href="/blog/">Blogs</Link>
+      <BlogsHoverMenu />
       <Link href="/gallery/">Gallery</Link>
       <AboutHoverMenu />
       <Link href="/contact-us/">Contact</Link>
@@ -145,7 +189,7 @@ function MobileNavigationItems() {
       <Link href="/">Home</Link>
       <ServicesMenu />
       <Link href="/packages/">Packages</Link>
-      <Link href="/blog/">Blogs</Link>
+      <BlogsMenu />
       <Link href="/gallery/">Gallery</Link>
       <AboutMenu />
       <Link href="/contact-us/">Contact</Link>

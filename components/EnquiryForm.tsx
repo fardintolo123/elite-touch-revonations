@@ -97,6 +97,43 @@ async function compressPhoto(file: File): Promise<File | null> {
  * in here, so none of it depends on client hydration to reach a crawler.
  */
 
+/**
+ * TWO-STEP FLOW (D-172). The owner asked for 4 Elements Painting's shorter,
+ * step-based form: there, step 1 is a one-click service picker and step 2 is
+ * contact details, with a "Step 1 of 2" progress bar. This form had the same
+ * eight fields in one column, with the room choice buried mid-form as a
+ * `<select>` below three required text inputs.
+ *
+ * WHY BOTH STEPS ARE ALWAYS IN THE DOM. Step 1 only *hides* step 2 with CSS,
+ * driven by `data-enhanced`/`data-current-step` on the form — the same idiom as
+ * `HoverNavMenu`. The server action is reached by a real form submission and
+ * `useActionState` progressively enhances it, so with JavaScript off or before
+ * hydration the visitor sees one ordinary long form that still submits and
+ * still validates server-side. Nothing is conditionally mounted; a step behind
+ * client state would drop fields out of the submitted FormData.
+ */
+const TOTAL_STEPS = 2
+
+const STEP_TITLES = [
+  'What are you renovating?',
+  'How should we reach you about your free measure?',
+] as const
+
+/**
+ * Step 1's choices. The four services come from `businessInfo` — never a hand
+ * written list, or the form drifts from the four services the business
+ * actually offers (CLAUDE.md Business Rules). "Not sure yet" is kept because
+ * the field is optional and was the old `<select>`'s default: a visitor who
+ * does not know which room category they need must still be able to continue.
+ */
+const ROOM_CHOICES = [
+  ...services.map((service) => ({
+    value: service.title,
+    label: service.title.replace(/ Renovations$/, ''),
+  })),
+  { value: '', label: 'Not sure yet' },
+]
+
 function SubmitButton({ waitingOnPhotos, sent }: { waitingOnPhotos: boolean; sent: boolean }) {
   const { pending } = useFormStatus()
   return (
@@ -123,13 +160,49 @@ export function EnquiryForm() {
   )
   const [preparingPhotos, setPreparingPhotos] = useState(false)
   const [photoNotice, setPhotoNotice] = useState<string | null>(null)
-  const serviceRef = useRef<HTMLSelectElement>(null)
+  const [enhanced, setEnhanced] = useState(false)
+  const [step, setStep] = useState(1)
+  const formRef = useRef<HTMLFormElement>(null)
   const statusRef = useRef<HTMLDivElement>(null)
+
+  // Hydration flag. Until this runs, the form renders as one plain column and
+  // the step CSS does nothing — see the TWO-STEP FLOW note above.
+  useEffect(() => {
+    setEnhanced(true)
+  }, [])
+
+  /** Step 1: one tap records the room and moves on, exactly as 4EP's does. */
+  function handleRoomChoice() {
+    trackEvent('form_step_complete', { step: 1, step_name: 'room' })
+    setStep(2)
+  }
+
+  function goBack() {
+    trackEvent('form_step_back', { step })
+    setStep(1)
+  }
+
+  /**
+   * Pre-selects the radio that matches `service`. The hero's room chips call
+   * `startEnquiry(service)`, and before the two-step flow this wrote straight
+   * to the `<select>`'s value. The radios are uncontrolled for the same reason
+   * the rest of the form is (a validation error must not wipe the answers), so
+   * the DOM node is still what gets set.
+   */
+  function selectRoom(service: string) {
+    const input = formRef.current?.querySelector<HTMLInputElement>(
+      `input[name="service"][value="${CSS.escape(service)}"]`
+    )
+    if (input) input.checked = true
+  }
 
   useEffect(() => listenForEnquiryStart((service) => {
     if (service !== '' && !services.some((item) => item.title === service)) return
-    if (!isPending && state.status !== 'success' && service && serviceRef.current) {
-      serviceRef.current.value = service
+    if (!isPending && state.status !== 'success') {
+      // The visitor already answered step 1 in the hero, so land them on the
+      // contact step instead of asking the same question twice.
+      if (service) selectRoom(service)
+      setStep(2)
     }
     const target = state.status === 'success'
       ? statusRef.current
@@ -158,6 +231,13 @@ export function EnquiryForm() {
   function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     if (isPending || preparingPhotos || state.status === 'success') {
       event.preventDefault()
+      return
+    }
+    // Only the last step submits. Without this an implicit submission (Enter in
+    // a field, or a stray submit button) could post an empty contact step.
+    if (enhanced && step < TOTAL_STEPS) {
+      event.preventDefault()
+      setStep(step + 1)
       return
     }
     submittedRef.current = true
@@ -225,8 +305,11 @@ export function EnquiryForm() {
 
   return (
     <form
+      ref={formRef}
       action={formAction}
       className="et-stack"
+      data-enhanced={enhanced}
+      data-current-step={step}
       noValidate
       onFocus={handleFormFocus}
       onSubmit={handleFormSubmit}
@@ -239,6 +322,67 @@ export function EnquiryForm() {
         <label htmlFor="company">Company</label>
         <input id="company" name="company" tabIndex={-1} autoComplete="off" />
       </div>
+
+      {/* Progress. Only truthful once the step flow is actually running, so it
+          is hidden (and removed from the a11y tree) until `enhanced`. */}
+      <div className={styles.progress} hidden={!enhanced}>
+        <div className={styles.progressHead}>
+          <p className="et-label">Step {step} of {TOTAL_STEPS}</p>
+          <p className="et-body-sm" style={{ color: 'var(--et-text-secondary)' }}>
+            Name, phone and email only
+          </p>
+        </div>
+        <div
+          className={styles.progressTrack}
+          role="progressbar"
+          aria-valuenow={step}
+          aria-valuemin={1}
+          aria-valuemax={TOTAL_STEPS}
+          aria-label={`Step ${step} of ${TOTAL_STEPS}`}
+        >
+          <div
+            className={styles.progressFill}
+            style={{ inlineSize: `${(step / TOTAL_STEPS) * 100}%` }}
+          />
+        </div>
+      </div>
+      <p aria-live="polite" className="et-visually-hidden">
+        {enhanced ? `Step ${step} of ${TOTAL_STEPS}: ${STEP_TITLES[step - 1]}` : ''}
+      </p>
+
+      <div className={styles.step} data-step="1">
+        <fieldset className={styles.timingFieldset}>
+          <legend className={`et-label ${styles.timingLegend}`}>
+            {STEP_TITLES[0]}
+          </legend>
+          <p className="et-field-help" style={{ marginTop: 'var(--et-space-1)' }}>
+            One tap. You can change it later, and you can skip it.
+          </p>
+          <div className={styles.roomOptions}>
+            {ROOM_CHOICES.map((choice) => {
+              const id = `service-${choice.value === '' ? 'unsure' : choice.value.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+
+              return (
+                <div className={styles.timingChoice} key={id}>
+                  <input
+                    className={styles.timingInput}
+                    id={id}
+                    name="service"
+                    type="radio"
+                    value={choice.value}
+                    onChange={handleRoomChoice}
+                  />
+                  <label className={styles.timingChoiceLabel} htmlFor={id}>
+                    {choice.label}
+                  </label>
+                </div>
+              )
+            })}
+          </div>
+        </fieldset>
+      </div>
+
+      <div className={styles.step} data-step="2">
 
       <div className="et-field">
         <label className="et-label" htmlFor="name">
@@ -344,20 +488,6 @@ export function EnquiryForm() {
         />
       </div>
 
-      <div className="et-field">
-        <label className="et-label" htmlFor="service">
-          What are you renovating? <span>(optional)</span>
-        </label>
-        <select ref={serviceRef} className="et-select" id="service" name="service" defaultValue="">
-          <option value="">Not sure yet</option>
-          {services.map((service) => (
-            <option key={service.slug} value={service.title}>
-              {service.title}
-            </option>
-          ))}
-        </select>
-      </div>
-
       <fieldset className={styles.timingFieldset}>
         <legend className={`et-label ${styles.timingLegend}`}>
           When would you like to start? <span>(optional)</span>
@@ -433,6 +563,7 @@ export function EnquiryForm() {
           </div>
         </div>
       </details>
+      </div>
 
       {state.status !== 'idle' && state.message && (
         <div
@@ -491,7 +622,31 @@ export function EnquiryForm() {
         </div>
       )}
 
-      <SubmitButton waitingOnPhotos={preparingPhotos} sent={state.status === 'success'} />
+      <div className={styles.stepNav}>
+        {/* Back/Next exist only for the enhanced flow. With no JavaScript the
+            whole form is one column and these would navigate nothing. */}
+        {enhanced && step > 1 && (
+          <button
+            type="button"
+            className="et-btn et-btn-lg et-btn-secondary"
+            onClick={goBack}
+          >
+            Back
+          </button>
+        )}
+        {enhanced && step < TOTAL_STEPS && (
+          <button
+            type="button"
+            className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
+            onClick={() => setStep(step + 1)}
+          >
+            Skip - I am not sure yet
+          </button>
+        )}
+        {(!enhanced || step === TOTAL_STEPS) && (
+          <SubmitButton waitingOnPhotos={preparingPhotos} sent={state.status === 'success'} />
+        )}
+      </div>
     </form>
   )
 }
