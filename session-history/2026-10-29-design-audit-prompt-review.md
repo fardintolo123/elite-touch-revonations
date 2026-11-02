@@ -326,3 +326,25 @@ deploy.
 - Console on live: a 403 on the background `/contact-us/?_rsc=` prefetch. That is the Cloudflare
   non-AU challenge (pre-existing, outside Australia only), plus the known GA4 CSP blocks.
 - Posted results to #74 (left open for the owner) and shared findings to #78.
+
+## Part 7 (2026-11-02): GA4 CSP fix and review of the unpushed services-menu commit
+- **GA4 was not recording.** The live CSP blocked `region1.analytics.google.com/g/collect` and
+  `stats.g.doubleclick.net/g/collect`. `dataLayer` got `phone_call_click`, but no hit left the
+  browser. Fixed in `next.config.ts` `connect-src` by adding `https://*.analytics.google.com` and
+  `https://*.g.doubleclick.net` only (**D-162**).
+- **How it was verified, and a lesson:** Playwright `route()` interception did not see the gtag
+  collect requests, so it looked as if nothing was sent (and up to two localhost test hits may have
+  reached GA4). The reliable method is to launch Chromium with
+  `--host-resolver-rules=MAP *.analytics.google.com 127.0.0.1:9, ...` and watch `requestfailed`
+  plus CSP console errors. Old CSP: 2 blocked. New CSP: 0 blocked, and both collectors attempted.
+- **Unpushed commit 47aeac1** (a VS Code "1" commit, 2026-11-01): a services-menu CSS change in
+  `app/globals.css`, plus 8 evidence PNGs in `session-history/evidence/2026-10-30-services-menu/`
+  whose before and after files are **byte-identical** (so they proved nothing). Re-verified here:
+  region suburbs now start on the service links' second column (x 593 px vs 492 px before); no
+  overflow at 1440 or 390. Safe to deploy.
+- **Concurrency on 2026-11-02:** sessions for #75, #76, #77, #78 and #79 were all editing the tree.
+  `DECISIONS.md` held **two different D-161 rows** from two sessions (duplicate IDs) and one of them
+  sits inside section 4's "Open" table. D-162 was committed by staging only its own row
+  (`git hash-object` + `git update-index --cacheinfo`), leaving the others' uncommitted lines alone.
+- The isolated build is in `D:/1/etr-ga-build` (HEAD + the CSP change; contains `.env.local`).
+  Delete it after the deploy check.

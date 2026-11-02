@@ -104,7 +104,10 @@ const cspHeader = [
   "form-action 'self'",
   `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com`,
   "script-src-attr 'none'",
-  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com",
+  // GA4 sends hits to regional `*.analytics.google.com` collectors and, with Google signals on, to
+  // `stats.g.doubleclick.net`. Both were blocked live on 2026-10-29, so GA4 recorded nothing. Google's
+  // GTM CSP guide lists both; nothing broader is allowed.
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.googletagmanager.com",
   "img-src 'self' data: blob: https:",
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self'",
