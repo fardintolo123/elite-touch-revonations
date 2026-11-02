@@ -21,7 +21,8 @@ Actions workflow, and the requested documentation updates.
   mismatch; corrected the baseline locally and confirmed the scanner passes.
 - A separate concurrent commit `e7922ea` reached `origin/main` independently. The correction can
   now be committed and pushed without including that unrelated work.
-- Left issue #79 open pending a green workflow run.
+- Corrected the baseline in `00abd0a`; the follow-up GitHub Actions run 41396719080 passed.
+- Left issue #79 open; closure was not requested.
 
 ## 3. Important Decisions
 
@@ -66,6 +67,7 @@ Actions workflow, and the requested documentation updates.
 - The first GitHub Actions run (41395768808) failed because the pushed source had four more existing
   `app/globals.css` hard-coded-hex hits than the baseline. This was source drift between the original
   scan and the `main` commit, not a scanner execution error. The baseline was corrected to 33.
+- Follow-up run 41396719080 passed on commit `00abd0a`.
 - Another local session added commit `e7922ea` after the issue #79 push. It contains unrelated work
   across issues #75/#76 and screenshots; it has since reached `origin/main` separately.
 
@@ -101,8 +103,9 @@ None.
 - Temporary phrase baseline check — expected failure at `lib/blog.ts:1210`; the quoted review text
   did not appear as a hit. Baseline restored and final scanner check passed.
 - First GitHub Actions run 41395768808 — failed due to four additional existing `app/globals.css`
-  color literals on the pushed source; baseline corrected afterward. A follow-up remote run is still
-  required.
+  color literals on the pushed source; the baseline was corrected to 33.
+- Follow-up GitHub Actions run 41396719080 on `00abd0a` — passed, including `npm ci --ignore-scripts`
+  and `npm run check:design`.
 - `git diff --check` on the edited documentation and package manifest — passed.
 - `package-lock.json` and `app/globals.css` have no net changes.
 - No build, type check, or browser test was performed.
@@ -120,14 +123,11 @@ None. No pages, copy, metadata, schema, links, or indexation settings were chang
 
 ### High Priority
 
-- Push the corrected baseline and this updated handoff. Concurrent commit `e7922ea` is already on
-  `origin/main`, so the correction can be pushed without including unpushed unrelated commits.
-- Verify that the follow-up GitHub Actions run passes.
+None.
 
 ### Medium Priority
 
-- Keep issue #79 open until its remaining CI evidence is available. Do not close it unless explicitly
-  requested.
+- Issue #79 is verified and ready to close, but remains open because closure was not requested.
 
 ### Low Priority
 
@@ -141,7 +141,7 @@ None. The owner authorized proceeding with the commit and push.
 
 - First inspect `git status --short` and preserve concurrent work.
 - Run `npm run check:design` after any scanner or baseline changes.
-- Inspect the workflow run triggered by the baseline correction and report its result.
+- The scanner and CI passed; no further implementation is pending for #79.
 - Do not alter the baseline without a reason, or edit the existing unrelated `lib/blog.ts` and plan
   changes unless separately requested.
 - Do not close issue #79 without explicit owner instruction.
