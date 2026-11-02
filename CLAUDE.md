@@ -509,6 +509,9 @@ came from, it is not ready to open.
 
 - The build must be green before commit. Treat a **drop** in the route count as the red flag; don't
   pin an exact total.
+- Run `npm run check:design` to ratchet the mechanical signals in
+  `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §3. Eyebrow counts are advisory; when a justified change
+  raises another baseline count, use `npm run check:design -- --update-baseline --reason "..."`.
 - **Never run two builds against the same build directory at once.** Concurrent builds corrupt each
   other and fail with misleading errors that look exactly like code faults.
 - **A server can become stale or corrupt underneath you.** Use a fresh production build and a

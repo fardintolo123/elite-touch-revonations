@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "reason": "Initialize per-file pattern counts, including zero-use route eyebrow counts; exempt quoted reviews and existing literal copy as required by the checklist.",
+  "patterns": {
+    "decorative-gradient": {
+      "app/globals.css": 2,
+      "components/XRayLens.module.css": 1
+    },
+    "et-eyebrow": {
+      "app/about-us/page.tsx": 4,
+      "app/blog/[slug]/page.tsx": 1,
+      "app/blog/page.tsx": 1,
+      "app/contact-us/page.tsx": 2,
+      "app/gallery/[slug]/page.tsx": 5,
+      "app/gallery/page.tsx": 3,
+      "app/packages/page.tsx": 4,
+      "app/page.tsx": 2,
+      "app/privacy/page.tsx": 0,
+      "app/services/[slug]/[location]/page.tsx": 14,
+      "app/services/[slug]/page.tsx": 6,
+      "app/services/page.tsx": 0,
+      "app/terms/page.tsx": 0
+    },
+    "generic-phrase": {
+      "lib/blog.ts": 3
+    },
+    "hard-coded-hex": {
+      "app/globals.css": 29,
+      "components/EnquiryForm.tsx": 1,
+      "components/layout/SiteFooter.tsx": 3,
+      "components/XRayLens.module.css": 1
+    },
+    "hard-coded-radius": {
+      "app/globals.css": 1,
+      "components/XRayLens.module.css": 1
+    },
+    "motion": {
+      "app/globals.css": 8
+    }
+  }
+}

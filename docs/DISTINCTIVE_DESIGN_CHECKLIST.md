@@ -117,8 +117,9 @@ preferences.
 
 Required before a design change or audit issue is "done":
 - [ ] **Before and after screenshots** at 390 and 1440, attached to the issue or PR.
-- [ ] **The pattern scan** (§3 signals) finds no new hits. Use `npm run check:design` once #79
-      lands; until then, grep the signals in §3.
+- [ ] **The pattern scan** (§3 signals) finds no counts above the committed baseline:
+      `npm run check:design`. To deliberately raise the baseline, use
+      `npm run check:design -- --update-baseline --reason "why the new pattern is justified"`.
 - [ ] **An independent critique** reports no remaining P0/P1 findings.
 - [ ] **Conversion rules pass:** service + location in the H1, tap-to-call visible on mobile, real
       proof visible early, call tracking intact.
@@ -146,7 +147,7 @@ Each issue edits only its own row below. Status: `open` → `audited` → `fixed
 | Proof + company pages | `/gallery`, 11 × `/gallery/[slug]`, `/packages`, `/about-us`, `/contact-us` | #76 | open |
 | Blog | `/blog`, `/blog/[slug]` | #77 | open |
 | Sitewide chrome + shared components | header, footer, `ContactSection`, `EnquiryForm`, `PageHero`, `WorkStrip`, `GoogleRating`, `AreasServedLinks`, reveal motion, `globals.css` | #78 | open |
-| Prevention | `npm run check:design` scanner + workflow | #79 | open |
+| Prevention | `npm run check:design` scanner + workflow | #79 | verified |
 
 ## 9. Baseline at adoption (source scan, 2026-10-28)
 
