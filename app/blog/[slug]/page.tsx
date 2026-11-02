@@ -6,8 +6,10 @@ import { PageHero } from '@/components/PageHero'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { buildMetadata } from '@/lib/metadata'
 import { blogPosts, getBlogPost } from '@/lib/blog'
+import { businessInfo } from '@/lib/businessInfo'
 import { formatDayMonthYear } from '@/lib/dateLabels'
 import { projectBySlug } from '@/lib/projects'
+import { FaqList } from '@/components/FaqList'
 import styles from '../blog.module.css'
 
 export function generateStaticParams() {
@@ -120,29 +122,40 @@ export default async function BlogPostPage({
                   <section>
                     <span className="et-eyebrow">FAQ</span>
                     <h2 className="et-h2">Frequently asked questions</h2>
-                    <div
-                      className="et-stack"
-                      style={{ marginTop: 'var(--et-space-4)', gap: 'var(--et-space-4)' }}
-                    >
-                      {post.faq.map((item) => (
-                        <details key={item.question} className="et-card">
-                          <summary className="et-h4" style={{ cursor: 'pointer' }}>
-                            {item.question}
-                          </summary>
-                          <p
-                            className="et-body-sm"
-                            style={{
-                              marginTop: 'var(--et-space-4)',
-                              color: 'var(--et-text-secondary)',
-                            }}
-                          >
-                            {item.answer}
-                          </p>
-                        </details>
-                      ))}
+                    <div style={{ marginTop: 'var(--et-space-4)' }}>
+                      <FaqList items={post.faq} />
                     </div>
                   </section>
                 )}
+                {/*
+                  Author/publisher attribution. The guides are published by the
+                  business, not by a named individual, so the block names the
+                  real people behind it and the real licence rather than
+                  inventing a personal byline (CLAUDE.md Business Rules).
+
+                  Keep the sentences short and the words plain: this renders on
+                  every one of the blog posts, and a shared block with long
+                  words is the documented way this site's Flesch gate has been
+                  tanked before.
+                */}
+                <section className={styles.postByline} aria-labelledby="post-publisher">
+                  <h2 id="post-publisher" className="et-h4">Who writes these guides</h2>
+                  <p className="et-body-sm">
+                    {`${businessInfo.name} is a family business in Sydney. Four of the Dawood family run it: Omar, Adam, Farah and Mohammed. We only work on bathrooms, ensuites, powder rooms and laundries.`}
+                  </p>
+                  <p className="et-body-sm">
+                    {`Omar holds NSW Builder Licence ${businessInfo.builderLicence}. Adam is a licensed tiler with more than 25 years on site. Farah plans the layout and the finishes. Mohammed helps run the job.`}
+                  </p>
+                  <p className="et-body-sm">
+                    {`We write these guides from the work we do. First published ${formatDayMonthYear(post.published)}.${post.updated ? ` Last revised ${formatDayMonthYear(post.updated)}.` : ''} `}
+                    <Link href="/about-us/" className="et-link">Meet the team</Link>
+                    {' or call us on '}
+                    <a href={businessInfo.phone.href} className="et-link">
+                      {businessInfo.phone.display}
+                    </a>
+                    .
+                  </p>
+                </section>
               </div>
             </div>
           </div>
@@ -160,6 +173,18 @@ export default async function BlogPostPage({
           { name: post.title, url: `/blog/${post.slug}/` },
         ]}
         faqs={post.faq}
+        primaryImage={
+          heroProject
+            ? heroProject.images[post.heroProject?.imageIndex ?? 0]
+            : undefined
+        }
+        article={{
+          headline: post.title,
+          description: post.description,
+          datePublished: post.published,
+          dateModified: post.updated,
+          section: post.category,
+        }}
       />
     </>
   )

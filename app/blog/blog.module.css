@@ -111,3 +111,16 @@
     column-gap: var(--et-space-10);
   }
 }
+
+/* Author/publisher attribution at the foot of a post.
+   A top rule, not a third card — the post already ends with FAQ cards, and
+   stacking another card is the "same section composition repeated" pattern
+   docs/DISTINCTIVE_DESIGN_CHECKLIST.md §3 flags. */
+.postByline {
+  display: grid;
+  gap: var(--et-space-3);
+  margin-top: var(--et-space-10);
+  padding-top: var(--et-space-6);
+  border-top: 1px solid var(--et-border);
+  color: var(--et-text-secondary);
+}

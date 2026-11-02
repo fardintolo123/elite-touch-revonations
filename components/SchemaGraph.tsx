@@ -2,6 +2,7 @@ import {
   buildPageGraph,
   jsonLd,
   type PageSchemaType,
+  type SchemaArticle,
   type SchemaCrumb,
   type SchemaFaqItem,
   type SchemaImage,
@@ -22,6 +23,7 @@ export function SchemaGraph({
   service,
   hubService,
   suburbService,
+  article,
 }: {
   path: string
   name: string
@@ -34,6 +36,7 @@ export function SchemaGraph({
   service?: Service
   hubService?: { service: Service; region: Region }
   suburbService?: { service: Service; suburb: Suburb }
+  article?: SchemaArticle
 }) {
   const graph = buildPageGraph({
     path,
@@ -47,6 +50,7 @@ export function SchemaGraph({
     service,
     hubService,
     suburbService,
+    article,
   })
 
   return (

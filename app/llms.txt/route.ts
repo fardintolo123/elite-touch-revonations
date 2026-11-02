@@ -1,4 +1,5 @@
 import { businessInfo, services } from '@/lib/businessInfo'
+import { blogPosts } from '@/lib/blog'
 import { projects } from '@/lib/projects'
 import { LOCATION_PARENT_SLUG, publishedRegions } from '@/lib/locations'
 
@@ -81,6 +82,22 @@ export async function GET() {
     lines.push(
       `- [${project.name}](${base}/gallery/${project.slug}/): ${project.blurb}`
     )
+  }
+  lines.push('')
+
+  /*
+   * The guides were missing here until 2026-11-02, so an answer engine reading
+   * this file saw a 15-page site instead of the published depth. Descriptions
+   * are each post's own `description` - the same string its meta description
+   * and index card already use - so this file still cannot say anything the
+   * site itself does not.
+   */
+  lines.push('## Guides')
+  lines.push(
+    `- [Bathroom Renovation Advice, Sydney](${base}/blog/): Practical bathroom renovation advice for Sydney homeowners, from ${businessInfo.name}.`
+  )
+  for (const post of blogPosts) {
+    lines.push(`- [${post.title}](${base}/blog/${post.slug}/): ${post.description}`)
   }
 
   const body = lines.join('\n') + '\n'

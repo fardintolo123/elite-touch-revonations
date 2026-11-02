@@ -11,6 +11,16 @@ export type PageSchemaType =
 
 export type SchemaCrumb = { name: string; url: string }
 export type SchemaFaqItem = { question: string; answer: string }
+export type SchemaArticle = {
+  headline: string
+  description?: string
+  /** ISO date the post was first published. Required — never a build date. */
+  datePublished: string
+  /** ISO date of a genuine content revision. Falls back to `datePublished`. */
+  dateModified?: string
+  /** The post's own category, used verbatim as `articleSection`. */
+  section?: string
+}
 export type SchemaImage = {
   src: string
   alt: string
@@ -40,6 +50,7 @@ export const schemaIds = {
   breadcrumb: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#breadcrumb`,
   faq: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#faq`,
   creativeWork: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#creativework`,
+  article: (pathOrUrl: string) => `${absoluteUrl(pathOrUrl)}#article`,
   image: (pathOrUrl: string, index: number) =>
     `${absoluteUrl(pathOrUrl)}#image-${index + 1}`,
 }
@@ -341,6 +352,65 @@ export function buildFaqNode({
 }
 
 /**
+ * `BlogPosting` node for `/blog/{slug}/`.
+ *
+ * D-125 rejected `Article` on the `/gallery/` project pages because this repo
+ * could not then back `datePublished`, `author` or `publisher.logo` honestly.
+ * That reasoning stands and gallery pages keep `CreativeWork` — but all three
+ * now exist for blog posts: every post in `lib/blog.ts` carries a real
+ * `published` date, and `businessInfo.schema.logo` ships.
+ *
+ * `author` and `publisher` both reference the business node by `@id`. The
+ * guides are published by Elite Touch Renovations, not by a named individual,
+ * and schema.org allows an `Organization` as `author`. Inventing a personal
+ * byline to satisfy an "author bio" checklist would be exactly the kind of
+ * fabricated credential CLAUDE.md's Business Rules forbid.
+ *
+ * `dateModified` falls back to `datePublished`. `lib/blog.ts` only sets
+ * `updated` when a post's content was genuinely revised, so a post without one
+ * has honestly not changed since it was published.
+ */
+export function buildArticleNode({
+  path,
+  article,
+  image,
+}: {
+  path: string
+  article: SchemaArticle
+  image?: SchemaImage
+}): SchemaNode {
+  const node: SchemaNode = {
+    '@id': schemaIds.article(path),
+    '@type': 'BlogPosting',
+    headline: article.headline,
+    url: absoluteUrl(path),
+    mainEntityOfPage: { '@id': schemaIds.webpage(path) },
+    isPartOf: { '@id': schemaIds.website },
+    datePublished: article.datePublished,
+    dateModified: article.dateModified ?? article.datePublished,
+    author: { '@id': schemaIds.business },
+    publisher: { '@id': schemaIds.business },
+    inLanguage: 'en-AU',
+    isAccessibleForFree: true,
+    about: { '@id': schemaIds.business },
+  }
+
+  if (article.description) node.description = article.description
+  if (article.section) node.articleSection = article.section
+  if (image) {
+    node.image = {
+      '@type': 'ImageObject',
+      contentUrl: absoluteUrl(image.src),
+      caption: image.alt,
+      width: image.width,
+      height: image.height,
+    }
+  }
+
+  return node
+}
+
+/**
  * Per-service `Service` node for the 4 plain `/services/{slug}/` pages
  * (issue #22 / tech-audit M-1). `provider` references the business node by
  * `@id` instead of duplicating it, made possible by issue #30's `@graph`
@@ -477,6 +547,7 @@ export function buildPageGraph({
   service,
   hubService,
   suburbService,
+  article,
 }: {
   path: string
   name: string
@@ -489,9 +560,11 @@ export function buildPageGraph({
   service?: Service
   hubService?: { service: Service; region: Region }
   suburbService?: { service: Service; suburb: Suburb }
+  article?: SchemaArticle
 }) {
   const hasFaqs = Boolean(faqs && faqs.length > 0)
   const projectId = project ? schemaIds.creativeWork(path) : undefined
+  const articleId = article ? schemaIds.article(path) : undefined
   const serviceId = service ? schemaIds.service(service) : undefined
   const suburbServiceId = suburbService
     ? schemaIds.suburbService(suburbService.service, suburbService.suburb)
@@ -516,7 +589,7 @@ export function buildPageGraph({
       // `primaryImage` too would embed a second, conflicting definition of
       // that id in one graph, so it's used only when there's no project.
       primaryImage: project ? undefined : primaryImage,
-      mainEntityId: projectId,
+      mainEntityId: projectId ?? articleId,
       hasPartIds: partIds,
     }),
     ...(breadcrumbs ? [buildBreadcrumbNode({ path, items: breadcrumbs })] : []),
@@ -525,5 +598,6 @@ export function buildPageGraph({
     ...(hubService ? [buildHubServiceNode(hubService)] : []),
     ...(suburbService ? [buildSuburbServiceNode(suburbService)] : []),
     ...(project ? [buildProjectNode({ path, project })] : []),
+    ...(article ? [buildArticleNode({ path, article, image: primaryImage })] : []),
   ])
 }

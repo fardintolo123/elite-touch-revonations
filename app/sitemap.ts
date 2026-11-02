@@ -149,8 +149,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogPosts.map((post) => ({
       url: `${base}/blog/${post.slug}/`,
-      // Per-post: reflects only posts genuinely revised since the blanket pass.
-      lastModified: post.updated ?? ISSUE_64_CONTENT_PASS,
+      // Per-post, and always a real date from lib/blog.ts: the revision date
+      // when the post was genuinely reworked, otherwise the date it was
+      // published. It used to fall back to the blanket ISSUE_64_CONTENT_PASS,
+      // which dated un-revised posts later than they were actually written.
+      lastModified: post.updated ?? post.published,
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),

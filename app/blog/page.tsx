@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ContactSection } from '@/components/ContactSection'
 import { PageHero } from '@/components/PageHero'
+import { SchemaGraph } from '@/components/SchemaGraph'
 import { buildMetadata } from '@/lib/metadata'
-import { blogPosts, type BlogPost } from '@/lib/blog'
+import { blogTopics } from '@/lib/blog'
 import styles from './blog.module.css'
 
 export const metadata: Metadata = buildMetadata({
@@ -11,26 +12,6 @@ export const metadata: Metadata = buildMetadata({
   title: 'Bathroom Renovation Advice, Sydney',
   description: 'Practical bathroom renovation advice for Sydney homeowners, from Elite Touch Renovations.',
 })
-
-function getTopicId(category: string) {
-  return `blog-topic-${category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`
-}
-
-const topicMap = new Map<string, BlogPost[]>()
-for (const post of blogPosts) {
-  const topicPosts = topicMap.get(post.category)
-  if (topicPosts) {
-    topicPosts.push(post)
-  } else {
-    topicMap.set(post.category, [post])
-  }
-}
-
-const blogTopics = Array.from(topicMap, ([category, posts]) => ({
-  category,
-  id: getTopicId(category),
-  posts,
-}))
 
 export default function BlogIndexPage() {
   return (
@@ -102,6 +83,21 @@ export default function BlogIndexPage() {
         </section>
         <ContactSection />
       </main>
+      {/*
+        The index carried no structured data at all until 2026-11-02. It is a
+        CollectionPage over the guides, and the breadcrumb matches the trail
+        each post already emits.
+      */}
+      <SchemaGraph
+        path="/blog/"
+        name="Bathroom renovation guides for Sydney homeowners"
+        description="Practical bathroom renovation advice for Sydney homeowners, from Elite Touch Renovations."
+        pageType="CollectionPage"
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Blogs', url: '/blog/' },
+        ]}
+      />
     </>
   )
 }
