@@ -636,6 +636,38 @@ svg {
   transform: translateY(-2px);
 }
 
+.et-area-list {
+  margin-top: var(--et-space-8);
+  border-top: 1px solid var(--et-border);
+}
+.et-area-list-item {
+  display: grid;
+  gap: var(--et-space-2);
+  padding-block: var(--et-space-5);
+  border-bottom: 1px solid var(--et-border);
+}
+@media (min-width: 768px) {
+  .et-area-list-item {
+    grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
+    align-items: baseline;
+    gap: var(--et-space-6);
+  }
+}
+.et-area-list-region {
+  color: var(--et-text);
+  font-size: var(--et-text-h4);
+  font-weight: 600;
+  text-decoration: none;
+}
+.et-area-list-region:hover {
+  color: var(--et-text-accent);
+}
+.et-area-list-detail {
+  display: grid;
+  gap: var(--et-space-2);
+  color: var(--et-text-secondary);
+}
+
 .et-google-rating {
   display: inline-flex;
   align-items: center;
@@ -973,7 +1005,6 @@ svg {
 }
 .et-logo {
   font-weight: 600;
-  /* Shrinks below the header CTA at 390px so the phone number never wraps. */
   font-size: 0.9375rem;
   letter-spacing: -0.01em;
   color: var(--et-text);
@@ -985,8 +1016,24 @@ svg {
     font-size: 1.0625rem;
   }
 }
-.et-logo span {
+.et-logo-name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--et-space-1);
+  white-space: normal;
+}
+.et-logo-name > span:first-child {
+  color: var(--et-text);
+}
+.et-logo-name > span:last-child {
   color: var(--et-text-accent);
+}
+@media (max-width: 479px) {
+  .et-logo-name {
+    display: grid;
+    gap: 0;
+    line-height: 1.05;
+  }
 }
 
 .et-nav {
@@ -1204,21 +1251,13 @@ svg {
   gap: var(--et-space-3);
 }
 
-/* At 390px the header must fit: logo + a call CTA showing the full number.
-   Trim the CTA's horizontal padding rather than its HEIGHT — the height is
-   what keeps it above the 44px touch minimum (DESIGN.md §10), and the number
-   stays visible because on a trade site it is a recognition and trust signal,
-   not just a link. */
+/* Keep the full business name beside the call CTA at narrow mobile widths. */
 @media (max-width: 479px) {
   .et-header-inner {
     gap: var(--et-space-3);
   }
   .et-logo {
     min-width: 0;
-  }
-  .et-logo > span {
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .et-header-actions .et-btn {
     padding-inline: var(--et-space-4);
@@ -1892,25 +1931,25 @@ form [role='status'] {
   }
 
   .et-section-revealed {
-    animation: et-section-enter 700ms var(--et-ease-out) both;
+    animation: et-section-enter var(--et-duration-deliberate) var(--et-ease-out) both;
   }
 
   .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > *,
   .et-section-revealed .et-media-frame,
   .et-section-revealed .et-photo,
   .et-section-revealed details {
-    animation: et-child-enter 650ms var(--et-ease-out) both;
+    animation: et-child-enter var(--et-duration-deliberate) var(--et-ease-out) both;
   }
-  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(2) { animation-delay: 90ms; }
-  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(3) { animation-delay: 180ms; }
-  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(4) { animation-delay: 270ms; }
-  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(n + 5) { animation-delay: 360ms; }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(2) { animation-delay: 60ms; }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(3) { animation-delay: 120ms; }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(4) { animation-delay: 180ms; }
+  .et-section-revealed :is(.et-grid, .et-steps, .et-checklist, .et-facts) > :nth-child(n + 5) { animation-delay: 240ms; }
 }
 
 @keyframes et-child-enter {
   from {
     opacity: 0;
-    transform: translateY(28px) scale(0.97);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -1921,7 +1960,7 @@ form [role='status'] {
 @keyframes et-section-enter {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;

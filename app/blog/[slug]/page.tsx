@@ -8,6 +8,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { blogPosts, getBlogPost } from '@/lib/blog'
 import { formatDayMonthYear } from '@/lib/dateLabels'
 import { projectBySlug } from '@/lib/projects'
+import styles from '../blog.module.css'
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }))
@@ -63,82 +64,86 @@ export default async function BlogPostPage({
         }
       />
       <main>
-        <article className="et-section">
-          <div className="et-container et-measure-wide">
-            <p className="et-body-sm" style={{ marginBottom: 'var(--et-space-8)', color: 'var(--et-text-secondary)' }}>
-              <Link href="/blog/" className="et-link">All blogs</Link> / {post.category}
-            </p>
-            <div className="et-stack et-blog-prose">
-              {post.quickAnswer ? (
-                <section className="et-card et-card-tinted et-blog-quick-answer">
-                  <h2 className="et-h2">{post.quickAnswer.heading}</h2>
-                  {post.quickAnswer.paragraphs.map((paragraph) => (
-                    <p key={paragraph} className="et-body">{paragraph}</p>
-                  ))}
-                  <div className="et-table-wrap">
-                    <table className="et-table">
-                      <caption>{post.quickAnswer.table.caption}</caption>
-                      <thead>
-                        <tr>
-                          {post.quickAnswer.table.columns.map((column) => (
-                            <th key={column} scope="col">{column}</th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {post.quickAnswer.table.rows.map((row) => (
-                          <tr key={row.label}>
-                            <th scope="row">
-                              {row.label}
-                              <span className="et-body-sm et-table-note">{row.detail}</span>
-                            </th>
-                            <td>{row.value}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <p className="et-body-sm">{post.quickAnswer.note}</p>
-                  <p>
-                    <Link href={post.quickAnswer.cta.href} className="et-btn et-btn-primary et-btn-md">
-                      {post.quickAnswer.cta.label}
-                    </Link>
-                  </p>
-                </section>
-              ) : null}
-              {post.sections.map((section) => (
-                <section key={section.heading}>
-                  <h2 className="et-h2">{section.heading}</h2>
-                  {section.paragraphs.map((paragraph, i) => <p key={i} className="et-body" dangerouslySetInnerHTML={{ __html: paragraph }} />)}
-                </section>
-              ))}
-              {post.faq && post.faq.length > 0 && (
-                <section>
-                  <span className="et-eyebrow">FAQ</span>
-                  <h2 className="et-h2">Frequently asked questions</h2>
-                  <div
-                    className="et-stack"
-                    style={{ marginTop: 'var(--et-space-4)', gap: 'var(--et-space-4)' }}
-                  >
-                    {post.faq.map((item) => (
-                      <details key={item.question} className="et-card">
-                        <summary className="et-h4" style={{ cursor: 'pointer' }}>
-                          {item.question}
-                        </summary>
-                        <p
-                          className="et-body-sm"
-                          style={{
-                            marginTop: 'var(--et-space-4)',
-                            color: 'var(--et-text-secondary)',
-                          }}
-                        >
-                          {item.answer}
-                        </p>
-                      </details>
+        <article className="et-section et-band-surface">
+          <div className="et-container">
+            <div className={styles.articleContent}>
+              <nav className={styles.postNavigation} aria-label="Blog post navigation">
+                <Link href="/blog/" className="et-link">All guides</Link>
+                <span aria-hidden="true">/</span>
+                <span>{post.category}</span>
+              </nav>
+              <div className="et-stack et-blog-prose">
+                {post.quickAnswer ? (
+                  <section className="et-card et-card-tinted et-blog-quick-answer">
+                    <h2 className="et-h2">{post.quickAnswer.heading}</h2>
+                    {post.quickAnswer.paragraphs.map((paragraph) => (
+                      <p key={paragraph} className="et-body">{paragraph}</p>
                     ))}
-                  </div>
-                </section>
-              )}
+                    <div className="et-table-wrap">
+                      <table className="et-table">
+                        <caption>{post.quickAnswer.table.caption}</caption>
+                        <thead>
+                          <tr>
+                            {post.quickAnswer.table.columns.map((column) => (
+                              <th key={column} scope="col">{column}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {post.quickAnswer.table.rows.map((row) => (
+                            <tr key={row.label}>
+                              <th scope="row">
+                                {row.label}
+                                <span className="et-body-sm et-table-note">{row.detail}</span>
+                              </th>
+                              <td>{row.value}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="et-body-sm">{post.quickAnswer.note}</p>
+                    <p>
+                      <Link href={post.quickAnswer.cta.href} className="et-btn et-btn-primary et-btn-md">
+                        {post.quickAnswer.cta.label}
+                      </Link>
+                    </p>
+                  </section>
+                ) : null}
+                {post.sections.map((section) => (
+                  <section key={section.heading}>
+                    <h2 className="et-h2">{section.heading}</h2>
+                    {section.paragraphs.map((paragraph, i) => <p key={i} className="et-body" dangerouslySetInnerHTML={{ __html: paragraph }} />)}
+                  </section>
+                ))}
+                {post.faq && post.faq.length > 0 && (
+                  <section>
+                    <span className="et-eyebrow">FAQ</span>
+                    <h2 className="et-h2">Frequently asked questions</h2>
+                    <div
+                      className="et-stack"
+                      style={{ marginTop: 'var(--et-space-4)', gap: 'var(--et-space-4)' }}
+                    >
+                      {post.faq.map((item) => (
+                        <details key={item.question} className="et-card">
+                          <summary className="et-h4" style={{ cursor: 'pointer' }}>
+                            {item.question}
+                          </summary>
+                          <p
+                            className="et-body-sm"
+                            style={{
+                              marginTop: 'var(--et-space-4)',
+                              color: 'var(--et-text-secondary)',
+                            }}
+                          >
+                            {item.answer}
+                          </p>
+                        </details>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </div>
             </div>
           </div>
         </article>

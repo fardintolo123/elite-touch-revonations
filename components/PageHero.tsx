@@ -114,10 +114,10 @@ export function PageHero({
             </div>
             <Link
               href={`/gallery/${image.project.slug}/`}
-              className="et-badge-suburb"
+              className="et-body-sm et-link"
               style={{ display: 'inline-flex', width: 'fit-content' }}
             >
-              {image.project.suburb} - {image.project.name}
+              See the {image.project.name}
             </Link>
           </div>
         </div>

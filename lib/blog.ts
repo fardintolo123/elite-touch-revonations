@@ -51,14 +51,15 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-cost-sydney',
     title: 'What changes the cost of a bathroom renovation in Sydney?',
-    metaTitle: 'Sydney Bathroom Renovation Cost Guide',
-    description: 'A practical guide to the real drivers of bathroom renovation pricing in Sydney, from room size and layout to tiles, electrical work and package pricing.',
+    metaTitle: 'What Changes Bathroom Renovation Costs?',
+    description: 'See how room size, layout changes, tile coverage, fittings and site conditions can change a bathroom renovation quote in Sydney.',
     published: '2026-09-10',
+    updated: '2026-11-02',
     readTime: '4 min read',
     category: 'Planning and cost',
     sections: [
-      { heading: 'Start with the room and the scope', paragraphs: ['There is no honest single price for every bathroom renovation. The cost changes with the room size, the fittings, the tile selection, the amount of electrical and plumbing work, and whether the layout changes.', 'A useful quote should make those decisions visible. It should describe what is included, what is excluded and which selections are still provisional. That gives you something meaningful to compare instead of comparing two totals with different scopes.'] },
-      { heading: 'ETR package starting points', paragraphs: ['If you are comparing Sydney bathroom renovation pricing, Elite Touch publishes <a href="/packages/" class="et-link">three package starting points</a>: Basic from $18,000 for an approximately 1.5 m × 1.8 m bathroom, Standard from $25,000 for an approximately 1.8 m × 2.4 m bathroom, and Premium from $30,000 for an approximately 2.4 m × 2.4 m bathroom.', 'These are starting prices, not fixed quotes. The final scope depends on the actual room and your selections. A free on-site measure is the right next step when you need a price tied to your bathroom.'] },
+      { heading: 'Start with the room and the scope', paragraphs: ['There is no honest single price for every bathroom renovation. If you are pricing a full bathroom in Sydney, start with our <a href="/packages/" class="et-link">package prices and size bases</a>, then consider how room size, fittings, tile selection, electrical and plumbing work, and layout affect the final scope.', 'A useful quote should make those decisions visible. It should describe what is included, what is excluded and which selections are still provisional. That gives you something meaningful to compare instead of comparing two totals with different scopes.'] },
+      { heading: 'ETR package starting points', paragraphs: ['If you are comparing Sydney bathroom renovation pricing, Elite Touch publishes <a href="/packages/" class="et-link">three package starting points</a>: Basic from $18,000 for an approximately 1.5 m × 1.8 m × 2.4 m bathroom, Standard from $25,000 for an approximately 1.8 m × 2.4 m × 2.4 m bathroom, and Premium from $30,000 for an approximately 2.4 m × 2.4 m × 2.4 m bathroom.', 'These are starting prices, not fixed quotes. The final scope depends on the actual room and your selections. A free on-site measure is the right next step when you need a price tied to your bathroom.'] },
       { heading: 'What changes the price?', paragraphs: ['The biggest cost shifts usually come from scope, not decoration alone. Moving walls, <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">changing fixture positions</a>, upgrading stone or joinery, adding complex glazing, changing electrical points or uncovering poor existing work can all move the price.', 'Tile format and fitting choices matter too, but they should be compared inside the whole scope. A cheaper tapware allowance does not make a quote better if demolition, waterproofing or electrical work has been left unclear.'] },
       { heading: 'Why the on-site measure matters', paragraphs: ['Photos can start the conversation, but they do not show enough to lock in a bathroom renovation price. The site measure checks the room size, access, fixture positions, floor falls and visible condition before a written scope is prepared.', 'That is also where practical details come out: whether there is only one bathroom in the home, where materials can be stored, how waste leaves the property and whether strata or building rules affect the program.'] },
       { heading: 'What to ask before accepting a quote', paragraphs: ['Ask whether demolition, waterproofing, tiling, fittings, electrical work, waste removal and final clean-up are included. Ask how variations are handled and whether the quote is fixed-scope and written.', 'The goal is not simply to find the lowest number. It is to understand what you are buying, who is responsible for each part of the work and what happens when the existing room reveals a condition that could not be seen before demolition.'] },
@@ -267,36 +268,95 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'diy-or-professional-bathroom-renovation',
     title: 'Should I renovate my bathroom myself or hire a professional?',
-    metaTitle: 'DIY Bathroom Renovation Guide',
-    description: 'How to think through a DIY bathroom renovation, licensed work, coordination and the cost of getting the sequence wrong.',
+    metaTitle: 'Should you DIY a bathroom renovation in NSW?',
+    description: 'In NSW, DIY only works for finish tasks; waterproofing, plumbing and electrical work must be licensed, and the decision should follow the risk and compliance rules.',
     published: '2026-09-10',
     readTime: '2 min read',
     category: 'Choosing a renovator',
     sections: [
-      { heading: 'Know what you are coordinating', paragraphs: ['A bathroom renovation is a sequence of connected tasks, not just a collection of finishes. Demolition, plumbing, <a href="/blog/bathroom-renovation-electrical-work/" class="et-link">electrical work</a>, waterproofing, tiling and fitting installation need to be planned around one another.', 'The more parts you coordinate yourself, the more responsibility you carry for ordering, access, timing and the quality of the finished result.'] },
-      { heading: 'Consider licensed and regulated work', paragraphs: ['Some work has licensing, safety and compliance requirements. Confirm what applies to your project in NSW before deciding which tasks you can take on.', 'A licensed renovator can help coordinate the work and document the agreed scope. ETR operates under NSW Builder Licence 475204C.'] },
-      { heading: 'Make the decision on the whole project', paragraphs: ['Compare the value of your time, the disruption of a room being out of action and the risk of rework. A lower initial spend is not useful if the sequence creates delays or requires work to be done twice.', 'Start with a measured scope and clear quote, whether you choose a professional or a carefully limited DIY approach.'] },
+      { heading: 'Know what you are coordinating', paragraphs: ['1) In NSW, a DIY bathroom renovation only makes sense for the finish work. Waterproofing, plumbing and electrical work must be done by licensed trades and signed off correctly, so the legal risk sits with the parts you are not meant to do yourself.', 'A bathroom renovation is a sequence of connected tasks, not just a collection of finishes. Demolition, plumbing, <a href="/blog/bathroom-renovation-electrical-work/" class="et-link">electrical work</a>, waterproofing, tiling and fitting installation need to be planned around one another.'] },
+      { heading: 'Consider licensed and regulated work', paragraphs: ['The rule is simple: if the work is regulated, it should be handled by a licensed professional. Check the NSW Fair Trading guidance before you decide how much of the job you want to take on: <a href="https://www.nsw.gov.au/housing-and-construction/building-or-renovating-a-home" class="et-link">NSW Fair Trading</a>.', 'A licensed renovator can help coordinate the work and document the agreed scope. ETR operates under NSW Builder Licence 475204C.'] },
+      { heading: 'Make the decision on the whole project', paragraphs: ['Compare the value of your time, the disruption of a room being out of action and the risk of rework. A lower initial spend is not useful if the sequence creates delays or requires work to be done twice.', 'Start with a measured scope and clear quote, whether you choose a professional or a carefully limited DIY approach. The practical rule is simple: do the safe, straightforward finish work yourself, and ask a licensed contractor to handle the work that carries compliance, licensing and warranty risk.'] },
     ],
   },
   {
     slug: 'strata-bathroom-renovation-sydney',
-    title: 'Strata bathroom renovation in Sydney: what is different?',
-    metaTitle: 'Strata Bathroom Renovation Sydney',
-    description: 'The approvals, access, communication and planning questions apartment owners should consider before a strata bathroom renovation.',
+    title: 'Renovating a bathroom in a Sydney apartment or strata unit?',
+    metaTitle: 'Strata Bathroom Renovation Sydney | Apartment Approval Guide',
+    description: 'Bathroom renovations in Sydney apartments and strata units need owners corporation approval, by-law checks and wet-area sign-off before work starts.',
     published: '2026-09-10',
     readTime: '4 min read',
     category: 'Planning and process',
     sections: [
-      { heading: 'The short version', paragraphs: ['Check the rules first. Plan the move in and out. Keep the paper trail.'] },
-      { heading: 'Check the building rules first', paragraphs: ['Apartment renovations can involve strata by-laws, approval steps, building access rules and limits on working hours. Ask your strata manager or owners corporation what applies before booking site work.', 'Do not assume approval is automatic because the work is inside your apartment. The building may have requirements for waterproofing, plumbing, noise, lifts and protection of common areas.'] },
-      { heading: 'What should you ask strata before the quote?', paragraphs: ['Ask if the owners corporation needs a renovation application, which forms they need, what work hours apply, how to book the lift and whether shared areas need special care.', 'Ask for the rules in writing. A neighbour may help, but the renovator needs the building rules before the work plan and quote are final.'] },
-      { heading: 'Plan access and protection', paragraphs: ['Check how materials and waste can move through the building, where trucks can stop and how shared areas must be kept safe. These details belong in the work plan and quote.', 'Give the team the building rules early so the site plan fits the property.'] },
-      { heading: 'Why access can affect timing', paragraphs: ['Apartment work can take longer when lifts, loading zones, parking, concierge rules or waste removal windows are tight. None of those details changes the quality of the bathroom, but they can change the way the job is staged.', 'This is why a strata renovation should not be priced as if it were a freestanding house with easy driveway access. The access plan is part of the scope.'] },
-      { heading: 'Waterproofing paperwork matters', paragraphs: ['Strata buildings can pay close attention to wet-area work because one bathroom can affect another lot. Ask what proof the building wants for waterproofing and keep the certificate with the final paperwork.', 'ETR waterproofs bathroom renovation work to <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">AS 3740</a> and supplies a compliance certificate for the waterproofing work. If your building has its own document process, raise it at the measure.'] },
-      { heading: 'Keep the paperwork together', paragraphs: ['Keep approvals, the written scope, choices, certificates and records of changes in one place. Clear records help everyone see what was agreed.', 'A free on-site measure is a good first step before we write a strata quote.'] },
-      { heading: 'What should not be assumed?', paragraphs: ['Do not assume the work can start just because the renovation is inside your apartment. Also do not assume every building has the same approval steps. Older blocks, newer buildings and tightly managed strata schemes can all handle wet-area work differently.', 'Bring the building rules to the first serious quote conversation. That gives the renovator a fair basis for scope, timing and access, and it gives you fewer surprises once the bathroom is open.'] },
-      { heading: 'How should neighbours and common areas be handled?', paragraphs: ['A strata bathroom renovation is not only about your apartment. <a href="/blog/bathroom-renovation-neighbours-noise/" class="et-link">Noise</a>, lift use, hallway protection and waste movement can affect neighbours and common property.', 'Ask how notices, access windows and protection are handled in your building. The smoother those details are, the less likely the job is to stall over something that was known before work started.'] },
-      { heading: 'What should you give the renovator?', paragraphs: ['Give the renovator the by-laws, approval conditions, contact details for the building manager and any forms the building wants completed. Those documents shape access and timing as much as the bathroom design does.', 'If the building changes a rule after the quote, ask for the timing and cost effect to be recorded before the plan changes.'] },
+      {
+        heading: 'The short version',
+        paragraphs: [
+          'Renovating a bathroom in a Sydney apartment or strata unit starts with the building rules. A wet-area renovation is not the same as a cosmetic refresh inside a free-standing house.',
+        ],
+      },
+      {
+        heading: 'Does a strata bathroom renovation need approval?',
+        paragraphs: [
+          'Yes. The NSW Government says work that needs waterproofing is not cosmetic work. In a strata building, that means the owners corporation usually needs to approve the job, and a by-law may be needed if the work touches common property or a building-wide wet-area system.',
+          'The NSW Government guidance is clear: bathroom work that involves waterproofing is treated as a renovation with building approval, not a minor cosmetic fix. See the <a href="https://www.nsw.gov.au/housing-and-construction/strata/renovations" class="et-link" target="_blank" rel="noreferrer">NSW Government strata renovations page</a> before you lock in the scope or timetable.',
+        ],
+      },
+      {
+        heading: 'What we handle for strata jobs',
+        paragraphs: [
+          'The written scope sets out the agreed renovation work. It is carried out under NSW Builder Licence 475204C, and the waterproofing is completed to <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">AS 3740</a> with a compliance certificate.',
+          'Give your renovator the approval conditions and building rules so the written scope can reflect them. Your owners corporation or strata manager can confirm which rules apply to your building.',
+        ],
+      },
+      {
+        heading: 'What should you ask strata before the quote?',
+        paragraphs: [
+          'Ask if the owners corporation needs a renovation application, which forms they need, what work hours apply, how to book the lift and whether shared areas need special protection.',
+          'Ask for the rules in writing. A neighbour may help, but the renovator needs the building rules before the work plan and quote are final.',
+        ],
+      },
+      {
+        heading: 'Plan access and protection',
+        paragraphs: [
+          'Check how materials and waste can move through the building, where trucks can stop and how shared areas must be kept safe. These details belong in the work plan and quote.',
+          'Give the team the building rules early so the site plan fits the property. A good access plan is part of the job, not an afterthought.',
+        ],
+      },
+      {
+        heading: 'Why access can affect timing',
+        paragraphs: [
+          'Apartment work can take longer when lifts, loading zones, parking, concierge rules or waste removal windows are tight. None of those details changes the quality of the bathroom, but they can change the way the job is staged.',
+          'This is why a strata renovation should not be priced as if it were a freestanding house with easy driveway access. The access plan is part of the scope.',
+        ],
+      },
+      {
+        heading: 'Keep the paperwork together',
+        paragraphs: [
+          'Keep approvals, the written scope, choices, certificates and records of changes in one place. Clear records help everyone see what was agreed.',
+          'A free on-site measure is a good first step before we write a strata quote. If you are comparing a unit renovation with a house renovation, read our <a href="/blog/apartment-bathroom-renovation-vs-house/" class="et-link">apartment bathroom renovation vs house guide</a> next.',
+        ],
+      },
+      {
+        heading: 'What should not be assumed?',
+        paragraphs: [
+          'Do not assume the work can start just because the renovation is inside your apartment. Also do not assume every building has the same approval steps. Older blocks, newer buildings and tightly managed strata schemes can all handle wet-area work differently.',
+          'Bring the building rules to the first serious quote conversation. That gives the renovator a fair basis for scope, timing and access, and it gives you fewer surprises once the bathroom is open.',
+        ],
+      },
+      {
+        heading: 'How should neighbours and common areas be handled?',
+        paragraphs: [
+          'A strata bathroom renovation is not only about your apartment. <a href="/blog/bathroom-renovation-neighbours-noise/" class="et-link">Noise</a>, lift use, hallway protection and waste movement can affect neighbours and common property.',
+          'Ask how notices, access windows and protection are handled in your building. The smoother those details are, the less likely the job is to stall over something that was known before work started.',
+        ],
+      },
+      {
+        heading: 'What should you give the renovator?',
+        paragraphs: [
+          'Give the renovator the by-laws, approval conditions, contact details for the building manager and any forms the building wants completed. Those documents shape access and timing as much as the bathroom design does.',
+          'If the building changes a rule after the quote, ask for the timing and cost effect to be recorded before the plan changes. That is the safest way to keep a renovation moving without surprises.',
+        ],
+      },
     ],
   },
   {
@@ -336,13 +396,13 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-warranty-guide',
     title: 'What warranty should a bathroom renovation include?',
-    metaTitle: 'Bathroom Renovation Warranty',
-    description: 'What to ask about workmanship warranties, exclusions and third-party fittings before signing a renovation agreement.',
+    metaTitle: 'How long should a bathroom renovation warranty last in NSW?',
+    description: 'In NSW, residential building work is covered by the statutory warranty and ETR\'s 10-year workmanship warranty, with the key exclusions to check before signing.',
     published: '2026-09-10',
     readTime: '2 min read',
     category: 'Choosing a renovator',
     sections: [
-      { heading: 'The short version', paragraphs: ['Read the terms. Ask what is covered. Keep the final papers. A clear warranty leaves less room for doubt. Clear terms help.'] },
+      { heading: 'The short version', paragraphs: ['1) In NSW, a bathroom renovation warranty should cover the statutory period for residential building work, and ETR also provides a 10-year workmanship warranty on the work it carries out. The statutory protection and the written workmanship warranty should both be read carefully, because the terms and exclusions matter as much as the headline number.', 'Read the terms. Ask what is covered. Keep the final papers. A clear warranty leaves less room for doubt. Clear terms help.'] },
       { heading: 'Read the wording, not just the number', paragraphs: ['A warranty should say what it covers, how long it lasts, how to make a claim and what it leaves out. Ask for the terms before you accept the quote.', 'A headline warranty term does not tell you if it covers fittings, products or work by other trades.'] },
       { heading: 'Separate workmanship from products', paragraphs: ['Workmanship and product warranties cover different things. Ask who handles a product fault and who handles a fault with the fitting work.', 'Keep invoices, product details, the final scope and handover papers together when the job is done.'] },
       { heading: 'ETR warranty wording', paragraphs: ['Elite Touch Renovations offers a 10-year workmanship warranty. It should be read as written in the <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">agreement</a> and does not automatically extend to third-party fittings.', 'Ask questions before work begins so the protection you expect matches the written terms.'] },
@@ -1111,6 +1171,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Why accessibility is a renovation decision, not a retrofit',
         paragraphs: [
+          'ETR does not currently offer specialist accessible or ageing-in-place bathroom renovations, and we do not provide specialist funding support through third-party care schemes. This guide is general information only and is not a service offer.',
           'Most people think about bathroom access only after a fall, an injury or a diagnosis. By then the room is already built. Adding grab bars, a shower seat or a wider door means cutting into finished tiles and walls.',
           'Building access into a renovation from the start costs far less and works better. The room is being stripped and rebuilt anyway. The time to plan for safe, easy use is now, not in ten years.',
         ],
@@ -2429,8 +2490,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-niche-design-ideas',
     title: 'Bathroom niches and recessed shelves: design, sizing and waterproofing',
-    metaTitle: 'Bathroom Niche Design Ideas Renovation',
-    description: 'How to plan a bathroom niche - where to place it, what size works, how waterproofing applies and the design choices that make it a feature, not an afterthought.',
+    metaTitle: 'Bathroom niche sizes and what to store in one',
+    description: 'A bathroom niche is best for shampoo, soap and everyday items, and most shower niches are 300 x 400 mm with a slight fall so water drains away.',
     published: '2026-10-03',
     readTime: '4 min read',
     category: 'Design and finishes',
@@ -2438,6 +2499,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'What a niche does in a bathroom',
         paragraphs: [
+          '1) A bathroom niche is best for shampoo, conditioner, soap and a small bottle of body wash. It keeps everyday products within reach, off the shower floor and away from the tile edges that are harder to clean.',
           'A niche is a recess built into the wall, set back from the surface, that holds bottles, soap and everyday items without a shelf or caddy hanging from the showerhead. It keeps the shower floor clear, makes cleaning easier and gives the room a built-in, finished look.',
           'Niches have moved from a luxury detail to a standard inclusion in most mid-range and premium bathroom renovations. If you are stripping the walls back anyway, adding one costs little extra in labour and materials.',
         ],
@@ -3701,6 +3763,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'What aging in place means for a bathroom',
         paragraphs: [
+          'ETR does not currently offer specialist accessible or ageing-in-place bathroom renovation packages, and we do not provide specialist funding support or funding advice through outside care schemes. This article is general information for planning only, not a service offer.',
           'Aging in place means staying in your own home as you get older, rather than moving to assisted living or a retirement community. The bathroom is the room most likely to need changes, because it involves wet surfaces, stepping over thresholds, reaching overhead and standing on one leg.',
           'The smartest time to plan for these changes is during a renovation. Adding structural blocking for grab rails costs almost nothing when the walls are open. Retrofitting them into a finished bathroom costs significantly more and may not be possible without damage.',
         ],

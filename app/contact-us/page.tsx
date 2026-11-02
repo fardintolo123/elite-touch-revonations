@@ -45,9 +45,8 @@ export default function ContactPage() {
       />
       <section className="et-hero">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Contact us</span>
           <h1 className="et-h1 et-measure-tight">
-            Book a free on-site measure in Sydney.
+            Book a free bathroom renovation measure in Sydney.
           </h1>
           <p className="et-lead et-measure">
             Tell us what is not working in the room. We will come out, measure
@@ -63,7 +62,6 @@ export default function ContactPage() {
           <div className="et-grid et-grid-2">
             {/* ---- Contact routes that work today ---- */}
             <div className="et-stack">
-              <span className="et-eyebrow">The fastest way</span>
               <h2 className="et-h2 et-measure-tight">Call or text us.</h2>
               <p className="et-lead et-measure">
                 Our customers often mention quick replies by phone and SMS. If
@@ -82,36 +80,40 @@ export default function ContactPage() {
 
               <GoogleRating />
 
-              <div className="et-card et-card-tinted">
+              <div className="et-stack">
                 <h3 className="et-h4">What happens after you get in touch</h3>
-                <ul
-                  className="et-checklist"
-                  style={{ marginTop: 'var(--et-space-5)' }}
+                <ol
+                  className="et-stack"
+                  style={{
+                    marginTop: 'var(--et-space-2)',
+                    listStyle: 'decimal',
+                    paddingInlineStart: 'var(--et-space-8)',
+                  }}
                 >
-                  <li>
+                  <li className="et-body-sm">
                     We ask what is not working, then arrange a free measure
                     anywhere in Sydney.
                   </li>
-                  <li>
+                  <li className="et-body-sm">
                     We talk through the scope, the fittings and the sequence on
                     site.
                   </li>
-                  <li>
+                  <li className="et-body-sm">
                     You get the agreed inclusions, exclusions and price in a
                     fixed-scope written quote.
                   </li>
-                  <li>
+                  <li className="et-body-sm">
                     If you go ahead, we book the demolition date and keep you
                     updated as the job runs.
                   </li>
-                </ul>
+                </ol>
               </div>
 
               {/* Contact details supplied by the owner on issue #2.
                   The info@elitetouchrenovations.au address was withheld while
                   it was "being set up"; the owner confirmed on 2026-08-19 that
                   it is the address to use, so it is now published. */}
-              <div className="et-card">
+              <div className="et-stack">
                 <h3 className="et-h4">Contact details</h3>
                 <ul
                   className="et-stack-tight"

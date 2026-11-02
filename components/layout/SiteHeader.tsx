@@ -166,8 +166,9 @@ export function SiteHeader() {
               width={163}
               height={160}
             />
-            <span aria-hidden="true">
-              Elite Touch <span>Renovations</span>
+            <span className="et-logo-name" aria-hidden="true">
+              <span>Elite Touch</span>
+              <span>Renovations</span>
             </span>
           </Link>
 

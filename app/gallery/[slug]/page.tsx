@@ -97,6 +97,13 @@ export default async function ProjectPage({
   if (!project) notFound()
 
   const others = projects.filter((item) => item.slug !== project.slug)
+  const leadImage = project.images[0]
+  const beforeImage = project.images.find((image) =>
+    image.src.endsWith('/before.webp')
+  )
+  const remainingImages = project.images.filter(
+    (image) => image !== leadImage && image !== beforeImage
+  )
   const projectRegion = publishedRegionForSuburb(project.suburb)
   const projectSuburb = publishedSuburbForName(project.suburb)
   const serviceHref = projectSuburb
@@ -133,48 +140,96 @@ export default async function ProjectPage({
         project={project}
       />
       <section className="et-hero">
-        <div className="et-container et-stack">
-          <p className="et-body-sm">
-            <Link href="/gallery/" className="et-link">
-              ← All projects
-            </Link>
-          </p>
-          <span className="et-eyebrow">
-            {project.suburb} · {project.service}
-          </span>
-          <p className="et-caption">Completed by {project.completedByYear}</p>
-          <h1 className="et-h1 et-measure-tight">{project.name}</h1>
-          <p className="et-lead et-measure">{project.blurb}</p>
-          {projectFacts.length > 0 ? (
-            <div className="et-stack-tight">
-              <ul className="et-facts" aria-label="Project facts">
-                {projectFacts.map((fact) => (
-                  <li key={fact.label} className="et-fact">
-                    <strong>{fact.label}</strong> {fact.value}
-                  </li>
-                ))}
-              </ul>
-              {project.priceRange ? (
-                <p
-                  className="et-body-sm et-measure"
-                  style={{ color: 'var(--et-text-secondary)' }}
-                >
-                  This was the budget for this completed project. Your price is
-                  firm after a free on-site measure and is set out in a
-                  fixed-scope written quote.
-                </p>
+        <div className="et-container">
+          <div className="et-hero-grid">
+            {beforeImage ? (
+              <div className="et-grid et-grid-2">
+                <figure className="et-stack-tight" style={{ margin: 0 }}>
+                  <div className="et-hero-media">
+                    <Image
+                      src={leadImage.src}
+                      alt={leadImage.alt}
+                      width={leadImage.width}
+                      height={leadImage.height}
+                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 100vw"
+                      priority
+                    />
+                  </div>
+                  <figcaption className="et-caption">Finished room</figcaption>
+                </figure>
+                <figure className="et-stack-tight" style={{ margin: 0 }}>
+                  <div className="et-hero-media">
+                    <Image
+                      src={beforeImage.src}
+                      alt={beforeImage.alt}
+                      width={beforeImage.width}
+                      height={beforeImage.height}
+                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 100vw"
+                    />
+                  </div>
+                  <figcaption className="et-caption">
+                    Before renovation. Supplied in black and white and
+                    photographed from a different position; this is not a
+                    matched-angle comparison.
+                  </figcaption>
+                </figure>
+              </div>
+            ) : (
+              <div className="et-hero-media">
+                <Image
+                  src={leadImage.src}
+                  alt={leadImage.alt}
+                  width={leadImage.width}
+                  height={leadImage.height}
+                  sizes="(min-width: 1360px) 652px, (min-width: 1024px) 50vw, 100vw"
+                  priority
+                />
+              </div>
+            )}
+            <div className="et-stack">
+              <p className="et-body-sm">
+                <Link href="/gallery/" className="et-link">
+                  ← All projects
+                </Link>
+              </p>
+              <span className="et-eyebrow">
+                {project.suburb} · {project.service}
+              </span>
+              <p className="et-caption">Completed by {project.completedByYear}</p>
+              <h1 className="et-h1 et-measure-tight">{project.name}</h1>
+              <p className="et-lead et-measure">{project.blurb}</p>
+              {projectFacts.length > 0 ? (
+                <div className="et-stack-tight">
+                  <ul className="et-facts" aria-label="Project facts">
+                    {projectFacts.map((fact) => (
+                      <li key={fact.label} className="et-fact">
+                        <strong>{fact.label}</strong> {fact.value}
+                      </li>
+                    ))}
+                  </ul>
+                  {project.priceRange ? (
+                    <p
+                      className="et-body-sm et-measure"
+                      style={{ color: 'var(--et-text-secondary)' }}
+                    >
+                      This was the budget for this completed project. Your
+                      price is firm after a free on-site measure and is set
+                      out in a fixed-scope written quote.
+                    </p>
+                  ) : null}
+                </div>
               ) : null}
             </div>
-          ) : null}
+          </div>
         </div>
       </section>
 
       {project.story ? (
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">About this project</span>
             <h2 className="et-h2 et-measure-tight">
-              The scope, constraint and finished work
+              How the {project.suburb} {project.service.toLowerCase()} came
+              together
             </h2>
             <p className="et-lead et-measure">{project.story}</p>
           </div>
@@ -184,12 +239,10 @@ export default async function ProjectPage({
       <section className="et-section et-band-canvas">
         <div className="et-container">
           <div className="et-photo-grid">
-            {project.images.map((image, index) => (
+            {remainingImages.map((image) => (
               <figure
                 key={image.src}
-                className={
-                  index === 0 ? 'et-photo et-photo-wide' : 'et-photo'
-                }
+                className="et-photo"
               >
                 <Image
                   src={image.src}
@@ -200,15 +253,8 @@ export default async function ProjectPage({
                      wide (index 0, LCP): 390→350, 768→704, 1024+→1200
                      (caps at the container max, doesn't stay 100vw).
                      grid (index 1+): 390→350, 768→340, 1024+→588. */
-                  sizes={
-                    index === 0
-                      ? '(min-width: 1024px) 1200px, 100vw'
-                      : '(min-width: 768px) 588px, 100vw'
-                  }
-                  /* First image is the LCP candidate. The rest stay lazy —
-                     eager MARKUP, lazy DOWNLOADS. */
-                  priority={index === 0}
-                  loading={index === 0 ? 'eager' : 'lazy'}
+                  sizes="(min-width: 768px) 588px, 100vw"
+                  loading="lazy"
                 />
               </figure>
             ))}
@@ -218,9 +264,8 @@ export default async function ProjectPage({
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">What every job includes</span>
           <h2 className="et-h2 et-measure-tight">
-            What sits behind the finished room.
+            What goes into each renovation.
           </h2>
           <ul className="et-checklist" style={{ marginTop: 'var(--et-space-6)' }}>
             <li className="et-body-sm">
@@ -247,7 +292,6 @@ export default async function ProjectPage({
 
       <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Related pages</span>
           <h2 className="et-h2 et-measure-tight">
             Planning a bathroom renovation in {project.suburb}?
           </h2>
@@ -321,8 +365,7 @@ export default async function ProjectPage({
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">More projects</span>
-          <h2 className="et-h2 et-measure-tight">Other work of ours</h2>
+          <h2 className="et-h2 et-measure-tight">More project photos</h2>
           <div
             className="et-grid et-grid-4"
             style={{ marginTop: 'var(--et-space-8)' }}

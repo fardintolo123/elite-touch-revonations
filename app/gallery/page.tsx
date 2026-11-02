@@ -71,6 +71,9 @@ const TEXT_ONLY_PROJECTS = [
 ] as const
 
 export default function GalleryPage() {
+  const featuredProject = projects[0]
+  const featuredCover = projectCover(featuredProject)
+
   return (
     <>
       <SchemaGraph
@@ -85,31 +88,56 @@ export default function GalleryPage() {
         primaryImage={projectCover(projects[0])}
       />
       <section className="et-hero">
-        <div className="et-container et-stack">
-          <span className="et-eyebrow">Our work</span>
-          <h1 className="et-h1 et-measure-tight">
-            Bathroom renovations we have completed across Sydney.
-          </h1>
-          <p className="et-lead et-measure">
-            Real photographs of finished work across Sydney, from Artarmon and
-            Balmain to Little Bay and The Rocks - different homes, different
-            budgets, the same standard underneath the tiles.
-          </p>
+        <div className="et-container">
+          <div className="et-hero-grid">
+            <Link
+              href={`/gallery/${featuredProject.slug}/`}
+              className="et-hero-media"
+              style={{ display: 'block' }}
+            >
+              <Image
+                src={featuredCover.src}
+                alt={featuredCover.alt}
+                width={featuredCover.width}
+                height={featuredCover.height}
+                sizes="(min-width: 1360px) 652px, (min-width: 1024px) 50vw, 100vw"
+                priority
+              />
+            </Link>
+            <div className="et-stack">
+              <span className="et-eyebrow">
+                {featuredProject.suburb} · {featuredProject.service}
+              </span>
+              <h1 className="et-h1 et-measure-tight">
+                Bathroom renovations we have completed across Sydney.
+              </h1>
+              <p className="et-lead et-measure">
+                Real photographs from Artarmon, Balmain, Little Bay and The
+                Rocks. Each room has its own layout, materials and constraints.
+              </p>
+              <Link
+                href={`/gallery/${featuredProject.slug}/`}
+                className="et-body-sm et-link"
+                style={{ display: 'inline-flex', width: 'fit-content' }}
+              >
+                See the {featuredProject.name}
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Recent projects</span>
           <h2 className="et-h2 et-measure-tight">
-            {projects.length} recent Sydney bathrooms
+            {projects.length - 1} more photographed projects
           </h2>
 
           <div
             className="et-grid et-grid-3"
             style={{ marginTop: 'var(--et-space-8)' }}
           >
-            {projects.map((project, index) => {
+            {projects.slice(1).map((project) => {
               const cover = projectCover(project)
               return (
                 <Link
@@ -127,8 +155,7 @@ export default function GalleryPage() {
                          390→310, 768→664, 1024+→344 (3-col grid caps at
                          the 1200px container, doesn't keep growing). */
                       sizes="(min-width: 1024px) 344px, (min-width: 768px) 664px, 100vw"
-                      priority={index === 0}
-                      loading={index === 0 ? 'eager' : 'lazy'}
+                      loading="lazy"
                     />
                   </span>
                   <span className="et-badge-suburb">{project.suburb}</span>
@@ -166,10 +193,8 @@ export default function GalleryPage() {
         intro="The gallery shows real projects by suburb. The area pages explain where we work across Sydney and link the project proof to the service coverage."
         band="surface"
       />
-
       <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Also completed</span>
           <h2 className="et-h2 et-measure-tight">
             Two more projects worth describing
           </h2>
@@ -178,12 +203,15 @@ export default function GalleryPage() {
             is worth explaining.
           </p>
 
-          <div
-            className="et-grid et-grid-2"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
+          <div className="et-stack" style={{ marginTop: 'var(--et-space-8)' }}>
             {TEXT_ONLY_PROJECTS.map((project) => (
-              <article key={project.name} className="et-card">
+              <article
+                key={project.name}
+                style={{
+                  borderTop: '1px solid var(--et-border)',
+                  paddingBlock: 'var(--et-space-6)',
+                }}
+              >
                 <h3 className="et-h4">{project.name}</h3>
                 <p
                   className="et-body-sm"

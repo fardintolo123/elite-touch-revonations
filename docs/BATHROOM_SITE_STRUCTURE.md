@@ -52,6 +52,30 @@ One page per region. Each briefly covers the whole area, links out to that regio
 
 ---
 
+## Search Console query signals (2026-11-02; D-10 test incomplete)
+
+The supplied `Queries.csv` contains query-level results, while `Pages.csv` contains page-level
+totals. They are separate aggregates, not a query-by-page export, so they do not show which page
+ranked for each suburb query. The export also does not include Google Keyword Planner volumes. The
+figures below are therefore useful as a preliminary signal, but they are not enough to complete the
+D-10 test or promote a suburb.
+
+| Query | Impressions | Avg position | GKP volume |
+|---|---:|---:|---|
+| `bathroom renovations hornsby` | 176 | 26.45 | Not supplied |
+| `bathroom renovations artarmon` | 73 | 25.51 | Not supplied |
+| `bathroom renovations pymble` | 66 | 46.74 | Not supplied |
+| `bathroom renovations five dock` | 43 | 44.74 | Not supplied |
+| `bathroom renovations balmain` | 65 | 25.15 | Not supplied |
+
+Separately, `Pages.csv` reports the North Shore hub at 382 impressions (average position 39.52) and
+the Inner West hub at 195 impressions (average position 37.50). These totals cannot be attributed
+to any one query. Both hub pages already show their relevant photographed local projects and link
+to those project pages; the North Shore hub covers Hornsby, Artarmon and Pymble, while the Inner
+West hub covers Five Dock and Balmain. Keep the current hub structure in place; do not promote a
+suburb until a true query-by-page export and the required Keyword Planner volume checks are
+available.
+
 ## Recommended URL / route structure
 
 ```

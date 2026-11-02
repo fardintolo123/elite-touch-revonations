@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
 import { formatReviewBody, reviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
-import { PageHero } from '@/components/PageHero'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
 import { projects } from '@/lib/projects'
@@ -33,6 +33,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const heroProject = projects.find((p) => p.slug === 'artarmon-bathroom')!
+const heroImage = heroProject.images[2]
 
 export default function AboutPage() {
   return (
@@ -47,140 +48,141 @@ export default function AboutPage() {
           { name: 'About Us', url: `${businessInfo.siteUrl}/about-us/` },
         ]}
       />
-      <PageHero
-        eyebrow="About us"
-        title="A Sydney family business that only renovates wet areas."
-        leads={[
-          `The Dawood family started Elite Touch Renovations in ${businessInfo.foundedYear}. We work across Sydney. We are small on purpose: the people who quote your job are the people who run it.`,
-          // Owner confirmed commercial work 2026-08-19 (D-67). Wording is the
-          // owner's own from the About PDF — it widens the CLIENT TYPE only.
-          // The four services are unchanged (D-01), and no commercial-specific
-          // compliance claim is made.
-          'We take on both residential and commercial projects, though most of our work is family homes.',
-        ]}
-        image={{ project: heroProject, imageIndex: 2 }}
-      />
+      <section className="et-hero">
+        <div className="et-container">
+          <div className="et-hero-grid">
+            <div className="et-stack">
+              <div className="et-hero-media">
+                <Image
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  width={heroImage.width}
+                  height={heroImage.height}
+                  sizes="(min-width: 1360px) 652px, (min-width: 1024px) 50vw, 100vw"
+                  priority
+                />
+              </div>
+              <Link
+                href={`/gallery/${heroProject.slug}/`}
+                className="et-body-sm et-link"
+                style={{ display: 'inline-flex', width: 'fit-content' }}
+              >
+                See the {heroProject.name}
+              </Link>
+            </div>
+            <div className="et-stack">
+              <h1 className="et-h1 et-measure-tight">
+                A Sydney family business that only renovates wet areas.
+              </h1>
+              <p className="et-lead et-measure">
+                The Dawood family started Elite Touch Renovations in{' '}
+                {businessInfo.foundedYear}. We work across Sydney. The people
+                who quote your job also run it.
+              </p>
+              <div className="et-hero-cta">
+                <Link
+                  href="/contact-us/"
+                  className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
+                >
+                  {businessInfo.offer.primaryCta}
+                </Link>
+                <a
+                  href={businessInfo.phone.href}
+                  className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
+                >
+                  Call {businessInfo.phone.display}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ---------------- The family ---------------- */}
       <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Who you will deal with</span>
           <h2 className="et-h2 et-measure-tight">The Dawood family</h2>
           <p className="et-lead et-measure">
-            Customers use our names in reviews. That shows how we work: the
-            people you meet stay with your job after you sign.
+            Customers name us in reviews. The people you meet run your job.
+          </p>
+          <p className="et-body-sm et-measure">
+            We work on homes and commercial projects. Most of our work is
+            family homes.
           </p>
 
-          <div
-            className="et-grid et-grid-2"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
+          <dl className="et-stack" style={{ marginTop: 'var(--et-space-4)' }}>
             {businessInfo.principals.map((person) => (
-              <div key={person.name} className="et-card">
-                <h3 className="et-h4">{person.name}</h3>
-                <p
-                  className="et-caption"
-                  style={{
-                    marginTop: 'var(--et-space-2)',
-                    color: 'var(--et-text-accent)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.12em',
-                  }}
+              <div
+                key={person.name}
+                style={{
+                  borderTop: '1px solid var(--et-border)',
+                  paddingBlock: 'var(--et-space-5)',
+                }}
+              >
+                <dt className="et-h4">{person.name}</dt>
+                <dd
+                  className="et-stack-tight"
+                  style={{ marginInlineStart: 0, marginTop: 'var(--et-space-2)' }}
                 >
-                  {person.role}
-                </p>
-                <p
-                  className="et-body-sm"
-                  style={{
-                    marginTop: 'var(--et-space-4)',
-                    color: 'var(--et-text-secondary)',
-                  }}
-                >
-                  {person.detail}
-                </p>
+                  <p className="et-caption">{person.role}</p>
+                  <p className="et-body-sm et-measure">{person.detail}</p>
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
 
       {/* ---------------- Credentials ---------------- */}
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Credentials</span>
           <h2 className="et-h2 et-measure-tight">
             What we are licensed and required to do.
           </h2>
 
-          <div
-            className="et-grid et-grid-3"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
-            <div className="et-card">
-              <h3 className="et-h4">NSW Builder Licence</h3>
-              <p
-                className="et-lead"
-                style={{ marginTop: 'var(--et-space-2)', color: 'var(--et-text)' }}
-              >
-                {businessInfo.builderLicence}
-              </p>
-              <p
-                className="et-body-sm"
-                style={{
-                  marginTop: 'var(--et-space-3)',
-                  color: 'var(--et-text-secondary)',
-                }}
-              >
-                Check it on the{' '}
+          <dl className="et-stack" style={{ marginTop: 'var(--et-space-4)' }}>
+            <div
+              style={{
+                borderTop: '1px solid var(--et-border)',
+                paddingBlock: 'var(--et-space-5)',
+              }}
+            >
+              <dt className="et-h4">NSW Builder Licence</dt>
+              <dd className="et-body-sm" style={{ marginInlineStart: 0 }}>
+                Licence number {businessInfo.builderLicence}. Check it on the{' '}
                 <ExternalLink href={businessInfo.authorities.nswLicenceRegister}>
                   NSW Fair Trading register
-                </ExternalLink>{' '}
-                before you hire anyone, including us.
-              </p>
+                </ExternalLink>
+              </dd>
             </div>
-
-            <div className="et-card">
-              <h3 className="et-h4">Waterproofing</h3>
-              <p
-                className="et-lead"
-                style={{ marginTop: 'var(--et-space-2)', color: 'var(--et-text)' }}
-              >
+            <div
+              style={{
+                borderTop: '1px solid var(--et-border)',
+                paddingBlock: 'var(--et-space-5)',
+              }}
+            >
+              <dt className="et-h4">Waterproofing</dt>
+              <dd className="et-body-sm" style={{ marginInlineStart: 0 }}>
                 <ExternalLink href={businessInfo.authorities.as3740}>
                   {businessInfo.standards.waterproofing}
                 </ExternalLink>
-              </p>
-              <p
-                className="et-body-sm"
-                style={{
-                  marginTop: 'var(--et-space-3)',
-                  color: 'var(--et-text-secondary)',
-                }}
-              >
-                We use primer and two coats to meet current Australian
-                Standards. Every package includes a certificate.
-              </p>
+                . We use primer and two coats. Each package includes a
+                certificate. We work to current Australian Standards.
+              </dd>
             </div>
-
-            <div className="et-card">
-              <h3 className="et-h4">Quoting</h3>
-              <p
-                className="et-lead"
-                style={{ marginTop: 'var(--et-space-2)', color: 'var(--et-text)' }}
-              >
-                Fixed scope, in writing
-              </p>
-              <p
-                className="et-body-sm"
-                style={{
-                  marginTop: 'var(--et-space-3)',
-                  color: 'var(--et-text-secondary)',
-                }}
-              >
-                After a free on-site measure. You see what is included and what
-                is not before you commit.
-              </p>
+            <div
+              style={{
+                borderTop: '1px solid var(--et-border)',
+                paddingBlock: 'var(--et-space-5)',
+              }}
+            >
+              <dt className="et-h4">Quoting</dt>
+              <dd className="et-body-sm" style={{ marginInlineStart: 0 }}>
+                After a free on-site measure, we write the scope. You see what
+                is included and what is not before you commit.
+              </dd>
             </div>
-          </div>
+          </dl>
 
           {/* Licences, insurances and statutory protections — all owner-supplied
               (issue #2). Every one of these is checkable, which is the point:
@@ -194,16 +196,15 @@ export default function AboutPage() {
                 Licences, insurance and protections
               </h3>
               <p className="et-body-sm et-measure">
-                Bathroom work must meet NSW law and the
-                {' '}
+                NSW bathroom work must meet the law and the{' '}
                 <ExternalLink href={businessInfo.authorities.nccWetAreas}>
                   National Construction Code
                 </ExternalLink>
-                . Our jobs meet the rules for licences and insurance.
+                . We meet the rules for licences and insurance.
               </p>
             </div>
 
-            <div className="et-card">
+            <div>
               <ul className="et-checklist">
                 <li className="et-body-sm">
                   <strong>NSW Builder Licence:</strong>{' '}
@@ -251,13 +252,19 @@ export default function AboutPage() {
             <h3 className="et-h3 et-measure-tight">
               The standards every trade works to
             </h3>
-            <div
-              className="et-grid et-grid-3"
+            <ul
+              className="et-stack"
               style={{ marginTop: 'var(--et-space-6)' }}
             >
               {businessInfo.standards.full.map((standard) => (
-                <div key={standard.code} className="et-card">
-                  <p className="et-h4">
+                <li
+                  key={standard.code}
+                  style={{
+                    borderTop: '1px solid var(--et-border)',
+                    paddingBlock: 'var(--et-space-4)',
+                  }}
+                >
+                  <h4 className="et-h4">
                     {'authorityKey' in standard ? (
                       <ExternalLink
                         href={businessInfo.authorities[standard.authorityKey]}
@@ -267,19 +274,11 @@ export default function AboutPage() {
                     ) : (
                       standard.code
                     )}
-                  </p>
-                  <p
-                    className="et-body-sm"
-                    style={{
-                      marginTop: 'var(--et-space-2)',
-                      color: 'var(--et-text-secondary)',
-                    }}
-                  >
-                    {standard.what}
-                  </p>
-                </div>
+                  </h4>
+                  <p className="et-body-sm et-measure">{standard.what}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
@@ -292,80 +291,78 @@ export default function AboutPage() {
       */}
       <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Our commitments</span>
           <h2 className="et-h2 et-measure-tight">
             What we put in writing.
           </h2>
 
-          <div
-            className="et-grid et-grid-2"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
-            <div className="et-card et-card-tinted">
-              <h3 className="et-h3">
+          <dl className="et-stack" style={{ marginTop: 'var(--et-space-4)' }}>
+            <div
+              style={{
+                borderTop: '1px solid var(--et-border)',
+                paddingBlock: 'var(--et-space-5)',
+              }}
+            >
+              <dt className="et-h4">
                 {businessInfo.workmanshipWarrantyYears}-year workmanship
                 warranty
-              </h3>
-              <p
-                className="et-body-sm"
-                style={{
-                  marginTop: 'var(--et-space-4)',
-                  color: 'var(--et-text-secondary)',
-                }}
+              </dt>
+              <dd
+                className="et-body-sm et-measure"
+                style={{ marginInlineStart: 0 }}
               >
-                On the work we carry out. This is on top of the warranty that
-                comes with the fittings themselves, and the legal defects
-                period under the{' '}
+                Our {businessInfo.workmanshipWarrantyYears}-year warranty
+                covers our work. Fittings have their own warranty. The{' '}
                 <ExternalLink
                   href={businessInfo.authorities.nswHomeBuildingContracts}
                 >
                   Home Building Act 1989
                 </ExternalLink>
-                .
-              </p>
+                {' '}also sets a defects period.
+              </dd>
             </div>
-
-            <div className="et-card">
-              <h3 className="et-h4">How you pay</h3>
-              <ul
-                className="et-checklist"
-                style={{ marginTop: 'var(--et-space-5)' }}
-              >
-                <li className="et-body-sm">
-                  {businessInfo.offer.deposit} to book your start date
-                </li>
-                <li className="et-body-sm">
-                  A {businessInfo.offer.paymentSchedule}, tied to agreed
-                  milestones
-                </li>
-                <li className="et-body-sm">
-                  You are never asked for money ahead of a milestone
-                </li>
-                <li className="et-body-sm">
-                  {businessInfo.insurance.contract}
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="et-card" style={{ marginTop: 'var(--et-space-6)' }}>
-            <h3 className="et-h4">One tree for every project</h3>
-            <p
-              className="et-body-sm et-measure"
+            <div
               style={{
-                marginTop: 'var(--et-space-3)',
-                color: 'var(--et-text-secondary)',
+                borderTop: '1px solid var(--et-border)',
+                paddingBlock: 'var(--et-space-5)',
               }}
             >
-              {businessInfo.sustainability.claim} Greenfleet is a not-for-profit
-              in Australia. It helps restore native forests.{' '}
-              <ExternalLink
-                href={businessInfo.sustainability.partnerUrl}
+              <dt className="et-h4">How you pay</dt>
+              <dd style={{ marginInlineStart: 0 }}>
+                <ul className="et-checklist">
+                  <li className="et-body-sm">
+                    {businessInfo.offer.deposit} to book your start date
+                  </li>
+                  <li className="et-body-sm">
+                    A {businessInfo.offer.paymentSchedule}, tied to agreed
+                    milestones
+                  </li>
+                  <li className="et-body-sm">
+                    We never ask for payment before a milestone.
+                  </li>
+                  <li className="et-body-sm">
+                    {businessInfo.insurance.contract}
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div
+              style={{
+                borderTop: '1px solid var(--et-border)',
+                paddingBlock: 'var(--et-space-5)',
+              }}
+            >
+              <dt className="et-h4">One tree for every project</dt>
+              <dd
+                className="et-body-sm et-measure"
+                style={{ marginInlineStart: 0 }}
               >
-                greenfleet.com.au
-              </ExternalLink>
-            </p>
-          </div>
+                {businessInfo.sustainability.claim}{' '}
+                <ExternalLink href={businessInfo.sustainability.partnerUrl}>
+                  greenfleet.com.au
+                </ExternalLink>
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -376,21 +373,23 @@ export default function AboutPage() {
       */}
       <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Customer reviews</span>
           <h2 className="et-h2 et-measure-tight">
             What our customers have written about us.
           </h2>
           <p className="et-lead et-measure">
-            These are the reviews, word for word, with the names given.
+            These reviews are word for word. We use each name as given.
           </p>
 
-          <div
-            className="et-grid et-grid-2"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
+          <div className="et-grid et-grid-2">
             {reviews.map((review) => (
-              <figure key={review.author} className="et-card">
-                <blockquote className="et-quote">
+              <figure
+                key={review.author}
+                style={{
+                  borderTop: '1px solid var(--et-border)',
+                  paddingBlock: 'var(--et-space-6)',
+                }}
+              >
+                <blockquote className="et-quote et-measure">
                   {formatReviewBody(review.body).split('\n\n').map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}

@@ -38,7 +38,6 @@ export function WorkStrip({
   return (
     <section className={`et-section et-band-${band}`}>
       <div className="et-container et-stack">
-        <span className="et-eyebrow">Our work</span>
         <h2 className="et-h2 et-measure-tight">{title}</h2>
         <p className="et-lead et-measure">{intro}</p>
 

@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { ContactSection } from '@/components/ContactSection'
 import { PageHero } from '@/components/PageHero'
 import { buildMetadata } from '@/lib/metadata'
-import { blogPosts } from '@/lib/blog'
+import { blogPosts, type BlogPost } from '@/lib/blog'
+import styles from './blog.module.css'
 
 export const metadata: Metadata = buildMetadata({
   path: '/blog/',
@@ -11,38 +12,90 @@ export const metadata: Metadata = buildMetadata({
   description: 'Practical bathroom renovation advice for Sydney homeowners, from Elite Touch Renovations.',
 })
 
+function getTopicId(category: string) {
+  return `blog-topic-${category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`
+}
+
+const topicMap = new Map<string, BlogPost[]>()
+for (const post of blogPosts) {
+  const topicPosts = topicMap.get(post.category)
+  if (topicPosts) {
+    topicPosts.push(post)
+  } else {
+    topicMap.set(post.category, [post])
+  }
+}
+
+const blogTopics = Array.from(topicMap, ([category, posts]) => ({
+  category,
+  id: getTopicId(category),
+  posts,
+}))
+
 export default function BlogIndexPage() {
   return (
     <>
       <PageHero
-        eyebrow="Bathroom renovation journal"
-        title="Clear advice before you renovate"
+        eyebrow="Sydney bathroom renovation guides"
+        title="Bathroom renovation guides for Sydney homeowners"
         leads={[
-          'Practical answers about bathroom renovation costs, timelines, quotes and planning in Sydney.',
-          'Use these guides to prepare better questions, then bring your room to us for a free on-site measure and fixed-scope written quote.',
+          'Start with the decision in front of you: price, scope, timing, layout, finishes or strata approval.',
+          'Each guide helps you ask better questions before a free on-site measure and fixed-scope written quote.',
         ]}
       />
 
       <main>
-        <section className="et-section">
-          <div className="et-container">
-            <p className="et-lead et-measure" style={{ marginBottom: 'var(--et-space-10)' }}>
-              Start here. Pick the guide that fits your job. Get clear facts, make a short list of questions, then talk to a team that can measure the room and set out the work in plain terms.
-            </p>
-            <div className="et-blog-grid">
-              {blogPosts.map((post) => (
-                <article key={post.slug} className="et-card et-blog-card">
-                  <span className="et-eyebrow">{post.category}</span>
-                  <h2 className="et-h3">
-                    <Link href={`/blog/${post.slug}/`} className="et-link">
-                      {post.title}
-                    </Link>
+        <section className="et-section et-band-surface">
+          <div className="et-container et-stack">
+            <header className="et-stack-tight">
+              <h2 className="et-h2">Browse renovation guides by topic</h2>
+              <p className="et-body et-measure">
+                Choose the topic that matches your next decision. Each guide includes its reading time.
+              </p>
+            </header>
+
+            <nav className={styles.topicNavigation} aria-label="Blog guide topics">
+              <ul className={styles.topicLinks}>
+                {blogTopics.map((topic) => (
+                  <li key={topic.id}>
+                    <a href={`#${topic.id}`} className={styles.topicLink}>
+                      <span>{topic.category}</span>
+                      <span className={styles.topicCount}>
+                        {topic.posts.length} {topic.posts.length === 1 ? 'guide' : 'guides'}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className={styles.topicSections}>
+              {blogTopics.map((topic) => (
+                <section
+                  key={topic.id}
+                  id={topic.id}
+                  className={styles.topicSection}
+                  aria-labelledby={`${topic.id}-heading`}
+                >
+                  <h2 id={`${topic.id}-heading`} className={`et-h3 ${styles.topicHeading}`}>
+                    {topic.category}
                   </h2>
-                  <p className="et-body">{post.description}</p>
-                  <p className="et-body-sm" style={{ color: 'var(--et-text-secondary)' }}>
-                    {post.readTime}
-                  </p>
-                </article>
+                  <ul className={styles.articleList}>
+                    {topic.posts.map((post) => (
+                      <li key={post.slug} className={styles.articleItem}>
+                        <article className={styles.articleEntry}>
+                          <p className={`et-body-sm ${styles.articleTime}`}>{post.readTime}</p>
+                          <h3 className="et-h4">
+                            <Link href={`/blog/${post.slug}/`} className="et-link">
+                              {post.title}
+                            </Link>
+                          </h3>
+                          <p className={`et-body-sm ${styles.articleDescription}`}>{post.description}</p>
+                        </article>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
               ))}
             </div>
           </div>

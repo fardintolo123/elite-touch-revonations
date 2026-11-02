@@ -91,10 +91,11 @@ export const suburbContent: Record<string, SuburbContent> = {
       'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
-      heading: 'Our work near Baulkham Hills',
+      heading: 'Bathrooms in established Baulkham Hills homes',
       paragraphs: [
-        "We haven't published a photographed Baulkham Hills project yet - we add a suburb's local gallery once a job there is finished and signed off.",
-        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District - our Castle Hill project - on the regional hub page linked below.',
+        'Many established brick homes in Baulkham Hills date from the 1970s to the 1990s. Their original bathrooms can be small, with the toilet in a separate room; opening up that layout is a common request.',
+        'If a renovation moves the dividing wall or toilet drain, it changes the plumbing and framing scope. We check the existing room at the free measure and record the agreed work in writing.',
+        "We haven't published a photographed Baulkham Hills project yet. The Hills District hub shows our nearby Castle Hill bathroom as regional work, not as a Baulkham Hills job.",
       ],
     },
     faqs: [
@@ -126,10 +127,11 @@ export const suburbContent: Record<string, SuburbContent> = {
       'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
-      heading: 'Our work near Kellyville',
+      heading: 'Bathroom layouts in newer estates near Kellyville',
       paragraphs: [
-        "We haven't published a photographed Kellyville project yet - we add a suburb's local gallery once a job there is finished and signed off.",
-        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Hills District - our Castle Hill project - on the regional hub page linked below.',
+        'In newer estates around Kellyville Ridge and Rouse Hill, many homes are two-storey on a concrete slab, with an upstairs bathroom over living space.',
+        'Where that is your layout, we check the waste-pipe route, floor falls and waterproofing scope at the free measure rather than assume every home is built the same way.',
+        "We haven't published a photographed Kellyville project yet. The Hills District hub shows our nearby Castle Hill bathroom as regional work, not as a Kellyville job.",
       ],
     },
     faqs: [
@@ -161,10 +163,10 @@ export const suburbContent: Record<string, SuburbContent> = {
       'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
-      heading: 'Our work near Marrickville',
+      heading: 'Older plumbing and floors in Marrickville bathrooms',
       paragraphs: [
-        "We haven't published a photographed Marrickville project yet - we add a suburb's local gallery once a job there is finished and signed off.",
-        'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in the Inner West - our Balmain project - on the regional hub page linked below.',
+        'Older plumbing and timber floors can be uncovered when a Marrickville bathroom is opened up. Before the written scope is finalised, we check the floor substrate and existing services and set out how hidden conditions will be handled.',
+        "There isn't a photographed Marrickville project on this site yet. The Inner West hub links to the Balmain renovation: that real project is identified as Balmain, not Marrickville.",
       ],
     },
     faqs: [
@@ -196,9 +198,10 @@ export const suburbContent: Record<string, SuburbContent> = {
       'A small bathroom renovation starts from $18,000 for a room about 1.5 by 1.8 by 2.4 metres on the <a href="/packages/" class="et-link">Basic package</a>. Standard starts from $25,000 and Premium from $30,000. The final price is firm after a free on-site measure. Every job is carried out under NSW Builder Licence 475204C and includes a <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">10-year workmanship warranty</a>.',
     ],
     localAngle: {
-      heading: 'Our work near Ryde',
+      heading: 'The closest photographed bathroom project to Ryde',
       paragraphs: [
-        "We haven't published a photographed Ryde project yet - we add a suburb's local gallery once a job there is finished and signed off.",
+        'The closest photographed regional example is the Gladesville bathroom. It ran for three weeks and included a full strip-out, waterproofing, tiling, a new shower, custom vanity storage and plumbing and electrical upgrades.',
+        "That project is in Gladesville, not Ryde. We haven't published a photographed Ryde job yet; we check your room, access and existing services at the free on-site measure before setting out the scope.",
         'In the meantime, you can see a real, photographed bathroom renovation we completed nearby in North-Western Sydney - our Gladesville project - on the regional hub page linked below.',
       ],
     },

@@ -69,6 +69,16 @@ function suburbPageDescription(suburb: Suburb, hasProject: boolean): string {
     : `Bathroom renovations in ${suburb.name} by Elite Touch Renovations. Free on-site measure and fixed-scope quotes.`
 }
 
+function regionAreaLabel(region: Region): string {
+  return region.name.endsWith(' Sydney') ? region.name : `the ${region.name}`
+}
+
+function regionLocationLabel(region: Region): string {
+  return region.name.endsWith(' Sydney')
+    ? region.name
+    : `Sydney's ${region.name}`
+}
+
 function SuburbLocationPage({
   suburb,
   region,
@@ -166,7 +176,6 @@ function SuburbLocationPage({
       {project ? (
         <section className="et-section et-band-canvas">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">Local proof</span>
             <h2 className="et-h2 et-measure-tight">
               A real bathroom renovation completed in {suburb.name}
             </h2>
@@ -180,7 +189,7 @@ function SuburbLocationPage({
                   alt={project.images[0].alt}
                   width={project.images[0].width}
                   height={project.images[0].height}
-                  sizes="(min-width: 1024px) 960px, 100vw"
+                  sizes="(min-width: 1360px) 1200px, (min-width: 1024px) calc(100vw - 160px), (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)"
                   loading="lazy"
                 />
               </span>
@@ -195,7 +204,6 @@ function SuburbLocationPage({
         nearbyProject && (
           <section className="et-section et-band-canvas">
             <div className="et-container et-stack">
-              <span className="et-eyebrow">Local proof, coming soon</span>
               <h2 className="et-h2 et-measure-tight">
                 We haven&rsquo;t photographed a {suburb.name} job yet
               </h2>
@@ -214,7 +222,7 @@ function SuburbLocationPage({
                     alt={nearbyProject.images[0].alt}
                     width={nearbyProject.images[0].width}
                     height={nearbyProject.images[0].height}
-                    sizes="(min-width: 1024px) 960px, 100vw"
+                    sizes="(min-width: 1360px) 1200px, (min-width: 1024px) calc(100vw - 160px), (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)"
                     loading="lazy"
                   />
                 </span>
@@ -231,7 +239,6 @@ function SuburbLocationPage({
       {content && (
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">Local knowledge</span>
             <h2 className="et-h2 et-measure-tight">
               {content.localAngle.heading}
             </h2>
@@ -253,9 +260,8 @@ function SuburbLocationPage({
 
       <section className="et-section et-band-ink">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">The same standard on every job</span>
           <h2 className="et-h2 et-measure-tight">
-            Licensed bathroom renovations across {suburb.name}
+            AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty
           </h2>
           <ul className="et-checklist">
             <li className="et-body-sm">
@@ -284,7 +290,6 @@ function SuburbLocationPage({
         <section className="et-section et-band-surface">
           <div className="et-container">
             <div className="et-stack">
-              <span className="et-eyebrow">FAQ</span>
               <h2 className="et-h2 et-measure-tight">
                 {suburb.name} bathroom renovation questions
               </h2>
@@ -469,7 +474,7 @@ export default async function LocationHubPage({
       <SchemaGraph
         path={`/services/${LOCATION_PARENT_SLUG}/${region.slug}/`}
         name={`Bathroom Renovations ${region.name}`}
-        description={`Bathroom renovations across Sydney's ${region.name} by Elite Touch Renovations. Free on-site measure, fixed-scope written quotes, waterproofing to AS 3740 and a ${businessInfo.workmanshipWarrantyYears}-year workmanship warranty.`}
+        description={`Bathroom renovations across ${regionLocationLabel(region)} by Elite Touch Renovations. Free on-site measure, fixed-scope written quotes, waterproofing to AS 3740 and a ${businessInfo.workmanshipWarrantyYears}-year workmanship warranty.`}
         breadcrumbs={[
           { name: 'Home', url: `${businessInfo.siteUrl}/` },
           { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
@@ -490,8 +495,8 @@ export default async function LocationHubPage({
         backLabel="Bathroom renovations"
         eyebrow={region.name}
         caption={`Reviewed ${reviewedMonth}`}
-        title={`Bathroom renovations on Sydney’s ${region.name}`}
-        lead={`We strip out, waterproof to ${businessInfo.standards.waterproofing}, tile and fit off across the ${region.name} - and we put the full scope and price in writing before anyone picks up a tool.`}
+        title={`Bathroom renovations across ${regionLocationLabel(region)}`}
+        lead={`We strip out, waterproof to ${businessInfo.standards.waterproofing}, tile and fit off across ${regionAreaLabel(region)} - and we put the full scope and price in writing before anyone picks up a tool.`}
         project={localProjects[0]}
         projectLabel={
           localProjects[0]
@@ -515,9 +520,8 @@ export default async function LocationHubPage({
       {hub && (
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">In short</span>
             <h2 className="et-h2 et-measure-tight">
-              What a bathroom renovation here costs and involves
+              What a bathroom renovation in {regionAreaLabel(publishedRegion)} costs and involves
             </h2>
             {hub.answer.map((para, index) => (
               <p
@@ -543,11 +547,10 @@ export default async function LocationHubPage({
       {localProjects.length > 0 && (
         <section className="et-section et-band-canvas">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">Work we have done here</span>
             <h2 className="et-h2 et-measure-tight">
               {localProjects.length === 1
-                ? 'A project we completed in this area'
-                : `${localProjects.length} projects we completed in this area`}
+                ? `A project completed in ${regionAreaLabel(publishedRegion)}`
+                : `${localProjects.length} projects completed across ${regionAreaLabel(publishedRegion)}`}
             </h2>
             <p className="et-lead et-measure">
               These are our own photographs of finished work, in the suburbs
@@ -555,10 +558,17 @@ export default async function LocationHubPage({
             </p>
 
             <div
-              className="et-grid et-grid-3"
-              style={{ marginTop: 'var(--et-space-8)' }}
+              className={
+                localProjects.length === 1
+                  ? 'et-container-narrow'
+                  : 'et-grid et-grid-2'
+              }
+              style={{
+                marginTop: 'var(--et-space-8)',
+                marginInline: 'auto',
+              }}
             >
-              {localProjects.map((project, index) => (
+              {localProjects.map((project) => (
                 <Link
                   key={project.slug}
                   href={`/gallery/${project.slug}/`}
@@ -570,7 +580,11 @@ export default async function LocationHubPage({
                       alt={project.images[0].alt}
                       width={project.images[0].width}
                       height={project.images[0].height}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      sizes={
+                        localProjects.length === 1
+                          ? '(min-width: 784px) 640px, (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)'
+                          : '(min-width: 1360px) 548px, (min-width: 1024px) calc(50vw - 132px), (min-width: 768px) calc(50vw - 108px), calc(100vw - 104px)'
+                      }
                       loading="lazy"
                     />
                   </span>
@@ -603,7 +617,6 @@ export default async function LocationHubPage({
       {hub && (
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">Local knowledge</span>
             <h2 className="et-h2 et-measure-tight">
               {hub.localAngle.heading}
             </h2>
@@ -627,8 +640,7 @@ export default async function LocationHubPage({
       {testimonial && (
         <section className="et-section et-band-ink">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">Customer review</span>
-            <figure className="et-card et-card-dark">
+            <figure style={{ margin: 0 }}>
               <blockquote className="et-quote">
                 {formatReviewBody(testimonial.body).split('\n\n').map((para, index) => (
                   <p key={index}>{para}</p>
@@ -645,7 +657,6 @@ export default async function LocationHubPage({
       {/* ---- Suburb list ---- */}
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Where we work</span>
           <h2 className="et-h2 et-measure-tight">
             {region.name} suburbs we service
           </h2>
@@ -679,52 +690,37 @@ export default async function LocationHubPage({
 
       <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Plan the next step</span>
           <h2 className="et-h2 et-measure-tight">
-            Compare areas and package options
+            Other Sydney areas and packages
           </h2>
           <p className="et-lead et-measure">
-            If you are comparing a few Sydney areas or working out the size of
-            the job, these pages sit closest to this one.
+            See other published bathroom-renovation areas, or compare package
+            starting prices and written inclusions.
           </p>
 
-          <div
-            className="et-grid et-grid-3"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
-            {siblingRegions.map((item) => (
-              <Link
-                key={item.slug}
-                href={`${item.hubUrl}/`}
-                className="et-card et-card-link"
-              >
-                <h3 className="et-h4">{item.name}</h3>
-                <p
-                  className="et-body-sm"
-                  style={{
-                    marginTop: 'var(--et-space-3)',
-                    color: 'var(--et-text-secondary)',
-                  }}
-                >
-                  See bathroom renovation work and service coverage for this
-                  area.
-                </p>
-              </Link>
-            ))}
-            <Link href="/packages/" className="et-card et-card-link">
-              <h3 className="et-h4">Packages and pricing</h3>
-              <p
-                className="et-body-sm"
-                style={{
-                  marginTop: 'var(--et-space-3)',
-                  color: 'var(--et-text-secondary)',
-                }}
-              >
-                Compare what changes between the Basic, Standard and Premium
-                scopes.
-              </p>
-            </Link>
-          </div>
+          <nav aria-label="Related bathroom renovation pages">
+            <ul
+              className="et-facts"
+              style={{
+                marginTop: 'var(--et-space-8)',
+                listStyle: 'none',
+                padding: 0,
+              }}
+            >
+              {siblingRegions.map((item) => (
+                <li key={item.slug} className="et-fact">
+                  <Link href={`${item.hubUrl}/`} className="et-link">
+                    Bathroom renovations in {item.name}
+                  </Link>
+                </li>
+              ))}
+              <li className="et-fact">
+                <Link href="/packages/" className="et-link">
+                  Packages and pricing
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
       </section>
 
@@ -734,7 +730,6 @@ export default async function LocationHubPage({
         <section className="et-section et-band-surface">
           <div className="et-container">
             <div className="et-stack">
-              <span className="et-eyebrow">FAQ</span>
               <h2 className="et-h2 et-measure-tight">
                 {region.name}: common bathroom renovation questions
               </h2>
@@ -770,15 +765,14 @@ export default async function LocationHubPage({
       {/* ---- What every job includes ---- */}
       <section className="et-section et-band-ink">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">The same standard everywhere</span>
           <h2 className="et-h2 et-measure-tight">
-            What you get, whichever suburb you are in.
+            AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty
           </h2>
           <div
             className="et-grid et-grid-2"
             style={{ marginTop: 'var(--et-space-8)' }}
           >
-            <div className="et-card et-card-dark">
+            <div>
               <h3 className="et-h4">Every renovation</h3>
               <ul
                 className="et-checklist"
@@ -808,7 +802,7 @@ export default async function LocationHubPage({
                 </li>
               </ul>
             </div>
-            <div className="et-card et-card-dark">
+            <div>
               <h3 className="et-h4">Licensed and insured</h3>
               <ul
                 className="et-checklist"

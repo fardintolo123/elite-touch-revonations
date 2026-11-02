@@ -43,7 +43,7 @@ export default function ServicesPage() {
         ]}
       />
       <PageHero
-        eyebrow="Our services"
+        eyebrow={`${services.length} renovation services`}
         title="Bathroom renovation services across Sydney."
         leads={[
           'Choose the room that needs work: a main bathroom, ensuite, bathroom and laundry together, or powder room. We plan the layout, scope and trade sequence around that wet area, then put it in writing before work starts.',

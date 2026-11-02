@@ -160,7 +160,7 @@ export default async function ServicePage({
         }
       />
 
-        <section className="et-section et-band-surface">
+        <section className="et-section et-band-canvas">
           <div className="et-container">
             <GoogleRating />
           </div>
@@ -169,7 +169,6 @@ export default async function ServicePage({
       {about && (
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
-            <span className="et-eyebrow">What this service solves</span>
             <h2 className="et-h2 et-measure-tight">{about.heading}</h2>
             {about.paragraphs.map((paragraph, index) => (
               <p
@@ -189,7 +188,6 @@ export default async function ServicePage({
         <div className="et-container">
           <div className="et-grid et-grid-2">
             <div className="et-stack">
-              <span className="et-eyebrow">What is included</span>
               <h2 className="et-h2 et-measure-tight">
                 What does the written scope cover?
               </h2>
@@ -205,15 +203,13 @@ export default async function ServicePage({
               </p>
             </div>
 
-            <div className="et-card">
-              <ul className="et-checklist">
-                {STANDARD_INCLUSIONS.map((item) => (
-                  <li key={item.key} className="et-body-sm">
-                    {item.body}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="et-checklist">
+              {STANDARD_INCLUSIONS.map((item) => (
+                <li key={item.key} className="et-body-sm">
+                  {item.body}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -225,7 +221,6 @@ export default async function ServicePage({
       {showBuildDurations && (
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">How long it takes</span>
           <h2 className="et-h2 et-measure-tight">
             How long you will have us in the house.
           </h2>
@@ -236,30 +231,26 @@ export default async function ServicePage({
             how that is handled in the quote, not afterwards.
           </p>
 
-          <div
-            className="et-grid et-grid-3"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
-            {businessInfo.buildDurations.map((item) => (
-              <div key={item.label} className="et-card">
-                <p className="et-h3">{item.weeks}</p>
-                <h3
-                  className="et-h4"
-                  style={{ marginTop: 'var(--et-space-4)' }}
-                >
-                  {item.label}
-                </h3>
-                <p
-                  className="et-body-sm"
-                  style={{
-                    marginTop: 'var(--et-space-2)',
-                    color: 'var(--et-text-secondary)',
-                  }}
-                >
-                  {item.detail}
-                </p>
-              </div>
-            ))}
+          <div className="et-table-wrap">
+            <table className="et-table">
+              <caption>Typical on-site programs by renovation scope</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Renovation scope</th>
+                  <th scope="col">Time on site</th>
+                  <th scope="col">What changes the program</th>
+                </tr>
+              </thead>
+              <tbody>
+                {businessInfo.buildDurations.map((item) => (
+                  <tr key={item.label}>
+                    <th scope="row">{item.label}</th>
+                    <td>{item.weeks}</td>
+                    <td>{item.detail}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -267,8 +258,7 @@ export default async function ServicePage({
 
       <section className="et-section et-band-ink">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Customer review</span>
-          <figure className="et-card et-card-dark">
+          <figure style={{ margin: 0 }}>
             <blockquote className="et-quote">
               <p>{formatReviewBody(review.body)}</p>
             </blockquote>
@@ -287,31 +277,28 @@ export default async function ServicePage({
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">Also from us</span>
           <h2 className="et-h2 et-measure-tight">Our other services</h2>
-          <div
-            className="et-grid et-grid-3"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
+          <ul className="et-checklist">
             {others.map((item) => (
-              <Link
-                key={item.slug}
-                href={`/services/${item.slug}/`}
-                className="et-card et-card-link"
-              >
-                <h3 className="et-h4">{item.title}</h3>
+              <li key={item.slug}>
+                <Link
+                  href={`/services/${item.slug}/`}
+                  className="et-h4 et-link"
+                >
+                  {item.title}
+                </Link>
                 <p
                   className="et-body-sm"
                   style={{
-                    marginTop: 'var(--et-space-3)',
+                    marginTop: 'var(--et-space-2)',
                     color: 'var(--et-text-secondary)',
                   }}
                 >
                   {item.summary}
                 </p>
-              </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -319,7 +306,6 @@ export default async function ServicePage({
         <section className="et-section et-band-surface">
           <div className="et-container">
             <div className="et-stack">
-              <span className="et-eyebrow">FAQ</span>
               <h2 className="et-h2 et-measure-tight">
                 Frequently asked questions about {service.title.toLowerCase()}
               </h2>

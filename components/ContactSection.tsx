@@ -37,7 +37,6 @@ export function ContactSection({
       <div className="et-container">
         <div className="et-grid et-grid-2 et-grid-align-center">
           <div className="et-stack">
-            <span className="et-eyebrow">Get in touch</span>
             <h2 className="et-h2 et-measure-tight">{title}</h2>
             <p className="et-lead et-measure">{intro}</p>
 
