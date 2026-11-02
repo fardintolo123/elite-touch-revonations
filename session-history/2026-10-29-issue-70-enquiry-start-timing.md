@@ -100,22 +100,22 @@ change.
 - No live Resend email or production Supabase test lead.
 - Matched mobile Lighthouse runs were added after the original implementation pass; results are in
   `docs/PERFORMANCE_BUDGET.md` and show no repeatable regression.
-- No push, deployment, or issue closure; those still require owner authorisation/current workflow.
+- Commits `eaf81c0`, `977ed74`, `dabed77`, and `6f2db63` are on remote `main`; issue #70
+  closed on 2026-10-30.
 
 ## 6. Current Project State
 
-- The issue #70 implementation and its spacing refinement are committed locally and all scoped
+- The issue #70 implementation and its spacing refinement are on remote `main`, and all scoped
   checks pass.
-- Issue #70 remains open. The consultant-tips plan says it is locally verified and should be ticked
-  only after the code is pushed and the issue closes.
+- Issue #70 is closed. The consultant-tips plan records E3 as shipped.
 - The four exact labels are rendered from the server-validated allowlist.
 - Selected, omitted and tampered submissions all succeed; only allowlisted timing reaches email or
   Supabase.
 - The final screenshots show a balanced 2×2 group at 390px and 1440px with no overflow.
 - The first independent reviewer found one P2 field-spacing issue. Commit `977ed74` corrected it;
   the exact-final reviewer returned ACCEPT with no P0/P1 finding.
-- Unrelated issue #71 and sitewide design-audit changes/temporary evidence coexist in the worktree and
-  must not be included in the issue #70 commit.
+- Issue #71 subsequently shipped and closed separately; unrelated sitewide worktree changes remain
+  outside the issue #70 commits.
 
 ## 7. Files Changed
 
@@ -197,10 +197,7 @@ None.
 
 ### High Priority
 
-1. Commit only the issue #70 paths listed above with an explicit pathspec.
-2. Obtain owner approval before pushing.
-3. After push, confirm remote `main` contains the issue #70 commit, close issue #70, and change E3 to
-   checked in the consultant-tips plan in the same reconciled change.
+None for issue #70. The implementation is on remote `main`, the issue is closed, and E3 is checked.
 
 ### Medium Priority
 
@@ -216,12 +213,11 @@ None. D-155 and issue #70 settle the product scope.
 
 ## 15. Next Session Handoff
 
-- Inspect `git status`, `git log`, issue #70 and this handoff first.
+- Issue #70 is complete; inspect `git status`, `git log`, issue #70 and this handoff before any
+  follow-up work.
 - Preserve the exact four labels and the verified 2×2 composition.
 - Do not add budget, make timing required, or create a database column.
-- Do not include unrelated issue #71, design-audit files, or their temporary screenshots in any issue
-  #70 commit.
-- Push/deploy only with owner approval. Close/tick issue #70 only after its commit is on remote `main`.
+- Keep design-audit files and temporary screenshots outside any future issue #70 follow-up commit.
 
 ## 16. Potential Documentation Updates
 

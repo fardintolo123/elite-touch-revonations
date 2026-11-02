@@ -57,8 +57,8 @@ impressions, clicks, calls and enquiries. The 4 Elements Painting verdicts are i
 - [x] Triage
 - [x] E1 #68 — shipped as `d46fd39`; closed 2026-10-28
 - [x] E2 #69 — shipped as `cf50660`; closed 2026-10-28
-- [ ] E3 #70 — implemented and verified locally 2026-10-29; close and tick after push
-- [ ] E4 #71
+- [x] E3 #70 — shipped as `eaf81c0` with verification follow-ups through `6f2db63`; closed 2026-10-30
+- [x] E4 #71 — shipped as `16ed718`; closed 2026-11-02
 - [ ] E5 #72
 
 All opened 2026-10-25; tick each item when its issue closes.

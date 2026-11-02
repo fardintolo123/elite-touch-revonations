@@ -83,7 +83,7 @@ verify the result in served HTML and a real browser.
 - Five projects without figures render no facts list or qualification and retain their prior layout.
 - All 11 gallery routes return 200 in the local production server sweep.
 - The six changed sitemap entries have `lastmod` 2026-10-29.
-- Issue #71 remains open pending an explicit closure instruction. Nothing was pushed or deployed.
+- Commit `16ed718` is on remote `main`; issue #71 closed with owner approval on 2026-11-02.
 - Other unrelated files are modified or untracked by concurrent sessions; they were preserved.
 
 ## 7. Files Changed
@@ -148,7 +148,7 @@ No performance regression is known.
 
 ### Medium Priority
 
-- Close issue #71 only if the owner explicitly authorizes the external state change.
+None for issue #71. The owner authorized the external state change and the issue is closed.
 
 ### Low Priority
 
@@ -166,7 +166,7 @@ No performance regression is known.
 
 - Read issue #71 and this handoff first.
 - Inspect `lib/projects.ts` and `app/gallery/[slug]/page.tsx`; do not recreate the facts row.
-- Check the issue comment and current state before deciding whether any tracker update remains.
+- Issue #71 is complete; check the issue comment and current state before any follow-up work.
 - Do not infer price years or package tiers.
 - Do not touch unrelated dirty files; concurrent issue #70, privacy, design-audit, and shared-form
   work was active during this session.
