@@ -358,7 +358,8 @@ page and every section, new and existing. `DESIGN.md` stays authoritative for th
   icon or number do the explaining. Keep three visible hierarchy levels and one focal point per
   viewport at 390 + 1440. Every nav dropdown row gets an icon (inline SVG, `DESIGN.md` §8.8 style, no
   new dependency) and a short label, not a sentence. Trimming never unmounts SEO copy (collapse with
-  CSS) and never touches a Business Rules fact. Run the density audit prompt in
+  CSS) and never changes a Business Rules fact: a fact may leave the hero (D-175 moved the licence
+  and AS 3740 row out) but must stay on the site (footer, About, FAQ, schema). Run the density audit prompt in
   `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §10 with `impeccable` before and after.
 - **One or two signature elements per page.** The rest is carried by real photos, reviews and facts.
 - **Judge the rendered page, not the code.** Screenshots at 390 + 1440, an independent critique

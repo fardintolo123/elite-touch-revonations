@@ -214,10 +214,12 @@ const HOME_FAQS = [
   },
 ] as const
 
-/* The hero photograph. Castle Hill's double vanity is the strongest single
-   image we have and it is genuinely our work, in a Tier-1 suburb. */
-const heroProject = projects.find((p) => p.slug === 'castle-hill-bathroom')!
-const heroImage = heroProject.images[0]
+/* The hero photograph (D-174: bigger, and a whole room rather than two basins).
+   Hornsby's shower and bath with the corner window onto the paddock and the
+   lit niche is the most distinctive full-room frame we have, and it is our
+   work. images[1] is `shower-bath-lit-niche`; the alt text comes from the data. */
+const heroProject = projects.find((p) => p.slug === 'hornsby-bathroom')!
+const heroImage = heroProject.images[1]
 
 /* Then / now: The Rocks is the one pair whose window wall lines up between
    the before and after photos (D-160). Facts come from lib/projects.ts. */
@@ -230,7 +232,9 @@ const servicesProject = projectBySlug('hornsby-ensuite')!
 const servicesImage = servicesProject.images[0]
 
 export default function HomePage() {
-  const [firstReview, secondReview] = featuredReviews(2)
+  /* The hero no longer carries a review card (D-174); the first featured review
+     is skipped so the section below keeps showing the same one as before. */
+  const [, secondReview] = featuredReviews(2)
 
   return (
     <>
@@ -251,15 +255,14 @@ export default function HomePage() {
             <figure className={styles.heroMedia}>
               {/* LCP candidate: eager + high priority. Our own photograph,
                   with alt text describing the photo (D-66). Rendered width
-                  measured with Playwright: 390→350, 1440→483 (the desktop
-                  column keeps its previous 0.85fr share). */}
+                  measured with Playwright: 390→350, 1440→516; the square crop of a 3:2 photo scales it to ~516 x 1.5, so `sizes` asks for 780 so the crop stays sharp. */}
               <div className={styles.heroPhoto}>
                 <Image
                   src={heroImage.src}
                   alt={heroImage.alt}
                   width={heroImage.width}
                   height={heroImage.height}
-                  sizes="(min-width: 1024px) 483px, 100vw"
+                  sizes="(min-width: 1024px) 780px, 100vw"
                   priority
                 />
               </div>
@@ -272,15 +275,16 @@ export default function HomePage() {
             </figure>
 
             <div className={`et-stack ${styles.heroIntro}`}>
-              <span className="et-eyebrow">Sydney · Family-run since 2022</span>
+              {/* "Sydney" is already in the H1, so the pill carries only the fact. */}
+              <span className={`et-eyebrow ${styles.heroEyebrow}`}>Family-run since 2022</span>
 
               <h1 className="et-display et-measure-tight">
                 Bathroom renovations near you in Sydney.
               </h1>
 
               <p className="et-lead et-measure">
-                We measure your bathroom on site, then put the work, exclusions
-                and price in writing before strip-out starts.
+                We measure on site, then put the work, exclusions and price in
+                writing.
               </p>
             </div>
 
@@ -299,15 +303,9 @@ export default function HomePage() {
                 </a>
               </div>
 
+              {/* Licence and AS 3740 left the hero (D-174: visitors do not weigh
+                  them here). They stay in the footer, About page, FAQ and schema. */}
               <ul className="et-facts">
-                <li className="et-fact">
-                  <strong>NSW Builder Licence</strong>{' '}
-                  {businessInfo.builderLicence}
-                </li>
-                <li className="et-fact">
-                  <strong>Waterproofing</strong>{' '}
-                  {businessInfo.standards.waterproofing} + certificate
-                </li>
                 <li className="et-fact">
                   <strong>Quotes</strong> Fixed scope, in writing
                 </li>
@@ -317,25 +315,6 @@ export default function HomePage() {
                 </li>
               </ul>
             </div>
-
-            {/* Social proof early — verbatim, attributed as written */}
-            <aside className={`et-card et-card-tinted ${styles.heroReview}`}>
-              <blockquote className="et-quote">
-                <p>{formatReviewBody(firstReview.body)}</p>
-              </blockquote>
-              <p className="et-quote-author">By {firstReview.author}</p>
-              <p
-                className="et-body-sm"
-                style={{
-                  marginTop: 'var(--et-space-6)',
-                  color: 'var(--et-text-secondary)',
-                }}
-              >
-                <Link href="/about-us/" className="et-link">
-                  Read more customer reviews
-                </Link>
-              </p>
-            </aside>
           </div>
         </div>
       </section>

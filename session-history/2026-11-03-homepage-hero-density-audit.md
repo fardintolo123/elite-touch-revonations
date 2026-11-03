@@ -1,0 +1,40 @@
+# Session Summary — homepage hero density audit (D-174 / D-175)
+
+## 1. Session Objective
+Turn outside feedback ("too much text, not enough visuals, hero overloaded, generic dropdowns") into a
+rule and an audit prompt, then audit and fix the homepage hero using the owner's annotated screenshot
+(keep the four room buttons that lead to the enquiry form).
+
+## 2. Work Completed
+- Rule in `CLAUDE.md` Design Standard, decision D-174, audit prompt in
+  `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §10 (commit `6b4cc9d`).
+- Measured before/after on a fresh production build (port 3345, Playwright, 390 and 1440).
+  Hero visible words 130 → 65; lead 18 → 13 words; hero height at 1440 970 → 868 px; hero photo
+  483×362 → 515×515 (area +52%); homepage hero H1 stays two lines at ≥1280.
+- Hero changes (`app/page.tsx`, `app/page.module.css`, `components/HomeEnquiryStarter.tsx`):
+  - photo: Castle Hill double vanity → Hornsby bathroom `shower-bath-lit-niche` (images[1]), square crop,
+    `sizes` 780 so the crop stays sharp (image request 640 → 828 rung; +13.5 KB)
+  - eyebrow: "Sydney ·" dropped (already in the H1), smaller padding
+  - lead cut to "We measure on site, then put the work, exclusions and price in writing."
+  - label "Choose your room to book a free on-site measure" → "Book a free on-site measure"
+  - removed: "Not sure yet? Request a free measure" link, licence + AS 3740 fact row, hero testimonial card
+  - kept: rating, the four room buttons, Call button, "Quotes fixed scope" and 10-year warranty facts
+- Checks: build green (twice), `check:design` PASS, `check:readability` home 63.9 PASS (`/blog/` 53.2 FAIL is
+  pre-existing and untouched), served HTML still has every kept phrase, exactly one image preload,
+  no horizontal overflow at 768/1024.
+
+## 3. Important Decisions
+- **D-175 (hero):** licence and AS 3740 leave the hero (owner: "ppl doesn't know what that means or care").
+  They stay in the footer, About page, FAQ and schema, so no Business Rules fact is changed.
+- The "Not sure yet" link was removed because the owner crossed it out; the form still has the
+  "Not sure yet" option and the Call button covers the unsure visitor. Easy to restore.
+- Nav dropdown icons (second half of the feedback) were **not** done in this session.
+
+## 4. Permanent Rules / Lessons
+- A `cover` crop changes what `sizes` should say: size it for the scaled image, not the visible box.
+- Measure the H1 line count whenever hero column widths change; it flipped to three lines at 1.0fr/1.05fr.
+- Do not redirect build logs to a path that does not exist (`../tmp`); use the scratchpad.
+
+## 5. Unfinished / Open
+- Nav dropdown icons and short labels (D-174) still to do.
+- Independent `vision-auditor` critique: no P0/P1. Open P2s (owner's call): no filled primary button in the hero body; "in writing" appears twice (lead + Quotes fact). Crop was moved to `object-position: 38% 50%` after the critique so no fixture is clipped.
