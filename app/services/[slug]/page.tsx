@@ -133,6 +133,19 @@ export default async function ServicePage({
     'hideBuildDurations' in service && service.hideBuildDurations
   )
 
+  /* D-177: real photos were 71% of the way down the page. Where the service has an
+     evidenced hero photo (bathroom, ensuite) the work strip now follows the opening
+     answer. Laundry and powder-room have no photographed jobs of their own (D-83/D-06),
+     so they keep the strip at the end rather than imply proof of that work up top. */
+  const workStripFirst = Boolean(heroProject)
+  const workStrip = (
+    <WorkStrip
+      title="Bathrooms we have finished"
+      intro="Our own photographs, with the suburb each job was in."
+      band="canvas"
+    />
+  )
+
   return (
     <>
       <SchemaGraph
@@ -151,9 +164,10 @@ export default async function ServicePage({
         service={service}
       />
       <PageHero
-        eyebrow={service.title}
         title={service.h1}
         leads={[service.summary]}
+        /* The rating sits in the hero (D-177) instead of alone in its own band. */
+        rating={<GoogleRating compact />}
         image={
           heroProject
             ? { project: heroProject, imageIndex: heroImageRef?.imageIndex }
@@ -164,12 +178,6 @@ export default async function ServicePage({
            borrowing a bathroom photo. */
         backdrop={Boolean(heroProject)}
       />
-
-        <section className="et-section et-band-canvas">
-          <div className="et-container">
-            <GoogleRating />
-          </div>
-        </section>
 
       {about && (
         <section className="et-section et-band-surface">
@@ -188,6 +196,8 @@ export default async function ServicePage({
           </div>
         </section>
       )}
+
+      {workStripFirst && workStrip}
 
       <section className="et-section et-band-canvas">
         <div className="et-container">
@@ -322,11 +332,7 @@ export default async function ServicePage({
         </section>
       )}
 
-      <WorkStrip
-        title="Bathrooms we have finished"
-        intro="Our own photographs, with the suburb each job was in."
-        band="canvas"
-      />
+      {!workStripFirst && workStrip}
 
       <ContactSection />
 

@@ -46,3 +46,14 @@ rule and an audit prompt, then audit and fix the homepage hero using the owner's
 - Icon maps live in `NavIcon.tsx` (`serviceIcon`, `topicIcon`); an unmapped service/category falls back to a neutral icon.
 - Wording in CLAUDE.md, D-174 and checklist §10 changed from "every dropdown row" to "every row that names a destination type; suburbs stay plain".
 - Verified on a production build: 390 + 1440 dropdown screenshots, 16 icons in each of desktop and mobile menu HTML, `check:design` PASS.
+
+## 7. Follow-on: services and location pages audit and fix (D-177)
+- Audit report (kept in repo): `.impeccable/critique/2026-11-03-services-and-location-density-audit.md`.
+- Fixed: `components/LocationHero.tsx` (slim, 11 pages), `components/PageHero.tsx` (optional eyebrow, `rating`),
+  `components/GoogleRating.tsx` (`compact`), `components/layout/NavIcon.tsx` (`size="lg"`), `app/globals.css`,
+  `app/services/page.tsx` (icon cards, inline rating), `app/services/[slug]/page.tsx` (rating in hero, work strip up),
+  `app/services/[slug]/[location]/page.tsx` (new leads, no chips).
+- Checks: build green, `check:design` PASS, `check:readability` all 16 affected URLs PASS, one H1 and correct preload on each.
+- Open (next round): lighten or drop the hero scrim and stop repeating the project photo; number strip for prices/warranty;
+  vary section composition; mobile length (work cards, contact block); trust-band duplication; laundry/powder hero gap.
+- Not yet audited: packages, gallery and project pages, About, Contact, blog index and posts, homepage below the hero.

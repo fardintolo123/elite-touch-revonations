@@ -8,6 +8,8 @@ import { PageHero } from '@/components/PageHero'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { projects } from '@/lib/projects'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
+import { GoogleRating } from '@/components/GoogleRating'
+import { NavIcon, serviceIcon } from '@/components/layout/NavIcon'
 
 /**
  * Services index — an existing indexed URL on the WordPress site (it is in
@@ -30,6 +32,16 @@ export const metadata: Metadata = buildMetadata({
 
 const heroProject = projects.find((p) => p.slug === 'hornsby-bathroom')!
 
+/* One short line per card (D-177), each taken from that service's own summary in
+   `lib/businessInfo.ts` so it adds no new claim. The full summary stays on the
+   service page. */
+const CARD_LINES: Record<string, string> = {
+  'bathroom-renovations': 'For awkward layouts, worn finishes and ageing waterproofing.',
+  'ensuite-bathroom-renovations': 'For small rooms where ventilation, storage and noise need solving.',
+  'laundry-renovations': 'One program, one trade sequence, one disruption instead of two.',
+  'powder-room-renovations': 'For tight layouts where the door, basin and toilet must fit.',
+}
+
 export default function ServicesPage() {
   return (
     <>
@@ -43,11 +55,11 @@ export default function ServicesPage() {
         ]}
       />
       <PageHero
-        eyebrow={`${services.length} renovation services`}
         title="Bathroom renovation services across Sydney."
         leads={[
-          'Choose the room that needs work: a main bathroom, ensuite, bathroom and laundry together, or powder room. We plan the layout, scope and trade sequence around that wet area, then put it in writing before work starts.',
+          'Pick the room that needs work. We plan the layout and scope around it, then put it in writing before work starts.',
         ]}
+        rating={<GoogleRating compact />}
         image={{ project: heroProject }}
         backdrop
       />
@@ -61,7 +73,10 @@ export default function ServicesPage() {
                 href={`/services/${service.slug}/`}
                 className="et-card et-card-link"
               >
-                <h2 className="et-h3">{service.title}</h2>
+                <NavIcon name={serviceIcon(service.slug)} size="lg" />
+                <h2 className="et-h3" style={{ marginTop: 'var(--et-space-5)' }}>
+                  {service.title}
+                </h2>
                 <p
                   className="et-body-sm"
                   style={{
@@ -69,7 +84,7 @@ export default function ServicesPage() {
                     color: 'var(--et-text-secondary)',
                   }}
                 >
-                  {service.summary}
+                  {CARD_LINES[service.slug] ?? service.summary}
                 </p>
                 <p
                   className="et-body-sm"

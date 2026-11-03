@@ -122,14 +122,10 @@ function SuburbLocationPage({
       <LocationHero
         backHref={`${region.hubUrl}/`}
         backLabel={`${region.name} bathroom renovations`}
-        eyebrow={`${suburb.name} · ${parentService.title}`}
-        caption={
-          project
-            ? `A photographed project in ${suburb.name}`
-            : `Bathroom renovations in ${suburb.name}`
-        }
         title={`Bathroom renovations in ${suburb.name}`}
-        lead={project?.blurb ?? content?.answer[0] ?? description}
+        /* One short line (D-177). The fuller description is the first paragraph of the
+           "In short" section directly below, so the hero no longer repeats it. */
+        lead={`Strip-out to handover in ${suburb.name}, with the scope and price in writing first.`}
         project={project ?? nearbyProject}
         projectLabel={
           project
@@ -138,15 +134,7 @@ function SuburbLocationPage({
               ? `See our ${nearbyProject.suburb} project nearby`
               : undefined
         }
-        rating={<GoogleRating />}
-        facts={[
-          { label: 'NSW Builder Licence', value: businessInfo.builderLicence },
-          {
-            label: `${businessInfo.workmanshipWarrantyYears}-year`,
-            value: 'workmanship warranty',
-          },
-          { label: 'Free on-site measure', value: 'across Sydney' },
-        ]}
+        rating={<GoogleRating compact />}
       />
 
       <section className="et-section et-band-surface">
@@ -493,25 +481,16 @@ export default async function LocationHubPage({
       <LocationHero
         backHref={`/services/${LOCATION_PARENT_SLUG}/`}
         backLabel="Bathroom renovations"
-        eyebrow={region.name}
         caption={`Reviewed ${reviewedMonth}`}
         title={`Bathroom renovations across ${regionLocationLabel(region)}`}
-        lead={`We strip out, waterproof to ${businessInfo.standards.waterproofing}, tile and fit off across ${regionAreaLabel(region)} - and we put the full scope and price in writing before anyone picks up a tool.`}
+        lead={`Strip-out to handover across ${regionAreaLabel(region)}, with the scope and price in writing first.`}
         project={localProjects[0]}
         projectLabel={
           localProjects[0]
-            ? `Featured project: ${localProjects[0].suburb} - ${localProjects[0].name}`
+            ? `See the ${localProjects[0].suburb} project`
             : undefined
         }
-        rating={<GoogleRating />}
-        facts={[
-          { label: 'NSW Builder Licence', value: businessInfo.builderLicence },
-          {
-            label: `${businessInfo.workmanshipWarrantyYears}-year`,
-            value: 'workmanship warranty',
-          },
-          { label: `${suburbs.length} suburbs`, value: 'served in this area' },
-        ]}
+        rating={<GoogleRating compact />}
       />
 
       {/* ---- Answer-first lead. A self-contained 134–167 word block an AI answer

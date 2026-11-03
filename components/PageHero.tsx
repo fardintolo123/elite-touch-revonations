@@ -47,21 +47,25 @@ export function PageHero({
   title,
   leads,
   cta = true,
+  rating,
   facts,
   image,
   backdrop = false,
 }: {
-  eyebrow: string
+  /** Omit when the pill would only restate the H1 (D-177). */
+  eyebrow?: string
   title: string
   leads: string[]
   cta?: boolean
+  /** One inline rating line under the CTAs (`<GoogleRating compact />`). */
+  rating?: ReactNode
   facts?: PageHeroFact[]
   image?: PageHeroImage
   backdrop?: boolean
 }) {
   const copy = (
     <div className="et-stack">
-      <span className="et-eyebrow">{eyebrow}</span>
+      {eyebrow && <span className="et-eyebrow">{eyebrow}</span>}
       <h1 className="et-h1 et-measure-tight">{title}</h1>
       {leads.map((lead, index) => (
         <p key={index} className="et-lead et-measure">
@@ -86,6 +90,8 @@ export function PageHero({
           </a>
         </div>
       )}
+
+      {rating}
 
       {facts && facts.length > 0 && (
         <ul className="et-facts">

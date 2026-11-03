@@ -2,9 +2,11 @@ import { businessInfo } from '@/lib/businessInfo'
 
 type GoogleRatingProps = {
   className?: string
+  /** One inline line with no card (D-177): for heroes, where the card out-shone the CTA. */
+  compact?: boolean
 }
 
-export function GoogleRating({ className }: GoogleRatingProps) {
+export function GoogleRating({ className, compact = false }: GoogleRatingProps) {
   const profile = businessInfo.googleBusinessProfile
 
   if (!profile.verifiedLive) return null
@@ -16,7 +18,9 @@ export function GoogleRating({ className }: GoogleRatingProps) {
 
   return (
     <a
-      className={['et-google-rating', className].filter(Boolean).join(' ')}
+      className={['et-google-rating', compact && 'et-google-rating-compact', className]
+        .filter(Boolean)
+        .join(' ')}
       href={profile.url}
       rel="noopener noreferrer"
       target="_blank"

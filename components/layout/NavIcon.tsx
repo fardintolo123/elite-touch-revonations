@@ -32,13 +32,24 @@ const ICONS = {
 
 export type NavIconName = keyof typeof ICONS
 
-export function NavIcon({ name }: { name: NavIconName }) {
+export function NavIcon({
+  name,
+  size = 'sm',
+}: {
+  name: NavIconName
+  /** `lg` is the DESIGN.md 8.8 icon tile (48px) for service cards (D-177). */
+  size?: 'sm' | 'lg'
+}) {
+  const px = size === 'lg' ? 24 : 18
   return (
-    <span className="et-nav-icon" aria-hidden="true">
+    <span
+      className={size === 'lg' ? 'et-nav-icon et-nav-icon-lg' : 'et-nav-icon'}
+      aria-hidden="true"
+    >
       <svg
         viewBox="0 0 24 24"
-        width="18"
-        height="18"
+        width={px}
+        height={px}
         fill="none"
         stroke="currentColor"
         strokeWidth="1.6"

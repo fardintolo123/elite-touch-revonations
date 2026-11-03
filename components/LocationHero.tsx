@@ -4,34 +4,36 @@ import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import type { Project } from '@/lib/projects'
 
-type LocationHeroFact = { label: string; value: ReactNode }
-
 /**
  * Full-bleed hero for location pages.
  *
  * The photo is always a real project already associated with the page. The
- * overlay keeps the location copy, CTAs, and trust facts readable while the
- * gallery link makes the image's provenance visible rather than decorative.
+ * overlay keeps the location copy and CTAs readable while the credit link makes
+ * the image's provenance visible rather than decorative.
+ *
+ * D-177 (D-174 applied): the hero holds the H1, one line, the two CTAs, one
+ * inline rating and one quiet credit line. The eyebrow pill, the caption above
+ * the H1, the three fact chips and the "featured project" pill that used to
+ * stack here were each restating something the page says lower down (licence,
+ * warranty and AS 3740 sit in the trust band and the footer; the suburb is in
+ * the H1). The back link stays as the page's one hierarchy cue.
  */
 export function LocationHero({
   backHref,
   backLabel,
-  eyebrow,
   caption,
   title,
   lead,
-  facts,
   project,
   projectLabel,
   rating,
 }: {
   backHref: string
   backLabel: string
-  eyebrow: string
-  caption: string
+  /** Quiet text before the project link, e.g. "Reviewed September 2026". */
+  caption?: string
   title: string
   lead: string
-  facts: LocationHeroFact[]
   project?: Project
   projectLabel?: string
   rating?: ReactNode
@@ -58,8 +60,6 @@ export function LocationHero({
             ← {backLabel}
           </Link>
         </p>
-        <span className="et-eyebrow et-eyebrow-on-image">{eyebrow}</span>
-        <p className="et-caption et-location-hero-caption">{caption}</p>
         <h1 className="et-h1 et-measure-tight">{title}</h1>
         <p className="et-lead et-measure et-location-hero-lead">{lead}</p>
 
@@ -80,21 +80,16 @@ export function LocationHero({
 
         {rating}
 
-        <ul className="et-facts et-location-hero-facts">
-          {facts.map((fact) => (
-            <li key={fact.label} className="et-fact">
-              <strong>{fact.label}</strong> {fact.value}
-            </li>
-          ))}
-        </ul>
-
-        {project && (
-          <Link
-            href={`/gallery/${project.slug}/`}
-            className="et-location-hero-project"
-          >
-            {projectLabel ?? `${project.suburb} - ${project.name}`} <span aria-hidden="true">↗</span>
-          </Link>
+        {(caption || project) && (
+          <p className="et-body-sm et-location-hero-credit">
+            {caption}
+            {caption && project ? ' · ' : null}
+            {project && (
+              <Link href={`/gallery/${project.slug}/`} className="et-location-hero-project">
+                {projectLabel ?? `${project.suburb} - ${project.name}`}
+              </Link>
+            )}
+          </p>
         )}
       </div>
     </section>
