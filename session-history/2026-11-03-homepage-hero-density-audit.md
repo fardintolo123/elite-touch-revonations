@@ -38,3 +38,11 @@ rule and an audit prompt, then audit and fix the homepage hero using the owner's
 ## 5. Unfinished / Open
 - Nav dropdown icons and short labels (D-174) still to do.
 - Independent `vision-auditor` critique: no P0/P1. Open P2s (owner's call): no filled primary button in the hero body; "in writing" appears twice (lead + Quotes fact). Crop was moved to `object-position: 38% 50%` after the critique so no fixture is clipped.
+
+## 6. Follow-on: dropdown icons (D-176)
+- `components/layout/NavIcon.tsx` (new, server component, inline SVG) + `components/layout/SiteHeader.tsx` + `app/globals.css`.
+  Services, Blogs and About panels: icon tile + the same text. Suburb/region links stay plain.
+- Row height 56px → 48px after critique; blogs panel ~482 → ~416px tall.
+- Icon maps live in `NavIcon.tsx` (`serviceIcon`, `topicIcon`); an unmapped service/category falls back to a neutral icon.
+- Wording in CLAUDE.md, D-174 and checklist §10 changed from "every dropdown row" to "every row that names a destination type; suburbs stay plain".
+- Verified on a production build: 390 + 1440 dropdown screenshots, 16 icons in each of desktop and mobile menu HTML, `check:design` PASS.

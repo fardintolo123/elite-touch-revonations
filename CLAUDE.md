@@ -356,7 +356,7 @@ page and every section, new and existing. `DESIGN.md` stays authoritative for th
   and one real proof item. Cut visible explanatory copy hard (target: at least half of the hero's
   words, measured first) unless a line carries a fact, trust signal or search term, and let a photo,
   icon or number do the explaining. Keep three visible hierarchy levels and one focal point per
-  viewport at 390 + 1440. Every nav dropdown row gets an icon (inline SVG, `DESIGN.md` §8.8 style, no
+  viewport at 390 + 1440. Every nav dropdown row that names a destination type gets an icon (suburb links stay plain; inline SVG, `DESIGN.md` §8.8 style, no
   new dependency) and a short label, not a sentence. Trimming never unmounts SEO copy (collapse with
   CSS) and never changes a Business Rules fact: a fact may leave the hero (D-175 moved the licence
   and AS 3740 row out) but must stay on the site (footer, About, FAQ, schema). Run the density audit prompt in

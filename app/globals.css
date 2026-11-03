@@ -1200,6 +1200,39 @@ svg {
   background: var(--et-surface-accent);
   color: var(--et-text-accent);
 }
+/* Dropdown rows with an icon (D-176): a quiet neutral tile that turns accent on hover, so fifteen
+   rows do not shout. Suburb links have no icon on purpose. */
+.et-nav-panel a.et-nav-link-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--et-space-3);
+  min-height: 44px;
+  /* 32px tile + 2 x 8px = a 48px row: still above the 44px target, without the 56px the default
+     12px padding gave (independent critique: panels grew 25%). */
+  padding-block: var(--et-space-2);
+}
+.et-nav-icon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--et-radius-sm);
+  background: var(--et-ink-50);
+  color: var(--et-text-secondary);
+  transition: color var(--et-duration-instant) var(--et-ease-standard),
+    background-color var(--et-duration-instant) var(--et-ease-standard);
+}
+.et-nav-panel a:hover .et-nav-icon,
+.et-nav-panel a:focus-visible .et-nav-icon,
+.et-nav-panel .et-nav-panel-index .et-nav-icon {
+  background: var(--et-surface-accent);
+  color: var(--et-text-accent);
+}
+.et-nav-panel-label {
+  flex: 1;
+  min-width: 0;
+}
 .et-nav-panel .et-nav-panel-index {
   grid-column: 1 / -1;
   margin-bottom: var(--et-space-2);

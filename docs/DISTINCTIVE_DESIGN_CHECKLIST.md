@@ -184,7 +184,7 @@ opinion or the code: start from the rendered page.
 4. Fix the highest-impact findings: the hero keeps only the H1 (service + location), one line, the
    primary CTA with tap-to-call, and one real proof item; cut explanatory copy by at least half
    where the numbers show it is there; three visible hierarchy levels and one focal point per
-   viewport; every dropdown row gets an icon and a short label.
+   viewport; every dropdown row that names a destination type (not the suburb links) gets an icon and a short label.
 5. Keep: every Business Rules fact, URLs, metadata, schema, internal links and call tracking. SEO
    copy that leaves view stays in the served HTML (collapse with CSS, never unmount). Icons are
    inline SVG in the DESIGN.md 8.8 style: no new dependency, no invented content.

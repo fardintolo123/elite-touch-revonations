@@ -4,6 +4,7 @@ import { businessInfo, services } from '@/lib/businessInfo'
 import { blogTopics } from '@/lib/blog'
 import { publishedRegions, publishedSuburbs } from '@/lib/locations'
 import { HoverNavMenu } from './HoverNavMenu'
+import { NavIcon, serviceIcon, topicIcon } from './NavIcon'
 
 /**
  * Server component. No `'use client'` — DECISIONS.md D-31 and the "'use client'
@@ -48,11 +49,17 @@ function ServicesPanel() {
   return (
     <div className="et-nav-panel et-nav-panel-services">
       <div className="et-nav-panel-services-list">
-        <Link href="/services/" className="et-nav-panel-index">
+        <Link href="/services/" className="et-nav-panel-index et-nav-link-icon">
+          <NavIcon name="grid" />
           All services
         </Link>
         {services.map((service) => (
-          <Link key={service.slug} href={`/services/${service.slug}/`}>
+          <Link
+            key={service.slug}
+            href={`/services/${service.slug}/`}
+            className="et-nav-link-icon"
+          >
+            <NavIcon name={serviceIcon(service.slug)} />
             {service.title}
           </Link>
         ))}
@@ -101,9 +108,18 @@ function ServicesHoverMenu() {
 function AboutPanel() {
   return (
     <div className="et-nav-panel et-nav-panel-compact">
-      <Link href="/about-us/">About us</Link>
-      <Link href="/privacy/">Privacy policy</Link>
-      <Link href="/terms/">Terms of use</Link>
+      <Link href="/about-us/" className="et-nav-link-icon">
+        <NavIcon name="people" />
+        About us
+      </Link>
+      <Link href="/privacy/" className="et-nav-link-icon">
+        <NavIcon name="lock" />
+        Privacy policy
+      </Link>
+      <Link href="/terms/" className="et-nav-link-icon">
+        <NavIcon name="scales" />
+        Terms of use
+      </Link>
     </div>
   )
 }
@@ -138,12 +154,14 @@ function AboutHoverMenu() {
 function BlogsPanel() {
   return (
     <div className="et-nav-panel et-nav-panel-blogs">
-      <Link href="/blog/" className="et-nav-panel-index">
-        All guides
+      <Link href="/blog/" className="et-nav-panel-index et-nav-link-icon">
+        <NavIcon name="book" />
+        <span className="et-nav-panel-label">All guides</span>
       </Link>
       {blogTopics.map((topic) => (
-        <Link key={topic.id} href={`/blog/#${topic.id}`}>
-          {topic.category}
+        <Link key={topic.id} href={`/blog/#${topic.id}`} className="et-nav-link-icon">
+          <NavIcon name={topicIcon(topic.category)} />
+          <span className="et-nav-panel-label">{topic.category}</span>
           <span className="et-nav-panel-count">{topic.posts.length}</span>
         </Link>
       ))}
