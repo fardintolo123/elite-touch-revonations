@@ -191,7 +191,7 @@ instruction, settled decisions, or the code-level source of truth for what is cu
 | Task type | Read first |
 |---|---|
 | **Anything, if unsure whether it's been decided** | [DECISIONS.md](DECISIONS.md) |
-| **UI / design / visual / component** | [DESIGN.md](DESIGN.md) — authoritative. Do not invent tokens. Then `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` — the AI-look lens and the rendered-screenshot gate |
+| **UI / design / visual / component** | [DESIGN.md](DESIGN.md) — authoritative. Do not invent tokens. Then `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` — the AI-look lens and the rendered-screenshot gate. Skill **`impeccable`** for the design work and the independent critique ([PRODUCT.md](PRODUCT.md) is its product brief; critiques are saved to `.impeccable/critique/`) |
 | **Design audit of an existing page or section** ("does this look AI-generated / templated?") | `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §4–§7 — screenshots at 390 + 1440 first, findings in its §6 format, **preserve what works**. Its §8 tracker maps every route class to its issue |
 | **New page or section** | `DESIGN.md` → `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` (write the visual direction first) → `docs/SEO_CONTENT_GUIDE.md` → `docs/CONTENT_QUALITY_CHECKLIST.md` → `docs/SEO_AEO_GEO_CHECKLIST.md` |
 | **Copywriting / readability** | `docs/CONTENT_QUALITY_CHECKLIST.md` |
@@ -229,6 +229,11 @@ only the roles that match the work.
 | Image/media issue | Media Creator |
 | Complex UI implementation | Designer + Developer + Vision Auditor |
 | Landing-page or conversion work | Relevant combination of Designer + Copywriter + Media Creator + Developer + Vision Auditor |
+
+**Recommended skills (use by default):** design/UX → **`impeccable`** (run its `context` first;
+`PRODUCT.md` and `DESIGN.md` are at the repo root) · SEO audits → **`seo`**, **`seo-audit`**, the
+`seo-*` family · code review → **`code-review`** · run the app → **`run`**. `impeccable` is a
+user-level skill (`~/.claude/skills/impeccable`), not vendored in this repo.
 
 Tool support differs:
 - **Claude Code:** project subagents live in `.claude/agents/` and can be invoked as real subagents.
@@ -306,8 +311,8 @@ page and every section, new and existing. `DESIGN.md` stays authoritative for th
   banned outright, but each needs a business reason written in the issue or PR. Pills and card radii
   are `DESIGN.md` system choices, not violations. *Volume and repetition* are what fail.
 - **One or two signature elements per page.** The rest is carried by real photos, reviews and facts.
-- **Judge the rendered page, not the code.** Screenshots at 390 + 1440, an independent critique,
-  fix, repeat. For existing pages, **preserve what works**: fix the finding, and keep URLs,
+- **Judge the rendered page, not the code.** Screenshots at 390 + 1440, an independent critique
+  (skill **`impeccable`** in a fresh context, or the `vision-auditor` subagent), fix, repeat. For existing pages, **preserve what works**: fix the finding, and keep URLs,
   metadata, schema, internal links and call tracking.
 - **Never fabricate** photos, reviews, results or credentials to make a section look "real". The
   Business Rules still bind.
