@@ -162,3 +162,35 @@ These are starting points for the issues, not a complete audit.
   Nothing to change from the scan alone.
 - **Known open finding:** P1 mobile sticky header height (~377px at 390×844) in the 2026-09-29
   critique. Re-check it on the current build before acting.
+
+## 10. Density and hierarchy audit (D-174)
+
+Use when a page feels too wordy, the hero is crowded, or a menu is plain text. Paste this as the
+session prompt, filling in the routes:
+
+```text
+Audit density and visual hierarchy of <routes> before changing anything. Do not start from my
+opinion or the code: start from the rendered page.
+
+1. Read PRODUCT.md, DESIGN.md, CLAUDE.md (Design Standard, Conversion Rules, Business Rules),
+   DECISIONS.md D-158 and D-174, and docs/DISTINCTIVE_DESIGN_CHECKLIST.md.
+2. Measure first. With Playwright on a fresh production build, take full-page screenshots at
+   390x844 and 1440x900. From the rendered DOM record: visible words per section, text blocks and
+   CTAs above the fold, and for each nav dropdown the rows with and without an icon and the words
+   per row. Save the numbers; they are the "before".
+3. Run the impeccable skill in a fresh context with the screenshots, the numbers and DESIGN.md
+   only: critique, then distill on the hero, clarify on the copy, layout on the hierarchy. Report
+   findings in section 6 format, P0 to P3.
+4. Fix the highest-impact findings: the hero keeps only the H1 (service + location), one line, the
+   primary CTA with tap-to-call, and one real proof item; cut explanatory copy by at least half
+   where the numbers show it is there; three visible hierarchy levels and one focal point per
+   viewport; every dropdown row gets an icon and a short label.
+5. Keep: every Business Rules fact, URLs, metadata, schema, internal links and call tracking. SEO
+   copy that leaves view stays in the served HTML (collapse with CSS, never unmount). Icons are
+   inline SVG in the DESIGN.md 8.8 style: no new dependency, no invented content.
+6. Prove it: before and after word counts and screenshots; a blur test (blur the screenshot and
+   the focal point still reads); an independent critique with no P0/P1; npm run check:design,
+   check:readability and a green build; curl the served HTML and grep distinctive phrases from
+   every section you shortened.
+Finish with the Executive Summary and the session handoff file.
+```

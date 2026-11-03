@@ -351,6 +351,15 @@ page and every section, new and existing. `DESIGN.md` stays authoritative for th
   same section composition repeated; motion that explains nothing; stock-looking visuals. None is
   banned outright, but each needs a business reason written in the issue or PR. Pills and card radii
   are `DESIGN.md` system choices, not violations. *Volume and repetition* are what fail.
+- **Show less, say it once** (owner, 2026-11-03 — D-174). One job and one message per section. The
+  hero holds only the H1 (service + location), one supporting line, the primary CTA with tap-to-call
+  and one real proof item. Cut visible explanatory copy hard (target: at least half of the hero's
+  words, measured first) unless a line carries a fact, trust signal or search term, and let a photo,
+  icon or number do the explaining. Keep three visible hierarchy levels and one focal point per
+  viewport at 390 + 1440. Every nav dropdown row gets an icon (inline SVG, `DESIGN.md` §8.8 style, no
+  new dependency) and a short label, not a sentence. Trimming never unmounts SEO copy (collapse with
+  CSS) and never touches a Business Rules fact. Run the density audit prompt in
+  `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §10 with `impeccable` before and after.
 - **One or two signature elements per page.** The rest is carried by real photos, reviews and facts.
 - **Judge the rendered page, not the code.** Screenshots at 390 + 1440, an independent critique
   (skill **`impeccable`** in a fresh context, or the `vision-auditor` subagent), fix, repeat. For existing pages, **preserve what works**: fix the finding, and keep URLs,
