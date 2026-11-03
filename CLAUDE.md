@@ -21,6 +21,16 @@ Read the linked docs; do not assume their contents.
 
 ---
 
+## Session / Chat Naming
+
+At the start of every session, put the repository name in the chat or session title so the project
+is identifiable. Use the prefix **`elite-touch-revonations`** plus a short task description, for
+example **`elite-touch-revonations - Fix enquiry form validation`**. Keep the prefix when renaming or
+continuing the session. If the tool cannot rename the title, state the suggested title in the first
+response.
+
+---
+
 ## Task Depth: Deeper, Not Bigger
 
 When shaping or rewriting a task, deepen the work while preserving the owner's objective, scope, constraints, and deliverables.
@@ -612,6 +622,14 @@ came from, it is not ready to open.
 - Consolidate session-history lessons by pattern, not by copying every incident. Promote only rules
   that are still true, place implementation mechanics in `PROJECT_CONTEXT.md`, and remove obsolete
   status statements while doing the consolidation.
+
+---
+
+## Refactoring Workflow
+
+- Refactors must preserve behaviour: build green, the task-class check from the Testing Workflow, and
+  a browser pass at 390 + 1440 showing no user-visible change. Reuse existing helpers and components
+  over new code. Do not mix a refactor with a content or design change in one commit.
 
 ---
 
