@@ -21,6 +21,13 @@ modes and apply only the relevant ones.
 Do not apply all five roles automatically. The main agent remains responsible for integrating the
 work and verifying the final result.
 
+## Skills
+
+Agent skills in `~/.agents/skills`, `~/.claude/skills` and the project's `.claude/skills` are
+available in VS Code as `/name` commands. The full list, grouped by use, is in `CLAUDE.md` under
+*Specialist Agents → Skills*. For design work and the independent design critique use `impeccable`;
+for SEO audits use `seo` and `seo-audit`. Skill output never overrides the Business Rules.
+
 ## Design Standard
 
 Before building or modifying any UI, define the business-specific visual direction and avoid generic

@@ -9,6 +9,13 @@ Also read `docs/SPECIALIST_AGENTS.md` when a task may benefit from specialist re
 
 For WebMCP work, use the project skill at `.claude/skills/webmcp/SKILL.md`. Claude Code and GitHub Copilot can discover the project skill from that location; Codex should read it when the task matches.
 
+## Skills
+
+User-level skills live in `~/.agents/skills` and are invoked with `$name` or `/skills`. The full list,
+grouped by use, and the rules for which to prefer are in `CLAUDE.md` under *Specialist Agents →
+Skills*. For design work and the independent design critique use `impeccable`; for SEO audits use
+`seo` and `seo-audit`. Skill output never overrides the Business Rules.
+
 ## Design Standard: Must Not Look AI-Generated
 
 Before building or modifying any UI, define the business-specific visual direction: which real
