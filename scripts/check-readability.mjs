@@ -141,6 +141,8 @@ const ROUTES = [
   '/blog/matt-vs-gloss-bathroom-tiles/',
   '/blog/frameless-vs-semi-frameless-shower-screen/',
   '/blog/fixed-scope-quote-vs-provisional-sums-bathroom/',
+  '/blog/how-long-does-a-bathroom-renovation-last/',
+  '/blog/repair-or-replace-bathroom-renovation/',
   '/services/',
   '/services/bathroom-renovations/',
   '/services/ensuite-bathroom-renovations/',

@@ -5356,6 +5356,202 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'how-long-does-a-bathroom-renovation-last',
+    title: 'How long does a bathroom renovation last?',
+    metaTitle: 'How Long Does a Bathroom Renovation Last?',
+    description: 'How long a bathroom renovation lasts, what makes one last longer, and why the waterproofing, tiling and ventilation decide its real lifespan.',
+    published: '2026-11-04',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'A well-built bathroom renovation is usually made to last 15 to 20 years or more before it needs major work. The look may be refreshed sooner, but the room underneath should go the distance.',
+        'What decides this is the work you cannot see once the tiles are on: the waterproofing, the fall of the floor to the drain, the tiling and grout, and the exhaust fan. Get those right and the room lasts. Get them wrong and it fails early, whatever the taps cost.',
+      ],
+      table: {
+        caption: 'Roughly how long each part of a bathroom lasts when it is done well.',
+        columns: ['Part of the bathroom', 'Typical lifespan'],
+        rows: [
+          { label: 'Waterproofing', detail: 'Hidden under the tiles.', value: 'The life of the renovation, done to AS 3740' },
+          { label: 'Tiles and grout', detail: 'Grout may need resealing.', value: '15 to 20 years or more' },
+          { label: 'Taps, shower and toilet', detail: 'The working fittings.', value: '10 to 15 years' },
+          { label: 'Silicone seals', detail: 'Around the shower and basin.', value: '5 to 10 years, then redone' },
+          { label: 'Exhaust fan', detail: 'Clears the damp air.', value: '5 to 10 years' },
+        ],
+      },
+      note: 'These are general guides, not a promise about your room. The firm commitment we make is a 10-year workmanship warranty on the work we do.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What makes a bathroom last?',
+        paragraphs: [
+          'The parts that keep water where it belongs are what make a bathroom last: the waterproofing, the way the floor falls to the drain, and a fan that clears the damp air. When these are right, the tiles stay sound and the walls behind them stay dry.',
+          'Fittings and finishes matter too, but they are the easy part to change later. The hard part to fix is the work sealed under the tiles. That is why a lasting bathroom is decided before the first tile goes on, not at the shop when you pick the taps. Our guide to <a href="/blog/bathroom-waterproofing-explained/" class="et-link">how waterproofing works</a> sets out what sits under the surface.',
+        ],
+      },
+      {
+        heading: 'Why waterproofing decides the lifespan',
+        paragraphs: [
+          'The waterproof layer under the tiles is the single part that most often ends a bathroom early. If it fails, water gets into the walls and floor, and you see mould, lifting tiles or stains on the ceiling below.',
+          'We seal every bathroom to AS 3740 with a primer and two coats, and hand over a certificate for the work. A room sealed to that standard should stay dry for the life of the renovation. Read what the <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate</a> proves and why it matters.',
+        ],
+      },
+      {
+        heading: 'What wears out first?',
+        paragraphs: [
+          'The first things to go are the soft seals, not the tiles. The silicone around the shower and basin lasts about 5 to 10 years, then it is scraped out and redone. Grout can stain or crack in spots and may need resealing or patching.',
+          'The exhaust fan also has a working life and gets weaker with age. A tired fan leaves damp in the room, which is where mould starts. Keeping these small parts fresh is cheap next to a room that fails. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> covers how to keep yours clean.',
+        ],
+      },
+      {
+        heading: 'How care makes a bathroom last longer',
+        paragraphs: [
+          'A bathroom lasts longer when the damp is cleared and the seals are kept fresh. Run the fan during and after a shower, wipe down the screen, and redo the silicone when it lifts or goes dark. None of this is hard, and it adds years.',
+          'Most bathrooms that fail early fail for one reason: trapped damp. A good fan and a dry room stop mould before it starts. Our guide to <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">stopping mould</a> explains why it comes back and how a renovation ends it.',
+        ],
+      },
+      {
+        heading: 'Does a cheaper bathroom last as long?',
+        paragraphs: [
+          'It can, if the money is spent in the right place. A Basic bathroom with sound waterproofing, good falls and a proper fan can last as long as a Premium one. The parts that make a room last are the same at every price.',
+          'Where a cheap job fails early is in the hidden work: thin waterproofing, poor falls, or no fan. Our <a href="/packages/" class="et-link">package prices and size bases</a> keep that core work in every tier, and our guide to <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">hidden costs</a> shows where corners get cut.',
+        ],
+      },
+      {
+        heading: 'What our warranty covers',
+        paragraphs: [
+          'We back the work we do with a 10-year workmanship warranty. That covers the quality of our labour, not the life of a tap or a fan you chose, which carry their own maker warranties.',
+          'A warranty is only as good as the builder behind it, so it sits alongside our NSW Builder Licence and insurance, not in place of them. Our <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">warranty guide</a> explains what to ask, and you can check our <a href="/about-us/" class="et-link">licence and cover</a> on the About page.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does bathroom waterproofing last?',
+        answer: 'Waterproofing done to AS 3740 is made to last for the life of the renovation, which is usually 15 to 20 years or more. It fails early only when it is done poorly or damaged by later work.',
+      },
+      {
+        question: 'How often should I reseal the silicone in my bathroom?',
+        answer: 'Silicone around the shower and basin usually lasts 5 to 10 years. Redo it sooner if it lifts, splits or goes dark, because a failed seal lets water in behind the tiles.',
+      },
+      {
+        question: 'Do bathroom tiles need replacing over time?',
+        answer: 'Good tiles can last 15 to 20 years or more and often outlast the rest of the room. The grout and seals around them wear first, so they are what usually needs attention, not the tiles.',
+      },
+      {
+        question: 'Does a bathroom renovation come with a warranty?',
+        answer: 'Ours does. Elite Touch Renovations provides a 10-year workmanship warranty on the work we do. Taps, fans and other fittings carry their own separate maker warranties.',
+      },
+      {
+        question: 'What makes a bathroom wear out faster?',
+        answer: 'Trapped damp is the main cause. A weak or missing exhaust fan, poor falls to the drain and failed seals all let moisture sit in the room, which leads to mould and tile and membrane failure.',
+      },
+    ],
+  },
+  {
+    slug: 'repair-or-replace-bathroom-renovation',
+    title: 'Repair or replace: signs it is time to renovate your bathroom',
+    metaTitle: 'Repair or Replace Your Bathroom?',
+    description: 'The signs a bathroom needs a full renovation, when a repair is enough, and how to decide between fixing the problem and replacing the room.',
+    published: '2026-11-04',
+    readTime: '4 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Replace the bathroom when the problem is in the structure or spread across the room: failed waterproofing, a floor that moves, mould that keeps coming back, or a layout that no longer works. Repair when it is one fitting, a cracked tile or a worn seal.',
+        'The deciding question is the waterproofing. Once the seal under the tiles has failed, there is no lasting fix without lifting the floor, and at that point a full renovation is usually the better spend.',
+      ],
+      table: {
+        caption: 'Signs that point to a repair, and signs that point to a full renovation.',
+        columns: ['What you are seeing', 'Repair or replace?'],
+        rows: [
+          { label: 'One cracked tile or a dripping tap', detail: 'A single, contained fault.', value: 'Repair' },
+          { label: 'Water stains on the ceiling below', detail: 'A sign the seal has failed.', value: 'Replace' },
+          { label: 'Mould that keeps coming back', detail: 'Often poor sealing or no fan.', value: 'Usually replace' },
+          { label: 'The layout does not work', detail: 'No storage, tight clearances.', value: 'Replace' },
+          { label: 'Dated look, everything works', detail: 'The room is sound.', value: 'Repair or refresh' },
+        ],
+      },
+      note: 'Not sure which you need? A free on-site measure tells you whether a repair will hold or the room needs rebuilding.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'When is a repair enough?',
+        paragraphs: [
+          'A repair is the right call when the fault is small and contained. A cracked tile, a dripping tap, a worn silicone seal or a loose towel rail can each be fixed on their own without touching the rest of the room.',
+          'The test is simple: is the room sound apart from this one thing? If the waterproofing is holding, the floor is firm and the layout works, there is no need to rebuild. Fix the fault and the bathroom carries on.',
+        ],
+      },
+      {
+        heading: 'When should you replace the bathroom?',
+        paragraphs: [
+          'Replace the room when the problems are spread out or sit in the structure. Failed waterproofing, a floor that flexes or moves, mould you cannot get rid of, and tiles coming away in more than one spot all point past a repair.',
+          'These faults feed each other. Damp from a failed seal rots the floor, which cracks more tiles, which lets in more water. Patching one part does not stop the cycle. Our guide to <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">why mould keeps coming back</a> shows how this builds up.',
+        ],
+      },
+      {
+        heading: 'The waterproofing test',
+        paragraphs: [
+          'The clearest sign you need to replace rather than repair is water showing up where it should not: stains on the ceiling in the room below, a musty smell, or paint bubbling on the other side of a shower wall. These mean the seal under the tiles has failed.',
+          'There is no lasting surface fix for failed waterproofing. The floor has to come up so the room can be sealed again to AS 3740 and certified. Our guide to the <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate</a> explains what a proper reseal involves.',
+        ],
+      },
+      {
+        heading: 'When the layout is the real problem',
+        paragraphs: [
+          'Sometimes nothing is broken and the room still does not work. There is nowhere to store things, the door hits the vanity, or two people cannot use the space at once. A repair cannot fix a layout, only a renovation can.',
+          'If the room is sound but cramped, it is worth weighing a rebuild that moves the fittings against living with it as is. Our guide to <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathrooms</a> and <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">when to move plumbing</a> cover what a new layout can and cannot change.',
+        ],
+      },
+      {
+        heading: 'What does it cost to replace?',
+        paragraphs: [
+          'A full renovation costs more up front than a repair, but it resets the whole room and its lifespan. A string of repairs on a failing bathroom often adds up to more than one rebuild would have cost, with the same problems returning in between.',
+          'Our <a href="/packages/" class="et-link">package prices and size bases</a> show where a full bathroom starts, and our guide to <a href="/blog/bathroom-renovation-cost-sydney/" class="et-link">what changes the cost</a> explains what moves the price for your room.',
+        ],
+      },
+      {
+        heading: 'How we help you decide',
+        paragraphs: [
+          'You do not have to work this out alone. At the free on-site measure we check the waterproofing, the floor and the layout, and tell you honestly whether a repair will hold or the room needs rebuilding. We would rather you knew than spent on a fix that will not last.',
+          'If a renovation is the answer, you then get a fixed-scope written quote. If a repair will do, we will say so. Our guide to <a href="/blog/how-to-choose-bathroom-renovator-sydney/" class="et-link">choosing a renovator</a> covers what honest advice should look like.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I just replace the tiles and keep the rest?',
+        answer: 'Only if the waterproofing under them is sound. New tiles over a failed seal will leak again, because the problem is the layer beneath, not the tiles. Lifting the tiles is also when hidden damage is usually found.',
+      },
+      {
+        question: 'How do I know if my bathroom waterproofing has failed?',
+        answer: 'The common signs are water stains on the ceiling in the room below, a musty smell, bubbling paint on the far side of a shower wall, or tiles sounding hollow. Any of these means water is getting past the seal.',
+      },
+      {
+        question: 'Is it cheaper to repair or replace a bathroom?',
+        answer: 'A single repair is cheaper than a renovation. But repeated repairs on a failing room often cost more over time than one rebuild, because the underlying problem keeps coming back.',
+      },
+      {
+        question: 'How old should a bathroom be before you renovate?',
+        answer: 'There is no set age. Many bathrooms are renovated at 15 to 20 years, but the trigger is the condition, not the age. A sound older bathroom can be left, and a poorly built newer one may need replacing sooner.',
+      },
+      {
+        question: 'Why does mould keep coming back in my bathroom?',
+        answer: 'Usually because damp is not clearing. A weak or missing exhaust fan, poor ventilation or a failed seal lets moisture sit in the room. Cleaning treats the surface, but the damp has to be fixed to stop it returning.',
+      },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {
