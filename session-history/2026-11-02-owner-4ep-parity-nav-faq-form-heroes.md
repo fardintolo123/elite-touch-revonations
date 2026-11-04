@@ -182,3 +182,36 @@ already covers what 4EP's `StickyCTA` does, so that one is not a gap.
 3. Re-pull Search Console after the quota resets (2026-11-03 00:00 UTC) and run `inspect_url` on
    `/services/bathroom-renovations/` to confirm its indexed state and last crawl.
 4. Owner sign-off before pushing; two commits are waiting on `main`.
+
+---
+
+## Addendum — verified on production, 2026-11-04
+
+The five changes above were pushed and are live. Re-verified against
+`https://www.elitetouchrenovations.au` (not a local build, to avoid colliding with another
+session's in-flight work):
+
+- `/packages/` — 12 `et-faq-item` rows (compact accordion), 28 `blog/#blog-topic-` links in the
+  header menu, "Step 1 of 2" present.
+- `/services/bathroom-renovations/` — 10 `et-hero-backdrop` hits, FAQ rows present.
+- `D-169` through `D-173` are all still in `DECISIONS.md`; `components/FaqList.tsx`,
+  `blogTopics`, `BlogsHoverMenu`, `TOTAL_STEPS`, `.et-image-fade` and `.et-hero-backdrop` all
+  still present in source.
+
+Later sessions built directly on this work: D-176 added line icons to the Services, Blogs and
+About dropdowns, and D-177/D-178 slimmed the service and location heroes. Nothing from this
+session was reverted.
+
+**New finding, recorded as O-13:** `/contact-us/` consistently returns HTTP 403 with
+`<title>Just a moment...</title>` — a Cloudflare challenge — to `curl`, with both a default and a
+browser user agent, while `/`, `/blog/`, `/gallery/`, `/about-us/`, `/packages/` and
+`/services/bathroom-renovations/` all returned 200 in the same runs. The page is in
+`sitemap.xml`. Whether Googlebot is also challenged was not tested. This is a hosting/WAF
+setting, so it is an owner decision, not a code fix.
+
+Also observed, not investigated: production TTFB was ~5s on the two pages measured. Previous
+measurement on 2026-11-02 was 2.85s on one page. Single samples both times — not a trend, and
+not enough to act on.
+
+The plan file `plans/owner-4ep-parity-2026-11.md` was deleted at this point, per the plan
+lifecycle.
