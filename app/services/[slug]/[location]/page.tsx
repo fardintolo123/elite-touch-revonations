@@ -23,6 +23,7 @@ import {
   publishedSuburbBySlug,
   regionBySlug,
 } from '@/lib/locations'
+import { AnswerBlock } from '@/components/AnswerBlock'
 import { formatMonthYear } from '@/lib/dateLabels'
 import type { Region, Suburb } from '@/lib/locations'
 import type { Project } from '@/lib/projects'
@@ -139,20 +140,17 @@ function SuburbLocationPage({
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
-          <span className="et-eyebrow">In short</span>
           <h2 className="et-h2 et-measure-tight">
             What a {suburb.name} bathroom renovation costs and involves
           </h2>
-          {(
-            content?.answer ??
-            (project ? [project.story ?? project.blurb] : [description])
-          ).map((paragraph, index) => (
-            <p
-              key={index}
-              className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
-              dangerouslySetInnerHTML={{ __html: paragraph }}
-            />
-          ))}
+          <AnswerBlock
+            html
+            prices
+            paragraphs={
+              content?.answer ??
+              (project ? [project.story ?? project.blurb] : [description])
+            }
+          />
           <p className="et-body-sm">
             <Link href="/packages/" className="et-link">
               Compare the Basic, Standard and Premium packages
@@ -173,10 +171,10 @@ function SuburbLocationPage({
             >
               <span className="et-media-frame">
                 <Image
-                  src={project.images[0].src}
-                  alt={project.images[0].alt}
-                  width={project.images[0].width}
-                  height={project.images[0].height}
+                  src={(project.images[1] ?? project.images[0]).src}
+                  alt={(project.images[1] ?? project.images[0]).alt}
+                  width={(project.images[1] ?? project.images[0]).width}
+                  height={(project.images[1] ?? project.images[0]).height}
                   sizes="(min-width: 1360px) 1200px, (min-width: 1024px) calc(100vw - 160px), (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)"
                   loading="lazy"
                 />
@@ -481,7 +479,6 @@ export default async function LocationHubPage({
       <LocationHero
         backHref={`/services/${LOCATION_PARENT_SLUG}/`}
         backLabel="Bathroom renovations"
-        caption={`Reviewed ${reviewedMonth}`}
         title={`Bathroom renovations across ${regionLocationLabel(region)}`}
         lead={`Strip-out to handover across ${regionAreaLabel(region)}, with the scope and price in writing first.`}
         project={localProjects[0]}
@@ -502,17 +499,10 @@ export default async function LocationHubPage({
             <h2 className="et-h2 et-measure-tight">
               What a bathroom renovation in {regionAreaLabel(publishedRegion)} costs and involves
             </h2>
-            {hub.answer.map((para, index) => (
-              <p
-                key={index}
-                className={
-                  index === 0
-                    ? 'et-lead et-measure'
-                    : 'et-body-sm et-measure'
-                }
-                dangerouslySetInnerHTML={{ __html: para }}
-              />
-            ))}
+            <AnswerBlock html prices paragraphs={hub.answer} />
+            <p className="et-body-sm" style={{ color: 'var(--et-text-secondary)' }}>
+              Reviewed {reviewedMonth}
+            </p>
             <p className="et-body-sm">
               <Link href="/packages/" className="et-link">
                 See what the Basic, Standard and Premium packages include
@@ -547,7 +537,11 @@ export default async function LocationHubPage({
                 marginInline: 'auto',
               }}
             >
-              {localProjects.map((project) => (
+              {localProjects.map((project, projectIndex) => {
+                /* The first project is the hero photo, so its card shows a different frame. */
+                const cardPhoto =
+                  projectIndex === 0 ? (project.images[1] ?? project.images[0]) : project.images[0]
+                return (
                 <Link
                   key={project.slug}
                   href={`/gallery/${project.slug}/`}
@@ -555,10 +549,10 @@ export default async function LocationHubPage({
                 >
                   <span className="et-media-frame">
                     <Image
-                      src={project.images[0].src}
-                      alt={project.images[0].alt}
-                      width={project.images[0].width}
-                      height={project.images[0].height}
+                      src={cardPhoto.src}
+                      alt={cardPhoto.alt}
+                      width={cardPhoto.width}
+                      height={cardPhoto.height}
                       sizes={
                         localProjects.length === 1
                           ? '(min-width: 784px) 640px, (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)'
@@ -584,7 +578,8 @@ export default async function LocationHubPage({
                     {project.blurb}
                   </p>
                 </Link>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>

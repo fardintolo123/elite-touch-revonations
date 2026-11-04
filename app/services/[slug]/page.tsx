@@ -1,3 +1,4 @@
+import { AnswerBlock } from '@/components/AnswerBlock'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -104,6 +105,8 @@ const STANDARD_INCLUSIONS = [
   { key: 'clean', body: 'Final clean before handover' },
 ] as const
 
+const PRICED_SERVICES: string[] = ['bathroom-renovations', 'ensuite-bathroom-renovations']
+
 export default async function ServicePage({
   params,
 }: {
@@ -183,16 +186,14 @@ export default async function ServicePage({
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
             <h2 className="et-h2 et-measure-tight">{about.heading}</h2>
-            {about.paragraphs.map((paragraph, index) => (
-              <p
-                key={paragraph}
-                className={
-                  index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'
-                }
-              >
-                {paragraph}
-              </p>
-            ))}
+            {/* The price strip is only for the two services whose copy already quotes
+                the Basic, Standard and Premium room-size packages. Laundry and powder
+                room are not priced that way on this site (D-178). */}
+            <AnswerBlock
+              paragraphs={about.paragraphs}
+              prices={PRICED_SERVICES.includes(service.slug)}
+              pricesAfterLead
+            />
           </div>
         </section>
       )}

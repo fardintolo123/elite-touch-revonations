@@ -57,3 +57,14 @@ rule and an audit prompt, then audit and fix the homepage hero using the owner's
 - Open (next round): lighten or drop the hero scrim and stop repeating the project photo; number strip for prices/warranty;
   vary section composition; mobile length (work cards, contact block); trust-band duplication; laundry/powder hero gap.
 - Not yet audited: packages, gallery and project pages, About, Contact, blog index and posts, homepage below the hero.
+
+## 8. Follow-on: price strip and clearer hero photo (D-178, 2026-11-04)
+- New: `lib/packageStarts.ts` (single source for the three from-prices and sizes; `app/packages/page.tsx` now reads it),
+  `components/AnswerBlock.tsx` (price strip + closed `<details>` for later paragraphs).
+- Edited: `app/globals.css` (strip, details, scrim, mobile photo-first, hero alignment), `components/LocationHero.tsx` unchanged this round,
+  `app/services/[slug]/page.tsx` (strip after lead; bathroom + ensuite only), `app/services/[slug]/[location]/page.tsx`
+  (AnswerBlock, different project-card frame, hub date moved).
+- Lesson: a scratchpad is wiped on session restart; rebuild scripts there rather than assuming they exist.
+- Lesson: sample real text contrast behind the brightest pixel, and test candidate scrims in the browser (inject the CSS) before rebuilding.
+- Open: suburb project text block, repeated section composition, mobile stacks (work cards, contact block), trust-band duplication,
+  laundry/powder hero gap. Not yet audited: packages, gallery and project pages, About, Contact, blog, homepage below the hero.

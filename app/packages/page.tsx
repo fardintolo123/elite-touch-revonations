@@ -1,3 +1,4 @@
+import { packageStarts } from '@/lib/packageStarts'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -76,9 +77,9 @@ export const metadata: Metadata = buildMetadata({
 
 const TIERS = [
   {
-    name: 'Basic',
-    price: 'From $18,000',
-    size: 'approx. 1.5 m × 1.8 m × 2.4 m',
+    name: packageStarts[0].name,
+    price: packageStarts[0].price,
+    size: packageStarts[0].size,
     electrical: '1 power point and 1 light switch replaced',
     tiling:
       '300×600 ceramic wall tiles in the shower enclosure to 2.1 m, and 1.2 m outside the shower area',
@@ -94,9 +95,9 @@ const TIERS = [
     ],
   },
   {
-    name: 'Standard',
-    price: 'From $25,000',
-    size: 'approx. 1.8 m × 2.4 m × 2.4 m',
+    name: packageStarts[1].name,
+    price: packageStarts[1].price,
+    size: packageStarts[1].size,
     electrical: '2 power points and 1 light switch replaced',
     tiling:
       '300×600 or 600×600 wall and floor tiles, tiled complete floor to ceiling',
@@ -112,9 +113,9 @@ const TIERS = [
     ],
   },
   {
-    name: 'Premium',
-    price: 'From $30,000',
-    size: 'approx. 2.4 m × 2.4 m × 2.4 m',
+    name: packageStarts[2].name,
+    price: packageStarts[2].price,
+    size: packageStarts[2].size,
     electrical:
       '3 power points and 1 light switch replaced, 2 LED downlights, exhaust fan, heated flooring',
     tiling:
