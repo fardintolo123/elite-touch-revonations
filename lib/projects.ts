@@ -107,7 +107,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Artarmon bathroom renovation with brushed gold tapware, warm sandy stone-look tiles, a central freestanding bath and a wall-hung vanity.',
     story:
-      "The project notes focus on warm sandy-toned floor and wall tiles, brushed gold fixtures and a freestanding bath as the room's calm centrepiece. The wall-hung vanity was used for storage without crowding the floor, and the lighting was kept soft so the gold, timber and stone textures feel balanced.",
+      "The design focuses on warm sandy-toned floor and wall tiles, brushed gold fixtures and a freestanding bath as the room's calm centrepiece. The wall-hung vanity was used for storage without crowding the floor, and the lighting was kept soft so the gold, timber and stone textures feel balanced.",
     images: [
       {
         src: `${DIR}/artarmon-bathroom/full-room-shower-toilet.webp`,
@@ -160,7 +160,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Project photos from a Castle Hill family bathroom in soft grey, crisp white and light wood, with brushed nickel taps and a frameless glass shower.',
     story:
-      'The source notes describe this as a family bathroom, rebuilt around soft greys, crisp whites, light wood finishes and nickel tapware. Large-format tiles were used on the floors and walls to keep the space open, with a frameless glass shower completing the clean, uncluttered finish.',
+      'A family bathroom, rebuilt around soft greys, crisp whites, light wood finishes and nickel tapware. Large-format tiles were used on the floors and walls to keep the space open, with a frameless glass shower completing the clean, uncluttered finish.',
     images: [
       {
         src: `${DIR}/castle-hill-bathroom/double-vanity-led-mirror.webp`,
@@ -212,7 +212,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Hornsby bathroom renovation in a bold black-and-white scheme: marble-look walls, black fittings, a frameless shower and a wall-hung vanity.',
     story:
-      'The project notes describe a full change from an outdated bathroom to a black-and-white room with large white tiles, black fittings and hidden storage. The bathroom and ensuite were planned as a matched set, with the frameless shower, wall-hung vanity and dark towel rails carrying the same clean line through both spaces.',
+      'This was a full change from an outdated bathroom to a black-and-white room with large white tiles, black fittings and hidden storage. The bathroom and ensuite were planned as a matched set, with the frameless shower, wall-hung vanity and dark towel rails carrying the same clean line through both spaces.',
     images: [
       {
         src: `${DIR}/hornsby-bathroom/vanity-marble-storage-tower.webp`,
@@ -281,7 +281,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Project photos from a Randwick family bathroom in soft neutral tones, with matte black fittings, a custom angled shower screen and wall-hung vanity.',
     story:
-      'The source notes call out a neutral family bathroom with matte black fittings and a custom angled shower screen as the main feature. The wall-hung vanity keeps the floor open while adding storage, and softer lighting was used to keep the room calm rather than stark.',
+      'A neutral family bathroom, with matte black fittings and a custom angled shower screen as the main feature. The wall-hung vanity keeps the floor open while adding storage, and softer lighting was used to keep the room calm rather than stark.',
     images: [
       {
         src: `${DIR}/randwick-bathroom/shower-vanity-round-mirror.webp`,
@@ -323,7 +323,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Balmain bathroom renovation pairing concrete-look walls with warm timber-look floors, a custom vanity, a matching tall cabinet and a bath.',
     story:
-      'This full bathroom renovation ran for three weeks, with the project notes listing an about $30,000 budget. The work paired full-height concrete-look porcelain wall tiles with timber-look floor tiles, a custom vanity, a matching tall cabinet and a bath. The main challenge was making the custom storage cabinet match the vanity cleanly.',
+      'This full bathroom renovation ran for three weeks on a budget of about $30,000. The work paired full-height concrete-look porcelain wall tiles with timber-look floor tiles, a custom vanity, a matching tall cabinet and a bath. The main challenge was making the custom storage cabinet match the vanity cleanly.',
     images: [
       {
         src: `${DIR}/balmain-bathroom/vanity-bath-window.webp`,
@@ -363,7 +363,7 @@ export const projects: readonly Project[] = [
     blurb:
       'A crisp white bathroom in classic subway tiles. A frameless glass shower and a floating vanity keep the floor clear and the room bright.',
     story:
-      'This full bathroom renovation ran for three weeks, with the project notes listing an about $26,000 budget. The scope included a full strip-out, waterproofing, white subway wall tiling, floor tiling, a new shower, custom vanity storage and upgraded plumbing and electrical work. The challenge was tiling around the existing bath so the finish still looked seamless.',
+      'This full bathroom renovation ran for three weeks on a budget of about $26,000. The scope included a full strip-out, waterproofing, white subway wall tiling, floor tiling, a new shower, custom vanity storage and upgraded plumbing and electrical work. The challenge was tiling around the existing bath so the finish still looked seamless.',
     images: [
       {
         src: `${DIR}/gladesville-bathroom/full-room-toilet-tub-vanity.webp`,
@@ -409,7 +409,7 @@ export const projects: readonly Project[] = [
     blurb:
       'A bright white bathroom with a bold turquoise basin and a freestanding bath. Timber shutters and a frameless shower keep the room feeling open.',
     story:
-      'This full bathroom renovation ran for four weeks, with the project notes listing an about $32,000 budget. The work included demolition, waterproofing, plumbing and electrical upgrades, wall and floor tiling, a new shower, custom vanity, toilet, lighting and bespoke bathroom sinks. The key constraint was limited space, so the layout had to work hard without losing daily function.',
+      'This full bathroom renovation ran for four weeks on a budget of about $32,000. The work included demolition, waterproofing, plumbing and electrical upgrades, wall and floor tiling, a new shower, custom vanity, toilet, lighting and bespoke bathroom sinks. The key constraint was limited space, so the layout had to work hard without losing daily function.',
     images: [
       {
         src: `${DIR}/little-bay-bathroom/shower-vanity-tub-wide.webp`,
@@ -475,7 +475,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Hunters Hill bathroom renovation with full-height marble-look tiles, a double vanity, a freestanding bath under timber shutters and black fittings.',
     story:
-      'This full bathroom renovation ran for four weeks, with the project notes listing an about $45,000 budget. The scope included full-height marble tiling, a freestanding bath, custom double vanity, integrated basins, frameless shower screen, matte black tapware and a heated towel rail. The detailed part was hand-cutting the marble cleanly around fixtures, corners and fittings.',
+      'This full bathroom renovation ran for four weeks on a budget of about $45,000. The scope included full-height marble tiling, a freestanding bath, custom double vanity, integrated basins, frameless shower screen, matte black tapware and a heated towel rail. The detailed part was hand-cutting the marble cleanly around fixtures, corners and fittings.',
     images: [
       {
         src: `${DIR}/hunters-hill-bathroom/freestanding-bath-shutters.webp`,
@@ -532,7 +532,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Bathroom renovation in a heritage terrace in The Rocks, built around an original leadlight window, with a freestanding bath and a frameless shower.',
     story:
-      'This full bathroom renovation ran for four weeks, with the project notes listing an about $32,000 budget. The work combined large-format wall tiles, encaustic-look floor tiles, matte black fittings, a freestanding bath, a floating vanity and a frameless shower screen. The important constraint was protecting the original heritage window throughout the renovation.',
+      'This full bathroom renovation ran for four weeks on a budget of about $32,000. The work combined large-format wall tiles, encaustic-look floor tiles, matte black fittings, a freestanding bath, a floating vanity and a frameless shower screen. The important constraint was protecting the original heritage window throughout the renovation.',
     images: [
       {
         src: `${DIR}/the-rocks-bathroom/shower-window-tub-wide.webp`,
@@ -577,7 +577,7 @@ export const projects: readonly Project[] = [
     metaDescription:
       'Artarmon bathroom and ensuite renovation in charcoal stone-look tiles, with custom vanities, frameless showers and LED backlit mirrors.',
     story:
-      'This bathroom and ensuite renovation ran for four weeks, with the project notes listing an about $48,000 budget. The work used 600 x 600 full-height grey porcelain wall tiles, light grey porcelain floor tiles, custom vanities, integrated basins, frameless shower screens and LED backlit mirrors. The challenge was fitting the custom double vanity and oversized LED mirror within the project timeframe.',
+      'This bathroom and ensuite renovation ran for four weeks on a budget of about $48,000. The work used 600 x 600 full-height grey porcelain wall tiles, light grey porcelain floor tiles, custom vanities, integrated basins, frameless shower screens and LED backlit mirrors. The challenge was fitting the custom double vanity and oversized LED mirror within the project timeframe.',
     images: [
       {
         src: `${DIR}/artarmon-bathroom-ensuite/double-vanity-corner-window.webp`,

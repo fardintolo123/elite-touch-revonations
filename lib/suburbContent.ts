@@ -58,7 +58,7 @@ export const suburbContent: Record<string, SuburbContent> = {
       heading: 'A Castle Hill bathroom project',
       paragraphs: [
         'We have a photographed Castle Hill bathroom renovation to show, rather than filling this page with generic suburb claims. The project used soft grey, crisp white and light wood finishes, with brushed nickel tapware and large-format floor and wall tiles.',
-        'The finished room includes a light oak wall-hung double vanity, two round vessel basins, a wide LED backlit mirror and a frameless glass shower. The project notes describe it as a family bathroom designed to feel bright, open and uncluttered.',
+        'The finished room includes a light oak wall-hung double vanity, two round vessel basins, a wide LED backlit mirror and a frameless glass shower. It is a family bathroom designed to feel bright, open and uncluttered.',
         'You can view the full Castle Hill project, including the photographed details, in the gallery. The photos show this project only; they are not presented as a promise about every bathroom in the suburb.',
       ],
     },

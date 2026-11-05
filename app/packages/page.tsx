@@ -11,6 +11,8 @@ import { projects } from '@/lib/projects'
 import { formatMonthYear } from '@/lib/dateLabels'
 import { ExternalLink } from '@/components/ExternalLink'
 import { FaqList } from '@/components/FaqList'
+import { GoogleRating } from '@/components/GoogleRating'
+import { PriceStrip } from '@/components/PriceStrip'
 
 /**
  * Packages / pricing.
@@ -247,23 +249,26 @@ const heroImage = heroProject.images[1]
 const packagePricingMonth = formatMonthYear(businessInfo.packagePricingUpdated)
 
 export default function PackagesPage() {
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+        { name: 'Home', url: `${businessInfo.siteUrl}/` },
+        { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
+      ] as const
+
   return (
     <>
       <SchemaGraph
         path="/packages/"
         name="Bathroom Renovation Cost & Packages"
         description="How much does a bathroom renovation cost in Sydney? See three package starting scopes with stated bathroom sizes and get a fixed-scope written quote."
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
-        ]}
+        breadcrumbs={breadcrumbs}
         faqs={FAQS}
         primaryImage={heroProject.images[1]}
       />
       <section className="et-hero">
         <div className="et-container">
           <div className="et-hero-grid">
-            <div className="et-stack">
+            <div className="et-stack et-packages-hero-photo">
               <div className="et-hero-media">
                 <Image
                   src={heroImage.src}
@@ -286,31 +291,31 @@ export default function PackagesPage() {
               <h1 className="et-h1 et-measure-tight">
                 Bathroom renovation packages in Sydney.
               </h1>
+              {/* D-181 (D-174 applied): the numbers lead. The three from-prices and their room sizes
+                  are one ruled row; the paragraph that listed them and the three fact chips
+                  (deposit, schedule and warranty said as separate items) are gone from the hero.
+                  The same figures stay in the cost section, the comparison table and the FAQ. */}
               <p className="et-lead et-measure">
-                If you are a Sydney homeowner pricing a full bathroom
-                renovation, packages start
-                from $18,000 (Basic, approx. 1.5 × 1.8 × 2.4 m), $25,000
-                (Standard, approx. 1.8 × 2.4 × 2.4 m) or $30,000 (Premium,
-                approx. 2.4 × 2.4 × 2.4 m).
+                Three bathroom renovation packages for Sydney homeowners,
+                from demolition to final clean.
               </p>
-              <p className="et-lead et-measure">
-                All three are from-prices. The final number is fixed in
-                writing after a free on-site measure, when the room and scope
-                are confirmed.
-              </p>
-              <ul className="et-facts">
-                <li className="et-fact">
-                  <strong>{businessInfo.workmanshipWarrantyYears}-year</strong>{' '}
-                  workmanship warranty
-                </li>
-                <li className="et-fact">
-                  <strong>{businessInfo.offer.deposit}</strong> to start
-                </li>
-                <li className="et-fact">
-                  <strong>Progressive payments</strong>{' '}
-                  {businessInfo.offer.paymentSchedule}
-                </li>
-              </ul>
+              <PriceStrip />
+              <div className="et-hero-cta">
+                <Link
+                  href="/contact-us/"
+                  className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
+                >
+                  {businessInfo.offer.primaryCta}
+                </Link>
+                {/* Real tel: anchor, never a JS handler (D-33) */}
+                <a
+                  href={businessInfo.phone.href}
+                  className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
+                >
+                  Call {businessInfo.phone.display}
+                </a>
+              </div>
+              <GoogleRating compact />
             </div>
           </div>
         </div>
@@ -326,13 +331,6 @@ export default function PackagesPage() {
               How much does a bathroom renovation cost in Sydney?
             </h2>
             <p className="et-lead et-measure">
-              With Elite Touch, a bathroom renovation starts from $18,000 for
-              a small bathroom around 1.5 × 1.8 × 2.4 m (Basic), from $25,000
-              for a mid-size bathroom around 1.8 × 2.4 × 2.4 m (Standard), or
-              from $30,000 for a larger, fully-specified bathroom around
-              2.4 × 2.4 × 2.4 m (Premium). See the full breakdown below.
-            </p>
-            <p className="et-body-sm et-measure">
               The price moves with three things: how much of the bathroom is
               tiled, which fittings you choose, and whether the layout
               changes. Moving a toilet or wall, or adding a freestanding bath
@@ -340,19 +338,59 @@ export default function PackagesPage() {
               these apply to your bathroom at the free on-site measure, not
               after demolition has started.
             </p>
-            <h3
-              className="et-h4"
-              style={{ marginTop: 'var(--et-space-8)' }}
-            >
-              Is a package a fixed price?
-            </h3>
-            <p className="et-body-sm et-measure">
-              No. The package is a starting scope based on a stated bathroom
-              size, not a fixed final price. We set the final number in writing
-              after the free on-site measure, when the room size, layout,
-              fittings and site conditions are all confirmed. That is why the
-              published package pricing is always shown as a from-price.
-            </p>
+
+            {/* D-181: the answers that followed (is a package fixed, is $30,000 the minimum,
+                what about $10,000) sat in two separate bands and repeated the hero strip and
+                the FAQ. They are all still here, in the served HTML, closed by default. */}
+            <details className="et-more">
+              <summary>Is a package fixed? Is $30,000 the minimum?</summary>
+              <div className="et-stack">
+                <p className="et-body-sm et-measure">
+                  With Elite Touch, a bathroom renovation starts from $18,000
+                  for a small bathroom around 1.5 × 1.8 × 2.4 m (Basic), from
+                  $25,000 for a mid-size bathroom around 1.8 × 2.4 × 2.4 m
+                  (Standard), or from $30,000 for a larger, fully-specified
+                  bathroom around 2.4 × 2.4 × 2.4 m (Premium). See the full
+                  breakdown below.
+                </p>
+                <h3 className="et-h4">Is a package a fixed price?</h3>
+                <p className="et-body-sm et-measure">
+                  No. The package is a starting scope based on a stated
+                  bathroom size, not a fixed final price. We set the final
+                  number in writing after the free on-site measure, when the
+                  room size, layout, fittings and site conditions are all
+                  confirmed. That is why the published package pricing is
+                  always shown as a from-price.
+                </p>
+                <h3 className="et-h4">
+                  Is $30,000 really the minimum for a bathroom renovation?
+                </h3>
+                <p className="et-body-sm et-measure">
+                  No. $30,000 is where our Premium package starts for a
+                  bathroom around 2.4 × 2.4 × 2.4 m - it isn&rsquo;t a floor
+                  under every renovation. Our Basic package starts from
+                  $18,000 for a bathroom around 1.5 × 1.8 × 2.4 m, and still
+                  includes full demolition, AS 3740 waterproofing, new tiling,
+                  a custom semi-frameless shower screen and all new fittings.
+                </p>
+                <h3 className="et-h4">
+                  What about a $10,000 bathroom renovation?
+                </h3>
+                <p className="et-body-sm et-measure">
+                  You&rsquo;ll sometimes see &ldquo;$10,000 bathroom
+                  renovation&rdquo; searched online. In our experience that
+                  figure covers cosmetic work - new tapware, a repaint,
+                  replacing a vanity - not a full renovation with demolition,
+                  re-waterproofing to AS 3740 and new tiling throughout. A
+                  compliant, fully waterproofed Sydney bathroom renovation
+                  realistically starts from $18,000 for a bathroom around 1.5
+                  × 1.8 × 2.4 m. If your budget is tighter than that, tell us
+                  at the free on-site measure - we&rsquo;ll be straight with
+                  you about what&rsquo;s realistic rather than stretch a quote
+                  to fit.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -376,7 +414,7 @@ export default function PackagesPage() {
 
           <p
             id="package-comparison-scroll-hint"
-            className="et-caption"
+            className="et-caption et-tier-hint"
             style={{
               marginTop: 'var(--et-space-6)',
               color: 'var(--et-text-secondary)',
@@ -384,8 +422,40 @@ export default function PackagesPage() {
           >
             Swipe or scroll horizontally to compare all three tiers.
           </p>
+          {/* Phones: three stacked tiers (the table shows one column at 390px). The table below
+              is kept for wider screens; both carry the same figures from `TIERS`. */}
+          <div className="et-tier-cards">
+            {TIERS.map((tier) => (
+              <article key={tier.name} className="et-tier-card">
+                <h3 className="et-h4">{tier.name}</h3>
+                <p className="et-tier-card-price">{tier.price}</p>
+                <p className="et-caption" style={{ color: 'var(--et-text-secondary)' }}>
+                  based on {tier.size}
+                </p>
+                <dl className="et-tier-card-facts">
+                  <div>
+                    <dt>Tiling</dt>
+                    <dd>{tier.tiling}</dd>
+                  </div>
+                  <div>
+                    <dt>Electrical</dt>
+                    <dd>{tier.electrical}</dd>
+                  </div>
+                </dl>
+                <details className="et-more">
+                  <summary>Fittings included ({tier.fittings.length})</summary>
+                  <ul className="et-checklist">
+                    {tier.fittings.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </details>
+              </article>
+            ))}
+          </div>
+
           <div
-            className="et-table-wrap"
+            className="et-table-wrap et-tier-table"
             role="region"
             aria-labelledby="package-comparison-heading"
             aria-describedby="package-comparison-scroll-hint"
@@ -465,6 +535,10 @@ export default function PackagesPage() {
                 </strong>
                 .
               </p>
+              <p className="et-body-sm et-measure">
+                The {businessInfo.offer.paymentSchedule} starts with the{' '}
+                <strong>{businessInfo.offer.deposit}</strong>.
+              </p>
             </div>
             <ul className="et-checklist">
               {IN_EVERY_TIER.map((item) => (
@@ -478,44 +552,6 @@ export default function PackagesPage() {
       </section>
 
       <section className="et-section et-band-canvas">
-        <div className="et-container">
-          <div className="et-stack">
-            <h2 className="et-h2 et-measure-tight">
-              Is $30,000 really the minimum for a bathroom renovation?
-            </h2>
-            <p className="et-lead et-measure">
-              No. $30,000 is where our Premium package starts for a bathroom
-              around 2.4 × 2.4 × 2.4 m - it isn&rsquo;t a floor under every
-              renovation. Our Basic package starts from $18,000 for a bathroom
-              around 1.5 × 1.8 × 2.4 m, and still includes full demolition,
-              AS 3740 waterproofing, new tiling, a custom semi-frameless shower
-              screen and all new fittings.
-            </p>
-
-            <h3
-              className="et-h4"
-              style={{ marginTop: 'var(--et-space-8)' }}
-            >
-              What about a $10,000 bathroom renovation?
-            </h3>
-            <p className="et-body-sm et-measure">
-              You&rsquo;ll sometimes see &ldquo;$10,000 bathroom
-              renovation&rdquo; searched online. In our experience that
-              figure covers cosmetic work - new tapware, a repaint, replacing
-              a vanity - not a full renovation with demolition,
-              re-waterproofing to AS 3740 and new tiling throughout. A
-              compliant, fully waterproofed Sydney bathroom renovation
-              realistically starts from $18,000 for a bathroom around 1.5 ×
-              1.8 × 2.4 m. If your budget is tighter than that, tell us at the
-              free on-site measure - we&rsquo;ll be
-              straight with you about what&rsquo;s realistic rather than
-              stretch a quote to fit.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="et-section et-band-surface">
         <div className="et-container">
           <div className="et-stack">
             <h2 className="et-h2 et-measure-tight">

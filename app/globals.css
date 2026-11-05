@@ -1912,6 +1912,15 @@ form [role='status'] {
   color: var(--et-text-secondary);
   font-size: var(--et-text-caption);
   line-height: 1.4;
+  white-space: nowrap;
+}
+@media (max-width: 479px) {
+  .et-price-strip-cell {
+    padding-inline: var(--et-space-2);
+  }
+  .et-price-strip-size {
+    font-size: 0.75rem;
+  }
 }
 .et-price-strip-note {
   color: var(--et-text-secondary);
@@ -1949,6 +1958,69 @@ form [role='status'] {
 }
 .et-more > .et-stack {
   margin-top: var(--et-space-3);
+}
+
+/* Packages (D-181): below 640px the comparison is three stacked tiers, because the table shows one
+   column at 390px. From 640px up the table is back. Both are in the served HTML with the same figures. */
+.et-tier-cards {
+  display: grid;
+  margin-top: var(--et-space-6);
+}
+.et-tier-card {
+  display: grid;
+  gap: var(--et-space-2);
+  padding-block: var(--et-space-6);
+  border-top: 1px solid var(--et-border);
+}
+.et-tier-card:last-child {
+  border-bottom: 1px solid var(--et-border);
+}
+.et-tier-card-price {
+  margin: 0;
+  color: var(--et-text);
+  font-size: var(--et-text-h3);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.et-tier-card-facts {
+  display: grid;
+  gap: var(--et-space-3);
+  margin: var(--et-space-2) 0 0;
+}
+.et-tier-card-facts dt {
+  color: var(--et-text-muted);
+  font-size: var(--et-text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.et-tier-card-facts dd {
+  margin: 0;
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-sm);
+}
+.et-tier-table,
+.et-tier-hint {
+  display: none;
+}
+/* Packages hero on phones: the numbers and the Book button come first, the photo after (D-181). */
+@media (max-width: 1023px) {
+  .et-packages-hero-photo {
+    order: 2;
+  }
+}
+@media (min-width: 640px) {
+  .et-tier-cards {
+    display: none;
+  }
+  .et-tier-table {
+    display: block;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .et-tier-hint {
+    display: block;
+  }
 }
 
 /* Testimonial */

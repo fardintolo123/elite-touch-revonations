@@ -123,20 +123,23 @@ export default async function ProjectPage({
       : []),
   ]
 
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+        { name: 'Home', url: `${businessInfo.siteUrl}/` },
+        { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
+        {
+          name: project.name,
+          url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
+        },
+      ] as const
+
   return (
     <>
       <SchemaGraph
         path={`/gallery/${project.slug}/`}
         name={project.name}
         description={projectMetaDescription(project)}
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
-          {
-            name: project.name,
-            url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
-          },
-        ]}
+        breadcrumbs={breadcrumbs}
         project={project}
       />
       <section className="et-hero">
@@ -228,8 +231,8 @@ export default async function ProjectPage({
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
             <h2 className="et-h2 et-measure-tight">
-              How the {project.suburb} {project.service.toLowerCase()} came
-              together
+              How {/^the\s/i.test(project.suburb) ? '' : 'the '}
+              {project.suburb} {project.service.toLowerCase()} came together
             </h2>
             <p className="et-lead et-measure">{project.story}</p>
           </div>
@@ -296,9 +299,9 @@ export default async function ProjectPage({
             Planning a bathroom renovation in {project.suburb}?
           </h2>
           <p className="et-lead et-measure">
-            This gallery page shows one real project in {project.suburb}. If
-            you are planning a similar job, start with the service page, then
-            compare the package scope before booking a free on-site measure.
+            If you are planning a similar job, start with the service page,
+            then compare the package scope before booking a free on-site
+            measure.
           </p>
 
           <div

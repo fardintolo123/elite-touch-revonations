@@ -1,4 +1,4 @@
-import { packageStarts } from '@/lib/packageStarts'
+import { PriceStrip } from '@/components/PriceStrip'
 
 /**
  * The opening answer of a service, hub or suburb page (D-178, D-174 applied).
@@ -13,11 +13,6 @@ import { packageStarts } from '@/lib/packageStarts'
  * `html` is true where the copy carries internal links from the linking system
  * (hub and suburb answers); service `about` paragraphs are plain text.
  */
-/* "approx. 1.5 m × 1.8 m × 2.4 m" -> "1.5 × 1.8 × 2.4 m": the same figures in a form that fits a
-   three-column row on a phone. "approx." moves to the note beneath the row. */
-const compactSize = (size: string) =>
-  size.replace('approx. ', '').replace(/ m(?= ×)/g, '').replace(/ m$/, '') + ' m'
-
 export function AnswerBlock({
   paragraphs,
   html = false,
@@ -41,23 +36,7 @@ export function AnswerBlock({
       </p>
     )
 
-  const strip = prices ? (
-        <div className="et-price-strip-wrap">
-          <dl className="et-price-strip">
-            {packageStarts.map((tier) => (
-              <div key={tier.name} className="et-price-strip-cell">
-                <dt>{tier.name}</dt>
-                <dd className="et-price-strip-price">{tier.price}</dd>
-                <dd className="et-price-strip-size">{compactSize(tier.size)}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="et-body-sm et-price-strip-note">
-            Starting prices, each for the approximate room size shown. Your price is firm after the
-            free on-site measure.
-          </p>
-        </div>
-  ) : null
+  const strip = prices ? <PriceStrip /> : null
 
   return (
     <>

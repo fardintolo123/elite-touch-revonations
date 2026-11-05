@@ -110,7 +110,7 @@ export const hubContent: Record<string, HubContent> = {
       paragraphs: [
         'The Inner West combines older terraces and Federation-era homes with apartments and renovated houses. A bathroom renovation here often has to work within a tight footprint, preserve the useful parts of an older home and plan deliveries around narrow streets or limited parking.',
         'In Marrickville and the surrounding inner-city suburbs, older plumbing and timber floors can appear once the room is opened up. We check the substrate and existing services before the scope is finalised, then set out the waterproofing, plumbing and finishes in the written quote rather than treating the unknowns as a surprise variation.',
-        'Balmain is a real example of the work we do in the region. The completed bathroom used full-height concrete-look porcelain wall tiles, timber-look floor tiles, a custom vanity, matching tall storage and a bath. The project ran for three weeks, with project notes recording an about $30,000 budget; the main challenge was matching the custom storage cabinet cleanly to the vanity.',
+        'Balmain is a real example of the work we do in the region. The completed bathroom used full-height concrete-look porcelain wall tiles, timber-look floor tiles, a custom vanity, matching tall storage and a bath. The project ran for three weeks on a budget of about $30,000; the main challenge was matching the custom storage cabinet cleanly to the vanity.',
       ],
     },
     faqs: [
