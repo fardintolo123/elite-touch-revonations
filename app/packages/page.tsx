@@ -353,7 +353,7 @@ export default function PackagesPage() {
                   bathroom around 2.4 × 2.4 × 2.4 m (Premium). See the full
                   breakdown below.
                 </p>
-                <h3 className="et-h4">Is a package a fixed price?</h3>
+                <h2 className="et-h4">Is a package a fixed price?</h2>
                 <p className="et-body-sm et-measure">
                   No. The package is a starting scope based on a stated
                   bathroom size, not a fixed final price. We set the final
