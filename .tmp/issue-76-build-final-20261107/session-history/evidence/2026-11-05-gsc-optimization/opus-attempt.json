@@ -1,0 +1,8 @@
+{
+  "is_error": true,
+  "terminal_reason": "api_error",
+  "api_error_status": 429,
+  "result": "You've hit your weekly limit \u00b7 resets Nov 7, 11:30pm (Asia/Kabul)",
+  "duration_api_ms": 0,
+  "modelUsage": {}
+}

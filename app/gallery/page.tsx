@@ -45,32 +45,6 @@ export const metadata: Metadata = buildMetadata({
     'Photos of bathroom renovations Elite Touch Renovations has completed across Sydney, from Artarmon and Balmain to Hunters Hill, Randwick and The Rocks.',
 })
 
-/**
- * Documented projects with no photography supplied. Kept as text so the work is
- * still represented. Do NOT attach any of the gallery photos to these — there
- * is no confirmed evidence linking them (D-06).
- *
- * ⚠️ 2026-08-25: a photographed Hunters Hill and a photographed The Rocks
- * project were added to `lib/projects.ts` (slugs `hunters-hill-bathroom`,
- * `the-rocks-bathroom`) from a separate source. Both closely match the
- * descriptions below — same suburb, same distinctive features (the Hunters
- * Hill entry's marble/double-vanity/freestanding-bath; The Rocks entry's
- * protected heritage window). They MAY be the same jobs as these two text
- * entries, now with photos. Asked directly, the user did not know either way
- * (see PROJECT_CONTEXT.md K14), so per D-06/D-69 they are kept as separate,
- * unmerged entries rather than assumed identical.
- */
-const TEXT_ONLY_PROJECTS = [
-  {
-    name: 'Heritage bathroom, The Rocks',
-    body: 'A bathroom in a 19th-century terrace, worked around an original timber-framed window that had to stay. Heritage fabric sets the constraints on a job like this - the waterproofing and the setout have to be planned around what cannot be moved.',
-  },
-  {
-    name: 'Marble bathroom, Hunters Hill',
-    body: 'Full-height marble, a custom double vanity and a freestanding bath. Large-format natural stone is unforgiving: the falls, the joints and the cuts all have to be right the first time, because there is no hiding a correction in marble.',
-  },
-] as const
-
 export default function GalleryPage() {
   const featuredProject = projects[0]
   const featuredCover = projectCover(featuredProject)
@@ -198,41 +172,6 @@ export default function GalleryPage() {
         intro="The gallery shows real projects by suburb. The area pages explain where we work across Sydney and link the project proof to the service coverage."
         band="surface"
       />
-      <section className="et-section et-band-canvas">
-        <div className="et-container et-stack">
-          <h2 className="et-h2 et-measure-tight">
-            Two more projects worth describing
-          </h2>
-          <p className="et-lead et-measure">
-            We do not have photography cleared for these two yet, but the work
-            is worth explaining.
-          </p>
-
-          <div className="et-stack" style={{ marginTop: 'var(--et-space-8)' }}>
-            {TEXT_ONLY_PROJECTS.map((project) => (
-              <article
-                key={project.name}
-                style={{
-                  borderTop: '1px solid var(--et-border)',
-                  paddingBlock: 'var(--et-space-6)',
-                }}
-              >
-                <h3 className="et-h4">{project.name}</h3>
-                <p
-                  className="et-body-sm"
-                  style={{
-                    marginTop: 'var(--et-space-4)',
-                    color: 'var(--et-text-secondary)',
-                  }}
-                >
-                  {project.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <ContactSection />
     </>
   )

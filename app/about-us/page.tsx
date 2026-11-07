@@ -190,8 +190,9 @@ export default function AboutPage() {
             >
               <dt className="et-h4">Quoting</dt>
               <dd className="et-body-sm" style={{ marginInlineStart: 0 }}>
-                After a free on-site measure, we write the scope. You see what
-                is included and what is not before you commit.
+                After a free on-site measure, we write the scope. The quote
+                shows what is included and what is not. You decide after you
+                see it.
               </dd>
             </div>
           </dl>
@@ -208,11 +209,12 @@ export default function AboutPage() {
                 Licences, insurance and protections
               </h3>
               <p className="et-body-sm et-measure">
-                NSW bathroom work must meet the law and the{' '}
+                The law and the{' '}
                 <ExternalLink href={businessInfo.authorities.nccWetAreas}>
                   National Construction Code
                 </ExternalLink>
-                . We meet the rules for licences and insurance.
+                {' '}set the rules for bathroom work in NSW. Our builder licence
+                and insurance are in place.
               </p>
             </div>
 

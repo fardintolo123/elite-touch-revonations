@@ -1,0 +1,127 @@
+import Link from 'next/link'
+import { EnquiryForm } from '@/components/EnquiryForm'
+import { GoogleRating } from '@/components/GoogleRating'
+import { businessInfo } from '@/lib/businessInfo'
+
+/**
+ * The enquiry block that appears at the bottom of EVERY page.
+ *
+ * Owner instruction 2026-08-20: "contact section/form should be in each page".
+ * On a lead-generation site that is the right call — making someone navigate to
+ * a contact page to enquire loses the ones who were ready on the page they were
+ * already reading.
+ *
+ * ⚠️ PERFORMANCE NOTE. This pulls the client-side `EnquiryForm` onto every
+ * page, so the form's JavaScript is now part of every route rather than just
+ * `/contact-us/`. That is a deliberate, owner-approved trade: the form is a
+ * small leaf component, and an enquiry is worth more than the bytes. It is
+ * recorded in D-80 so nobody later "optimises" it away without knowing why it
+ * is there. If page weight becomes a problem, the answer is to slim the form,
+ * not to remove it from pages.
+ *
+ * Everything except the form itself is server-rendered, so the phone number,
+ * the heading and the copy are all in the served HTML for crawlers.
+ */
+
+export function ContactSection({
+  title = 'Book a free on-site measure',
+  intro = 'Tell us what is not working in the room. We will measure it anywhere in Sydney at no cost, talk through the work, then send a written quote.',
+  showReviewProof = false,
+}: {
+  title?: string
+  intro?: string
+  showReviewProof?: boolean
+}) {
+  return (
+    <section className="et-section et-band-canvas" id="enquire">
+      <div className="et-container">
+        <div className="et-grid et-grid-2 et-grid-align-center">
+          <div className="et-stack">
+            <h2 className="et-h2 et-measure-tight">{title}</h2>
+            <p className="et-lead et-measure">
+              {intro} It will list what is included, what is not, and the price.
+            </p>
+
+            {/* Real tel: anchor — D-33. Never a JS click handler. */}
+            <a
+              href={businessInfo.phone.href}
+              className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
+              style={{ alignSelf: 'flex-start' }}
+            >
+              Call {businessInfo.phone.display}
+            </a>
+
+            <ul className="et-facts">
+              <li className="et-fact">
+                <strong>NSW Builder Licence</strong>{' '}
+                {businessInfo.builderLicence}
+              </li>
+              <li className="et-fact">
+                <strong>{businessInfo.workmanshipWarrantyYears}-year</strong>{' '}
+                workmanship warranty
+              </li>
+              <li className="et-fact">
+                <strong>Free</strong> on-site measure
+              </li>
+            </ul>
+
+            <p
+              className="et-body-sm"
+              style={{ color: 'var(--et-text-secondary)' }}
+            >
+              Or email{' '}
+              <a
+                href={`mailto:${businessInfo.email.primary}`}
+                className="et-link"
+              >
+                {businessInfo.email.primary}
+              </a>
+            </p>
+          </div>
+
+          <div className="et-card">
+            <h3 className="et-h3" id="enquiry-form" tabIndex={-1}>Tell us about the room</h3>
+            <p
+              className="et-body-sm"
+              style={{
+                marginTop: 'var(--et-space-3)',
+                marginBottom: 'var(--et-space-8)',
+                color: 'var(--et-text-secondary)',
+              }}
+            >
+              Send your contact details and, if helpful, up to two photos. We
+              will call to learn about the room and arrange the free on-site
+              measure. After the visit, we will put the inclusions, exclusions
+              and price in writing.
+            </p>
+            {showReviewProof && (
+              <div style={{ marginBottom: 'var(--et-space-6)' }}>
+                <GoogleRating />
+              </div>
+            )}
+            <EnquiryForm />
+
+            {/* Privacy notice — issue #37 / content audit C-1. Lives here in the
+                server component (not the 'use client' form leaf) so it is in
+                the served HTML on every page, and so the form leaf stays
+                minimal (PROJECT_CONTEXT.md §4.14). */}
+            <p
+              className="et-body-sm"
+              style={{
+                marginTop: 'var(--et-space-5)',
+                color: 'var(--et-text-secondary)',
+              }}
+            >
+              We use your details only to arrange your measure and reply to your
+              enquiry. See our{' '}
+              <Link className="et-link" href="/privacy/">
+                privacy policy
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

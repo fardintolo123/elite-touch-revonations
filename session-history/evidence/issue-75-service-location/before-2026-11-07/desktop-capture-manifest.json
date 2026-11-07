@@ -1,0 +1,81 @@
+{
+  "capturedAt": "2026-11-07T10:21:40.031Z",
+  "baselineCommit": "5a271588e099741e38670ed5568c2eaf5d5b12a9",
+  "baseUrl": "http://127.0.0.1:3348",
+  "viewport": "1440x900",
+  "method": "Production build from pre-#75 commit; scrolled each representative route to reveal sections and lazy images, then returned instantly to scrollY=0 before captures.",
+  "results": [
+    {
+      "route": "/services/",
+      "status": 200,
+      "viewport": "1440x900",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "src": "http://127.0.0.1:3348/_next/image/?url=%2Fimages%2Fprojects%2Fhornsby-bathroom%2Fvanity-marble-storage-tower.webp&w=1920&q=75",
+        "complete": true,
+        "naturalWidth": 844
+      },
+      "viewportScreenshot": "services-1440-viewport.png",
+      "fullScreenshot": "services-1440-full.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/",
+      "status": 200,
+      "viewport": "1440x900",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "src": "http://127.0.0.1:3348/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Ffreestanding-bath-vanity.webp&w=1920&q=75",
+        "complete": true,
+        "naturalWidth": 846
+      },
+      "viewportScreenshot": "services_bathroom-renovations-1440-viewport.png",
+      "fullScreenshot": "services_bathroom-renovations-1440-full.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/hills-district/",
+      "status": 200,
+      "viewport": "1440x900",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "src": "http://127.0.0.1:3348/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=1920&q=75",
+        "complete": true,
+        "naturalWidth": 845
+      },
+      "viewportScreenshot": "services_bathroom-renovations_hills-district-1440-viewport.png",
+      "fullScreenshot": "services_bathroom-renovations_hills-district-1440-full.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/baulkham-hills/",
+      "status": 200,
+      "viewport": "1440x900",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "hero": {
+        "src": "http://127.0.0.1:3348/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=1920&q=75",
+        "complete": true,
+        "naturalWidth": 845
+      },
+      "viewportScreenshot": "services_bathroom-renovations_baulkham-hills-1440-viewport.png",
+      "fullScreenshot": "services_bathroom-renovations_baulkham-hills-1440-full.png"
+    }
+  ]
+}

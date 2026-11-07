@@ -1,0 +1,72 @@
+{
+  "capturedAt": "2026-11-07T10:14:35.560Z",
+  "baseUrl": "http://127.0.0.1:3347",
+  "viewport": "1440x900",
+  "method": "Scroll every route to trigger reveal sections and lazy images; decode hero image; disable smooth scroll; return to scrollY=0 before viewport and full-page captures.",
+  "results": [
+    {
+      "route": "/services/",
+      "status": 200,
+      "viewport": "1440x900",
+      "browserViewport": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "width": 1440,
+        "height": 900,
+        "documentWidth": 1425
+      },
+      "viewportScreenshot": "services-1440-viewport.png",
+      "fullScreenshot": "services-1440-full.png",
+      "scrollHeight": 5554,
+      "heroImageDecoded": true
+    },
+    {
+      "route": "/services/bathroom-renovations/",
+      "status": 200,
+      "viewport": "1440x900",
+      "browserViewport": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "width": 1440,
+        "height": 900,
+        "documentWidth": 1425
+      },
+      "viewportScreenshot": "services_bathroom-renovations-1440-viewport.png",
+      "fullScreenshot": "services_bathroom-renovations-1440-full.png",
+      "scrollHeight": 7539,
+      "heroImageDecoded": true
+    },
+    {
+      "route": "/services/bathroom-renovations/hills-district/",
+      "status": 200,
+      "viewport": "1440x900",
+      "browserViewport": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "width": 1440,
+        "height": 900,
+        "documentWidth": 1425
+      },
+      "viewportScreenshot": "services_bathroom-renovations_hills-district-1440-viewport.png",
+      "fullScreenshot": "services_bathroom-renovations_hills-district-1440-full.png",
+      "scrollHeight": 7080,
+      "heroImageDecoded": true
+    },
+    {
+      "route": "/services/bathroom-renovations/baulkham-hills/",
+      "status": 200,
+      "viewport": "1440x900",
+      "browserViewport": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "width": 1440,
+        "height": 900,
+        "documentWidth": 1425
+      },
+      "viewportScreenshot": "services_bathroom-renovations_baulkham-hills-1440-viewport.png",
+      "fullScreenshot": "services_bathroom-renovations_baulkham-hills-1440-full.png",
+      "scrollHeight": 5221,
+      "heroImageDecoded": true
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+[
+  {
+    "route": "/gallery/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Bathroom Renovation Photos, Sydney | Elite Touch Renovations",
+    "h1": "Bathroom renovations we have completed across Sydney.",
+    "scrollWidth": 375,
+    "viewportWidth": 390,
+    "imageCount": 13,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 700.3000030517578,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-gallery-390x844.png"
+  },
+  {
+    "route": "/gallery/the-rocks-bathroom/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "The Rocks bathroom renovation | Elite Touch Renovations",
+    "h1": "The Rocks heritage bathroom renovation",
+    "scrollWidth": 375,
+    "viewportWidth": 390,
+    "imageCount": 16,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 717.4999923706055,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-project-390x844.png"
+  },
+  {
+    "route": "/packages/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Bathroom Renovation Cost, Sydney | Elite Touch Renovations",
+    "h1": "Bathroom renovation packages in Sydney.",
+    "scrollWidth": 375,
+    "viewportWidth": 390,
+    "imageCount": 6,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 307.4000015258789,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-packages-390x844.png"
+  },
+  {
+    "route": "/about-us/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "About Us | Elite Touch Renovations",
+    "h1": "A Sydney family business that only renovates wet areas.",
+    "scrollWidth": 375,
+    "viewportWidth": 390,
+    "imageCount": 6,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 692.3000030517578,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-about-390x844.png"
+  },
+  {
+    "route": "/contact-us/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Book a Free On-Site Measure | Elite Touch Renovations",
+    "h1": "Book a free bathroom renovation measure in Sydney.",
+    "scrollWidth": 375,
+    "viewportWidth": 390,
+    "imageCount": 2,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 346.5,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-contact-390x844.png"
+  },
+  {
+    "route": "/gallery/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Bathroom Renovation Photos, Sydney | Elite Touch Renovations",
+    "h1": "Bathroom renovations we have completed across Sydney.",
+    "scrollWidth": 1425,
+    "viewportWidth": 1440,
+    "imageCount": 13,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 455.3000183105469,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-gallery-1440x900.png"
+  },
+  {
+    "route": "/gallery/the-rocks-bathroom/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "The Rocks bathroom renovation | Elite Touch Renovations",
+    "h1": "The Rocks heritage bathroom renovation",
+    "scrollWidth": 1425,
+    "viewportWidth": 1440,
+    "imageCount": 16,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 440,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-project-1440x900.png"
+  },
+  {
+    "route": "/packages/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Bathroom Renovation Cost, Sydney | Elite Touch Renovations",
+    "h1": "Bathroom renovation packages in Sydney.",
+    "scrollWidth": 1425,
+    "viewportWidth": 1440,
+    "imageCount": 6,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 343.40000915527344,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-packages-1440x900.png"
+  },
+  {
+    "route": "/about-us/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "About Us | Elite Touch Renovations",
+    "h1": "A Sydney family business that only renovates wet areas.",
+    "scrollWidth": 1425,
+    "viewportWidth": 1440,
+    "imageCount": 6,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 400.90000915527344,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-about-1440x900.png"
+  },
+  {
+    "route": "/contact-us/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Book a Free On-Site Measure | Elite Touch Renovations",
+    "h1": "Book a free bathroom renovation measure in Sydney.",
+    "scrollWidth": 1425,
+    "viewportWidth": 1440,
+    "imageCount": 2,
+    "brokenImages": [],
+    "phoneLinks": [
+      {
+        "href": "tel:+61411752334",
+        "text": "Call\nCall Elite Touch Renovations on\n0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "Call 0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      },
+      {
+        "href": "tel:+61411752334",
+        "text": "0411 752 334",
+        "visible": true
+      }
+    ],
+    "h1Bottom": 343.40000915527344,
+    "overflow": false,
+    "pageErrors": [],
+    "file": "D:\\1\\elite-touch-revonations\\.impeccable\\critique\\issue-76-2026-11-07\\after\\after-contact-1440x900.png"
+  }
+]

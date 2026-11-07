@@ -1,0 +1,3204 @@
+{
+  "property": "sc-domain:elitetouchrenovations.au",
+  "startDate": "2026-08-05",
+  "endDate": "2026-11-02",
+  "type": "web",
+  "dataState": "final",
+  "requestedRowLimit": 25000,
+  "returnedRows": 2458,
+  "candidateRule": "Screening only: reported rounded position 15–80 inclusive, impressions >=10. Not final relevance/underoptimization approval. No country/device or recurrence claims.",
+  "candidates": [
+    {
+      "query": "bathroom renovations castle hill",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 528,
+      "ctrPercent": 0,
+      "position": 26.7
+    },
+    {
+      "query": "bathroom renovations eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 511,
+      "ctrPercent": 0,
+      "position": 33.8
+    },
+    {
+      "query": "bathroom renovations hornsby",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-bathroom/",
+      "clicks": 0,
+      "impressions": 375,
+      "ctrPercent": 0,
+      "position": 26.8
+    },
+    {
+      "query": "bathroom lighting ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-lighting-ideas/",
+      "clicks": 0,
+      "impressions": 300,
+      "ctrPercent": 0,
+      "position": 15.8
+    },
+    {
+      "query": "bathroom renovations hornsby",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 254,
+      "ctrPercent": 0,
+      "position": 66.3
+    },
+    {
+      "query": "bathroom waterproofing",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 250,
+      "ctrPercent": 0,
+      "position": 53.6
+    },
+    {
+      "query": "bathroom renovations pymble",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 233,
+      "ctrPercent": 0,
+      "position": 60.1
+    },
+    {
+      "query": "custom bathroom renovations castle hill",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 193,
+      "ctrPercent": 0,
+      "position": 35.5
+    },
+    {
+      "query": "how to renovate a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 189,
+      "ctrPercent": 0,
+      "position": 22.2
+    },
+    {
+      "query": "bathroom renovations artarmon",
+      "page": "https://www.elitetouchrenovations.au/gallery/artarmon-bathroom/",
+      "clicks": 2,
+      "impressions": 168,
+      "ctrPercent": 1.2,
+      "position": 17.4
+    },
+    {
+      "query": "marble bathroom renovations western sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 164,
+      "ctrPercent": 0,
+      "position": 38.3
+    },
+    {
+      "query": "bathroom renovations five dock",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 152,
+      "ctrPercent": 0,
+      "position": 50.2
+    },
+    {
+      "query": "bathroom upgrade",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-essential-upgrades/",
+      "clicks": 0,
+      "impressions": 145,
+      "ctrPercent": 0,
+      "position": 16.8
+    },
+    {
+      "query": "small bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 142,
+      "ctrPercent": 0,
+      "position": 75.1
+    },
+    {
+      "query": "bathroom renovations hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 141,
+      "ctrPercent": 0,
+      "position": 24.4
+    },
+    {
+      "query": "bathroom renovation eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 132,
+      "ctrPercent": 0,
+      "position": 32.3
+    },
+    {
+      "query": "bathroom renovations artarmon",
+      "page": "https://www.elitetouchrenovations.au/artarmon-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 128,
+      "ctrPercent": 0,
+      "position": 25.4
+    },
+    {
+      "query": "diy bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 121,
+      "ctrPercent": 0,
+      "position": 19.8
+    },
+    {
+      "query": "eastern suburbs bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 119,
+      "ctrPercent": 0,
+      "position": 25.5
+    },
+    {
+      "query": "bathroom renovations inner west",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 118,
+      "ctrPercent": 0,
+      "position": 38.5
+    },
+    {
+      "query": "bathroom renovations kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 116,
+      "ctrPercent": 0,
+      "position": 59.3
+    },
+    {
+      "query": "bathroom renovations seven hills",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 115,
+      "ctrPercent": 0,
+      "position": 57.5
+    },
+    {
+      "query": "renovating a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 112,
+      "ctrPercent": 0,
+      "position": 24
+    },
+    {
+      "query": "bathroom demolition",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-demolition-what-to-expect/",
+      "clicks": 0,
+      "impressions": 110,
+      "ctrPercent": 0,
+      "position": 45.1
+    },
+    {
+      "query": "bathroom renovation package",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 110,
+      "ctrPercent": 0,
+      "position": 35.1
+    },
+    {
+      "query": "bathroom renovation timeline",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 110,
+      "ctrPercent": 0,
+      "position": 20.2
+    },
+    {
+      "query": "bathroom renovations leichhardt",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 106,
+      "ctrPercent": 0,
+      "position": 57.5
+    },
+    {
+      "query": "how to waterproof a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 106,
+      "ctrPercent": 0,
+      "position": 53.5
+    },
+    {
+      "query": "bathroom renovation castle hill",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 105,
+      "ctrPercent": 0,
+      "position": 25.4
+    },
+    {
+      "query": "bathroom renovation packages",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 105,
+      "ctrPercent": 0,
+      "position": 31
+    },
+    {
+      "query": "bathroom renovations chatswood",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 99,
+      "ctrPercent": 0,
+      "position": 53.8
+    },
+    {
+      "query": "bathroom renovations chatswood",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 96,
+      "ctrPercent": 0,
+      "position": 62.8
+    },
+    {
+      "query": "bathroom renovations hornsby",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-ensuite/",
+      "clicks": 0,
+      "impressions": 95,
+      "ctrPercent": 0,
+      "position": 26
+    },
+    {
+      "query": "bathroom renovation checklist",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-checklist-sydney/",
+      "clicks": 0,
+      "impressions": 94,
+      "ctrPercent": 0,
+      "position": 35.1
+    },
+    {
+      "query": "bathroom renovations rose bay",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 89,
+      "ctrPercent": 0,
+      "position": 45.9
+    },
+    {
+      "query": "waterproofing bathroom floor",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 89,
+      "ctrPercent": 0,
+      "position": 61.1
+    },
+    {
+      "query": "home renovations leichhardt",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 85,
+      "ctrPercent": 0,
+      "position": 79.2
+    },
+    {
+      "query": "home renovations leichhardt",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 85,
+      "ctrPercent": 0,
+      "position": 69.9
+    },
+    {
+      "query": "bathroom renovation moorebank",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 84,
+      "ctrPercent": 0,
+      "position": 36
+    },
+    {
+      "query": "ensuite bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-renovation-ideas-layout/",
+      "clicks": 0,
+      "impressions": 83,
+      "ctrPercent": 0,
+      "position": 72.9
+    },
+    {
+      "query": "bathroom renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 82,
+      "ctrPercent": 0,
+      "position": 56.4
+    },
+    {
+      "query": "bathroom renovations roseville",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 79,
+      "ctrPercent": 0,
+      "position": 46.5
+    },
+    {
+      "query": "how long does a bathroom renovation take",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 76,
+      "ctrPercent": 0,
+      "position": 17.4
+    },
+    {
+      "query": "shower waterproofing",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 76,
+      "ctrPercent": 0,
+      "position": 64.4
+    },
+    {
+      "query": "bathroom renovation timeline",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-project-management-timeline/",
+      "clicks": 0,
+      "impressions": 75,
+      "ctrPercent": 0,
+      "position": 27.3
+    },
+    {
+      "query": "bathroom renovations balmain",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 75,
+      "ctrPercent": 0,
+      "position": 55.6
+    },
+    {
+      "query": "bathroom renovations baulkham hills",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 73,
+      "ctrPercent": 0,
+      "position": 37.7
+    },
+    {
+      "query": "bathroom renovations marrickville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/marrickville/",
+      "clicks": 0,
+      "impressions": 72,
+      "ctrPercent": 0,
+      "position": 22.8
+    },
+    {
+      "query": "bathroom renovations castlecrag",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 71,
+      "ctrPercent": 0,
+      "position": 49.9
+    },
+    {
+      "query": "bathroom renovations wahroonga",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 71,
+      "ctrPercent": 0,
+      "position": 27.5
+    },
+    {
+      "query": "disabled bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/accessible-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 71,
+      "ctrPercent": 0,
+      "position": 71.6
+    },
+    {
+      "query": "bathroom renovations north rocks",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 70,
+      "ctrPercent": 0,
+      "position": 46.8
+    },
+    {
+      "query": "ensuite renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-renovation-ideas-layout/",
+      "clicks": 0,
+      "impressions": 70,
+      "ctrPercent": 0,
+      "position": 43.9
+    },
+    {
+      "query": "waterproofing a bathroom floor",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 70,
+      "ctrPercent": 0,
+      "position": 59.4
+    },
+    {
+      "query": "bathroom renovations balmain",
+      "page": "https://www.elitetouchrenovations.au/gallery/balmain-bathroom/",
+      "clicks": 0,
+      "impressions": 69,
+      "ctrPercent": 0,
+      "position": 21
+    },
+    {
+      "query": "bathroom renovations seven hills",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 67,
+      "ctrPercent": 0,
+      "position": 46.7
+    },
+    {
+      "query": "common bathroom renovation mistakes",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-mistakes-to-avoid/",
+      "clicks": 0,
+      "impressions": 67,
+      "ctrPercent": 0,
+      "position": 20.4
+    },
+    {
+      "query": "ensuite bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/services/ensuite-bathroom-renovations/",
+      "clicks": 0,
+      "impressions": 67,
+      "ctrPercent": 0,
+      "position": 48.9
+    },
+    {
+      "query": "small space bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 67,
+      "ctrPercent": 0,
+      "position": 79.9
+    },
+    {
+      "query": "how long to renovate a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 66,
+      "ctrPercent": 0,
+      "position": 19.2
+    },
+    {
+      "query": "bathroom renovation pymble",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 64,
+      "ctrPercent": 0,
+      "position": 60.8
+    },
+    {
+      "query": "marble bathroom renovations western sydney",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 64,
+      "ctrPercent": 0,
+      "position": 25.6
+    },
+    {
+      "query": "bathroom renovations north shore",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 63,
+      "ctrPercent": 0,
+      "position": 41.1
+    },
+    {
+      "query": "bathroom renovations wahroonga",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 63,
+      "ctrPercent": 0,
+      "position": 54.9
+    },
+    {
+      "query": "bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/first-time-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 62,
+      "ctrPercent": 0,
+      "position": 28.3
+    },
+    {
+      "query": "home renovations ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 62,
+      "ctrPercent": 0,
+      "position": 57.2
+    },
+    {
+      "query": "small ensuite renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 62,
+      "ctrPercent": 0,
+      "position": 67.6
+    },
+    {
+      "query": "bathroom renovations berowra",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 61,
+      "ctrPercent": 0,
+      "position": 52.5
+    },
+    {
+      "query": "bathroom renovations north sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 61,
+      "ctrPercent": 0,
+      "position": 48.9
+    },
+    {
+      "query": "bathroom renovations st ives",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 61,
+      "ctrPercent": 0,
+      "position": 65.6
+    },
+    {
+      "query": "bathtub refinishing hornsby",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-bathroom/",
+      "clicks": 0,
+      "impressions": 61,
+      "ctrPercent": 0,
+      "position": 32.8
+    },
+    {
+      "query": "ensuite renovations",
+      "page": "https://www.elitetouchrenovations.au/services/ensuite-bathroom-renovations/",
+      "clicks": 0,
+      "impressions": 60,
+      "ctrPercent": 0,
+      "position": 53.9
+    },
+    {
+      "query": "can you renovate a bathroom yourself",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 58,
+      "ctrPercent": 0,
+      "position": 25.4
+    },
+    {
+      "query": "ensuite renovation",
+      "page": "https://www.elitetouchrenovations.au/services/ensuite-bathroom-renovations/",
+      "clicks": 0,
+      "impressions": 58,
+      "ctrPercent": 0,
+      "position": 45.6
+    },
+    {
+      "query": "small bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 58,
+      "ctrPercent": 0,
+      "position": 71.7
+    },
+    {
+      "query": "waterproof bathroom flooring",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-flooring-options-renovation/",
+      "clicks": 0,
+      "impressions": 58,
+      "ctrPercent": 0,
+      "position": 48
+    },
+    {
+      "query": "bathroom renovations kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 57,
+      "ctrPercent": 0,
+      "position": 28
+    },
+    {
+      "query": "renovating bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 57,
+      "ctrPercent": 0,
+      "position": 24.7
+    },
+    {
+      "query": "bathroom renovations balmain",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 56,
+      "ctrPercent": 0,
+      "position": 56.4
+    },
+    {
+      "query": "bathroom flooring",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-flooring-options-renovation/",
+      "clicks": 0,
+      "impressions": 54,
+      "ctrPercent": 0,
+      "position": 41.8
+    },
+    {
+      "query": "bathroom light ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-lighting-ideas/",
+      "clicks": 0,
+      "impressions": 54,
+      "ctrPercent": 0,
+      "position": 21.7
+    },
+    {
+      "query": "bathroom renovations ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 54,
+      "ctrPercent": 0,
+      "position": 32.3
+    },
+    {
+      "query": "bathroom renovations moorebank",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 53,
+      "ctrPercent": 0,
+      "position": 54.3
+    },
+    {
+      "query": "bathrooms eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 52,
+      "ctrPercent": 0,
+      "position": 34.9
+    },
+    {
+      "query": "how long does it take to renovate a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 52,
+      "ctrPercent": 0,
+      "position": 20.6
+    },
+    {
+      "query": "bathroom colour ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-colour-schemes-australia/",
+      "clicks": 0,
+      "impressions": 51,
+      "ctrPercent": 0,
+      "position": 52.4
+    },
+    {
+      "query": "bathroom renovation kingsford",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 51,
+      "ctrPercent": 0,
+      "position": 31.4
+    },
+    {
+      "query": "ensuite bathroom sydney",
+      "page": "https://www.elitetouchrenovations.au/services/ensuite-bathroom-renovations/",
+      "clicks": 0,
+      "impressions": 51,
+      "ctrPercent": 0,
+      "position": 38.5
+    },
+    {
+      "query": "home renovations baulkham hills",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 51,
+      "ctrPercent": 0,
+      "position": 65.2
+    },
+    {
+      "query": "waterproof bathroom floor",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-flooring-options-renovation/",
+      "clicks": 0,
+      "impressions": 51,
+      "ctrPercent": 0,
+      "position": 60.1
+    },
+    {
+      "query": "accessible bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/accessible-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 50,
+      "ctrPercent": 0,
+      "position": 42.9
+    },
+    {
+      "query": "bathroom renovation diy",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 50,
+      "ctrPercent": 0,
+      "position": 24
+    },
+    {
+      "query": "bathroom renovations inner west sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 50,
+      "ctrPercent": 0,
+      "position": 39.1
+    },
+    {
+      "query": "bathroom renovations leichhardt",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 50,
+      "ctrPercent": 0,
+      "position": 71.9
+    },
+    {
+      "query": "bathroom renovations north shore sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 50,
+      "ctrPercent": 0,
+      "position": 45.9
+    },
+    {
+      "query": "waterproofing bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 50,
+      "ctrPercent": 0,
+      "position": 57.2
+    },
+    {
+      "query": "bathroom renovations marrickville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 49,
+      "ctrPercent": 0,
+      "position": 47.3
+    },
+    {
+      "query": "kitchen renovations marrickville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/marrickville/",
+      "clicks": 0,
+      "impressions": 49,
+      "ctrPercent": 0,
+      "position": 67.3
+    },
+    {
+      "query": "bathroom renovations st peters",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 48,
+      "ctrPercent": 0,
+      "position": 62.7
+    },
+    {
+      "query": "bathroom modifications for elderly",
+      "page": "https://www.elitetouchrenovations.au/blog/aging-in-place-bathroom-design/",
+      "clicks": 0,
+      "impressions": 47,
+      "ctrPercent": 0,
+      "position": 41
+    },
+    {
+      "query": "bathroom renovation randwick",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 46,
+      "ctrPercent": 0,
+      "position": 36.7
+    },
+    {
+      "query": "how to renovate a bathroom yourself",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 46,
+      "ctrPercent": 0,
+      "position": 21.1
+    },
+    {
+      "query": "bathroom colour schemes",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-colour-schemes-australia/",
+      "clicks": 0,
+      "impressions": 45,
+      "ctrPercent": 0,
+      "position": 39.1
+    },
+    {
+      "query": "bathroom packages sydney",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 45,
+      "ctrPercent": 0,
+      "position": 32.5
+    },
+    {
+      "query": "bathroom renovation checklist australia",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-checklist-sydney/",
+      "clicks": 0,
+      "impressions": 45,
+      "ctrPercent": 0,
+      "position": 30.8
+    },
+    {
+      "query": "bathroom renovations randwick",
+      "page": "https://www.elitetouchrenovations.au/gallery/randwick-bathroom/",
+      "clicks": 0,
+      "impressions": 45,
+      "ctrPercent": 0,
+      "position": 25.1
+    },
+    {
+      "query": "toilet renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/toilet-upgrade-guide-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 45,
+      "ctrPercent": 0,
+      "position": 15.3
+    },
+    {
+      "query": "waterproof bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 45,
+      "ctrPercent": 0,
+      "position": 67.3
+    },
+    {
+      "query": "bathroom renovations oatlands",
+      "page": "https://elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 44,
+      "ctrPercent": 0,
+      "position": 23.3
+    },
+    {
+      "query": "bathroom renovation sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 43,
+      "ctrPercent": 0,
+      "position": 39
+    },
+    {
+      "query": "bathroom renovations leichhardt",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 43,
+      "ctrPercent": 0,
+      "position": 73.8
+    },
+    {
+      "query": "complete bathroom renovation packages",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 43,
+      "ctrPercent": 0,
+      "position": 37.3
+    },
+    {
+      "query": "heated towel rail installation inner west",
+      "page": "https://www.elitetouchrenovations.au/blog/heated-towel-rail-bathroom-guide/",
+      "clicks": 0,
+      "impressions": 43,
+      "ctrPercent": 0,
+      "position": 16.2
+    },
+    {
+      "query": "bathroom design eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 42,
+      "ctrPercent": 0,
+      "position": 45.5
+    },
+    {
+      "query": "bathroom splashback ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-splashback-ideas-renovation/",
+      "clicks": 0,
+      "impressions": 42,
+      "ctrPercent": 0,
+      "position": 23.7
+    },
+    {
+      "query": "bathroom upgrade hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 42,
+      "ctrPercent": 0,
+      "position": 30.3
+    },
+    {
+      "query": "bathroom renovations double bay",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 41,
+      "ctrPercent": 0,
+      "position": 36.1
+    },
+    {
+      "query": "bathroom renovations dulwich hill",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 41,
+      "ctrPercent": 0,
+      "position": 43.3
+    },
+    {
+      "query": "accessible bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/accessible-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 40,
+      "ctrPercent": 0,
+      "position": 45.9
+    },
+    {
+      "query": "bathroom renovation hornsby",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-bathroom/",
+      "clicks": 0,
+      "impressions": 40,
+      "ctrPercent": 0,
+      "position": 26.2
+    },
+    {
+      "query": "home renovations inner west",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 40,
+      "ctrPercent": 0,
+      "position": 55.5
+    },
+    {
+      "query": "bathroom remodel checklist",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-checklist-sydney/",
+      "clicks": 0,
+      "impressions": 39,
+      "ctrPercent": 0,
+      "position": 37
+    },
+    {
+      "query": "bathroom renovation kingsford",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 39,
+      "ctrPercent": 0,
+      "position": 71.4
+    },
+    {
+      "query": "bathroom renovations padstow",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 39,
+      "ctrPercent": 0,
+      "position": 73.2
+    },
+    {
+      "query": "bathroom renovations pendle hill",
+      "page": "https://elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 39,
+      "ctrPercent": 0,
+      "position": 18.9
+    },
+    {
+      "query": "bathroom renovations randwick",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 39,
+      "ctrPercent": 0,
+      "position": 43.3
+    },
+    {
+      "query": "ensuite renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-renovation-ideas-layout/",
+      "clicks": 0,
+      "impressions": 38,
+      "ctrPercent": 0,
+      "position": 43.7
+    },
+    {
+      "query": "how to renovate bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 38,
+      "ctrPercent": 0,
+      "position": 24
+    },
+    {
+      "query": "bathroom renovation package deals",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 37,
+      "ctrPercent": 0,
+      "position": 45.9
+    },
+    {
+      "query": "bathroom splashback",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-splashback-ideas-renovation/",
+      "clicks": 0,
+      "impressions": 37,
+      "ctrPercent": 0,
+      "position": 20.3
+    },
+    {
+      "query": "disabled bathroom renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/blog/accessible-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 37,
+      "ctrPercent": 0,
+      "position": 19.9
+    },
+    {
+      "query": "bathroom demolition sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/",
+      "clicks": 0,
+      "impressions": 36,
+      "ctrPercent": 0,
+      "position": 25.7
+    },
+    {
+      "query": "bathroom renovations sydney inner west",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 36,
+      "ctrPercent": 0,
+      "position": 37.1
+    },
+    {
+      "query": "bathroom tiling castle hill",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 36,
+      "ctrPercent": 0,
+      "position": 20.5
+    },
+    {
+      "query": "small bathroom renovations seven hills",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 36,
+      "ctrPercent": 0,
+      "position": 71.6
+    },
+    {
+      "query": "bathroom renovation rouse hill",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 35,
+      "ctrPercent": 0,
+      "position": 40.4
+    },
+    {
+      "query": "bathroom renovations castlecrag",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 35,
+      "ctrPercent": 0,
+      "position": 78
+    },
+    {
+      "query": "custom bathroom package sydney",
+      "page": "https://www.elitetouchrenovations.au/packages-deals/",
+      "clicks": 0,
+      "impressions": 35,
+      "ctrPercent": 0,
+      "position": 42
+    },
+    {
+      "query": "en suite bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-renovation-ideas-layout/",
+      "clicks": 0,
+      "impressions": 35,
+      "ctrPercent": 0,
+      "position": 59.7
+    },
+    {
+      "query": "strata renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/blog/strata-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 35,
+      "ctrPercent": 0,
+      "position": 22.2
+    },
+    {
+      "query": "bathroom renovations for seniors",
+      "page": "https://www.elitetouchrenovations.au/blog/aging-in-place-bathroom-design/",
+      "clicks": 0,
+      "impressions": 34,
+      "ctrPercent": 0,
+      "position": 29.8
+    },
+    {
+      "query": "bathroom renovation eagle vale",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 33,
+      "ctrPercent": 0,
+      "position": 36.7
+    },
+    {
+      "query": "bathroom renovations castle hill sydney",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 33,
+      "ctrPercent": 0,
+      "position": 24.4
+    },
+    {
+      "query": "bathroom renovations cost calculator",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-budget-planning/",
+      "clicks": 0,
+      "impressions": 33,
+      "ctrPercent": 0,
+      "position": 65.7
+    },
+    {
+      "query": "ensuite renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/services/ensuite-bathroom-renovations/",
+      "clicks": 0,
+      "impressions": 33,
+      "ctrPercent": 0,
+      "position": 45.6
+    },
+    {
+      "query": "modern bathroom renovation rosemeadow",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 33,
+      "ctrPercent": 0,
+      "position": 52.6
+    },
+    {
+      "query": "bathroom remodel castle hill",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 32,
+      "ctrPercent": 0,
+      "position": 28.8
+    },
+    {
+      "query": "bathroom remodeling eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 32,
+      "ctrPercent": 0,
+      "position": 30.6
+    },
+    {
+      "query": "how to plan a bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-design-process/",
+      "clicks": 0,
+      "impressions": 32,
+      "ctrPercent": 0,
+      "position": 57.1
+    },
+    {
+      "query": "bathroom renovations artarmon",
+      "page": "https://www.elitetouchrenovations.au/gallery/artarmon-bathroom-ensuite/",
+      "clicks": 0,
+      "impressions": 31,
+      "ctrPercent": 0,
+      "position": 27.2
+    },
+    {
+      "query": "bathroom waterproofing material",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 31,
+      "ctrPercent": 0,
+      "position": 62.6
+    },
+    {
+      "query": "home renovations marrickville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/marrickville/",
+      "clicks": 0,
+      "impressions": 31,
+      "ctrPercent": 0,
+      "position": 50.7
+    },
+    {
+      "query": "laundry renovations kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 31,
+      "ctrPercent": 0,
+      "position": 23.2
+    },
+    {
+      "query": "marble bathroom renovations western sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 31,
+      "ctrPercent": 0,
+      "position": 57.4
+    },
+    {
+      "query": "back to wall vs wall-hung",
+      "page": "https://www.elitetouchrenovations.au/blog/wall-hung-vs-floor-mounted-fixtures/",
+      "clicks": 0,
+      "impressions": 30,
+      "ctrPercent": 0,
+      "position": 71.9
+    },
+    {
+      "query": "bathroom renovations eastern suburbs sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 30,
+      "ctrPercent": 0,
+      "position": 21
+    },
+    {
+      "query": "bathroom renovations sydney north shore",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 30,
+      "ctrPercent": 0,
+      "position": 43
+    },
+    {
+      "query": "bathroom renovations sydney south",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 30,
+      "ctrPercent": 0,
+      "position": 68.6
+    },
+    {
+      "query": "custom bathroom renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 30,
+      "ctrPercent": 0,
+      "position": 67.7
+    },
+    {
+      "query": "home renovation ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 30,
+      "ctrPercent": 0,
+      "position": 50.9
+    },
+    {
+      "query": "bathroom renovation packages sydney",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 1,
+      "impressions": 29,
+      "ctrPercent": 3.4,
+      "position": 16.1
+    },
+    {
+      "query": "bathroom renovation concord",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 29,
+      "ctrPercent": 0,
+      "position": 55.9
+    },
+    {
+      "query": "bathroom renovation kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 29,
+      "ctrPercent": 0,
+      "position": 58.8
+    },
+    {
+      "query": "bathroom renovations ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-western-sydney/",
+      "clicks": 0,
+      "impressions": 29,
+      "ctrPercent": 0,
+      "position": 48
+    },
+    {
+      "query": "bathroom renovations leichhardt",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 28,
+      "ctrPercent": 0,
+      "position": 35.4
+    },
+    {
+      "query": "bathroom renovations lower north shore",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 28,
+      "ctrPercent": 0,
+      "position": 46.1
+    },
+    {
+      "query": "bathroom renovations rosemeadow",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 28,
+      "ctrPercent": 0,
+      "position": 29.5
+    },
+    {
+      "query": "bathroom underfloor heating",
+      "page": "https://www.elitetouchrenovations.au/blog/underfloor-heating-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 28,
+      "ctrPercent": 0,
+      "position": 53.4
+    },
+    {
+      "query": "bathroom renovation rosemeadow",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 28.7
+    },
+    {
+      "query": "bathroom renovation ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 30.7
+    },
+    {
+      "query": "bathroom renovations auburn",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 73
+    },
+    {
+      "query": "bathroom renovations kellyville",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 62.1
+    },
+    {
+      "query": "bathroom renovations padstow",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 54.7
+    },
+    {
+      "query": "bathroom renovations pendle hill",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 29.9
+    },
+    {
+      "query": "fine touch group",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 52.3
+    },
+    {
+      "query": "small bathroom renovations moorebank",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 65.3
+    },
+    {
+      "query": "waterproofing bathrooms",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctrPercent": 0,
+      "position": 51.6
+    },
+    {
+      "query": "bathroom renovation north shore sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 26,
+      "ctrPercent": 0,
+      "position": 43.5
+    },
+    {
+      "query": "how long does a bathroom renovation take australia",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 26,
+      "ctrPercent": 0,
+      "position": 17.1
+    },
+    {
+      "query": "lighting for bathrooms",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-lighting-ideas/",
+      "clicks": 0,
+      "impressions": 26,
+      "ctrPercent": 0,
+      "position": 20.2
+    },
+    {
+      "query": "small bathroom renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 26,
+      "ctrPercent": 0,
+      "position": 53.3
+    },
+    {
+      "query": "bathroom renovation homebush",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 47.2
+    },
+    {
+      "query": "bathroom renovations bulli",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 35.4
+    },
+    {
+      "query": "bathroom renovations castlecrag",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 53
+    },
+    {
+      "query": "bathroom renovations gladesville",
+      "page": "https://www.elitetouchrenovations.au/gallery/gladesville-bathroom/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 16.4
+    },
+    {
+      "query": "bathroom renovations millfield",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 53.2
+    },
+    {
+      "query": "bathroom renovations revesby",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 50
+    },
+    {
+      "query": "diy bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 20.1
+    },
+    {
+      "query": "home renovations pymble",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 79.2
+    },
+    {
+      "query": "luxury bathroom renovation rosemeadow",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 62.1
+    },
+    {
+      "query": "luxury ensuite renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/services/ensuite-bathroom-renovations/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 62.7
+    },
+    {
+      "query": "small bathroom renovations",
+      "page": "https://elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 25,
+      "ctrPercent": 0,
+      "position": 23.8
+    },
+    {
+      "query": "bathroom makeovers randwick",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 57.8
+    },
+    {
+      "query": "bathroom package sydney",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 29.4
+    },
+    {
+      "query": "bathroom renovation eastern suburbs sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 27
+    },
+    {
+      "query": "bathroom renovation kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 36.9
+    },
+    {
+      "query": "bathroom renovation mistakes",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-mistakes-to-avoid/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 16
+    },
+    {
+      "query": "bathroom renovations eastern sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 24.9
+    },
+    {
+      "query": "bathroom renovations pymble",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 30.1
+    },
+    {
+      "query": "bathroom renovations rose bay",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 24.6
+    },
+    {
+      "query": "strata bylaws renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/blog/strata-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 24,
+      "ctrPercent": 0,
+      "position": 33.9
+    },
+    {
+      "query": "bathroom makeover sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 56.2
+    },
+    {
+      "query": "bathroom makeovers lane cove",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 45
+    },
+    {
+      "query": "bathroom makeovers sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 57.7
+    },
+    {
+      "query": "bathroom renovations willoughby",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 57.3
+    },
+    {
+      "query": "custom bathroom package sydney",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 24
+    },
+    {
+      "query": "diy bathroom renovation timeline",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 17.4
+    },
+    {
+      "query": "is bathroom underfloor heating expensive to run",
+      "page": "https://www.elitetouchrenovations.au/blog/underfloor-heating-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 44.3
+    },
+    {
+      "query": "laundry renovations eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 29.4
+    },
+    {
+      "query": "rosemeadow bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 23,
+      "ctrPercent": 0,
+      "position": 29.4
+    },
+    {
+      "query": "bathroom renovation checklist",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-project-management-timeline/",
+      "clicks": 0,
+      "impressions": 22,
+      "ctrPercent": 0,
+      "position": 38.1
+    },
+    {
+      "query": "bathroom renovation waterproofing",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 22,
+      "ctrPercent": 0,
+      "position": 48.2
+    },
+    {
+      "query": "bathroom renovations bulli",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 22,
+      "ctrPercent": 0,
+      "position": 58
+    },
+    {
+      "query": "bathroom renovations marrickville",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 22,
+      "ctrPercent": 0,
+      "position": 64.8
+    },
+    {
+      "query": "diy bathroom renovation australia",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 22,
+      "ctrPercent": 0,
+      "position": 17.5
+    },
+    {
+      "query": "how long does it take to remodel a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 22,
+      "ctrPercent": 0,
+      "position": 23.6
+    },
+    {
+      "query": "ndis bathroom renovations hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 22,
+      "ctrPercent": 0,
+      "position": 38.8
+    },
+    {
+      "query": "bathroom regrouting ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 21,
+      "ctrPercent": 0,
+      "position": 38.1
+    },
+    {
+      "query": "bathroom renovation randwick",
+      "page": "https://www.elitetouchrenovations.au/gallery/randwick-bathroom/",
+      "clicks": 0,
+      "impressions": 21,
+      "ctrPercent": 0,
+      "position": 23.8
+    },
+    {
+      "query": "bathroom tile colour schemes",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-colour-schemes-australia/",
+      "clicks": 0,
+      "impressions": 21,
+      "ctrPercent": 0,
+      "position": 35.8
+    },
+    {
+      "query": "floor tile renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-flooring-options-renovation/",
+      "clicks": 0,
+      "impressions": 21,
+      "ctrPercent": 0,
+      "position": 30.8
+    },
+    {
+      "query": "homebush bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 21,
+      "ctrPercent": 0,
+      "position": 38.3
+    },
+    {
+      "query": "how long does bathroom renovation take",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 21,
+      "ctrPercent": 0,
+      "position": 21.7
+    },
+    {
+      "query": "bathroom and kitchen demolition ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 32.1
+    },
+    {
+      "query": "bathroom grout",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-grout-guide-types-maintenance/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 69
+    },
+    {
+      "query": "bathroom makeovers ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 38.1
+    },
+    {
+      "query": "bathroom renovation before selling",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-resale-value-what-agents-look-for/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 19.9
+    },
+    {
+      "query": "bathroom renovation faqs",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-mistakes-to-avoid/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 38.4
+    },
+    {
+      "query": "bathroom renovation hornsby",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 57.5
+    },
+    {
+      "query": "bathroom renovation ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/family-bathroom-renovation-ideas/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 33.5
+    },
+    {
+      "query": "bathroom renovations north ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 46
+    },
+    {
+      "query": "bathroom renovations revesby",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 41.6
+    },
+    {
+      "query": "schedule appointment ultra renovations",
+      "page": "https://www.elitetouchrenovations.au/calendly/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 18.1
+    },
+    {
+      "query": "shower demolition",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-demolition-what-to-expect/",
+      "clicks": 0,
+      "impressions": 20,
+      "ctrPercent": 0,
+      "position": 40.1
+    },
+    {
+      "query": "bathroom makeovers leichhardt",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 50.2
+    },
+    {
+      "query": "bathroom renovation bellevue hill",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 71.9
+    },
+    {
+      "query": "bathroom renovations goonellabah",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 63.5
+    },
+    {
+      "query": "bathroom renovations rothbury",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 54.6
+    },
+    {
+      "query": "diy bathroom renovation timeline",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-project-management-timeline/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 45.2
+    },
+    {
+      "query": "home renovations balmain",
+      "page": "https://www.elitetouchrenovations.au/gallery/balmain-bathroom/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 75.5
+    },
+    {
+      "query": "laundry renovations killara",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 73
+    },
+    {
+      "query": "small bathroom reno",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 19,
+      "ctrPercent": 0,
+      "position": 69.5
+    },
+    {
+      "query": "bathroom makeovers kellyville",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 72.6
+    },
+    {
+      "query": "bathroom renovation homebush",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 61.3
+    },
+    {
+      "query": "bathroom renovations castle hill nsw",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 29.8
+    },
+    {
+      "query": "bathroom renovations castlecrag",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 53.8
+    },
+    {
+      "query": "bathroom renovations colyton",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 53.4
+    },
+    {
+      "query": "bathroom renovations somersby",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-bathroom/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 51.7
+    },
+    {
+      "query": "bathroom renovations the ponds",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 27.7
+    },
+    {
+      "query": "bathroom upgrade ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/ryde/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 28.4
+    },
+    {
+      "query": "baulkham hills bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 36.9
+    },
+    {
+      "query": "how to waterproof bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-waterproofing-explained/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 64.4
+    },
+    {
+      "query": "inner west bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 30.6
+    },
+    {
+      "query": "small bathroom renovations bonnyrigg heights",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 42.2
+    },
+    {
+      "query": "small bathroom renovations seven hills",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctrPercent": 0,
+      "position": 48.6
+    },
+    {
+      "query": "bathroom floors",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-flooring-options-renovation/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 64.4
+    },
+    {
+      "query": "bathroom makeovers randwick",
+      "page": "https://www.elitetouchrenovations.au/gallery/randwick-bathroom/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 26.1
+    },
+    {
+      "query": "bathroom renovation bellevue hill",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 32.4
+    },
+    {
+      "query": "bathroom renovation surry hills",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 41.2
+    },
+    {
+      "query": "bathroom renovation wahroonga",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 22.8
+    },
+    {
+      "query": "bathroom renovations near me",
+      "page": "https://elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 16.4
+    },
+    {
+      "query": "bathroom tiling baulkham hills",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 23.5
+    },
+    {
+      "query": "bathroom tiling hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 19.1
+    },
+    {
+      "query": "bathroom trends australia",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-trends-australia-right-now/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 37.6
+    },
+    {
+      "query": "custom bathroom rennovations sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 77
+    },
+    {
+      "query": "ensuite bathroom sydney",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-ensuite/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 38.1
+    },
+    {
+      "query": "ensuite renovation ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-renovation-ideas-layout/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 28.5
+    },
+    {
+      "query": "homebush bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 77.9
+    },
+    {
+      "query": "laundry renovations wahroonga",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 30.2
+    },
+    {
+      "query": "renovation packages sydney",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 16.1
+    },
+    {
+      "query": "renovations inner west sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 17,
+      "ctrPercent": 0,
+      "position": 47.8
+    },
+    {
+      "query": "bathroom makeovers leichhardt",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 65.9
+    },
+    {
+      "query": "bathroom renovation budget",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-budget-planning/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 48.2
+    },
+    {
+      "query": "bathroom renovations castle cove",
+      "page": "https://www.elitetouchrenovations.au/gallery/castle-hill-bathroom/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 35.4
+    },
+    {
+      "query": "bathroom renovations five dock",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 61.6
+    },
+    {
+      "query": "bathroom upgrade homebush",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 67.1
+    },
+    {
+      "query": "demolishing a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-demolition-what-to-expect/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 32.2
+    },
+    {
+      "query": "heritage renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/blog/heritage-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 32.3
+    },
+    {
+      "query": "how much to install heated floor under tile",
+      "page": "https://www.elitetouchrenovations.au/blog/underfloor-heating-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 54.9
+    },
+    {
+      "query": "how to renovate your bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 25.4
+    },
+    {
+      "query": "small bathroom renovations harrington park",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 48.6
+    },
+    {
+      "query": "small bathroom renovations rosemeadow",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctrPercent": 0,
+      "position": 45.4
+    },
+    {
+      "query": "bathroom makeovers leichhardt",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 61.9
+    },
+    {
+      "query": "bathroom remodelling sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 54.9
+    },
+    {
+      "query": "bathroom renovation inner west sydney",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/inner-west/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 39.3
+    },
+    {
+      "query": "bathroom renovations berowra",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 55.1
+    },
+    {
+      "query": "bathroom renovations castlecrag",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 23.5
+    },
+    {
+      "query": "bathroom renovations ettamogah",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 44.9
+    },
+    {
+      "query": "bathroom renovations lane cove",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 36.3
+    },
+    {
+      "query": "bathroom renovations neutral bay",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 49.9
+    },
+    {
+      "query": "bathroom renovations rouse hill",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 30.9
+    },
+    {
+      "query": "how long does it take to redo a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 21.9
+    },
+    {
+      "query": "powder room ideas australia",
+      "page": "https://www.elitetouchrenovations.au/blog/powder-room-renovation-guide/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 38.4
+    },
+    {
+      "query": "renovations petersham",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctrPercent": 0,
+      "position": 50.6
+    },
+    {
+      "query": "artistic kitchens and bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 42.4
+    },
+    {
+      "query": "bathroom renovation hoxton park",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 59
+    },
+    {
+      "query": "bathroom renovation kingsford",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 77.3
+    },
+    {
+      "query": "bathroom renovation prestons",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 50.1
+    },
+    {
+      "query": "bathroom renovations for small bathrooms",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 78.2
+    },
+    {
+      "query": "bathroom storage buying guide",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-storage-planning-renovation/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 29.4
+    },
+    {
+      "query": "bathroom upgrade homebush",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 76
+    },
+    {
+      "query": "hornsby kitchen renovations",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-bathroom/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 66.8
+    },
+    {
+      "query": "how long bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 24.4
+    },
+    {
+      "query": "how long does it take to redo bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 22.6
+    },
+    {
+      "query": "how to renovate a bathroom yourself australia",
+      "page": "https://www.elitetouchrenovations.au/blog/diy-or-professional-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 17.4
+    },
+    {
+      "query": "how to renovate a small bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 31.8
+    },
+    {
+      "query": "killara laundry renovations",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 52.6
+    },
+    {
+      "query": "laundry renovation milperra",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 79.3
+    },
+    {
+      "query": "renovations hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 14,
+      "ctrPercent": 0,
+      "position": 35.6
+    },
+    {
+      "query": "bathroom colours",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-colour-schemes-australia/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 44.4
+    },
+    {
+      "query": "bathroom remodeling little bay",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 17.6
+    },
+    {
+      "query": "bathroom renovation rouse hill",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 15.5
+    },
+    {
+      "query": "bathroom renovation upper north shore",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 49.5
+    },
+    {
+      "query": "bathroom renovations ellalong",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 75.4
+    },
+    {
+      "query": "bathroom renovations normanhurst",
+      "page": "https://www.elitetouchrenovations.au/gallery/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 43.7
+    },
+    {
+      "query": "bathroom renovations north ryde",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-western-sydney/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 29.2
+    },
+    {
+      "query": "bathroom renovations redfern",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 41.8
+    },
+    {
+      "query": "bathroom tiling kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 22.4
+    },
+    {
+      "query": "elite bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 19.2
+    },
+    {
+      "query": "ensuite layout",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-renovation-ideas-layout/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 47
+    },
+    {
+      "query": "inner west strata apartment renovations",
+      "page": "https://www.elitetouchrenovations.au/blog/strata-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 18.8
+    },
+    {
+      "query": "laundry renovations castle hill",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 31.3
+    },
+    {
+      "query": "renovators hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctrPercent": 0,
+      "position": 26.5
+    },
+    {
+      "query": "bathroom and kitchen demolition eastern suburbs sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 69.4
+    },
+    {
+      "query": "bathroom installers insurance",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-insurance-australia/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 24.8
+    },
+    {
+      "query": "bathroom makeovers lane cove",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 78.8
+    },
+    {
+      "query": "bathroom renovation cost sydney",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-cost-sydney/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 22.6
+    },
+    {
+      "query": "bathroom renovation services sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 41.5
+    },
+    {
+      "query": "bathroom renovations balmain",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/north-shore/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 78.1
+    },
+    {
+      "query": "bathroom renovations croydon park",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 64.3
+    },
+    {
+      "query": "bathroom renovations for elderly",
+      "page": "https://www.elitetouchrenovations.au/blog/aging-in-place-bathroom-design/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 16.3
+    },
+    {
+      "query": "bathroom renovations kellyville ridge",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 17.2
+    },
+    {
+      "query": "bathroom renovations rutherford",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 34.7
+    },
+    {
+      "query": "bathroom renovations seven hills",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 39.5
+    },
+    {
+      "query": "bedroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-vs-bathroom-vs-powder-room-renovation/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 27.9
+    },
+    {
+      "query": "ensuite renovation ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/ensuite-vs-bathroom-vs-powder-room-renovation/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 22.4
+    },
+    {
+      "query": "hills district bathroom renovations",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 19.6
+    },
+    {
+      "query": "home renovations rose bay",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 72.7
+    },
+    {
+      "query": "how long to remodel a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 20.8
+    },
+    {
+      "query": "large format tile",
+      "page": "https://www.elitetouchrenovations.au/blog/large-format-tiles-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 62.4
+    },
+    {
+      "query": "laundry renovations turramurra",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 66.7
+    },
+    {
+      "query": "schedule appointment ultra renovations",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 27.7
+    },
+    {
+      "query": "small bathroom renovations bossley park",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 12,
+      "ctrPercent": 0,
+      "position": 58.1
+    },
+    {
+      "query": "bathroom light fitting",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-lighting-ideas/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 15.8
+    },
+    {
+      "query": "bathroom makeovers kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 34.4
+    },
+    {
+      "query": "bathroom paint colours",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-colour-schemes-australia/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 48.2
+    },
+    {
+      "query": "bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-living-at-home/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 28.5
+    },
+    {
+      "query": "bathroom renovation artarmon",
+      "page": "https://www.elitetouchrenovations.au/gallery/artarmon-bathroom/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 17.8
+    },
+    {
+      "query": "bathroom renovation hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 25.6
+    },
+    {
+      "query": "bathroom renovation marrickville",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 59.3
+    },
+    {
+      "query": "bathroom renovation schedule",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 22.3
+    },
+    {
+      "query": "bathroom renovations bronte",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 25.6
+    },
+    {
+      "query": "bathroom renovators hills district",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 21.3
+    },
+    {
+      "query": "bathroom splashbacks",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-splashback-ideas-renovation/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 29.6
+    },
+    {
+      "query": "contact ultra renovations",
+      "page": "https://www.elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 28
+    },
+    {
+      "query": "double vanity size",
+      "page": "https://www.elitetouchrenovations.au/blog/double-vanity-vs-single-bathroom/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 58.6
+    },
+    {
+      "query": "elite home design and construction sydney",
+      "page": "https://www.elitetouchrenovations.au/about-us/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 23.1
+    },
+    {
+      "query": "grout colours",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-grout-guide-types-maintenance/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 61.9
+    },
+    {
+      "query": "how long to do bathroom renovation",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 27.9
+    },
+    {
+      "query": "how long to redo bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-timeline-sydney/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 21.8
+    },
+    {
+      "query": "how to renovate a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-add-value-home/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 51.2
+    },
+    {
+      "query": "laundry renovation kellyville",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 24.3
+    },
+    {
+      "query": "laundry renovation services bentleigh east",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 24.3
+    },
+    {
+      "query": "laundry renovations hills district",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 37.3
+    },
+    {
+      "query": "laundry renovations maitland",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 53.6
+    },
+    {
+      "query": "renovation mistakes",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-mistakes-to-avoid/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 23.1
+    },
+    {
+      "query": "splashback for bathroom walls",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-splashback-ideas-renovation/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 40.3
+    },
+    {
+      "query": "types of toilets",
+      "page": "https://www.elitetouchrenovations.au/blog/toilet-upgrade-guide-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 43.8
+    },
+    {
+      "query": "wet room bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/wet-room-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctrPercent": 0,
+      "position": 44.2
+    },
+    {
+      "query": "ensuite renovations",
+      "page": "https://elitetouchrenovations.au/",
+      "clicks": 1,
+      "impressions": 10,
+      "ctrPercent": 10,
+      "position": 25
+    },
+    {
+      "query": "bathroom light fixtures ideas",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-lighting-ideas/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 15.5
+    },
+    {
+      "query": "bathroom painting sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 78.8
+    },
+    {
+      "query": "bathroom remodel sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 50.5
+    },
+    {
+      "query": "bathroom renovation",
+      "page": "https://elitetouchrenovations.au/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 16.7
+    },
+    {
+      "query": "bathroom renovation baulkham hills",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 32.5
+    },
+    {
+      "query": "bathroom renovation eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 37.1
+    },
+    {
+      "query": "bathroom renovation specialists sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 63.8
+    },
+    {
+      "query": "bathroom renovations colyton",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/hills-district/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 32.2
+    },
+    {
+      "query": "bathroom renovations ellalong",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 68.7
+    },
+    {
+      "query": "bathroom renovations in sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 52.4
+    },
+    {
+      "query": "bathroom renovations somersby",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 71.3
+    },
+    {
+      "query": "bathroom renovations surry hills",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 37.6
+    },
+    {
+      "query": "complete bathroom renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 59.6
+    },
+    {
+      "query": "cost of renovating a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/first-time-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 19
+    },
+    {
+      "query": "heritage bathrooms australia",
+      "page": "https://www.elitetouchrenovations.au/blog/heritage-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 56.3
+    },
+    {
+      "query": "home renovations hornsby",
+      "page": "https://www.elitetouchrenovations.au/gallery/hornsby-bathroom/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 61
+    },
+    {
+      "query": "home renovations package sydney",
+      "page": "https://www.elitetouchrenovations.au/packages/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 39
+    },
+    {
+      "query": "how much to install underfloor heating",
+      "page": "https://www.elitetouchrenovations.au/blog/underfloor-heating-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 46.8
+    },
+    {
+      "query": "how to renovate a bathroom",
+      "page": "https://www.elitetouchrenovations.au/blog/bathroom-renovation-budget-planning/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 34.8
+    },
+    {
+      "query": "laundry renovation currans hill",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 51.8
+    },
+    {
+      "query": "laundry renovation rosemeadow",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 26.9
+    },
+    {
+      "query": "laundry renovation rouse hill",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 19.2
+    },
+    {
+      "query": "laundry renovations balmain",
+      "page": "https://www.elitetouchrenovations.au/services/laundry-renovations/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 19.1
+    },
+    {
+      "query": "luxury bathroom renovation rosemeadow",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 70.4
+    },
+    {
+      "query": "shower installation eastern suburbs",
+      "page": "https://www.elitetouchrenovations.au/services/bathroom-renovations/eastern-suburbs/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 23.6
+    },
+    {
+      "query": "small bathroom redo",
+      "page": "https://www.elitetouchrenovations.au/blog/small-bathroom-renovation-without-feeling-cramped/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 79.6
+    },
+    {
+      "query": "small bathroom renovations eagle vale",
+      "page": "https://www.elitetouchrenovations.au/services/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 43.9
+    },
+    {
+      "query": "strata bathroom renovations sydney",
+      "page": "https://www.elitetouchrenovations.au/blog/strata-bathroom-renovation-sydney/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 16.1
+    },
+    {
+      "query": "types of shower screens",
+      "page": "https://www.elitetouchrenovations.au/blog/shower-screen-types-bathroom-renovation/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctrPercent": 0,
+      "position": 47
+    }
+  ]
+}

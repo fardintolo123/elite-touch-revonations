@@ -45,6 +45,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > I completed the remaining #75-scoped checks and updated its GitHub checklist, but **left the issue open** because required gates still fail:
+<<<<<<< HEAD
 > 
 > - Full-site readability is 115/116; `/about-us/` scores 59.8 and belongs to #76.
 > - Three mobile Lighthouse runs put Baulkham Hills’ median LCP at 2.654s, above the 2.5s target. The median TBT is 236ms, and one run exceeded the 300ms hard cap.
@@ -52,6 +53,15 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > The production build passed with 122 static routes, `check:design` passed, all 16 #75 routes passed the route and mobile call checks, and the independent visual review found no P0/P1 issues. The tracker row is `fixed`, not `verified`. I did not commit or push.
 > 
+=======
+>
+> - Full-site readability is 115/116; `/about-us/` scores 59.8 and belongs to #76.
+> - Three mobile Lighthouse runs put Baulkham Hills’ median LCP at 2.654s, above the 2.5s target. The median TBT is 236ms, and one run exceeded the 300ms hard cap.
+> - The screenshots are captured locally but aren’t attached to GitHub.
+>
+> The production build passed with 122 static routes, `check:design` passed, all 16 #75 routes passed the route and mobile call checks, and the independent visual review found no P0/P1 issues. The tracker row is `fixed`, not `verified`. I did not commit or push.
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > The updated [visual review](<D:/1/elite-touch-revonations/.impeccable/critique/issue-75-current-build-vision-review-2026-11-05.md>), [screenshot manifest](<D:/1/elite-touch-revonations/session-history/evidence/issue-75-service-location/current-build/manifest.json>), and [session handoff](<D:/1/elite-touch-revonations/session-history/2026-11-05-issue-75-gate-recheck.md>) record the results.
 
 ### elite-touch-revonations - GSC page optimization
@@ -61,6 +71,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > **What happened**
+<<<<<<< HEAD
 > 
 > Audited 115 pages against 2,458 GSC query/page rows, using the current model as authorized.
 > 
@@ -72,11 +83,25 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > Created these execution issues:
 > 
+=======
+>
+> Audited 115 pages against 2,458 GSC query/page rows, using the current model as authorized.
+>
+> **Why it matters**
+>
+> Found five concrete improvements while excluding irrelevant queries and avoiding unnecessary rewrites.
+>
+> **What’s finished**
+>
+> Created these execution issues:
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > - [#92: Correct conflicting renovation timings](https://github.com/fardintolo123/elite-touch-revonations/issues/92)
 > - [#93: Improve the renovation checklist](https://github.com/fardintolo123/elite-touch-revonations/issues/93)
 > - [#94: Improve small-bathroom answers](https://github.com/fardintolo123/elite-touch-revonations/issues/94)
 > - [#95: Improve the DIY decision guide](https://github.com/fardintolo123/elite-touch-revonations/issues/95)
 > - [#96: Add contextual waterproofing links](https://github.com/fardintolo123/elite-touch-revonations/issues/96)
+<<<<<<< HEAD
 > 
 > Saved the [audit report](/D:/1/elite-touch-revonations/session-history/evidence/2026-11-05-gsc-optimization/REPORT.md) and [handoff](/D:/1/elite-touch-revonations/session-history/2026-11-05-gsc-page-optimization-audit-and-issues.md).
 > 
@@ -84,6 +109,15 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > Implementation remains queued behind existing work in the shared content file, including #91. **No website changes were made or pushed.**
 > 
+=======
+>
+> Saved the [audit report](/D:/1/elite-touch-revonations/session-history/evidence/2026-11-05-gsc-optimization/REPORT.md) and [handoff](/D:/1/elite-touch-revonations/session-history/2026-11-05-gsc-page-optimization-audit-and-issues.md).
+>
+> **What’s still a problem**
+>
+> Implementation remains queued behind existing work in the shared content file, including #91. **No website changes were made or pushed.**
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > **W
 
 ### elite-touch-revonations - Review issue 88
@@ -93,6 +127,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > ## What happened
+<<<<<<< HEAD
 > 
 > - Added the aftercare article in [lib/blog.ts](D:/1/elite-touch-revonations/lib/blog.ts), covering handover, documents, the confirmed 10-year workmanship warranty and care.
 > - Added the new page to the readability checks and linked it to the four related guides and contact page.
@@ -115,6 +150,30 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > ## What should happen next
 > 
+=======
+>
+> - Added the aftercare article in [lib/blog.ts](D:/1/elite-touch-revonations/lib/blog.ts), covering handover, documents, the confirmed 10-year workmanship warranty and care.
+> - Added the new page to the readability checks and linked it to the four related guides and contact page.
+>
+> ## Why it matters
+>
+> Homeowners can now find the post-renovation information in one place. The copy avoids inventing warranty terms or an aftercare process.
+>
+> ## What’s finished
+>
+> The build and design check passed. The new page passed readability at **73.9**, appears in the generated blog index and sitemap, and rendered at mobile and desktop widths. The changes remain local and uncommitted.
+>
+> ## What’s still a problem
+>
+> The full-site readability check failed on the existing About page: **59.8**, against a target of 60. The new article passed, but [issue #88](https://github.com/fardintolo123/elite-touch-revonations/issues/88) remains open while the full check is unresolved.
+>
+> ## What I need to decide
+>
+> Nothing — no decision is needed from you.
+>
+> ## What should happen next
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > 1. Resolve the About page readability failure in its existing workstream, then rerun the full check.
 > 2. Verify and close issue #88, and commit its changes separately from the oth
 
@@ -125,6 +184,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > ## What happened
+<<<<<<< HEAD
 > 
 > Issue #91 cannot start yet: its prerequisite changes to the same blog file are still uncommitted. The issue and its plan explicitly require that work to be committed first.
 > 
@@ -148,6 +208,31 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > ## What should happen next
 > 
+=======
+>
+> Issue #91 cannot start yet: its prerequisite changes to the same blog file are still uncommitted. The issue and its plan explicitly require that work to be committed first.
+>
+> I also found a later decision that calls the **3–4 week** renovation duration owner-corrected, although the older decision says **3–5 weeks**. I could not locate the original owner statement.
+>
+> ## Why it matters
+>
+> Starting now would mix issue #91 with another session’s changes to all 80 guide descriptions. Repeating the duration without resolving its source could also spread a conflicting customer promise.
+>
+> ## What’s finished
+>
+> I checked the issue, the working tree, the plan, and the available duration records. No files were changed and no tests were run.
+>
+> ## What’s still a problem
+>
+> Issue #91 remains open and unimplemented. The prerequisite is uncommitted, and the original duration confirmation has not been found.
+>
+> ## What I need to decide
+>
+> Nothing yet.
+>
+> ## What should happen next
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > 1. The session responsible for the existing description changes should commit them.
 > 2. Then proceed with issue #91, tracing the duration claim before using it and omitting it if the conflict remains unresolved.
 
@@ -158,6 +243,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > ## What happened
+<<<<<<< HEAD
 > 
 > - Read `CLAUDE.md` and checked [GitHub issue #76](https://github.com/fardintolo123/elite-touch-revonations/issues/76). It is **open and unassigned**. It covers 15 routes across five page types.
 > - The local tracker still says `open`, and the [issue plan](/D:/1/elite-touch-revonations/plans/issue-76-proof-company-design-2026-11.md) is `in progress` with every checklist item unchecked.
@@ -167,6 +253,17 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > **Raw material:** The issue and its attachments, rendered pages, project and image records, the package source PDF, verbatim reviews, generated HTML, and form behavior.
 > 
+=======
+>
+> - Read `CLAUDE.md` and checked [GitHub issue #76](https://github.com/fardintolo123/elite-touch-revonations/issues/76). It is **open and unassigned**. It covers 15 routes across five page types.
+> - The local tracker still says `open`, and the [issue plan](/D:/1/elite-touch-revonations/plans/issue-76-proof-company-design-2026-11.md) is `in progress` with every checklist item unchecked.
+> - Three issue-owned files have uncommitted edits: the project page, packages page, and project copy. A prior [audit](/D:/1/elite-touch-revonations/.impeccable/critique/2026-11-04-remaining-pages-density-audit.md) records baseline measurements and an independent critique, but it predates those edits and is not completion evidence.
+>
+> **What a top design professional would add:** Judge the rendered pages and their proof, not just the ticket and source diffs. They would check the actual project photos, package source, review text, generated routes, and enquiry path.
+>
+> **Raw material:** The issue and its attachments, rendered pages, project and image records, the package source PDF, verbatim reviews, generated HTML, and form behavior.
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > **Methods and tools:** Playwright captures at 390×844 and 1440×900; an independent critique of those captur
 
 - Latest turn interruption: You’ve hit your usage limit. No completion is inferred from this failure.
@@ -178,11 +275,16 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > ### What happened
+<<<<<<< HEAD
 > 
+=======
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > - I read [CLAUDE.md](D:/1/elite-touch-revonations/CLAUDE.md) and checked [issue #89](https://github.com/fardintolo123/elite-touch-revonations/issues/89).
 > - Issue #89 is open. It calls for one new blog post explaining recurring bathroom problems and when renovation may address them.
 > - Its required predecessor, [issue #88](https://github.com/fardintolo123/elite-touch-revonations/issues/88), is also open. The project plan puts #88 before #89 because both change the same blog and readability files.
 > - The checkout contains many existing uncommitted changes. I made no changes.
+<<<<<<< HEAD
 > 
 > ### Why it matters
 > 
@@ -198,6 +300,23 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > ### What I need to decide
 > 
+=======
+>
+> ### Why it matters
+>
+> The post needs to help readers distinguish a recurring problem from the appropriate remedy without promising that renovation prevents every future problem or advertising standalone repair services. Its causes and remedies need checking against reliable sources as it is written.
+>
+> ### What’s finished
+>
+> The instructions, issue scope, dependency and current checkout status have been checked. No implementation or build verification was requested or performed.
+>
+> ### What’s still a problem
+>
+> Issue #89 remains open, and its stated dependency #88 has not been completed.
+>
+> ### What I need to decide
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > Nothing — no decision is needed from yo
 
 ### elite-touch-revonations - Review issue 90
@@ -207,11 +326,19 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > **Issue [#90](https://github.com/fardintolo123/elite-touch-revonations/issues/90) is open and is not ready to implement as written.** It depends on #89, which is open and follows open issue #88. Its two shared files also contain uncommitted changes.
+<<<<<<< HEAD
 > 
 > The source copy supports a **free on-site consultation and quote**, and describes a fixed-scope written quote. I did not find an explicit source for **“no obligation.”** The source copy says a quote is *usually* sent within five business days, but that should be checked for current accuracy before it becomes a promise. The proposed post does not yet exist; both related quote articles do.
 > 
 > To deepen the task without enlarging it:
 > 
+=======
+>
+> The source copy supports a **free on-site consultation and quote**, and describes a fixed-scope written quote. I did not find an explicit source for **“no obligation.”** The source copy says a quote is *usually* sent within five business days, but that should be checked for current accuracy before it becomes a promise. The proposed post does not yet exist; both related quote articles do.
+>
+> To deepen the task without enlarging it:
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > 1. **Professional approach:** Check each claim about the actual booking and quoting process before writing, and distinguish the new article from the existing quote guides.
 > 2. **Raw material:** Use the original source copy, the current contact and package pages, the existing quote articles, and direct confirmation of any missing business terms.
 > 3. **Methods and tools:** Compare claims against those sources; inspect the blog renderer and route data; then use the production build, readability and design checks, and served HTML and sitemap inspection to verify th
@@ -223,6 +350,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > ## What happened
+<<<<<<< HEAD
 > 
 > I finished the #77 work, posted the verification and 80-post editorial sweep, updated the checklist and handoff, and closed [issue #77](https://github.com/fardintolo123/elite-touch-revonations/issues/77) as you requested.
 > 
@@ -232,13 +360,30 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > ## What’s finished
 > 
+=======
+>
+> I finished the #77 work, posted the verification and 80-post editorial sweep, updated the checklist and handoff, and closed [issue #77](https://github.com/fardintolo123/elite-touch-revonations/issues/77) as you requested.
+>
+> ## Why it matters
+>
+> The blog now follows the project’s visual direction more closely: generic hero labels and nested main landmarks are gone, and project photos lead on mobile. The screenshot you supplied shows the seven topic groups totaling 80 guides.
+>
+> ## What’s finished
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > - Production build passed with 121 routes; the design check passed.
 > - All 81 blog routes passed readability. The independent reviews found no P0/P1 issues.
 > - The completion comment is [posted on #77](https://github.com/fardintolo123/elite-touch-revonations/issues/77#issuecomment-6655292796).
 > - The handoff is in [session-history](D:/1/elite-touch-revonations/session-history/2026-11-05-issue-77-blog-design.md). Final captures include [mobile](D:/1/elite-touch-revonations/.impeccable/critique/issue-77-after-index-390.png) and [desktop](D:/1/elite-touch-revonations/.impeccable/critique/issue-77-after-index-1440.png).
+<<<<<<< HEAD
 > 
 > ## What’s still a problem
 > 
+=======
+>
+> ## What’s still a problem
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > The before/after captures are saved locally but could not be attached to GitHub. The i
 
 ### Review issue 80 instructions
@@ -248,6 +393,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > ## What happened
+<<<<<<< HEAD
 > 
 > Completed the work for [issue #81](https://github.com/fardintolo123/elite-touch-revonations/issues/81). It was already closed before this work; I added a final verification comment. [Issue #80](https://github.com/fardintolo123/elite-touch-revonations/issues/80) remains open.
 > 
@@ -257,11 +403,26 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > ## What’s finished
 > 
+=======
+>
+> Completed the work for [issue #81](https://github.com/fardintolo123/elite-touch-revonations/issues/81). It was already closed before this work; I added a final verification comment. [Issue #80](https://github.com/fardintolo123/elite-touch-revonations/issues/80) remains open.
+>
+> ## Why it matters
+>
+> Issue #80 tracks several child issues, and #82 is still open. Closing #80 now would mark an unfinished tracker complete.
+>
+> ## What’s finished
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > - Updated the packages page and preserved the fixed-price question as an H2.
 > - Passed the production build (121 routes) and design check; independently reviewed the final page.
 > - Recorded the handoff in [session-history/2026-11-05-issue-81-completion.md](<D:/1/elite-touch-revonations/session-history/2026-11-05-issue-81-completion.md>).
 > - No push or deployment was made.
+<<<<<<< HEAD
 > 
+=======
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > Screenshots and the independent review are saved locally: [390px before](<D:/1/elite-touch-revonations/.impeccable/critique/2026-11-05-issue-81/before-390.png>), [1440px before](<D:/1/elite-touch-revonations/.impeccable/critique/2026-11-05-issue-81/before-1440.png>), [390px after](<D:/1/elite-touch-revonations/.impeccable/critique/2026-11-05-issue-81/after-390.png>), [1440px after](<D:/1/elite-touch-revonations/.impec
 
 ### Review issue 72 using CLAUDE.md
@@ -271,7 +432,11 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > Closed [issue #82](https://github.com/fardintolo123/elite-touch-revonations/issues/82) as completed after verifying its implementation criteria. Updated the tracker to mark it done; the 90-day Search Console comparison remains a follow-up after deployment. The closing comment clarifies that the changes have not been deployed.
+<<<<<<< HEAD
 > 
+=======
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > **Executive Summary:** #82 is closed; post-deployment measurement remains tracked.
 
 ### Check issue 63
@@ -281,11 +446,16 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 - Latest available final answer excerpt (can predate a failed latest turn):
 
 > **What happened**
+<<<<<<< HEAD
 > 
+=======
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > - I fixed the spacing on the updated location hero pages.
 > - The hero content now sits lower, with clearer gaps between copy, CTAs, rating, facts, and gallery link.
 > - Mobile spacing is tighter so the first viewport carries more useful content.
 > - Updated the issue-63 plan and session handoff.
+<<<<<<< HEAD
 > 
 > **Why it matters**
 > 
@@ -293,11 +463,21 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > **What's finished**
 > 
+=======
+>
+> **Why it matters**
+>
+> The pages now feel less cramped and more intentional, especially compared with the screenshot you sent. The proof elements are easier to scan instead of feeling stacked together.
+>
+> **What's finished**
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > - Typecheck passed.
 > - Production build passed: 58/58 pages.
 > - Browser checked all seven updated location routes at desktop and 390px mobile.
 > - No horizontal overflow found.
 > - Local server stopped after testing.
+<<<<<<< HEAD
 > 
 > **What's still a problem**
 > 
@@ -309,6 +489,19 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > **What should happen next**
 > 
+=======
+>
+> **What's still a problem**
+>
+> GitHub issue 63 is still open because authenticated GitHub access is not available here.
+>
+> **What I need to decide**
+>
+> Nothing — no decision is needed from you.
+>
+> **What should happen next**
+>
+>>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 > Review the updated location pages visually. Once GitHub access is available, issue 63 can be closed.
 
 ## Concrete recovery notes

@@ -148,7 +148,10 @@ export default async function ProjectPage({
           <Breadcrumbs items={breadcrumbs} />
           <div className="et-hero-grid">
             {beforeImage ? (
-              <div className="et-grid et-grid-2">
+              <div
+                className="et-grid et-grid-2"
+                style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}
+              >
                 <figure className="et-stack-tight" style={{ margin: 0 }}>
                   <div className="et-hero-media">
                     <Image
@@ -156,7 +159,7 @@ export default async function ProjectPage({
                       alt={leadImage.alt}
                       width={leadImage.width}
                       height={leadImage.height}
-                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 100vw"
+                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 48vw"
                       priority
                     />
                   </div>
@@ -169,7 +172,7 @@ export default async function ProjectPage({
                       alt={beforeImage.alt}
                       width={beforeImage.width}
                       height={beforeImage.height}
-                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 100vw"
+                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 48vw"
                     />
                   </div>
                   <figcaption className="et-caption">
@@ -231,10 +234,7 @@ export default async function ProjectPage({
       {project.story ? (
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
-            <h2 className="et-h2 et-measure-tight">
-              How {/^the\s/i.test(project.suburb) ? '' : 'the '}
-              {project.suburb} {project.service.toLowerCase()} came together
-            </h2>
+            <h2 className="et-h2 et-measure-tight">Scope and key details</h2>
             <p className="et-lead et-measure">{project.story}</p>
           </div>
         </section>

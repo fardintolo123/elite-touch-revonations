@@ -1,0 +1,579 @@
+{
+  "capturedAt": "2026-11-07T10:03:54.425Z",
+  "baseUrl": "http://127.0.0.1:3347",
+  "buildDir": "D:/1/etr-issue-75-build-20261107",
+  "routeCount": 16,
+  "representativeRoutes": [
+    "/services/",
+    "/services/bathroom-renovations/",
+    "/services/bathroom-renovations/hills-district/",
+    "/services/bathroom-renovations/baulkham-hills/"
+  ],
+  "results": [
+    {
+      "route": "/services/",
+      "status": 200,
+      "title": "Bathroom Renovations Across Sydney | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovation services across Sydney."
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "Bathroom Renovations",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services-390-top.png",
+      "mobileFullScreenshot": "services-390-full.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopFullScreenshot": "services-1440-full.png",
+      "topScreenshot": "services-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fhornsby-bathroom%2Fvanity-marble-storage-tower.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 259
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/",
+      "status": 200,
+      "title": "Bathroom Renovations Sydney | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom Renovations Sydney"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What does a full bathroom renovation solve?",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations-390-top.png",
+      "mobileFullScreenshot": "services_bathroom-renovations-390-full.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopFullScreenshot": "services_bathroom-renovations-1440-full.png",
+      "topScreenshot": "services_bathroom-renovations-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Ffreestanding-bath-vanity.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 259
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/baulkham-hills/",
+      "status": 200,
+      "title": "Baulkham Hills bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations in Baulkham Hills"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a Baulkham Hills bathroom renovation costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_baulkham-hills-390-top.png",
+      "mobileFullScreenshot": "services_bathroom-renovations_baulkham-hills-390-full.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopFullScreenshot": "services_bathroom-renovations_baulkham-hills-1440-full.png",
+      "topScreenshot": "services_bathroom-renovations_baulkham-hills-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 259
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/castle-hill/",
+      "status": 200,
+      "title": "Castle Hill bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations in Castle Hill"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a Castle Hill bathroom renovation costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_castle-hill-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_castle-hill-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 259
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/eastern-suburbs/",
+      "status": 200,
+      "title": "Eastern Suburbs bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's Eastern Suburbs"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a bathroom renovation in the Eastern Suburbs costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_eastern-suburbs-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_eastern-suburbs-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Fshower-vanity-round-mirror.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 258
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/hills-district/",
+      "status": 200,
+      "title": "Hills District bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's Hills District"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a bathroom renovation in the Hills District costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_hills-district-390-top.png",
+      "mobileFullScreenshot": "services_bathroom-renovations_hills-district-390-full.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopFullScreenshot": "services_bathroom-renovations_hills-district-1440-full.png",
+      "topScreenshot": "services_bathroom-renovations_hills-district-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 259
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/inner-west/",
+      "status": 200,
+      "title": "Inner West bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's Inner West"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a bathroom renovation in the Inner West costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_inner-west-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_inner-west-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fbalmain-bathroom%2Fvanity-bath-window.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 225
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/kellyville/",
+      "status": 200,
+      "title": "Kellyville bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations in Kellyville"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a Kellyville bathroom renovation costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_kellyville-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_kellyville-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 259
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/marrickville/",
+      "status": 200,
+      "title": "Marrickville bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations in Marrickville"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a Marrickville bathroom renovation costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_marrickville-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_marrickville-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fbalmain-bathroom%2Fvanity-bath-window.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 225
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/north-shore/",
+      "status": 200,
+      "title": "North Shore bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's North Shore"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a bathroom renovation in the North Shore costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_north-shore-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_north-shore-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fartarmon-bathroom%2Ffull-room-shower-toilet.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 287
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/north-western-sydney/",
+      "status": 200,
+      "title": "North-West bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations across North-Western Sydney"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a bathroom renovation in North-Western Sydney costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_north-western-sydney-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_north-western-sydney-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fgladesville-bathroom%2Ffull-room-toilet-tub-vanity.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 225
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/randwick/",
+      "status": 200,
+      "title": "Randwick bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations in Randwick"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a Randwick bathroom renovation costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_randwick-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_randwick-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Fshower-vanity-round-mirror.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 258
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/bathroom-renovations/ryde/",
+      "status": 200,
+      "title": "Ryde bathroom renovation | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom renovations in Ryde"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What a Ryde bathroom renovation costs and involves",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_bathroom-renovations_ryde-390-top.png",
+      "topScreenshot": "services_bathroom-renovations_ryde-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fgladesville-bathroom%2Ffull-room-toilet-tub-vanity.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 225
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/ensuite-bathroom-renovations/",
+      "status": 200,
+      "title": "Ensuite Renovations Sydney | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Ensuite Renovations Sydney"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "How do you make a small ensuite work?",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_ensuite-bathroom-renovations-390-top.png",
+      "topScreenshot": "services_ensuite-bathroom-renovations-390-top.png",
+      "heroImageLoaded": {
+        "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fhornsby-ensuite%2Fvanity-window-greenery.webp&w=640&q=75",
+        "complete": true,
+        "naturalWidth": 390,
+        "naturalHeight": 259
+      },
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/laundry-renovations/",
+      "status": 200,
+      "title": "Bathroom + Laundry Renovations | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Bathroom and Laundry Renovations Sydney"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "Why renovate the bathroom and laundry together?",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_laundry-renovations-390-top.png",
+      "topScreenshot": "services_laundry-renovations-390-top.png",
+      "heroImageLoaded": null,
+      "topScreenshotCapturedAfterHeroDecode": true
+    },
+    {
+      "route": "/services/powder-room-renovations/",
+      "status": 200,
+      "title": "Powder Room Renovations Sydney | Elite Touch Renovations",
+      "h1CountServed": 1,
+      "h1": [
+        "Powder Room Renovations Sydney"
+      ],
+      "hasServedH2": true,
+      "distinctiveH2": "What do toilet renovations in Sydney cover?",
+      "telVisible": true,
+      "overflow390": false,
+      "mobileTopScreenshot": "services_powder-room-renovations-390-top.png",
+      "topScreenshot": "services_powder-room-renovations-390-top.png",
+      "heroImageLoaded": null,
+      "topScreenshotCapturedAfterHeroDecode": true
+    }
+  ],
+  "topStripCapture": {
+    "capturedAt": "2026-11-07T10:12:06.726Z",
+    "baseUrl": "http://127.0.0.1:3347",
+    "viewport": "390x844",
+    "method": "Wait for top hero image decode before capturing; exact mobile viewport screenshot.",
+    "routeCount": 16,
+    "results": [
+      {
+        "route": "/services/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fhornsby-bathroom%2Fvanity-marble-storage-tower.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 259
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Ffreestanding-bath-vanity.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 259
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/baulkham-hills/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_baulkham-hills-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 259
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/castle-hill/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_castle-hill-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 259
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/eastern-suburbs/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_eastern-suburbs-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Fshower-vanity-round-mirror.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 258
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/hills-district/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_hills-district-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 259
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/inner-west/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_inner-west-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fbalmain-bathroom%2Fvanity-bath-window.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 225
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/kellyville/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_kellyville-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fdouble-vanity-led-mirror.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 259
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/marrickville/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_marrickville-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fbalmain-bathroom%2Fvanity-bath-window.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 225
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/north-shore/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_north-shore-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fartarmon-bathroom%2Ffull-room-shower-toilet.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 287
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/north-western-sydney/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_north-western-sydney-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fgladesville-bathroom%2Ffull-room-toilet-tub-vanity.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 225
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/randwick/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_randwick-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Fshower-vanity-round-mirror.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 258
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/bathroom-renovations/ryde/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_bathroom-renovations_ryde-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fgladesville-bathroom%2Ffull-room-toilet-tub-vanity.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 225
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/ensuite-bathroom-renovations/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_ensuite-bathroom-renovations-390-top.png",
+        "heroImage": {
+          "currentSrc": "http://127.0.0.1:3347/_next/image/?url=%2Fimages%2Fprojects%2Fhornsby-ensuite%2Fvanity-window-greenery.webp&w=640&q=75",
+          "complete": true,
+          "naturalWidth": 390,
+          "naturalHeight": 259
+        },
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/laundry-renovations/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_laundry-renovations-390-top.png",
+        "heroImage": null,
+        "heroPhotoDecoded": true
+      },
+      {
+        "route": "/services/powder-room-renovations/",
+        "status": 200,
+        "viewport": "390x844",
+        "screenshot": "services_powder-room-renovations-390-top.png",
+        "heroImage": null,
+        "heroPhotoDecoded": true
+      }
+    ]
+  }
+}
