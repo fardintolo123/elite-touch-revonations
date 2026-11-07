@@ -43,18 +43,22 @@ const CARD_LINES: Record<string, string> = {
 }
 
 export default function ServicesPage() {
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+  ] as const
+
   return (
     <>
       <SchemaGraph
         path="/services/"
         name="Bathroom Renovations Across Sydney"
         description="Bathroom, ensuite, bathroom and laundry, and powder room renovations across Sydney. Fixed-scope written quotes and waterproofing to AS 3740."
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
-        ]}
+        breadcrumbs={breadcrumbs}
       />
       <PageHero
+        breadcrumbs={breadcrumbs}
         title="Bathroom renovation services across Sydney."
         leads={[
           'Pick the room that needs work. We plan the layout and scope around it, then put it in writing before work starts.',

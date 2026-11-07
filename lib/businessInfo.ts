@@ -518,7 +518,20 @@ export const services = [
         'Both rooms are waterproofed to AS 3740 and certified separately. Every job is carried out under NSW Builder Licence 475204C and has a 10-year workmanship warranty.',
       ],
     },
+    additionalSections: [
+      {
+        heading: 'Where do we plan bathroom and laundry renovations in Sydney?',
+        paragraphs: [
+          'We plan bathroom-and-laundry projects across Sydney. That includes the Hills District (Kellyville and Castle Hill), North Shore (Killara and Wahroonga), Inner West (Balmain) and Eastern Suburbs.',
+        ],
+      },
+    ],
     faqs: [
+      {
+        question: 'Do you renovate a bathroom and laundry together in Kellyville?',
+        answer:
+          'Yes. We plan the bathroom and laundry as one project. At the free on-site measure, we work out whether the rooms should run together or one after the other, then record the sequence in the written scope.',
+      },
       {
         question: 'Can the bathroom and laundry be done at different times?',
         answer:
@@ -565,7 +578,7 @@ export const services = [
      * IMPROVE of the existing page, not a new blog post.
      */
     about: {
-      heading: 'What matters most in a powder room?',
+      heading: 'What do toilet renovations in Sydney cover?',
       paragraphs: [
         'A powder room is usually 1.5–3 square metres, with a toilet and hand basin. In that footprint, a poor door swing, an oversized basin or a tight toilet clearance can make the whole room awkward to use.',
         'We set out the fixtures and tiles around the real room before the scope is fixed. If the room has a floor waste and water supply, its floor still needs compliant waterproofing even though there is no shower.',
@@ -586,6 +599,11 @@ export const services = [
      */
     hideBuildDurations: true,
     faqs: [
+      {
+        question: 'Can you renovate just the toilet room?',
+        answer:
+          'Yes, if you mean a powder room with a toilet and hand basin, usually 1.5–3 square metres. We confirm the layout and scope at a free on-site measure, then set out the work in a written quote.',
+      },
       {
         question: 'What is the smallest a powder room can be?',
         answer:

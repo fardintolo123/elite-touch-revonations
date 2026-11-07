@@ -7,6 +7,7 @@ import { buildMetadata } from '@/lib/metadata'
 import { projects, projectBySlug, projectMetaDescription } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
 import {
   LOCATION_PARENT_SLUG,
   publishedRegionForSuburb,
@@ -125,13 +126,13 @@ export default async function ProjectPage({
 
   /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
   const breadcrumbs = [
-        { name: 'Home', url: `${businessInfo.siteUrl}/` },
-        { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
-        {
-          name: project.name,
-          url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
-        },
-      ] as const
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
+    {
+      name: project.name,
+      url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
+    },
+  ] as const
 
   return (
     <>
@@ -144,6 +145,7 @@ export default async function ProjectPage({
       />
       <section className="et-hero">
         <div className="et-container">
+          <Breadcrumbs items={breadcrumbs} />
           <div className="et-hero-grid">
             {beforeImage ? (
               <div className="et-grid et-grid-2">
@@ -190,11 +192,10 @@ export default async function ProjectPage({
               </div>
             )}
             <div className="et-stack">
-              <p className="et-body-sm">
-                <Link href="/gallery/" className="et-link">
-                  ← All projects
-                </Link>
-              </p>
+              {/* The "← All projects" link that used to sit here is now the
+                  "Our Work" step of the breadcrumb trail above (D-180). Two
+                  ways back to the same index is the duplication D-174 forbids,
+                  and it also freed a scored <p> from the readability gate. */}
               <span className="et-eyebrow">
                 {project.suburb} · {project.service}
               </span>

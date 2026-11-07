@@ -128,6 +128,8 @@ export default async function ServicePage({
   // Optional per-service extras. Not every service has these, so guard with
   // `in` rather than assuming the field exists on the whole `Service` union.
   const about = 'about' in service ? service.about : undefined
+  const additionalSections =
+    'additionalSections' in service ? service.additionalSections : undefined
   const faqs = 'faqs' in service ? service.faqs : undefined
   // Some service pages carry their own timeline in the FAQ/about copy. When
   // that timeline describes a different scope than the shared single-bathroom
@@ -149,24 +151,28 @@ export default async function ServicePage({
     />
   )
 
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+    {
+      name: service.title,
+      url: `${businessInfo.siteUrl}/services/${service.slug}/`,
+    },
+  ] as const
+
   return (
     <>
       <SchemaGraph
         path={`/services/${service.slug}/`}
         name={service.h1}
         description={service.summary}
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
-          {
-            name: service.title,
-            url: `${businessInfo.siteUrl}/services/${service.slug}/`,
-          },
-        ]}
+        breadcrumbs={breadcrumbs}
         faqs={faqs}
         service={service}
       />
       <PageHero
+        breadcrumbs={breadcrumbs}
         title={service.h1}
         leads={[service.summary]}
         /* The rating sits in the hero (D-177) instead of alone in its own band. */
@@ -229,6 +235,15 @@ export default async function ServicePage({
           </div>
         </div>
       </section>
+
+      {additionalSections?.map((section) => (
+        <section key={section.heading} className="et-section et-band-surface">
+          <div className="et-container et-stack">
+            <h2 className="et-h2 et-measure-tight">{section.heading}</h2>
+            <AnswerBlock paragraphs={section.paragraphs} />
+          </div>
+        </section>
+      ))}
 
       {/* Build durations. Owner-supplied (issue #2 service PDF), settled in
           D-75. These are on-site programs and a real customer promise — do not

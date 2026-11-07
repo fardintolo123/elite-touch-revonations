@@ -14,10 +14,16 @@ export const metadata: Metadata = buildMetadata({
 })
 
 export default function BlogIndexPage() {
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Blogs', url: '/blog/' },
+  ] as const
+
   return (
     <>
       <PageHero
-        eyebrow="Sydney bathroom renovation guides"
+        breadcrumbs={breadcrumbs}
         title="Bathroom renovation guides for Sydney homeowners"
         leads={[
           'Start with the decision in front of you: price, scope, timing, layout, finishes or strata approval.',
@@ -25,8 +31,7 @@ export default function BlogIndexPage() {
         ]}
       />
 
-      <main>
-        <section className="et-section et-band-surface">
+      <section className="et-section et-band-surface">
           <div className="et-container et-stack">
             <header className="et-stack-tight">
               <h2 className="et-h2">Browse renovation guides by topic</h2>
@@ -80,9 +85,8 @@ export default function BlogIndexPage() {
               ))}
             </div>
           </div>
-        </section>
-        <ContactSection />
-      </main>
+      </section>
+      <ContactSection />
       {/*
         The index carried no structured data at all until 2026-11-02. It is a
         CollectionPage over the guides, and the breadcrumb matches the trail
@@ -93,10 +97,7 @@ export default function BlogIndexPage() {
         name="Bathroom renovation guides for Sydney homeowners"
         description="Practical bathroom renovation advice for Sydney homeowners, from Elite Touch Renovations."
         pageType="CollectionPage"
-        breadcrumbs={[
-          { name: 'Home', url: '/' },
-          { name: 'Blogs', url: '/blog/' },
-        ]}
+        breadcrumbs={breadcrumbs}
       />
     </>
   )

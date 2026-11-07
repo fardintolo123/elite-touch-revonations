@@ -465,6 +465,11 @@ remains unpushed; the earlier performance gate is still open.
    cannot cost a lead. The validated label is included in the office/customer email rows and appended
    to the existing Supabase `message` value; there is deliberately no new database column. Keep the
    field optional, single-step and free of budget questions unless the owner revisits D-155.
+26. **Extra service-page sections belong in service data.** A service record may define
+    `additionalSections` as a list of headings and paragraphs; the shared service renderer places
+    them after the written-scope section and before service-specific build durations. They stay
+    server-rendered. Use this field when a service needs a distinct H2 section, and keep the section
+    order and band rhythm intentional.
 
 ### How it is verified
 

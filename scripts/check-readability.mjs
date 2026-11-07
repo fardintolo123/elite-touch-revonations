@@ -143,6 +143,7 @@ const ROUTES = [
   '/blog/fixed-scope-quote-vs-provisional-sums-bathroom/',
   '/blog/how-long-does-a-bathroom-renovation-last/',
   '/blog/repair-or-replace-bathroom-renovation/',
+  '/blog/what-happens-after-bathroom-renovation/',
   '/services/',
   '/services/bathroom-renovations/',
   '/services/ensuite-bathroom-renovations/',
@@ -217,6 +218,18 @@ function htmlToSentenceBlob(mainHtml) {
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<svg[\s\S]*?<\/svg>/gi, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ')
+    // Headings are labels for the prose that follows, not prose blocks.
+    // Removing them before selecting <li> blocks also prevents a card list
+    // item from swallowing its h3 title along with its description.
+    .replace(/<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>/gi, ' ')
+    // Reading time is interface metadata. Keep the description paragraph in
+    // the same <li> so it is still scored when the list item is selected.
+    .replace(/<p\b[^>]*>[\s\S]*?<\/p>/gi, (paragraph) => {
+      const label = decodeEntities(paragraph.replace(/<[^>]+>/g, ' '))
+        .replace(/\s+/g, ' ')
+        .trim()
+      return /^\d+\s+min(?:ute)?s?\s+read$/i.test(label) ? ' ' : paragraph
+    })
 
   const proseBlocks = [...html.matchAll(/<(p|li|dd)\b[^>]*>([\s\S]*?)<\/\1>/gi)]
     .map((match) => decodeEntities(match[2].replace(/<[^>]+>/g, ' '))

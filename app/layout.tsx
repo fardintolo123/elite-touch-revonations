@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 import { SiteHeader } from '@/components/layout/SiteHeader'
+import { ScrollToTop } from '@/components/layout/ScrollToTop'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { businessInfo } from '@/lib/businessInfo'
 import './globals.css'
@@ -114,6 +115,7 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={jost.variable}>
       <body>
+        <ScrollToTop />
         {/* GTM noscript fallback — must be first child of body (D-32) */}
         <noscript>
           <iframe

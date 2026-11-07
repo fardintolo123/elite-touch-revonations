@@ -1008,6 +1008,16 @@ svg {
    Header / footer (DESIGN.md §8.9, §8.10)
    ========================================================================== */
 
+:root {
+  /* Header flow height used by full-bleed heroes to fill the remaining viewport. */
+  --et-header-flow-height: calc(var(--et-space-16) + var(--et-space-12) + 1px);
+}
+@media (min-width: 1024px) {
+  :root {
+    --et-header-flow-height: calc(var(--et-space-20) + 1px);
+  }
+}
+
 .et-header {
   position: sticky;
   top: 0;
@@ -1256,13 +1266,33 @@ svg {
   text-transform: uppercase;
 }
 .et-nav-panel-services {
-  width: min(640px, calc(100vw - (var(--et-gutter) * 2)));
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(280px, 3fr) minmax(0, 5fr);
+  width: min(820px, calc(100vw - (var(--et-gutter) * 2)));
+  padding: 0;
+  overflow-x: hidden;
+}
+.et-nav-panel-services-main,
+.et-nav-panel-areas {
+  min-width: 0;
+  padding: var(--et-space-5);
+}
+.et-nav-panel-services-main {
+  background: var(--et-surface-accent);
+  border-right: 1px solid var(--et-border);
+}
+.et-nav-panel-services-main .et-nav-panel-index {
+  margin-bottom: var(--et-space-2);
+}
+.et-nav-panel-services-main .et-nav-icon {
+  background: var(--et-surface);
+}
+.et-nav-panel-services-main a:hover,
+.et-nav-panel-services-main a:focus-visible {
+  background: var(--et-surface);
 }
 .et-nav-panel-services-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: var(--et-space-5);
+  grid-template-columns: minmax(0, 1fr);
   row-gap: var(--et-space-1);
 }
 .et-nav-panel-services-list > a,
@@ -1271,32 +1301,64 @@ svg {
   align-items: center;
   min-height: 44px;
 }
-/* Continue the services list's two-column rhythm: region labels stay on the
-   first grid line and their published suburbs start on the same second grid
-   line as the service links above. */
+.et-nav-panel-areas .et-nav-panel-heading {
+  margin: var(--et-space-3) var(--et-space-3) var(--et-space-2);
+}
+/* Regions are parents and suburbs are children, so this is a compact directory
+   rather than another equal-cell matrix. The stable first track makes the
+   relationship obvious without leaving conspicuous empty columns. */
 .et-nav-panel-regions {
   display: grid;
-  gap: var(--et-space-2) 0;
+  gap: 0;
 }
 .et-nav-panel-group {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(132px, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
-  column-gap: var(--et-space-5);
+  column-gap: var(--et-space-3);
+}
+.et-nav-panel-group + .et-nav-panel-group {
+  border-top: 1px solid var(--et-border);
+}
+.et-nav-panel-group > a {
+  min-width: 0;
+  color: var(--et-text-secondary);
+  font-weight: 600;
 }
 .et-nav-panel-suburbs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--et-space-1) var(--et-space-2);
+  min-width: 0;
 }
 .et-nav-panel-group .et-nav-panel-child {
   display: flex;
   align-items: center;
+  min-width: 0;
   min-height: 44px;
-  padding: var(--et-space-2) var(--et-space-3);
+  padding: var(--et-space-2);
   color: var(--et-text-muted);
   font-size: var(--et-text-caption);
+}
+/* At the exact desktop-nav breakpoint the Services trigger sits left of the
+   viewport midpoint. Keep the two-zone composition, but tighten and optically
+   nudge the panel so its rounded edge never clips off-screen. */
+@media (min-width: 1024px) and (max-width: 1151px) {
+  .et-nav-panel-services {
+    left: calc(50% + var(--et-space-4));
+    grid-template-columns: minmax(230px, 2fr) minmax(0, 3fr);
+    width: min(640px, calc(100vw - (var(--et-gutter) * 2)));
+  }
+  .et-nav-panel-services-main,
+  .et-nav-panel-areas {
+    padding: var(--et-space-4);
+  }
+  .et-nav-panel-group {
+    grid-template-columns: minmax(120px, 0.85fr) minmax(0, 1.15fr);
+  }
+  .et-nav-panel-group .et-nav-panel-child {
+    padding-inline: var(--et-space-1);
+  }
 }
 /* Eight short topic rows, not 78 headlines (D-173) — one narrow column reads
    faster than a wide two-column grid of two-word labels. */
@@ -1323,6 +1385,79 @@ svg {
 }
 .et-nav-panel-compact {
   width: 220px;
+}
+
+/* ==========================================================================
+   Breadcrumb trail (components/Breadcrumbs.tsx, D-180)
+   Flat row of links with a "/" between them. Deliberately quiet: it is an
+   orientation aid above the H1, never a second navigation bar competing with
+   the header (D-174, one job per element).
+   ========================================================================== */
+
+.et-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--et-space-2);
+  /* `sm`, the size every other text link on this site uses (`.et-link`, the
+     footer, body links). Not `caption`: at 13px the links came out 18.2px tall,
+     under the 24px WCAG 2.5.8 AA target-size floor, and smaller than any other
+     link on the page for no reason. */
+  font-size: var(--et-text-sm);
+  line-height: 1.4;
+}
+.et-breadcrumb a,
+.et-breadcrumb-current {
+  /* Vertical padding buys hit area without changing how the trail looks: 20.8px
+     of text plus 4px either side clears the 24px AA floor. DESIGN.md's 44×44
+     rule is its button rule — every inline text link on this site is ~20.8px,
+     and a 44px-tall breadcrumb would push the H1 down a full line on a phone. */
+  padding-block: var(--et-space-1);
+  color: var(--et-text-secondary);
+  text-decoration: none;
+}
+.et-breadcrumb a:hover {
+  color: var(--et-text-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* Separator is decorative: a CSS ::before is not in the accessibility tree, so
+   the nav reads as "Home, Services, ..." rather than "Home slash Services". */
+.et-breadcrumb > :not(:first-child)::before {
+  margin-right: var(--et-space-2);
+  color: var(--et-text-muted);
+  content: '/';
+}
+.et-breadcrumb-current {
+  color: var(--et-text);
+  font-weight: 600;
+}
+/* On the pages that build their own hero markup the trail is a direct child of
+   the container, immediately above a grid that has no top gap of its own. */
+.et-hero > .et-container > .et-breadcrumb:first-child {
+  margin-bottom: var(--et-space-6);
+}
+
+/* Over a scrimmed photo (the backdrop and suburb heroes) the trail inherits
+   the same white treatment those heroes already give their other text. The
+   literal white is deliberate for the reason given at `.et-hero-backdrop
+   .et-h1`: a photo behind an ink scrim is dark in BOTH colour schemes, so
+   `--et-text-inverse` would turn this dark-on-dark in dark mode. */
+.et-hero-backdrop .et-breadcrumb a,
+.et-location-hero .et-breadcrumb a {
+  color: rgba(255, 255, 255, 0.82);
+}
+.et-hero-backdrop .et-breadcrumb a:hover,
+.et-location-hero .et-breadcrumb a:hover {
+  color: #ffffff;
+}
+.et-hero-backdrop .et-breadcrumb > :not(:first-child)::before,
+.et-location-hero .et-breadcrumb > :not(:first-child)::before {
+  color: rgba(255, 255, 255, 0.55);
+}
+.et-hero-backdrop .et-breadcrumb-current,
+.et-location-hero .et-breadcrumb-current {
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -1489,6 +1624,19 @@ svg {
 .et-nav-mobile .et-nav-panel-services-list {
   grid-template-columns: 1fr;
 }
+.et-nav-mobile .et-nav-panel-services-main,
+.et-nav-mobile .et-nav-panel-areas {
+  padding: 0;
+}
+.et-nav-mobile .et-nav-panel-services-main {
+  background: transparent;
+  border-right: 0;
+}
+.et-nav-mobile .et-nav-panel-areas {
+  margin-top: var(--et-space-3);
+  padding-top: var(--et-space-3);
+  border-top: 1px solid var(--et-border);
+}
 .et-nav-mobile .et-nav-panel-regions {
   grid-template-columns: 1fr;
 }
@@ -1496,8 +1644,15 @@ svg {
   grid-template-columns: 1fr;
   row-gap: var(--et-space-1);
 }
+.et-nav-mobile .et-nav-panel-group + .et-nav-panel-group {
+  border-top: 0;
+}
+.et-nav-mobile .et-nav-panel-group > a {
+  grid-column: auto;
+}
 .et-nav-mobile .et-nav-panel-suburbs {
   display: grid;
+  grid-column: auto;
   grid-template-columns: 1fr;
 }
 .et-nav-mobile .et-nav-panel-group .et-nav-panel-child {
@@ -1735,15 +1890,6 @@ form [role='status'] {
   color: #ffffff;
   text-wrap: balance;
 }
-.et-location-hero-back {
-  color: #ffffff;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.45);
-  text-underline-offset: 3px;
-}
-.et-location-hero-back:hover {
-  text-decoration-color: #ffffff;
-}
 .et-hero-backdrop .et-eyebrow {
   margin-top: var(--et-space-7);
   background: rgba(255, 255, 255, 0.12);
@@ -1837,11 +1983,29 @@ form [role='status'] {
     padding-inline: 0;
   }
 }
+
+/* Full-bleed first-screen heroes fill the visible content viewport below the
+   header. The minimum keeps the established composition on shorter screens;
+   content can still make a hero taller when it needs more room. */
+.et-hero-backdrop,
+.et-location-hero {
+  min-height: max(420px, calc(100vh - var(--et-header-flow-height)));
+  min-height: max(420px, calc(100svh - var(--et-header-flow-height)));
+}
+@media (min-width: 1024px) {
+  .et-hero-backdrop,
+  .et-location-hero {
+    min-height: max(560px, calc(100vh - var(--et-header-flow-height)));
+    min-height: max(560px, calc(100svh - var(--et-header-flow-height)));
+  }
+}
+
 @media (max-width: 767px) {
   .et-location-hero {
     display: flex;
     flex-direction: column;
-    min-height: 0;
+    min-height: max(420px, calc(100vh - var(--et-header-flow-height)));
+    min-height: max(420px, calc(100svh - var(--et-header-flow-height)));
     padding-block: 0 var(--et-space-10);
   }
   /* D-178: on a phone the real photo sits above the copy, undimmed, instead of behind it. */
@@ -2062,6 +2226,7 @@ form [role='status'] {
   border-top: 1px solid var(--et-border);
 }
 .et-assurance-item dd {
+  margin-inline: 0;
   margin-top: var(--et-space-3);
   color: var(--et-text-secondary);
 }

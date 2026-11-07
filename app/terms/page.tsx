@@ -38,18 +38,22 @@ export const metadata: Metadata = buildMetadata({
 const updated = formatMonthYear(businessInfo.legalPagesUpdated)
 
 export default function TermsPage() {
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Terms of Use', url: `${businessInfo.siteUrl}/terms/` },
+  ] as const
+
   return (
     <>
       <SchemaGraph
         path="/terms/"
         name="Terms of Use"
         description="The terms for using the Elite Touch Renovations website, including how published package prices, project photos and outbound links should be read."
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Terms of Use', url: `${businessInfo.siteUrl}/terms/` },
-        ]}
+        breadcrumbs={breadcrumbs}
       />
       <PageHero
+        breadcrumbs={breadcrumbs}
         eyebrow="Terms"
         title="Website terms of use"
         cta={false}

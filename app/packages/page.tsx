@@ -13,6 +13,7 @@ import { ExternalLink } from '@/components/ExternalLink'
 import { FaqList } from '@/components/FaqList'
 import { GoogleRating } from '@/components/GoogleRating'
 import { PriceStrip } from '@/components/PriceStrip'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
 
 /**
  * Packages / pricing.
@@ -251,9 +252,9 @@ const packagePricingMonth = formatMonthYear(businessInfo.packagePricingUpdated)
 export default function PackagesPage() {
   /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
   const breadcrumbs = [
-        { name: 'Home', url: `${businessInfo.siteUrl}/` },
-        { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
-      ] as const
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Packages', url: `${businessInfo.siteUrl}/packages/` },
+  ] as const
 
   return (
     <>
@@ -267,6 +268,7 @@ export default function PackagesPage() {
       />
       <section className="et-hero">
         <div className="et-container">
+          <Breadcrumbs items={breadcrumbs} />
           <div className="et-hero-grid">
             <div className="et-stack et-packages-hero-photo">
               <div className="et-hero-media">

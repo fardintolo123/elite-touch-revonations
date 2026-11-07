@@ -21,6 +21,65 @@ Read the linked docs; do not assume their contents.
 
 ---
 
+## Sunrise / sunset session continuity
+
+Follow [.agents/workflows/session-management.md](.agents/workflows/session-management.md) for the
+shared issue/session record, evidence states, recovery and approval rules. When the owner types
+`sunrise` or `sunrise #NUMBER`, follow [.agents/workflows/sunrise.md](.agents/workflows/sunrise.md).
+When they type `sunset`, follow [.agents/workflows/sunset.md](.agents/workflows/sunset.md).
+These are agent instructions, not installed shell commands. If the tool does not auto-load project
+instructions, read the named workflow explicitly. Use repository-relative paths and record the actual
+checkout/ref; create a branch only when the owner asks. Do not switch Git state merely to resume.
+
+State review/implement/verify mode and what actually happened. A prompt rewrite must not substitute
+for executing an authorized implementation. Use one issue across sessions for the same deliverable,
+with a current writer, evidence and exact next action. A sunset is a checkpoint, not automatic closure.
+Instruction-only changes use link/diff/resume checks; application QA gates apply to runtime changes.
+
+## Starting or syncing a session
+
+The owner may paste this file at the start of a Claude Code, Claude, or Codex chat. Treat it as the
+project brief, then read the linked workflow files from the actual checkout before acting; pasted
+instructions do not prove the current issue, chat, branch, or file state. If the owner names an issue,
+run `sunrise #NUMBER` for that issue before work, even if they do not type the trigger separately. If
+the task continues existing work but no issue is named, use the live queue and latest checkpoints to
+find its issue; ask only if the match is ambiguous. For new work, follow the issue-tracking rules and
+do not attach it to an unrelated open issue. `sunrise` without a number means inspect the queue and
+checkpoints, then recommend a next action within the owner's stated scope; do not start unrelated work.
+
+For a new chat, the owner can start with: `sunrise #NUMBER — implement this issue. Work only on this
+issue in this session; first report its current status, risks, and next action.` Use `review` or
+`verify` instead of `implement` when that is the requested mode.
+
+When the owner asks Claude Code to break larger work into GitHub issues, create or update issues only
+for the requested substantive deliverables. Each issue should state its scope, file boundaries,
+dependencies, acceptance criteria, and independent verification. When the owner asks Claude or Codex
+to implement an issue, work only on the selected issue in that chat. Do not create or expand issues
+just because a task seems large. Continue the same issue across tools or chats when needed; keep one
+active implementation writer and do not create a duplicate issue for the same deliverable.
+
+To sync a chat that is already in progress, the owner can say: `Session sync — apply Sunrise for issue
+#NUMBER now. Check the live issue, latest checkpoint, current checkout, and this chat's work; preserve
+existing edits, then report what is complete and the exact next action before continuing.` Resume the
+current session in place; do not restart it or infer completion from an idle or interrupted chat.
+
+Agents cannot reliably see or predict the account's remaining usage from the chat. Do not promise a
+warning or claim to have sensed an unseen limit. Save checkpoints at meaningful milestones, and act
+immediately on any visible usage warning or context-limit notice while the session can still respond.
+Sync the Sunset checkpoint to the GitHub issue when authorized and include the actual checkout, unsaved local
+changes, completed work, and exact next action. If interruption happens before a checkpoint, the next
+chat must inspect the live issue and actual checkout rather than assume the last response or operation
+finished. Local uncommitted changes remain in that checkout; another machine cannot retrieve them from
+the issue unless they were published or included in an approved recovery artifact.
+
+## Project knowledge: tips and winning features
+
+Maintain [tips.md](tips.md) and [winning-features.md](winning-features.md) using
+[project knowledge maintenance](.agents/workflows/project-knowledge.md). Record owner-shared tips
+promptly with source, date, applicability and status. When a meaningful pattern is added, changed
+or removed, update its verified implementation/evidence and reusable principle in the catalogue.
+Advice is not implementation approval, and a design rationale is not measured conversion lift.
+
 ## Session / Chat Naming
 
 At the start of every session, put the repository name in the chat or session title so the project
@@ -69,14 +128,11 @@ Everything else is yours to decide. If you're unsure whether something clears th
 proceed, and record what you decided (in `DECISIONS.md` if it should outlive the session, and in the
 Executive Summary either way).
 
-**At the end of every session with non-trivial work, write a session handoff file — automatically,
-without being asked.** Follow the process in
-[session-history/_session-handoff-prompt-template.md](session-history/_session-handoff-prompt-template.md)
-exactly, including its own instruction not to touch `CLAUDE.md` or other permanent documentation while
-writing it. Save it to `session-history/YYYY-MM-DD-[short-descriptive-session-name].md`, confirm the
-file exists, and give its path in the Executive Summary. Skip this only for genuinely trivial
-exchanges (a one-line question, no file or content changes) — anything that touched code, content, or
-made a decision gets a handoff file.
+**Checkpoint substantial work and hand off automatically** using `.agents/workflows/sunset.md`
+and the compact record in `.agents/workflows/session-management.md`. Use a unique timestamp/session
+filename in `session-history/`, sync the source issue when authorized, verify the record exists and
+report its path and sync result. The legacy template points to this shared routine. A trivial exchange
+with no durable discovery, change or unfinished work can omit an empty checkpoint.
 
 ---
 
@@ -437,7 +493,7 @@ pause mid-list only for a genuine owner decision, never to check in on routine p
 5. **Gate with the right check** for the task class (build green · performance re-measure · browser
    verification · the SEO/AEO/GEO checklist).
 6. **For issue-driven work:** confirm every issue requirement and acceptance criterion is met,
-  verify the result, and close the issue only after those checks pass. Leave blocked issues open.
+  verify the result, and apply the Issue Workflow closure authorization rule. Leave blocked or approval-pending issues open.
 7. **Complete:** build green, docs updated, decisions recorded in `DECISIONS.md`, and stale plan
    state reconciled.
 8. **Report** using one Executive Summary — see below.
@@ -454,7 +510,7 @@ pause mid-list only for a genuine owner decision, never to check in on routine p
 - **Never trust an old unchecked box as proof that work remains.** Reconcile it against current code,
   `DECISIONS.md`, the current issue state and the latest handoff first. Later work often completes or
   supersedes an earlier checklist without updating it.
-- On completion, cancellation or supersession: close/update the issue, move durable knowledge to the
+- On completion, cancellation or supersession: update the issue (close only when authorized), move durable knowledge to the
   correct permanent document, write the handoff, and delete the plan. Git history and
   `session-history/` preserve the audit trail without polluting the active queue.
 
@@ -479,10 +535,9 @@ an end-to-end delivery task. Work autonomously through the complete workflow:
   build, type check, lint, browser, responsive, served-HTML, performance, or SEO checks. Inspect
   the actual result, fix failures, and rerun verification until the issue has no known unresolved
   problems.
-6. **Close the issue only after verification passes.** Close the GitHub issue yourself once the
-  implementation is complete and verified. Do not leave routine closure for the owner.
+6. **Apply the authorized closure scope after verification.** Close only when the owner requested closure or explicitly included it in this task; otherwise report ready to close and leave the issue open.
 
-Do not close an issue when a genuine blocker remains, verification is incomplete, or completion
+Do not close an issue as completed when a genuine blocker remains, verification is incomplete, or completion
 requires an owner-only decision. Report the specific blocker and ask only the necessary question.
 Implementing an issue does **not** by itself authorize changing external issue state: close the
 GitHub issue only when the owner explicitly asked for issue closure or the task scope explicitly
@@ -496,8 +551,9 @@ issue must:
 - **Come from the plan and checklist** in `plans/`. Never open an issue from a passing idea that
   has not gone through step 1 above — an issue with no plan behind it is exactly how the sibling
   project lost track of *why* work was queued.
-- **Be small, actionable and specific.** One deliverable, doable in one sitting — not a milestone,
-  not "polish the homepage." If it needs its own sub-checklist, it is still a plan, not an issue.
+- **Be bounded, actionable and specific.** One deliverable with acceptance criteria; it can span
+  multiple sessions. Use linked child issues for independent deliverables and a checklist for concrete
+  steps. Do not create a duplicate issue merely because a new session starts.
 - **Include a linked checklist item or page reference** — the specific `plans/*.md` line, or a
   `DECISIONS.md` / doc anchor, it was raised from. An issue that cannot be traced back to the plan
   cannot be reconciled with it later.
@@ -507,7 +563,7 @@ issue must:
   user-visible, code, content, SEO, performance, or documentation result that proves the issue is
   done, plus the narrowest useful check that can verify it independently.
 - **Be updated together with the plan and checklist during implementation.** When a checklist item
-  is ticked, its linked issue is closed or updated in the *same* change, not in a follow-up pass.
+  is ticked, update its linked issue with evidence in the same workflow; close only within the task authorization.
   A plan and an issue tracker that drift apart both become unreliable at once.
 - **Include explicit parallelization metadata.** Every issue created from a larger task must state
   whether it can safely run in parallel, what it depends on, which files it owns, and which files it
@@ -593,6 +649,11 @@ came from, it is not ready to open.
 - ⚠️ **Do not trust a background task's exit code.** A wrapped command
   (`build > log 2>&1; echo $?`) reports the wrapper's status, not the build's. **Read the output.**
 - **Verify UI changes in a real browser**, desktop and mobile (390px). Not by reasoning about the code.
+- **Full-bleed hero fold and navigation gate:** for every full-bleed first-screen hero, measure the
+  actual CSS viewport and sticky-header height in the browser at 390px and 1440px. The hero must not
+  leave an unintended blank band below its photo; normal internal route navigation must land at the
+  top unless the link explicitly targets a hash. Check every shared hero variant, not only the page
+  under edit, and preserve naturally taller mobile compositions.
 - **Any visual or design change** also needs the distinctive design gate
   (`docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §7): before and after screenshots at 390 and 1440, an
   independent critique (a reviewer that did not build it) with no P0/P1 left, and no new §3 pattern
@@ -714,7 +775,7 @@ what's wrong, what to decide, and exactly what to do next.
 - [ ] If GitHub issues were created from a larger task, each includes actionable Parallelization
       metadata with file ownership, dependencies, acceptance criteria, and verification scope.
 - [ ] If implementing an existing GitHub issue, every requirement and acceptance criterion was
-  implemented, verified, and the issue was closed; blocked issues remain open.
+  implemented and verified; closure follows the task authorization. Blocked or approval-pending issues remain open.
 - [ ] Active plan reconciled with current code/decisions; completed or superseded plan removed after
       its durable knowledge and handoff were recorded.
 - [ ] Generated-route changes are reflected in static params, internal navigation, sitemap/schema,

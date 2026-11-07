@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import type { Project } from '@/lib/projects'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
+import type { SchemaCrumb } from '@/lib/schema'
 
 /**
  * Full-bleed hero for location pages.
@@ -16,11 +18,18 @@ import type { Project } from '@/lib/projects'
  * the H1, the three fact chips and the "featured project" pill that used to
  * stack here were each restating something the page says lower down (licence,
  * warranty and AS 3740 sit in the trust band and the footer; the suburb is in
- * the H1). The back link stays as the page's one hierarchy cue.
+ * the H1). The page keeps exactly one hierarchy cue.
+ *
+ * D-180: that cue is now the full breadcrumb trail rather than a single "back"
+ * link. This does not reverse D-177 — there is still one quiet cue above the
+ * H1, and rendering both would be the duplication D-174 forbids — it just
+ * shows the whole path instead of one step of it. It also drops a scored <p>
+ * from every location page: the back link lived in one, and
+ * `scripts/check-readability.mjs` counted "← Bathroom renovations in the Hills
+ * District." as a sentence of prose.
  */
 export function LocationHero({
-  backHref,
-  backLabel,
+  breadcrumbs,
   caption,
   title,
   lead,
@@ -28,8 +37,8 @@ export function LocationHero({
   projectLabel,
   rating,
 }: {
-  backHref: string
-  backLabel: string
+  /** The SAME array the page passes to `<SchemaGraph breadcrumbs={...}>` (D-180). */
+  breadcrumbs: readonly SchemaCrumb[]
   /** Quiet text before the project link, e.g. "Reviewed September 2026". */
   caption?: string
   title: string
@@ -49,17 +58,14 @@ export function LocationHero({
             alt={photo.alt}
             fill
             sizes="100vw"
-            priority
+            preload
+            fetchPriority="high"
           />
         </div>
       )}
 
       <div className="et-container et-location-hero-content">
-        <p className="et-body-sm">
-          <Link href={backHref} className="et-location-hero-back">
-            ← {backLabel}
-          </Link>
-        </p>
+        <Breadcrumbs items={breadcrumbs} />
         <h1 className="et-h1 et-measure-tight">{title}</h1>
         <p className="et-lead et-measure et-location-hero-lead">{lead}</p>
 

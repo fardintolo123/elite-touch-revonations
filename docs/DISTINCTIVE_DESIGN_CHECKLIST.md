@@ -143,10 +143,10 @@ Each issue edits only its own row below. Status: `open` → `audited` → `fixed
 | Route class | Routes | Issue | Status |
 |---|---|---|---|
 | Homepage | `/` | #74 | verified: deployed 2026-10-29 (9a0bda4), checked live at 390 + 1440, two independent critiques with no P0/P1 left |
-| Service + location pages | `/services`, 4 × `/services/[slug]`, 11 published `/services/bathroom-renovations/[location]` | #75 | open |
+| Service + location pages | `/services`, 4 × `/services/[slug]`, 11 published `/services/bathroom-renovations/[location]` | #75 | fixed: current route and visual checks pass; awaiting sitewide readability, mobile LCP, and GitHub screenshot attachment gates |
 | Proof + company pages | `/gallery`, 11 × `/gallery/[slug]`, `/packages`, `/about-us`, `/contact-us` | #76 | open |
-| Blog | `/blog`, `/blog/[slug]` | #77 | audited (layout refined; copy/readability open) |
-| Sitewide chrome + shared components | header, footer, `ContactSection`, `EnquiryForm`, `PageHero`, `WorkStrip`, `GoogleRating`, `AreasServedLinks`, reveal motion, `globals.css` | #78 | open |
+| Blog | `/blog`, `/blog/[slug]` | #77 | verified 2026-11-05: 80 posts, 81 passing blog routes, responsive captures, checks and independent review; completion comment posted, screenshots local (not attached) |
+| Sitewide chrome + shared components | header, footer, `ContactSection`, `EnquiryForm`, `PageHero`, `WorkStrip`, `GoogleRating`, `AreasServedLinks`, reveal motion, `globals.css` | #78 | verified 2026-11-05: production build, checks, responsive captures and independent critique; local evidence in `.impeccable/critique/issue-78-*` (not attached to GitHub) |
 | Prevention | `npm run check:design` scanner + workflow | #79 | verified |
 
 ## 9. Baseline at adoption (source scan, 2026-10-28)
@@ -194,3 +194,4 @@ opinion or the code: start from the rendered page.
    every section you shortened.
 Finish with the Executive Summary and the session handoff file.
 ```
+

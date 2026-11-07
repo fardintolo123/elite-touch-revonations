@@ -568,11 +568,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Areas sit after the review band, not straight after the work strip:
-          both shared components are rows of white cards, and two consecutive
-          sections must not share a composition (checklist §4). */}
+      {/* The ruled area list follows the review band and photo-led work strip,
+          giving this coverage section a distinct composition (checklist §4). */}
       <AreasServedLinks
-        title="Need bathroom renovations near you in Sydney?"
+        title="Sydney regions and the suburbs we cover"
         intro="We work across Sydney and offer a free on-site measure throughout the metro area. See our work and bathroom renovation details for your area."
         band="canvas"
       />

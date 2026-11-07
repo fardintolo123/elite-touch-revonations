@@ -1,0 +1,5668 @@
+import { businessInfo } from './businessInfo'
+
+export type BlogSection = {
+  heading: string
+  paragraphs: string[]
+}
+
+export type BlogQuickAnswer = {
+  heading: string
+  paragraphs: string[]
+  table: {
+    caption: string
+    columns: [string, string]
+    rows: {
+      label: string
+      detail: string
+      value: string
+    }[]
+  }
+  note: string
+  cta: {
+    href: string
+    label: string
+  }
+}
+
+export type BlogFaqItem = {
+  question: string
+  answer: string
+}
+
+export type BlogPost = {
+  slug: string
+  title: string
+  metaTitle?: string
+  description: string
+  published: string
+  /** Set only when the post's content was genuinely revised after `published` — never bumped for a rebuild alone. */
+  updated?: string
+  readTime: string
+  category: string
+  quickAnswer?: BlogQuickAnswer
+  sections: BlogSection[]
+  /** 4-6 real questions, same pattern as the service-page FAQ (app/services/[slug]/page.tsx). */
+  faq?: BlogFaqItem[]
+  /** A real, evidenced project photo (lib/projects.ts) that actually shows this post's subject — never a stock image. */
+  heroProject?: { slug: string; imageIndex?: number }
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: 'bathroom-renovation-cost-sydney',
+    title: 'What changes the cost of a bathroom renovation in Sydney?',
+    metaTitle: 'What Changes Bathroom Renovation Costs?',
+    description: 'Room size, layout, tiles, fittings and site conditions all shape a Sydney bathroom quote.',
+    published: '2026-09-10',
+    updated: '2026-11-02',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      { heading: 'Start with the room and the scope', paragraphs: ['There is no honest single price for every bathroom renovation. If you are pricing a full bathroom in Sydney, start with our <a href="/packages/" class="et-link">package prices and size bases</a>, then consider how room size, fittings, tile selection, electrical and plumbing work, and layout affect the final scope.', 'A useful quote should make those decisions visible. It should describe what is included, what is excluded and which selections are still provisional. That gives you something meaningful to compare instead of comparing two totals with different scopes.'] },
+      { heading: 'ETR package starting points', paragraphs: ['If you are comparing Sydney bathroom renovation pricing, Elite Touch publishes <a href="/packages/" class="et-link">three package starting points</a>: Basic from $18,000 for an approximately 1.5 m × 1.8 m × 2.4 m bathroom, Standard from $25,000 for an approximately 1.8 m × 2.4 m × 2.4 m bathroom, and Premium from $30,000 for an approximately 2.4 m × 2.4 m × 2.4 m bathroom.', 'These are starting prices, not fixed quotes. The final scope depends on the actual room and your selections. A free on-site measure is the right next step when you need a price tied to your bathroom.'] },
+      { heading: 'What changes the price?', paragraphs: ['The biggest cost shifts usually come from scope, not decoration alone. Moving walls, <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">changing fixture positions</a>, upgrading stone or joinery, adding complex glazing, changing electrical points or uncovering poor existing work can all move the price.', 'Tile format and fitting choices matter too, but they should be compared inside the whole scope. A cheaper tapware allowance does not make a quote better if demolition, waterproofing or electrical work has been left unclear.'] },
+      { heading: 'Why the on-site measure matters', paragraphs: ['Photos can start the conversation, but they do not show enough to lock in a bathroom renovation price. The site measure checks the room size, access, fixture positions, floor falls and visible condition before a written scope is prepared.', 'That is also where practical details come out: whether there is only one bathroom in the home, where materials can be stored, how waste leaves the property and whether strata or building rules affect the program.'] },
+      { heading: 'What to ask before accepting a quote', paragraphs: ['Ask whether demolition, waterproofing, tiling, fittings, electrical work, waste removal and final clean-up are included. Ask how variations are handled and whether the quote is fixed-scope and written.', 'The goal is not simply to find the lowest number. It is to understand what you are buying, who is responsible for each part of the work and what happens when the existing room reveals a condition that could not be seen before demolition.'] },
+      { heading: 'What does a good quote help you decide?', paragraphs: ['A good quote lets you compare like with like. It should name the room, the package or scope basis, the inclusions, the exclusions, the payment schedule and the process for approving changes.', 'It should also make the next step plain. If the number is only a verbal estimate, ask for the written scope before you make a decision. A bathroom is too important to price from assumptions.'] },
+      { heading: 'How should you use the starting prices?', paragraphs: ['Use the starting prices to set a realistic bracket before you ask for a quote. They help you see whether a plan is likely to sit near a basic refresh of the existing footprint or a larger premium build with more complex selections.', 'Do not use them as a substitute for the measured quote. A price only becomes useful when it is connected to your room, your selections and the exact work written into the scope.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-timeline-sydney',
+    title: 'How long does a bathroom renovation take?',
+    metaTitle: 'Bathroom Renovation Timeline',
+    description: 'Planning, selections and site work shape each bathroom renovation timeline.',
+    published: '2026-09-10',
+    readTime: '4 min read',
+    category: 'Planning and process',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Most bathroom renovations in Sydney take 3-7 weeks on site from demolition to final handover. The shorter end is a full renovation on the same footprint; the longer end is a premium build or a job that moves walls or fixture positions.',
+        'These are on-site working times. Planning, product selections and ordering happen before the build starts, and hidden issues can only be confirmed once the old bathroom is opened up.',
+      ],
+      table: {
+        caption: 'Typical on-site duration for an Elite Touch bathroom renovation.',
+        columns: ['Renovation type', 'Typical duration'],
+        rows: businessInfo.buildDurations.map((duration) => ({
+          label: duration.label,
+          detail: duration.detail,
+          value: duration.weeks,
+        })),
+      },
+      note: 'Your written quote should include the program for your room, not just a verbal estimate.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      { heading: 'The short answer', paragraphs: ['A <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a> is usually measured in weeks rather than days. The exact timeline depends on the room, the scope, product availability, approvals and what is discovered once the old finishes are removed.', 'A reliable programme should explain the sequence of work and identify decisions that need to be made before the job starts. That is more useful than promising an attractive number of days before the room has been measured.'] },
+      { heading: 'The stages that shape the programme', paragraphs: ['Planning covers the measure, selections, scope and written quote. The site work then commonly moves through protection and demolition, plumbing and electrical preparation, waterproofing, tiling, installation of fittings, finishing and clean-up.', 'Some stages depend on the previous one. Waterproofing needs the right preparation, and later finishes depend on completed and properly cured work. A rushed sequence can create more risk than a realistic programme.'] },
+      { heading: 'Why do some renovations drag on for months?', paragraphs: ['Long delays often come from decisions that were not settled before site work began. Late fittings, unclear selections, building access limits, approval delays or a quote that left key items provisional can all stop a room that is already stripped out.', 'Hidden conditions can also change the programme. A rotten floor, poor existing plumbing or other issue behind old finishes has to be documented and priced before work continues. That is why the variation process matters as much as the headline timeline.'] },
+      { heading: 'What should be decided before demolition?', paragraphs: ['The layout, tapware, tile choice, vanity, shower screen, accessories and any strata access rules should be known before the bathroom comes out. If an item affects ordering or rough-in, it should not be left for later.', 'A written programme does not remove every risk, but it shows which choices are holding up the job and which stages are waiting on curing, inspection, delivery or approval.'] },
+      { heading: 'How to reduce avoidable delays', paragraphs: ['Confirm the layout, fittings and tile choices early. Ask which items the renovator is ordering, when they are expected and what happens if a selected product is unavailable.', 'Your quote should also explain how changes are approved. Keeping decisions in writing helps the homeowner and the renovation team work from the same scope.'] },
+      { heading: 'What should your renovator give you?', paragraphs: ['Ask for the expected on-site programme in writing, with the scope it is based on. If the bathroom is the only one in the home, raise that at the measure so the most disruptive stages can be planned clearly.', 'The right answer is not the shortest possible promise. It is a realistic sequence for your room, backed by a scope that says what happens if the work changes.'] },
+      { heading: 'How should you plan around the bathroom being out of action?', paragraphs: ['Talk about <a href="/blog/bathroom-renovation-living-at-home/" class="et-link">daily routines before demolition</a>, especially if the home has only one bathroom. The most disruptive stage is usually early in the job, when the room is stripped out and trades are preparing the services and surfaces.', 'A clear program helps you decide whether you need to stay elsewhere for part of the work, arrange different washing routines or plan around school and work hours. The practical plan is part of the renovation, not a side issue.'] },
+    ],
+  },
+  {
+    slug: 'how-to-compare-bathroom-renovation-quotes',
+    title: 'Fixed quote vs verbal estimate: what to ask before you sign',
+    metaTitle: 'Fixed Quote vs Verbal Estimate',
+    description: 'Compare a fixed-scope quote with a rough estimate before you choose a renovator.',
+    published: '2026-09-10',
+    updated: '2026-11-02',
+    readTime: '4 min read',
+    category: 'Quotes and decisions',
+    sections: [
+      { heading: 'Compare scope before price', paragraphs: ['Two quotes can have different totals because they list different work. Read the scope first: layout, demolition, waterproofing, tiling, fittings, electrical work, plumbing, waste removal and clean-up should be clear.', 'If a line is vague, ask for it to be made clear in writing. A lower price may cost more if key work has been left for later.'] },
+      { heading: 'What is the risk with a verbal estimate?', paragraphs: ['A verbal estimate can be useful for an early conversation, but it is not enough to sign on. It may not define the tile allowance, fixture choices, access, waste removal, waterproofing, electrical work or what happens if hidden damage is found.', 'The problem is not that every estimate is dishonest. The problem is that an estimate leaves too many assumptions outside the decision, and those assumptions can turn into extra cost once your bathroom is already out of action.'] },
+      { heading: 'What should a fixed-scope quote include?', paragraphs: ['A fixed-scope written quote should say what room is being renovated, what work is included, what is excluded, which selections are allowed for and how variations are approved. It should also show the payment schedule and any program assumptions.', 'For a bathroom, look closely for demolition, plumbing and electrical preparation, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing to AS 3740</a>, tiling, fit-off, rubbish removal and final clean. If one quote names those items and another does not, you are not comparing the same thing.'] },
+      { heading: 'Check the assumptions', paragraphs: ['Look for assumptions about the room size, tile format, fitting allowances, access, work hours and the state of the walls and floor. These details can change the final result.', 'Ask how changes are priced and approved. You should know who can approve a change and how it will be recorded before work goes ahead.'] },
+      { heading: 'Ask these questions before you sign', paragraphs: ['Ask whether the quote is based on an on-site measure, which items are provisional, who manages the trades, when you will receive the program and what certificate or handover documents are supplied. Our guide to <a href="/blog/fixed-scope-quote-vs-provisional-sums-bathroom/" class="et-link">fixed-scope quotes, provisional sums and PC items</a> explains each term.', 'Ask what happens if the old bathroom reveals rot, asbestos, non-compliant plumbing or another issue after demolition. You want the variation process clear before the pressure of a half-demolished room is in the room with you.'] },
+      { heading: 'Choose accountability as well as value', paragraphs: ['Ask who will manage the project, how communication will work and what protection is included after completion. ETR is family-run, holds NSW Builder Licence 475204C and offers a 10-year workmanship warranty as stated in its terms.', 'A free on-site measure and fixed-scope written quote give you a better basis for comparing the actual room, not just an estimate made from photographs.'] },
+      { heading: 'When is the cheapest quote not the cheapest job?', paragraphs: ['The cheapest quote can become the dearer job if important work has been left out or pushed into variations. A bathroom renovation has too many connected stages to price on a single headline number.', 'Choose the quote that makes the work easy to understand. If you cannot explain what is included after reading it, ask for the scope to be rewritten before you sign.'] },
+      { heading: 'What should be agreed before the deposit?', paragraphs: ['Before paying a deposit, check the scope, payment schedule, start assumptions and <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">variation process</a>. Confirm who orders the main selections and what happens if a product is unavailable.', 'The aim is simple: after you sign, both sides should be working from the same document. If a promise matters, it belongs in the quote or contract rather than in a phone call you have to remember later.'] },
+    ],
+  },
+  {
+    slug: 'questions-to-ask-a-bathroom-renovator',
+    title: 'How to choose a bathroom renovator in Sydney without getting burned',
+    metaTitle: 'Choose a Bathroom Renovator',
+    description: 'Check the licence, scope, timing, waterproofing and aftercare before you hire a Sydney renovator.',
+    published: '2026-09-10',
+    readTime: '4 min read',
+    category: 'Choosing a renovator',
+    sections: [
+      { heading: 'Questions about the company', paragraphs: ['Ask who holds the licence, who will manage the project and who will be your day-to-day contact. Confirm the business name on the quote matches the business you are engaging.', 'For ETR, the NSW Builder Licence is 475204C. The project is run by the Dawood family, with Omar Dawood as Licensed Builder and Civil Engineer and Adam Dawood as Licensed Tiler and Projects Manager.'] },
+      { heading: 'Questions about the work', paragraphs: ['Ask what is included in demolition, plumbing, electrical work, waterproofing, tiling, fittings, waste removal and clean-up. Ask how the team deals with changes or hidden conditions.', 'You should also ask how the renovation will be sequenced, what decisions are needed before work begins and how the team will protect the rest of your home.'] },
+      { heading: 'Questions that reveal a hard sell', paragraphs: ['Be careful when a renovator pushes for a decision before measuring the room, avoids writing down exclusions or says a bathroom can be priced from photos alone. A confident builder should be able to explain what is known and what still needs checking.', 'Ask why the quoted program is realistic, what could change it and how product delays are handled. A vague answer now usually becomes stress later.'] },
+      { heading: 'Questions about waterproofing and paperwork', paragraphs: ['Ask how the bathroom will be waterproofed, what standard applies and whether a certificate is supplied. For ETR bathroom renovations, <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing is done to AS 3740</a> with primer plus two coats, and a compliance certificate is supplied.', 'Ask what other handover documents you should keep with the final scope, warranty terms and product information. A careful paper trail is not exciting, but it matters if you ever need to check what was agreed.'] },
+      { heading: 'Questions about the quote and warranty', paragraphs: ['Ask for a <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">fixed-scope written quote</a>, the payment schedule, the variation process and the terms of any warranty. Make sure the warranty wording is specific and do not assume it covers third-party fittings unless the terms say so.', 'A good first conversation should leave you with fewer assumptions, not more. If the answer changes depending on who you speak to, ask for the agreed position in writing.'] },
+      { heading: 'How should you decide after the answers?', paragraphs: ['Compare the written scope, not just the price. The right renovator should be clear about what is included, who is on site, how updates are handled and what happens if the old room hides a problem.', 'You are choosing the people who will have your bathroom open for weeks. Good communication, clean site habits and a clear variation process are not extras; they are part of the job.'] },
+      { heading: 'What proof should matter most?', paragraphs: ['Look for checkable proof: a licence number, a written quote, clear waterproofing paperwork, a real warranty and real customer feedback. Vague claims about quality are not the same as evidence.', 'For ETR, the load-bearing trust signals are plain: NSW Builder Licence 475204C, AS 3740 waterproofing, fixed-scope written quotes, a free on-site measure and a 10-year workmanship warranty stated as written.'] },
+      { heading: 'What should make you pause?', paragraphs: ['Pause if the scope is hard to understand, the price keeps changing without written detail or the renovator avoids basic questions about timing, waterproofing and variations.', 'A bathroom renovation is too disruptive to run on guesswork. If the conversation feels rushed before you sign, it rarely becomes clearer after demolition.'] },
+      { heading: 'What should feel clear before you say yes?', paragraphs: ['You should know who you call, what happens first, what the written quote includes, when the bathroom will be out of action and how changes are approved.', 'If those answers are clear, the decision becomes less about trusting a sales pitch and more about choosing the team with the cleanest process.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-checklist-sydney',
+    title: 'Bathroom renovation checklist for Sydney homeowners',
+    metaTitle: 'Bathroom Renovation Checklist',
+    description: 'Settle the scope, selections, access and key documents before bathroom work starts.',
+    published: '2026-09-10',
+    readTime: '2 min read',
+    category: 'Planning and process',
+    sections: [
+      { heading: 'Before requesting quotes', paragraphs: ['Write down what is not working in the room and what you want to change. Note storage needs, shower and bath choices, lighting, ventilation, access needs and any limits on the layout.', 'Take room measurements and photos for the first talk, but get an on-site measure before you rely on a price. The state of the room matters.'] },
+      { heading: 'Before accepting a quote', paragraphs: ['Check the scope, room size, what is in and out, your choices, the <a href="/blog/bathroom-renovation-project-management-timeline/" class="et-link">work plan</a> and how changes are agreed. Keep the final scope and choices together in writing.', 'Check the builder licence and ask who will manage the work. Make sure the quote covers waste, floor protection and the final clean.'] },
+      { heading: 'Before work starts', paragraphs: ['Choose items that must be ordered and confirm site access. Decide where materials can be stored and how the team will move through the home.', 'Keep a simple record of choices and changes. Clear notes help keep the job on track while the room is out of use.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-waterproofing-certificate-sydney',
+    title: 'Waterproofing certificates explained: what every Sydney bathroom renovation needs',
+    metaTitle: 'Waterproofing Certificates Explained',
+    description: 'Learn what the certificate covers, when to ask for it and how AS 3740 fits.',
+    published: '2026-09-20',
+    readTime: '4 min read',
+    category: 'Planning and process',
+    sections: [
+      { heading: 'The short answer', paragraphs: ['A waterproofing certificate is the paper trail that confirms the wet-area waterproofing work was completed for the <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a>. For ETR bathroom renovations, waterproofing is done to AS 3740, with primer plus two coats, and a compliance certificate is supplied.', 'This is not a separate waterproofing-only service. It is one critical stage inside the full bathroom renovation sequence, because the tile finish only performs if the surface behind it has been prepared and sealed correctly.'] },
+      { heading: 'What does AS 3740 mean in plain English?', paragraphs: ['AS 3740 is the <a href="/blog/bathroom-waterproofing-explained/" class="et-link">wet-area waterproofing standard</a> used for bathrooms and other wet areas. It sets out where waterproofing is needed and how wet-area work should be treated so water does not move into parts of the building that are meant to stay dry.', 'For a homeowner, the standard matters because you cannot judge waterproofing from the finished tiles. Once the room is complete, the membrane is hidden. The certificate and the written scope are the record of what was done behind the finish.'] },
+      { heading: 'When should you ask about the certificate?', paragraphs: ['Ask before you accept the quote, not at handover. The quote should explain whether waterproofing is included, what standard applies and what paperwork you receive at the end.', 'You should also ask how the waterproofing stage fits into the program. Proper prep, coating and curing time should be part of the sequence, not squeezed in as an afterthought.'] },
+      { heading: 'Why does the certificate matter after the job?', paragraphs: ['The certificate gives you a record to keep with the rest of your handover papers. If you sell, make an insurance claim or need to check the work years later, you have more than a memory of what was said.', 'It also helps separate real process from sales talk. A renovator who can name the standard, explain the sequence and supply the certificate is giving you something checkable.'] },
+      { heading: 'What does the certificate not prove?', paragraphs: ['A certificate does not mean every product in the bathroom has a 10-year warranty, and it does not replace the need for a clear workmanship warranty. Product warranties, workmanship and waterproofing paperwork are related, but they are not the same thing.', 'It also does not make a vague quote acceptable. You still need the whole scope in writing: demolition, plumbing, electrical work, tiling, fittings, waste removal, clean-up and the variation process.'] },
+      { heading: 'Questions to ask before you sign', paragraphs: ['Ask whether the bathroom is waterproofed to AS 3740, whether primer and two coats are included, whether the certificate is supplied and who manages the sequence around waterproofing.', 'A careful renovator should be able to explain the process without hiding behind jargon. If the answer is only "we do waterproofing", ask for the standard, certificate and scope in writing.'] },
+      { heading: 'How does this fit with the rest of the bathroom?', paragraphs: ['Waterproofing is one stage in a chain. The substrate, falls to drains, plumbing positions, screed, tile setout and final fit-off all affect the finished room, so the certificate should sit inside a broader renovation scope.', 'That is why ETR discusses waterproofing as part of the bathroom renovation, not as a detached repair product. The goal is a bathroom that works as a whole system once the tiles, fixtures and finishes are back in place.'] },
+      { heading: 'Where should you keep the certificate?', paragraphs: ['Keep the certificate with your quote, contract, invoices, warranty terms and product information. If a later owner, insurer or strata manager asks what was done, you want the record in one place.', 'Good paperwork will not make the bathroom look better on day one, but it protects the value of the work after the room is finished.'] },
+    ],
+  },
+  {
+    slug: 'first-time-bathroom-renovation-sydney',
+    title: 'First time renovating? Here is exactly what happens, step by step',
+    metaTitle: 'First Bathroom Renovation Steps',
+    description: 'See the steps before, during and after your first bathroom renovation in Sydney.',
+    published: '2026-09-20',
+    readTime: '4 min read',
+    category: 'Planning and process',
+    sections: [
+      { heading: 'Start with the measure, not the mood board', paragraphs: ['Your first <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a> should start with the room as it is. The on-site measure checks the size, access, current layout, visible condition and practical needs before finishes are locked in.', 'Photos, saved ideas and showroom visits are useful, but the measured room decides what will fit. This is also where you raise daily-use issues such as storage, poor light, a tight shower, one bathroom in the home or a layout that never worked.'] },
+      { heading: 'Then the scope is written down', paragraphs: ['After the measure, the renovation needs a written scope. It should say what is included, what is excluded, which selections are still open and how changes will be approved.', 'At ETR, the aim is a fixed-scope written quote before work begins. That means the job is not priced as a loose verbal estimate that changes once the bathroom has already been stripped out.'] },
+      { heading: 'Selections and ordering happen before site work', paragraphs: ['Tiles, tapware, vanity, toilet, shower screen, accessories and lighting decisions affect timing and cost. The sooner these are settled, the fewer avoidable delays there are once the room is out of action.', 'If you are unsure, ask which choices must be made now and which can wait. Not every decision has the same impact on the program.'] },
+      { heading: 'Site work follows a sequence', paragraphs: ['The on-site stage usually moves through protection, demolition, plumbing and electrical preparation, waterproofing, tiling, fit-off, finishing and final clean. Each stage depends on the one before it.', 'Waterproofing is a good example. It needs proper prep and curing time. Rushing it may make a program look shorter on paper, but it adds risk to the part of the bathroom you cannot see once the tiles go on.'] },
+      { heading: 'Changes need to be handled in writing', paragraphs: ['Even with a careful quote, an old bathroom can reveal problems after demolition. If that happens, ask for the reason, cost and timing effect before extra work proceeds.', 'This is why a variation process matters. It keeps a stressful moment from turning into a guessing game and gives both sides one clear record of the decision.'] },
+      { heading: 'How do you keep the rest of the home usable?', paragraphs: ['Before work starts, agree how the team will move through the home, where tools and materials can be stored, how <a href="/blog/bathroom-renovation-living-at-home/" class="et-link">dust and floor protection</a> will be handled and when noisy work is likely.', 'This is especially important if you work from home, have children at home or have only one bathroom. Renovation is much less stressful when the practical rules are clear before the first day on site.'] },
+      { heading: 'What should you keep asking during the job?', paragraphs: ['Ask what has been completed, what happens next and whether any decision is needed from you before the next stage can continue. Short, regular updates are better than waiting until a delay has already happened.', 'If something changes, ask for it in writing. First-time renovators often worry that asking simple questions is annoying, but a good process makes those questions normal.'] },
+      { heading: 'Handover is more than a finished room', paragraphs: ['At handover, keep the final scope, invoices, warranty terms, waterproofing certificate and product information together. These papers are part of the renovation, not admin clutter.', 'A first renovation feels much calmer when you know the next step before it arrives. Ask simple questions early, keep the answers in writing and make the room itself the source of truth.'] },
+    ],
+  },
+  {
+    slug: 'ensuite-vs-bathroom-vs-powder-room-renovation',
+    title: 'Ensuite vs full bathroom vs powder room renovation: cost and scope compared',
+    metaTitle: 'Ensuite vs Bathroom vs Powder Room',
+    description: 'Compare room scope and costs for an ensuite, full bathroom or powder room.',
+    published: '2026-09-20',
+    readTime: '4 min read',
+    category: 'Compare your options',
+    sections: [
+      { heading: 'The short answer', paragraphs: ['A full bathroom, ensuite and powder room are all wet-area renovations, but they do not carry the same scope. The right comparison is not just room size; it is what the room must do each day.', 'A main bathroom often has the most users. An ensuite has to work beside a bedroom, often in a small footprint. A powder room may have no shower, but the fixture setout and waterproofing still matter if it has a water supply and floor waste.'] },
+      { heading: 'What changes in a full bathroom?', paragraphs: ['A <a href="/services/bathroom-renovations/" class="et-link">full bathroom renovation</a> usually needs the broadest scope: shower, toilet, vanity, storage, waterproofing, tiling, ventilation, lighting and often a bath. It may also be the only bathroom in the home, so disruption planning matters.', 'ETR <a href="/packages/" class="et-link">package starting points</a> for bathroom-sized work begin at Basic from $18,000 for an approximately 1.5 m x 1.8 m bathroom, Standard from $25,000 and Premium from $30,000, each tied to its stated room size and inclusion list.'] },
+      { heading: 'What changes in an ensuite?', paragraphs: ['An <a href="/services/ensuite-bathroom-renovations/" class="et-link">ensuite renovation</a> often has the same trade sequence as a bathroom, but the design pressure is different. The room is smaller, storage is tighter, ventilation can be harder and noise beside the bedroom matters.', 'A good ensuite scope should settle the toilet position, shower clearance, vanity size, door swing, ventilation and lighting before the price is locked in. Small layout mistakes are felt every morning. Our <a href="/blog/ensuite-renovation-ideas-layout/" class="et-link">ensuite layout guide</a> covers the design choices that matter most in a tight space.'] },
+      { heading: 'What changes in a powder room?', paragraphs: ['A <a href="/services/powder-room-renovations/" class="et-link">powder room renovation</a> is smaller again, usually with a toilet and hand basin. The design challenge is clearance: door swing, basin projection, toilet position and tile setout can make the difference between useful and cramped.', 'Do not assume a small room needs no serious planning. If it has a floor waste and water supply, waterproofing still has to be handled properly, and a poor layout can make the room awkward for years. Our <a href="/blog/powder-room-renovation-guide/" class="et-link">powder room guide</a> walks through the clearances that matter.'] },
+      { heading: 'Where do costs overlap?', paragraphs: ['Some costs appear in every wet-area renovation: protection, demolition, plumbing, electrical work, waterproofing where required, tiling, fit-off and clean-up. Smaller rooms can still involve most of the same trades, even when the material quantities are lower.', 'That is why the room type alone does not set the price. A small ensuite with difficult access or a changed layout can be more involved than a larger bathroom that keeps the same service positions.'] },
+      { heading: 'How should you choose where to start?', paragraphs: ['Start with the room causing the most daily friction. If the main bathroom is failing, it may need to come first. If the ensuite is used every day and the main bathroom still works, the ensuite may be the better first job.', 'If two wet areas are linked, ask whether they should be planned together. One measured scope can show whether sequencing the rooms saves disruption or whether separate stages make more sense for the household.'] },
+      { heading: 'What should the quote make clear?', paragraphs: ['The quote should name the room, not just say "bathroom renovation". It should say whether the job is a main bathroom, ensuite, powder room or combined wet-area program, because the assumptions behind each one are different.', 'Ask for the scope to spell out the trade sequence, selections, waterproofing, exclusions and timing. A room-type comparison only helps if the written quote is specific enough to show what is being compared.'] },
+      { heading: 'What is the best first question?', paragraphs: ['Ask what problem each room is meant to solve. A main bathroom may need better storage and family use, an ensuite may need quiet and ventilation, and a powder room may need better clearance.', 'Once the purpose is clear, the cost conversation becomes more useful because the quote can focus on the room that matters most.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-laundry-combo-renovation-worth-it',
+    title: 'Bathroom + laundry combo renovations: is combining the two worth it?',
+    metaTitle: 'Bathroom and Laundry Combo Guide',
+    description: 'Check shared work, plumbing and layout before combining a bathroom and laundry.',
+    published: '2026-09-20',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      { heading: 'The short answer', paragraphs: ['Combining a bathroom and laundry renovation can be worth it when the rooms are close together, share services or would otherwise create two separate rounds of disruption. It is not automatically the right choice for every home.', 'ETR treats this as a <a href="/services/laundry-renovations/" class="et-link">bathroom and laundry renovation</a> planned as one program, not as a standalone laundry-only service. The measure decides whether the combined sequence helps the household or simply makes too much wet-area space unavailable at once.'] },
+      { heading: 'Where can combining the work help?', paragraphs: ['One combined scope can reduce repeated site setup, demolition, deliveries, trade visits and final clean-up. If the rooms share a wall or services, the plumbing and electrical planning may also be clearer when both rooms are considered together.', 'It can also help the design feel consistent. Tile choices, <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage</a>, lighting and practical access can be planned as one wet-area decision rather than two separate projects that happen months apart.'] },
+      { heading: 'What are the trade-offs?', paragraphs: ['The main trade-off is disruption. If the bathroom and laundry are both offline at once, the household needs a clear plan for washing, access and daily routines.', 'Sometimes a staged program is better. One room can be completed while the other stays usable, then the team swaps over. That decision belongs in the written scope before work starts.'] },
+      { heading: 'What happens with waterproofing?', paragraphs: ['Both rooms need to be treated as wet areas where the scope requires it. ETR waterproofs wet-area renovation work to AS 3740 and supplies certification for the waterproofing work.', 'Do not let a combined job blur the paperwork. The quote should still explain what is included for each room and what certificates or handover records you will receive.'] },
+      { heading: 'What should you ask at the measure?', paragraphs: ['Ask whether the rooms should run together or in sequence, what the expected on-site program is, which selections affect ordering and whether access or strata rules change the plan.', 'The best combined job is not just two renovations at the same time. It is one controlled program with the disruption, cost and scope made clear before the first room comes out.'] },
+      { heading: 'How does cost comparison work?', paragraphs: ['Compare the combined scope against two separate jobs, not against a single-room bathroom quote. A combined program may reduce repeated setup, but it also adds another wet area, more selections and more decisions.', 'The measured quote should show whether the saving is in fewer site visits, shared trade sequencing or simpler ordering. Avoid assuming there is a fixed discount just because two rooms are booked together.'] },
+      { heading: 'When is combining not worth it?', paragraphs: ['Combining may not suit a home where the bathroom and laundry are far apart, where one room needs urgent work but the other does not, or where losing both rooms at once would be too disruptive.', 'It may also be better to wait if key selections are not ready. A combined project has more moving parts, so late decisions can slow down two rooms instead of one.'] },
+      { heading: 'What should be written room by room?', paragraphs: ['Ask for the inclusions and exclusions to be clear for the bathroom and for the laundry. Each room should have its own fixtures, finishes, waterproofing needs and handover records identified.', 'That clarity protects the benefit of combining the work. You get one coordinated program without losing sight of what each room actually needs.'] },
+      { heading: 'What should the final decision come down to?', paragraphs: ['Choose the option that gives the home the least avoidable disruption for the clearest scope. Sometimes that means one combined program, and sometimes it means staging the rooms.', 'The measure should make that choice clearer by showing how the rooms connect, what the household can live without and what needs to stay usable.'] },
+    ],
+  },
+  {
+    slug: 'small-bathroom-renovation-without-feeling-cramped',
+    title: 'How to renovate a small bathroom without it feeling cramped',
+    metaTitle: 'Small Bathroom Renovation Guide',
+    description: 'Use clear paths, storage and door swings to plan a small bathroom.',
+    published: '2026-09-10',
+    readTime: '2 min read',
+    category: 'Small bathrooms',
+    sections: [
+      { heading: 'Begin with movement and storage', paragraphs: ['A small bathroom needs a clear path through the room. Start by checking door swings, shower access, toilet clearance and the location of <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage</a> before choosing finishes.', 'A measured plan helps you decide where a vanity, shaving cabinet, shower screen and accessories can fit without making the room harder to use.'] },
+      { heading: 'Use a restrained selection', paragraphs: ['A small room can feel busy when every surface competes for attention. A consistent tile approach, considered contrast and fittings sized to the room can create a calmer result.', 'The right choice depends on the room and the homeowner. Inspiration is useful, but a selection should still be checked against the actual layout, maintenance needs and budget.'] },
+      { heading: 'Protect the essentials', paragraphs: ['Do not trade away waterproofing, sound preparation or a workable layout just to add a decorative feature. These are the parts that affect how the room performs every day.', 'Bring the room to a renovator for a measure and written scope. That turns a small-bathroom idea into a plan that can be priced honestly.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-mistakes-to-avoid',
+    title: 'What are the biggest bathroom renovation mistakes to avoid?',
+    metaTitle: 'Bathroom Renovation Mistakes',
+    description: 'Spot planning gaps that can cause rework, confusion or extra cost.',
+    published: '2026-09-10',
+    readTime: '2 min read',
+    category: 'Planning and process',
+    sections: [
+      { heading: 'The short version', paragraphs: ['Plan the room. Set the scope. Ask clear questions. Keep each change in writing.'] },
+      { heading: 'Starting without a measured scope', paragraphs: ['A photo can start a talk, but it cannot show every issue that affects the job. Choices about layout, access, plumbing, electrical work and finishes should follow an on-site measure.', 'A clear scope gives you and the renovator the same starting point. It also makes later changes easier to spot.'] },
+      { heading: 'Choosing finishes before solving the room', paragraphs: ['Tiles and fittings matter, but they should follow the <a href="/blog/bathroom-renovation-design-process/" class="et-link">layout and how you use the room</a>. Nice tiles do not fix a poor door swing, awkward storage or a shower that is hard to use.', 'Settle movement, storage, ventilation and cleaning needs before you pick finishes.'] },
+      { heading: 'Accepting a vague quote', paragraphs: ['A price with no list of work is hard to compare. Ask what is in, what the price assumes, what is left out and how changes are agreed.', 'The best quote is one you can understand, not just the one with the lowest price.'] },
+    ],
+  },
+  {
+    slug: 'diy-or-professional-bathroom-renovation',
+    title: 'Should I renovate my bathroom myself or hire a professional?',
+    metaTitle: 'Should you DIY a bathroom renovation in NSW?',
+    description: 'See which tasks need licensed trades and where DIY can add risk in NSW.',
+    published: '2026-09-10',
+    readTime: '2 min read',
+    category: 'Choosing a renovator',
+    sections: [
+      { heading: 'Know what you are coordinating', paragraphs: ['1) In NSW, a DIY bathroom renovation only makes sense for the finish work. Waterproofing, plumbing and electrical work must be done by licensed trades and signed off correctly, so the legal risk sits with the parts you are not meant to do yourself.', 'A bathroom renovation is a sequence of connected tasks, not just a collection of finishes. Demolition, plumbing, <a href="/blog/bathroom-renovation-electrical-work/" class="et-link">electrical work</a>, waterproofing, tiling and fitting installation need to be planned around one another.'] },
+      { heading: 'Consider licensed and regulated work', paragraphs: ['The rule is simple: if the work is regulated, it should be handled by a licensed professional. Check the NSW Fair Trading guidance before you decide how much of the job you want to take on: <a href="https://www.nsw.gov.au/housing-and-construction/building-or-renovating-a-home" class="et-link">NSW Fair Trading</a>.', 'A licensed renovator can help coordinate the work and document the agreed scope. ETR operates under NSW Builder Licence 475204C.'] },
+      { heading: 'Make the decision on the whole project', paragraphs: ['Compare the value of your time, the disruption of a room being out of action and the risk of rework. A lower initial spend is not useful if the sequence creates delays or requires work to be done twice.', 'Start with a measured scope and clear quote, whether you choose a professional or a carefully limited DIY approach. The practical rule is simple: do the safe, straightforward finish work yourself, and ask a licensed contractor to handle the work that carries compliance, licensing and warranty risk.'] },
+    ],
+  },
+  {
+    slug: 'strata-bathroom-renovation-sydney',
+    title: 'Renovating a bathroom in a Sydney apartment or strata unit?',
+    metaTitle: 'Strata Bathroom Renovation Sydney | Apartment Approval Guide',
+    description: 'Check strata rules, approvals, access and wet-area sign-off before work begins.',
+    published: '2026-09-10',
+    updated: '2026-11-02',
+    readTime: '4 min read',
+    category: 'Planning and process',
+    sections: [
+      {
+        heading: 'The short version',
+        paragraphs: [
+          'Renovating a bathroom in a Sydney apartment or strata unit starts with the building rules. A wet-area renovation is not the same as a cosmetic refresh inside a free-standing house.',
+        ],
+      },
+      {
+        heading: 'Does a strata bathroom renovation need approval?',
+        paragraphs: [
+          'Yes. NSW Government guidance says a renovation that requires waterproofing cannot be treated as minor cosmetic work, so get the owners corporation\'s approval before work starts. Depending on the scope, approval may need a special resolution; work that changes common property may also need a by-law.',
+          'Check your scheme\'s rules and approval path before setting a start date. Read the <a href="https://www.nsw.gov.au/housing-and-construction/strata/renovations" class="et-link" target="_blank" rel="noopener noreferrer">NSW Government strata renovations guidance</a> and confirm the requirements with your strata manager.',
+        ],
+      },
+      {
+        heading: 'What we handle for strata jobs',
+        paragraphs: [
+          'The written scope sets out the agreed renovation work. It is carried out under NSW Builder Licence 475204C, and the waterproofing is completed to <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">AS 3740</a> with a compliance certificate.',
+          'Give your renovator the approval conditions and building rules so the written scope can reflect them. Your owners corporation or strata manager can confirm which rules apply to your building.',
+        ],
+      },
+      {
+        heading: 'What should you ask strata before the quote?',
+        paragraphs: [
+          'Ask if the owners corporation needs a renovation application, which forms they need, what work hours apply, how to book the lift and whether shared areas need special protection.',
+          'Ask for the rules in writing. A neighbour may help, but the renovator needs the building rules before the work plan and quote are final.',
+        ],
+      },
+      {
+        heading: 'Plan access and protection',
+        paragraphs: [
+          'Check how materials and waste can move through the building, where trucks can stop and how shared areas must be kept safe. These details belong in the work plan and quote.',
+          'Give the team the building rules early so the site plan fits the property. A good access plan is part of the job, not an afterthought.',
+        ],
+      },
+      {
+        heading: 'Why access can affect timing',
+        paragraphs: [
+          'Apartment work can take longer when lifts, loading zones, parking, concierge rules or waste removal windows are tight. None of those details changes the quality of the bathroom, but they can change the way the job is staged.',
+          'This is why a strata renovation should not be priced as if it were a freestanding house with easy driveway access. The access plan is part of the scope.',
+        ],
+      },
+      {
+        heading: 'Keep the paperwork together',
+        paragraphs: [
+          'Keep approvals, the written scope, choices, certificates and records of changes in one place. Clear records help everyone see what was agreed.',
+          'A free on-site measure is a good first step before we write a strata quote. If you are comparing a unit renovation with a house renovation, read our <a href="/blog/apartment-bathroom-renovation-vs-house/" class="et-link">apartment bathroom renovation vs house guide</a> next.',
+        ],
+      },
+      {
+        heading: 'What should not be assumed?',
+        paragraphs: [
+          'Do not assume the work can start just because the renovation is inside your apartment. Also do not assume every building has the same approval steps. Older blocks, newer buildings and tightly managed strata schemes can all handle wet-area work differently.',
+          'Bring the building rules to the first serious quote conversation. That gives the renovator a fair basis for scope, timing and access, and it gives you fewer surprises once the bathroom is open.',
+        ],
+      },
+      {
+        heading: 'How should neighbours and common areas be handled?',
+        paragraphs: [
+          'A strata bathroom renovation is not only about your apartment. <a href="/blog/bathroom-renovation-neighbours-noise/" class="et-link">Noise</a>, lift use, hallway protection and waste movement can affect neighbours and common property.',
+          'Ask how notices, access windows and protection are handled in your building. The smoother those details are, the less likely the job is to stall over something that was known before work started.',
+        ],
+      },
+      {
+        heading: 'What should you give the renovator?',
+        paragraphs: [
+          'Give the renovator the by-laws, approval conditions, contact details for the building manager and any forms the building wants completed. Those documents shape access and timing as much as the bathroom design does.',
+          'If the building changes a rule after the quote, ask for the timing and cost effect to be recorded before the plan changes. That is the safest way to keep a renovation moving without surprises.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-hidden-costs-sydney',
+    title: 'Sydney bathroom renovation: hidden costs to watch for',
+    metaTitle: 'Bathroom Renovation Hidden Costs',
+    description: 'Scope changes and site surprises can move a Sydney bathroom budget.',
+    published: '2026-09-10',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      { heading: 'Hidden usually means unspecified', paragraphs: ['Many surprise costs begin as an unclear assumption: what happens to demolition, waste, access, fittings, tile quantities, electrical work or the existing substrate?', 'Ask what the quote includes and what would be treated as a variation. Clarity at the start is more useful than trying to predict every possible condition.'] },
+      { heading: 'Existing conditions can change the work', paragraphs: ['A bathroom is opened up during renovation, and the condition behind old finishes may affect the work required. The quote should explain how an unexpected condition is documented and priced.', 'Do not approve a change you do not understand. Ask for the reason, the cost and the effect on timing in writing.'] },
+      { heading: 'What can show up after demolition?', paragraphs: ['Old bathrooms can hide rot, poor substrate, non-compliant plumbing or asbestos in pre-1990 homes. Some signs can be spotted before quoting, but the full condition is not always visible until finishes are removed.', 'That does not mean every hidden issue should become an open cheque. The quote should say how unexpected conditions are raised, who approves the variation and what happens before extra work proceeds.'] },
+      { heading: 'How should a variation be handled?', paragraphs: ['A <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">variation</a> should explain the problem, the recommended fix, the cost and the effect on timing. It should be approved before the extra work is done, except where an urgent safety step is genuinely needed.', 'Keep variation records with the quote and selections. A bathroom renovation has many moving parts, and written decisions stop a stressful week from becoming a memory test.'] },
+      { heading: 'Leave room for considered selections', paragraphs: ['Selections should match the room, the scope and the budget. Changing fittings or finishes late can affect ordering and the programme.', 'A measured room and <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">fixed-scope written quote</a> give you a stronger basis for deciding what to include before work begins.'] },
+      { heading: 'What questions reduce the risk?', paragraphs: ['Ask what is included in demolition, waste removal, waterproofing, tiling, plumbing, electrical work, fittings and final clean. Ask what is provisional and what would count as a variation.', 'Ask how hidden conditions are photographed, explained and priced. A clear answer before work starts is one of the best ways to avoid feeling trapped after demolition.'] },
+      { heading: 'The aim is control, not pretending nothing can change', paragraphs: ['No renovator can promise that every old bathroom is exactly as it looks from the outside. What they can promise is a clear scope, a proper measure, a written quote and a fair process for handling what the old room reveals.', 'That is the practical difference between a hidden issue and a nasty surprise. One has a process; the other has panic.'] },
+      { heading: 'What should be included before demolition?', paragraphs: ['Before demolition, the quote should already name the known work and the assumptions behind it. Access, rubbish removal, fixture allowances, waterproofing, tile quantities and electrical work should not be floating in conversation only.', 'The clearer those items are, the easier it is to tell whether a new cost is genuinely hidden or was simply left out of the first scope.'] },
+      { heading: 'How much contingency should you expect?', paragraphs: ['A contingency is not a licence for vague quoting. It is a way to stay calm if an old bathroom reveals something that could not be confirmed before strip-out.', 'Ask what kinds of findings would trigger a variation and how quickly you would be told. The process matters more than guessing a perfect number in advance, especially in older Sydney homes with prior patch repairs.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-essential-upgrades',
+    title: 'Bathroom renovation: essential upgrades vs nice-to-haves',
+    metaTitle: 'Essential Bathroom Upgrades',
+    description: 'Choose which bathroom upgrades matter most when you need to limit the spend.',
+    published: '2026-09-10',
+    readTime: '1 min read',
+    category: 'Planning and cost',
+    sections: [
+      { heading: 'Protect performance first', paragraphs: ['Start with the parts that determine whether the room works: a sound layout, proper preparation, <a href="/blog/bathroom-waterproofing-explained/" class="et-link">waterproofing</a>, drainage, ventilation and safe electrical planning.', 'Decorative upgrades are easier to reconsider later. Poor preparation is harder and more disruptive to correct after the finishes are installed.'] },
+      { heading: 'Then prioritise daily use', paragraphs: ['Give priority to the shower, toilet, vanity, storage and lighting choices you will use every day. Consider access, cleaning and the way the household actually moves through the room.', 'A smaller list of well-considered choices can be more useful than a long list of features that compete for space.'] },
+      { heading: 'Make the trade-offs visible', paragraphs: ['Ask your renovator to show how each change affects scope, price and timing. Keep approved changes in writing.', 'This turns a limited budget into a sequence of decisions rather than a last-minute compromise.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-warranty-guide',
+    title: 'What warranty should a bathroom renovation include?',
+    metaTitle: 'How long should a bathroom renovation warranty last in NSW?',
+    description: 'Check NSW warranty rules and ETR’s stated 10-year workmanship warranty before you sign.',
+    published: '2026-09-10',
+    readTime: '2 min read',
+    category: 'Choosing a renovator',
+    sections: [
+      { heading: 'The short version', paragraphs: ['1) In NSW, a bathroom renovation warranty should cover the statutory period for residential building work, and ETR also provides a 10-year workmanship warranty on the work it carries out. The statutory protection and the written workmanship warranty should both be read carefully, because the terms and exclusions matter as much as the headline number.', 'Read the terms. Ask what is covered. Keep the final papers. A clear warranty leaves less room for doubt. Clear terms help.'] },
+      { heading: 'Read the wording, not just the number', paragraphs: ['A warranty should say what it covers, how long it lasts, how to make a claim and what it leaves out. Ask for the terms before you accept the quote.', 'A headline warranty term does not tell you if it covers fittings, products or work by other trades.'] },
+      { heading: 'Separate workmanship from products', paragraphs: ['Workmanship and product warranties cover different things. Ask who handles a product fault and who handles a fault with the fitting work.', 'Keep invoices, product details, the final scope and handover papers together when the job is done.'] },
+      { heading: 'ETR warranty wording', paragraphs: ['Elite Touch Renovations offers a 10-year workmanship warranty. It should be read as written in the <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">agreement</a> and does not automatically extend to third-party fittings.', 'Ask questions before work begins so the protection you expect matches the written terms.'] },
+    ],
+  },
+  {
+    slug: 'fast-bathroom-renovation-what-to-expect',
+    title: 'Is a quick bathroom renovation possible? What to expect',
+    metaTitle: 'Fast Bathroom Renovation Guide',
+    description: 'Selections, approvals, deliveries and trade order shape a renovation timeline.',
+    published: '2026-09-10',
+    readTime: '1 min read',
+    category: 'Planning and process',
+    sections: [
+      { heading: 'Speed starts before demolition', paragraphs: ['The fastest jobs are not rushed. The room has been measured, the scope is agreed, your choices are ready and access is clear before site work starts.', 'Late choices and products that are out of stock can add more time than a good plan takes.'] },
+      { heading: 'Do not remove the necessary sequence', paragraphs: ['Floor protection, demolition, prep, plumbing and electrical work, waterproofing, tiling, fitting work and final clean each have a place in the plan.', 'Cutting prep or curing time adds risk. Ask how the plan leaves enough time for each stage.'] },
+      { heading: 'Ask for a realistic programme', paragraphs: ['A useful <a href="/blog/bathroom-renovation-project-management-timeline/" class="et-link">work plan</a> shows what must happen first, when you need to make choices and how changes affect timing. It should fit the room rather than promise the same number of days for every job.', 'A clear written scope is the best way to start a fair talk about timing.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-trends-australia-right-now',
+    title: 'Bathroom trends in Australia right now',
+    metaTitle: 'Australian Bathroom Trends',
+    description: 'See bathroom styles gaining attention in Australia, with a check on daily use.',
+    published: '2026-09-12',
+    readTime: '2 min read',
+    category: 'Design and finishes',
+    sections: [
+      { heading: 'The trend is clean and practical', paragraphs: ['Many Australian bathrooms are moving toward calmer palettes, cleaner lines and <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">finishes</a> that are easy to maintain. The emphasis is usually on light, openness and strong everyday function.', 'That can mean durable tiles, quieter tones and material choices that still work with a busy home.'] },
+      { heading: 'The best design still fits the room', paragraphs: ['A trend is only useful if it suits the actual bathroom. A very dark finish can feel heavy in a narrow room, while a high-contrast scheme may feel busy if storage and lighting are not planned well.', 'The most successful updates usually balance appearance, access and ease of cleaning.'] },
+      { heading: 'Make choices based on the room', paragraphs: ['Think about layout, bathroom size, natural light and how the room is used most days. Then choose the trend that supports that decision rather than forcing the room to fit a style idea.', 'A straightforward, well-proportioned bathroom usually feels current longer than a room shaped by one single statement item.'] },
+    ],
+  },
+  {
+    slug: 'small-bathroom-storage-solutions',
+    title: 'Storage solutions for small bathrooms',
+    metaTitle: 'Small Bathroom Storage Ideas',
+    description: 'Plan vanity drawers, wall shelves and shower niches to keep a small bathroom clear.',
+    published: '2026-09-12',
+    readTime: '1 min read',
+    category: 'Small bathrooms',
+    sections: [
+      { heading: 'Storage has to do real work', paragraphs: ['In a small bathroom, <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage needs to solve a daily problem</a>. Tall mirrored storage, a well-placed vanity and thoughtful shelving can make the room feel better organised without making it crowded.', 'The aim is to keep the essentials close without creating visual clutter.'] },
+      { heading: 'Plan storage before finishes', paragraphs: ['A good storage plan begins with the room and the routines inside it. Ask where towels, products, hair tools and cleaning items will live and choose a setup that supports those habits.', 'When storage is planned early, finishes and fittings are easier to choose in a way that supports the room rather than fight it.'] },
+      { heading: 'Keep the layout clear', paragraphs: ['Storage should not block the shower, vanity or movement through the room. A cleaner, better-used layout often matters more than extra accessories.', 'A compact room feels bigger when it is simpler and easier to use.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-lighting-ideas',
+    title: 'Bathroom lighting ideas that improve function and mood',
+    metaTitle: 'Bathroom Lighting Ideas',
+    description: 'Place task, ambient and accent lights for shaving, cleaning and evening use.',
+    published: '2026-09-12',
+    updated: '2026-09-27',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    heroProject: { slug: 'castle-hill-bathroom', imageIndex: 0 },
+    quickAnswer: {
+      heading: 'The short answer',
+      paragraphs: [
+        'Good bathroom lighting uses three layers, not one big fixture: task light for the mirror, ambient light for the whole room, and a softer accent layer for evenings.',
+        'Get those three layers right and the fixture count matters far less than where each light sits.',
+      ],
+      table: {
+        caption: 'The three lighting layers',
+        columns: ['Layer', 'What it does'],
+        rows: [
+          { label: 'Task', detail: 'Beside or above the mirror', value: 'Even, shadow-free light for shaving, make-up and grooming' },
+          { label: 'Ambient', detail: 'Ceiling-mounted', value: 'General light so the room does not feel dim or flat' },
+          { label: 'Accent', detail: 'Niches, shaving cabinets, toe-kicks', value: 'A softer mood layer for evening use' },
+        ],
+      },
+      note: 'Fixture positions and safety ratings still need to be confirmed against your room and wiring before anything is installed.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      { heading: 'Start with the task', paragraphs: ['Good bathroom lighting solves everyday tasks first: shaving, grooming, applying makeup and cleaning. A room can feel nicer with layered lighting, but it still needs to be usable first.', 'A single downlight above the door usually throws shadow across the face at the mirror. Light placed either side of the mirror, or built into a mirror itself, lights the face evenly instead.'] },
+      { heading: 'Layer the light instead of relying on one fixture', paragraphs: ['Lighting works best in layers. A ceiling layer for general brightness, a task layer at the <a href="/blog/bathroom-mirror-guide-renovation/" class="et-link">mirror</a>, and a softer accent layer in a niche or shaving cabinet can work together without making the room feel busy or over-lit.', 'The right mix depends on the room size, mirror position and the finishes in the space. A small bathroom with light tiles needs less ambient light than a larger, darker-toned room.'] },
+      { heading: 'Get the colour temperature right', paragraphs: ['Warm-to-neutral white light, roughly in the 2700K–3000K range, generally reads as calmer and more flattering to skin tones than a cooler, bluer white. A colder white can feel clinical in a small room.', 'Keep every fixture in the room on the same colour temperature. Mixing warm and cool white light in one bathroom is one of the most common reasons a finished room looks slightly wrong even when every fixture is good quality on its own.'] },
+      { heading: 'Match fixtures to wet areas', paragraphs: ['Fittings near a shower or bath need a higher ingress-protection (IP) rating than fittings elsewhere in the room, because they need to tolerate moisture and spray. Australian wiring rules set out which zones near water need which rating.', 'This is a licensed electrician’s call, not a style choice. Confirm the required rating for each fitting’s position before you fall in love with a look that will not survive its own bathroom.'] },
+      { heading: 'Plan lighting early, not last', paragraphs: ['Lighting positions get locked in once the electrical rough-in is done and the tiles are set. Deciding fixture types and positions during the early planning stage, alongside the waterproofing and tiling plan, avoids a mirror light that ends up in the wrong spot or a switch plate placed somewhere awkward.', 'Good lighting is not about adding more fixtures. It is about using the right light, at the right colour temperature and the right safety rating, in the right place.'] },
+    ],
+    faq: [
+      {
+        question: 'What is the best type of lighting for a small bathroom?',
+        answer: 'Layer it rather than relying on one ceiling fixture: a task light at the mirror, a general ambient light, and an optional soft accent light. A small room usually needs less total brightness than a large one, so avoid over-lighting it just because a bigger room next door has more fixtures.',
+      },
+      {
+        question: 'What colour temperature should bathroom lights be?',
+        answer: 'Most bathrooms suit a warm-to-neutral white in the 2700K–3000K range, which flatters skin tones and feels calmer than a cooler white. Keep every fixture in the room at the same colour temperature so nothing looks mismatched.',
+      },
+      {
+        question: 'Can I choose my own bathroom light fittings?',
+        answer: 'Yes for the style and finish. The placement and the safety rating near water still need to be confirmed against Australian wiring rules by a licensed electrician before installation.',
+      },
+      {
+        question: 'Do LED mirrors count as a light source?',
+        answer: 'Yes. A built-in LED mirror can supply the task-lighting layer on its own, which is useful in a smaller bathroom where there is no room for separate wall lights either side of the mirror.',
+      },
+      {
+        question: 'When should bathroom lighting be decided during a renovation?',
+        answer: 'Early, alongside the waterproofing and tiling plan. Fixture positions and wiring are locked in once the electrical rough-in and tiling are done, so deciding later usually means compromising on where the light actually falls.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-tiling-and-finishes-guide',
+    title: 'Choosing bathroom tiles and finishes',
+    metaTitle: 'Bathroom Tiles and Finishes',
+    description: 'Compare tile, surface and fitting choices by room use, care and cost.',
+    published: '2026-09-12',
+    updated: '2026-11-02',
+    readTime: '2 min read',
+    category: 'Design and finishes',
+    sections: [
+      { heading: 'Choose for the room first', paragraphs: ['Tile and finish choices have a big effect on the look and feel of a bathroom. A <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tile</a> can make a room feel calmer, while smaller tiles can add texture and detail in the right setting.', 'The best finish is the one that suits the room size, how much traffic it gets and how you want to live in it.'] },
+      { heading: 'Balance style with upkeep', paragraphs: ['A finish should be easy to clean and durable enough for daily use. <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">Grout</a>, texture and matte finishes all affect how a room feels and how much upkeep it needs.', 'The right selection makes a room easier to maintain and usually feels more considered over time. Two common choices are covered side by side: <a href="/blog/porcelain-vs-ceramic-tiles-bathroom/" class="et-link">porcelain vs ceramic</a> and <a href="/blog/matt-vs-gloss-bathroom-tiles/" class="et-link">matt vs gloss</a>.'] },
+      { heading: 'Keep the decision in context', paragraphs: ['The best bathroom tile and finish plan is the one that fits the whole room: layout, fixtures, lighting and storage. Good choices support each other, rather than compete with one another.', 'A clear selection plan is easier to quote, order and install without costly change.'] },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-add-value-home',
+    title: 'Does a bathroom renovation add value to your home?',
+    metaTitle: 'Bathroom Renovation Home Value',
+    description: 'Resale value depends on the home, the scope and what buyers notice.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      { heading: 'The short answer', paragraphs: ['A well-planned bathroom renovation typically returns 60 to 80 percent of its cost at resale. The exact figure depends on the suburb, the property price, and how dated the existing bathroom was before the work.', 'That makes bathroom renovations one of the higher-return improvements you can make to a home in Sydney, alongside kitchens and street appeal. But returns are not guaranteed, and spending more does not automatically mean getting more back.'] },
+      { heading: 'Why bathrooms influence buyers', paragraphs: ['Bathrooms show how well a home has been kept. A buyer who sees a worn bathroom starts to price the work. That guess can run higher than the real cost because buyers also weigh the upheaval.', 'A clean bathroom with good light, working ventilation and sound fittings eases that concern. It does not need to be lavish. It needs to feel cared for and ready to use.'] },
+      { heading: 'Refresh vs full renovation', paragraphs: ['A cosmetic refresh - new tapware, a painted vanity, fresh silicone, better lighting - can cost under $5,000 and still shift the impression of a room on sale day. It will not fix layout problems, poor waterproofing or failing plumbing, but it can remove the "dated" label.', 'A full renovation addresses the structure, waterproofing, layout, fixtures and finishes together. ETR package starting points begin at Basic from $18,000 for a roughly 1.5 m × 1.8 m bathroom, Standard from $25,000, and Premium from $30,000, each tied to a stated room size and inclusion list. These are starting prices, not fixed quotes - the final scope follows a free on-site measure. Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> walks through how to set and hold a realistic number.'] },
+      { heading: 'What actually adds value', paragraphs: ['Focus on what buyers use each day: a shower with good water pressure, enough storage, clean tiles, good airflow and a layout that suits the room.', 'You cannot see AS 3740 waterproofing once the tiles go on. The certificate can give a buyer more peace of mind than a bold tile wall.'] },
+      { heading: 'How to avoid overcapitalising', paragraphs: ['A common guideline is to keep a bathroom renovation under 5 to 10 percent of the property value. A $60,000 bathroom in a $700,000 home is unlikely to return its cost, because buyers in that price bracket are not expecting that level of finish.', 'Match the bathroom to the home and the suburb. A solid mid-range renovation with good waterproofing, clean finishes and a sensible layout usually returns more of its cost than a high-end build in a modest property. We cover this in more detail in our guide to <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">what agents actually look for</a> at resale.'] },
+      { heading: 'What should you ask before renovating for resale?', paragraphs: ['Ask whether the bathroom is the weakest room in the home. If the kitchen, exterior or structural issues are worse, fixing the bathroom may not shift the sale price as much as you hope.', 'Ask what level of finish comparable homes in the street already have. A renovation that brings the bathroom up to the local standard is usually the safest return. Going well beyond it is a personal choice, not a financial one.'] },
+      { heading: 'What does a good renovation include for resale?', paragraphs: ['A clear layout, sound fittings, waterproofing done to standard, good light and airflow, and plain finishes that suit many buyers. That mix keeps the room useful for years.', 'A fixed-scope written quote that lists the work helps you plan the spend. Start with a free on-site measure if you are weighing up the cost for your home.'] },
+    ],
+    faq: [
+      {
+        question: 'How much value does a bathroom renovation add in Sydney?',
+        answer: 'A well-executed renovation typically returns 60 to 80 percent of its cost at resale. The exact return depends on the suburb, the property price point and how dated the existing bathroom was.',
+      },
+      {
+        question: 'Is it worth renovating the bathroom before selling?',
+        answer: 'Usually yes, if the bathroom is the weakest room in the home. A dated bathroom makes buyers estimate a higher renovation cost than the actual price, which can reduce their offer by more than the renovation would have cost.',
+      },
+      {
+        question: 'What bathroom features add the most value?',
+        answer: 'Clean layout, proper waterproofing, good ventilation, modern fittings and enough storage. These practical features matter more at resale than decorative upgrades.',
+      },
+      {
+        question: 'How much should I spend on a bathroom renovation for resale?',
+        answer: 'A common guideline is 5 to 10 percent of the property value. Spending beyond that risks overcapitalising, where the renovation costs more than it adds to the sale price.',
+      },
+      {
+        question: 'Does a new bathroom increase home value more than a new kitchen?',
+        answer: 'Both are high-return improvements. Kitchens typically cost more to renovate, so the percentage return can be similar. If the bathroom is in worse condition, it may offer the better return for the money.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-colour-schemes-australia',
+    title: 'Bathroom colour schemes that actually work in Australian homes',
+    metaTitle: 'Bathroom Colour Schemes Australia',
+    description: 'Use Australian light, tile size and daily routines to choose bathroom colours.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      { heading: 'Start with the room, not the trend', paragraphs: ['A colour scheme should suit the bathroom it goes into. The room size, natural light, ceiling height, tile format and how the space is used every day matter more than what is trending on a design blog.', 'A north-facing room in Sydney gets warm afternoon light, so cool-toned tiles may read differently from how they looked in the showroom. A small, windowless ensuite needs a scheme that keeps the room feeling open rather than heavy.'] },
+      { heading: 'Warm neutrals are the clearest shift right now', paragraphs: ['The biggest change in Australian bathrooms is the move from cool greys and stark whites toward warmer neutrals: greige, mushroom, taupe, sandy beige and parchment tones. These colours feel calmer, suit more light conditions and age well.', 'Warm neutrals pair easily with timber vanities, brushed brass or champagne fittings and natural stone. They also work across bathroom types, from a compact powder room to a larger family bathroom.'] },
+      { heading: 'Six colour combinations worth considering', paragraphs: ['White and charcoal is a clean, high-contrast pairing that suits most room sizes and does not date quickly. Sage green and white brings warmth without colour risk and works well in homes near bushland or established gardens.', 'Terracotta and beige creates a grounded, earthy feel and pairs with timber and natural stone. Olive and timber accents suit a natural palette and add character without making the room feel busy.', 'Navy and white reads as classic and structured, useful when the vanity or joinery carries the colour. All white with stone keeps the room light and lets the stone do the work, which suits smaller bathrooms where visual simplicity helps.'] },
+      { heading: 'How to use the 60-30-10 rule in a bathroom', paragraphs: ['A useful starting point is to divide the room into three layers: 60 percent of the colour comes from the dominant surface, usually the wall and floor tiles. 30 percent comes from a secondary tone, often the vanity, cabinetry or a feature wall. 10 percent comes from the accents, like tapware, accessories and towels.', 'This structure keeps the room balanced. If 60 percent is a warm white tile, the 30 could be an olive vanity and the 10 could be brushed brass fittings. The proportions do the work without needing complicated rules.'] },
+      { heading: 'Choose tile colour before paint colour', paragraphs: ['Tiles are the biggest surface in a bathroom and the hardest to change later. Choose the tile colour and format first, then match the paint, grout, fittings and accessories to it.', 'A common mistake is choosing a wall paint and then trying to find a tile that matches. Paint is easy to change. Tile is not. Start with the permanent surface and build outward.'] },
+      { heading: 'Small bathrooms need lighter, simpler schemes', paragraphs: ['A compact bathroom usually works better with fewer colours and lighter tones. Light tiles on walls and floor make the room feel larger, and large-format tiles reduce grout lines, which keeps the visual noise down.', 'That does not mean the room has to be plain. A single well-chosen feature, like a textured tile behind the vanity or a coloured shaving cabinet, can carry the design without crowding a small space. Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers tile format and material choices in more detail.'] },
+      { heading: 'What lasts vs what dates', paragraphs: ['Bold colours in small doses can add character, but a bathroom covered in a trend colour will feel dated faster than one with a neutral base and considered accents. Fittings, towels and accessories are easier to swap than floor tiles.', 'If the bathroom is being renovated for long-term use, a neutral base with colour in the accessories and soft furnishings gives you more room to change the feel later without touching the hard finishes.'] },
+      { heading: 'How does ETR handle colour decisions?', paragraphs: ['The colour scheme is part of the selections process during planning, before site work starts. The on-site measure helps confirm what the room can carry, and the written scope ties the selection to the quote.', 'Farah Dawood, ETR\'s architectural designer, works with homeowners on the design direction so that the scheme, layout and fittings work together rather than compete. A free on-site measure is the right starting point.'] },
+    ],
+    faq: [
+      {
+        question: 'What is the most popular bathroom colour in Australia right now?',
+        answer: 'Warm neutrals like greige, mushroom and taupe are the clearest trend. They have replaced the cool greys and stark whites that dominated for the past decade, and they suit a wider range of Australian light conditions.',
+      },
+      {
+        question: 'What colours make a small bathroom look bigger?',
+        answer: 'Light tones on walls and floor, large-format tiles to reduce grout lines, and a consistent colour scheme with minimal contrast. A lighter, simpler palette creates a sense of space without needing a bigger room.',
+      },
+      {
+        question: 'Should I choose bathroom tiles or paint first?',
+        answer: 'Tiles first. They are the biggest surface in the room and the hardest to change. Choose the tile colour and format, then match the paint, grout and fittings to it.',
+      },
+      {
+        question: 'What bathroom colours date the fastest?',
+        answer: 'Heavily saturated trend colours used on permanent surfaces like tiles tend to date fastest. A neutral tile base with colour in accessories and soft furnishings gives you more flexibility to update the look later.',
+      },
+      {
+        question: 'How do I choose a bathroom colour scheme for resale?',
+        answer: 'Neutral, warm-toned schemes with clean finishes appeal to the broadest range of buyers. Avoid very personal or polarising colours on the tiles and keep bold choices in items that are easy to swap.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-ventilation-sydney-renovation',
+    title: 'Bathroom ventilation: what every Sydney renovation needs to get right',
+    metaTitle: 'Bathroom Ventilation Requirements Sydney',
+    description: 'Learn fan rules, sizing and the damp that poor bathroom ventilation can leave.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why ventilation matters more than most finishes',
+        paragraphs: [
+          'A shower fills the bathroom with damp air. If that air cannot leave, it settles on walls, gets into wall spaces and can lead to mould, wood rot and peeling paint. Most of the harm stays out of sight.',
+          'The building code calls for good ventilation. It is easier and cheaper to get it right during the job than to fix damp damage later.',
+        ],
+      },
+      {
+        heading: 'What the building code actually requires',
+        paragraphs: [
+          'Under the National Construction Code (NCC), a bathroom must have either natural ventilation through an openable window or mechanical ventilation through an exhaust fan. If the room has no window, or the window does not open to at least five percent of the floor area, a mechanical exhaust system is mandatory.',
+          'The minimum exhaust rate for a bathroom is 25 litres per second. For a bathroom with a shower, 40 to 50 litres per second is a more realistic target if you want the fan to actually clear the steam before it settles.',
+          'The exhaust must discharge directly to outside air - through a wall, soffit or roof cowl. Venting into the roof cavity is not compliant and simply moves the moisture problem into the roof structure, where it can rot timber and damage insulation.',
+        ],
+      },
+      {
+        heading: 'Natural ventilation vs mechanical ventilation',
+        paragraphs: [
+          'A window can meet the code on its own if it opens wide enough. But most people shut bathroom windows in winter, at night or for privacy. A window alone may not clear the damp air each time.',
+          'An exhaust fan runs when needed and clears damp air in any weather. In most Sydney renovations, a fan goes in even when there is a window, to give the room a steady path for damp air to leave.',
+        ],
+      },
+      {
+        heading: 'Types of exhaust fans',
+        paragraphs: [
+          'Ceiling-mounted exhaust fans are the most common in bathroom renovations. They pull air up through the ceiling and duct it outside. Wall-mounted fans are used when ducting through the ceiling is not practical, typically in apartments or single-storey homes with limited roof space.',
+          'Combination units with a fan, heat lamp and LED light are popular in Sydney bathrooms because they handle ventilation, warmth and lighting from one ceiling point. They suit compact rooms where ceiling space is limited.',
+          'Inline fans sit in the duct run rather than in the ceiling and are quieter at the grille. They suit ensuites next to a bedroom where fan noise matters.',
+        ],
+      },
+      {
+        heading: 'How to size the fan for the room',
+        paragraphs: [
+          'A fan is rated in litres per second (L/s). The minimum code requirement is 25 L/s, but a fan that only just meets the minimum may not clear steam fast enough in a room with a large shower or poor airflow.',
+          'A practical rule: for a standard bathroom up to about eight square metres, a fan rated at 40 to 50 L/s handles the moisture load well. Larger rooms, rooms with a freestanding bath and a shower, or rooms with no window benefit from a higher-capacity fan or a second extraction point.',
+          'The duct run matters too. Every bend in the duct reduces airflow. A short, straight run to the outside delivers more extraction than a long, winding path through the roof - even with the same fan.',
+        ],
+      },
+      {
+        heading: 'Ducting mistakes that cause problems',
+        paragraphs: [
+          'The most common mistake is venting the exhaust into the roof cavity instead of outside. This is not compliant with the NCC and causes real damage: moisture accumulates in the roof space, condensation forms on the underside of the roof sheeting, and the timber framing absorbs water over months and years.',
+          'Flexible duct that sags or has unnecessary bends restricts airflow and collects condensation inside the duct. Rigid or semi-rigid duct, properly supported with a slight fall toward the outside, performs better and lasts longer.',
+          'A fan connected to duct that is too small for its capacity will be noisy and underperform. The fan manufacturer specifies the duct diameter - match it.',
+        ],
+      },
+      {
+        heading: 'When should the fan run?',
+        paragraphs: [
+          'The fan should run during every shower and for at least 15 to 20 minutes after the shower stops. A timer switch or a humidity-sensing switch handles this automatically so the fan runs long enough to clear the moisture without relying on someone remembering to leave it on.',
+          'A fan wired directly to the light switch turns off the moment the light goes off, which is usually too soon. A run-on timer is a small addition during the electrical rough-in and makes a measurable difference to how well the room dries. The electrical rough-in happens right after <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition</a> - the right time to plan the fan wiring.',
+        ],
+      },
+      {
+        heading: 'What ETR does about ventilation',
+        paragraphs: [
+          'Ventilation is scoped at the on-site measure, before the quote is written. We confirm whether the room has natural ventilation, what exhaust capacity the room needs, and where the duct run will go. The electrical rough-in includes the fan wiring and any timer or humidity switch.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate, and the ventilation is part of the same moisture-management approach - keeping water out of the structure and moving damp air out of the room.',
+          'A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is an exhaust fan required by law in a bathroom in Sydney?',
+        answer: 'If the bathroom has no openable window, or the window does not meet the minimum size requirement under the NCC, a mechanical exhaust fan is mandatory. In practice, most renovations include a fan regardless because it provides more reliable moisture removal than a window alone.',
+      },
+      {
+        question: 'Can I vent the exhaust fan into the roof cavity?',
+        answer: 'No. The NCC requires exhaust air to discharge directly to outside. Venting into the roof cavity moves the moisture problem into the roof structure, where it causes condensation, timber rot and insulation damage over time.',
+      },
+      {
+        question: 'How long should a bathroom exhaust fan run after a shower?',
+        answer: 'At least 15 to 20 minutes after the shower stops, to clear the remaining moisture. A run-on timer or humidity-sensing switch handles this automatically and is a small addition during the electrical rough-in.',
+      },
+      {
+        question: 'What size exhaust fan do I need for my bathroom?',
+        answer: 'The NCC minimum is 25 litres per second, but 40 to 50 L/s is more practical for a standard bathroom with a shower. Larger rooms or rooms with no window benefit from a higher-capacity fan. The duct run length and number of bends also affect how much air the fan actually moves.',
+      },
+      {
+        question: 'Does a bathroom with a window still need an exhaust fan?',
+        answer: 'Legally, a window that meets the minimum opening size can satisfy the ventilation requirement on its own. Practically, most people do not leave the window open in cold or wet weather, so an exhaust fan gives the room a more consistent moisture-removal path.',
+      },
+    ],
+  },
+  {
+    slug: 'heritage-bathroom-renovation-sydney',
+    title: 'Renovating a bathroom in a heritage or older Sydney home',
+    metaTitle: 'Heritage Bathroom Renovation Sydney',
+    description: 'Plan for approvals, old pipes and hidden structure in a Sydney heritage bathroom.',
+    published: '2026-10-02',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    heroProject: { slug: 'the-rocks-bathroom' },
+    sections: [
+      {
+        heading: 'What makes a heritage bathroom renovation different',
+        paragraphs: [
+          'An older home brings conditions a newer house does not. The wall framing may be hardwood. The drainage may be clay or cast iron. The floor may sit on timber rather than a slab. Lead pipe, old water lines or asbestos may turn up once the room is opened.',
+          'If the home is heritage-listed or in a heritage area, there are extra approval steps. The good news: most internal bathroom work does not need heritage consent. The real work is in the structure and the services, not the forms.',
+        ],
+      },
+      {
+        heading: 'Heritage listing vs heritage conservation area',
+        paragraphs: [
+          'A heritage-listed home is on the NSW Heritage Register or a council list for its own value. A heritage area (HCA) protects the look of a whole street or block. The rules mainly cover changes you can see from outside.',
+          'For bathroom work, the split matters. A like-for-like internal fit-out - same footprint, same wet area, no walls moved - usually needs no heritage consent under either type. Changes to the outside of the building, to load-bearing walls or to heritage features inside may need a statement and council sign-off.',
+          'We check this at the on-site measure so the position is clear before the quote is written.',
+        ],
+      },
+      {
+        heading: 'What you usually find behind the walls',
+        paragraphs: [
+          'Older Sydney homes share a pattern. The bathroom was often added or last done up decades ago. The pipes, drains and linings behind the walls are from that era.',
+          'Clay drains crack and sag. Old water pipes corrode and choke flow. Lead lines still turn up in some pre-1950s homes. Fibro sheeting, vinyl tiles and pipe lagging with asbestos are common in homes built before the mid-1980s.',
+          'None of this is unusual. A builder who works on older homes expects it. The key is that the quote allows for what is likely at strip-out, rather than treating it as a surprise. Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers what the strip-out process looks like step by step.',
+        ],
+      },
+      {
+        heading: 'Structural and waterproofing considerations',
+        paragraphs: [
+          'A bathroom on a timber floor needs more prep before it can be sealed. The membrane cannot bridge movement in the subfloor. The base may need to be stiffened or re-sheeted first. This is normal on older homes but adds a step a slab bathroom does not need.',
+          'Wall framing in older homes is often uneven. Stud spacing, plumb and level can vary. The framing may need packing or new lining before tiles go on. This is prep work, not a defect - it is how these houses were built.',
+          'Every bathroom we renovate is waterproofed to AS 3740 and issued a compliance certificate, regardless of the age of the home.',
+        ],
+      },
+      {
+        heading: 'Designing a bathroom that suits the house',
+        paragraphs: [
+          'A heritage home does not need a heritage-themed bathroom. What it needs is a bathroom that does not fight the character of the house. The proportions, ceiling height, natural light and architectural language of the home should influence the design - not dictate it.',
+          'A freestanding bath, a frameless shower and modern fittings can work well in a terrace if the scale and palette suit the house. Our Rocks project shows this: large wall tiles, patterned floor tiles, matte black fittings and a freestanding bath sit around the original leadlight window.',
+          'Period-style fixtures are one approach, but not the only one. A clean, modern bathroom that suits the room often ages better than a mix of heritage copies.',
+        ],
+      },
+      {
+        heading: 'Common design choices in older-home bathrooms',
+        paragraphs: [
+          'Subway tiles and hexagonal mosaics reference historical tile formats without committing to a full period reproduction. They work as well in a 1920s bungalow as in a contemporary apartment.',
+          'Freestanding baths suit rooms with higher ceilings and enough floor area. In a compact bathroom, a built-in bath or a walk-in shower makes better use of the space.',
+          'Timber vanities or vanities with a timber shelf bring warmth to a tiled room and suit the material palette of most older Sydney homes. Brushed brass and champagne gold fittings complement warm-toned timber and stone without looking out of place in a period home.',
+        ],
+      },
+      {
+        heading: 'Cost considerations for older homes',
+        paragraphs: [
+          'A bathroom in an older home can cost more than the same scope in a newer house. The gap is almost always in the prep, not the finishes. Replacing old pipes, fixing a timber floor, removing asbestos and getting the base ready for tiles all add labour and time.',
+          'The best way to manage this is to allow for it from the start. A quote that assumes the best case behind the walls is a quote that will change at strip-out. We walk through what is likely at the on-site measure and price to match.',
+          'ETR\'s packages start from $18,000 for a Basic renovation in a small bathroom. Older homes more commonly fall into the Standard (from $25,000) or Premium (from $30,000) range because of the preparation work involved.',
+        ],
+      },
+      {
+        heading: 'How ETR handles older and heritage homes',
+        paragraphs: [
+          'The on-site measure covers the approval position, what is likely behind the walls, and the design direction. The written quote names every item in the scope and how surprise finds at strip-out are handled - before work starts, not after.',
+          'Adam Dawood has over 25 years in tiling and project management. The team works on older Sydney homes regularly. The Rocks heritage bathroom, the Hunters Hill marble bathroom and the Artarmon bathroom-and-ensuite are all finished projects in older homes.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, and covered by a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need council approval to renovate a bathroom in a heritage-listed home?',
+        answer: 'A like-for-like internal fit-out - same footprint, no walls moved, no changes to the outside - usually does not need heritage consent. Changes to the exterior or to heritage features inside may need approval. We check this at the on-site measure.',
+      },
+      {
+        question: 'Does a heritage bathroom renovation cost more than a standard one?',
+        answer: 'It can. The gap is usually in the prep - replacing old pipes, fixing timber floors, removing asbestos and getting the base ready for tiles. The finishes cost the same. Allowing for this in the quote from the start avoids surprise extras.',
+      },
+      {
+        question: 'Can I put a modern bathroom in a Federation or Victorian home?',
+        answer: 'Yes. A clean, modern bathroom that respects the room proportions and material palette of the house can work very well. A contemporary design does not have to fight the character of the home - our Rocks project combines large-format tiles, matte black fittings and a freestanding bath around an original heritage window.',
+      },
+      {
+        question: 'What happens if asbestos is found during strip-out?',
+        answer: 'Asbestos-containing materials are common in homes built or renovated before the mid-1980s. Licensed removal is required and is a regulated process. The written quote sets out how unexpected finds like asbestos are handled before work starts.',
+      },
+      {
+        question: 'Do you work on bathrooms in heritage conservation areas on the North Shore and Inner West?',
+        answer: 'Yes. We renovate bathrooms in heritage and Federation-era homes across Sydney, including the large heritage conservation areas in the Ku-ring-gai suburbs and the Inner West. Every bathroom is waterproofed to AS 3740 with a certificate, and the written quote accounts for the conditions typical of older housing stock.',
+      },
+    ],
+  },
+  {
+    slug: 'walk-in-shower-vs-bathtub-renovation',
+    title: 'Walk-in shower vs bathtub: how to choose during a bathroom renovation',
+    metaTitle: 'Walk-In Shower vs Bathtub Renovation',
+    description: 'Compare space, access and household needs before choosing a shower or bath.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Compare your options',
+    sections: [
+      {
+        heading: 'Why this decision matters more than most fixture choices',
+        paragraphs: [
+          'The shower-or-bath question is one of the first layout decisions in a bathroom renovation and one of the hardest to change later. It sets the floor plan, the plumbing positions, the waterproofing footprint and the way the room feels to use every day.',
+          'There is no universally right answer. The choice depends on who uses the room, how much space you have, whether you plan to sell, and what you actually do in the bathroom on a weekday morning.',
+        ],
+      },
+      {
+        heading: 'When a walk-in shower makes the most sense',
+        paragraphs: [
+          'A walk-in shower suits bathrooms where space is tight, access needs to be easy, or the household simply does not use a bath. In a compact room - say 1.5 by 2.4 metres - removing the bath and fitting a full-width shower opens the floor plan and gives more room to move.',
+          'Walk-in showers are also the stronger choice for accessibility. A curbless entry, a built-in seat and grab bars make the room safer for older adults and anyone with limited mobility. If you are planning to stay in the home long term, this is worth considering now rather than retrofitting later - our <a href="/blog/accessible-bathroom-renovation-sydney/" class="et-link">accessible bathroom guide</a> covers the full range of features.',
+          'From a cleaning standpoint, a frameless glass shower with wall-to-wall tiling is simpler to maintain than a bath surround with grout joints, silicone seals and hard-to-reach corners.',
+        ],
+      },
+      {
+        heading: 'When a bathtub still adds value',
+        paragraphs: [
+          'If there are young children in the home, a bath is practical - bathing a toddler in a shower is awkward at best. Families with children under five or six generally benefit from keeping at least one bath in the house.',
+          'A freestanding bath in a larger bathroom can also serve as a design centrepiece. In rooms with higher ceilings and enough floor area, the bath anchors the space and adds a sense of proportion that a shower alone does not.',
+          'For resale, the general guidance is to keep at least one bathtub in a family home. Buyers with children expect it, and removing every bath from a three- or four-bedroom house can narrow the buyer pool. If the home has two bathrooms, converting one to a walk-in shower while keeping the bath in the other is a common and practical split.',
+        ],
+      },
+      {
+        heading: 'Space and layout considerations',
+        paragraphs: [
+          'A standard bath takes up roughly 1,700 by 750 millimetres of floor space. A walk-in shower can work in a smaller footprint - as little as 900 by 900 millimetres, though 1,000 by 1,200 or wider is more comfortable.',
+          'In a bathroom under four square metres, the bath often dominates the room and leaves little space for the vanity and toilet. Replacing it with a shower and reclaiming that floor area can make the whole room feel larger and more functional - see our guide to <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathroom renovations</a> for more layout ideas.',
+          'Layout also affects plumbing. Moving the waste position from a bath to a shower (or vice versa) is straightforward in a full renovation where the floor is being stripped and re-waterproofed, but it adds cost if you are trying to do it as a standalone job.',
+        ],
+      },
+      {
+        heading: 'What about a shower-over-bath?',
+        paragraphs: [
+          'A shower-over-bath is the compromise most Australians grew up with. It gives you both options in one footprint, which matters when the bathroom is too small for separate fixtures.',
+          'The trade-off is that neither function works as well as a dedicated version. The shower screen is usually a single panel rather than a full enclosure, water hits the bath surround at an angle, and stepping over the bath edge is less accessible than a curbless shower entry.',
+          'If the room genuinely cannot fit both a separate shower and a bath, a shower-over-bath is a reasonable solution. If it can, dedicated fixtures will feel better to use and look cleaner.',
+        ],
+      },
+      {
+        heading: 'Cost difference between a shower and a bath',
+        paragraphs: [
+          'In a full renovation where the room is stripped back anyway, the cost difference between installing a walk-in shower and installing a bath is mostly in the fixtures and the tiling area, not in the labour or waterproofing - both need a compliant membrane either way.',
+          'A freestanding bath adds the cost of the bath itself (typically $800 to $3,000 depending on material and brand) plus the floor waste and mixer. A walk-in shower adds the cost of the shower screen (a frameless panel runs $600 to $1,500 installed), the showerhead and mixer, and any niche or seat tiling.',
+          'The layout decision should be made before the quote, because it affects the floor plan, the tile quantities and the plumbing positions. ETR\'s packages start from $18,000 for a Basic renovation in a small bathroom, and the fixture choice is part of the selections process.',
+        ],
+      },
+      {
+        heading: 'How to decide',
+        paragraphs: [
+          'Ask four questions. Does anyone in the household need or regularly use a bath? Is this the only bathroom in the home? Are you planning to sell within a few years? Is the room large enough to fit both comfortably?',
+          'If nobody uses the bath and the home has more than one bathroom, a walk-in shower is usually the better use of the space. If young children are in the picture or resale is the priority in a single-bathroom home, keep the bath.',
+          'The on-site measure is the right time to work through this. The room dimensions, the plumbing positions and the household\'s actual use all feed into the decision, and the written scope locks it in before work starts.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Does removing a bathtub hurt resale value?',
+        answer: 'It can, if the home has no other bath. Families with young children generally expect at least one bathtub. If the home has two or more bathrooms, converting one to a walk-in shower while keeping the bath elsewhere is a common approach that suits both accessibility and resale.',
+      },
+      {
+        question: 'Is a walk-in shower cheaper than a bathtub in a renovation?',
+        answer: 'In a full renovation, the cost difference is mostly in the fixtures and tiling area. A freestanding bath and a frameless shower screen are in a similar price range. The bigger cost factors are the room size, tile selection and plumbing positions, not the shower-versus-bath choice alone.',
+      },
+      {
+        question: 'Can I fit both a shower and a bath in a small bathroom?',
+        answer: 'It depends on the room dimensions. A shower-over-bath fits both into one footprint but compromises both functions. Separate fixtures need a room of roughly six square metres or more to work comfortably without feeling cramped.',
+      },
+      {
+        question: 'Are walk-in showers better for older adults?',
+        answer: 'Generally, yes. A curbless entry, a built-in seat and grab bars make the room safer and easier to use. If you are planning to age in place, a walk-in shower is the more practical long-term choice.',
+      },
+      {
+        question: 'When should I decide between a shower and a bath?',
+        answer: 'Before the quote is written. The choice affects the floor plan, plumbing positions, tile quantities and waterproofing layout. At ETR, this is settled during the on-site measure so the written scope reflects the agreed layout.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-budget-planning',
+    title: 'How to budget for a bathroom renovation without blowing it',
+    metaTitle: 'Bathroom Renovation Budget Planning',
+    description: 'Plan the main costs, allow for changes and keep the agreed scope clear.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why bathroom budgets blow out',
+        paragraphs: [
+          'The most common reason a bathroom renovation costs more than expected is that the scope was not clear before work started. An approximate quote based on a phone call or a rough sketch leaves room for assumptions on both sides, and those assumptions show up as variations once the walls are open.',
+          'The second most common reason is a change of mind mid-build. Upgrading tiles after they have been ordered, moving a toilet position after the plumbing rough-in, or adding a heated towel rail after the electrical is done all add cost because they undo work that has already been completed.',
+          'A fixed-scope written quote that names every inclusion, and a selections process that locks in materials before site work begins, are the two most effective budget controls available to a homeowner.',
+        ],
+      },
+      {
+        heading: 'Start with how much you can spend, not how much it costs',
+        paragraphs: [
+          'Work out what you can afford before you start comparing quotes. A bathroom renovation in Sydney typically ranges from $18,000 to $50,000 or more, depending on the room size, the scope and the finish level. That is a wide range, and trying to price a bathroom without a budget is like shopping without knowing what is in your account.',
+          'A common guideline is to keep the renovation cost within five to ten percent of the property value. For a home worth $1.2 million, that suggests a bathroom budget of $60,000 to $120,000 across all wet areas - not per room. If the home is worth $800,000, the range is tighter.',
+          'The budget should include a contingency of 10 to 15 percent. This is not padding - it is a realistic allowance for what may be found behind the walls, especially in older homes.',
+        ],
+      },
+      {
+        heading: 'Where the money goes',
+        paragraphs: [
+          'In a typical full bathroom renovation, labour and trades account for roughly 40 to 50 percent of the total cost. This covers demolition, plumbing, electrical, waterproofing, tiling and installation of fixtures. Materials - tiles, adhesives, membranes, cement sheet - make up 15 to 20 percent.',
+          'Fixtures and fittings - the vanity, tapware, toilet, shower screen, mirror, towel rails - account for 25 to 35 percent. This is where the finish level has the biggest impact. A basic vanity and chrome tapware cost a fraction of a stone-top vanity with brushed brass fittings.',
+          'The remaining 10 to 15 percent is contingency. In practice, this covers the things that only become visible at strip-out: old plumbing that needs replacing, water damage in the subfloor, or non-compliant waterproofing from the previous renovation. We cover these in more detail in our <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">hidden costs guide</a>.',
+        ],
+      },
+      {
+        heading: 'How to compare quotes without being misled',
+        paragraphs: [
+          'The cheapest quote is not always the cheapest renovation. A low quote that excludes items the others include will cost the same or more once the variations are added. The question is not "which quote is lowest" but "which quote includes the most for what I need." Our guide to <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">comparing renovation quotes</a> covers what to look for in detail.',
+          'Ask each renovator to itemise what is included: demolition, disposal, plumbing, electrical, waterproofing, tiling, fixtures, painting, clean-up. If an item is missing from one quote, it does not mean it is free - it means it will be an extra.',
+          'Check whether the quote is fixed or provisional. A fixed-scope quote names the price for a defined set of inclusions. A provisional quote estimates costs that may change. Both are legitimate, but they manage risk differently, and you need to know which one you are signing.',
+        ],
+      },
+      {
+        heading: 'Selections: lock them in early',
+        paragraphs: [
+          'Tiles, tapware, the vanity, the toilet, the shower screen, lighting - all of these should be selected and confirmed before the renovation starts. Changing a selection after the build is underway almost always adds cost, because it changes the scope that the quote was based on.',
+          'If you are unsure about a selection, say so during planning. A good renovator will walk you through the options within your budget and help you finalise choices before the contract is signed.',
+          'ETR\'s written quote ties the selections to the scope and the price. If a selection changes, the price adjustment is clear and agreed before the work is affected.',
+        ],
+      },
+      {
+        heading: 'Where to spend and where to save',
+        paragraphs: [
+          'Spend on waterproofing, plumbing and the things you cannot see or reach once the room is finished. These are the items that cause expensive problems if they fail, and the cost difference between adequate and good is small compared to the cost of fixing them later.',
+          'Spend on the fixtures you touch every day: the showerhead, the tapware, the toilet flush. Cheap fittings feel cheap every morning.',
+          'Save on decorative items that are easy to change later: towel rails, mirrors, accessories, paint colour. These can be upgraded without opening a wall. Save on tile upgrades that add visual complexity without adding durability - a well-laid neutral tile lasts as long as an expensive pattern tile and dates less.',
+        ],
+      },
+      {
+        heading: 'How a written scope prevents surprises',
+        paragraphs: [
+          'The single most effective way to hold a bathroom renovation budget is a written scope that names every inclusion, every exclusion, every allowance and every condition. If it is in the scope, it is in the price. If it is not in the scope, it is not in the price.',
+          'A written scope also names how unexpected finds are handled - what happens if the plumber finds corroded pipes, or the tiler finds water damage in the substrate. The best time to agree on this is before the contract is signed, not when the builder is standing in a half-demolished bathroom.',
+          'ETR provides a fixed-scope written quote after the free on-site measure. The quote separates the inclusions, the exclusions and the process for handling anything found at strip-out. The price is the price unless the scope changes.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much should I budget for a bathroom renovation in Sydney?',
+        answer: 'A full bathroom renovation in Sydney typically costs between $18,000 and $50,000 depending on the room size, scope and finish level. ETR\'s packages start from $18,000 for a Basic renovation in a small bathroom, from $25,000 for Standard and from $30,000 for Premium. Include a contingency of 10 to 15 percent for what may be found behind the walls.',
+      },
+      {
+        question: 'What is the biggest cause of bathroom renovation cost overruns?',
+        answer: 'An unclear scope. When the quote does not name every inclusion, assumptions on both sides show up as variations once work is underway. A fixed-scope written quote and finalised selections before site work starts are the two most effective budget controls.',
+      },
+      {
+        question: 'Should I get three quotes for a bathroom renovation?',
+        answer: 'Getting two or three quotes is reasonable, but compare what is included, not just the total. A lower quote that excludes items the others include will cost the same or more once the extras are added. Ask each renovator to itemise their inclusions.',
+      },
+      {
+        question: 'What percentage of home value should a bathroom renovation cost?',
+        answer: 'A common guideline is five to ten percent of the property value across all wet areas. This helps avoid overcapitalising - spending more on the renovation than it adds to the home\'s value.',
+      },
+      {
+        question: 'Where should I spend more and where should I save in a bathroom renovation?',
+        answer: 'Spend on waterproofing, plumbing and the fixtures you use every day - showerhead, tapware, toilet. Save on decorative items you can upgrade later without opening a wall: mirrors, towel rails, accessories and paint colour.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-resale-value-what-agents-look-for',
+    title: 'Bathroom renovation and resale: what agents actually look for',
+    metaTitle: 'Bathroom Renovation Resale Value',
+    description: 'See what agents and buyers check, and where a bathroom spend can go too far.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why the bathroom matters at sale time',
+        paragraphs: [
+          'Real estate agents consistently name the bathroom as one of the first rooms buyers inspect - and one of the fastest to form a negative impression. A dated, worn or poorly maintained bathroom signals potential problems behind the walls: failed waterproofing, old plumbing, hidden mould. Buyers price that risk in, even if the problems are only assumed.',
+          'A well-finished bathroom does the opposite. It signals that the home has been maintained, that the owner invested in the parts that matter, and that the buyer can move in without planning an immediate renovation. For the numbers behind this, see our guide on whether <a href="/blog/bathroom-renovation-add-value-home/" class="et-link">a bathroom renovation adds value</a>.',
+        ],
+      },
+      {
+        heading: 'What agents actually notice',
+        paragraphs: [
+          'Agents assess a bathroom quickly, and they are looking at condition more than style. Grout that is clean and intact, silicone that is not discoloured, tapware that works smoothly, a shower screen without water marks, tiles that are not cracked - these are the things that register in the first 30 seconds.',
+          'Beyond condition, agents look at whether the bathroom feels current. That does not mean it has to follow the latest trend. It means the fixtures, tiles and layout do not immediately read as 20 years old. A neutral, well-maintained bathroom from five years ago still presents well. A bathroom with pink tiles, a brass-finish mixer and a corner spa bath does not.',
+          'The third thing agents notice is layout efficiency. A bathroom that fits a shower, vanity and toilet into a functional arrangement feels practical. A bathroom where the door hits the vanity, the toilet faces the entrance, or the shower has no screen feels compromised.',
+        ],
+      },
+      {
+        heading: 'What buyers care about',
+        paragraphs: [
+          'Buyers want a bathroom they do not have to think about. If it looks clean, feels modern enough and works properly, it passes. If it looks like it needs work, they start calculating the cost of fixing it - and that number is always higher in a buyer\'s head than it would be in reality.',
+          'Family buyers specifically look for a bath (at least one in the home), enough storage for toiletries, and a bathroom that is separate from the main living area. Downsizers and couples are more likely to value a walk-in shower, a double vanity, and a sense of space.',
+          'Almost no buyer cares whether the tiles are porcelain or ceramic, or whether the tapware is a specific brand. They care whether the room feels maintained, works well and does not need immediate attention.',
+        ],
+      },
+      {
+        heading: 'Renovating for resale vs renovating for yourself',
+        paragraphs: [
+          'The distinction matters. If you are renovating to sell within 12 months, the goal is a bathroom that appeals to the broadest range of buyers without overspending. Neutral tiles, clean finishes, standard-quality fixtures and a sensible layout do the job. Bold design choices - pattern tiles, statement colours, unusual layouts - narrow the buyer pool.',
+          'If you are renovating for yourself and plan to stay for five or more years, you have more room to personalise. The resale consideration is still there, but it should not override how you want to live in the room.',
+          'The mistake most people make when renovating for resale is spending too much on the finish level. A $50,000 bathroom in a $900,000 home does not return its cost. A $25,000 bathroom in the same home almost certainly does.',
+        ],
+      },
+      {
+        heading: 'How to avoid overcapitalising',
+        paragraphs: [
+          'The five-to-ten-percent guideline - keeping the total renovation spend within that range of the property value - is a useful starting point. For a home worth $1 million, that means $50,000 to $100,000 across all wet areas, not per room.',
+          'Match the finish level to the suburb. A brushed brass, stone-top, wall-hung vanity is the right call in Mosman. In a first-home suburb, a well-made standard vanity with engineered-stone top does the same job for resale at a fraction of the cost.',
+          'Do not skip the things that matter structurally. Waterproofing, plumbing and electrical are not resale luxuries - they are the parts that protect the home and avoid future claims. The money saved by cutting corners here is the money spent fixing water damage later.',
+        ],
+      },
+      {
+        heading: 'The finishes that return the most at resale',
+        paragraphs: [
+          'Large-format neutral tiles on walls and floors. They are easy to maintain, they suit most taste profiles and they make the room feel larger. A 600 by 300 or 600 by 600 tile in a warm white or light grey reads as current without being trendy.',
+          'A frameless shower screen. It signals a modern renovation and makes the room feel open, even in a small bathroom. The cost is modest relative to its visual impact.',
+          'Consistent tapware in a single finish - chrome, matte black or brushed nickel. Mismatched finishes read as piecemeal, and a consistent finish reads as planned.',
+          'A vanity with storage. Floating vanities look clean, but a vanity that hides bottles, towels and cleaning supplies keeps the room presentable for inspections and open homes.',
+        ],
+      },
+      {
+        heading: 'What ETR recommends for resale renovations',
+        paragraphs: [
+          'At the on-site measure, we ask whether the renovation is for resale or long-term use, because it changes the selections guidance. A resale renovation prioritises broad appeal, neutral finishes and cost control. A long-term renovation can take more design risk.',
+          'ETR\'s Standard package (from $25,000) covers the scope that most resale renovations need: a full strip-out, new plumbing, electrical, waterproofing to AS 3740, tiling, and mid-range fixtures. The written quote names every inclusion so the budget is fixed before work starts.',
+          'A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much value does a bathroom renovation add to a home?',
+        answer: 'A mid-range bathroom renovation typically returns 60 to 80 percent of its cost at resale. The exact figure depends on the suburb, the condition of the existing bathroom and the finish level of the renovation. Overcapitalising - spending more than the market will return - is the main risk.',
+      },
+      {
+        question: 'What bathroom features do buyers care about most?',
+        answer: 'Buyers care about condition and functionality more than specific brands or materials. A clean, well-maintained bathroom with a sensible layout, working fixtures and neutral finishes passes the test. A dated or damaged bathroom raises concerns about hidden problems.',
+      },
+      {
+        question: 'Should I renovate the bathroom before selling my house?',
+        answer: 'If the bathroom is visibly dated, damaged or in poor condition, a renovation usually improves the sale price more than it costs. If the bathroom is already in reasonable condition, a deep clean and minor repairs may be enough. An agent can help assess whether a renovation will pay for itself.',
+      },
+      {
+        question: 'What is the best colour for a bathroom when selling?',
+        answer: 'Warm neutrals - white, light grey, greige, taupe - appeal to the broadest range of buyers. Avoid bold or polarising colours on permanent surfaces like tiles. Keep colour in items that are easy to change: towels, accessories and paint. Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers the current palette trends in detail.',
+      },
+      {
+        question: 'How much should I spend on a bathroom renovation for resale?',
+        answer: 'A common guideline is five to ten percent of the property value across all wet areas. Match the finish level to the suburb and the buyer profile. A $25,000 renovation in a million-dollar home is a strong return. A $50,000 renovation in the same home may not be.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-demolition-what-to-expect',
+    title: 'What happens during bathroom demolition? A step-by-step guide',
+    metaTitle: 'Bathroom Demolition Process',
+    description: 'Know what comes out, how the room is protected and what may show behind walls.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Demolition is the first real step',
+        paragraphs: [
+          'For most homeowners, demolition day is the first time the renovation feels real. The old bathroom goes from a room you use every day to a stripped-back shell in a matter of hours. It is noisy, dusty and fast - and it is also when the builder gets the first clear look at what is actually behind the walls and under the floor.',
+          'Understanding what happens during demolition, and why, takes the anxiety out of the process. The work follows a logical sequence, and every step has a reason.',
+        ],
+      },
+      {
+        heading: 'Before the first tile comes off',
+        paragraphs: [
+          'The plumber isolates the water supply to the bathroom and caps the feeds. The electrician disconnects any hardwired fixtures - exhaust fans, heat lamps, heated towel rails - and makes the circuits safe. This happens before anything is removed.',
+          'If the bathroom is in a unit or apartment, the strata or body corporate may need to be notified, and water shutoff may affect common services. This is sorted before demo day, not on it.',
+          'The rest of the home is protected with drop sheets and plastic barriers at the bathroom door. Dust is the main concern - tile removal generates fine powder that travels further than most people expect.',
+        ],
+      },
+      {
+        heading: 'The demolition sequence',
+        paragraphs: [
+          'Fixtures come out first: the vanity, mirror, toilet, shower screen and any accessories. These are disconnected and removed before tile demolition begins.',
+          'If there is a bath, it comes out next. A freestanding bath lifts out. A built-in bath may need to be cut or broken to remove, depending on the material and how it was installed.',
+          'Wall tiles are stripped using a combination of electric demolition hammers and hand tools. The goal is to remove the tiles and the adhesive bed cleanly, exposing the substrate - usually cement sheet or fibre cement board. In some older homes, the substrate is plaster or brick, and the approach changes accordingly.',
+          'Floor tiles follow the same process. The screed - the sand-and-cement layer under the tiles - is also removed to expose the structural floor, whether that is a concrete slab or timber framing. The old waterproofing membrane comes off with the screed.',
+        ],
+      },
+      {
+        heading: 'What the builder is looking for',
+        paragraphs: [
+          'Demolition is also an inspection. Once the surfaces are stripped, the builder, plumber and tiler can see the actual condition of the structure, the plumbing and the waterproofing for the first time.',
+          'Common findings include: corroded galvanised or copper pipes, cracked or sagging clay drainage, water damage in the timber subfloor or framing, previous waterproofing that was patched rather than properly applied, and - in homes built or renovated before the mid-1980s - asbestos-containing materials in the wall or floor linings.',
+          'None of these are unusual, and a good quote accounts for the likelihood of finding them. ETR\'s written scope names how unexpected finds at strip-out are handled before work starts.',
+        ],
+      },
+      {
+        heading: 'Asbestos: the one that cannot be ignored',
+        paragraphs: [
+          'Asbestos-containing materials were widely used in Australian homes until the mid-1980s. Fibro wall linings, vinyl floor tiles, pipe lagging and even some adhesives can contain asbestos. You cannot identify asbestos by looking at it - it requires testing. This is especially common in <a href="/blog/heritage-bathroom-renovation-sydney/" class="et-link">heritage and older-home renovations</a>.',
+          'If suspected asbestos is identified, it must be removed by a licensed asbestos removalist. The material is bagged, labelled and disposed of at a licensed facility. The work area is sealed and the air is monitored. This is a regulated process, not something the builder handles informally.',
+          'A pre-demolition asbestos inspection is recommended for any home built before 1990. It is a small cost that avoids a larger problem if asbestos is found mid-demolition.',
+        ],
+      },
+      {
+        heading: 'How long demolition takes',
+        paragraphs: [
+          'A standard bathroom strip-out - fixtures, tiles, screed, old waterproofing - takes one to two days. A simple fixture-and-tile removal in a small bathroom can be done in a single day. A full gut-out including wall linings, substrate removal and any structural investigation takes two.',
+          'The waste from a bathroom demolition is typically one to two cubic metres - enough to fill a small skip bin. The skip is arranged before demo day and removed once the room is cleared.',
+        ],
+      },
+      {
+        heading: 'What happens after demolition',
+        paragraphs: [
+          'Once the room is stripped, the preparation phase begins. The plumber roughs in the new pipe positions, the electrician runs new wiring, and any substrate repair - re-sheeting walls, levelling the floor, reinforcing timber framing - is completed.',
+          'The room is then ready for waterproofing. The membrane is applied, allowed to cure, and flood-tested before any tiles go on. This is the stage where the new bathroom starts to take shape.',
+          'Demolition is not the renovation - it is the clearing away of the old room so the new one can be built properly. Understanding that it is a planned, controlled process makes the noise and disruption easier to manage. Our <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">renovation timeline guide</a> covers what comes after demolition and how long each stage takes.',
+        ],
+      },
+      {
+        heading: 'How ETR manages demolition',
+        paragraphs: [
+          'Demolition is part of every full renovation scope. The on-site measure confirms the room condition, the likely findings at strip-out and the waste disposal requirements before the quote is written.',
+          'The team manages dust containment, waste removal and services isolation as part of the work. If asbestos is suspected, a testing and removal plan is included in the scope.',
+          'Every bathroom is waterproofed to AS 3740 after demolition and preparation, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does bathroom demolition take?',
+        answer: 'One to two days for a standard strip-out. A simple fixture-and-tile removal in a small bathroom can take a single day. A full gut-out with substrate removal and structural inspection takes two.',
+      },
+      {
+        question: 'How much waste does a bathroom demolition produce?',
+        answer: 'Typically one to two cubic metres - tiles, screed, fixtures, old linings and packaging. This fits a small skip bin, which is arranged before demo day and removed once the room is cleared.',
+      },
+      {
+        question: 'Will bathroom demolition damage the rest of the house?',
+        answer: 'Not if it is managed properly. Drop sheets and plastic barriers are set up at the bathroom door before work starts. Dust from tile removal is the main concern - it travels further than most people expect, so containment matters.',
+      },
+      {
+        question: 'What if asbestos is found during demolition?',
+        answer: 'Asbestos-containing materials must be removed by a licensed removalist. The area is sealed, the material is bagged and disposed of at a licensed facility, and the air is monitored. A pre-demolition asbestos inspection is recommended for any home built before 1990.',
+      },
+      {
+        question: 'Can I live in the house during bathroom demolition?',
+        answer: 'Yes. Most homeowners stay in the house during a bathroom renovation. You will need access to another bathroom or toilet during the work. The demolition phase is the noisiest part - it typically lasts one to two days, and the noise drops significantly once tiling begins.',
+      },
+    ],
+  },
+  {
+    slug: 'accessible-bathroom-renovation-sydney',
+    title: 'Accessible bathroom renovation: designing for all ages and abilities',
+    metaTitle: 'Accessible Bathroom Renovation Sydney',
+    description: 'Plan clear paths, grab-rail support and easy shower access for all ages.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why accessibility is a renovation decision, not a retrofit',
+        paragraphs: [
+          'ETR does not currently offer specialist accessible or ageing-in-place bathroom renovations, and we do not provide specialist funding support through third-party care schemes. This guide is general information only and is not a service offer.',
+          'Most people think about bathroom access only after a fall, an injury or a diagnosis. By then the room is already built. Adding grab bars, a shower seat or a wider door means cutting into finished tiles and walls.',
+          'Building access into a renovation from the start costs far less and works better. The room is being stripped and rebuilt anyway. The time to plan for safe, easy use is now, not in ten years.',
+        ],
+      },
+      {
+        heading: 'What makes a bathroom accessible',
+        paragraphs: [
+          'Access is not a single feature. It is a set of layout, entry, fixture and surface choices that make the room safe, easy to use and dignified for all ages.',
+          'The key items: a step-free shower entry, grab bars at the shower and toilet, a raised-height toilet (460 to 480 mm), non-slip floor tiles, room to move, good lighting, and lever taps that do not need grip strength.',
+          'None of these look clinical when they are built into the design. A curbless shower with a linear drain, a grab bar in a matching finish and a wall-hung vanity at a good height all read as modern choices - because they are.',
+        ],
+      },
+      {
+        heading: 'Step-free shower entry',
+        paragraphs: [
+          'A curbless shower is the most important access feature in a bathroom. Stepping over a hob is a fall risk for older adults and a barrier for a wheelchair. A flat entry with a linear drain removes both problems. Our <a href="/blog/walk-in-shower-vs-bathtub-renovation/" class="et-link">walk-in shower vs bathtub guide</a> covers the layout and cost trade-offs in detail.',
+          'The sealing and drainage need to be set up for a flat shower from the start. The floor fall, drain position and screen placement all matter. This is simple in a full renovation but hard to add later.',
+        ],
+      },
+      {
+        heading: 'Grab bars and structural reinforcement',
+        paragraphs: [
+          'Grab bars need solid timber or steel behind the wall to hold. If that backing is not put in during the build, adding bars later means cutting tiles and opening the wall.',
+          'Putting blocking in during a renovation costs almost nothing - a few timber offcuts fixed between studs before the sheets go on. Doing it later is costly. This is the clearest case for planning access early.',
+          'Grab bars come in finishes that match modern taps - matte black, brushed nickel, brushed brass. They do not have to look like hospital fittings.',
+        ],
+      },
+      {
+        heading: 'Toilet height and position',
+        paragraphs: [
+          'A standard toilet sits around 400 to 410 mm high. A raised-height toilet sits at 460 to 480 mm - roughly chair height. This makes sitting and standing much easier for older adults and anyone with hip or knee problems.',
+          'Position matters too. Clear space beside the toilet (at least 450 mm on one side) lets someone transfer from a chair or use a grab bar. This is a layout call made at the planning stage.',
+        ],
+      },
+      {
+        heading: 'Floor surfaces and lighting',
+        paragraphs: [
+          'Wet tile is a fall hazard at any age. A tile rated P3 or higher for wet barefoot areas cuts the risk without giving up looks. Many current tiles come in non-slip finishes that look and feel like standard ones.',
+          'Good lighting matters. Even light with no dark spots makes it easier to see edges and surfaces. A low-level LED near the floor helps with overnight use without the main light.',
+        ],
+      },
+      {
+        heading: 'Planning for the future without building for a hospital',
+        paragraphs: [
+          'Universal design means a room works well for the widest range of people without looking like it was built for one condition. A bathroom planned this way is easy for a 30-year-old, safe for a 70-year-old and usable after surgery.',
+          'The practical approach: put in the structure now - blocking for bars, a flat shower, a raised toilet, room to move - and add the visible features as needs change. The room does not need to look like an aged-care home to be safe.',
+        ],
+      },
+      {
+        heading: 'How ETR approaches accessible bathrooms',
+        paragraphs: [
+          'At the on-site measure, we talk through how the room is used, who uses it and whether access is a priority now or for the future. The scope can include a flat shower, grab bar blocking, raised fixtures and non-slip tiles without changing how the room looks.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does an accessible bathroom renovation cost in Sydney?',
+        answer: 'An accessible bathroom renovation costs about the same as a standard one when the features are designed in from the start. The main additions - curbless shower, grab bar blocking, comfort-height toilet, non-slip tiles - add modest cost during a full renovation. ETR\'s packages start from $18,000 for a Basic renovation.',
+      },
+      {
+        question: 'Can I make my bathroom accessible without it looking clinical?',
+        answer: 'Yes. Grab bars come in finishes that match contemporary tapware. A curbless shower looks like a modern design choice. A comfort-height toilet is visually identical to a standard one. The accessibility is in the design, not in the appearance.',
+      },
+      {
+        question: 'What is the most important accessibility feature in a bathroom?',
+        answer: 'A step-free shower entry. It removes the biggest fall risk, makes the room wheelchair-accessible and is the hardest feature to add after the bathroom is built. If you do one accessibility upgrade during a renovation, this is it.',
+      },
+      {
+        question: 'Should I install grab bars now or wait until I need them?',
+        answer: 'Install the blocking now and add the bars when needed. Blocking is a few offcuts of timber fixed behind the wall during the renovation - it costs almost nothing. Adding it later means opening a tiled wall, which is expensive and disruptive.',
+      },
+      {
+        question: 'Does an accessible bathroom affect resale value?',
+        answer: 'Universal design features generally help rather than hurt resale value. They broaden the buyer pool to include older buyers, people with disabilities and families planning long-term. A well-designed accessible bathroom looks contemporary, not clinical.',
+      },
+    ],
+  },
+  {
+    slug: 'apartment-bathroom-renovation-vs-house',
+    title: 'Apartment bathroom renovation vs house: what changes',
+    metaTitle: 'Apartment vs House Bathroom Renovation',
+    description: 'Check lift access, shared pipes, noise rules, strata terms and site costs.',
+    published: '2026-10-02',
+    readTime: '4 min read',
+    category: 'Compare your options',
+    sections: [
+      {
+        heading: 'The biggest difference is who else is involved',
+        paragraphs: [
+          'In a house, the renovation is between you and the builder. In an apartment, it involves the strata committee, the building manager, and sometimes the neighbours. The building has shared structure, shared plumbing and rules that govern when and how work can be done.',
+          'This does not make an apartment renovation harder - it makes it different. The room is often smaller and simpler. But the approvals, access rules and work-hour limits add steps a house does not need. Our <a href="/blog/strata-bathroom-renovation-sydney/" class="et-link">strata renovation guide</a> covers the by-law and approval process in full.',
+        ],
+      },
+      {
+        heading: 'Strata approval: what you need and when',
+        paragraphs: [
+          'In NSW, strata renovations fall into three classes: cosmetic, minor or major. A bathroom renovation is almost always minor or major, because sealing the wet area affects shared property - the slab and the membrane under the tiles.',
+          'Minor work needs a majority vote from the strata committee. Major work needs a special vote at a general meeting - at least 75 percent of owners in favour.',
+          'Allow four to eight weeks for a by-law to be drafted, sent out and voted on. Start this before choosing tiles, not after.',
+        ],
+      },
+      {
+        heading: 'Waterproofing in an apartment',
+        paragraphs: [
+          'Sealing matters more in an apartment than a house. A failure does not just damage your room - it hits the unit below. Water can travel a long way through a concrete slab. A leak on the tenth floor can show up floors below, on the other side of the building.',
+          'Most strata schemes require the sealing to be checked and certified before tiles go on. Some need a certifier who is not the builder. The by-law names the standard - usually AS 3740 - and the sign-off process.',
+          'ETR waterproofs every bathroom to AS 3740 with a compliance certificate, whether it is in a house or an apartment.',
+        ],
+      },
+      {
+        heading: 'Plumbing: what can move and what cannot',
+        paragraphs: [
+          'In a house, pipes run through the floor and walls and can usually be moved within the room. In an apartment, the waste stack - the vertical pipe to the building drain - is shared property and stays where it is.',
+          'This means the toilet is usually fixed in place. It can shift a short distance with an offset connector, but a big move is rarely doable. The shower and vanity wastes have more flex, but they still need to drain to the existing floor waste or stack.',
+          'The result: layout options in an apartment are tighter than in a house. The on-site measure shows what can change and what must stay.',
+        ],
+      },
+      {
+        heading: 'Noise, access and working hours',
+        paragraphs: [
+          'Most strata by-laws restrict renovation work to weekdays between 8 am and 5 pm, with no work on weekends or public holidays. Some buildings restrict noisy work (demolition, drilling) to a narrower window within those hours.',
+          'Access matters too. Tiles, tools and waste all move through shared spaces - lifts, halls, car parks. The building manager will usually need floor and lift covers, notice to nearby residents, and a delivery plan.',
+          'Demolition in a unit makes the same dust as in a house, but the space is tighter. Dust sealing at the bathroom door and along the hall matters more when the next unit is a few metres away.',
+        ],
+      },
+      {
+        heading: 'Acoustic requirements',
+        paragraphs: [
+          'Apartment bathroom floors carry impact noise to the unit below. Many Sydney strata schemes need a sound layer between the slab and the tile bed. This adds a step to the floor prep but is a by-law condition, not optional.',
+          'The rule varies by building. Some schemes name a product or a minimum sound rating. Others leave it to the builder to suggest and the committee to approve. Read the by-law carefully before the scope is locked in.',
+        ],
+      },
+      {
+        heading: 'Cost differences',
+        paragraphs: [
+          'An apartment bathroom does not always cost more than a house for the same room size and finish. The room is often smaller, so tile and fixture totals are lower.',
+          'Where apartment work adds cost is in the extras: strata fees, building covers, shorter work hours (which stretch the program), sound underlay, and sometimes outside certification. Each is small. Together they add up.',
+          'ETR\'s packages start from $18,000 for a Basic renovation. The on-site measure and the strata by-law together determine the full scope and cost for an apartment.',
+        ],
+      },
+      {
+        heading: 'How ETR handles apartment renovations',
+        paragraphs: [
+          'We read the strata by-law before quoting so the scope, the sign-off rules and the access conditions are known up front. The written quote covers building covers, noise limits and any sound or sealing rules the by-law names.',
+          'Every apartment bathroom is waterproofed to AS 3740 with a compliance certificate. The work is carried out under NSW Builder Licence 475204C with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need strata approval to renovate my apartment bathroom?',
+        answer: 'Yes, in almost all cases. A bathroom renovation involves waterproofing, which affects common property. Minor renovations need a majority vote from the strata committee. Major renovations need a special resolution with at least 75 percent of owners voting in favour. Allow four to eight weeks for the approval process.',
+      },
+      {
+        question: 'Can I move the toilet in an apartment bathroom renovation?',
+        answer: 'The toilet position is usually constrained by the plumbing stack, which is common property and cannot be moved. A small shift using an offset pan connector may be possible, but a large relocation is rarely practical. The on-site measure confirms what can change.',
+      },
+      {
+        question: 'Is an apartment bathroom renovation more expensive than a house?',
+        answer: 'Not necessarily for the same room size and finish level. Apartment renovations add costs for strata fees, building protection, acoustic underlay and sometimes independent waterproofing certification, but the room is often smaller, which reduces tile and fixture quantities.',
+      },
+      {
+        question: 'What are the noise restrictions for apartment renovations in Sydney?',
+        answer: 'Most strata by-laws restrict work to weekdays between 8 am and 5 pm with no weekend work. Some buildings restrict noisy work like demolition and drilling to a narrower window. The by-law should be checked before scheduling.',
+      },
+      {
+        question: 'Who is responsible if a waterproofing failure damages the unit below?',
+        answer: 'The lot owner is generally liable for damage caused by work within their lot. This is why waterproofing certification is critical in an apartment - it provides evidence that the work was done to AS 3740 and inspected before tiling. ETR issues a compliance certificate for every bathroom.',
+      },
+    ],
+  },
+  {
+    slug: 'wet-room-bathroom-renovation',
+    title: 'Wet room design: is it right for your bathroom renovation?',
+    metaTitle: 'Wet Room Bathroom Renovation Australia',
+    description: 'Learn how a wet room differs from a standard bathroom and what it needs.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What a wet room actually is',
+        paragraphs: [
+          'A wet room is a bathroom where the entire floor is waterproofed and graded to a drain, with no shower screen, no hob and no tray separating the shower from the rest of the room. The shower is part of the floor, not a contained enclosure.',
+          'The idea is simple: the whole room handles water. In practice, that means the waterproofing, drainage and floor gradient need to be right across the full area, not just inside a shower recess.',
+        ],
+      },
+      {
+        heading: 'How it differs from a standard bathroom',
+        paragraphs: [
+          'In a standard bathroom, the shower sits inside a defined wet zone - a hob at the floor, a screen on the sides, a tray underneath. The rest of the room stays dry. A wet room removes that boundary. The shower is open, the floor slopes to a drain, and the whole room is the wet zone.',
+          'This changes the waterproofing scope. A standard bathroom waterproofs the shower area plus a set distance around it. A wet room waterproofs the full floor and a portion of every wall. The membrane area is larger, and the floor prep is more involved because the gradient must carry water to the drain from every part of the room.',
+        ],
+      },
+      {
+        heading: 'When a wet room makes sense',
+        paragraphs: [
+          'Wet rooms work well in compact bathrooms where a shower screen would crowd the room. Removing the screen and hob opens up the floor and makes the space feel larger. A 1.5 by 2 metre bathroom that feels tight with a framed shower can feel open as a wet room.',
+          'They also suit accessibility needs. A flat floor with no step and no screen to navigate around is easier for older adults, wheelchair users and anyone with limited mobility. Our <a href="/blog/accessible-bathroom-renovation-sydney/" class="et-link">accessible bathroom guide</a> covers the full range of features that make a room safer.',
+          'Wet rooms can also suit a second bathroom or ensuite where the room is small and the design can be simple.',
+        ],
+      },
+      {
+        heading: 'When a wet room may not be the right choice',
+        paragraphs: [
+          'If the bathroom needs to stay dry between uses - for example, a family bathroom where children dress and undress on the floor - a wet room means the whole floor gets wet every time the shower runs. Towels, bath mats and a toilet roll holder near the shower zone will get damp.',
+          'A wet room also means the toilet, vanity and any cabinetry are in the splash zone. Timber vanities and unsealed surfaces need to handle moisture, and storage at floor level gets wet unless it is raised or enclosed.',
+          'If the room is large, a wet room can feel excessive. A spacious bathroom with a dedicated shower and a freestanding bath usually works better with a defined shower zone than as a fully open wet room.',
+        ],
+      },
+      {
+        heading: 'Waterproofing and drainage',
+        paragraphs: [
+          'The waterproofing in a wet room is the same standard as any bathroom - AS 3740 - but it covers a larger area. The full floor, the junction between floor and walls, and a minimum height up every wall must be sealed. In practice, most wet rooms waterproof the walls to full height.',
+          'The floor gradient is critical. The entire floor must fall toward the drain, typically at a gradient of 1 in 80 to 1 in 100. A linear drain along one wall simplifies the fall because the floor slopes in one direction. A central point drain needs a four-way fall, which is harder to set up cleanly with large tiles.',
+          'Every wet room ETR builds is waterproofed to AS 3740 with a compliance certificate.',
+        ],
+      },
+      {
+        heading: 'Tile and finish considerations',
+        paragraphs: [
+          'Tile choice matters more in a wet room because the whole floor gets wet. A tile rated P3 or higher for wet barefoot areas reduces slip risk. Mosaics grip well because of the grout lines, but they are harder to clean. A textured porcelain tile is a good middle ground.',
+          'Large-format tiles on a graded floor need careful cutting and layout. The gradient creates a slight curve across the surface, and a 600 by 600 tile will show lippage if the screed is not perfect. Smaller tiles follow the fall more easily. Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers tile formats in more detail.',
+        ],
+      },
+      {
+        heading: 'Cost considerations',
+        paragraphs: [
+          'A wet room does not automatically cost more than a standard bathroom. The shower screen is removed from the scope, which saves $600 to $1,500. But the waterproofing area is larger, the floor preparation is more involved, and the screed needs to be set to a precise gradient across the full room.',
+          'In a compact bathroom, those costs roughly balance. In a larger room, the additional waterproofing and screed work can add to the total. ETR\'s packages start from $18,000 for a Basic renovation - the on-site measure confirms whether a wet room layout suits the room and the budget.',
+        ],
+      },
+      {
+        heading: 'How ETR handles wet room renovations',
+        paragraphs: [
+          'The on-site measure confirms whether the room suits a wet room layout: the floor structure, the drain position, the gradient and how the room is used. The written quote names the full waterproofing scope and the drainage approach before work starts.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is a wet room more expensive than a standard bathroom?',
+        answer: 'Not necessarily. The shower screen is removed from the scope, but the waterproofing area is larger and the floor preparation is more involved. In a compact bathroom, the costs roughly balance. In a larger room, the additional prep can add to the total.',
+      },
+      {
+        question: 'Does the whole bathroom floor get wet in a wet room?',
+        answer: 'Yes, the floor in the shower zone gets wet, and splash reaches further without a screen. A well-graded floor drains quickly, but towels, bath mats and items stored at floor level will get damp near the shower area.',
+      },
+      {
+        question: 'Are wet rooms suitable for families with children?',
+        answer: 'They can be, but a family bathroom where children use the floor may suit a defined shower zone better. A wet room in a second bathroom or ensuite is a practical alternative that keeps the family bathroom dry.',
+      },
+      {
+        question: 'What tiles are best for a wet room floor?',
+        answer: 'A tile rated P3 or higher for wet barefoot areas. Mosaics grip well because of the grout lines, and textured porcelain tiles offer a good balance between grip and easy cleaning. Avoid polished tiles on any wet room floor.',
+      },
+      {
+        question: 'Do wet rooms need special waterproofing?',
+        answer: 'The standard is the same - AS 3740 - but the waterproofed area is larger. The full floor and a minimum height up every wall must be sealed. Most wet rooms waterproof the walls to full height for complete protection.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-tapware-finishes-guide',
+    title: 'How to choose bathroom tapware finishes that last',
+    metaTitle: 'Bathroom Tapware Finishes Guide',
+    description: 'Compare finish care, wear and style before you choose bathroom taps.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why the tapware finish matters',
+        paragraphs: [
+          'Tapware is one of the most visible elements in a bathroom. The basin mixer, the shower set, the bath spout and the towel rails set the tone of the room. A consistent finish makes the room feel planned. Mismatched finishes make it feel pieced together.',
+          'The finish also affects durability and maintenance. Some finishes show fingerprints and water marks more than others. Some wear over time. Choosing the right finish for how the room is used matters as much as how it looks on day one.',
+        ],
+      },
+      {
+        heading: 'Chrome: the reliable standard',
+        paragraphs: [
+          'Chrome is the most common bathroom finish and the most forgiving. It is hard-wearing, easy to clean and works with almost any tile or colour scheme. Chrome is also the least expensive option in most tapware ranges.',
+          'The trade-off is that chrome can feel generic. In a bathroom designed around warm neutrals, timber or natural stone, chrome can read as cool and clinical. It suits clean, modern or minimalist designs best.',
+        ],
+      },
+      {
+        heading: 'Matte black: bold but showing its age',
+        paragraphs: [
+          'Matte black became the dominant bathroom finish over the past five years. It creates strong contrast against white or light tiles and suits contemporary, industrial and monochrome schemes.',
+          'The downside: matte black shows water marks, soap residue and fingerprints more than any other finish. Daily wiping is the reality. The coating can also wear or scratch over time on lower-quality fittings, showing the base metal underneath.',
+          'Matte black still works. But the peak has passed, and many designers are now choosing softer alternatives - gunmetal, brushed nickel or brushed brass - that offer contrast without the maintenance.',
+        ],
+      },
+      {
+        heading: 'Brushed nickel: calm and versatile',
+        paragraphs: [
+          'Brushed nickel sits between chrome and brass. It has a soft, warm grey tone that suits a wide range of colour schemes - warm neutrals, greige tiles, timber vanities, natural stone. The brushed texture hides fingerprints and water spots better than polished or matte finishes.',
+          'Brushed nickel is one of the most durable and low-maintenance finishes available. It ages well and does not date as quickly as trend-driven finishes. If you are renovating for long-term use or resale, it is a strong choice.',
+        ],
+      },
+      {
+        heading: 'Brushed brass and champagne gold',
+        paragraphs: [
+          'Brushed brass and its close relative champagne gold add warmth and personality. They pair well with warm neutrals, terracotta tones, green tiles and timber. In the right room, they make the fittings a feature rather than a background element.',
+          'The concern with brass finishes is longevity. Some coatings can wear or discolour over time, especially in high-use areas. Buy from a reputable supplier that offers a finish warranty, and avoid the cheapest options - the coating quality matters.',
+          'Brushed brass works best when used consistently across all fittings in the room. Mixing brass with chrome or black in the same bathroom can look intentional if the split is deliberate, but accidental mixing reads as unfinished.',
+        ],
+      },
+      {
+        heading: 'Gunmetal: the new contender',
+        paragraphs: [
+          'Gunmetal is a dark finish with a softer, more sophisticated edge than matte black. It has subtle bronze or nickel undertones that shift depending on the light. It offers the depth of black without the high-contrast maintenance.',
+          'Gunmetal suits contemporary and moody colour schemes - dark tiles, charcoal grout, stone surfaces. It is becoming more widely available in Australian tapware ranges, though the selection is still smaller than chrome, black or brass.',
+        ],
+      },
+      {
+        heading: 'How to choose',
+        paragraphs: [
+          'Pick the tile and vanity first. The tapware finish should complement the room, not lead it. A warm tile scheme suits brushed nickel, brass or gunmetal. A cool or neutral scheme suits chrome or matte black.',
+          'Commit to one finish across the whole room - basin, shower, bath, towel rails, toilet roll holder, robe hook. Consistency is what makes the room feel designed. Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how to coordinate finishes with tile and vanity choices.',
+          'Consider maintenance. If the bathroom is high-traffic and cleaning time is limited, avoid matte black. If the room is a guest powder room used once a week, any finish works.',
+        ],
+      },
+      {
+        heading: 'What ETR recommends',
+        paragraphs: [
+          'Tapware finishes are chosen during the selections process, before the quote is finalised. We recommend matching the finish to the room, the tile scheme and the long-term use of the bathroom.',
+          'The on-site measure is the right time to talk through options. The written quote names the tapware and finish so there are no surprises. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the most durable bathroom tapware finish?',
+        answer: 'Chrome and brushed nickel are the most durable and low-maintenance finishes. Both resist wear, hide water marks and clean easily. Matte black and some brass finishes require more care and can show wear over time.',
+      },
+      {
+        question: 'Is matte black tapware still in style?',
+        answer: 'Matte black is still widely used, but the peak has passed. Many designers are moving toward softer alternatives like gunmetal, brushed nickel and brushed brass. Matte black still works well in the right room, but it shows water marks and requires daily wiping.',
+      },
+      {
+        question: 'Can I mix tapware finishes in one bathroom?',
+        answer: 'A single consistent finish across all fittings gives the cleanest result. Mixing two finishes can work if the split is deliberate - for example, brushed brass tapware with matte black shower accessories - but accidental mixing reads as unfinished.',
+      },
+      {
+        question: 'What tapware finish is best for resale?',
+        answer: 'Brushed nickel and chrome appeal to the broadest range of buyers. They are neutral, durable and do not polarise. Bold finishes like brass or matte black can work but may narrow the buyer pool. Our <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">resale guide</a> covers what agents look for.',
+      },
+      {
+        question: 'Should I choose tapware before or after tiles?',
+        answer: 'Choose tiles first. The tapware finish should complement the tile scheme, not the other way around. Tiles are the biggest surface in the room and the hardest to change - choose them, then match the fittings.',
+      },
+    ],
+  },
+  {
+    slug: 'underfloor-heating-bathroom-renovation',
+    title: 'Underfloor heating in a bathroom: worth the cost?',
+    metaTitle: 'Underfloor Heating Bathroom Renovation Cost',
+    description: 'Check supply cost, running cost and floor build-up before adding bathroom heating.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'The short answer',
+        paragraphs: [
+          'If you are already renovating the bathroom and the floor is being stripped, underfloor heating is one of the most affordable comfort upgrades you can add. The cost is modest - typically $600 to $1,500 installed for a standard bathroom - and it runs for decades with almost no maintenance.',
+          'The time to install it is during the renovation, when the floor is open and the electrician is already on site. Adding it later means lifting tiles, which is costly and disruptive.',
+        ],
+      },
+      {
+        heading: 'How it works',
+        paragraphs: [
+          'Electric underfloor heating uses a thin heating mat or cable laid on the screed before the tiles go on. The mat sits between the waterproofing membrane and the tile adhesive. A thermostat on the wall controls the temperature and the schedule.',
+          'The system heats the tile surface, not the air. You feel the warmth through your feet. It does not replace a room heater in cold climates, but in Sydney it takes the chill off a tile floor in the morning and makes the room noticeably more comfortable from autumn through spring.',
+        ],
+      },
+      {
+        heading: 'What it costs',
+        paragraphs: [
+          'For a standard bathroom of 3 to 9 square metres, expect to pay $600 to $1,500 installed, including a programmable thermostat. The heating mat itself is the smaller part of the cost. The electrician\'s time to lay the mat, connect the thermostat and test the system is the larger part.',
+          'Running costs are low. A typical bathroom heating mat draws 150 to 300 watts - similar to a couple of light bulbs. Running it for an hour in the morning costs a few cents. Over a full winter, the total running cost for most bathrooms is less than $30.',
+        ],
+      },
+      {
+        heading: 'Electric vs hydronic',
+        paragraphs: [
+          'Electric heating mats are the standard choice for bathroom renovations. They are thin, easy to install under tiles, and work independently of the home\'s heating system. They suit rooms up to about 15 square metres.',
+          'Hydronic underfloor heating circulates warm water through pipes in the floor. It is more efficient for heating whole houses but is more complex and expensive to install. It is rarely practical for a single-room bathroom renovation because it needs a boiler or heat pump, piping and a manifold.',
+          'For a bathroom renovation, electric is almost always the right choice.',
+        ],
+      },
+      {
+        heading: 'Installation during a renovation',
+        paragraphs: [
+          'The heating mat is laid after the waterproofing membrane has been applied and cured. The electrician positions the mat according to the room layout - typically covering the floor area where you stand, avoiding the area under the toilet, vanity and any fixed cabinetry.',
+          'The thermostat sensor is embedded in the floor between the mat cables. The thermostat itself is mounted on the wall at switch height. The wiring connects to a dedicated circuit in the switchboard.',
+          'The tiles go on top of the mat using a flexible tile adhesive. The system is not switched on until the adhesive has fully cured - usually seven days after tiling.',
+        ],
+      },
+      {
+        heading: 'What to consider',
+        paragraphs: [
+          'Underfloor heating works best under tile and stone. These materials conduct heat well and feel warm underfoot. It is less effective under vinyl or timber, which insulate rather than conduct.',
+          'The heating mat adds a small amount of height to the floor - typically 3 to 4 millimetres. In most renovations this is absorbed into the tile bed and makes no practical difference.',
+          'If the bathroom has a timber subfloor, check that the heating mat is compatible. Most electric mats are rated for use on timber and concrete substrates, but the manufacturer\'s instructions should be followed.',
+        ],
+      },
+      {
+        heading: 'How ETR handles underfloor heating',
+        paragraphs: [
+          'Underfloor heating is discussed at the on-site measure. If you want it, it is included in the written scope and the electrical rough-in. The mat is laid after <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition</a> and waterproofing, before tiling.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate. The underfloor heating sits on top of the membrane and does not affect the waterproofing. A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does underfloor heating cost in a bathroom renovation?',
+        answer: 'For a standard bathroom of 3 to 9 square metres, expect $600 to $1,500 installed, including a programmable thermostat. Running costs are low - typically less than $30 for a full winter of morning use.',
+      },
+      {
+        question: 'Can underfloor heating be added to an existing bathroom?',
+        answer: 'It can, but it means lifting the tiles and re-tiling after the mat is installed. That is expensive and disruptive. The practical time to add it is during a renovation, when the floor is already open.',
+      },
+      {
+        question: 'Does underfloor heating work under all floor types?',
+        answer: 'It works best under tile and stone, which conduct heat well. It is less effective under vinyl or timber, which insulate rather than conduct. Most bathroom renovations use tile, so this is rarely a limitation.',
+      },
+      {
+        question: 'Is underfloor heating safe in a wet area?',
+        answer: 'Yes. The heating mat is installed on top of the waterproofing membrane and is designed for wet-area use. It is connected to a dedicated circuit with safety switches. The system is tested before tiling and does not compromise the waterproofing.',
+      },
+      {
+        question: 'How long does bathroom underfloor heating last?',
+        answer: 'Most electric underfloor heating systems are rated for 25 to 30 years or more. They have no moving parts and require no maintenance. The thermostat may need replacing before the mat does.',
+      },
+    ],
+  },
+  {
+    slug: 'family-bathroom-renovation-ideas',
+    title: 'Family-friendly bathroom renovation: designing for kids and adults',
+    metaTitle: 'Family Bathroom Renovation Ideas',
+    description: 'Plan a family bathroom around clear paths, safe use, storage and hard-wearing finishes.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'A family bathroom has to work harder',
+        paragraphs: [
+          'A family bathroom is used by more people, more often and in more ways than any other bathroom in the house. Morning rush, bath time, teeth brushing, laundry staging - the room handles all of it. The design needs to be practical, durable and safe, without feeling like a compromise.',
+          'The best family bathrooms are not designed around a single user or a single moment. They are designed around how the room is used across a typical week.',
+        ],
+      },
+      {
+        heading: 'Keep the bath',
+        paragraphs: [
+          'If you have children under six, keep a bathtub. Bathing a toddler in a shower is awkward, slippery and rarely successful. A built-in bath with a flat, wide rim is easier for parents to kneel beside and safer for small children to sit in.',
+          'A freestanding bath looks good but is harder to use for bathing children - there is no rim to lean on, and cleaning behind it is a chore. In a family bathroom, a built-in bath is almost always more practical. Our <a href="/blog/walk-in-shower-vs-bathtub-renovation/" class="et-link">shower vs bathtub guide</a> covers this decision in more detail.',
+        ],
+      },
+      {
+        heading: 'Separate the shower',
+        paragraphs: [
+          'If the room is large enough, a separate walk-in shower alongside the bath gives adults a quick, practical option without climbing over a bath edge every morning. A shower-over-bath is the fallback when the room is too small for both.',
+          'A fixed rain showerhead plus a hand-held shower on a rail covers all uses - the rain head for adults, the hand-held for rinsing children and cleaning the shower itself.',
+        ],
+      },
+      {
+        heading: 'Storage that survives daily use',
+        paragraphs: [
+          'A family bathroom needs more storage than most renovations plan for. Toiletries for two or more people, cleaning products, bath toys, spare towels and nappies or nappy bins all compete for space.',
+          'A vanity with drawers is more practical than open shelves. Items are hidden, dust-free and out of reach of small children. A mirrored shaving cabinet above the vanity doubles the storage without adding floor footprint.',
+          'A recessed shower niche keeps bottles off the floor and off the bath edge. Two niches - one at adult height, one lower - suit a shared room. Our <a href="/blog/small-bathroom-storage-solutions/" class="et-link">storage solutions guide</a> covers niche placement and vanity options.',
+        ],
+      },
+      {
+        heading: 'Durable finishes',
+        paragraphs: [
+          'Children are hard on surfaces. Bath toys scratch acrylic baths. Wet hands pull on towel rails. Soap and toothpaste sit on vanity tops for longer than they should.',
+          'Porcelain tiles are more durable than ceramic and resist chipping better. An engineered-stone vanity top handles spills and stains better than natural stone. Chrome or brushed nickel tapware is easier to maintain than matte black in a high-traffic room.',
+          'Choose grout in a mid-tone rather than white. White grout in a family bathroom stains within months. A grey or warm-toned grout hides daily use and cleans more easily.',
+        ],
+      },
+      {
+        heading: 'Safety features',
+        paragraphs: [
+          'Non-slip floor tiles rated P3 or higher reduce the risk of falls on wet floors. This matters more in a family bathroom where children run, slip and splash.',
+          'A thermostatic mixer valve on the shower and bath limits the water temperature and prevents scalding. This is a small addition during the plumbing rough-in and a genuine safety feature for young children.',
+          'Rounded edges on vanity tops and benchtops reduce the risk of injury from bumps. Soft-close toilet seats and drawers stop fingers getting caught.',
+        ],
+      },
+      {
+        heading: 'Layout considerations',
+        paragraphs: [
+          'Door clearance matters in a family bathroom. A door that swings into the room and hits the vanity or toilet is a daily frustration. A sliding door or a door that opens outward frees up floor space.',
+          'Keep the toilet out of the direct sight line from the door. A short return wall or a change in the room layout gives privacy without a separate toilet room.',
+          'If the household has teenagers, consider a double vanity or a wider single vanity with two basins. Morning congestion is one of the biggest sources of frustration in a shared bathroom.',
+        ],
+      },
+      {
+        heading: 'How ETR designs family bathrooms',
+        paragraphs: [
+          'At the on-site measure, we ask who uses the room and how. The layout, fixtures and finishes are chosen to suit the household, not just the room. The written quote names every inclusion so there are no surprises.',
+          'ETR\'s packages start from $18,000 for a Basic renovation. Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Should I keep the bathtub in a family bathroom renovation?',
+        answer: 'If you have children under six, yes. Bathing a toddler in a shower is impractical and unsafe. A built-in bath with a flat rim is the most practical choice. If the room is large enough, add a separate walk-in shower alongside it.',
+      },
+      {
+        question: 'What tiles are best for a family bathroom?',
+        answer: 'Porcelain tiles are more durable than ceramic and resist chipping. Choose a non-slip rating of P3 or higher for the floor. Use mid-toned grout rather than white - it hides daily use and stains less visibly.',
+      },
+      {
+        question: 'How can I make a family bathroom safer for children?',
+        answer: 'Non-slip floor tiles, a thermostatic mixer valve to prevent scalding, soft-close drawers and toilet seats, and rounded vanity edges are the key safety features. All are easy to include during a renovation.',
+      },
+      {
+        question: 'How much storage does a family bathroom need?',
+        answer: 'More than most renovations plan for. A vanity with drawers, a mirrored shaving cabinet and recessed shower niches cover most needs. Plan storage for toiletries, cleaning products, towels and children\'s bath items.',
+      },
+      {
+        question: 'Is a double vanity worth it in a family bathroom?',
+        answer: 'If the room is large enough and the household includes teenagers or multiple adults, a double vanity reduces morning congestion. If the room is compact, a wider single vanity with a generous benchtop is a practical alternative.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-vanity-guide-renovation',
+    title: 'How to choose the right bathroom vanity during a renovation',
+    metaTitle: 'Bathroom Vanity Guide Renovation',
+    description: 'Compare vanity size, storage, wall-hung or floor-standing fit and material.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'The vanity sets the tone',
+        paragraphs: [
+          'The vanity is usually the largest piece of furniture in a bathroom. It anchors the room visually and practically - it holds the basin, the tapware, the mirror and most of the storage. Getting the vanity right sets the tone for the rest of the design.',
+          'Choosing a vanity is not just a style decision. Size, mounting, material, storage and basin type all affect how the room works day to day.',
+        ],
+      },
+      {
+        heading: 'Wall-hung vs freestanding',
+        paragraphs: [
+          'A wall-hung vanity is mounted to the wall with no legs touching the floor. It makes the room feel larger because you can see the floor underneath. It also makes cleaning easier - a mop slides under without moving anything.',
+          'The trade-off: a wall-hung vanity needs solid backing in the wall to carry the weight. If the wall is plasterboard on timber studs, blocking must be installed during the renovation. A wall-hung vanity also has less depth for plumbing, so the waste and water lines need to be positioned carefully.',
+          'A freestanding vanity sits on the floor like a piece of furniture. It is simpler to install and does not need wall reinforcement. It can feel more grounded and substantial in a larger room. The downside is that it collects dust and moisture where it meets the floor.',
+        ],
+      },
+      {
+        heading: 'Size and proportion',
+        paragraphs: [
+          'The vanity should suit the room, not dominate it. In a small bathroom, a 600 to 750 millimetre vanity leaves room for the toilet and shower without crowding the space. In a larger bathroom or an ensuite, a 900 to 1,200 millimetre vanity gives more benchtop space and storage.',
+          'A double vanity (1,200 millimetres or wider) suits a shared bathroom or master ensuite where two people use the room at the same time. It reduces morning congestion but needs a room wide enough to carry it without blocking the door swing or the shower entry.',
+          'Depth matters too. A standard vanity is 450 to 500 millimetres deep. A compact vanity for a powder room or small bathroom may be 350 to 400 millimetres. Shallower vanities free up floor space but hold less.',
+        ],
+      },
+      {
+        heading: 'Basin types',
+        paragraphs: [
+          'An undermount basin sits below the benchtop. It gives a clean edge, is easy to wipe down and suits stone or engineered-stone tops. An above-counter basin sits on top of the vanity. It adds height and makes a visual statement, but the exposed sides collect dust and the bench height is higher.',
+          'An integrated basin is moulded as one piece with the benchtop. It is the easiest to clean - no seam, no edge, no join. It works well in compact vanities and is common in laminate and polymarble units.',
+          'A semi-recessed basin sits partly inside the vanity and partly above it. It gives a shallower cabinet while keeping a full-size basin. It suits narrow rooms where depth is limited.',
+        ],
+      },
+      {
+        heading: 'Material and benchtop',
+        paragraphs: [
+          'Engineered stone is the most common benchtop choice in bathroom renovations. It resists stains, scratches and moisture better than natural stone and comes in a wide range of colours. Natural stone - marble, granite, travertine - adds character but needs sealing and is more porous.',
+          'Timber vanity cabinets bring warmth to a tiled room. They suit warm neutral schemes and pair well with brushed brass or brushed nickel fittings. Ensure the timber is sealed or finished for wet-area use - raw timber in a bathroom will not last.',
+          'Laminate and polyurethane cabinets are moisture-resistant and cost-effective. They suit a budget or mid-range renovation and are available in a range of colours and textures.',
+        ],
+      },
+      {
+        heading: 'Storage',
+        paragraphs: [
+          'Drawers are more practical than doors in a vanity. They let you see everything at once, reach items at the back and use the full depth of the cabinet. A two-drawer vanity with an internal divider handles most bathroom storage needs.',
+          'A mirrored shaving cabinet above the vanity adds storage without adding floor footprint. It is especially useful in compact bathrooms where the vanity is small.',
+          'If the household shares the bathroom, plan storage for multiple sets of toiletries. A single drawer shared between two people fills up fast.',
+        ],
+      },
+      {
+        heading: 'How ETR helps with vanity selection',
+        paragraphs: [
+          'The vanity is part of the selections process during planning, before site work starts. The on-site measure confirms the room dimensions, the plumbing positions and the wall structure. The written quote names the vanity type, size and material so the scope and price are clear.',
+          'ETR\'s packages start from $18,000 for a Basic renovation. A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is a wall-hung vanity better than a freestanding one?',
+        answer: 'A wall-hung vanity makes the room feel larger and is easier to clean under. It needs solid backing in the wall. A freestanding vanity is simpler to install and can feel more substantial. The right choice depends on the room size, the wall structure and the look you want.',
+      },
+      {
+        question: 'What size vanity do I need for a small bathroom?',
+        answer: 'A 600 to 750 millimetre vanity suits most small bathrooms. It leaves room for the toilet and shower without crowding the space. A compact vanity with a shallower depth (350 to 400 mm) frees up even more floor area.',
+      },
+      {
+        question: 'What is the best vanity benchtop material for a bathroom?',
+        answer: 'Engineered stone is the most practical choice for most renovations. It resists stains, scratches and moisture, and comes in a wide range of colours. Natural stone adds character but needs sealing. Laminate and polymarble are cost-effective alternatives.',
+      },
+      {
+        question: 'Should I choose an undermount or above-counter basin?',
+        answer: 'An undermount basin gives a clean edge and is easy to wipe. An above-counter basin makes a visual statement but collects dust and raises the bench height. An integrated basin - moulded as one piece with the benchtop - is the easiest to clean.',
+      },
+      {
+        question: 'How much storage should a bathroom vanity have?',
+        answer: 'A two-drawer vanity with an internal divider handles most needs. Add a mirrored shaving cabinet above for extra storage without taking floor space. If the bathroom is shared, plan for storage for multiple sets of toiletries.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-permits-sydney',
+    title: 'Bathroom renovation permits and approvals in Sydney: what you need',
+    metaTitle: 'Bathroom Renovation Permits Sydney',
+    description: 'Find out when Sydney bathroom work needs approval and what can trigger it.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Do I need approval?',
+        paragraphs: [
+          'Most bathroom renovations in Sydney do not need council approval. If you are stripping the old room, fitting new pipes, sealing the wet area, tiling and putting in new fixtures - all in the same footprint - you can go ahead without a formal sign-off.',
+          'That does not mean there are no rules. The wet area must be sealed to AS 3740. Pipe and wiring work must be done by licensed trades. And some jobs do need approval, based on what you change.',
+        ],
+      },
+      {
+        heading: 'What exempt development covers',
+        paragraphs: [
+          'Exempt work in NSW means you can do internal changes without council sign-off, as long as the work does not touch the structure, change the outside of the home or alter how the space is used. A like-for-like bathroom fit-out - new fixtures, new tiles, new pipes and sealing in the same wet area - is almost always exempt.',
+          'The key tests: no walls holding up the roof are removed, no change to the outside of the home, no extra floor area, and the work meets the Building Code. If all of these pass, you do not need a DA or a CDC.',
+        ],
+      },
+      {
+        heading: 'When you need a Complying Development Certificate',
+        paragraphs: [
+          'A CDC is a fast-track approval that a private certifier or council can issue, usually within 5 to 10 working days. You need one when the job goes beyond a like-for-like fit-out but still falls inside the rules for fast-track work.',
+          'Common triggers: moving a wall to change the room layout, making the wet area larger than it was, or changing the room\'s use - for example, turning a laundry into a bathroom.',
+          'A CDC is simpler and faster than a full DA. A certifier checks the plans, confirms they meet the Building Code and issues the sign-off. No council meeting is needed.',
+        ],
+      },
+      {
+        heading: 'When you need a Development Application',
+        paragraphs: [
+          'A DA is needed for work that does not fit the exempt or fast-track paths. In a bathroom job, this usually means big structural changes - taking out a wall that holds up the roof, adding a new room, or changing the outside of a heritage-listed home.',
+          'A DA goes through council and takes 3 to 12 weeks. It involves plans, an impact statement, and sometimes a notice to neighbours. Our <a href="/blog/heritage-bathroom-renovation-sydney/" class="et-link">heritage guide</a> covers what applies to listed homes.',
+          'For a standard bathroom job within the same footprint, a DA is rarely needed.',
+        ],
+      },
+      {
+        heading: 'Strata approvals are separate',
+        paragraphs: [
+          'If the bathroom is in a strata unit, the by-law adds another step on top of any council rules. Sealing the wet area affects shared property - the slab - and most schemes need a by-law vote before wet-area work can start.',
+          'Strata approval is not a council process. It is run by the owners body under the Strata Act. Allow 4 to 8 weeks for the by-law process. Our <a href="/blog/strata-bathroom-renovation-sydney/" class="et-link">strata guide</a> covers this in detail.',
+        ],
+      },
+      {
+        heading: 'Licences and insurance requirements',
+        paragraphs: [
+          'In NSW, any home building work over $5,000 must be done by a builder with a current licence. For jobs over $20,000, the builder must also carry Home Building cover - this protects you if the builder dies, goes missing or loses their licence.',
+          'Pipe and wiring work must be done by licensed trades and signed off with a certificate. The wet area must be sealed to AS 3740 and signed off before tiles go on.',
+          'ETR holds NSW Builder Licence 475204C. Every bathroom is sealed to AS 3740 with a sign-off and covered by a 10-year workmanship warranty.',
+        ],
+      },
+      {
+        heading: 'What ETR handles',
+        paragraphs: [
+          'The on-site measure confirms whether the job is exempt, needs a CDC or needs a DA. For most bathroom jobs, no council approval is needed. If a CDC is needed, we handle the filing with the certifier.',
+          'All trade work is done by licensed plumbers, sparkies and sealers. The written quote names the scope, and every sign-off is handed over when the job is done. A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need council approval to renovate my bathroom in Sydney?',
+        answer: 'Most bathroom jobs - new tiles, new pipes, sealing and new fixtures in the same footprint - are exempt and do not need council approval. You need approval if you are taking out walls, making the wet area bigger or changing the outside of the home.',
+      },
+      {
+        question: 'What is a CDC?',
+        answer: 'A CDC (Complying Development Certificate) is a fast-track approval issued by a private certifier or council, usually within 5 to 10 working days. It applies to jobs that go beyond a like-for-like fit-out - for example, moving a wall or making the wet area larger.',
+      },
+      {
+        question: 'What licence does a bathroom builder need in NSW?',
+        answer: 'Any home building work over $5,000 must be done by a builder with a current NSW Home Building Licence. For jobs over $20,000, the builder must also carry Home Building cover. ETR holds NSW Builder Licence 475204C.',
+      },
+      {
+        question: 'Do I need strata approval for a unit bathroom job?',
+        answer: 'Yes. Strata approval is separate from council approval. Sealing the wet area affects shared property, and most schemes need a by-law vote before wet-area work can start. Allow 4 to 8 weeks for the by-law process.',
+      },
+      {
+        question: 'What sign-off papers should I get after a bathroom job?',
+        answer: 'At minimum: a sealing sign-off (AS 3740), plumbing papers for the water and drainage work, and an electrical sign-off for any wiring. These prove the work was done to standard and matter for insurance and resale.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-plumbing-replacement',
+    title: 'What plumbing gets replaced during a bathroom renovation?',
+    metaTitle: 'Bathroom Renovation Plumbing Replacement',
+    description: 'See which pipes may be replaced and why old lines can be risky to keep.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Most of it, and here is why',
+        paragraphs: [
+          'In a full bathroom renovation, the plumber replaces most of the plumbing inside the room. The water supply lines, the drainage, the fixture connections and often the stop valves are all renewed. This is not because every pipe is failing - it is because the walls and floor are open, and this is the only practical time to do it.',
+          'Reusing 20-year-old pipes behind new tiles means the weakest part of the bathroom is the one you cannot see or reach. If a pipe fails after the tiles go on, fixing it means opening the wall. Replacing the plumbing during the renovation is cheaper than fixing it after.',
+        ],
+      },
+      {
+        heading: 'Water supply lines',
+        paragraphs: [
+          'The pipes that carry hot and cold water to the basin, shower, bath and toilet are called supply lines. In older homes, these may be copper, galvanised steel or - in pre-1950s homes - lead.',
+          'Copper pipes corrode over time, especially at joints. Galvanised steel pipes rust from the inside out, narrowing the bore and reducing water pressure. Lead pipes are a health concern and should be replaced whenever they are found.',
+          'New supply lines are typically PEX (cross-linked polyethylene) or copper. PEX is flexible, resistant to corrosion and faster to install. Copper is traditional and durable. Both are compliant. The plumber roughs in the new lines to the positions set by the layout before the walls are sheeted.',
+        ],
+      },
+      {
+        heading: 'Drainage',
+        paragraphs: [
+          'The waste pipes carry used water from the basin, shower and bath to the main drain. The toilet connects to a larger sewer pipe. In older homes, these may be clay, cast iron or PVC.',
+          'Clay drains crack and sag over time. Cast iron corrodes. Both can develop root intrusion at joints. PVC is the modern standard - it does not corrode, is smooth inside and lasts decades.',
+          'In a full renovation, the drain positions are set during the plumbing rough-in. If the layout is changing - for example, moving the shower from one end of the room to the other - new drain runs are laid in the slab or under the timber floor.',
+        ],
+      },
+      {
+        heading: 'The toilet connection',
+        paragraphs: [
+          'The toilet connects to the sewer via a pan connector. In older homes, this may be a lead or rubber joint on a clay or cast iron stack. In a renovation, the connection is renewed with a PVC pan connector and a new cistern connection.',
+          'If the toilet position is changing, the waste pipe route changes too. In a house on a slab, this may mean cutting the slab to lay a new pipe run. In an apartment, the toilet is usually constrained by the stack position. Our <a href="/blog/apartment-bathroom-renovation-vs-house/" class="et-link">apartment vs house guide</a> covers the plumbing constraints in unit renovations.',
+        ],
+      },
+      {
+        heading: 'Stop valves and isolation points',
+        paragraphs: [
+          'Stop valves let you shut off the water to a single fixture without turning off the whole house. Old gate valves seize over time and stop working. New ball valves or quarter-turn isolators are more reliable.',
+          'Replacing stop valves during the renovation is a small job - the plumber is already on site and the walls are open. It gives you the ability to isolate a leaking tap or toilet later without shutting off the main.',
+        ],
+      },
+      {
+        heading: 'What about the hot water system?',
+        paragraphs: [
+          'A bathroom renovation does not automatically mean replacing the hot water system. If the existing unit is working well and has capacity for the new fixtures, it stays.',
+          'If the existing unit is old, undersized or unreliable, the renovation is a good time to upgrade. The plumber is already on site, and the new supply lines can be run to suit the new unit location.',
+          'Switching from an old electric tank to a heat pump or continuous-flow gas unit can reduce energy costs. This is a separate decision from the bathroom renovation itself, but the timing works well together.',
+        ],
+      },
+      {
+        heading: 'How ETR manages plumbing',
+        paragraphs: [
+          'The plumbing scope is confirmed at the on-site measure. The written quote names what is being replaced, what is being reused and how the rough-in will be done. The plumber is licensed and all work is certified.',
+          'Every bathroom is waterproofed to AS 3740 after the plumbing rough-in, with a compliance certificate. The work is carried out under NSW Builder Licence 475204C with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do all pipes need to be replaced during a bathroom renovation?',
+        answer: 'Not technically, but it is almost always recommended. The walls and floor are open during a renovation, and this is the only practical time to renew old plumbing. Reusing old pipes behind new tiles means the weakest part of the bathroom is the one you cannot reach.',
+      },
+      {
+        question: 'What type of pipes are used in a modern bathroom renovation?',
+        answer: 'PEX (cross-linked polyethylene) or copper for water supply. PVC for drainage. PEX is flexible, corrosion-resistant and fast to install. Copper is traditional and durable. PVC is the standard for waste and sewer lines.',
+      },
+      {
+        question: 'Can the toilet be moved during a bathroom renovation?',
+        answer: 'Yes, but it depends on the waste pipe route. In a house on a slab, the slab may need to be cut. In an apartment, the toilet is usually constrained by the stack position. The plumber assesses what is practical during the on-site measure.',
+      },
+      {
+        question: 'How much does plumbing replacement add to a bathroom renovation cost?',
+        answer: 'Plumbing is part of the total renovation cost, not a separate charge. In a full renovation, the plumbing rough-in, fixture connections and certification are included in the scope. The cost varies with the number of fixtures and whether pipe positions are moving.',
+      },
+      {
+        question: 'Should I replace the hot water system at the same time as the bathroom?',
+        answer: 'Only if the existing system is old, undersized or unreliable. If it works well and has capacity for the new fixtures, it can stay. The renovation is a convenient time to upgrade because the plumber is already on site.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-insurance-australia',
+    title: 'Bathroom renovation and home insurance: what to know before you start',
+    metaTitle: 'Bathroom Renovation Insurance Australia',
+    description: 'Tell your insurer before work starts and check what your policy covers.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Your insurer needs to know',
+        paragraphs: [
+          'Before a bathroom renovation starts, tell your home insurer. Most policies require you to notify them of any renovation, extension or structural work. Failing to do so can void your cover or leave gaps that only show up when you make a claim.',
+          'This is not a complicated process. A phone call or online update to your insurer before work starts is usually enough. They may ask about the scope, the builder, the licence and the expected cost.',
+        ],
+      },
+      {
+        heading: 'What can go wrong during the renovation',
+        paragraphs: [
+          'A bathroom job involves demo, pipe work, wiring and sealing. Things that can go wrong include water damage from a pipe join during the rough-in, damage to the next room during demo, or a fire from wiring work.',
+          'Your home policy may or may not cover damage caused during building work. Some policies cut out building damage. Others cover it but with strings - for example, the builder must hold their own cover.',
+          'Check your policy before work starts. If it cuts out building damage, your builder\'s cover should pick it up - but confirm that too.',
+        ],
+      },
+      {
+        heading: 'Builder insurance vs home insurance',
+        paragraphs: [
+          'A licensed builder should carry public liability cover, which pays for damage to other people or their property during the work. In NSW, for jobs over $20,000, the builder must also carry Home Building cover - this protects you if the builder dies, goes missing or loses their licence.',
+          'These are not the same as your home policy. Builder cover pays for damage the builder causes during the work. Your home policy pays for other events - a storm, a fire, a theft - that may happen while the bathroom is half-built.',
+          'Both are needed. Neither replaces the other.',
+        ],
+      },
+      {
+        heading: 'Update your policy after the renovation',
+        paragraphs: [
+          'A new bathroom raises the value of your home. If your policy still shows the old sum, you may be under-covered. A modern bathroom with new fittings costs more to replace than the old one did.',
+          'After the work is done, update the insured value of your building with your provider. This is usually a simple change. It may raise your premium slightly, but it means you are fully covered if you need to claim.',
+          'Keep a copy of the written scope, the final invoice and the sealing sign-off. These are useful if you need to claim or if a future buyer asks for proof of the work.',
+        ],
+      },
+      {
+        heading: 'Waterproofing certificates and insurance',
+        paragraphs: [
+          'A sealing sign-off (AS 3740) is not just a building rule. It is proof that the wet area was sealed to standard. If water damage turns up later - in your home or, in a unit, in the one below - the sign-off shows the work was done right.',
+          'Without one, you may be on the hook for damage from a sealing failure, and your provider may refuse the claim. This is one of the reasons every ETR bathroom is sealed to AS 3740 with a sign-off.',
+        ],
+      },
+      {
+        heading: 'Warranty and defects',
+        paragraphs: [
+          'A builder\'s warranty covers faults in the work for a set period. ETR gives a 10-year warranty. If a fault shows up in that time - a tile lifting, a leak at a join, a fitting that fails because of how it was put in - the warranty covers it, not your home policy.',
+          'Home cover pays for sudden damage - a burst pipe, a storm, an impact. It does not pay for slow wear, ageing or faults in the building work. Knowing where warranty ends and home cover starts saves mix-ups later.',
+        ],
+      },
+      {
+        heading: 'Checklist before the renovation starts',
+        paragraphs: [
+          'Tell your home provider the scope and dates. Check your policy covers your home during the work, or learn what it leaves out. Check the builder holds public liability cover and, for jobs over $20,000, Home Building cover. Keep copies of the builder\'s licence, cover papers, the written scope and the sealing sign-off.',
+          'After the work is done, update your insured value to match the new worth of the home. A free on-site measure anywhere in Sydney is the right starting point for the job itself.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need to tell my insurer about a bathroom renovation?',
+        answer: 'Yes. Most home policies need you to tell them before any building or structural work starts. If you skip this step, your cover could be voided or have gaps you only find when you claim.',
+      },
+      {
+        question: 'Does home cover pay for damage during a bathroom job?',
+        answer: 'It depends on your policy. Some policies cut out damage from building work. Others cover it with strings. Check your policy before work starts and confirm what the builder\'s cover handles as well.',
+      },
+      {
+        question: 'What cover should my bathroom builder carry?',
+        answer: 'A licensed builder should carry public liability cover. In NSW, for jobs over $20,000, the builder must also carry Home Building cover. This protects you if the builder cannot finish or fix the work.',
+      },
+      {
+        question: 'Should I update my home policy after a bathroom job?',
+        answer: 'Yes. A new bathroom raises the value of your home. Update your insured sum with your provider after the work is done so you are not under-covered.',
+      },
+      {
+        question: 'Why does the sealing sign-off matter for cover?',
+        answer: 'A sealing sign-off (AS 3740) is proof that the wet area was sealed to standard. If water damage turns up later, the sign-off shows the work was done right. Without one, you may be on the hook for the damage and your provider may refuse the claim.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-project-management-timeline',
+    title: 'Bathroom renovation project management: what to expect week by week',
+    metaTitle: 'Bathroom Renovation Project Management Timeline',
+    description: 'Follow the work from the first measure to the final clean with a week-by-week plan.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why a bathroom renovation has a sequence',
+        paragraphs: [
+          'A bathroom renovation is not one job. It is a series of trades working in sequence: demolition, plumbing rough-in, electrical rough-in, waterproofing, tiling, fixture installation, painting, final plumbing, final electrical, clean-up. Each trade depends on the one before it.',
+          'Good project management means the right trade turns up on the right day with the right materials, and nothing waits longer than it needs to. Poor project management means the plumber is booked somewhere else when the demolition finishes, and the job sits idle for a week.',
+        ],
+      },
+      {
+        heading: 'Before the renovation starts: planning and selections',
+        paragraphs: [
+          'The on-site measure happens first. The builder inspects the room, takes measurements, discusses the layout and scope, and identifies any likely issues - old plumbing, timber floors, access constraints, strata requirements.',
+          'After the measure, the written quote is prepared. The homeowner selects tiles, tapware, the vanity, toilet, shower screen, lighting and accessories. All selections should be confirmed and materials ordered before the renovation starts. Changes after site work begins cost time and money.',
+          'This planning phase typically takes 2 to 4 weeks, depending on how quickly selections are made and materials are available.',
+        ],
+      },
+      {
+        heading: 'Week 1: demolition and rough-in',
+        paragraphs: [
+          'Day 1 to 2: the old bathroom is stripped. Fixtures, tiles, screed and old waterproofing are removed. The room is reduced to structure - studs, slab or timber floor, pipe stubs. Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers this step in detail.',
+          'Day 2 to 3: the plumber roughs in the new pipe positions - water supply, drainage and any gas lines. The electrician runs new wiring for lights, the exhaust fan, heated towel rail and any underfloor heating.',
+          'Day 3 to 4: wall and floor substrates are repaired or replaced. Cement sheet lining goes on the walls. The floor screed is poured and set to the correct gradient for drainage.',
+        ],
+      },
+      {
+        heading: 'Week 2: waterproofing and tiling',
+        paragraphs: [
+          'Day 5 to 6: the waterproofing membrane is applied. This is a multi-coat process - each coat must dry before the next is applied. The membrane covers the floor, the junction between floor and walls, and a minimum height up the shower walls. The membrane is inspected and certified before tiling begins.',
+          'Day 6 to 8: tiling starts. Floor tiles go down first, followed by wall tiles. A standard bathroom takes 2 to 3 days to tile. Complex layouts, feature walls or small mosaic tiles take longer. Grouting follows tiling - typically the next day.',
+        ],
+      },
+      {
+        heading: 'Week 3: fixtures and finishing',
+        paragraphs: [
+          'Day 9 to 10: the plumber returns to install the basin, tapware, toilet, shower set and any bath fittings. The shower screen is measured and ordered - a frameless screen is typically custom-made and arrives 5 to 10 business days after measurement.',
+          'Day 10 to 11: the electrician installs the exhaust fan, light fittings, mirror light, heated towel rail and switches. Painting of walls and ceilings is done at this stage.',
+          'Day 12 to 13: the shower screen is installed. Final silicone is applied at all junctions - screen to tile, vanity to wall, bath to tile. Accessories - towel rails, toilet roll holder, robe hooks - are fixed.',
+        ],
+      },
+      {
+        heading: 'Handover and clean-up',
+        paragraphs: [
+          'The final step is a thorough clean and a walk-through with the homeowner. Every fixture is checked, every tap is run, every drain is tested. The shower is run to check for leaks. The exhaust fan is tested.',
+          'All compliance certificates are handed over: waterproofing (AS 3740), plumbing, electrical. The warranty documentation is provided. The room is clean and ready to use.',
+          'From demolition to handover, a standard bathroom renovation takes 2 to 3 weeks of site work. The total project timeline - including the planning and selections phase - is typically 4 to 8 weeks.',
+        ],
+      },
+      {
+        heading: 'What keeps a renovation on track',
+        paragraphs: [
+          'Three things: confirmed selections before the start date, a clear written scope, and a project manager who coordinates the trades. When one of these is missing, the job stalls.',
+          'Adam Dawood manages ETR\'s projects with over 25 years of experience. The written scope names every inclusion, and the trade schedule is set before demolition day. Communication through the build - what is happening today, what is coming tomorrow - is something our <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">timeline guide</a> and our reviews consistently highlight.',
+        ],
+      },
+      {
+        heading: 'How ETR manages the process',
+        paragraphs: [
+          'The on-site measure, written quote, selections process and trade schedule are all coordinated before site work begins. During the build, the homeowner is updated on progress and timing. The project manager is the single point of contact.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does a bathroom renovation take from start to finish?',
+        answer: 'Site work typically takes 2 to 3 weeks for a standard bathroom. The total project timeline, including planning and selections, is 4 to 8 weeks. Complex renovations, heritage homes or custom materials can extend the timeline.',
+      },
+      {
+        question: 'What is the biggest cause of renovation delays?',
+        answer: 'Late selections. If tiles, tapware or fixtures are not confirmed before the start date, the job waits for materials. Confirming all selections and ordering materials before demolition is the single most effective way to avoid delays.',
+      },
+      {
+        question: 'Can I use the bathroom during the renovation?',
+        answer: 'No. The bathroom is out of service from demolition to handover - typically 2 to 3 weeks. You will need access to another bathroom or toilet in the house or a temporary arrangement.',
+      },
+      {
+        question: 'What happens if something unexpected is found during demolition?',
+        answer: 'Unexpected finds - old plumbing, water damage, asbestos - are common in older homes. A good written scope names how these are handled before work starts. The builder communicates the find, the options and the cost impact before proceeding.',
+      },
+      {
+        question: 'How do I know the renovation is on schedule?',
+        answer: 'Regular communication from the project manager. You should know what trade is on site each day, what comes next and whether the timeline has changed. A daily or end-of-day update is standard practice.',
+      },
+    ],
+  },
+  {
+    slug: 'large-format-tiles-bathroom-renovation',
+    title: 'Large-format tiles in a bathroom renovation: pros, cons and what to know',
+    metaTitle: 'Large Format Tiles Bathroom Renovation',
+    description: 'Check tile size, wall preparation, fitting needs and cost before choosing large tiles.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What counts as a large-format tile',
+        paragraphs: [
+          'A large-format tile is any tile where one side is 400 millimetres or longer. Common bathroom sizes are 300 by 600, 600 by 600 and 600 by 1,200 millimetres. Some suppliers now offer 800 by 1,600 and even 1,200 by 1,200 panels for feature walls.',
+          'The trend toward larger tiles has been building for years. Fewer grout lines give the room a cleaner, more seamless look and make the space feel larger. But larger tiles bring specific installation requirements that smaller tiles do not.',
+        ],
+      },
+      {
+        heading: 'The visual advantage',
+        paragraphs: [
+          'Fewer grout lines mean less visual interruption. A wall covered in 600 by 1,200 tiles reads as a continuous surface rather than a grid. In a small bathroom, this effect makes the room feel more spacious.',
+          'Large-format tiles also show the tile pattern - veining, texture, colour variation - more clearly. A marble-look porcelain tile at 600 by 1,200 displays the veining across a single piece rather than cutting it into small fragments. The result looks more natural and less repetitive.',
+          'Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how tile format and colour work together to set the room\'s tone.',
+        ],
+      },
+      {
+        heading: 'Installation requirements',
+        paragraphs: [
+          'Large tiles need a flat substrate. Even a slight variation in the wall or floor surface - 2 to 3 millimetres over a metre - causes lippage, where one edge of the tile sits higher than the next. The substrate must be prepared to a tighter tolerance than for smaller tiles.',
+          'The adhesive matters. Large tiles need a high-bond, flexible tile adhesive applied with a notched trowel in a pattern that ensures full coverage across the back of the tile. Spot-fixing - applying adhesive in dabs - risks voids under the tile, which can crack under load or movement.',
+          'Cutting large-format tiles requires a tile saw large enough to handle the size. Curved cuts, around pipes and drains, are harder and produce more waste. Plan on ordering 15 to 20 percent more tiles than the measured area to account for cuts and breakage.',
+        ],
+      },
+      {
+        heading: 'Where large-format tiles work best',
+        paragraphs: [
+          'Feature walls. A single wall behind the vanity or in the shower recess in a large-format tile creates a focal point. The rest of the room can use a simpler, smaller tile to balance the visual weight.',
+          'Floor tiles in open areas. A 600 by 600 or 600 by 1,200 tile on the floor of a larger bathroom reduces grout lines and is easy to clean. In a compact bathroom, a single row of 600 by 1,200 tiles may be all the floor needs.',
+          'Wall tiles in showers. Large tiles on the shower walls reduce the grout area, which reduces the surface that needs regular sealing and cleaning. A shower with four large tiles per wall looks cleaner than one with twenty small tiles.',
+        ],
+      },
+      {
+        heading: 'Where they are harder to use',
+        paragraphs: [
+          'Shower floors. The floor of a walk-in shower is graded to a drain. A large tile cannot follow a multi-directional gradient without either lippage or visible cuts. Shower floors suit smaller tiles - mosaics or 100 by 100 tiles - that follow the curve of the fall.',
+          'Small rooms with many fixtures. A bathroom with a toilet, vanity, shower recess and door frame in a tight space has many cuts and junctions. Large tiles mean more waste and more complex cutting around obstacles.',
+          'Curved or uneven walls. Older homes with walls that are not plumb or flat need more preparation before large tiles can go on. The cost of straightening the substrate can offset the savings from fewer tiles.',
+        ],
+      },
+      {
+        heading: 'Cost considerations',
+        paragraphs: [
+          'Large-format tiles are not always more expensive per square metre than smaller tiles. Many popular porcelain ranges cost the same across sizes. The cost difference is in the installation - large tiles take more time to handle, more care to set and more skill to cut.',
+          'Labour costs are typically higher for large-format tiles because the tiler works more slowly to get the substrate right, handle the tiles without breaking them, and achieve a flat, lippage-free finish. A 600 by 1,200 tile that cracks during cutting wastes eight times the material of a 300 by 300 tile.',
+          'The total cost depends on the room size, the tile size, the number of cuts and the substrate condition. ETR\'s on-site measure confirms what is practical and quotes accordingly.',
+        ],
+      },
+      {
+        heading: 'How ETR handles large-format tiles',
+        paragraphs: [
+          'Large-format tiles are selected during the planning phase, before the quote is finalised. The tile choice affects the substrate preparation, the adhesive specification and the tiling time. The written quote accounts for these requirements.',
+          'Adam Dawood has over 25 years in tiling and project management. The team handles large-format tiles regularly, including full-height feature walls and floor-to-ceiling shower tiles. Every bathroom is waterproofed to AS 3740 with a compliance certificate. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are large-format tiles more expensive than standard tiles?',
+        answer: 'The tiles themselves are often the same price per square metre. The cost difference is in installation - large tiles require a flatter substrate, more careful handling, and higher-skill cutting. Labour costs are typically higher, and waste from breakage costs more per tile.',
+      },
+      {
+        question: 'Can I use large-format tiles in a small bathroom?',
+        answer: 'Yes. Large tiles can make a small bathroom feel more spacious by reducing grout lines. A 300 by 600 or 600 by 600 tile works well in most small rooms. Very large tiles (600 by 1,200 or bigger) may produce more waste from cuts in a tight space.',
+      },
+      {
+        question: 'Can large-format tiles be used on a shower floor?',
+        answer: 'Generally not. Shower floors are graded to a drain, and large tiles cannot follow the gradient without lippage or awkward cuts. Smaller tiles - mosaics or 100 by 100 tiles - follow the fall more easily and provide better grip on a wet surface.',
+      },
+      {
+        question: 'What causes lippage with large-format tiles?',
+        answer: 'Lippage happens when one edge of a tile sits higher than the next, usually because the substrate is not flat enough. Large tiles span more surface area, so even small variations in the wall or floor become visible. Proper substrate preparation is the fix.',
+      },
+      {
+        question: 'What grout width should I use with large-format tiles?',
+        answer: 'A 1.5 to 2 millimetre grout joint is standard for large-format rectified tiles. Narrower joints emphasise the seamless look. The tile manufacturer specifies the minimum joint width - going below it can cause cracking if the tile or substrate moves.',
+      },
+    ],
+  },
+
+  // ── Weeks 11–15 (content strategy batch 3) ──────────────────────────
+
+  {
+    slug: 'eco-friendly-bathroom-renovation',
+    title: 'Eco-friendly bathroom renovation: sustainable choices that save water and money',
+    metaTitle: 'Eco Friendly Bathroom Renovation Australia',
+    description: 'Choose water-saving fittings and durable materials to reduce water use and replacement waste.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why sustainability matters in a bathroom',
+        paragraphs: [
+          'Bathrooms use more water than any other room in the house. The average Australian household sends roughly 200 litres per person per day through taps, toilets and showers, and the bathroom accounts for most of it. A renovation is the one chance to change all the fixtures at once.',
+          'Sustainable choices in a bathroom are not about sacrifice. They are about picking products that use less water and energy while doing the same job. In most cases, the swap costs the same or saves money over the life of the fixture.',
+        ],
+      },
+      {
+        heading: 'Water-saving fixtures and the WELS rating',
+        paragraphs: [
+          'The Water Efficiency Labelling and Standards (WELS) scheme rates taps, showers, toilets and washing machines on a star scale. More stars means less water per use. A 3-star showerhead uses about 6 to 7 litres per minute. A 1-star head uses 12 or more.',
+          'Dual-flush toilets are standard in Australia. A 4-star model uses roughly 3 litres on a half flush and 4.5 litres on a full flush. Older single-flush cisterns used 11 litres every time. The swap alone can save thousands of litres a year.',
+          'Low-flow taps with aerators mix air into the water stream. You get the same feel of pressure at the basin, but the tap delivers fewer litres per minute. Our <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware finishes guide</a> covers how to choose a tap that looks right and performs well.',
+        ],
+      },
+      {
+        heading: 'Materials with a lighter footprint',
+        paragraphs: [
+          'Porcelain tiles are fired at high heat and last decades. They do not release chemicals into the room and can be made from partly recycled content. Some Australian tile ranges now use up to 40 percent recycled material in the body of the tile.',
+          'Recycled glass benchtops and panels are another option. They are non-porous, do not need sealing and come in a range of colours. Bamboo is sometimes used for vanity tops or shelving - it grows faster than timber and is hard enough for wet areas when sealed.',
+          'Low-VOC paints and adhesives reduce the chemicals released into the air during and after the renovation. VOC stands for volatile organic compounds - the fumes you smell from fresh paint. Low-VOC products dry with less odour and better indoor air quality.',
+        ],
+      },
+      {
+        heading: 'LED lighting and energy use',
+        paragraphs: [
+          'LED downlights use a fraction of the power of halogen globes and last five to ten times longer. In a bathroom with four to six downlights, the switch from halogen to LED can cut lighting energy by 80 percent.',
+          'Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">bathroom lighting guide</a> covers placement and colour temperature. From a sustainability angle, the main point is simple: LED is the default for any new bathroom, and there is no performance reason to choose anything else.',
+        ],
+      },
+      {
+        heading: 'Ventilation and moisture control',
+        paragraphs: [
+          'Good ventilation is the most underrated sustainability feature in a bathroom. A room that clears steam quickly does not grow mould. A room that traps moisture needs chemical cleaning, replacement of grout and sometimes replacement of wall lining - all of which cost money and materials.',
+          'A timer-controlled exhaust fan that runs for 15 minutes after the shower is off clears moisture before it settles. A humidity-sensing fan does the same thing automatically. Either option extends the life of every surface in the room.',
+        ],
+      },
+      {
+        heading: 'ETR and Greenfleet',
+        paragraphs: [
+          'Elite Touch Renovations plants one tree for every completed project through Greenfleet, an Australian carbon offset provider. It is a small step, but it is real and ongoing.',
+          'The practical sustainability in our work is in the build itself: WELS-rated fixtures as standard, LED lighting, waterproofing to AS 3740 that protects the structure for decades, and a 10-year workmanship warranty that means the bathroom is built to last, not to be redone in five years. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do water-saving showerheads feel weak?',
+        answer: 'No. A modern 3-star WELS showerhead uses about 6 to 7 litres per minute and delivers a pressurised spray. The difference from an older high-flow head is hard to notice in use. Wider shower heads help - they spread the flow over a larger area.',
+      },
+      {
+        question: 'Are eco-friendly materials more expensive?',
+        answer: 'Some are, some are not. WELS-rated taps and toilets are priced the same as non-rated ones in most ranges. Recycled glass benchtops can cost more than standard laminate but less than natural stone. The savings on water and energy bills offset the difference over time.',
+      },
+      {
+        question: 'What is the WELS rating system?',
+        answer: 'WELS stands for Water Efficiency Labelling and Standards. It is an Australian government scheme that rates taps, showers, toilets and appliances on a star scale. More stars means less water per use. The label is mandatory on all new products sold in Australia.',
+      },
+      {
+        question: 'Can I reuse my existing tiles or fixtures?',
+        answer: 'Sometimes. If the existing bath, vanity or toilet is in good condition and meets current standards, it can stay. Tiles are harder to reuse - removing them usually breaks them. The decision is made at the on-site measure, based on what is there.',
+      },
+      {
+        question: 'Does ETR use sustainable building practices?',
+        answer: 'Yes. We specify WELS-rated fixtures as standard, use LED lighting, waterproof to AS 3740 so the structure lasts, and plant a tree for every completed project through Greenfleet. The strongest sustainability move is building a bathroom that does not need redoing in five years.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-living-at-home',
+    title: 'Bathroom renovation while living at home: how to manage the disruption',
+    metaTitle: 'Bathroom Renovation Living at Home Tips',
+    description: 'Plan for dust, noise and bathroom access if you stay at home during the work.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Yes, most people stay in the house',
+        paragraphs: [
+          'Most of the families we work with stay at home during their bathroom renovation. It is not always comfortable, but it is normal. The disruption has a shape - a loud week at the start, a quieter build phase in the middle, and a finishing stretch at the end.',
+          'The key is knowing what to expect and planning for it before work starts, not reacting to it once the tiles are off the wall.',
+        ],
+      },
+      {
+        heading: 'The hardest part: the first week',
+        paragraphs: [
+          'Demolition is the loudest and dustiest phase. Tiles, fixtures, wall lining and sometimes framing come out. This usually takes one to two days. After that, the noise drops - plumbing and electrical rough-in are quieter, and waterproofing is silent.',
+          'Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers what happens step by step. The short version: the first three days are the worst, and it gets better from there.',
+        ],
+      },
+      {
+        heading: 'Access to a toilet and shower',
+        paragraphs: [
+          'If the house has a second bathroom, ensuite or powder room, you have a fallback. If the bathroom being renovated is the only one, the toilet is the critical fixture. A good team sequences the work so the toilet is out of action for the shortest window - often less than a day.',
+          'For showers, some households use a gym, a neighbour or a relative for a few days. Others set up a temporary outdoor shower. It is not ideal, but it is temporary, and knowing the exact days helps you plan.',
+        ],
+      },
+      {
+        heading: 'Dust control and protecting the house',
+        paragraphs: [
+          'Dust from a bathroom strip-out travels through the house if it is not contained. Drop sheets over floors, plastic sheeting across doorways and a dedicated path from the bathroom to the front door keep it manageable.',
+          'Kieran C, one of our customers, noted that "they exercised due care at all times including providing drop sheets and surface protection to and from the work area and leaving the site clean and tidy at the end of each day." That standard of housekeeping is part of the job, not an extra.',
+        ],
+      },
+      {
+        heading: 'Noise and working hours',
+        paragraphs: [
+          'In Sydney, residential building work is generally allowed from 7 am to 5 pm on weekdays and 8 am to 1 pm on Saturdays. We follow these hours. The loudest work - cutting tiles, using angle grinders, demolishing walls - happens during the day. Evenings and Sundays are quiet.',
+          'If you work from home, the demolition days are the ones to plan around. Consider working from a cafe or a co-working space for those two to three days. After demolition, noise drops significantly.',
+        ],
+      },
+      {
+        heading: 'Keeping kids and pets safe',
+        paragraphs: [
+          'A bathroom renovation site has sharp edges, open plumbing and exposed wiring. The work area is sealed off from the rest of the house, but children and pets should stay out of it.',
+          'Talk to the team about the household before work starts. If there are small children, a baby gate across the corridor or a locked door is simple. For dogs, keeping them in a different part of the house during work hours avoids stress for the dog and the team.',
+        ],
+      },
+      {
+        heading: 'How long does the disruption last',
+        paragraphs: [
+          'A standard full bathroom renovation runs three to four weeks on site. Of that, the first week is the most disruptive. By week two, the waterproofing is curing and the room is quiet. Weeks three and four are tiling and fit-off - cleaner and quieter.',
+          'Our <a href="/blog/bathroom-renovation-project-management-timeline/" class="et-link">project management guide</a> breaks this down week by week. The main point: the disruption is front-loaded, not spread evenly across the build.',
+        ],
+      },
+      {
+        heading: 'What ETR does to keep it manageable',
+        paragraphs: [
+          'Omar keeps you updated with progress throughout the job. The team works to a fixed program. Drop sheets and surface protection go down before the first tool comes out. The site is cleaned at the end of each working day.',
+          'A free on-site measure anywhere in Sydney is the starting point. Before the quote is written, we talk through the household - how many bathrooms, who is home during the day, any pets - so the program fits the home, not just the room.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I use the bathroom at all during the renovation?',
+        answer: 'Not while the room is being worked on. If the house has a second bathroom or powder room, you can use that. If it is the only bathroom, the team sequences the work so the toilet is disconnected for the shortest time - often less than a day.',
+      },
+      {
+        question: 'How bad is the dust?',
+        answer: 'The worst dust comes during demolition, which lasts one to two days. Drop sheets, plastic sheeting and a sealed doorway contain most of it. After demolition, dust levels drop. The site is cleaned at the end of each working day.',
+      },
+      {
+        question: 'Should I move out during the renovation?',
+        answer: 'Most people stay at home. If the bathroom is the only one in the house and you have young children, a few nights away during the demolition phase can make life easier. But it is not required - the disruption is temporary and manageable with planning.',
+      },
+      {
+        question: 'What time do the tradies start work?',
+        answer: 'Work starts from 7 am on weekdays and 8 am on Saturdays, in line with Sydney residential building hours. The loudest work is during the day. No work happens on Sundays or public holidays.',
+      },
+      {
+        question: 'Will the renovation damage other parts of my house?',
+        answer: 'Not if it is managed properly. Drop sheets protect floors and surfaces. Plastic sheeting contains dust. A dedicated path from the bathroom to the exit keeps traffic away from other rooms. Kieran C noted that ETR provided surface protection and left the site clean daily.',
+      },
+    ],
+  },
+
+  {
+    slug: 'shower-screen-types-bathroom-renovation',
+    title: 'Shower screens explained: frameless, semi-frameless and framed',
+    metaTitle: 'Shower Screen Types Bathroom Renovation',
+    description: 'Compare glass, wall fit, cleaning and cost across three shower-screen styles.',
+    published: '2026-10-03',
+    updated: '2026-11-02',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why the shower screen matters',
+        paragraphs: [
+          'The shower screen is one of the most visible elements in a bathroom. It sits at eye level, it is the first thing you touch in the morning, and it determines how much light passes through the shower recess. The wrong screen makes a small bathroom feel smaller. The right one opens the room up.',
+          'There are three main types: frameless, semi-frameless and framed. Each has a different look, a different price point and different installation needs. If you are down to two, see our <a href="/blog/frameless-vs-semi-frameless-shower-screen/" class="et-link">frameless vs semi-frameless comparison</a>.',
+        ],
+      },
+      {
+        heading: 'Frameless shower screens',
+        paragraphs: [
+          'A frameless screen uses panels of 10-millimetre toughened safety glass held by minimal brackets and hinges. There is no metal frame around the edges. The result is a clean, open look that lets light through and makes the bathroom feel larger.',
+          'Cleaning is easier because there are no channels or frame edges to trap soap scum. A squeegee after each shower and a weekly wipe keeps the glass clear.',
+          'The trade-off is cost and precision. Frameless screens need walls that are straight and plumb. If the walls are out of square - common in older Sydney homes - the glass panel will not sit flush, and the gap lets water through. Wall preparation before installation adds to the cost.',
+          'Expect to pay $800 to $2,000 or more for a frameless screen, depending on the size and configuration.',
+        ],
+      },
+      {
+        heading: 'Semi-frameless shower screens',
+        paragraphs: [
+          'A semi-frameless screen frames the fixed panels but leaves the door edge largely unframed. It uses 6 to 8-millimetre toughened glass. The frame at the top and bottom provides structure, while the unframed door keeps a clean look.',
+          'This is the middle ground. It costs less than frameless, tolerates walls that are slightly out of square, and still looks current. Most mid-range bathroom renovations in Sydney use a semi-frameless screen.',
+          'Cleaning is a little more work than frameless - the frame channels collect some residue - but less than a fully framed screen.',
+        ],
+      },
+      {
+        heading: 'Framed shower screens',
+        paragraphs: [
+          'A framed screen has an aluminium or steel frame around every panel and uses 4 to 6-millimetre glass. It is the most forgiving on walls that are not perfectly level and the most affordable option.',
+          'The frame channels collect soap scum and mineral deposits. Regular cleaning with a mould-resistant bathroom cleaner keeps them in good condition, but they require more attention than frameless glass.',
+          'Framed screens suit tight budgets and older homes where wall straightening would add too much cost. They are functional, durable and still available in modern finishes - matt black, brushed nickel and chrome.',
+        ],
+      },
+      {
+        heading: 'Sliding, hinged and fixed panels',
+        paragraphs: [
+          'The screen type and the door type are separate choices. A frameless screen can have a hinged door, a pivot door or a fixed panel with an open entry. A framed screen can have a sliding door - useful in small bathrooms where a swinging door would hit the vanity or toilet.',
+          'Sliding doors suit tight spaces. Hinged doors open wider and are easier to clean. Fixed panels with no door at all are used in walk-in and <a href="/blog/wet-room-bathroom-renovation/" class="et-link">wet room designs</a> where the shower is open to the room.',
+        ],
+      },
+      {
+        heading: 'Which screen suits your renovation',
+        paragraphs: [
+          'In a small bathroom, a frameless fixed panel with an open entry makes the room feel bigger than a framed sliding door. In a large bathroom, a frameless hinged door is the clean, premium choice. In a budget renovation, a semi-frameless or framed screen delivers a good result without the wall preparation cost.',
+          'The choice also depends on the tile and tapware finishes. Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how the screen frame colour ties into the room\'s palette - matt black frames with dark tapware, for example, or chrome frames in a lighter scheme.',
+        ],
+      },
+      {
+        heading: 'How ETR handles shower screens',
+        paragraphs: [
+          'The shower screen is selected during the design phase, after the layout is settled. Farah Dawood, our architectural designer, helps choose a screen that suits the room size, tile layout and budget. The screen is measured and ordered after tiling is complete, so the fit is precise.',
+          'Every shower recess is waterproofed to AS 3740 before the screen goes in. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are frameless shower screens worth the extra cost?',
+        answer: 'In a small bathroom, yes - the visual difference is significant. A frameless screen makes the room feel more open and is easier to clean. In a larger bathroom with a separate shower recess, the difference is less noticeable, and a semi-frameless screen may be a better value.',
+      },
+      {
+        question: 'How thick should shower screen glass be?',
+        answer: 'Frameless screens use 10-millimetre toughened safety glass. Semi-frameless screens use 6 to 8-millimetre glass. Framed screens use 4 to 6-millimetre glass. Thicker glass is heavier and more expensive, but it does not flex or rattle.',
+      },
+      {
+        question: 'Can I put a shower screen in a wet room?',
+        answer: 'Yes, but many wet room designs use a fixed glass panel instead of a full screen with a door. The panel acts as a splash guard while keeping the open, walk-in feel. The floor is graded to a drain, so water is managed by the fall, not the screen.',
+      },
+      {
+        question: 'How do I stop water marks on a frameless screen?',
+        answer: 'A squeegee after each shower removes most water before it dries. A weekly clean with white vinegar or a glass cleaner removes mineral deposits. Some screens come with a nano-coating that makes water bead and run off, reducing spots.',
+      },
+      {
+        question: 'What colour frames are available?',
+        answer: 'The most common finishes are chrome, matt black, brushed nickel and brushed gold. Matt black is the most popular in current Sydney renovations. The frame colour should match or complement the tapware and towel rail finishes in the room.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-niche-design-ideas',
+    title: 'Bathroom niches and recessed shelves: design, sizing and waterproofing',
+    metaTitle: 'Bathroom niche sizes and what to store in one',
+    description: 'Plan niche size and placement so bottles fit and it works with the shower layout.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What a niche does in a bathroom',
+        paragraphs: [
+          '1) A bathroom niche is best for shampoo, conditioner, soap and a small bottle of body wash. It keeps everyday products within reach, off the shower floor and away from the tile edges that are harder to clean.',
+          'A niche is a recess built into the wall, set back from the surface, that holds bottles, soap and everyday items without a shelf or caddy hanging from the showerhead. It keeps the shower floor clear, makes cleaning easier and gives the room a built-in, finished look.',
+          'Niches have moved from a luxury detail to a standard inclusion in most mid-range and premium bathroom renovations. If you are stripping the walls back anyway, adding one costs little extra in labour and materials.',
+        ],
+      },
+      {
+        heading: 'Where to place a niche',
+        paragraphs: [
+          'The most common spot is in the shower, at a height between chest and eye level - roughly 1,000 to 1,400 millimetres from the floor. This puts everyday items within easy reach without bending.',
+          'A second niche beside the vanity replaces a shelf or cabinet top. It can hold skincare, a toothbrush holder or rolled hand towels. A niche in the wall behind the toilet can store spare rolls without a freestanding holder.',
+          'Avoid placing a niche on an external wall if possible. External walls often carry insulation and may be thinner, making the recess harder to build without cutting into the insulation layer. Internal walls between rooms are usually the easiest to work with.',
+        ],
+      },
+      {
+        heading: 'Sizing and proportions',
+        paragraphs: [
+          'A standard single niche is 300 millimetres wide by 400 millimetres tall by 80 to 100 millimetres deep. That holds most bottles upright. A double-height niche - 300 by 600 or 300 by 800 - gives two shelf levels with a horizontal tile divider in the middle.',
+          'The width and height should align with the tile grid. A niche that cuts a tile in half looks messy. A niche that sits neatly between full tiles looks intentional. Your tiler plans the niche around the tile layout, not the other way around.',
+          'Our <a href="/blog/small-bathroom-storage-solutions/" class="et-link">storage solutions guide</a> covers other ways to add storage in a small bathroom when a niche alone is not enough.',
+        ],
+      },
+      {
+        heading: 'Waterproofing a niche',
+        paragraphs: [
+          'A niche in a shower wall is a wet area within a wet area. Every surface inside the niche - top, bottom, sides and back - must be waterproofed to AS 3740, the same standard as the shower walls. The membrane wraps into the recess and ties into the wall membrane around the opening.',
+          'The most common failure point is the bottom shelf of the niche. Water pools there. If the membrane is not properly detailed at the corners or the shelf does not slope slightly forward, water sits behind the tile and eventually works its way into the wall framing.',
+          'A properly built niche has a slight fall - 2 to 3 millimetres from back to front - so water drains out rather than pooling inside.',
+        ],
+      },
+      {
+        heading: 'Tile and finish options',
+        paragraphs: [
+          'The simplest approach is to tile the niche in the same tile as the surrounding wall. It blends in and looks clean. The alternative is to use a contrasting tile - a different colour, a mosaic or a feature tile - to turn the niche into a design detail.',
+          'A marble or stone-look tile inside a white or grey-tiled shower adds a focal point without overwhelming the room. LED strip lighting behind or above the niche adds depth and makes the recess stand out. The light must be rated for wet areas.',
+          'Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers how to choose tiles that work together across the room.',
+        ],
+      },
+      {
+        heading: 'How ETR builds niches',
+        paragraphs: [
+          'The niche is planned during the design phase, before tiling starts. Farah Dawood works out the placement, size and tile alignment as part of the layout drawing. The niche is framed into the wall stud work, waterproofed with the rest of the shower, and tiled to match or contrast the surrounding wall.',
+          'Adam Dawood, with over 25 years in tiling, sets the niche so it aligns with the tile grid and the shelf slopes forward for drainage. Every niche is waterproofed to AS 3740. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a bathroom niche cost to add?',
+        answer: 'If the walls are already being stripped and rebuilt - as in a full renovation - the extra cost is modest: framing, a small amount of extra waterproofing and tiling. It is far cheaper to add during a renovation than to retrofit later, because the wall is already open.',
+      },
+      {
+        question: 'Can I have more than one niche?',
+        answer: 'Yes. A tall double niche in the shower with a divider shelf is common. A second niche beside the vanity or behind the toilet adds storage elsewhere in the room. The main limit is wall space and stud locations.',
+      },
+      {
+        question: 'Should the niche tile match the wall tile?',
+        answer: 'It depends on the look you want. Matching tiles create a seamless, built-in feel. A contrasting tile - a feature mosaic, a different colour or a stone-look tile - turns the niche into a design feature. Both approaches work; it is a style choice.',
+      },
+      {
+        question: 'Does a niche weaken the wall?',
+        answer: 'Not when it is properly framed. The niche is built into the wall stud work with a header and cripple studs, so the surrounding wall keeps its strength. The recess does not remove a structural member - it fits between existing studs or is framed within them.',
+      },
+      {
+        question: 'Can I add a niche to an existing bathroom without a full renovation?',
+        answer: 'It is possible but rarely practical. Adding a niche means cutting into the wall, exposing and re-doing the waterproofing, re-tiling the area and matching the existing tiles. The cost and disruption often approach a partial renovation anyway.',
+      },
+    ],
+  },
+
+  {
+    slug: 'freestanding-bath-renovation-guide',
+    title: 'Freestanding bath in a renovation: space, plumbing and cost',
+    metaTitle: 'Freestanding Bath Renovation Guide Australia',
+    description: 'Check room size, plumbing, floor support and fit before choosing a freestanding bath.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'The appeal of a freestanding bath',
+        paragraphs: [
+          'A freestanding bath sits away from the wall on its own feet or base. It becomes the centrepiece of the room. The look is open, sculptural and less built-in than a drop-in or alcove bath.',
+          'Freestanding baths have been the most requested bath style in Sydney renovations for several years. They work in both traditional and modern bathrooms. The practical question is whether your room has the space and plumbing for one.',
+        ],
+      },
+      {
+        heading: 'How much room you need',
+        paragraphs: [
+          'A freestanding bath needs clear space around it. The bath itself is typically 1,500 to 1,700 millimetres long and 700 to 800 millimetres wide. You need at least 150 millimetres of clearance on each side and 600 millimetres at one end for access.',
+          'In practice, the bathroom needs to be roughly 8 square metres or larger to carry a freestanding bath without crowding the rest of the room. A smaller room can hold one, but the shower, vanity and toilet end up squeezed.',
+          'Our <a href="/blog/walk-in-shower-vs-bathtub-renovation/" class="et-link">walk-in shower vs bathtub guide</a> covers how to decide between the two when space is tight.',
+        ],
+      },
+      {
+        heading: 'Plumbing requirements',
+        paragraphs: [
+          'A built-in bath has its taps on the wall. A freestanding bath needs either floor-mounted taps or a wall-mounted spout that reaches over the rim. Floor-mounted tapware means the water pipes come up through the floor, not out of the wall.',
+          'This often requires adjusting pipe locations in the slab or subfloor. In a concrete-slab home, that means cutting the slab to relocate the pipes - an additional cost. In a timber-floor home, it is easier because pipes can be run under the floorboards.',
+          'The waste outlet also moves. A freestanding bath drains through the floor, not through the wall. The drain position must match the bath before the waterproofing is laid.',
+        ],
+      },
+      {
+        heading: 'Floor strength and waterproofing',
+        paragraphs: [
+          'A full bath holds roughly 300 litres of water plus the weight of the person in it and the bath itself. A stone or composite bath can weigh 80 to 150 kilograms empty. The floor needs to carry this load without movement.',
+          'Timber floors may need extra support - additional joists or noggins - under the bath position. Concrete slabs are usually fine. The area under and around the bath is waterproofed to AS 3740, the same standard as the shower and the rest of the wet area.',
+        ],
+      },
+      {
+        heading: 'Material options and cost range',
+        paragraphs: [
+          'Acrylic is the lightest and most affordable material. A standard acrylic freestanding bath starts from around $800 to $1,500. It is warm to the touch, light enough for a timber floor and available in many shapes.',
+          'Stone composite (also called solid surface) is heavier, more durable and retains heat longer. Prices start from $2,000 and run to $5,000 or more. Cast iron is traditional and very heavy - it usually needs a reinforced floor.',
+          'Including the bath, the floor-mounted tapware, the plumbing changes and any floor strengthening, a freestanding bath typically adds $2,500 to $8,000 to a renovation, depending on the model and the site conditions.',
+        ],
+      },
+      {
+        heading: 'Is a freestanding bath right for your household',
+        paragraphs: [
+          'If you have children who need bathing, a freestanding bath is less practical than a built-in bath with a flat rim - the rim is higher, and there is no ledge for toys or a cup. If the bath is for soaking and relaxation, a freestanding model is hard to beat.',
+          'Our <a href="/blog/family-bathroom-renovation-ideas/" class="et-link">family bathroom guide</a> covers how to design a bathroom that works for both adults and children. If the room is large enough, a freestanding bath for the parents and a built-in bath for the children in a separate bathroom is the best of both.',
+        ],
+      },
+      {
+        heading: 'How ETR handles freestanding bath installations',
+        paragraphs: [
+          'The bath model and position are confirmed during the design phase, before the plumbing rough-in. Farah Dawood works out the layout so the bath has clearance, the tapware has access and the waste aligns with the drain.',
+          'The written quote accounts for any slab cutting, floor reinforcing or pipe relocation. Every bathroom is waterproofed to AS 3740 with a compliance certificate. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a freestanding bath add to a renovation?',
+        answer: 'Typically $2,500 to $8,000, including the bath, floor-mounted or wall-mounted tapware, plumbing changes and any floor reinforcement. The range depends on the bath material, the tapware and whether the slab needs cutting.',
+      },
+      {
+        question: 'Can I put a freestanding bath in a small bathroom?',
+        answer: 'It is possible but often not practical. A freestanding bath needs clear space around it. In a room under 8 square metres, it tends to crowd the shower, vanity and toilet. A compact 1,500-millimetre bath may fit, but the room will feel tight.',
+      },
+      {
+        question: 'Does the floor need reinforcing for a freestanding bath?',
+        answer: 'Concrete slabs usually do not. Timber floors may need extra support - additional joists or noggins under the bath position - to carry the weight of the bath, the water and the person in it. This is checked during the on-site measure.',
+      },
+      {
+        question: 'Can I have a freestanding bath without floor-mounted taps?',
+        answer: 'Yes. A wall-mounted spout that reaches over the rim is an alternative. It avoids cutting the floor for pipe access and can look clean in a modern design. The wall behind the bath must have concealed plumbing access.',
+      },
+      {
+        question: 'Is a freestanding bath good for resale value?',
+        answer: 'In a large bathroom, yes - it is a feature that buyers notice. In a small bathroom where the bath crowds the room, it can work against you. The value depends on the room size and the overall design, not the bath alone.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-mould-prevention-renovation',
+    title: 'Bathroom mould: why it returns and how a renovation stops it',
+    metaTitle: 'Bathroom Mould Prevention Renovation',
+    description: 'Find the moisture, airflow or leak issue behind bathroom mould before it returns.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Mould is a symptom, not the problem',
+        paragraphs: [
+          'Mould grows where moisture sits. In a bathroom, that means grout lines, silicone joints, ceiling corners and behind tiles where water has worked its way in. Cleaning removes the visible growth, but if the conditions stay the same, it comes back.',
+          'The real problems are usually poor ventilation, failed waterproofing, or materials that trap moisture instead of shedding it. A renovation is the chance to fix all three at once.',
+        ],
+      },
+      {
+        heading: 'Poor ventilation is the number one cause',
+        paragraphs: [
+          'Steam from a hot shower fills the room in minutes. If the bathroom has no exhaust fan, a weak fan, or a fan that vents into the roof cavity instead of outside, that moisture settles on every surface. It soaks into grout, collects in corners and feeds mould growth.',
+          'A properly sized exhaust fan that vents to the outside - not into the roof space - clears steam before it settles. A timer or humidity sensor keeps the fan running after you leave the room, which is when most of the drying happens.',
+          'Our <a href="/blog/bathroom-ventilation-sydney-renovation/" class="et-link">ventilation guide</a> covers fan sizing, ducting and the common mistakes that make ventilation fail.',
+        ],
+      },
+      {
+        heading: 'Failed waterproofing lets water behind the tiles',
+        paragraphs: [
+          'Waterproofing is a membrane applied to the walls and floor before tiling. When it is intact, water stays on the surface. When it fails - through age, movement, or poor application - water gets behind the tiles and into the wall framing.',
+          'Behind the tiles, there is no airflow. Moisture sits there permanently. Over months and years, it rots timber framing, degrades plaster and creates a mould colony that is invisible from the outside. The first sign is often a musty smell or discolouration at the base of the wall.',
+          'In a renovation, the old tiles and lining come off, the framing is inspected and repaired, and new waterproofing is applied to AS 3740 - the Australian standard for wet-area waterproofing. A compliance certificate confirms the work.',
+        ],
+      },
+      {
+        heading: 'Material choices that resist mould',
+        paragraphs: [
+          'Cement-based grout absorbs moisture. Epoxy grout does not. In a shower recess, epoxy grout resists staining and mould growth far better than standard grout. It costs a little more and takes longer to apply, but it lasts longer and stays cleaner.',
+          'Large-format tiles reduce the total length of grout joints. A wall covered in 600 by 1,200 tiles has far less grout than the same wall in 100 by 100 mosaics. Less grout means less surface for mould to colonise. Our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> covers the trade-offs.',
+          'Moisture-resistant plasterboard (green board) is rated for wet areas and holds up better than standard plasterboard if any moisture does get past the membrane. It is standard practice in a new bathroom build.',
+        ],
+      },
+      {
+        heading: 'Silicone joints and ongoing maintenance',
+        paragraphs: [
+          'Silicone is used where tile meets a fixture - around the shower base, the bath rim, and where the wall meets the floor. Silicone is flexible, which is why it is used at movement joints, but it is also the first place mould appears because it stays damp.',
+          'Anti-mould silicone contains a fungicide that resists growth for several years. Replacing silicone every five to eight years is normal maintenance. It is a 30-minute job for a professional and keeps the bathroom looking and performing well.',
+        ],
+      },
+      {
+        heading: 'How ETR addresses mould at the source',
+        paragraphs: [
+          'In a renovation, the old surfaces come off. Adam Dawood inspects the framing and substrate for rot, mould damage and waterproofing failure. Damaged framing is replaced. New waterproofing goes on to AS 3740 with a compliance certificate.',
+          'The design includes proper mechanical ventilation, material choices that resist moisture, and grout and silicone specified for wet areas. The result is a bathroom that stays dry, not one that needs constant cleaning to keep mould at bay. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I just clean the mould instead of renovating?',
+        answer: 'You can clean the visible growth, but if the cause is poor ventilation or failed waterproofing, it will come back. Cleaning treats the symptom. A renovation treats the cause - proper ventilation, new waterproofing and materials that resist moisture.',
+      },
+      {
+        question: 'Is bathroom mould dangerous?',
+        answer: 'It can be. Some mould species release spores that irritate airways and trigger allergic reactions, especially in children, older adults and people with asthma. Mould hidden behind walls can grow for years without being seen.',
+      },
+      {
+        question: 'How do I know if the waterproofing has failed?',
+        answer: 'Common signs are discolouration or swelling at the base of tiled walls, a musty smell, soft or spongy patches in the wall, or mould that keeps returning despite cleaning. Water damage to the ceiling of the room below is another indicator.',
+      },
+      {
+        question: 'Does ventilation alone stop mould?',
+        answer: 'Ventilation removes airborne moisture and is the single biggest factor. But it does not fix water getting behind tiles through failed waterproofing. Both need to be right. A renovation addresses both at once.',
+      },
+      {
+        question: 'What is the difference between epoxy and cement grout?',
+        answer: 'Cement grout absorbs moisture and is porous. Epoxy grout is non-porous, water-resistant and far more resistant to mould and staining. Epoxy costs more and takes longer to apply, but it performs better in wet areas over time.',
+      },
+    ],
+  },
+
+  {
+    slug: 'heated-towel-rail-bathroom-guide',
+    title: 'Heated towel rails: types, costs and what to know during a renovation',
+    metaTitle: 'Heated Towel Rail Bathroom Guide Australia',
+    description: 'Compare electric and hydronic heated rails, running costs and fit before choosing one.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why heated towel rails are worth considering',
+        paragraphs: [
+          'A heated towel rail does two things: it dries your towels and it warms the bathroom. Dry towels last longer between washes, smell fresher and feel better. A warm bathroom is more pleasant on a cold Sydney winter morning.',
+          'In a renovation, installing a heated towel rail is simple because the walls are open and the electrician is already on site. Retrofitting one later means chasing cables through finished walls or running visible conduit.',
+        ],
+      },
+      {
+        heading: 'Electric heated towel rails',
+        paragraphs: [
+          'Electric models are the most common type in Australian bathrooms. They plug into a power point or are hardwired into the bathroom circuit. Inside the rail, a heating element warms either a dry rod or a sealed liquid that transfers heat to the bars.',
+          'Liquid-filled rails hold heat longer after they are switched off. Dry-element rails heat up faster. Both work well. The choice is usually about the model and finish, not the heating method.',
+          'A basic electric rail starts from around $150. A mid-range stainless steel model with six or seven bars runs about $400 to $600. Premium models with smart controls, timers and brushed finishes can reach $1,500 or more.',
+        ],
+      },
+      {
+        heading: 'Hydronic heated towel rails',
+        paragraphs: [
+          'A hydronic rail connects to the home\'s hot water system. Hot water from the boiler or heat pump circulates through the rail. It works the same way as a hydronic radiator.',
+          'Hydronic rails are less common in Sydney because most homes do not have a hydronic heating system already installed. Adding one just for a towel rail is not cost-effective. If the home already has hydronic heating, connecting a towel rail is straightforward.',
+          'Our <a href="/blog/underfloor-heating-bathroom-renovation/" class="et-link">underfloor heating guide</a> covers a related decision - both add warmth to the bathroom, and the two can work together in a premium build.',
+        ],
+      },
+      {
+        heading: 'Running costs',
+        paragraphs: [
+          'An electric heated towel rail uses about the same power as a standard light globe - roughly 60 to 120 watts. On a timer that runs for a few hours in the morning and evening, the running cost is $10 to $20 per month.',
+          'A timer switch is strongly recommended. Leaving a towel rail on all day wastes energy and does not dry towels any faster once they are dry. A 2-hour morning timer and a 2-hour evening timer is enough for most households.',
+        ],
+      },
+      {
+        heading: 'Sizing and placement',
+        paragraphs: [
+          'The rail should be wide enough to hold two to three towels without bunching. A rail that is too narrow means towels overlap and the inner layers stay damp. Common widths are 500 to 750 millimetres.',
+          'Mount the rail where towels are easy to reach from the shower - usually on the wall adjacent to the shower recess, not across the room. Height should put the bottom bar at least 600 millimetres above the floor.',
+          'In a small bathroom, a vertical ladder-style rail takes up less wall width than a wide horizontal model. Some models double as a robe hook on the top bar.',
+        ],
+      },
+      {
+        heading: 'Installation during a renovation',
+        paragraphs: [
+          'The best time to install a heated towel rail is during the renovation, when the walls are open. The electrician runs the cable to the rail position and installs either a concealed power point behind the rail or a hardwired connection with a switch.',
+          'Hardwired installation looks cleaner - no visible plug or cable - but requires a licensed electrician and a dedicated circuit or connection from the bathroom circuit. A plug-in model is simpler and can be moved if you change the layout later.',
+        ],
+      },
+      {
+        heading: 'How ETR includes heated towel rails',
+        paragraphs: [
+          'Heated towel rails are a common inclusion in our Standard and Premium packages. The rail model, position and power connection are planned during the design phase. The electrician installs the wiring during the rough-in, before the walls are lined and tiled.',
+          'A free on-site measure anywhere in Sydney is the starting point. The written quote sets out what is included, and the rail is one of the items you choose during the selections process.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a heated towel rail cost?',
+        answer: 'A basic electric model starts from about $150. A mid-range stainless steel rail runs $400 to $600. Premium models with brushed finishes and smart timers can reach $1,500 or more. Installation during a renovation is minimal extra cost because the electrician is already on site.',
+      },
+      {
+        question: 'Are heated towel rails expensive to run?',
+        answer: 'No. Most use 60 to 120 watts, about the same as a light globe. On a timer running a few hours per day, the cost is $10 to $20 per month. Leaving it on all day is wasteful but not expensive.',
+      },
+      {
+        question: 'Should I get electric or hydronic?',
+        answer: 'Electric, unless your home already has a hydronic heating system. Adding a hydronic system just for a towel rail is not practical or cost-effective. Electric rails are simple to install, reliable and widely available.',
+      },
+      {
+        question: 'Can I add a heated towel rail to an existing bathroom?',
+        answer: 'Yes, with a plug-in model. It plugs into a standard power point. A hardwired model is better installed during a renovation when the walls are open - retrofitting one into a finished bathroom means chasing cables through the wall or running visible conduit.',
+      },
+      {
+        question: 'Do heated towel rails work in summer?',
+        answer: 'They still dry towels, which is useful even in warm weather - damp towels in a humid bathroom grow musty. You can leave the rail off in summer and use it only in the cooler months if you prefer.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-mirror-guide-renovation',
+    title: 'Bathroom mirrors: types, sizing and LED options for your renovation',
+    metaTitle: 'Bathroom Mirror Guide Renovation LED',
+    description: 'Check mirror size, lighting, anti-fog needs and wiring before the walls are closed.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why the mirror matters more than you think',
+        paragraphs: [
+          'The mirror is the most-used surface in the bathroom. You face it every morning and every evening. It sets the tone of the room and, in a small space, affects how large the room feels. A well-chosen mirror can make a bathroom look bigger, brighter and more finished.',
+          'In a renovation, the mirror choice should be made during the design phase, not at the end. An LED mirror or a medicine cabinet needs electrical wiring behind the wall, which has to be in place before tiling starts.',
+        ],
+      },
+      {
+        heading: 'Framed mirrors',
+        paragraphs: [
+          'A framed mirror has a visible border - timber, metal or composite - that adds a decorative edge. Timber frames suit traditional and coastal styles. Black metal frames suit modern, industrial and minimalist bathrooms.',
+          'Framed mirrors are the easiest to install because they hang on the wall like a picture. No electrical work is needed unless you add separate wall sconces on either side.',
+        ],
+      },
+      {
+        heading: 'Frameless mirrors',
+        paragraphs: [
+          'A frameless mirror is a sheet of glass with polished edges, mounted flush to the wall. It looks clean and modern and blends with any tile and colour scheme. Frameless mirrors are the default in most contemporary Sydney bathroom renovations.',
+          'They can be cut to any shape - round, arch, pill, rectangle - and are usually glued to the wall with mirror adhesive and supported by concealed clips. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers how mirror width relates to vanity width.',
+        ],
+      },
+      {
+        heading: 'LED backlit mirrors',
+        paragraphs: [
+          'An LED backlit mirror has a strip of LED lights behind the glass, casting a glow around the edges. It provides even, shadow-free light for grooming and adds a feature to the room, especially at night.',
+          'LED mirrors need a power connection behind the wall. This means the electrician must run a cable to the mirror position during the rough-in, before the wall is lined and tiled. This is why the mirror choice should happen during the design phase, not after tiling.',
+          'Most modern LED mirrors include touch controls for brightness and colour temperature - warm white for atmosphere, cool white for grooming. Some include a de-mister pad that keeps the glass clear after a shower.',
+        ],
+      },
+      {
+        heading: 'Medicine cabinets and shaving cabinets',
+        paragraphs: [
+          'A mirrored medicine cabinet combines a mirror with concealed storage. The cabinet recesses into the wall - similar to a niche - and the mirror is the door.',
+          'Recessed cabinets need wall depth. In a timber-framed wall, they fit between studs (typically 70 to 90 millimetres deep). On a masonry wall, a surface-mounted cabinet sits proud of the wall and adds visual depth.',
+          'A recessed cabinet with LED lighting and a power outlet inside covers mirror, light and storage in one element. It must be planned during the design phase because the wall stud framing must accommodate the opening.',
+        ],
+      },
+      {
+        heading: 'Sizing your mirror',
+        paragraphs: [
+          'A general rule: the mirror should be the same width as the vanity or slightly narrower. A mirror wider than the vanity looks oversized. A mirror much narrower looks undersized.',
+          'For a single vanity (typically 600 to 900 millimetres wide), a mirror of 500 to 800 millimetres wide works. For a double vanity (1,200 to 1,500 millimetres), one wide mirror or two individual mirrors above each basin.',
+          'Height depends on the ceiling and the users. The bottom of the mirror should be roughly 1,200 millimetres from the floor. The top should be as close to the ceiling as the proportions allow. Taller mirrors reflect more light and make the room feel higher.',
+        ],
+      },
+      {
+        heading: 'How ETR handles mirror selection',
+        paragraphs: [
+          'The mirror type and size are confirmed during the design phase, alongside the vanity and the lighting layout. If an LED mirror or recessed cabinet is chosen, the electrician runs the wiring during the rough-in.',
+          'Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers how mirror lighting works with the rest of the room\'s lighting plan. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need an electrician for an LED mirror?',
+        answer: 'Yes. An LED mirror must be connected to the electrical circuit by a licensed electrician. The wiring should be installed during the rough-in phase, before the walls are tiled. Plug-in LED mirrors exist but the cable is visible, which looks less finished.',
+      },
+      {
+        question: 'What shape mirror is best for a small bathroom?',
+        answer: 'A round or arch mirror softens the room and works well above a single vanity. A tall rectangular mirror makes the ceiling feel higher. In a small bathroom, a larger mirror makes the room feel more spacious - do not scale the mirror down just because the room is small.',
+      },
+      {
+        question: 'How do anti-fog mirrors work?',
+        answer: 'An anti-fog mirror has a heated pad behind the glass - called a de-mister - that warms the surface enough to prevent condensation forming after a hot shower. It runs on the same electrical connection as the LED lighting. Some models activate automatically when the light is turned on.',
+      },
+      {
+        question: 'Should the mirror match the vanity width exactly?',
+        answer: 'Not exactly, but close. The mirror should be the same width as the vanity or slightly narrower. A mirror wider than the vanity looks unbalanced. A mirror 50 to 100 millimetres narrower than the vanity on each side looks intentional.',
+      },
+      {
+        question: 'Can I use a mirror to make a small bathroom feel bigger?',
+        answer: 'Yes. A large mirror above the vanity reflects light and the opposite wall, creating a sense of depth. Placing the mirror across from a window or the shower screen maximises the reflected light. Frameless edges help the mirror blend into the wall.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-grout-guide-types-maintenance',
+    title: 'Bathroom grout: types, colours and how to keep it clean',
+    metaTitle: 'Bathroom Grout Guide Types Colours',
+    description: 'Compare cement and epoxy grout, choose a colour and plan how to keep it clean.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What grout does in a bathroom',
+        paragraphs: [
+          'Grout fills the joints between tiles. It keeps water from getting behind the tiles, holds the tiles in position, and finishes the look. In a bathroom, grout is exposed to water, steam, soap and cleaning products every day. The type of grout and how it is maintained affects how the bathroom looks and performs over years.',
+          'Most people do not think about grout until it starts to discolour or grow mould. By then, the problem is usually the grout type, not the cleaning.',
+        ],
+      },
+      {
+        heading: 'Cement-based grout',
+        paragraphs: [
+          'Cement grout is the traditional type. It is a mixture of Portland cement, sand and water. It is affordable, easy to work with and available in many colours.',
+          'The downside is that cement grout is porous. It absorbs water, soap residue and dirt. Over time, it stains, darkens and can support mould growth. Sealing the grout after installation helps, but the sealant wears off and needs reapplying every one to two years in a shower.',
+          'Cement grout is fine for dry areas - splashbacks, floor tiles in a powder room. In a shower recess, it needs more maintenance than the alternative.',
+        ],
+      },
+      {
+        heading: 'Epoxy grout',
+        paragraphs: [
+          'Epoxy grout is made from epoxy resin and a hardener. It is non-porous, which means it does not absorb water, does not stain and is highly resistant to mould. It does not need sealing.',
+          'Epoxy costs more than cement grout and is harder to apply - it sets faster and is less forgiving to work with. Not every tiler is experienced with it. But in a wet area, the long-term performance is significantly better.',
+          'Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers how grout type fits into the broader tile specification. If mould in the shower is a concern, our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> covers the full picture.',
+        ],
+      },
+      {
+        heading: 'Grout colour choices',
+        paragraphs: [
+          'Grout colour changes the entire look of a tiled wall. A matching colour - white grout with white tiles - gives a seamless, clean look where the joints almost disappear. A contrasting colour - dark grout with light tiles - highlights the tile pattern and makes each tile stand out.',
+          'In practical terms, lighter grout shows dirt and staining more quickly. Darker grout hides marks but can fade over time. A mid-tone grey is a popular compromise in current Sydney renovations - it complements most tile colours and hides wear better than white.',
+          'The grout colour should be chosen at the same time as the tile, not after. Some tile showrooms provide grout colour samples to test against the tile before the final order.',
+        ],
+      },
+      {
+        heading: 'How wide should grout joints be',
+        paragraphs: [
+          'The tile manufacturer specifies a minimum joint width. Rectified tiles - tiles with precisely cut edges - allow joints as narrow as 1.5 millimetres. Non-rectified tiles typically need 3 to 5 millimetres to account for size variation.',
+          'Narrower joints give a cleaner, more modern look. Wider joints suit traditional or rustic tile styles. In a shower, the joint width affects how much grout is exposed to water - narrower is generally better for maintenance.',
+          'Our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> covers joint widths for bigger tiles, where getting the joint right is even more important.',
+        ],
+      },
+      {
+        heading: 'Keeping grout clean',
+        paragraphs: [
+          'For cement grout: wipe the shower walls with a squeegee after each use to remove water before it dries. Clean weekly with a mild bathroom cleaner - avoid bleach-based products, which break down the sealant. Reseal every one to two years.',
+          'For epoxy grout: a weekly wipe with a damp cloth is usually enough. Epoxy does not absorb stains, so marks sit on the surface and come off easily. No sealing is needed.',
+          'For both types: good ventilation is the best defence. A fan that clears steam from the room stops moisture from sitting on the grout surface for hours.',
+        ],
+      },
+      {
+        heading: 'How ETR specifies grout',
+        paragraphs: [
+          'The grout type, colour and joint width are confirmed during the selections process, alongside the tiles. Adam Dawood, with over 25 years in tiling, advises on the best grout for the tile, the location and the client\'s maintenance preference.',
+          'Epoxy grout is standard in our shower recesses. Cement grout is used in dry areas where the performance difference is not needed. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is epoxy grout worth the extra cost?',
+        answer: 'In a shower, yes. Epoxy grout does not absorb water, does not stain and does not support mould growth. It costs more upfront but saves on cleaning time, resealing and replacement over the life of the bathroom.',
+      },
+      {
+        question: 'Can I change the grout colour without re-tiling?',
+        answer: 'Grout colourants and pens can change the appearance of existing cement grout. They sit on the surface and wear off over time. For a permanent change, the old grout is raked out and new grout applied - a labour-intensive process but cheaper than re-tiling.',
+      },
+      {
+        question: 'Why does my white grout turn yellow?',
+        answer: 'Yellow or brown staining in cement grout is usually caused by mineral deposits from hard water, soap residue or mould growing within the porous grout. Regular sealing and wiping after each shower slows the process. Switching to epoxy grout prevents it.',
+      },
+      {
+        question: 'How long does grout last in a bathroom?',
+        answer: 'Cement grout in a well-ventilated bathroom lasts 10 to 15 years before it needs replacing. Epoxy grout can last the life of the tiles - 20 to 30 years - because it does not break down from water exposure.',
+      },
+      {
+        question: 'Should I choose grout colour to match or contrast the tiles?',
+        answer: 'Matching grout gives a seamless, modern look. Contrasting grout highlights the tile pattern and adds visual interest. In a small bathroom, matching grout makes the room feel larger. In a larger room, contrasting grout can add character.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-splashback-ideas-renovation',
+    title: 'Bathroom splashback ideas: tiles, glass and panels',
+    metaTitle: 'Bathroom Splashback Ideas Renovation',
+    description: 'Compare tile, glass, stone and acrylic for splash zones around sinks and baths.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What a splashback does in a bathroom',
+        paragraphs: [
+          'A splashback is the section of wall behind the basin, around the bath or beside the toilet that catches water splashes. Without protection, the wall absorbs moisture, stains and eventually grows mould. A splashback is both practical and decorative - it protects the wall and finishes the room.',
+          'In a bathroom renovation, the splashback is an opportunity to add a design detail without committing to a feature wall across the entire room.',
+        ],
+      },
+      {
+        heading: 'Tiles: the most common option',
+        paragraphs: [
+          'Tiles are the standard splashback material in Australian bathrooms. They are waterproof, durable and available in more colours, patterns and sizes than any other material. A tile splashback behind the vanity can match the shower tiles for a unified look or use a feature tile for contrast.',
+          'Subway tiles in a brick pattern are the most popular style for a vanity splashback. Mosaic tiles, Moroccan-pattern tiles and geometric shapes are used for more decorative effects. Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how to choose tiles that work with the rest of the room.',
+          'The main maintenance consideration is grout. A tile splashback behind a basin gets wet daily. Epoxy grout resists staining and mould better than cement grout in this location.',
+        ],
+      },
+      {
+        heading: 'Glass panels',
+        paragraphs: [
+          'A glass panel is a single sheet of toughened glass mounted to the wall. It is seamless - no grout lines, no joints - which makes it easy to clean. A wipe with glass cleaner keeps it clear.',
+          'Glass can be clear, tinted or back-painted in any colour. A back-painted glass panel in a bold colour behind the vanity can be a strong design feature. Clear glass over a feature wallpaper or paint creates a layered look.',
+          'The downside is cost. A custom-cut glass panel, templated to the exact wall dimensions, costs more than tiles. It also needs precise wall preparation - the wall behind the glass must be flat and finished, because any imperfection shows through.',
+        ],
+      },
+      {
+        heading: 'Natural stone',
+        paragraphs: [
+          'A stone slab - marble, granite or engineered stone - as a splashback creates a premium, seamless surface. It is particularly effective behind a freestanding vanity or as a feature behind a bath.',
+          'Stone needs sealing. Marble is porous and stains from soap, toothpaste and water marks if not sealed and wiped regularly. Engineered stone (a composite of quartz and resin) is non-porous and lower maintenance, but it does not have the natural veining of real marble.',
+          'Our <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware guide</a> covers how to match the splashback material with the tap and accessory finishes.',
+        ],
+      },
+      {
+        heading: 'Acrylic and composite panels',
+        paragraphs: [
+          'Acrylic panels are lightweight, waterproof and available in a wide range of colours. They install with adhesive directly to the wall. There are no grout lines and no sealing needed.',
+          'They are the most affordable seamless option and suit budget renovations or rental properties where a premium finish is not required. The surface can scratch more easily than glass or tile, and it does not have the visual depth of stone or glass.',
+        ],
+      },
+      {
+        heading: 'Height and coverage',
+        paragraphs: [
+          'A vanity splashback typically runs from the vanity top to 200 to 400 millimetres up the wall. A full-height splashback runs from the vanity to the ceiling or to the bottom of the mirror. Full-height coverage is easier to maintain because there is no exposed painted wall above the splashback to catch water.',
+          'Behind a bath, the splashback should cover the wall area that gets wet. For a freestanding bath, that may be the wall from floor to 600 millimetres above the bath rim. For an alcove bath, the end wall and the back wall are usually fully tiled.',
+        ],
+      },
+      {
+        heading: 'How ETR designs splashbacks',
+        paragraphs: [
+          'The splashback material, height and tile pattern are part of the design phase. Farah Dawood works out how the splashback relates to the vanity, the mirror and the overall tile layout. The goal is a detail that works with the room, not one that competes with it.',
+          'Every splashback in a wet area is installed over proper waterproofing to AS 3740. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need a splashback behind the bathroom vanity?',
+        answer: 'It is strongly recommended. Water from the basin splashes onto the wall daily. Without a waterproof surface, the paint or plaster absorbs moisture, stains and eventually grows mould. A splashback protects the wall and is far easier to clean.',
+      },
+      {
+        question: 'What is the cheapest splashback option?',
+        answer: 'Acrylic panels are the most affordable seamless option. Standard ceramic tiles are the most affordable tiled option. Both are waterproof and durable. The cheapest overall depends on the size of the area and whether the tiles need grout.',
+      },
+      {
+        question: 'Can I use paint instead of a splashback?',
+        answer: 'Semi-gloss or gloss bathroom paint is water-resistant, not waterproof. It works above a splashback or in areas that get minimal splash, but it will not hold up behind a basin that gets wet every day. A physical splashback is a better long-term solution.',
+      },
+      {
+        question: 'How high should a bathroom splashback be?',
+        answer: 'Behind a vanity, at least 200 millimetres above the basin is the minimum. Full-height - from the vanity to the mirror or ceiling - is better for maintenance and looks more finished. Behind a bath, cover any area that gets wet.',
+      },
+      {
+        question: 'Is glass or tile easier to maintain?',
+        answer: 'Glass is easier to clean because it has no grout lines. A wipe with glass cleaner is all it needs. Tiles with epoxy grout are close - the non-porous grout resists staining. Tiles with cement grout need more regular cleaning and periodic resealing.',
+      },
+    ],
+  },
+
+  // ── Weeks 16–20 (content strategy batch 4) ──────────────────────────
+
+  {
+    slug: 'bathroom-waterproofing-explained',
+    title: 'Bathroom waterproofing explained: what every homeowner should know',
+    metaTitle: 'Bathroom Waterproofing Explained Australia',
+    description: 'See what AS 3740 covers and what to check before tiling over the membrane.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'What waterproofing actually is',
+        paragraphs: [
+          'Waterproofing is a liquid membrane applied to the walls and floor of a bathroom before tiling. It dries to form a continuous, flexible barrier that stops water from reaching the building structure behind the tiles.',
+          'Without it, water works through grout joints, around fixtures and into the wall framing and floor substrate. Over months and years, this causes rot, mould, structural damage and - in multi-storey homes - leaks into the rooms below.',
+        ],
+      },
+      {
+        heading: 'Why it is a legal requirement in Australia',
+        paragraphs: [
+          'In NSW, bathroom waterproofing must comply with the Building Code of Australia and Australian Standard AS 3740 - Waterproofing of Domestic Wet Areas. It is not optional and it is not a cosmetic step. A bathroom without compliant waterproofing fails inspection.',
+          'The standard sets minimum requirements: which surfaces must be waterproofed, how high the membrane must extend up the wall, what materials are acceptable, and how the membrane must be tested before tiling. A compliance certificate is issued by the applicator or an inspector to confirm the work meets the standard.',
+        ],
+      },
+      {
+        heading: 'Where the membrane goes',
+        paragraphs: [
+          'The entire floor of a wet area must be waterproofed, including under the bath and behind the toilet. The membrane extends at least 150 millimetres up the walls from the floor. In a shower, the membrane goes at least 1,800 millimetres up the wall - typically to the full height of the tiled area.',
+          'Around penetrations - pipes, drains, taps - the membrane wraps into purpose-made collars that seal the junction between the pipe and the membrane. These junctions are the most common failure points in older bathrooms.',
+          'Our <a href="/blog/bathroom-niche-design-ideas/" class="et-link">niche design guide</a> covers how waterproofing works inside a recessed shelf, which is a wet area within a wet area.',
+        ],
+      },
+      {
+        heading: 'How it is applied',
+        paragraphs: [
+          'The substrate - usually cement sheet or fibre cement board - is cleaned and primed. A primer coat helps the membrane bond to the surface. The first coat of membrane is applied by brush or roller, covering all surfaces.',
+          'After the first coat dries (typically overnight), a second coat is applied at right angles to the first. Two coats ensure there are no thin spots or pinholes. In corners and junctions, a reinforcing fabric tape is embedded into the wet membrane to bridge the joint.',
+          'The membrane cures for at least 24 hours before tiling can begin. Rushing this step risks trapping moisture under the membrane or applying tiles before the membrane has reached its full strength.',
+        ],
+      },
+      {
+        heading: 'What can go wrong',
+        paragraphs: [
+          'The most common failures are at penetrations (pipes and drains), at internal corners (where wall meets floor), and at the shower hob (the step into the shower). These are the points where water pressure is highest and where movement can crack a rigid seal.',
+          'Poor application - too thin, one coat instead of two, rushing the cure time, or missing a corner - creates weak spots that may hold for a year but fail within five. By then, the tiles are on, and the failure is invisible until damage appears.',
+          'Our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> covers what happens when waterproofing fails and moisture gets trapped behind tiles.',
+        ],
+      },
+      {
+        heading: 'The compliance certificate',
+        paragraphs: [
+          'After the membrane is applied and cured, it is inspected. If it meets AS 3740, a compliance certificate is issued. This certificate is a legal document that confirms the waterproofing was done correctly.',
+          'Keep this certificate. It is required for any future insurance claim related to water damage, and it may be requested during a property sale. Our <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate guide</a> covers what the certificate contains and why it matters.',
+        ],
+      },
+      {
+        heading: 'How ETR handles waterproofing',
+        paragraphs: [
+          'Every ETR bathroom is waterproofed to AS 3740 - primer, two coats, reinforced corners, sealed penetrations, full cure before tiling. A compliance certificate is issued for every job.',
+          'Adam Dawood, with over 25 years in the industry, inspects the membrane before tiling starts. The written quote includes waterproofing as a standard line item, not an optional extra. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does bathroom waterproofing last?',
+        answer: 'A properly applied membrane to AS 3740 should last the life of the bathroom - typically 15 to 25 years. Failure usually happens at penetrations or corners due to poor application, not because the membrane material itself wears out.',
+      },
+      {
+        question: 'Can I waterproof my own bathroom?',
+        answer: 'In NSW, waterproofing in a wet area must be done by a licensed waterproofer or under the supervision of a licensed builder. DIY waterproofing will not receive a compliance certificate and may void your home insurance for water damage claims.',
+      },
+      {
+        question: 'How do I know if my existing waterproofing has failed?',
+        answer: 'Common signs are mould that keeps returning despite cleaning, soft or spongy patches in the wall, discolouration at the base of tiled walls, a musty smell, or water damage to the ceiling of the room below. Any of these warrants an inspection.',
+      },
+      {
+        question: 'Is waterproofing included in a renovation quote?',
+        answer: 'It should be. At ETR, waterproofing is a standard line item in every bathroom renovation quote. If a quote does not mention waterproofing, ask - it is not something that can be skipped or done cheaply.',
+      },
+      {
+        question: 'What is the difference between waterproofing and water resistance?',
+        answer: 'Waterproofing is a continuous membrane that stops water completely. Water resistance means a material can tolerate some moisture but is not impervious. Moisture-resistant plasterboard, for example, handles humidity better than standard plasterboard but it is not a waterproof barrier.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-waste-disposal',
+    title: 'Bathroom renovation waste: what gets removed and where it goes',
+    metaTitle: 'Bathroom Renovation Waste Disposal Sydney',
+    description: 'See what a bathroom renovation removes and how the waste is sorted and taken away in Sydney.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'What comes out of a bathroom',
+        paragraphs: [
+          'A full bathroom strip-out produces tiles, adhesive, cement sheet, plasterboard, timber framing (if damaged), the old bath or shower base, the toilet, the vanity, tapware, the shower screen and sometimes old plumbing and electrical fittings.',
+          'For a standard bathroom of 4 to 6 square metres, this adds up to roughly 1 to 2 cubic metres of waste. A larger bathroom or one with a bath, heavy stone tiles and a full vanity cabinet produces more.',
+        ],
+      },
+      {
+        heading: 'Skip bins and sizing',
+        paragraphs: [
+          'Most bathroom renovations use a 4-cubic-metre skip bin. That holds the waste from a standard bathroom strip-out - roughly 40 heavy-duty bags of rubble. A larger bathroom or a combined bathroom-and-laundry job may need a 6-cubic-metre bin.',
+          'The skip is delivered before demolition starts and collected once the strip-out is complete. In Sydney, skip bin hire for a bathroom renovation runs from $300 to $600 depending on the bin size, the suburb and the hire period.',
+          'Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers what happens during the strip-out itself.',
+        ],
+      },
+      {
+        heading: 'What can be recycled',
+        paragraphs: [
+          'Tiles and concrete rubble go to a construction recycling facility where they are crushed and reused as road base or fill. Metal fittings - copper pipes, brass taps, steel frames - have scrap value and are separated at the depot.',
+          'Old toilets, baths and basins made of vitreous china or cast iron are recyclable. Timber framing that is not treated or painted can be chipped. Glass shower screens can be recycled if they are not laminated.',
+          'Most licensed skip bin operators sort the waste at a transfer station. The recycling rate for bathroom renovation waste is typically 60 to 80 percent by weight.',
+        ],
+      },
+      {
+        heading: 'Asbestos: the one thing that changes everything',
+        paragraphs: [
+          'Homes built before 1990 may contain asbestos in the wall lining, floor tiles, adhesive or behind wet-area sheeting. Asbestos cannot go in a standard skip bin. It must be tested, removed by a licensed asbestos removalist, double-bagged in labelled plastic and taken to a licensed disposal facility.',
+          'ETR tests for asbestos where the home\'s age warrants it. The cost of asbestos removal depends on the area and the type of asbestos (bonded or friable). Our written quote allows for testing, and if asbestos is found, the removal is priced and handled as a separate, documented line item.',
+          'Our <a href="/blog/heritage-bathroom-renovation-sydney/" class="et-link">heritage renovation guide</a> covers how asbestos and lead paint are managed in older Sydney homes.',
+        ],
+      },
+      {
+        heading: 'Plasterboard and paint',
+        paragraphs: [
+          'Plasterboard (gyprock) must be separated from general waste. Most skip bin operators ask for it to be bagged or placed on top of the load for sorting at the depot. Mixing plasterboard through rubble often triggers a surcharge because it contaminates the recycling stream.',
+          'Painted surfaces are generally acceptable in construction waste. Lead-based paint, found in homes built before 1970, requires separate handling - the same principle as asbestos. Testing is cheap and quick.',
+        ],
+      },
+      {
+        heading: 'How ETR manages waste',
+        paragraphs: [
+          'The skip bin is organised as part of the project program. The team separates recyclable materials during demolition rather than after. Drop sheets and dust containment protect the rest of the house from debris during the carry-out.',
+          'Kieran C noted that the team provided "drop sheets and surface protection to and from the work area and leaving the site clean and tidy at the end of each day." Waste management is part of that standard, not an afterthought. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does waste removal cost in a bathroom renovation?',
+        answer: 'Skip bin hire for a standard bathroom renovation in Sydney runs $300 to $600 for a 4 to 6-cubic-metre bin. This is usually included in the renovation quote as a line item. Asbestos removal, if needed, is an additional cost.',
+      },
+      {
+        question: 'Can I keep my old bath or vanity?',
+        answer: 'Yes, if it is in good condition and you want to repurpose or donate it. Let the team know before demolition starts so the item is removed carefully rather than broken out. Charity organisations sometimes collect usable fixtures.',
+      },
+      {
+        question: 'Is bathroom renovation waste recyclable?',
+        answer: 'Most of it is. Tiles and concrete are crushed for road base. Metals are scrapped. Porcelain fixtures are recyclable. Licensed skip bin operators sort the waste at a transfer station, and 60 to 80 percent by weight is typically diverted from landfill.',
+      },
+      {
+        question: 'What if my bathroom has asbestos?',
+        answer: 'Asbestos must be removed by a licensed removalist, not by a general builder. It is tested before work begins, removed under controlled conditions, double-bagged in labelled plastic and taken to a licensed disposal facility. The cost depends on the area and type of asbestos.',
+      },
+      {
+        question: 'Where does the skip bin go?',
+        answer: 'Usually on the driveway or the street verge. If the bin is placed on a public road or footpath, a council permit may be needed. The skip bin operator handles the permit application. The bin is typically on site for the duration of the demolition phase - one to three days.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-investment-property',
+    title: 'Bathroom renovation for investment properties: what to spend and what to skip',
+    metaTitle: 'Bathroom Renovation Investment Property Australia',
+    description: 'Choose durable finishes for a rental and set spending around tenant needs.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Investment bathrooms are different from owner-occupied ones',
+        paragraphs: [
+          'In your own home, you may pick finishes you love. In a rental, you need finishes that tenants can care for, that last between leases and that earn their cost.',
+          'The goal is not the lowest price. Cheap work can look cheap, draw lower rents and need redoing sooner. Aim for a sound bathroom that suits tenants and lasts 10 to 15 years without major work.',
+        ],
+      },
+      {
+        heading: 'Where to spend',
+        paragraphs: [
+          'Waterproofing. This is vital. If the membrane fails, water can harm the home and cost far more to fix. Each rental bathroom should be waterproofed to AS 3740 with a compliance certificate.',
+          'Tiles. Choose porcelain over ceramic. Porcelain is harder, resists scratches and holds up well with heavy use. White, light grey or warm beige suits many tenants and ages well.',
+          'Tapware and fixtures. Mid-range brands that meet Australian Standards last longer than cheap fittings. A mixer tap may cost more than separate hot and cold taps, but is easier to use.',
+          'Ventilation. A fan that vents outside helps stop mould, a common upkeep issue in rental bathrooms. A good fan costs far less than mould clean-up between leases.',
+        ],
+      },
+      {
+        heading: 'Where to save',
+        paragraphs: [
+          'Tile size and pattern. A standard 300 by 600 porcelain tile in a plain colour costs less per square metre than a boutique tile. It is easier to replace if one breaks. Skip trends that may date in five years.',
+          'Vanity and mirror. A wall-hung vanity with a stone-top basin in white or grey lasts well, is easy to clean and is easy to find. A plain frameless mirror costs less than an LED model and has no wiring to fail.',
+          'Shower screen. A semi-frameless screen costs less than frameless and can fit walls that are not quite plumb, as can happen in older rentals.',
+          'Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> shows how to plan the spend across the full job.',
+        ],
+      },
+      {
+        heading: 'Return on investment',
+        paragraphs: [
+          'A mid-range bathroom renovation costing $18,000 to $30,000 typically returns 60 to 75 percent of its cost in added property value. But the financial case for an investment property is broader than resale alone.',
+          'A renovated bathroom justifies a higher weekly rent - often $30 to $60 more per week, which is $1,500 to $3,000 per year. Over 10 years, that added rent alone can cover a significant portion of the renovation cost.',
+          'A good bathroom can also mean less time with no tenant. Tenants may renew a lease when the room works well. Our <a href="/blog/bathroom-renovation-resale-value-what-agents-look-for/" class="et-link">resale value guide</a> covers what agents look for in a bathroom.',
+        ],
+      },
+      {
+        heading: 'Durability choices that matter for rentals',
+        paragraphs: [
+          'Epoxy grout in the shower resists mould and stains better than cement grout. It costs more at first but cuts a common cleaning complaint from tenants and property managers.',
+          'Large tiles mean fewer grout lines and less cleaning. A wall with four tiles is easier to care for than a wall with forty. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> covers how upkeep differs.',
+          'Anti-mould silicone at joints lasts three to five years longer than standard silicone. New silicone between leases costs less than fixing mould damage later.',
+        ],
+      },
+      {
+        heading: 'How ETR works with property investors',
+        paragraphs: [
+          'We renovate bathrooms in investment properties regularly. The process is the same as an owner-occupied renovation - on-site measure, written quote, fixed program - but the selections are guided toward durability and tenant appeal rather than personal taste.',
+          'The Basic package starts from $18,000 for a bathroom about 1.5 × 1.8 × 2.4 m. Every job is waterproofed to AS 3740 with a compliance certificate and carries a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much should I spend on a bathroom renovation for a rental property?',
+        answer: 'A mid-range renovation of $18,000 to $25,000 typically delivers the best return for an investment property. Going cheaper risks a result that does not lift the rent or appeal to good tenants. Going premium rarely adds enough rent to justify the extra cost.',
+      },
+      {
+        question: 'What is the ROI on a bathroom renovation for an investment property?',
+        answer: 'The renovation itself returns roughly 60 to 75 percent in added property value. The ongoing rental increase - often $30 to $60 per week - adds value over time. Reduced vacancy and lower maintenance costs also contribute.',
+      },
+      {
+        question: 'Should I renovate the bathroom before selling an investment property?',
+        answer: 'If the bathroom is dated, damaged or has waterproofing issues, yes. A renovated bathroom creates a "move-in ready" impression that supports a higher sale price and faster sale. If the bathroom is in reasonable condition, a cosmetic refresh may be enough.',
+      },
+      {
+        question: 'What finishes are best for a rental bathroom?',
+        answer: 'Neutral porcelain tiles (white, light grey or beige), a wall-hung vanity with a stone-top basin, chrome or brushed nickel tapware, a semi-frameless shower screen and epoxy grout in the shower. These are durable, widely appealing and easy to maintain.',
+      },
+      {
+        question: 'Can I claim the renovation on tax?',
+        answer: 'Renovations to an investment property are generally a capital improvement, not a repair. Capital improvements are added to the cost base and depreciated over time. Consult your accountant for advice specific to your situation - ETR provides itemised invoices that your accountant can use.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-ceiling-renovation-guide',
+    title: 'Bathroom ceiling renovation: what most people overlook',
+    metaTitle: 'Bathroom Ceiling Renovation Guide',
+    description: 'Check moisture damage, fan placement, lighting and paint before finishing the ceiling.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'The ceiling is the most neglected surface in a bathroom',
+        paragraphs: [
+          'Walls get new tiles. Floors get waterproofing. Fixtures get replaced. But the ceiling is often left as is, repainted at most. In many older Sydney bathrooms, the ceiling is the surface most affected by years of steam, and it is the one most likely to hide damage.',
+          'Steam rises. In a bathroom without adequate ventilation, moisture hits the ceiling first and sits there longest. Over years, this causes paint to peel, plasterboard to swell, and mould to colonise the surface and - worse - the cavity above it.',
+        ],
+      },
+      {
+        heading: 'Signs the ceiling needs attention',
+        paragraphs: [
+          'Peeling or bubbling paint is the most visible sign. Yellow or brown staining indicates water damage - either from condensation or from a leak above. Soft or spongy patches in the plasterboard mean the board has absorbed moisture and lost its structural integrity.',
+          'Mould on the ceiling - especially in corners and around the exhaust fan - means moisture is not being cleared fast enough. Cleaning it off treats the symptom. Fixing the ventilation and replacing the damaged board treats the cause.',
+          'Our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> covers why mould keeps returning and what a renovation does to stop it.',
+        ],
+      },
+      {
+        heading: 'Exhaust fan placement and ducting',
+        paragraphs: [
+          'The exhaust fan should be in the ceiling, positioned directly above or near the shower - where the most steam is produced. The fan must duct to the outside of the building, not into the roof cavity. A fan that exhausts into the roof space simply moves the moisture problem from the bathroom to the roof framing.',
+          'During a renovation, the ceiling is open. This is the time to install or upgrade the exhaust fan, run the ducting to an external vent, and seal the penetration. Retrofitting ducting through a finished ceiling is more expensive and disruptive.',
+          'Our <a href="/blog/bathroom-ventilation-sydney-renovation/" class="et-link">ventilation guide</a> covers fan sizing, ducting routes and timer controls in detail.',
+        ],
+      },
+      {
+        heading: 'Lighting recesses and electrical work',
+        paragraphs: [
+          'Recessed downlights sit in the ceiling cavity. In a bathroom, these must be rated for wet areas (IP44 or higher) and installed by a licensed electrician. LED downlights are the standard choice - they use less power, produce less heat in the cavity and last longer than halogen.',
+          'The number and position of downlights are planned during the design phase. Farah Dawood works out the lighting layout alongside the tile plan, vanity position and mirror location. The electrician installs the wiring during the rough-in, before the ceiling is lined.',
+          'Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers how ceiling lights work with mirror lighting and task lighting to light the room evenly.',
+        ],
+      },
+      {
+        heading: 'Paint vs tiles on the ceiling',
+        paragraphs: [
+          'Most bathroom ceilings are painted, not tiled. A good-quality moisture-rated ceiling paint - semi-gloss or satin finish - resists condensation, is easy to clean and does not trap moisture the way a flat paint does.',
+          'Tiling the ceiling is rare and usually reserved for steam rooms or shower recesses with very high ceilings where water runs down from above. In a standard bathroom, paint is the practical and cost-effective choice.',
+          'The ceiling should be lined with moisture-resistant plasterboard (green board), not standard plasterboard. Standard board swells and degrades in a humid room. Green board handles the conditions and provides a stable base for paint.',
+        ],
+      },
+      {
+        heading: 'How ETR handles bathroom ceilings',
+        paragraphs: [
+          'In a full renovation, the ceiling is inspected during the strip-out. Damaged plasterboard is replaced with moisture-resistant board. The exhaust fan is installed with external ducting. Downlights are wired during the electrical rough-in.',
+          'The ceiling is painted with a moisture-rated paint after tiling is complete, so no paint is damaged during the tiling process. Every bathroom is waterproofed to AS 3740 and the ceiling work is part of the overall program. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Should I replace the bathroom ceiling during a renovation?',
+        answer: 'If the plasterboard shows signs of moisture damage - swelling, staining, mould or peeling paint - yes. Replacing it with moisture-resistant board during a renovation is far cheaper than doing it later. If the board is in good condition, repainting with moisture-rated paint is enough.',
+      },
+      {
+        question: 'What type of paint is best for a bathroom ceiling?',
+        answer: 'A moisture-rated interior paint in a semi-gloss or satin finish. These finishes resist condensation and are easier to wipe clean than flat or matt finishes. Some brands offer mould-resistant formulas with added fungicide.',
+      },
+      {
+        question: 'Does the exhaust fan have to go in the ceiling?',
+        answer: 'It is the most common and effective position because steam rises. Wall-mounted fans are an option in some layouts, but ceiling fans positioned above the shower clear steam more efficiently. The key is that the fan ducts to the outside, not into the roof cavity.',
+      },
+      {
+        question: 'Can I use standard plasterboard on a bathroom ceiling?',
+        answer: 'It is not recommended. Standard plasterboard absorbs moisture and degrades in a humid room. Moisture-resistant plasterboard (green board or similar) is rated for wet areas and provides a stable base for paint in a bathroom environment.',
+      },
+      {
+        question: 'How many downlights does a bathroom ceiling need?',
+        answer: 'A standard bathroom of 4 to 6 square metres typically needs three to four LED downlights for even light coverage. The exact number depends on the room shape, ceiling height and whether the vanity mirror has its own lighting.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-electrical-work',
+    title: 'Bathroom renovation electrical work: what changes and what stays',
+    metaTitle: 'Bathroom Renovation Electrical Work Guide',
+    description: 'Plan bathroom lights, fans and heated rails, and check work against AS/NZS 3000.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Electrical work is part of every renovation',
+        paragraphs: [
+          'Even if you are keeping the same layout, the electrical work in a bathroom renovation typically includes new lighting, a new or upgraded exhaust fan, relocating or adding power points, and installing a safety switch if the home does not already have one.',
+          'All electrical work in a bathroom must be done by a licensed electrician and must comply with AS/NZS 3000, the Australian wiring rules. The bathroom is classified as a wet area, which means stricter rules about where power points, lights and switches can be placed.',
+        ],
+      },
+      {
+        heading: 'Lighting circuits',
+        paragraphs: [
+          'Most bathroom renovations replace the lighting with LED downlights. These are wired during the rough-in phase - after the walls are framed but before they are lined and tiled. The electrician runs cables through the wall and ceiling cavity to each light position.',
+          'The number, position and type of lights are decided during the design phase. Task lighting above the mirror, ambient lighting from downlights and feature lighting in a niche each need their own cable run. Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers the full layout.',
+        ],
+      },
+      {
+        heading: 'Exhaust fan wiring',
+        paragraphs: [
+          'The exhaust fan is wired to a switch - often a timer switch that keeps the fan running for 10 to 15 minutes after you leave the room. Some fans include a humidity sensor that turns the fan on automatically when moisture levels rise.',
+          'The fan cable runs through the ceiling cavity to the fan position. The ducting (a separate trade) runs from the fan to an external vent. Both the cable and the duct are installed during the rough-in, before the ceiling is lined.',
+        ],
+      },
+      {
+        heading: 'Power points and zones',
+        paragraphs: [
+          'AS/NZS 3000 divides the bathroom into zones based on proximity to water. Power points cannot be installed within 600 millimetres of a shower, bath or basin. In practice, this means the power point is usually beside the mirror or on the wall opposite the shower.',
+          'A shaver socket or a general power point rated for bathroom use is typically installed during the renovation. If an LED mirror, a heated towel rail or underfloor heating is planned, each needs its own power connection - either a dedicated circuit or a connection from the bathroom circuit.',
+          'Our <a href="/blog/heated-towel-rail-bathroom-guide/" class="et-link">heated towel rail guide</a> covers the wiring options for that specific fixture.',
+        ],
+      },
+      {
+        heading: 'Safety switches',
+        paragraphs: [
+          'A safety switch (residual current device or RCD) cuts the power within milliseconds if it detects a fault - such as water bridging a live connection. In NSW, all power and lighting circuits in a bathroom must be protected by a safety switch.',
+          'If the home was built before safety switches became mandatory, the renovation is the right time to install one. The electrician adds the RCD to the switchboard as part of the bathroom circuit work. It protects every outlet and light in the bathroom.',
+        ],
+      },
+      {
+        heading: 'What stays and what goes',
+        paragraphs: [
+          'In most renovations, the existing cables inside the walls are replaced because the wall lining is removed during the strip-out. New cables are run to new positions to match the new layout.',
+          'The switchboard connection usually stays unless the home needs an upgrade - older homes with ceramic fuses or no safety switches may need a switchboard upgrade as part of the renovation. The electrician assesses this during the quoting phase.',
+        ],
+      },
+      {
+        heading: 'How ETR coordinates electrical work',
+        paragraphs: [
+          'The electrical layout is planned during the design phase, alongside the tile plan, lighting layout and fixture positions. The electrician does the rough-in after demolition and framing, before waterproofing. After tiling, the electrician returns for the fit-off - installing lights, switches, power points and the exhaust fan.',
+          'All electrical work is carried out by a licensed electrician to AS/NZS 3000 and is covered by a certificate of compliance. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I do any of the electrical work myself?',
+        answer: 'No. In NSW, all electrical work in a wet area must be done by a licensed electrician. This includes wiring lights, fans, power points and heated towel rails. DIY electrical work is illegal and voids your insurance.',
+      },
+      {
+        question: 'How much does the electrical work cost in a bathroom renovation?',
+        answer: 'The electrical component typically runs $1,500 to $4,000, depending on the number of lights, whether a heated towel rail or underfloor heating is included, and whether the switchboard needs an upgrade. It is included as a line item in the renovation quote.',
+      },
+      {
+        question: 'Do I need a safety switch in the bathroom?',
+        answer: 'Yes. In NSW, all power and lighting circuits in a bathroom must be protected by a safety switch (RCD). If the home does not have one, it should be installed during the renovation. It is a safety requirement, not an optional upgrade.',
+      },
+      {
+        question: 'Can I have a power point in the shower?',
+        answer: 'No. AS/NZS 3000 prohibits power points within 600 millimetres of a shower, bath or basin. Power points are installed outside these zones - typically beside the mirror or on a wall away from water sources.',
+      },
+      {
+        question: 'When does the electrician come during a renovation?',
+        answer: 'Twice. The first visit (rough-in) happens after demolition and framing but before waterproofing and tiling - cables are run to their positions. The second visit (fit-off) happens after tiling - lights, switches, fans and power points are installed and connected.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-flooring-options-renovation',
+    title: 'Bathroom flooring options: tiles, vinyl and what works in wet areas',
+    metaTitle: 'Bathroom Flooring Options Renovation Australia',
+    description: 'Compare tile, vinyl and stone by grip, care and use in wet areas.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What makes a bathroom floor different',
+        paragraphs: [
+          'A bathroom floor gets wet. It needs to be waterproof, slip-resistant when wet, durable enough to handle daily foot traffic and easy to clean. Not every flooring material meets all four requirements.',
+          'In Australia, the floor of a wet area must be waterproofed to AS 3740. The flooring material sits on top of the waterproof membrane - the membrane does the waterproofing, and the floor material provides the wearing surface.',
+        ],
+      },
+      {
+        heading: 'Porcelain tiles',
+        paragraphs: [
+          'Porcelain is the most common bathroom floor material in Australian renovations. It is fired at a higher temperature than ceramic, making it denser, harder and less porous. A good porcelain tile absorbs almost no water.',
+          'Porcelain is available in every size, colour and finish. Matt and textured finishes provide grip when wet. Polished porcelain is slippery when wet and is not recommended for bathroom floors unless it is used only in dry areas.',
+          'Slip resistance is rated under AS 4586. For a bathroom floor, look for a tile rated R10 or higher. Our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> covers how tile size affects installation on a bathroom floor.',
+        ],
+      },
+      {
+        heading: 'Ceramic tiles',
+        paragraphs: [
+          'Ceramic tiles are lighter and softer than porcelain. They are fired at a lower temperature and are more porous, which means they absorb more water. In a bathroom, this is usually not a problem because the waterproof membrane is underneath, but ceramic is less durable for heavy use.',
+          'Ceramic costs less than porcelain and comes in a wide range of patterns and colours. It is a reasonable choice for a budget bathroom or a powder room with light foot traffic. For a main bathroom or ensuite that gets daily use, porcelain is the stronger choice.',
+        ],
+      },
+      {
+        heading: 'Vinyl and luxury vinyl tiles',
+        paragraphs: [
+          'Vinyl flooring is waterproof, warm underfoot and softer to walk on than tile. Luxury vinyl tiles (LVT) are thicker, more durable and available in convincing wood and stone-look finishes.',
+          'Vinyl does not need grouting, which eliminates a maintenance surface. It is quieter underfoot and more forgiving if you drop something - a glass bottle on vinyl may survive; on porcelain, it will not.',
+          'The trade-off is durability. Vinyl scratches more easily than tile and can be damaged by heavy furniture or sharp objects. It also does not carry the same premium visual impression as tile, which matters for resale.',
+        ],
+      },
+      {
+        heading: 'Natural stone',
+        paragraphs: [
+          'Marble, limestone, travertine and slate are used in premium bathroom renovations. Natural stone adds a luxury feel that manufactured tiles cannot fully replicate.',
+          'The downside is maintenance. Natural stone is porous and must be sealed regularly to prevent staining and water absorption. Marble stains from soap, toothpaste and cleaning products. Limestone scratches. Slate is harder but irregular in thickness.',
+          'Engineered stone (quartz composite) is an alternative - it looks similar to natural stone but is non-porous and lower maintenance. It is more commonly used for vanity tops and splashbacks than for floors.',
+        ],
+      },
+      {
+        heading: 'Slip resistance matters',
+        paragraphs: [
+          'AS 4586 rates floor surfaces for slip resistance. A wet bathroom floor needs a rating of at least R10 (or P3 for the pendulum test). A shower floor needs a higher rating because it is constantly wet - R11 or R12 is recommended.',
+          'The slip rating depends on the surface texture, not the material. A matt porcelain tile can be R10 or R11. A polished porcelain tile of the same material can be R9 or lower - too slippery for a wet bathroom floor.',
+          'Ask the tile supplier for the slip rating before ordering. Our <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiling and finishes guide</a> covers how to choose tiles that look right and perform safely.',
+        ],
+      },
+      {
+        heading: 'How ETR selects bathroom flooring',
+        paragraphs: [
+          'The floor tile is chosen during the selections process, alongside the wall tiles, grout and tapware. Adam Dawood advises on slip resistance, tile size and substrate preparation. Every floor is waterproofed to AS 3740 with a compliance certificate before the tiles go down.',
+          'A free on-site measure anywhere in Sydney is the starting point. The written quote includes the floor tile, adhesive, grout and waterproofing as standard line items.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the best flooring for a bathroom?',
+        answer: 'Porcelain tiles with a matt or textured finish rated R10 or higher for slip resistance. They are waterproof, durable, easy to clean and available in a wide range of styles. Porcelain is the standard choice for most Australian bathroom renovations.',
+      },
+      {
+        question: 'Can I use timber flooring in a bathroom?',
+        answer: 'Real timber is not recommended. It swells and warps with moisture exposure. Timber-look porcelain tiles or luxury vinyl tiles give a similar appearance without the water damage risk.',
+      },
+      {
+        question: 'Is vinyl flooring good enough for a bathroom?',
+        answer: 'Luxury vinyl tiles are a viable option, especially for budget renovations or rental properties. They are waterproof, warm underfoot and easy to install. They are less durable than porcelain and do not carry the same premium look for resale.',
+      },
+      {
+        question: 'What slip rating do I need for a bathroom floor?',
+        answer: 'At least R10 under AS 4586 for the general bathroom floor. R11 or R12 for the shower floor, which is wet more often and needs higher grip. Ask the tile supplier for the rating - it depends on the surface texture, not the material.',
+      },
+      {
+        question: 'Does the floor need waterproofing if I use waterproof tiles?',
+        answer: 'Yes. The waterproof membrane under the tiles is what protects the building structure. The tiles protect the membrane and provide the wearing surface. Both layers are required under AS 3740.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-design-process',
+    title: 'The bathroom renovation design process: from first ideas to final plans',
+    metaTitle: 'Bathroom Renovation Design Process Steps',
+    description: 'Follow the plan from site measure and layout options to selections and quote.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Design happens before pricing',
+        paragraphs: [
+          'A bathroom renovation quote means nothing without a design behind it. Two quotes for "a new bathroom" are not comparable if one includes a layout change, heated towel rail and full-height tiling while the other does not. The design defines the scope, and the scope defines the price.',
+          'At ETR, the design process starts at the on-site measure and finishes when you sign off on the layout, materials and inclusions. The written quote comes from that - not the other way around.',
+        ],
+      },
+      {
+        heading: 'Step 1: the on-site measure',
+        paragraphs: [
+          'Omar Dawood visits the site, measures the room, checks the existing plumbing and electrical positions, notes the wall construction (timber frame or masonry) and photographs the current bathroom.',
+          'This visit is free and takes about 45 minutes. The goal is to understand what is there, what you want to change, and what the room can realistically accommodate. If there are structural constraints - load-bearing walls, plumbing that cannot easily move, low ceiling height - they are identified here.',
+        ],
+      },
+      {
+        heading: 'Step 2: layout options',
+        paragraphs: [
+          'Farah Dawood, our architectural designer, works through layout options based on the measurements and your brief. The layout sets the position of the shower, bath (if included), vanity, toilet and door.',
+          'Even in a small bathroom, there are usually two or three workable layouts. The differences matter - a toilet that faces the door feels different from one beside the door. A shower at the far end of the room opens the entry. A vanity under the window gets natural light.',
+          'The layout is where the biggest design decisions happen. Once the fixture positions are set, the tile plan, lighting and storage follow from them.',
+        ],
+      },
+      {
+        heading: 'Step 3: material selections',
+        paragraphs: [
+          'Selections cover tiles (floor and wall), grout colour, tapware (taps, showerhead, mixer), vanity and basin, toilet, shower screen, mirror, towel rails, and any extras - heated towel rail, niche, underfloor heating.',
+          'You can visit a tile showroom, browse online or work from a mood board. Farah helps narrow the options based on the layout, the room size and your budget. A mood board - a collection of images, colours and materials - helps align everyone before the final choices are locked in.',
+          'Our guides on <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes</a>, <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware finishes</a> and <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity selection</a> cover the main decisions in detail.',
+        ],
+      },
+      {
+        heading: 'Step 4: the written quote',
+        paragraphs: [
+          'The quote is built from the design - the layout, the materials and the scope of work. It lists every inclusion: demolition, waterproofing, plumbing, electrical, tiling, fixtures, painting and clean-up. It also states what is excluded.',
+          'ETR uses a HIA fixed-price renovation contract. The price is fixed to the agreed scope. If something unexpected is found during the strip-out - rot, old plumbing, asbestos - it is discussed and priced before any extra work goes ahead.',
+          'Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing quotes</a> covers what to look for and what questions to ask.',
+        ],
+      },
+      {
+        heading: 'Step 5: sign-off and scheduling',
+        paragraphs: [
+          'Once you approve the design and sign the contract, the job is scheduled. Materials are ordered, the skip bin is booked, and the program is set - demolition, rough-in, waterproofing, tiling, fit-off, handover.',
+          'The program is shared with you before work starts, so you know what is happening each week. Omar provides updates throughout. A standard full renovation runs three to four weeks on site.',
+        ],
+      },
+      {
+        heading: 'Why the design phase matters',
+        paragraphs: [
+          'Skipping or rushing the design phase is how renovations go wrong. A layout that does not work, materials ordered in the wrong finish, a missing power point for the mirror - these problems are cheap to fix on paper and expensive to fix on site.',
+          'The design phase is free at ETR. The on-site measure, the layout options and the selections support are part of the quoting process. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does the design process take?',
+        answer: 'Typically one to two weeks from the on-site measure to a signed-off design and quote. The timeline depends on how quickly material selections are made - some clients decide in a day, others take a few weeks to visit showrooms.',
+      },
+      {
+        question: 'Do I need to choose my tiles before getting a quote?',
+        answer: 'Not necessarily. The quote can be prepared with an allowance for tiles within a price range. Final tile selection can happen after the quote is accepted, as long as it is confirmed before the tiling phase starts.',
+      },
+      {
+        question: 'Can I change the design after the quote is signed?',
+        answer: 'Minor changes - a different tap finish, a different grout colour - are usually straightforward. Changes that affect the layout, the scope of work or the materials may require a revised quote. The earlier a change is made, the less it costs.',
+      },
+      {
+        question: 'Do I need an architect or interior designer?',
+        answer: 'For a standard bathroom renovation, no. Farah Dawood, our architectural designer, handles the layout and material selections as part of the ETR process. If you are working with your own designer or architect, we collaborate with them.',
+      },
+      {
+        question: 'Is the on-site measure really free?',
+        answer: 'Yes. The on-site measure, layout options and quote are free and without obligation. You receive a written quote with a detailed scope of work. If you do not proceed, there is no charge.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-renovation-contract-guide',
+    title: 'What to look for in a bathroom renovation contract',
+    metaTitle: 'Bathroom Renovation Contract Guide Australia',
+    description: 'Check scope, price, payment dates, changes, warranty and insurance before you sign.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why the contract matters',
+        paragraphs: [
+          'Our Basic package starts from $18,000 for a bathroom about 1.5 × 1.8 × 2.4 m. Premium starts from $30,000 for a room about 2.4 × 2.4 × 2.4 m. The contract sets out the work, price and how changes are handled.',
+          'In NSW, a written contract is legally required for residential building work over $5,000. For work over $20,000, the Home Building Act requires specific clauses including a cooling-off period, progress payment schedule and details of the builder\'s insurance.',
+        ],
+      },
+      {
+        heading: 'Scope of work',
+        paragraphs: [
+          'The contract should list the work: strip-out, waterproofing, plumbing, electrical work, tiling, fittings, paint, clean-up and waste removal. Each item should be clear, so you know what is in and what is out.',
+          'If the quote says "bathroom renovation" but does not list the work, ask. A vague scope can lead to disputes. Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to quotes</a> shows what to look for.',
+        ],
+      },
+      {
+        heading: 'Fixed price vs cost-plus',
+        paragraphs: [
+          'A fixed-price contract sets the cost for the agreed work. You know the price before work starts. If the builder finds rot or old plumbing, any extra cost is talked through and agreed in writing before more work goes ahead.',
+          'A cost-plus contract charges for materials at cost plus a margin, and for labour by the hour or day. You do not know the final price until the job is done. This can suit a large job whose full scope is hard to set at the start, but the owner takes on more cost risk.',
+          'ETR uses a HIA fixed-price renovation contract. The price is tied to the agreed work and changes only if you approve a variation in writing.',
+        ],
+      },
+      {
+        heading: 'Payment schedule',
+        paragraphs: [
+          'The contract sets out when payments are due. A standard schedule for a bathroom renovation is a deposit (typically 10 to 30 percent), one or two progress payments tied to milestones (such as completion of waterproofing and completion of tiling), and a final payment on handover.',
+          'In NSW, the Home Building Act caps the deposit for residential work at 10 percent for contracts over $20,000. For contracts under $20,000, a reasonable deposit is agreed between the parties.',
+          'ETR\'s payment schedule is 30 percent deposit, 40 percent at a defined milestone and 30 percent on completion. This is set out in the contract before work starts.',
+        ],
+      },
+      {
+        heading: 'Variations and extras',
+        paragraphs: [
+          'A variation is a change to the agreed work: a new tile choice, an extra niche or a wall that needs work due to rot. The contract should say that you must agree to each change and its cost in writing before the extra work starts.',
+          'Verbal deals about extras are hard to prove. A good contract calls for a written note of the change, the cost and both sides\' signatures. That helps prevent a shock in the final bill.',
+        ],
+      },
+      {
+        heading: 'Warranty and insurance',
+        paragraphs: [
+          'The contract should state the workmanship warranty term. ETR provides a 10-year workmanship warranty. Product warranties are separate from the builder\'s work.',
+          'The builder should hold public liability insurance and workers\' compensation insurance. In NSW, for residential work over $20,000, the builder must also provide a Home Building Compensation Fund (HBCF) certificate, which protects the homeowner if the builder cannot complete the work.',
+          'Our <a href="/blog/bathroom-renovation-insurance-australia/" class="et-link">insurance guide</a> covers what insurance means for you during a renovation.',
+        ],
+      },
+      {
+        heading: 'What ETR\'s contract covers',
+        paragraphs: [
+          'ETR uses a HIA fixed-price renovation contract from the Housing Industry Association. It covers the work, price, payment plan, variations, warranty, insurance, dispute process and cooling-off period.',
+          'We talk you through the contract before you sign. Every job is carried out under NSW Builder Licence 475204C, with $20 million public liability insurance and a 10-year workmanship warranty. Start with a free on-site measure in Sydney.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is a written contract required for a bathroom renovation?',
+        answer: 'In NSW, yes - for residential building work over $5,000, a written contract is required by law. For work over $20,000, the Home Building Act requires specific clauses including a cooling-off period and a progress payment schedule.',
+      },
+      {
+        question: 'What is a HIA contract?',
+        answer: 'A HIA contract is a standard-form building contract published by the Housing Industry Association. It is widely used in residential renovations across Australia. It covers scope, pricing, payments, variations, warranty, insurance and dispute resolution in a format that meets legal requirements.',
+      },
+      {
+        question: 'Can I negotiate the payment schedule?',
+        answer: 'The schedule is usually set by the contract type and legal requirements. In NSW, the deposit is capped at 10 percent for contracts over $20,000. Progress payments are tied to milestones. The final payment is due on completion and handover.',
+      },
+      {
+        question: 'What happens if the builder finds a problem during the renovation?',
+        answer: 'Under a fixed-price contract, the builder discusses the problem with you, describes the extra work needed, provides a cost for the variation and gets your written approval before proceeding. The variation is documented and added to the contract.',
+      },
+      {
+        question: 'What should I do before signing a renovation contract?',
+        answer: 'Read the full document. Check that the scope lists every inclusion. Confirm the payment schedule. Verify the builder\'s licence number on the NSW Fair Trading register. Ask for proof of insurance. Understand how variations are handled. Ask any questions before you sign.',
+      },
+    ],
+  },
+
+  {
+    slug: 'aging-in-place-bathroom-design',
+    title: 'Aging in place: designing a bathroom for the years ahead',
+    metaTitle: 'Aging in Place Bathroom Design Australia',
+    description: 'Plan grab-rail support, step-free showers and wider doors for future access.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What aging in place means for a bathroom',
+        paragraphs: [
+          'ETR does not currently offer specialist accessible or ageing-in-place bathroom renovation packages, and we do not provide specialist funding support or funding advice through outside care schemes. This article is general information for planning only, not a service offer.',
+          'Aging in place means staying in your own home as you get older, rather than moving to assisted living or a retirement community. The bathroom is the room most likely to need changes, because it involves wet surfaces, stepping over thresholds, reaching overhead and standing on one leg.',
+          'The smartest time to plan for these changes is during a renovation. Adding structural blocking for grab rails costs almost nothing when the walls are open. Retrofitting them into a finished bathroom costs significantly more and may not be possible without damage.',
+        ],
+      },
+      {
+        heading: 'Curbless showers',
+        paragraphs: [
+          'A curbless (or zero-threshold) shower has no step or hob at the entry. The floor is graded to a drain, and water is contained by the fall of the floor rather than a raised edge. This is safer for anyone with limited mobility, balance concerns or a wheelchair.',
+          'Curbless showers are also easier to clean, look more open and suit the walk-in shower trend. Our <a href="/blog/wet-room-bathroom-renovation/" class="et-link">wet room guide</a> covers the design and waterproofing details for this style of shower.',
+          'The floor gradient must be precise - steep enough to drain water but gentle enough to stand on comfortably. A linear drain along one wall is the most common solution in a curbless shower.',
+        ],
+      },
+      {
+        heading: 'Grab rail blocking',
+        paragraphs: [
+          'Grab rails need a solid mounting point - timber blocking behind the wall lining, fixed between the studs. If the blocking is not there when the wall is built, the grab rail cannot be safely installed later without opening the wall.',
+          'During a renovation, the builder installs timber blocking at standard grab rail heights (800 to 900 millimetres for a horizontal rail beside the toilet, 900 to 1,200 millimetres for a vertical rail in the shower). The blocking is hidden behind the tiles. The rails can be added at any time in the future without disturbing the wall.',
+          'This is the single most cost-effective aging-in-place feature. It costs less than $100 in materials and five minutes of labour when the walls are open. Retrofitting it later can cost $500 to $1,000 or more.',
+        ],
+      },
+      {
+        heading: 'Wider doorways',
+        paragraphs: [
+          'A standard bathroom door is 720 millimetres wide. A wheelchair needs at least 820 millimetres. If the wall is being moved or the door frame replaced during the renovation, widening the doorway to 820 or 870 millimetres is a small extra cost.',
+          'A wider door also makes the room easier to use with a walking frame, crutches or when carrying a child. It is not only about wheelchairs - it is about making the room work for more situations.',
+        ],
+      },
+      {
+        heading: 'Non-slip flooring',
+        paragraphs: [
+          'Slip-and-fall injuries in the bathroom are a leading cause of hospital admissions for older Australians. The floor tile must be slip-resistant when wet - rated R10 or higher under AS 4586.',
+          'Matt and textured porcelain tiles provide good grip without looking clinical. Polished tiles are not suitable for a bathroom floor at any age, but they are especially dangerous for anyone with reduced balance or reaction time.',
+          'Our <a href="/blog/bathroom-flooring-options-renovation/" class="et-link">flooring guide</a> covers slip ratings and material options in detail.',
+        ],
+      },
+      {
+        heading: 'Comfort height toilet and lever taps',
+        paragraphs: [
+          'A comfort-height toilet (also called a raised-height or accessible-height toilet) sits 60 to 80 millimetres higher than a standard model. It is easier to sit down on and stand up from, and it reduces the strain on knees and hips.',
+          'Lever taps are easier to operate than knob taps for anyone with reduced grip strength - arthritis, for example. They are also the standard in most modern tapware ranges, so they do not look institutional.',
+        ],
+      },
+      {
+        heading: 'How ETR designs for the future',
+        paragraphs: [
+          'We install grab rail blocking as standard in every renovation we do. It costs almost nothing during the build and makes a significant difference if rails are needed later. Curbless showers, wider doors and comfort-height toilets are discussed at the design phase.',
+          'Our <a href="/blog/accessible-bathroom-renovation-sydney/" class="et-link">accessible bathroom guide</a> covers the full range of accessibility features. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is aging-in-place design only for older people?',
+        answer: 'No. Universal design works for everyone - families with young children, anyone recovering from an injury, and people who want a bathroom that works long-term without future renovations. A curbless shower and lever taps are good design for any age.',
+      },
+      {
+        question: 'How much extra does aging-in-place design cost?',
+        answer: 'Very little when done during a renovation. Grab rail blocking is under $100 in materials. A curbless shower costs about the same as a hob shower. A wider door frame is a modest extra if the wall is already being framed. The biggest cost savings come from doing it now rather than retrofitting later.',
+      },
+      {
+        question: 'Can I get funding for aging-in-place modifications?',
+        answer: 'In Australia, home modifications may be covered through the Commonwealth Home Support Programme, a Home Care Package, or the NDIS, depending on your eligibility and care needs. Your GP or an occupational therapist can refer you for an assessment.',
+      },
+      {
+        question: 'What is the difference between accessible and aging-in-place design?',
+        answer: 'Accessible design addresses current needs - someone who uses a wheelchair or has a disability now. Aging-in-place design plans for future needs - structural preparation (like grab rail blocking) that makes the bathroom easy to adapt later without a second renovation.',
+      },
+      {
+        question: 'Should I install grab rails now or just the blocking?',
+        answer: 'If you need them now, install them now. If you are planning ahead, the blocking is enough. Modern grab rails come in styles that match contemporary tapware - chrome, matt black, brushed nickel - so they do not look clinical when the time comes.',
+      },
+    ],
+  },
+
+  {
+    slug: 'bathroom-paint-guide-renovation',
+    title: 'Bathroom paint: where to use it, what type and when tiles are better',
+    metaTitle: 'Bathroom Paint Guide Renovation Australia',
+    description: 'Choose paint for damp areas and know when tile may be a better fit.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Paint still has a place in a bathroom',
+        paragraphs: [
+          'Not every surface in a bathroom needs to be tiled. The ceiling, the upper walls above the splash zone and any feature walls away from water are typically painted. Paint is cheaper than tile, faster to apply and easier to change if you want a new colour in a few years.',
+          'The key is choosing the right paint for a wet room and using it only where moisture exposure is manageable. Paint in the wrong place - behind a basin, in a shower recess - fails quickly and leads to peeling, mould and ongoing maintenance.',
+        ],
+      },
+      {
+        heading: 'Where paint works',
+        paragraphs: [
+          'The ceiling. Almost every bathroom ceiling is painted, not tiled. Moisture-rated paint in a semi-gloss or satin finish handles the steam from showers. Our <a href="/blog/bathroom-ceiling-renovation-guide/" class="et-link">ceiling guide</a> covers what to use and when the ceiling board needs replacing.',
+          'Upper walls above the tile line. In many bathrooms, tiles go to 1,200 or 1,800 millimetres on non-shower walls, and paint covers the area from the tile top to the ceiling. This zone gets humidity but not direct water contact.',
+          'Feature walls. A painted feature wall - a dark colour, a textured finish, or a two-tone scheme - adds character to a bathroom without the cost of feature tiles. It works best on walls away from the shower and basin.',
+        ],
+      },
+      {
+        heading: 'Where tiles are better',
+        paragraphs: [
+          'Behind the vanity (the splashback area), behind the bath, inside the shower recess and any surface that gets direct water contact. These areas need a waterproof, durable, easy-to-clean surface that paint cannot provide long-term.',
+          'Our <a href="/blog/bathroom-splashback-ideas-renovation/" class="et-link">splashback guide</a> covers the options for behind the vanity - tiles, glass and panels. In the shower, tiles over a waterproof membrane is the standard.',
+        ],
+      },
+      {
+        heading: 'Choosing the right paint',
+        paragraphs: [
+          'For a bathroom, use a paint rated for wet areas. Most major Australian paint brands - Dulux, Taubmans, Haymes - have a bathroom-specific or kitchen-and-bathroom range formulated with extra mould resistance and moisture tolerance.',
+          'Finish matters. Semi-gloss and satin finishes shed moisture and are easier to wipe clean than flat or matt finishes. A flat finish looks good but absorbs moisture and marks more easily in a humid room.',
+          'Low-VOC paints reduce the chemical fumes during and after painting. In a bathroom with limited ventilation, this is worth the small premium. Our <a href="/blog/eco-friendly-bathroom-renovation/" class="et-link">eco-friendly renovation guide</a> covers low-VOC choices alongside other sustainable options.',
+        ],
+      },
+      {
+        heading: 'Preparation is everything',
+        paragraphs: [
+          'Paint adheres to a clean, dry, properly prepared surface. In a bathroom renovation, the wall is typically new moisture-resistant plasterboard (green board), which needs a primer coat before the paint. Existing walls need sanding, filling and priming to get a smooth base.',
+          'If the existing paint is peeling or there are signs of moisture damage underneath, the wall lining should be replaced rather than painted over. Painting over a damaged surface traps moisture and makes the problem worse.',
+        ],
+      },
+      {
+        heading: 'Colour choices for bathrooms',
+        paragraphs: [
+          'Light colours make a small bathroom feel larger. White, off-white, light grey and soft neutrals are the most popular bathroom paint colours because they reflect light and work with any tile and tapware scheme.',
+          'Dark colours - charcoal, navy, deep green - work as feature walls or in larger bathrooms where the dark colour does not shrink the room. In a small bathroom, a dark ceiling can feel oppressive.',
+          'Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers how to coordinate paint, tiles and fixtures into a cohesive palette.',
+        ],
+      },
+      {
+        heading: 'How ETR handles painted surfaces',
+        paragraphs: [
+          'The ceiling and upper walls are painted after tiling is complete, so no paint is splashed during the tile phase. We use moisture-rated paint on all bathroom surfaces and prime new plasterboard before painting.',
+          'The paint colour is chosen during the selections process, alongside the tiles and tapware. A free on-site measure anywhere in Sydney is the starting point.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I just paint over the existing bathroom walls?',
+        answer: 'If the walls are in good condition - no peeling, no moisture damage, no mould - yes, with proper preparation (sanding, filling, priming). If there is damage, the wall lining should be replaced before painting. Painting over damage traps moisture and makes it worse.',
+      },
+      {
+        question: 'What paint finish is best for a bathroom?',
+        answer: 'Semi-gloss or satin. These finishes resist moisture and are easy to wipe clean. Flat or matt finishes absorb moisture and mark more easily in a humid room. Semi-gloss is the most common choice for bathroom ceilings and walls.',
+      },
+      {
+        question: 'How often does bathroom paint need redoing?',
+        answer: 'In a well-ventilated bathroom with moisture-rated paint, five to eight years before it needs a fresh coat. In a poorly ventilated bathroom, paint can start peeling or growing mould within two to three years. Good ventilation extends the life of every surface.',
+      },
+      {
+        question: 'Is mould-resistant paint actually effective?',
+        answer: 'It helps, but it is not a substitute for ventilation. Mould-resistant paint contains a fungicide that slows mould growth on the painted surface. If the underlying cause - poor ventilation, failed waterproofing - is not addressed, the paint delays mould but does not prevent it.',
+      },
+      {
+        question: 'Should I tile all the way to the ceiling?',
+        answer: 'In the shower, yes - full-height tiles are standard. On other walls, tiles to 1,200 or 1,800 millimetres with paint above is the most common and cost-effective approach. Full-height tiles on every wall is a premium choice that adds cost.',
+      },
+    ],
+  },
+  {
+    slug: 'how-to-choose-bathroom-renovator-sydney',
+    title: 'How to choose a bathroom renovator in Sydney',
+    metaTitle: 'How to Choose a Bathroom Renovator Sydney',
+    description: 'Check the licence, insurance, past work, written quote and warning signs.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why the choice matters more than the price',
+        paragraphs: [
+          'A bathroom renovation costs tens of thousands of dollars and takes weeks. The person you hire controls the quality, the timeline and the outcome. A wrong choice means rework, delays, or a result that does not last.',
+          'Sydney has hundreds of bathroom renovators. Some are licensed builders with decades of trade skill. Others are handymen with a website. The gap between them is not always obvious from a quote or a photo.',
+        ],
+      },
+      {
+        heading: 'Check the licence first',
+        paragraphs: [
+          'In NSW, any home building work over $5,000 must be done by a licensed contractor. The licence is issued by NSW Fair Trading. You can check it on the Fair Trading website in under a minute.',
+          'A licensed builder has passed trade and business tests, holds public liability cover, and is backed by the Home Building Fund for work over $20,000. An unlicensed operator has none of this.',
+          'Elite Touch Renovations holds NSW Builder Licence 475204C. Adam Dawood has over 25 years of tiling and renovation skill. Omar Dawood is the licensed builder and civil engineer who founded the company in 2022.',
+        ],
+      },
+      {
+        heading: 'Cover and warranty',
+        paragraphs: [
+          'Ask for proof of public liability cover - at least $10 million is standard for home work. Workers comp cover is also needed if the business has staff.',
+          'A written warranty protects you after the job is done. ETR provides a 10-year workmanship warranty on every renovation. Our <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">contract guide</a> explains what should be in your contract, including warranty clauses.',
+        ],
+      },
+      {
+        heading: 'Portfolio and reviews',
+        paragraphs: [
+          'Ask to see finished projects - real photos, not stock images. A strong portfolio shows a range of styles, steady quality and care in the details.',
+          'Read reviews from named customers, not unnamed quotes. Kieran C wrote about our work: "The finished tiling was first class with good falls, neat consistent joints, clean cuts and no lippage."',
+          'Ken Chen noted that "Omar, Adam and the team did an excellent job renovating our main bathroom, ensuite and standalone toilet" and that "they were professional, honest and provided us with regular updates throughout the job."',
+        ],
+      },
+      {
+        heading: 'How they talk to you',
+        paragraphs: [
+          'Good updates are the most common praise in renovation reviews - and the most common gripe when missing. Ask how the renovator keeps you in the loop. Do they send daily progress photos? Do they answer calls and messages fast?',
+          'Our <a href="/blog/bathroom-renovation-design-process/" class="et-link">design process guide</a> explains how we handle the journey from first ideas to final plans. Farah Dawood leads the design phase, working with each client to turn their vision into a buildable plan.',
+        ],
+      },
+      {
+        heading: 'The quote and what it should include',
+        paragraphs: [
+          'A proper quote lists every item: demolition, sealing, plumbing, electrical, tiling, fixtures, fittings and clean-up. It states the total price, the payment schedule and the expected timeline.',
+          'ETR provides fixed-scope written quotes after a free on-site measure anywhere in Sydney. Our <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing quotes</a> shows you how to read and compare them side by side.',
+          'Be wary of quotes that are vague, very cheap, or given without a site visit. A bathroom cannot be quoted well from a phone call or a photo.',
+        ],
+      },
+      {
+        heading: 'Red flags to watch for',
+        paragraphs: [
+          'No licence number on the quote or website. No written contract. Pressure to sign fast. A request for a large upfront deposit with no staged payment plan. No references or portfolio. No fixed address or ABN.',
+          'Our ABN is 92 679 016 721. We are a family-run business - Omar, Adam, Farah and Mohammed Dawood - based in Granville, NSW. We have been renovating bathrooms across Sydney since 2022. Call us on 0411 752 334 for a free on-site measure.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Do I need a licensed builder for a bathroom renovation in Sydney?',
+        answer: 'Yes. Any home building work over $5,000 in NSW must be done by a licensed contractor. The licence can be checked on the NSW Fair Trading website. Unlicensed work is not covered by the Home Building Fund.',
+      },
+      {
+        question: 'How many quotes should I get for a bathroom renovation?',
+        answer: 'Three is the standard advice. More than three makes it harder to compare without adding much clarity. Make sure each quote covers the same scope so you are comparing like for like.',
+      },
+      {
+        question: 'What questions should I ask a bathroom renovator before hiring?',
+        answer: 'Ask for their licence number, proof of cover, a written warranty, a detailed quote with what is and is not included, a timeline, a payment schedule, and references from recent projects.',
+      },
+      {
+        question: 'How do I check a builder licence in NSW?',
+        answer: 'Go to the NSW Fair Trading website and search by licence number or business name. The search shows the licence type, holder name, status and any conditions. It takes under a minute.',
+      },
+      {
+        question: 'What is the Home Building Fund?',
+        answer: 'A government-backed fund that protects homeowners if a licensed builder cannot finish the work or fix defects - for example, if they become insolvent. It applies to home work over $20,000 in NSW. Unlicensed work is not covered.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-accessories-hardware-guide',
+    title: 'Bathroom accessories and hardware: the finishing touches that matter',
+    metaTitle: 'Bathroom Accessories Hardware Guide Renovation',
+    description: 'Choose rails, hooks and holders early so their finish and location are set.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why hardware matters',
+        paragraphs: [
+          'Tiles, vanity and tapware get the most attention during a bathroom renovation. But the smaller items - towel rails, hooks, toilet roll holders and robe hooks - are what you touch every day. If they wobble, clash or are in the wrong spot, the whole room feels unfinished.',
+          'Hardware is also one of the easiest things to get right, because it is chosen late in the process and costs far less than tiles or fixtures. A full hardware pack for a bathroom costs $200 to $600 depending on finish and brand.',
+        ],
+      },
+      {
+        heading: 'Towel rails and hooks',
+        paragraphs: [
+          'A towel rail (or bar) holds bath towels flat so they dry faster. A hook holds a robe or a towel folded in half. Most bathrooms need at least one rail near the shower and one hook on the door or wall.',
+          'Single rails suit smaller bathrooms. Double rails hold two towels in the same wall space. Heated towel rails combine drying and warming - our <a href="/blog/heated-towel-rail-bathroom-guide/" class="et-link">heated towel rail guide</a> covers types and running costs.',
+          'Place towel rails within arm\'s reach of the shower, at a height that keeps the towel off the floor. Standard height is 900 to 1,200 millimetres above the floor.',
+        ],
+      },
+      {
+        heading: 'Toilet roll holders and brushes',
+        paragraphs: [
+          'A toilet roll holder should be within easy reach of the toilet - 600 to 700 millimetres from the centre of the toilet, at a height of about 660 millimetres. Recessed holders sit flush with the wall and save space in tight rooms.',
+          'A toilet brush holder is a small detail that makes a real difference to the look of the room. Matching it to the towel rail and robe hook creates a clean, finished feel.',
+        ],
+      },
+      {
+        heading: 'Matching finishes to tapware',
+        paragraphs: [
+          'Choose hardware in the same finish as your tapware and shower fittings. If your taps are matte black, your towel rail, hooks and holders should be matte black too. Mixing chrome and black in the same room looks unplanned.',
+          'Common finishes in 2026 are matte black, brushed nickel, brushed brass and chrome. Our <a href="/blog/bathroom-tapware-finishes-guide/" class="et-link">tapware finishes guide</a> covers the pros and cons of each finish and how they wear over time.',
+        ],
+      },
+      {
+        heading: 'When to choose hardware',
+        paragraphs: [
+          'Hardware is selected during the fixtures and fittings stage - after tiles and tapware are locked in, but before the final fit-off. This timing matters because the builder needs to know where to place wall mounting points.',
+          'Phil Deayton said about our work: "Would definitely recommend them, especially for their attention to detail. It was 100%." Those small details - level rails, centred hooks, matched finishes - add up to a room that feels complete.',
+        ],
+      },
+      {
+        heading: 'Getting the details right with ETR',
+        paragraphs: [
+          'Hardware placement is part of our design process. During the free on-site measure, we note where towels will hang, where robes will go and which hand reaches for the toilet roll. These details are planned, not guessed.',
+          'Every bathroom renovation starts with a free on-site measure anywhere in Sydney. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What bathroom accessories do I need?',
+        answer: 'At a minimum: one towel rail or bar, one or two hooks (robe or towel), a toilet roll holder and a toilet brush holder. A soap dish or dispenser and a bath shelf are optional but useful. Choose them all in the same finish.',
+      },
+      {
+        question: 'Should bathroom hardware match the tapware?',
+        answer: 'Yes. Matching the finish (matte black, chrome, brushed nickel) across tapware, shower fittings and hardware creates a unified look. Mixing finishes in the same room looks unplanned.',
+      },
+      {
+        question: 'How much do bathroom accessories cost?',
+        answer: 'A basic hardware pack (towel rail, hook, toilet roll holder, brush holder) costs $200 to $400 in chrome or matte black. Premium brands or brushed brass finishes cost $400 to $600 or more.',
+      },
+      {
+        question: 'Can I add accessories after the renovation is finished?',
+        answer: 'Surface-mounted accessories (hooks, rails with visible screws) can be added at any time. Recessed accessories (in-wall holders, niches) must be planned during the renovation because they need a cavity in the wall.',
+      },
+      {
+        question: 'Where should I put the towel rail in a bathroom?',
+        answer: 'Within arm\'s reach of the shower, at a height of 900 to 1,200 millimetres above the floor. If space is tight, a hook on the back of the door works as an alternative.',
+      },
+    ],
+  },
+  {
+    slug: 'toilet-upgrade-guide-bathroom-renovation',
+    title: 'Toilet upgrades during a bathroom renovation: types, costs and what to know',
+    metaTitle: 'Toilet Types Bathroom Renovation Guide Australia',
+    description: 'Compare wall-hung, back-to-wall and close-coupled toilets by fit and cost.',
+    published: '2026-10-03',
+    updated: '2026-11-02',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why the toilet matters in a renovation',
+        paragraphs: [
+          'The toilet is the most-used fixture in the bathroom. Yet it is often the last thing people think about during a renovation. Choosing the right type affects the look of the room, how easy it is to clean, and how much water the household uses.',
+          'A new toilet suite costs $400 to $2,500 depending on the type and brand. The fitting cost is $200 to $600. Given that the toilet will be used ten to fifteen thousand times a year, it is worth getting right.',
+        ],
+      },
+      {
+        heading: 'Back to wall toilets',
+        paragraphs: [
+          'A back to wall toilet sits flush against the wall. The cistern is hidden - either in the wall cavity or inside a furniture unit. The result is a clean, modern look with no exposed pipes or tanks.',
+          'These are the most popular choice in Australian bathroom renovations in 2026. They are easy to clean because there are no gaps behind the pan where dust and grime collect. They suit most bathroom sizes and styles.',
+        ],
+      },
+      {
+        heading: 'Wall-hung toilets',
+        paragraphs: [
+          'A wall-hung toilet is mounted on the wall, with the pan off the floor. The cistern is concealed inside the wall. This creates a floating look and makes it very easy to clean the floor beneath.',
+          'Wall-hung toilets need a strong mounting frame inside the wall cavity, which adds to the fitting cost. They work well in modern, minimal bathrooms and save a small amount of floor space. The pan height can be set to suit the user - a benefit for taller people or those with mobility needs.',
+          'Our <a href="/blog/wall-hung-vs-floor-mounted-fixtures/" class="et-link">wall-hung vs floor-mounted guide</a> compares these options across all bathroom fixtures. For a head-to-head on the two concealed-cistern styles, read <a href="/blog/wall-hung-vs-back-to-wall-toilet/" class="et-link">wall-hung vs back-to-wall toilet</a>.',
+        ],
+      },
+      {
+        heading: 'Close coupled toilets',
+        paragraphs: [
+          'A close coupled toilet has the cistern bolted directly on top of the pan. It is the most common type in existing Australian homes and the cheapest to buy and fit. The cistern is visible but sits right against the bowl.',
+          'These are a good budget choice when the plumbing stays in the same place. They are simple to install, easy to repair and widely available. The trade-off is a bulkier look compared to a back to wall or wall-hung model.',
+        ],
+      },
+      {
+        heading: 'Water ratings and WELS',
+        paragraphs: [
+          'Every toilet sold in Australia carries a WELS (Water Efficiency Labelling and Standards) star rating. A 4-star dual-flush toilet uses about 4.5 litres on a full flush and 3 litres on a half flush.',
+          'Replacing an old single-flush toilet with a 4-star dual-flush model can save 30,000 to 50,000 litres of water per year in a four-person household. Our <a href="/blog/eco-friendly-bathroom-renovation/" class="et-link">eco-friendly renovation guide</a> covers WELS ratings for all fixtures.',
+        ],
+      },
+      {
+        heading: 'Cost range and what ETR recommends',
+        paragraphs: [
+          'Budget (close coupled): $400 to $700 supply plus $200 to $400 fitting. Mid-range (back to wall): $600 to $1,200 supply plus $300 to $500 fitting. Premium (wall-hung): $1,000 to $2,500 supply plus $500 to $800 fitting (including the concealed frame).',
+          'Ken Chen said that "Omar, Adam and the team did an excellent job renovating our main bathroom, ensuite and standalone toilet." The right toilet type is chosen during the design phase, based on the layout, budget and style of the room.',
+          'A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Which toilet type is easiest to clean?',
+        answer: 'Wall-hung, because the pan is off the floor and you can mop underneath. Back to wall is a close second - no gaps behind the pan. Close coupled is the hardest because of the join between the cistern and the bowl.',
+      },
+      {
+        question: 'How much does a new toilet cost in a bathroom renovation?',
+        answer: 'Supply plus fitting: $600 to $1,100 for a close coupled, $900 to $1,700 for a back to wall, and $1,500 to $3,300 for a wall-hung with concealed frame. These are typical ranges for mid-quality Australian brands.',
+      },
+      {
+        question: 'Can I change from a close coupled toilet to a wall-hung?',
+        answer: 'Yes, but it requires changes to the plumbing and wall framing. A concealed cistern frame must be installed inside the wall cavity. This is easiest during a full renovation when the walls are already open.',
+      },
+      {
+        question: 'What WELS rating should I look for in a toilet?',
+        answer: 'A 4-star dual-flush model is the current standard. It uses about 4.5 litres on a full flush and 3 litres on a half flush. Some 5-star models use even less water.',
+      },
+      {
+        question: 'Do wall-hung toilets hold the weight of a heavy person?',
+        answer: 'Yes. A properly installed wall-hung toilet with a certified mounting frame holds 400 kilograms or more. The frame is bolted into the wall studs and floor, not just the plasterboard.',
+      },
+    ],
+  },
+  {
+    slug: 'double-vanity-vs-single-bathroom',
+    title: 'Double vanity vs single vanity: which suits your bathroom?',
+    metaTitle: 'Double Vanity vs Single Vanity Bathroom Guide',
+    description: 'Compare space, plumbing, storage and cost before choosing one or two basins.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Compare your options',
+    sections: [
+      {
+        heading: 'The vanity decision',
+        paragraphs: [
+          'The vanity is the centre of the bathroom. It holds the basin, stores toiletries and sets the visual tone for the room. Choosing between a single and a double vanity is one of the biggest layout decisions in a renovation.',
+          'The answer depends on room size, who uses the bathroom, and how the plumbing is set up. A double vanity is not always better - and a single vanity is not always a compromise. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers materials, mounting styles and sizing in detail.',
+        ],
+      },
+      {
+        heading: 'When a double vanity works',
+        paragraphs: [
+          'A double vanity suits a bathroom used by two people at the same time - typically a master bathroom or ensuite. It reduces morning bottlenecks and gives each person their own basin, mirror space and storage.',
+          'You need at least 1,500 millimetres of wall width for a comfortable double vanity - 1,800 millimetres is better. Below that, the basins are too close together and the bench space between them is too small to be useful.',
+          'A double vanity also needs two sets of plumbing - hot and cold supply lines and two waste connections. If the existing plumbing has only one set, adding a second adds $500 to $1,500 to the cost.',
+        ],
+      },
+      {
+        heading: 'When a single vanity is the smarter choice',
+        paragraphs: [
+          'In a bathroom under 5 square metres, a single vanity is usually the better option. It leaves more floor space for movement, towel rails and storage. A large single basin (600 to 900 millimetres) feels generous without crowding the room.',
+          'In a powder room or guest bathroom, a single vanity is standard. These rooms are used by one person at a time, so a second basin adds cost without adding function.',
+          'Our <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathroom guide</a> covers other ways to make a compact room feel larger.',
+        ],
+      },
+      {
+        heading: 'Cost difference',
+        paragraphs: [
+          'A quality single vanity (unit, basin, tapware, fitting) costs $1,500 to $4,000. A double vanity costs $2,500 to $7,000. The difference comes from the wider unit, the second basin and tapset, and the extra plumbing.',
+          'If your renovation is on a tight budget, a single vanity with a larger basin often gives a better result than a cramped double vanity where the basins are too small and too close together.',
+        ],
+      },
+      {
+        heading: 'Storage comparison',
+        paragraphs: [
+          'A double vanity is wider, so it has more drawer and cupboard space underneath. But a single vanity frees up wall space for a tall boy, a medicine cabinet, or wall-mounted shelves - which can hold just as much.',
+          'The best approach is to list what needs to be stored (toiletries, cleaning products, spare towels, medications) and then decide which layout accommodates that list better. Our <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage planning guide</a> walks through this step by step.',
+        ],
+      },
+      {
+        heading: 'How to decide',
+        paragraphs: [
+          'Measure the wall. If you have 1,800 millimetres or more and two people use the room at the same time, a double vanity is worth the extra cost. If the wall is under 1,500 millimetres or the room is used by one person at a time, a single vanity will serve you better.',
+          'Lachlan Conaty said: "They listened to what I wanted, offered great suggestions, and completed the project on time." The vanity is chosen during the design phase. A free on-site measure anywhere in Sydney is the starting point - call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How wide does a bathroom need to be for a double vanity?',
+        answer: 'At least 1,500 millimetres of wall width, but 1,800 millimetres or more is best. Below 1,500 millimetres, the basins are too close and the bench space is not useful.',
+      },
+      {
+        question: 'Does a double vanity add value to a home?',
+        answer: 'In a master bathroom or ensuite, yes - it is a feature buyers expect in mid-range to premium homes. In a small family bathroom or powder room, a well-chosen single vanity is a better use of space and money.',
+      },
+      {
+        question: 'Can I retrofit a double vanity where a single was?',
+        answer: 'If the wall is wide enough and the plumbing can be extended, yes. The plumbing work (adding a second supply and waste connection) typically costs $500 to $1,500. The wall width is the main constraint.',
+      },
+      {
+        question: 'What is the standard height for a bathroom vanity?',
+        answer: 'The standard height is 850 to 900 millimetres from the floor to the top of the bench. Wall-hung vanities can be mounted at any height to suit the user. Comfort height (900 millimetres) is becoming the new standard.',
+      },
+      {
+        question: 'Should the vanity match the rest of the bathroom?',
+        answer: 'The vanity should complement the tiles, tapware and overall colour scheme. It does not need to match exactly, but it should feel like it belongs. A timber vanity in a room with cool grey tiles can look striking if the tones are balanced.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-scope-changes',
+    title: 'Bathroom renovation scope: how to manage changes without blowing the budget',
+    metaTitle: 'Bathroom Renovation Scope Changes Budget Guide',
+    description: 'Write down changes, costs and timing before extra bathroom work starts.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'What scope changes mean for your renovation',
+        paragraphs: [
+          'Scope is the agreed list of work in your contract. A scope change - also called a variation - is anything that adds to, removes from, or alters that list after the contract is signed. Scope changes are the number one cause of budget blowouts in bathroom renovations.',
+          'Not all changes are avoidable. A hidden plumbing fault found during demolition is a genuine surprise. Deciding mid-build that you want a different tile is a choice. The cost of each is very different, and knowing the difference keeps the budget under control.',
+        ],
+      },
+      {
+        heading: 'Common triggers for scope changes',
+        paragraphs: [
+          'The most common triggers are: changing tile or fixture selections after ordering, discovering rotten framing or failed plumbing behind the walls, adding features not in the original scope (such as underfloor heating or a niche), and changing the layout after rough-in plumbing is done.',
+          'Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> explains what is found behind walls and how it affects the scope. Our <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">hidden costs guide</a> covers the financial side of surprises.',
+        ],
+      },
+      {
+        heading: 'Why late changes cost more',
+        paragraphs: [
+          'Every decision made after demolition costs more than the same decision made before it. A tile change after the original tiles have been ordered means a restocking fee, a new lead time, and a delayed site. A layout change after the plumber has done the rough-in means ripping up and redoing the plumbing.',
+          'The rule is simple: the later the change, the higher the cost. The cheapest time to make a change is during the design phase. The most costly time is during the fit-off.',
+        ],
+      },
+      {
+        heading: 'How variations work in a contract',
+        paragraphs: [
+          'A variation is a written change to the contract. Under the NSW Home Building Act, any change to the scope or price must be documented and signed by both parties before the work is done.',
+          'A good builder will present a variation form that states what is changing, why, how much it adds (or saves), and what it does to the timeline. You should never be asked to agree to a price increase verbally or after the fact.',
+          'Our <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">contract guide</a> explains what your contract should say about variations.',
+        ],
+      },
+      {
+        heading: 'How to prevent scope creep',
+        paragraphs: [
+          'Make all design decisions before signing the contract. Lock in tiles, tapware, fixtures, layout and finishes during the design phase. Visit showrooms, compare samples and make final selections before demolition day.',
+          'Set a realistic contingency - 10 to 15 per cent of the contract price - for genuine surprises like hidden damage. This is not a second budget for upgrades. It is a safety net for unknowns.',
+          'Our <a href="/blog/bathroom-renovation-budget-planning/" class="et-link">budget planning guide</a> walks through how to build a realistic budget with a proper contingency.',
+        ],
+      },
+      {
+        heading: 'How ETR keeps projects on scope',
+        paragraphs: [
+          'Our design process locks in every selection before the contract is signed. Tiles, tapware, fixtures, layout, hardware - all confirmed and ordered before demolition begins. This removes the most common trigger for variations.',
+          'Dinous Bakini said: "They completed the project on time and within budget, and the quality of their work is outstanding." Huseyin Sumaktas added: "The work that Elite Touch Renovations did for me was perfect, well priced, and they had great communication and service."',
+          'A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What is a variation in a bathroom renovation contract?',
+        answer: 'A written change to the agreed scope or price. Under the NSW Home Building Act, any change must be documented and signed by both parties before the work is done. Never agree to a price change verbally.',
+      },
+      {
+        question: 'How much contingency should I set aside for a bathroom renovation?',
+        answer: 'Ten to fifteen per cent of the contract price. This covers genuine surprises like hidden water damage or faulty plumbing. It is not a second budget for design upgrades.',
+      },
+      {
+        question: 'Can I change my tile choice after demolition has started?',
+        answer: 'Yes, but it will cost more. The original tiles may incur a restocking fee, the new tiles may have a lead time that delays the job, and the tiler may need to adjust the layout. The cheapest time to change tiles is before ordering.',
+      },
+      {
+        question: 'What causes bathroom renovation budget blowouts?',
+        answer: 'The most common causes are late design changes, hidden damage found during demolition, adding features not in the original scope, and not having a written contract with clear inclusions.',
+      },
+      {
+        question: 'How do I avoid scope creep during a bathroom renovation?',
+        answer: 'Lock in all design decisions before signing the contract. Visit showrooms, pick your tiles and tapware, confirm the layout and set a contingency for genuine surprises. The more decisions made before demolition, the fewer surprises during the build.',
+      },
+    ],
+  },
+  {
+    slug: 'shower-seat-bench-bathroom-design',
+    title: 'Shower seats and bench seating: comfort, safety and style',
+    metaTitle: 'Shower Seat Bench Bathroom Design Guide',
+    description: 'Compare built-in, fold-down and freestanding shower seats for fit and use.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why add a seat to the shower',
+        paragraphs: [
+          'A shower seat is a practical addition that suits more people than you might think. It is not only for people with limited mobility. A built-in bench makes shaving legs easier, gives children a place to sit, and turns a daily shower into a more relaxed experience.',
+          'Planning a seat during the renovation is far cheaper than adding one later. A built-in bench costs $300 to $800 when installed during the tiling phase. Retrofitting one into a finished shower is costly and may compromise the sealing.',
+        ],
+      },
+      {
+        heading: 'Built-in bench seats',
+        paragraphs: [
+          'A built-in bench is a tiled ledge that forms part of the shower wall. It is fully waterproofed and tiled to match the rest of the shower. The standard size is 400 to 500 millimetres deep, 450 to 500 millimetres high, and at least 600 millimetres wide.',
+          'Built-in benches look seamless and do not take up floor space the way a freestanding stool does. They are the most popular choice in mid-range to premium bathroom renovations. Our <a href="/blog/bathroom-niche-design-ideas/" class="et-link">niche and recess guide</a> covers how built-in elements are waterproofed.',
+        ],
+      },
+      {
+        heading: 'Fold-down and wall-mounted seats',
+        paragraphs: [
+          'A fold-down seat mounts to the wall and folds flat when not in use. It is a good option when the shower is too narrow for a built-in bench. Stainless steel and teak are the most common materials.',
+          'These seats need solid mounting - a stud or timber blocking behind the tiles, not just plasterboard. If the seat is planned during the renovation, the builder installs the blocking while the walls are open. Our <a href="/blog/aging-in-place-bathroom-design/" class="et-link">aging-in-place guide</a> explains blocking in detail.',
+        ],
+      },
+      {
+        heading: 'Freestanding shower stools',
+        paragraphs: [
+          'A freestanding stool or chair can be added to any shower at any time. No building work is needed. Teak, bamboo, and medical-grade plastic are common materials.',
+          'The trade-off is that stools take up floor space, can move when wet, and do not match the look of a tiled shower as well as a built-in bench does. They are best as a short-term solution or in a rental property.',
+        ],
+      },
+      {
+        heading: 'Sizing and placement',
+        paragraphs: [
+          'The shower must be large enough to fit a seat and still have room to stand and move. A shower with a built-in bench should be at least 1,200 by 900 millimetres. The bench is usually placed on the wall opposite the shower head.',
+          'Height matters for comfort. A seat height of 450 to 500 millimetres suits most adults. For someone in a wheelchair who transfers to the seat, 450 millimetres matches the chair height.',
+        ],
+      },
+      {
+        heading: 'Universal design and future-proofing',
+        paragraphs: [
+          'A shower seat is one of the simplest universal design features. It makes the shower safer and more comfortable for people of all ages and abilities, without looking like a medical fixture.',
+          'Ali Hassan said: "The bathroom renovation team was awesome! They listened to what we wanted, gave us great ideas, and did fantastic work." The seat design is discussed during the free on-site measure. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How big does the shower need to be for a built-in bench?',
+        answer: 'At least 1,200 by 900 millimetres. The bench takes up 400 to 500 millimetres of depth, and the remaining space must be wide enough to stand and move comfortably.',
+      },
+      {
+        question: 'How much does a built-in shower bench cost?',
+        answer: 'About $300 to $800 when installed during the tiling phase of a renovation. This includes the frame, sealing and tiling. Adding one after the renovation is finished costs significantly more.',
+      },
+      {
+        question: 'Is a shower seat only for elderly or disabled people?',
+        answer: 'No. A shower seat is useful for shaving legs, bathing children, resting after exercise, and simply relaxing. It is a universal design feature that benefits anyone at any age.',
+      },
+      {
+        question: 'Can I add a shower seat after the renovation is finished?',
+        answer: 'A fold-down seat can be added if there is timber blocking behind the tiles. A freestanding stool needs no building work. A built-in tiled bench cannot be added without opening the walls and redoing the sealing and tiling.',
+      },
+      {
+        question: 'What material is best for a shower seat?',
+        answer: 'For a built-in bench, the same tiles as the shower walls. For a fold-down seat, stainless steel or teak. For a freestanding stool, teak is the most popular because it resists moisture and looks warm.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-layout-changes-renovation',
+    title: 'Bathroom layout changes: when to move plumbing and when to keep it',
+    metaTitle: 'Bathroom Layout Changes Moving Plumbing Renovation',
+    description: 'Keep or move pipes based on layout, cost and how the room will work.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Same layout vs new layout',
+        paragraphs: [
+          'The biggest cost decision in a bathroom renovation is whether to move the plumbing. Keeping the toilet, shower and basin in their current positions is a like-for-like renovation. Moving them is a layout change - and it adds thousands to the bill.',
+          'A like-for-like renovation in a standard bathroom starts from $18,000 with ETR. A renovation with layout changes can add $3,000 to $10,000 or more, depending on how far the fixtures move and whether walls are involved.',
+        ],
+      },
+      {
+        heading: 'When moving plumbing makes sense',
+        paragraphs: [
+          'If the current layout wastes space, blocks natural light, or forces awkward movement, a layout change is worth the cost. Common examples: moving the toilet away from the door so it is not the first thing you see, swapping the shower and bath to free up floor space, or rotating the vanity to face a window.',
+          'Moving the toilet is the most costly fixture to shift because it connects to a 100-millimetre waste pipe in the floor. Moving it more than a metre from the existing waste point often means lifting the floor slab.',
+          'Our <a href="/blog/bathroom-renovation-plumbing-replacement/" class="et-link">plumbing guide</a> explains what gets replaced during a renovation and how plumbing changes affect cost.',
+        ],
+      },
+      {
+        heading: 'What layout changes cost',
+        paragraphs: [
+          'Shifting a basin: $500 to $1,500 depending on the distance from the existing supply and waste points. Shifting a shower: $1,000 to $3,000 including rerouting the hot and cold lines, waste and any screen changes. Shifting a toilet: $1,500 to $5,000 or more if the floor slab needs cutting.',
+          'Wall removal adds $1,000 to $3,000 per wall (more if load-bearing, which requires an engineer\'s beam design). New walls cost $800 to $2,000 each including framing, lining, sealing and tiling.',
+        ],
+      },
+      {
+        heading: 'Structural walls and what you cannot move',
+        paragraphs: [
+          'Load-bearing walls hold up the floor or roof above. They cannot be removed without an engineer\'s design for a replacement beam. Internal non-load-bearing walls can usually be removed or shifted with fewer constraints.',
+          'Wet area walls (around the shower and bath) must be fully sealed to meet AS 3740. Our <a href="/blog/bathroom-waterproofing-explained/" class="et-link">sealing guide</a> explains what AS 3740 requires and why it matters.',
+          'In apartments, the building\'s main waste stack is fixed. You can move fixtures within the apartment floor, but the waste must still connect to the stack at the right fall. Our <a href="/blog/apartment-bathroom-renovation-vs-house/" class="et-link">apartment vs house guide</a> covers strata-specific constraints.',
+        ],
+      },
+      {
+        heading: 'Common layout improvements',
+        paragraphs: [
+          'Replacing a bath with a walk-in shower: frees up 1.5 to 2 square metres of floor space. See our <a href="/blog/walk-in-shower-vs-bathtub-renovation/" class="et-link">shower vs bath guide</a> for the trade-offs.',
+          'Adding a wall niche: creates recessed storage without losing floor space. Moving the door swing from inward to outward (or replacing with a sliding door): opens up the usable area inside.',
+          'Widening the shower from 900 to 1,200 millimetres: transforms a tight shower into a comfortable one, especially for people with larger builds or mobility needs.',
+        ],
+      },
+      {
+        heading: 'How ETR designs a new layout',
+        paragraphs: [
+          'Farah Dawood leads the design process, starting with the existing floor plan and the client\'s priorities. Layout options are drawn to scale so you can see how each change affects the space, the plumbing cost and the daily use of the room.',
+          'Nikki Comensoli said: "Every detail was done with care and attention. Our bathrooms are all great, and our new bathtub is a favourite in our family. Nothing was too difficult."',
+          'A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does it cost to move the toilet in a bathroom renovation?',
+        answer: 'Between $1,500 and $5,000, depending on how far it moves from the existing waste point. Moves over one metre often require cutting into the floor slab, which adds cost.',
+      },
+      {
+        question: 'Can I change the bathroom layout in an apartment?',
+        answer: 'Yes, within limits. Fixtures can be moved within the apartment floor, but the waste must still connect to the building\'s main stack at the correct fall. Strata approval is usually needed. Our apartment vs house guide covers the details.',
+      },
+      {
+        question: 'Is it worth changing the bathroom layout?',
+        answer: 'If the current layout wastes space, blocks light, or forces awkward movement, yes. If the layout works well and you just want new finishes, a like-for-like renovation saves thousands and delivers a great result faster.',
+      },
+      {
+        question: 'How long does a bathroom renovation with layout changes take?',
+        answer: 'Three to five weeks for a standard bathroom, compared to two to three weeks for a like-for-like renovation. The extra time covers plumbing relocation, any structural work and additional sealing inspections.',
+      },
+      {
+        question: 'Do I need council approval to change a bathroom layout?',
+        answer: 'Generally not for internal changes that do not alter the building envelope. However, if you are removing a load-bearing wall, you need an engineer\'s certification. In an apartment, strata approval is separate from council. Our permits guide covers the details.',
+      },
+    ],
+  },
+  {
+    slug: 'wall-hung-vs-floor-mounted-fixtures',
+    title: 'Wall-hung vs floor-mounted bathroom fixtures: pros, cons and cost',
+    metaTitle: 'Wall Hung vs Floor Mounted Bathroom Fixtures Guide',
+    description: 'Compare cleaning, fitting and cost for wall-hung or floor-mounted fixtures.',
+    published: '2026-10-03',
+    updated: '2026-11-02',
+    readTime: '4 min read',
+    category: 'Compare your options',
+    sections: [
+      {
+        heading: 'What the difference means',
+        paragraphs: [
+          'Floor-mounted fixtures sit on the floor with their weight carried by the slab or subfloor. Wall-hung fixtures are fixed to the wall with concealed brackets, and the floor beneath is clear. The choice affects the look, the cost, the cleaning and how the room feels.',
+          'Both types are common in Australian bathroom renovations. Floor-mounted is the traditional approach. Wall-hung is the modern, minimal option that has become the default in higher-end projects.',
+        ],
+      },
+      {
+        heading: 'Wall-hung benefits',
+        paragraphs: [
+          'Easier to clean - you can mop the entire floor without moving anything or reaching behind a pedestal. The room looks larger because you can see the floor from wall to wall. The height can be set to suit the user - useful for tall people or those with mobility needs.',
+          'Wall-hung vanities create storage space on the floor beneath them. Wall-hung toilets eliminate the gap between the pan and the wall where dust collects. The plumbing is concealed inside the wall, giving a clean, uncluttered look.',
+          'Jaya Rupan said about our work: "The team was professional, punctual, and skilled, turning my ideas into a beautiful, functional space."',
+        ],
+      },
+      {
+        heading: 'Floor-mounted benefits',
+        paragraphs: [
+          'Cheaper to buy and install. No reinforced wall framing needed. Wider product range and easier to find matching styles. Simpler to repair or replace - the fixture lifts off the floor without opening the wall.',
+          'Floor-mounted vanities are more stable for heavy stone benchtops. Floor-mounted toilets are the simplest to install and the most familiar to plumbers. If budget is tight, floor-mounted fixtures deliver the same function at lower cost.',
+        ],
+      },
+      {
+        heading: 'What wall-hung fixtures need',
+        paragraphs: [
+          'A wall-hung vanity needs a reinforced wall frame or mounting rail behind the tiles, rated for the weight of the unit plus a full basin of water. A wall-hung toilet needs a concealed cistern frame bolted to the studs and floor.',
+          'This framing must be planned during the renovation - it cannot be added easily after the tiles are on the wall. The builder installs it during the rough-in stage, before the wall lining goes up.',
+          'Our <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet guide</a> covers wall-hung toilet frames and mounting in detail, and our <a href="/blog/wall-hung-vs-back-to-wall-toilet/" class="et-link">wall-hung vs back-to-wall toilet comparison</a> puts the two toilet styles side by side.',
+        ],
+      },
+      {
+        heading: 'Cost comparison',
+        paragraphs: [
+          'Wall-hung vanity: $1,800 to $5,000 (unit plus mounting, fitting and plumbing). Floor-mounted vanity: $1,200 to $3,500. Wall-hung toilet: $1,500 to $3,300 (including concealed frame). Floor-mounted toilet: $600 to $1,700.',
+          'The price gap is mainly the mounting hardware and the extra labour for concealed plumbing. Over the life of the bathroom (15 to 20 years), the easier cleaning may offset the higher upfront cost.',
+        ],
+      },
+      {
+        heading: 'Which to choose',
+        paragraphs: [
+          'If you want a clean, modern look and easier cleaning, wall-hung is the way to go - provided the budget allows and the walls can take the weight. If budget is tight or you prefer a classic look, floor-mounted fixtures are reliable, widely available and simpler to install.',
+          'Peta Grund said: "Omar and Adam did a wonderful job on our bathroom renovation. Adam\'s precision and attention to detail with the tiling is second to none." The fixture type is chosen during the design phase. Call 0411 752 334 for a free on-site measure anywhere in Sydney.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are wall-hung vanities strong enough for stone benchtops?',
+        answer: 'Yes, if the wall mounting is properly rated for the weight. A reinforced mounting rail or steel bracket system can support a heavy stone top. The builder specifies this during the design phase.',
+      },
+      {
+        question: 'Do wall-hung toilets leak?',
+        answer: 'No more than floor-mounted toilets. The concealed cistern is a sealed unit with standard plumbing connections. An access panel allows service and repair without opening the wall.',
+      },
+      {
+        question: 'Can I change from floor-mounted to wall-hung during a renovation?',
+        answer: 'Yes - a renovation is the ideal time because the walls are open. The builder installs the concealed frame or mounting rail during the rough-in stage before the wall lining goes up.',
+      },
+      {
+        question: 'Which is easier to clean - wall-hung or floor-mounted?',
+        answer: 'Wall-hung is much easier. The floor beneath is clear, so you can mop from wall to wall without working around pedestals, pans or vanity legs.',
+      },
+      {
+        question: 'Are wall-hung fixtures more expensive to repair?',
+        answer: 'The fixtures themselves are repaired the same way. The concealed plumbing is reached through an access panel (for the toilet cistern) or by removing the vanity. Repair access is designed in, not an afterthought.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-storage-planning-renovation',
+    title: 'How to plan bathroom storage during a renovation',
+    metaTitle: 'Bathroom Storage Planning Renovation Guide',
+    description: 'Plan vanity drawers, niches and wall shelves before choosing bathroom finishes.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'Why storage should be planned early',
+        paragraphs: [
+          'Storage is the feature people miss most when it is left out of a renovation. Toiletries pile up on the vanity, cleaning products sit on the floor, and the room that looked perfect in the design photos feels cluttered within weeks.',
+          'The time to plan storage is during the design phase - not after the tiles are on the walls. Built-in storage (niches, recesses, vanity drawers) must be designed before the framing stage. Adding it later means opening finished walls.',
+        ],
+      },
+      {
+        heading: 'Vanity drawers and cupboards',
+        paragraphs: [
+          'The vanity is the primary storage unit in most bathrooms. Drawers are more useful than cupboard doors because you can see and reach everything without bending down and reaching to the back.',
+          'A 900-millimetre single vanity with three drawers holds more accessible storage than a 1,200-millimetre vanity with two cupboard doors. Drawer organisers (dividers, trays) make the most of each drawer. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers sizing and layout in detail.',
+        ],
+      },
+      {
+        heading: 'Niches and recessed shelves',
+        paragraphs: [
+          'A wall niche is a recessed shelf built into the wall, tiled to match the surrounding surface. It stores shampoo, soap and other shower items without a shelf or caddy that collects mould.',
+          'Standard niche sizes are 300 by 300 millimetres or 300 by 600 millimetres. Two smaller niches (one at standing height, one lower) are more useful than one large niche. Our <a href="/blog/bathroom-niche-design-ideas/" class="et-link">niche guide</a> covers sizing, placement and sealing.',
+        ],
+      },
+      {
+        heading: 'Medicine cabinets and mirror cabinets',
+        paragraphs: [
+          'A mirror cabinet combines two functions - a mirror and a cupboard - in a single unit. It stores medicines, grooming items and small bottles behind a mirrored door, keeping the vanity top clear.',
+          'Surface-mounted cabinets sit on the wall. Recessed cabinets sit inside the wall and give a cleaner look but need a deeper wall cavity. Our <a href="/blog/bathroom-mirror-guide-renovation/" class="et-link">mirror guide</a> covers both types.',
+        ],
+      },
+      {
+        heading: 'Tall boys and open shelving',
+        paragraphs: [
+          'A tall boy (tall cupboard or linen tower) is a narrow, floor-to-ceiling unit that stores towels, spare toilet rolls and cleaning products. It fits in corners or beside the vanity where there is not enough width for a wider unit.',
+          'Open shelving (floating shelves, ladder shelves) works in dry areas of the bathroom - above the toilet, beside the mirror, or on a wall away from the shower splash zone. It is best for display items and folded towels, not for small bottles that clutter easily.',
+        ],
+      },
+      {
+        heading: 'Planning your storage list',
+        paragraphs: [
+          'Start by listing everything that needs a home in the bathroom: shampoo, conditioner, soap, toothbrushes, razors, makeup, medicines, cleaning products, spare towels, toilet rolls, hair dryer, straightener. Then assign each item to a storage type - vanity drawer, niche, cabinet, or tall boy.',
+          'Guot Lual said: "My bathroom looks fantastic now - modern and functional." The balance of modern and functional starts with getting the storage right. Call 0411 752 334 for a free on-site measure anywhere in Sydney.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How many niches does a shower need?',
+        answer: 'One or two. A single niche at shoulder height stores daily products. A second niche lower down is useful for children or for leg-shaving items. More than two in a standard shower starts to look busy.',
+      },
+      {
+        question: 'What is the best vanity storage layout?',
+        answer: 'Drawers beat doors. A vanity with three graduated drawers (shallow on top, deep on the bottom) stores more in an accessible way than a vanity with two cupboard doors.',
+      },
+      {
+        question: 'Can I add storage after the renovation is finished?',
+        answer: 'Surface-mounted items (mirror cabinets, floating shelves, hooks) can be added at any time. Built-in items (niches, recessed cabinets) need the wall opened, reframed, sealed and retiled - best done during the renovation.',
+      },
+      {
+        question: 'How deep should a bathroom niche be?',
+        answer: 'About 80 to 100 millimetres - deep enough to hold a standard shampoo bottle without it sticking out past the tile surface. The depth is limited by the wall stud spacing (typically 90 millimetres in a standard timber frame).',
+      },
+      {
+        question: 'Where should I put a tall boy in a bathroom?',
+        answer: 'In a corner, beside the vanity, or next to the toilet. Keep it away from the shower splash zone so the contents stay dry. A tall boy works best against a dry wall, at least 600 millimetres from the shower screen.',
+      },
+    ],
+  },
+  {
+    slug: 'bathroom-renovation-neighbours-noise',
+    title: 'Bathroom renovation and your neighbours: managing noise and access',
+    metaTitle: 'Bathroom Renovation Neighbours Noise Management Guide',
+    description: 'Set work hours, dust control and access rules before renovation work begins.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    sections: [
+      {
+        heading: 'Why neighbours matter during a renovation',
+        paragraphs: [
+          'A bathroom renovation is noisy, dusty and disruptive. Demolition, drilling, grinding and hammering produce sound levels that carry through walls, floors and ceilings - especially in apartments and terraces.',
+          'A brief conversation with your neighbours before work starts goes a long way. It sets expectations, avoids complaints, and keeps the relationship intact. Most people are understanding when they know what to expect and how long it will last.',
+        ],
+      },
+      {
+        heading: 'Noise hours and rules',
+        paragraphs: [
+          'In Sydney, residential construction noise is regulated by the EPA (Environment Protection Authority). Standard permitted hours are Monday to Friday 7 am to 6 pm, Saturday 8 am to 1 pm, and no work on Sundays or public holidays.',
+          'Strata buildings often have stricter rules - some limit noisy work to 9 am to 3 pm on weekdays only. Check your strata by-laws before scheduling the renovation. Our <a href="/blog/strata-bathroom-renovation-sydney/" class="et-link">strata renovation guide</a> covers the full approval process.',
+          'Demolition is the noisiest phase and typically lasts one to two days. After that, the noise drops significantly. Tiling and fitting are much quieter than knocking out old tiles and cutting into walls.',
+        ],
+      },
+      {
+        heading: 'Dust and mess',
+        paragraphs: [
+          'Demolition produces dust that travels through the home and can reach neighbouring properties in terraces and apartments. Dust barriers (plastic sheeting over doorways), extraction fans, and regular vacuuming keep it under control.',
+          'Kieran C said about our work: "They exercised due care at all times including providing drop sheets and surface protection to and from the work area and leaving the site clean and tidy at the end of each day. Good housekeeping of this standard is not common practice for the majority of tradespeople in my experience."',
+          'Our <a href="/blog/bathroom-renovation-living-at-home/" class="et-link">living-at-home guide</a> covers dust control and daily cleanup in detail.',
+        ],
+      },
+      {
+        heading: 'Access and parking',
+        paragraphs: [
+          'Renovation teams need access to carry materials in and waste out. In a house, this usually means the driveway and front path. In an apartment, it means the common areas - lift, hallway, loading dock.',
+          'If the renovation team needs to use shared spaces (lifts, car parks, skip bin areas), arrange this with the strata manager before work starts. Some buildings require a bond, a booking for the goods lift, and protective coverings in the corridors.',
+        ],
+      },
+      {
+        heading: 'Talking to your neighbours',
+        paragraphs: [
+          'A quick note or a knock on the door one to two weeks before the start date is enough. Let them know what is happening, when it starts, how long it will take, and what hours the work will run. Offer your phone number in case there is an issue.',
+          'Most complaints happen because neighbours were not told. A simple heads-up prevents almost all of them.',
+        ],
+      },
+      {
+        heading: 'How ETR manages the site',
+        paragraphs: [
+          'Luke Saukilai said: "The team was friendly, showed up on time, and got everything done quickly." We protect floors and surfaces on the path to and from the work area, use dust barriers, and clean the site at the end of each day.',
+          'The renovation timeline, work hours and access plan are agreed before the job starts. A free on-site measure anywhere in Sydney is the starting point. Call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What are the allowed noise hours for a bathroom renovation in Sydney?',
+        answer: 'Monday to Friday 7 am to 6 pm, Saturday 8 am to 1 pm, no work on Sundays or public holidays. These are the EPA guidelines. Strata buildings often have stricter rules - check the by-laws before scheduling.',
+      },
+      {
+        question: 'Do I need to tell my neighbours about a bathroom renovation?',
+        answer: 'It is not legally required in a house, but it is strongly recommended. In a strata building, the by-laws may require written notice to the strata manager and affected neighbours.',
+      },
+      {
+        question: 'How long is the noisy phase of a bathroom renovation?',
+        answer: 'Demolition is the loudest phase and typically lasts one to two days. After demolition, the noise level drops significantly. Tiling, plumbing and fitting are much quieter.',
+      },
+      {
+        question: 'How do renovation teams control dust?',
+        answer: 'Plastic sheeting over doorways, extraction fans, regular vacuuming, and damp-mopping at the end of each day. Protective coverings on floors and surfaces between the work area and the entry prevent dust tracking.',
+      },
+      {
+        question: 'Can neighbours complain about renovation noise?',
+        answer: 'Yes, if the noise is outside permitted hours or excessively loud. Working within the allowed hours and giving neighbours advance notice prevents most complaints. In a strata building, persistent noise complaints can result in fines.',
+      },
+    ],
+  },
+  {
+    slug: 'ensuite-renovation-ideas-layout',
+    title: 'Ensuite renovation ideas: layout, design and what to prioritise',
+    metaTitle: 'Ensuite Renovation Ideas Layout Design Guide',
+    description: 'Plan space, ventilation, storage and door swing before setting an ensuite layout.',
+    published: '2026-10-03',
+    readTime: '5 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What makes an ensuite different',
+        paragraphs: [
+          'An ensuite is the private bathroom attached to the master bedroom. It is smaller than the main family bathroom - typically 3 to 5 square metres - and is used by one or two people rather than the whole household.',
+          'Because it is private, the design can be more personal. Bold tiles, premium fixtures and a spa-like feel work well in an ensuite because they suit the couple who uses it, not the needs of children, guests and daily household traffic.',
+        ],
+      },
+      {
+        heading: 'Layout options for a small ensuite',
+        paragraphs: [
+          'The three fixtures in most ensuites are a shower, a vanity and a toilet. In a small room, the layout sequence matters. The most common and space-efficient layout puts the vanity nearest the door, the toilet beside or opposite it, and the shower at the far end.',
+          'A long, narrow ensuite suits a linear layout - all three fixtures along one wall. A wider room allows an L-shaped layout with the shower tucked into a corner. Our <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">layout changes guide</a> covers the cost and process of moving fixtures.',
+          'In some master bedrooms, the ensuite has no external wall and therefore no window. In that case, a quality exhaust fan and good lighting are essential - see ventilation below.',
+        ],
+      },
+      {
+        heading: 'Design priorities',
+        paragraphs: [
+          'In a small ensuite, the shower does the most work. A frameless shower screen opens the room visually and lets light flow through. A walk-in (curbless) shower removes the step and makes the room feel larger. Our <a href="/blog/shower-screen-types-bathroom-renovation/" class="et-link">shower screen guide</a> compares frameless, semi-frameless and framed options.',
+          'The vanity should include as much drawer storage as the width allows - an ensuite has less wall space for hooks and shelves. A mirror cabinet doubles as both mirror and storage. Our <a href="/blog/double-vanity-vs-single-bathroom/" class="et-link">vanity comparison guide</a> helps decide between a single and double vanity.',
+        ],
+      },
+      {
+        heading: 'Ventilation and moisture',
+        paragraphs: [
+          'An ensuite attached to the bedroom needs excellent ventilation to prevent moisture migrating into the bedroom, the wardrobe and the carpet. A ducted exhaust fan rated for the room volume is essential - not optional.',
+          'The exhaust fan should run during and for 15 to 20 minutes after every shower. A humidity-sensing fan turns on and off automatically. Our <a href="/blog/bathroom-ventilation-sydney-renovation/" class="et-link">ventilation guide</a> covers fan sizing, ducting and building code requirements.',
+        ],
+      },
+      {
+        heading: 'Lighting in a windowless ensuite',
+        paragraphs: [
+          'Many ensuites have no external window or only a small one. Layered lighting compensates: a ceiling downlight for general brightness, a backlit mirror or LED strip for task lighting at the vanity, and an accent light (niche LED, under-vanity strip) for atmosphere.',
+          'A skylight or sun tunnel is an option if the ensuite is on the top floor. Natural light transforms a small, internal room. Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">lighting guide</a> covers the principles of bathroom lighting design.',
+        ],
+      },
+      {
+        heading: 'Storage in a tight space',
+        paragraphs: [
+          'An ensuite serves one or two people, so the storage needs are smaller than a family bathroom. A vanity with drawers, one or two shower niches and a mirror cabinet usually cover everything. A recessed toilet roll holder saves space on a narrow wall.',
+          'Our <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage planning guide</a> walks through how to list what needs a home and assign each item to the right storage type.',
+        ],
+      },
+      {
+        heading: 'Getting started with ETR',
+        paragraphs: [
+          'Ken Chen said: "Omar, Adam and the team did an excellent job renovating our main bathroom, ensuite and standalone toilet." Ensuite renovations are one of our four services - see our <a href="/services/ensuite-bathroom-renovations/" class="et-link">ensuite renovation service page</a> for examples.',
+          'Every project starts with a free on-site measure anywhere in Sydney. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How small can an ensuite be?',
+        answer: 'A functional ensuite with a shower, vanity and toilet can fit in as little as 2.5 square metres. Below that, the room becomes too tight to use comfortably. Most ensuites are 3 to 5 square metres.',
+      },
+      {
+        question: 'Does an ensuite renovation add value to a home?',
+        answer: 'Yes. A modern ensuite is one of the top features buyers look for in a master bedroom. The return on a well-done ensuite renovation is typically 60 to 80 per cent of the cost.',
+      },
+      {
+        question: 'Should I include a bath in the ensuite?',
+        answer: 'Only if the room is large enough (at least 6 square metres) and you genuinely use a bath. In a small ensuite, a spacious shower is a better use of space. Keep the bath in the family bathroom if the home has one.',
+      },
+      {
+        question: 'How much does an ensuite renovation cost?',
+        answer: 'A like-for-like ensuite renovation starts from about $18,000 with ETR, depending on the size and finishes. Premium finishes, layout changes or a freestanding bath push the price higher. A free on-site measure gives you a fixed-scope quote.',
+      },
+      {
+        question: 'Can I add an ensuite where there was not one before?',
+        answer: 'Yes, if the plumbing can be connected to the existing waste and supply lines. Adding an ensuite typically costs $25,000 to $50,000 depending on whether walls need building, plumbing needs extending and the level of finish.',
+      },
+    ],
+  },
+  {
+    slug: 'powder-room-renovation-guide',
+    title: 'Powder room renovation: making a small space shine',
+    metaTitle: 'Powder Room Renovation Guide Ideas Australia',
+    description: 'Plan a compact vanity, basin, door swing and lighting for a powder room.',
+    published: '2026-10-03',
+    readTime: '4 min read',
+    category: 'Design and finishes',
+    sections: [
+      {
+        heading: 'What a powder room is - and why it matters',
+        paragraphs: [
+          'A powder room is a small bathroom with a toilet and a basin - no shower, no bath. It is the bathroom guests use. It is the room visitors judge the house by, even if they never see the master bathroom or the ensuite.',
+          'Because it is small (typically 1 to 2 square metres), every choice is amplified. A bold tile, a striking vanity or a feature mirror makes a strong impression. A plain powder room feels like an afterthought.',
+        ],
+      },
+      {
+        heading: 'Design for impact',
+        paragraphs: [
+          'A powder room is the one room where you can take design risks that would be overwhelming in a larger bathroom. A dark, dramatic tile on every wall. A patterned encaustic floor tile. A marble slab behind the basin. A bold wallpaper above a tile dado.',
+          'The room is small, so the material cost of a premium tile or stone is low - you might need only 5 to 8 square metres of tiles. This makes it the most affordable room to finish to a premium standard.',
+          'Our <a href="/blog/bathroom-colour-schemes-australia/" class="et-link">colour schemes guide</a> covers palettes that work in small spaces, and our <a href="/blog/bathroom-splashback-ideas-renovation/" class="et-link">splashback guide</a> shows material options beyond standard tiles.',
+        ],
+      },
+      {
+        heading: 'Compact vanities and basins',
+        paragraphs: [
+          'A powder room vanity is typically 400 to 600 millimetres wide - much smaller than a bathroom vanity. Wall-hung vanities are the most popular choice because they keep the floor clear and make the room feel bigger.',
+          'Basin options include vessel basins (sitting on top of the vanity), under-mount basins (set into the bench) and wall-mounted basins (no vanity at all). A wall-mounted basin frees the most space but offers no storage - fine for a room where only hand wash and a hand towel are needed.',
+        ],
+      },
+      {
+        heading: 'Lighting and mirrors',
+        paragraphs: [
+          'A powder room often has no window, so lighting is everything. A backlit round mirror creates a warm glow and serves as both a light source and a design feature. A pendant light or a wall sconce beside the mirror adds atmosphere.',
+          'Avoid harsh downlights aimed directly at the mirror - they create unflattering shadows. Soft, diffused light at face height is the most flattering and welcoming choice. Our <a href="/blog/bathroom-mirror-guide-renovation/" class="et-link">mirror guide</a> covers LED options and sizing.',
+        ],
+      },
+      {
+        heading: 'Toilet selection for a powder room',
+        paragraphs: [
+          'A wall-hung or back-to-wall toilet is the best choice for a powder room because it hides the cistern and keeps the room uncluttered. In a very small room, every centimetre counts - a concealed cistern saves 150 to 200 millimetres of depth compared to a close coupled toilet.',
+          'Our <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet upgrade guide</a> compares all three types with costs and fitting details.',
+        ],
+      },
+      {
+        heading: 'Getting started with ETR',
+        paragraphs: [
+          'Powder room renovations are one of our four services - see our <a href="/services/powder-room-renovations/" class="et-link">powder room renovation service page</a> for examples. Alex Mustafa said: "They demonstrated professionalism and expertise throughout, transforming my outdated bathroom into a modern oasis with meticulous attention to detail."',
+          'Every project starts with a free on-site measure anywhere in Sydney. Call 0411 752 334 to book yours.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How much does a powder room renovation cost?',
+        answer: 'A powder room renovation typically costs $8,000 to $15,000 depending on the finishes. The room is small, so even premium tiles and fixtures cost less than they would in a full bathroom. A free on-site measure gives you a fixed-scope quote.',
+      },
+      {
+        question: 'Does a powder room need waterproofing?',
+        answer: 'The floor area around the toilet and basin must be sealed. There is no shower, so the full wet-area sealing requirements of AS 3740 do not apply to the shower zone. The floor and a strip up the wall behind the toilet and basin are the sealed areas.',
+      },
+      {
+        question: 'What size vanity fits a powder room?',
+        answer: 'Most powder room vanities are 400 to 600 millimetres wide. A wall-mounted basin with no vanity works in the tightest rooms. If the room is wide enough, a 750-millimetre vanity with a single drawer provides useful storage.',
+      },
+      {
+        question: 'Can I use bold tiles in a powder room?',
+        answer: 'Yes - the powder room is the best room in the house for bold design choices. The small area means the material cost is low, and the room is used briefly by guests, so a dramatic tile or pattern makes a lasting impression without being overwhelming.',
+      },
+      {
+        question: 'Does a powder room add value to a home?',
+        answer: 'Yes. A ground-floor powder room is a highly sought-after feature for buyers, especially in homes with bedrooms upstairs. It saves guests from using the family bathroom and adds convenience for daily life.',
+      },
+    ],
+  },
+  {
+    slug: 'wall-hung-vs-back-to-wall-toilet',
+    title: 'Wall-hung vs back-to-wall toilet: which should you choose?',
+    metaTitle: 'Wall-Hung vs Back-to-Wall Toilet',
+    description: 'Compare cleaning, wall depth, repairs and cost before choosing a toilet.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Choose a wall-hung toilet if you want a clear floor and a pan set at a height that suits you. Choose a back-to-wall toilet if you want a clean look and a simpler fit. Most back-to-wall setups hide the cistern in the wall or a cabinet, so both can look tidy.',
+        'The real difference is how the pan is held. A wall-hung pan hangs from a frame in the wall. A back-to-wall pan stands on the floor and sits against the wall.',
+      ],
+      table: {
+        caption: 'Wall-hung and back-to-wall toilets compared on the points that decide most choices.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'Easy floor cleaning', detail: 'You can mop straight under a wall-hung pan.', value: 'Wall-hung' },
+          { label: 'Pan height to suit you', detail: 'A wall-hung pan is fixed at the height you choose.', value: 'Wall-hung' },
+          { label: 'A tight room that feels bigger', detail: 'Seeing more floor makes a small room feel open.', value: 'Wall-hung' },
+          { label: 'Less change to the pipes and wall', detail: 'A wall-hung toilet moves the waste pipe into the wall.', value: 'Back-to-wall' },
+          { label: 'A simpler, usually lower-cost fit', detail: 'The floor carries the pan, so the frame has less to do.', value: 'Back-to-wall' },
+        ],
+      },
+      note: 'Confirm the frame, wall depth and pipe position at the on-site measure before you buy a pan.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is the difference between a wall-hung and a back-to-wall toilet?',
+        paragraphs: [
+          'A wall-hung toilet has no floor contact. The pan is bolted to a steel frame inside the wall, and the flush cistern sits in that same frame. A back-to-wall toilet has a pan that stands on the floor with its back pushed against the wall.',
+          'Both hide the cistern, so the room looks clean and there is no tank to dust. Our wider <a href="/blog/toilet-upgrade-guide-bathroom-renovation/" class="et-link">toilet types guide</a> also covers the close-coupled toilet. This page sticks to the two that people compare most.',
+        ],
+      },
+      {
+        heading: 'Why choose a wall-hung toilet?',
+        paragraphs: [
+          'The big win is cleaning. With nothing on the floor under the pan, one pass with the mop does the job. There is no foot, no base and no gap where grime collects.',
+          'You also pick the pan height when the frame is fixed. Taller people often like a higher pan. The open floor lets a small ensuite read as larger, which helps in a tight room.',
+          'The trade-off is that the whole pan hangs from the wall, so the fixing is only as good as the frame and the wall behind it. That is why the build-up matters more than the pan itself.',
+        ],
+      },
+      {
+        heading: 'Why choose a back-to-wall toilet?',
+        paragraphs: [
+          'A back-to-wall pan stands on the floor, so the floor carries its weight. The wall frame, where there is one, only has to hold the cistern. That is usually simpler to build and simpler to service.',
+          'It also suits rooms where moving the waste pipe is hard. If the pipe already comes out of the floor in the right spot, a back-to-wall pan can often use it. Our guide to <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">moving fixtures in a layout change</a> explains why pipe position drives cost.',
+          'The trade-off is the join where the pan meets the floor. It is tidy, but it is one more line to wipe.',
+        ],
+      },
+      {
+        heading: 'What does a wall-hung toilet need inside the wall?',
+        paragraphs: [
+          'A wall-hung toilet needs a carrier frame. It is fixed to the floor and the wall structure and holds the pan and the cistern. The frame needs more wall depth than a plain stud wall, so the wall is often built out.',
+          'This work happens early, at rough-in, before the wall lining, the waterproofing and the tiles go on. It cannot be added later without opening the wall. The flush plate on the front is also your access to the cistern for future repairs.',
+          'The frame maker states its load rating. Ask to see it, and make sure the frame is installed the way the maker directs. Our <a href="/blog/bathroom-renovation-plumbing-replacement/" class="et-link">plumbing replacement guide</a> shows where this fits in the sequence of work.',
+        ],
+      },
+      {
+        heading: 'Where does a close-coupled toilet fit in?',
+        paragraphs: [
+          'A close-coupled toilet has the cistern sitting on the back of the pan. It is the most common type in older homes. It is simple, easy to repair and easy to find parts for.',
+          'It is a sound choice when the plumbing stays where it is and the budget is tight. If you want a cleaner look, the two toilets on this page are the step up. You can also compare other fixtures in our <a href="/blog/wall-hung-vs-floor-mounted-fixtures/" class="et-link">wall-hung vs floor-mounted fixtures</a> guide, which covers vanities as well.',
+        ],
+      },
+      {
+        heading: 'Which toilet suits your renovation?',
+        paragraphs: [
+          'If you are rebuilding the wall anyway and want the easiest floor to clean, a wall-hung toilet is worth pricing. If the layout is fixed and you want the simplest build, a back-to-wall toilet is the safer pick.',
+          'Neither is wrong. The right answer depends on the wall, the waste pipe and the way the room is used. We check those on site at the free measure, then put the chosen toilet and frame in your fixed-scope written quote.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are wall-hung toilets harder to repair?',
+        answer: 'The parts you use most, the flush button and the cistern workings, are reached through the flush plate on the wall. The pan can be unbolted from the frame. Repairs are usually fine, but any fault inside the wall is harder to reach than on a floor-standing toilet.',
+      },
+      {
+        question: 'Does a wall-hung toilet need a special wall?',
+        answer: 'It needs a carrier frame fixed to the floor and the wall structure, and enough wall depth to hold the frame. The wall is often built out to fit. This is planned at rough-in, before the tiles go on.',
+      },
+      {
+        question: 'How much weight can a wall-hung toilet hold?',
+        answer: 'The load rating comes from the frame maker. Ask to see the rating on the data sheet, and have the frame installed exactly as the maker directs.',
+      },
+      {
+        question: 'Is a wall-faced toilet the same as a back-to-wall toilet?',
+        answer: 'Both names describe a pan that sits against the wall instead of out from it. Some suppliers use the two names for the same pan. Check the product sheet before you order.',
+      },
+      {
+        question: 'Can I swap a close-coupled toilet for a wall-hung one?',
+        answer: 'Yes, but it is not a simple swap. The waste pipe moves into the wall and a frame is fitted, so it works best in a full renovation while the wall is open.',
+      },
+    ],
+  },
+  {
+    slug: 'porcelain-vs-ceramic-tiles-bathroom',
+    title: 'Porcelain vs ceramic tiles for a bathroom: which is better?',
+    metaTitle: 'Porcelain vs Ceramic Bathroom Tiles',
+    description: 'Compare water absorption, strength, cutting and cost before choosing bathroom tile.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Porcelain is the safer pick for bathroom floors and wet shower areas. It is denser, absorbs very little water and takes knocks well. Ceramic is a good choice for walls. It is usually cheaper and easier to cut.',
+        'Neither tile makes the bathroom waterproof. The waterproofing membrane under the tile does that job, and it is laid to AS 3740.',
+      ],
+      table: {
+        caption: 'Porcelain and ceramic tiles compared on the points that matter in a bathroom.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'Floors and wet areas', detail: 'Denser tile that absorbs very little water.', value: 'Porcelain' },
+          { label: 'Wear and knocks', detail: 'Harder body that resists chips and scuffs.', value: 'Porcelain' },
+          { label: 'A lower tile cost', detail: 'Ceramic is usually cheaper per square metre.', value: 'Ceramic' },
+          { label: 'Easy cutting and fitting', detail: 'Softer body, so less cutting time on site.', value: 'Ceramic' },
+          { label: 'Bathroom walls', detail: 'No foot traffic, so ceramic does the job well.', value: 'Ceramic' },
+        ],
+      },
+      note: 'Compare the actual tile you like, not the label. Both groups have a wide range in price and quality.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is the difference between porcelain and ceramic tiles?',
+        paragraphs: [
+          'Both are made from clay and fired in a kiln. Porcelain uses a finer clay and a higher heat, so the tile comes out denser and harder. By the usual industry definition, a porcelain tile absorbs 0.5 percent water or less. Ceramic is more porous and softer.',
+          'In a bathroom that gap shows up in three places: how the tile handles water, how it handles wear and how it behaves when it is cut and laid.',
+        ],
+      },
+      {
+        heading: 'Which is better for a bathroom floor?',
+        paragraphs: [
+          'Porcelain, in most cases. A bathroom floor takes water, soap, dropped bottles and daily foot traffic. A dense, hard tile copes with that better than a porous one.',
+          'Slip resistance matters as much as the material. Ask your supplier for the slip rating of any floor tile. It is shown as a P rating from the wet pendulum test or an R rating from the ramp test. A matt or textured finish usually grips better than a polished one. Our <a href="/blog/matt-vs-gloss-bathroom-tiles/" class="et-link">matt vs gloss tile guide</a> covers that choice.',
+        ],
+      },
+      {
+        heading: 'Which is better for bathroom walls?',
+        paragraphs: [
+          'Ceramic is a good, cost-sensible choice on walls. Nobody walks on it, and the tile is lighter and easier to cut around niches, windows and fixtures. If you have a low budget, putting ceramic on the walls and porcelain on the floor is a common way to keep the cost down.',
+          'Porcelain also works well on walls, especially in large sizes. Large porcelain panels are heavy, though, so the wall behind them must be flat and strong. Read our <a href="/blog/large-format-tiles-bathroom-renovation/" class="et-link">large-format tiles guide</a> before you commit to big sizes.',
+        ],
+      },
+      {
+        heading: 'What do cutting, fitting and cost look like?',
+        paragraphs: [
+          'Porcelain is harder to cut and drill. It needs a diamond blade and more time, which can lift the labour cost. Ceramic cuts faster. The tile price also tends to be lower, but both groups range from cheap to very high, so a premium ceramic can cost more than a budget porcelain.',
+          'Compare the exact tile and its fitting needs. The cheapest tile per square metre is not always the cheapest finished wall. Our <a href="/blog/bathroom-renovation-cost-sydney/" class="et-link">guide to what changes the cost</a> shows how tile choice sits inside the whole scope.',
+        ],
+      },
+      {
+        heading: 'Does the tile make the bathroom waterproof?',
+        paragraphs: [
+          'No. Water gets through the grout lines and, in a ceramic tile, can pass through the tile body. The seal that protects the room is the waterproofing membrane laid under the tile. We lay it to AS 3740 and supply the certificate. See our guide to <a href="/blog/bathroom-waterproofing-explained/" class="et-link">how bathroom waterproofing works</a>.',
+          'That is why a good tile alone does not fix a leaking bathroom, and why a great membrane does not make up for poor tiling.',
+        ],
+      },
+      {
+        heading: 'Who lays the tile matters as much as which tile you pick',
+        paragraphs: [
+          'Adam Dawood is our licensed tiler. Kieran C described our finished tiling this way: "good falls, neat consistent joints, clean cuts and no lippage."',
+          'Falls, straight joints and flat edges depend on the person laying the tile, whichever type you choose. We talk through the tile at the free measure, then record your choice in the fixed-scope written quote.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is porcelain always better than ceramic for a bathroom?',
+        answer: 'Not always. Porcelain is the stronger choice for floors and wet areas. On walls, ceramic works well and often costs less. The best plan can use both.',
+      },
+      {
+        question: 'Is porcelain more expensive than ceramic?',
+        answer: 'Usually, but not always. Porcelain is harder to cut, so labour can also cost more. Both groups range from budget to premium, so compare the exact tile.',
+      },
+      {
+        question: 'Can I use ceramic tiles on a bathroom floor?',
+        answer: 'You can, if the tile is rated for floors and has a suitable slip rating. Porcelain is the more common choice because it is harder and absorbs less water.',
+      },
+      {
+        question: 'What is a through-body porcelain tile?',
+        answer: 'It is a porcelain tile with the same colour all the way through. A chip shows the same colour as the surface, so damage is less obvious than on a glazed tile with a different body colour.',
+      },
+      {
+        question: 'Do porcelain tiles need sealing?',
+        answer: 'Many glazed porcelain tiles do not need sealing, but the grout and some natural-look or unglazed tiles may. Follow the maker advice for the exact product you choose.',
+      },
+    ],
+  },
+  {
+    slug: 'matt-vs-gloss-bathroom-tiles',
+    title: 'Matt vs gloss bathroom tiles: which finish should you choose?',
+    metaTitle: 'Matt vs Gloss Bathroom Tiles',
+    description: 'Compare grip, cleaning, light and water marks before choosing matt or gloss tile.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Choose matt tiles for the floor and shower base, where grip counts most. Choose gloss tiles for walls if you want more light in the room. A mix of both is common and works well.',
+        'Matt hides water marks and grips better. Gloss bounces light around and wipes clean fast, but it shows every flaw in the wall and can be slippery when wet.',
+      ],
+      table: {
+        caption: 'Matt and gloss tiles compared on the points that decide the choice.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'Grip underfoot', detail: 'Check the slip rating on any floor tile.', value: 'Matt' },
+          { label: 'Hiding water marks', detail: 'Gloss shows drips, soap film and fingerprints.', value: 'Matt' },
+          { label: 'A brighter small room', detail: 'Gloss reflects light from the window and lights.', value: 'Gloss' },
+          { label: 'Wiping clean fast', detail: 'A smooth surface has no texture to trap soap scum.', value: 'Gloss' },
+          { label: 'Hiding a wavy wall', detail: 'Gloss shows every ripple in its reflection.', value: 'Matt' },
+        ],
+      },
+      note: 'Texture varies a lot between products. Ask for a sample and check it wet.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'Which finish is better for a bathroom floor?',
+        paragraphs: [
+          'Matt, in most cases. A wet floor is where a slip can happen, and a polished surface gives your feet less grip. Ask the supplier for the slip rating of any floor tile. It is shown as a P rating from the wet pendulum test or an R rating from the ramp test.',
+          'In the shower base, many people choose a matt tile or a small tile. The extra grout lines give more grip underfoot. A matt floor also hides footprints and water spots between cleans.',
+        ],
+      },
+      {
+        heading: 'Which finish is better for bathroom walls?',
+        paragraphs: [
+          'Either can work. Gloss wall tiles brighten the room, which helps in a bathroom with little natural light. They also wipe clean quickly, so soap film comes off with one pass.',
+          'Matt wall tiles give a softer, calmer look. They hide water marks and fingerprints, so the wall looks neat for longer. Some textured matt tiles hold a little soap scum in the surface, so a soft brush now and then keeps them fresh.',
+        ],
+      },
+      {
+        heading: 'How does the finish change the light in the room?',
+        paragraphs: [
+          'Gloss throws light back into the room. It can make a small ensuite feel larger and brighter, especially with a mirror and a window. Matt absorbs and softens the light, so the room feels warmer and quieter.',
+          'Your lighting plan matters here. Strong lights over a glossy wall can bring glare. Our <a href="/blog/bathroom-lighting-ideas/" class="et-link">bathroom lighting guide</a> shows how to place lights so the finish looks its best.',
+        ],
+      },
+      {
+        heading: 'Why does gloss show wall flaws?',
+        paragraphs: [
+          'A glossy tile acts like a mirror. If the wall behind it is slightly wavy, or one tile edge sits higher than the next, you see it in the reflection. A matt tile hides small flaws.',
+          'This is why careful prep and laying matter more with gloss. Straight walls, even joints and flat edges let the finish shine. Kieran C wrote of our tiling: "good falls, neat consistent joints, clean cuts and no lippage."',
+        ],
+      },
+      {
+        heading: 'How do you clean each finish?',
+        paragraphs: [
+          'Gloss shows marks sooner, so you wipe it more often, but each wipe is quick. Matt shows marks less, but a textured matt surface needs a soft brush to lift soap scum out of the grain.',
+          'Grout is part of the cleaning job, whichever finish you pick. See our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> for types and upkeep, and our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> for airflow and damp control.',
+        ],
+      },
+      {
+        heading: 'Can you mix matt and gloss in one bathroom?',
+        paragraphs: [
+          'Yes, and many good bathrooms do. A common plan is a matt floor for grip with gloss or satin on the walls for light. Keep the colours close so the room stays calm.',
+          'Our wider <a href="/blog/bathroom-tiling-and-finishes-guide/" class="et-link">tiles and finishes guide</a> and <a href="/blog/porcelain-vs-ceramic-tiles-bathroom/" class="et-link">porcelain vs ceramic comparison</a> help you narrow the rest. Bring your sample tiles to the free on-site measure and we will check them against the room.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Are matt tiles easier to clean than gloss tiles?',
+        answer: 'It depends on the tile. Smooth gloss wipes clean quickly but shows marks sooner. Matt hides marks, but a textured matt surface can need a soft brush.',
+      },
+      {
+        question: 'Are gloss tiles slippery in a bathroom?',
+        answer: 'Polished gloss tiles can be slippery when wet, so they are better on walls than floors. Always check the slip rating of a floor tile with the supplier.',
+      },
+      {
+        question: 'What finish is best for a small bathroom?',
+        answer: 'Gloss walls reflect light and can make a small room feel bigger. A matt floor adds grip. A light colour on the walls helps most.',
+      },
+      {
+        question: 'Do matt tiles show water marks?',
+        answer: 'Much less than gloss. Water spots and soap film are easy to see on a glossy surface and far less visible on a matt one.',
+      },
+      {
+        question: 'What finish should I use in the shower?',
+        answer: 'Many people use a matt or small tile on the shower floor for grip and a finish of their choice on the shower walls. Ask for the slip rating before you order the floor tile.',
+      },
+    ],
+  },
+  {
+    slug: 'frameless-vs-semi-frameless-shower-screen',
+    title: 'Frameless vs semi-frameless shower screen: which is better?',
+    metaTitle: 'Frameless vs Semi-Frameless Shower Screen',
+    description: 'Compare glass, wall fit, cleaning and cost before choosing a shower screen.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Choose a frameless screen for the cleanest look and the easiest glass to clean. Choose a semi-frameless screen if your walls are not perfectly straight or you want to keep the cost down. A semi-frameless screen still looks current.',
+        'Frameless uses thicker glass with minimal hardware. Semi-frameless frames the fixed panels and leaves the door edge largely open.',
+      ],
+      table: {
+        caption: 'Frameless and semi-frameless shower screens compared on the points that decide the choice.',
+        columns: ['If this matters most', 'Better fit'],
+        rows: [
+          { label: 'The cleanest, most open look', detail: 'No metal frame around the edges.', value: 'Frameless' },
+          { label: 'Easy glass cleaning', detail: 'No channels to trap soap scum.', value: 'Frameless' },
+          { label: 'Walls that are slightly out of square', detail: 'The frame takes up small gaps.', value: 'Semi-frameless' },
+          { label: 'A lower screen cost', detail: 'Thinner glass and simpler fitting.', value: 'Semi-frameless' },
+          { label: 'A look that still feels current', detail: 'Clean door edge with a light frame.', value: 'Semi-frameless' },
+        ],
+      },
+      note: 'Order the glass after tiling, once the real opening is measured.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is the difference between frameless and semi-frameless?',
+        paragraphs: [
+          'A frameless screen uses panels of 10-millimetre toughened safety glass held by small brackets and hinges. There is no metal frame around the edges. A semi-frameless screen uses 6 to 8-millimetre toughened glass. It frames the fixed panels but leaves the door edge largely unframed.',
+          'Our wider <a href="/blog/shower-screen-types-bathroom-renovation/" class="et-link">shower screen types guide</a> also covers the fully framed screen. This page puts the two most popular choices side by side.',
+        ],
+      },
+      {
+        heading: 'Why choose a frameless screen?',
+        paragraphs: [
+          'The look is the main draw. With no frame, light passes through and the shower feels part of the room. It suits small bathrooms, where an open view makes the space feel larger.',
+          'Cleaning is easier too. There are no frame channels to collect soap scum, so a squeegee after each shower and a weekly wipe keeps the glass clear.',
+          'The cost is higher. Frameless glass is thicker and the fitting must be precise.',
+        ],
+      },
+      {
+        heading: 'Why choose a semi-frameless screen?',
+        paragraphs: [
+          'It is the middle ground. The frame on the fixed panels gives structure and hides small gaps. That makes it more forgiving if the walls are slightly out of square, which is common in older Sydney homes.',
+          'It usually costs less than frameless and still looks clean. The frame channels collect a little residue, so it needs a bit more cleaning than frameless, but far less than a fully framed screen.',
+        ],
+      },
+      {
+        heading: 'How do wall and floor tolerances affect the choice?',
+        paragraphs: [
+          'A frameless panel must sit flush against the wall. If the wall is out of square, the glass cannot close the gap and water gets through. Fixing the wall first adds cost to a frameless job.',
+          'A semi-frameless frame can take up some of that error. If your walls are in poor shape, ask us at the measure whether straightening them is worth it for a frameless screen, or whether semi-frameless is the sensible call.',
+        ],
+      },
+      {
+        heading: 'What about the door: hinged or sliding?',
+        paragraphs: [
+          'The screen type and the door type are separate choices. Both screen types can take a hinged or pivot door. A sliding door suits a tight room where a swinging door would hit the vanity or toilet. A hinged door opens wider and is easier to clean.',
+          'If the shower is open to the room, a fixed panel with no door is another option. See our <a href="/blog/wet-room-bathroom-renovation/" class="et-link">wet room guide</a> for how that works.',
+        ],
+      },
+      {
+        heading: 'How do we handle shower screens?',
+        paragraphs: [
+          'The screen is chosen in the design phase, after the layout is settled. Farah Dawood, our architectural designer, helps pick a screen that suits the room, the tile layout and the budget.',
+          'The glass is measured and ordered after tiling is done, so the fit is exact. Every shower recess is waterproofed to AS 3740 before the screen goes in. Your screen choice goes in the fixed-scope written quote after a free on-site measure.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is a frameless shower screen worth the extra cost?',
+        answer: 'It can be, if you want the cleanest look and the easiest glass to clean. If your walls are out of square or the budget is tight, a semi-frameless screen is a sound alternative.',
+      },
+      {
+        question: 'Are semi-frameless shower screens less likely to leak?',
+        answer: 'The frame helps cover small gaps, so a semi-frameless screen is more forgiving on walls that are not perfectly straight. Either type seals well when it is measured and fitted properly.',
+      },
+      {
+        question: 'How thick is the glass in a frameless shower screen?',
+        answer: 'Frameless screens commonly use 10-millimetre toughened safety glass. Semi-frameless screens use 6 to 8-millimetre toughened glass.',
+      },
+      {
+        question: 'Which shower screen is easiest to clean?',
+        answer: 'Frameless, because there are no frame channels to collect soap scum. A squeegee after each shower keeps either type looking good.',
+      },
+      {
+        question: 'When is the shower screen ordered?',
+        answer: 'After tiling is complete. That lets the glass be measured against the finished opening, so the fit is exact.',
+      },
+    ],
+  },
+  {
+    slug: 'fixed-scope-quote-vs-provisional-sums-bathroom',
+    title: 'Fixed-scope quote vs provisional sums and PC items: what each means',
+    metaTitle: 'Fixed-Scope Quote vs Provisional Sums',
+    description: 'Learn how quote terms can change your final price and what to ask first.',
+    published: '2026-11-02',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'A fixed-scope quote sets one price for a defined list of work. A prime cost (PC) item is an allowance for something you have not picked yet, such as tapware or tiles. A provisional sum is an allowance for work that cannot be priced until the room is open.',
+        'The fewer allowances a quote carries, the less the final price can move. Your job is to find out which items are fixed and which are allowances.',
+      ],
+      table: {
+        caption: 'How each quote term works and what can change the price.',
+        columns: ['Quote term', 'Can the price move?'],
+        rows: [
+          { label: 'Fixed-scope item', detail: 'A set price for a defined list of work.', value: 'Only if you change the scope in writing' },
+          { label: 'PC item (prime cost)', detail: 'An allowance for an item you pick later.', value: 'Yes, if your pick costs more or less than the allowance' },
+          { label: 'Provisional sum', detail: 'An allowance for work that cannot be priced yet.', value: 'Yes, once the real work is known' },
+        ],
+      },
+      note: 'Ask for the list of allowances in writing before you accept any quote.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What is a fixed-scope quote?',
+        paragraphs: [
+          'A fixed-scope quote names the work, lists what is included and gives a price for that scope. The price changes only if you change the scope, and the change is agreed in writing first. That is how Elite Touch quotes: a free on-site measure, then a fixed-scope written quote.',
+          'It does not mean nothing is ever unknown. It means the unknowns are named, and the quote says how each is handled.',
+        ],
+      },
+      {
+        heading: 'What is a PC item?',
+        paragraphs: [
+          'PC stands for prime cost. A PC item is an allowance for a product you have not chosen yet. The quote sets aside an amount for it, such as the tiles, the tapware or the basin.',
+          'If you pick something that costs more than the allowance, you pay the difference. If you pick something cheaper, the difference should come off. The risk is a low allowance that makes the quote look cheap, then grows when you shop. We lock in PC items before fit-off, and allowances are stated in writing so the budget for each tile, tap and basin is on the page.',
+        ],
+      },
+      {
+        heading: 'What is a provisional sum?',
+        paragraphs: [
+          'A provisional sum is an allowance for work whose cost cannot be known until the job starts. The classic case is damage hidden behind the old finishes, such as rot in the floor or a failed pipe.',
+          'The final cost depends on what is found. A fair quote says what the sum covers, who decides when it is used and how any leftover is returned. Read <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">our guide to hidden costs</a> for the usual causes.',
+        ],
+      },
+      {
+        heading: 'How do they change the final price?',
+        paragraphs: [
+          'Two quotes with the same total can carry very different risk. One may be nearly all fixed. The other may have a low tile allowance, a low fixture allowance and a small sum for the unknowns.',
+          'To compare quotes fairly, list every allowance and ask what a realistic figure would be. Our guide to <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">comparing bathroom renovation quotes</a> gives a step-by-step method.',
+        ],
+      },
+      {
+        heading: 'What should you ask before you sign?',
+        paragraphs: [
+          'Ask which items are fixed and which are allowances. Ask how each allowance was set and what happens if you pick above or below it. Ask what the contingency covers and how a variation is approved.',
+          'We allow a contingency in every quote and inspect the floor and wall surfaces as soon as the room is open. Asbestos in older homes is tested before quoting and, if found, priced separately. Our <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">contract guide</a> and <a href="/blog/bathroom-renovation-scope-changes/" class="et-link">scope changes guide</a> cover what the paperwork should say.',
+        ],
+      },
+      {
+        heading: 'Which approach is better for you?',
+        paragraphs: [
+          'A mostly fixed quote suits you if you want to know your cost early and have made most choices. A quote with PC items suits you if you want to shop for tiles and fittings, as long as the allowances are realistic.',
+          'Either way, the answer is the same: get it in writing and compare like with like. Our <a href="/packages/" class="et-link">package prices and size bases</a> show how we publish our starting points.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What does PC mean in a bathroom quote?',
+        answer: 'PC means prime cost. It is the amount set aside for an item you have not chosen yet, such as tapware, tiles or a basin. If your choice costs more or less, the price changes by the difference.',
+      },
+      {
+        question: 'What is a provisional sum?',
+        answer: 'A provisional sum is an allowance for work that cannot be priced until the job starts, such as repairs hidden behind the old finishes. The final amount depends on what is found.',
+      },
+      {
+        question: 'Is a fixed-price quote the same as a fixed-scope quote?',
+        answer: 'Close. A fixed-scope quote fixes the price for a defined list of work. The price moves only if you change the scope in writing.',
+      },
+      {
+        question: 'Can I ask for fewer allowances in my quote?',
+        answer: 'Yes. Make your choices early and ask for those items to be priced as fixed. The more you settle before the quote, the fewer allowances are needed.',
+      },
+      {
+        question: 'Who decides when a provisional sum is used?',
+        answer: 'The quote should say. Ask for the rule in writing, including how the work is priced and how any unused amount is returned.',
+      },
+    ],
+  },
+  {
+    slug: 'how-long-does-a-bathroom-renovation-last',
+    title: 'How long does a bathroom renovation last?',
+    metaTitle: 'How Long Does a Bathroom Renovation Last?',
+    description: 'See what helps a bathroom last, from waterproofing and tile work to airflow.',
+    published: '2026-11-04',
+    readTime: '4 min read',
+    category: 'Planning and cost',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'A well-built bathroom renovation is usually made to last 15 to 20 years or more before it needs major work. The look may be refreshed sooner, but the room underneath should go the distance.',
+        'What decides this is the work you cannot see once the tiles are on: the waterproofing, the fall of the floor to the drain, the tiling and grout, and the exhaust fan. Get those right and the room lasts. Get them wrong and it fails early, whatever the taps cost.',
+      ],
+      table: {
+        caption: 'Roughly how long each part of a bathroom lasts when it is done well.',
+        columns: ['Part of the bathroom', 'Typical lifespan'],
+        rows: [
+          { label: 'Waterproofing', detail: 'Hidden under the tiles.', value: 'The life of the renovation, done to AS 3740' },
+          { label: 'Tiles and grout', detail: 'Grout may need resealing.', value: '15 to 20 years or more' },
+          { label: 'Taps, shower and toilet', detail: 'The working fittings.', value: '10 to 15 years' },
+          { label: 'Silicone seals', detail: 'Around the shower and basin.', value: '5 to 10 years, then redone' },
+          { label: 'Exhaust fan', detail: 'Clears the damp air.', value: '5 to 10 years' },
+        ],
+      },
+      note: 'These are general guides, not a promise about your room. The firm commitment we make is a 10-year workmanship warranty on the work we do.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'What makes a bathroom last?',
+        paragraphs: [
+          'The parts that keep water where it belongs are what make a bathroom last: the waterproofing, the way the floor falls to the drain, and a fan that clears the damp air. When these are right, the tiles stay sound and the walls behind them stay dry.',
+          'Fittings and finishes matter too, but they are the easy part to change later. The hard part to fix is the work sealed under the tiles. That is why a lasting bathroom is decided before the first tile goes on, not at the shop when you pick the taps. Our guide to <a href="/blog/bathroom-waterproofing-explained/" class="et-link">how waterproofing works</a> sets out what sits under the surface.',
+        ],
+      },
+      {
+        heading: 'Why waterproofing decides the lifespan',
+        paragraphs: [
+          'The waterproof layer under the tiles is the single part that most often ends a bathroom early. If it fails, water gets into the walls and floor, and you see mould, lifting tiles or stains on the ceiling below.',
+          'We seal every bathroom to AS 3740 with a primer and two coats, and hand over a certificate for the work. A room sealed to that standard should stay dry for the life of the renovation. Read what the <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate</a> proves and why it matters.',
+        ],
+      },
+      {
+        heading: 'What wears out first?',
+        paragraphs: [
+          'The first things to go are the soft seals, not the tiles. The silicone around the shower and basin lasts about 5 to 10 years, then it is scraped out and redone. Grout can stain or crack in spots and may need resealing or patching.',
+          'The exhaust fan also has a working life and gets weaker with age. A tired fan leaves damp in the room, which is where mould starts. Keeping these small parts fresh is cheap next to a room that fails. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> covers how to keep yours clean.',
+        ],
+      },
+      {
+        heading: 'How care makes a bathroom last longer',
+        paragraphs: [
+          'A bathroom lasts longer when the damp is cleared and the seals are kept fresh. Run the fan during and after a shower, wipe down the screen, and redo the silicone when it lifts or goes dark. None of this is hard, and it adds years.',
+          'Most bathrooms that fail early fail for one reason: trapped damp. A good fan and a dry room stop mould before it starts. Our guide to <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">stopping mould</a> explains why it comes back and how a renovation ends it.',
+        ],
+      },
+      {
+        heading: 'Does a cheaper bathroom last as long?',
+        paragraphs: [
+          'It can, if the money is spent in the right place. A Basic bathroom with sound waterproofing, good falls and a proper fan can last as long as a Premium one. The parts that make a room last are the same at every price.',
+          'Where a cheap job fails early is in the hidden work: thin waterproofing, poor falls, or no fan. Our <a href="/packages/" class="et-link">package prices and size bases</a> keep that core work in every tier, and our guide to <a href="/blog/bathroom-renovation-hidden-costs-sydney/" class="et-link">hidden costs</a> shows where corners get cut.',
+        ],
+      },
+      {
+        heading: 'What our warranty covers',
+        paragraphs: [
+          'We back the work we do with a 10-year workmanship warranty. That covers the quality of our labour, not the life of a tap or a fan you chose, which carry their own maker warranties.',
+          'A warranty is only as good as the builder behind it, so it sits alongside our NSW Builder Licence and insurance, not in place of them. Our <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">warranty guide</a> explains what to ask, and you can check our <a href="/about-us/" class="et-link">licence and cover</a> on the About page.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How long does bathroom waterproofing last?',
+        answer: 'Waterproofing done to AS 3740 is made to last for the life of the renovation, which is usually 15 to 20 years or more. It fails early only when it is done poorly or damaged by later work.',
+      },
+      {
+        question: 'How often should I reseal the silicone in my bathroom?',
+        answer: 'Silicone around the shower and basin usually lasts 5 to 10 years. Redo it sooner if it lifts, splits or goes dark, because a failed seal lets water in behind the tiles.',
+      },
+      {
+        question: 'Do bathroom tiles need replacing over time?',
+        answer: 'Good tiles can last 15 to 20 years or more and often outlast the rest of the room. The grout and seals around them wear first, so they are what usually needs attention, not the tiles.',
+      },
+      {
+        question: 'Does a bathroom renovation come with a warranty?',
+        answer: 'Ours does. Elite Touch Renovations provides a 10-year workmanship warranty on the work we do. Taps, fans and other fittings carry their own separate maker warranties.',
+      },
+      {
+        question: 'What makes a bathroom wear out faster?',
+        answer: 'Trapped damp is the main cause. A weak or missing exhaust fan, poor falls to the drain and failed seals all let moisture sit in the room, which leads to mould and tile and membrane failure.',
+      },
+    ],
+  },
+  {
+    slug: 'repair-or-replace-bathroom-renovation',
+    title: 'Repair or replace: signs it is time to renovate your bathroom',
+    metaTitle: 'Repair or Replace Your Bathroom?',
+    description: 'Use leaks, loose tiles and damp to judge whether repair or replacement makes sense.',
+    published: '2026-11-04',
+    readTime: '4 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Replace the bathroom when the problem is in the structure or spread across the room: failed waterproofing, a floor that moves, mould that keeps coming back, or a layout that no longer works. Repair when it is one fitting, a cracked tile or a worn seal.',
+        'The deciding question is the waterproofing. Once the seal under the tiles has failed, there is no lasting fix without lifting the floor, and at that point a full renovation is usually the better spend.',
+      ],
+      table: {
+        caption: 'Signs that point to a repair, and signs that point to a full renovation.',
+        columns: ['What you are seeing', 'Repair or replace?'],
+        rows: [
+          { label: 'One cracked tile or a dripping tap', detail: 'A single, contained fault.', value: 'Repair' },
+          { label: 'Water stains on the ceiling below', detail: 'A sign the seal has failed.', value: 'Replace' },
+          { label: 'Mould that keeps coming back', detail: 'Often poor sealing or no fan.', value: 'Usually replace' },
+          { label: 'The layout does not work', detail: 'No storage, tight clearances.', value: 'Replace' },
+          { label: 'Dated look, everything works', detail: 'The room is sound.', value: 'Repair or refresh' },
+        ],
+      },
+      note: 'Not sure which you need? A free on-site measure tells you whether a repair will hold or the room needs rebuilding.',
+      cta: {
+        href: '/contact-us/',
+        label: 'Book a free on-site measure',
+      },
+    },
+    sections: [
+      {
+        heading: 'When is a repair enough?',
+        paragraphs: [
+          'A repair is the right call when the fault is small and contained. A cracked tile, a dripping tap, a worn silicone seal or a loose towel rail can each be fixed on their own without touching the rest of the room.',
+          'The test is simple: is the room sound apart from this one thing? If the waterproofing is holding, the floor is firm and the layout works, there is no need to rebuild. Fix the fault and the bathroom carries on.',
+        ],
+      },
+      {
+        heading: 'When should you replace the bathroom?',
+        paragraphs: [
+          'Replace the room when the problems are spread out or sit in the structure. Failed waterproofing, a floor that flexes or moves, mould you cannot get rid of, and tiles coming away in more than one spot all point past a repair.',
+          'These faults feed each other. Damp from a failed seal rots the floor, which cracks more tiles, which lets in more water. Patching one part does not stop the cycle. Our guide to <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">why mould keeps coming back</a> shows how this builds up.',
+        ],
+      },
+      {
+        heading: 'The waterproofing test',
+        paragraphs: [
+          'The clearest sign you need to replace rather than repair is water showing up where it should not: stains on the ceiling in the room below, a musty smell, or paint bubbling on the other side of a shower wall. These mean the seal under the tiles has failed.',
+          'There is no lasting surface fix for failed waterproofing. The floor has to come up so the room can be sealed again to AS 3740 and certified. Our guide to the <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate</a> explains what a proper reseal involves.',
+        ],
+      },
+      {
+        heading: 'When the layout is the real problem',
+        paragraphs: [
+          'Sometimes nothing is broken and the room still does not work. There is nowhere to store things, the door hits the vanity, or two people cannot use the space at once. A repair cannot fix a layout, only a renovation can.',
+          'If the room is sound but cramped, it is worth weighing a rebuild that moves the fittings against living with it as is. Our guide to <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathrooms</a> and <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">when to move plumbing</a> cover what a new layout can and cannot change.',
+        ],
+      },
+      {
+        heading: 'What does it cost to replace?',
+        paragraphs: [
+          'A full renovation costs more up front than a repair, but it resets the whole room and its lifespan. A string of repairs on a failing bathroom often adds up to more than one rebuild would have cost, with the same problems returning in between.',
+          'Our <a href="/packages/" class="et-link">package prices and size bases</a> show where a full bathroom starts, and our guide to <a href="/blog/bathroom-renovation-cost-sydney/" class="et-link">what changes the cost</a> explains what moves the price for your room.',
+        ],
+      },
+      {
+        heading: 'How we help you decide',
+        paragraphs: [
+          'You do not have to work this out alone. At the free on-site measure we check the waterproofing, the floor and the layout, and tell you honestly whether a repair will hold or the room needs rebuilding. We would rather you knew than spent on a fix that will not last.',
+          'If a renovation is the answer, you then get a fixed-scope written quote. If a repair will do, we will say so. Our guide to <a href="/blog/how-to-choose-bathroom-renovator-sydney/" class="et-link">choosing a renovator</a> covers what honest advice should look like.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I just replace the tiles and keep the rest?',
+        answer: 'Only if the waterproofing under them is sound. New tiles over a failed seal will leak again, because the problem is the layer beneath, not the tiles. Lifting the tiles is also when hidden damage is usually found.',
+      },
+      {
+        question: 'How do I know if my bathroom waterproofing has failed?',
+        answer: 'The common signs are water stains on the ceiling in the room below, a musty smell, bubbling paint on the far side of a shower wall, or tiles sounding hollow. Any of these means water is getting past the seal.',
+      },
+      {
+        question: 'Is it cheaper to repair or replace a bathroom?',
+        answer: 'A single repair is cheaper than a renovation. But repeated repairs on a failing room often cost more over time than one rebuild, because the underlying problem keeps coming back.',
+      },
+      {
+        question: 'How old should a bathroom be before you renovate?',
+        answer: 'There is no set age. Many bathrooms are renovated at 15 to 20 years, but the trigger is the condition, not the age. A sound older bathroom can be left, and a poorly built newer one may need replacing sooner.',
+      },
+      {
+        question: 'Why does mould keep coming back in my bathroom?',
+        answer: 'Usually because damp is not clearing. A weak or missing exhaust fan, poor ventilation or a failed seal lets moisture sit in the room. Cleaning treats the surface, but the damp has to be fixed to stop it returning.',
+      },
+    ],
+  },
+  {
+    slug: 'what-happens-after-bathroom-renovation',
+    title: 'What happens after your bathroom renovation?',
+    metaTitle: 'Bathroom Renovation Handover and Aftercare',
+    description: 'Know what to check, which documents to keep and how to care for your new bathroom.',
+    published: '2026-11-05',
+    readTime: '4 min read',
+    category: 'Planning and process',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'At handover, check the finished room and keep the documents for the work. Elite Touch Renovations provides a waterproofing certificate and a 10-year workmanship warranty.',
+        'Ask when the room is ready to use, follow the care guidance for your fittings and let your builder know if something needs attention.',
+      ],
+      table: {
+        caption: 'A practical handover checklist for your bathroom.',
+        columns: ['At handover', 'What to do'],
+        rows: [
+          { label: 'Finished room', detail: 'Look over the work with your builder.', value: 'Raise any concerns' },
+          { label: 'Documents', detail: 'Keep certificates and product details with your contract.', value: 'Save a copy' },
+          { label: 'Care', detail: 'Check when to use and how to clean each finish.', value: 'Follow the guidance' },
+        ],
+      },
+      note: 'If a detail is unclear, ask before you start using the room.',
+      cta: { href: '/contact-us/', label: 'Contact our team' },
+    },
+    sections: [
+      {
+        heading: 'What happens on handover day?',
+        paragraphs: [
+          'Handover is your chance to look over the finished bathroom and raise any concerns. Check the room against the agreed scope and ask about anything you do not understand. Elite Touch includes a final clean before handover.',
+          'Ask when the shower and other fittings are ready to use. Keep a note of any items still to be addressed and agree with your builder on the next step.',
+        ],
+      },
+      {
+        heading: 'What documents and certificates should I keep?',
+        paragraphs: [
+          'Keep your contract, final scope, approved changes and receipts together. Ask for the waterproofing certificate and the relevant plumbing and electrical documents, along with the care and warranty details for your fittings.',
+          'Elite Touch waterproofs bathrooms to AS 3740 and supplies a certificate. Our <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate guide</a> explains what to look for. Save a digital copy with your other records so you can find it later.',
+        ],
+      },
+      {
+        heading: 'How does the workmanship warranty work?',
+        paragraphs: [
+          'Elite Touch Renovations provides a 10-year workmanship warranty. Keep your contract and warranty details, and ask us if you need to understand how they apply to your job.',
+          'Fittings may have separate maker warranties. Keep their product details and check the maker terms. Our <a href="/blog/bathroom-renovation-warranty-guide/" class="et-link">bathroom warranty guide</a> covers questions to ask about the different kinds of cover.',
+        ],
+      },
+      {
+        heading: 'How do I care for the bathroom in the first few weeks?',
+        paragraphs: [
+          'First, ask when each part of the room is ready to use. Follow the care instructions for your tiles, tapware and other fittings, since finishes can need different treatment.',
+          'Use the exhaust fan to help clear steam. Wipe water from shower walls after use and keep grout clean. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout care guide</a> explains how upkeep differs by grout type; our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould guide</a> covers damp and airflow.',
+        ],
+      },
+      {
+        heading: 'What if something needs attention after we finish?',
+        paragraphs: [
+          'If you notice a concern, make a note of what you have seen and where it is. Photos and the date can help you explain it. Keep the relevant scope and product details handy.',
+          'You can <a href="/contact-us/" class="et-link">contact the Elite Touch team</a> to discuss work we completed. Ask what information is needed and what the next step will be. For a fitting, check its maker details as well.',
+        ],
+      },
+    ],
+    faq: [
+      { question: 'What should I check at bathroom handover?', answer: 'Look over the finished room against the agreed scope, raise any concerns and ask when the fittings are ready to use. Keep a note of any items still to be addressed.' },
+      { question: 'Do I receive a waterproofing certificate?', answer: 'Elite Touch Renovations supplies a waterproofing certificate for its bathroom work. Keep it with your contract and other records.' },
+      { question: 'What warranty does Elite Touch provide?', answer: 'Elite Touch Renovations provides a 10-year workmanship warranty. Ask us how the warranty details apply to your job.' },
+      { question: 'How should I care for new bathroom grout?', answer: 'Follow the care guidance for your grout type. Wipe water from shower walls after use, keep grout clean and use the exhaust fan to help clear steam.' },
+      { question: 'Who should I contact if I notice a problem?', answer: 'Contact the Elite Touch team to discuss work we completed. Note where the issue is and keep photos and your job details handy. For a fitting, check its maker details too.' },
+    ],
+  },
+]
+
+export function getBlogPost(slug: string) {
+  return blogPosts.find((post) => post.slug === slug)
+}
+
+/**
+ * Anchor id for a category section on `/blog/`. The blog index renders these
+ * as the `id` of each topic group, so anything linking to a topic (currently
+ * the index's own jump list and the header's Blogs menu) must derive the id
+ * from here rather than re-deriving the slug rule.
+ */
+export function getBlogTopicId(category: string) {
+  return `blog-topic-${category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`
+}
+
+/**
+ * The blog grouped by `category`, in first-published order within each group
+ * and in the order the categories first appear in `blogPosts`.
+ *
+ * ONE SOURCE (CLAUDE.md "Generated route collections have one source"): the
+ * blog index page and the header's Blogs menu both read this. The header menu
+ * deliberately lists the seven categories, not all `blogPosts.length` titles —
+ * the per-title version was removed in `ad6d3fa` because repeating 78 long
+ * headlines in sitewide chrome tanked the readability gate on every page, and
+ * restoring it verbatim would reintroduce that regression (D-173).
+ */
+export const blogTopics = (() => {
+  const topicMap = new Map<string, BlogPost[]>()
+  for (const post of blogPosts) {
+    const topicPosts = topicMap.get(post.category)
+    if (topicPosts) {
+      topicPosts.push(post)
+    } else {
+      topicMap.set(post.category, [post])
+    }
+  }
+  return Array.from(topicMap, ([category, posts]) => ({
+    category,
+    id: getBlogTopicId(category),
+    posts,
+  }))
+})()

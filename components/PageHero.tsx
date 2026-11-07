@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import type { Project } from '@/lib/projects'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
+import type { SchemaCrumb } from '@/lib/schema'
 
 /**
  * Shared hero for every page except the homepage (which has its own layout —
@@ -51,6 +53,7 @@ export function PageHero({
   facts,
   image,
   backdrop = false,
+  breadcrumbs,
 }: {
   /** Omit when the pill would only restate the H1 (D-177). */
   eyebrow?: string
@@ -62,9 +65,16 @@ export function PageHero({
   facts?: PageHeroFact[]
   image?: PageHeroImage
   backdrop?: boolean
+  /**
+   * The SAME array the page passes to `<SchemaGraph breadcrumbs={...}>` — one
+   * source for the visible trail and the `BreadcrumbList` (D-180). Omit on the
+   * homepage, which is the trail's root and has no trail of its own.
+   */
+  breadcrumbs?: readonly SchemaCrumb[]
 }) {
   const copy = (
     <div className="et-stack">
+      {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
       {eyebrow && <span className="et-eyebrow">{eyebrow}</span>}
       <h1 className="et-h1 et-measure-tight">{title}</h1>
       {leads.map((lead, index) => (

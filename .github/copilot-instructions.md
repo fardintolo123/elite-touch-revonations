@@ -8,6 +8,19 @@ Use `docs/SPECIALIST_AGENTS.md` as the canonical specialist-role contract. GitHu
 the Claude Code `.claude/agents/*.md` files as named subagents, so treat the roles as instruction
 modes and apply only the relevant ones.
 
+## Session continuity
+
+Read `CLAUDE.md` and `.agents/workflows/session-management.md` for project rules. Treat `sunrise`
+or `sunrise #NUMBER` as a request to follow `.agents/workflows/sunrise.md`; treat `sunset` as a
+request to follow `.agents/workflows/sunset.md`. Preserve task mode, issue/session links, actual
+code revision, verification, recovery and approval state. Create a branch only when the owner asks.
+These words invoke project instructions; no native shell or slash command is implied.
+
+Maintain `tips.md` and `winning-features.md` under
+`.agents/workflows/project-knowledge.md`: capture sourced owner advice promptly, and update or retire
+verified reusable patterns when they change. Preserve actual evidence and publication status.
+
+
 ## Specialist Routing
 
 - Visual/UI issue: use Designer + Vision Auditor guidance.

@@ -5,6 +5,7 @@ import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { GoogleRating } from '@/components/GoogleRating'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
 
 /**
  * Contact us.
@@ -31,6 +32,12 @@ export const metadata: Metadata = buildMetadata({
 })
 
 export default function ContactPage() {
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Contact Us', url: `${businessInfo.siteUrl}/contact-us/` },
+  ] as const
+
   return (
     <>
       <SchemaGraph
@@ -38,13 +45,11 @@ export default function ContactPage() {
         name="Book a Free On-Site Measure"
         description="Book a free on-site bathroom renovation measure anywhere in Sydney. Call Elite Touch Renovations on 0411 752 334 or send us your details."
         pageType="ContactPage"
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Contact Us', url: `${businessInfo.siteUrl}/contact-us/` },
-        ]}
+        breadcrumbs={breadcrumbs}
       />
       <section className="et-hero">
         <div className="et-container et-stack">
+          <Breadcrumbs items={breadcrumbs} />
           <h1 className="et-h1 et-measure-tight">
             Book a free bathroom renovation measure in Sydney.
           </h1>

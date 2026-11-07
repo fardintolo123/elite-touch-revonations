@@ -7,6 +7,7 @@ import { projects, projectCover } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
+import { Breadcrumbs } from '@/components/Breadcrumbs'
 
 /**
  * Gallery / our work.
@@ -74,6 +75,12 @@ export default function GalleryPage() {
   const featuredProject = projects[0]
   const featuredCover = projectCover(featuredProject)
 
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
+  ] as const
+
   return (
     <>
       <SchemaGraph
@@ -81,14 +88,12 @@ export default function GalleryPage() {
         name="Bathroom Renovation Photos, Sydney"
         description="Photos of bathroom renovations Elite Touch Renovations has completed across Sydney, from Artarmon and Balmain to Hunters Hill, Randwick and The Rocks."
         pageType="CollectionPage"
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
-        ]}
+        breadcrumbs={breadcrumbs}
         primaryImage={projectCover(projects[0])}
       />
       <section className="et-hero">
         <div className="et-container">
+          <Breadcrumbs items={breadcrumbs} />
           <div className="et-hero-grid">
             <Link
               href={`/gallery/${featuredProject.slug}/`}

@@ -48,18 +48,22 @@ export const metadata: Metadata = buildMetadata({
 const updated = formatMonthYear(businessInfo.legalPagesUpdated)
 
 export default function PrivacyPage() {
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Privacy Policy', url: `${businessInfo.siteUrl}/privacy/` },
+  ] as const
+
   return (
     <>
       <SchemaGraph
         path="/privacy/"
         name="Privacy Policy"
         description="How Elite Touch Renovations collects and uses the details you send through our enquiry form, who else handles them, and how to ask us to correct or delete them."
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Privacy Policy', url: `${businessInfo.siteUrl}/privacy/` },
-        ]}
+        breadcrumbs={breadcrumbs}
       />
       <PageHero
+        breadcrumbs={breadcrumbs}
         eyebrow="Privacy"
         title="Our privacy policy"
         cta={false}

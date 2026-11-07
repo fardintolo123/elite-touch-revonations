@@ -95,6 +95,22 @@ function SuburbLocationPage({
   // No local project yet (issue #54, owner instruction 2026-10-01 — D-153):
   // point to the region's real photographed work instead of inventing local proof.
   const nearbyProject = project ? undefined : projectsInRegion(region)[0]
+  const proofProject = project ?? nearbyProject
+  const proofPhoto = proofProject?.images[1] ?? proofProject?.images[0]
+  const locationPosition = publishedLocationSlugs().indexOf(suburb.slug)
+  const proofImageOnRight = locationPosition >= 0 && locationPosition % 2 === 1
+
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+    {
+      name: parentService.title,
+      url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/`,
+    },
+    { name: region.name, url: `${businessInfo.siteUrl}${region.hubUrl}/` },
+    { name: suburb.name, url: `${businessInfo.siteUrl}${path}` },
+  ] as const
 
   return (
     <>
@@ -102,27 +118,14 @@ function SuburbLocationPage({
         path={path}
         name={`${suburb.name} bathroom renovation`}
         description={description}
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
-          {
-            name: parentService.title,
-            url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/`,
-          },
-          {
-            name: region.name,
-            url: `${businessInfo.siteUrl}${region.hubUrl}/`,
-          },
-          { name: suburb.name, url: `${businessInfo.siteUrl}${path}` },
-        ]}
+        breadcrumbs={breadcrumbs}
         project={project}
         suburbService={{ service: parentService, suburb }}
         faqs={content?.faqs}
       />
 
       <LocationHero
-        backHref={`${region.hubUrl}/`}
-        backLabel={`${region.name} bathroom renovations`}
+        breadcrumbs={breadcrumbs}
         title={`Bathroom renovations in ${suburb.name}`}
         /* One short line (D-177). The fuller description is the first paragraph of the
            "In short" section directly below, so the hero no longer repeats it. */
@@ -138,7 +141,7 @@ function SuburbLocationPage({
         rating={<GoogleRating compact />}
       />
 
-      <section className="et-section et-band-surface">
+      <section className="et-section et-band-canvas">
         <div className="et-container et-stack">
           <h2 className="et-h2 et-measure-tight">
             What a {suburb.name} bathroom renovation costs and involves
@@ -159,87 +162,68 @@ function SuburbLocationPage({
         </div>
       </section>
 
-      {project ? (
-        <section className="et-section et-band-canvas">
-          <div className="et-container et-stack">
-            <h2 className="et-h2 et-measure-tight">
-              A real bathroom renovation completed in {suburb.name}
-            </h2>
-            <Link
-              href={`/gallery/${project.slug}/`}
-              className="et-card et-card-link et-media-card"
-            >
-              <span className="et-media-frame">
-                <Image
-                  src={(project.images[1] ?? project.images[0]).src}
-                  alt={(project.images[1] ?? project.images[0]).alt}
-                  width={(project.images[1] ?? project.images[0]).width}
-                  height={(project.images[1] ?? project.images[0]).height}
-                  sizes="(min-width: 1360px) 1200px, (min-width: 1024px) calc(100vw - 160px), (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)"
-                  loading="lazy"
-                />
-              </span>
-              <span className="et-badge-suburb">{project.suburb}</span>
-              <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
-                View the full project
-              </h3>
-            </Link>
-          </div>
-        </section>
-      ) : (
-        nearbyProject && (
-          <section className="et-section et-band-canvas">
-            <div className="et-container et-stack">
-              <h2 className="et-h2 et-measure-tight">
-                We haven&rsquo;t photographed a {suburb.name} job yet
-              </h2>
-              <p className="et-body-sm et-measure">
-                We add a suburb&rsquo;s own gallery once a local job is finished
-                and signed off. In the meantime, here is real, photographed
-                work we completed nearby in the {region.name}.
-              </p>
-              <Link
-                href={`/gallery/${nearbyProject.slug}/`}
-                className="et-card et-card-link et-media-card"
-              >
-                <span className="et-media-frame">
-                  <Image
-                    src={nearbyProject.images[0].src}
-                    alt={nearbyProject.images[0].alt}
-                    width={nearbyProject.images[0].width}
-                    height={nearbyProject.images[0].height}
-                    sizes="(min-width: 1360px) 1200px, (min-width: 1024px) calc(100vw - 160px), (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)"
-                    loading="lazy"
-                  />
-                </span>
-                <span className="et-badge-suburb">{nearbyProject.suburb}</span>
-                <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
-                  View the full project
-                </h3>
-              </Link>
-            </div>
-          </section>
-        )
-      )}
-
-      {content && (
+      {(content || proofProject) && (
         <section className="et-section et-band-surface">
-          <div className="et-container et-stack">
-            <h2 className="et-h2 et-measure-tight">
-              {content.localAngle.heading}
-            </h2>
-            {content.localAngle.paragraphs.map((paragraph, index) => (
-              <p
-                key={index}
-                className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
-                dangerouslySetInnerHTML={{ __html: paragraph }}
-              />
-            ))}
-            <p className="et-body-sm">
-              <Link href={`${region.hubUrl}/`} className="et-link">
-                See bathroom renovation coverage across the {region.name}
-              </Link>
-            </p>
+          <div className="et-container">
+            <div
+              className="et-grid et-grid-2 et-grid-align-center"
+              dir={proofImageOnRight ? 'rtl' : 'ltr'}
+            >
+              {proofProject && proofPhoto && (
+                <figure className="et-stack" dir="ltr" style={{ margin: 0 }}>
+                  <Link
+                    href={`/gallery/${proofProject.slug}/`}
+                    style={{ display: 'block' }}
+                    aria-label={`View the ${proofProject.suburb} bathroom project`}
+                  >
+                    <div className="et-photo" style={{ aspectRatio: '4 / 3' }}>
+                      <Image
+                        src={proofPhoto.src}
+                        alt={proofPhoto.alt}
+                        width={proofPhoto.width}
+                        height={proofPhoto.height}
+                        sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(50vw - 32px), calc(100vw - 40px)"
+                        loading="lazy"
+                      />
+                    </div>
+                  </Link>
+                  <figcaption className="et-body-sm">
+                    <span className="et-badge-suburb">{proofProject.suburb}</span>
+                    <span>
+                    {project
+                      ? 'Completed bathroom project'
+                      : `Nearby project in the ${region.name}`}
+                    </span>
+                  </figcaption>
+                </figure>
+              )}
+
+              <div className="et-stack" dir="ltr">
+                <h2 className="et-h2 et-measure-tight">
+                  {content?.localAngle.heading ??
+                    `Bathroom renovation work in ${suburb.name}`}
+                </h2>
+                {content?.localAngle.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ))}
+                {proofProject && (
+                  <p className="et-body-sm">
+                    <Link href={`/gallery/${proofProject.slug}/`} className="et-link">
+                      View the {proofProject.suburb} bathroom project
+                    </Link>
+                  </p>
+                )}
+                <p className="et-body-sm">
+                  <Link href={`${region.hubUrl}/`} className="et-link">
+                    See bathroom renovation coverage across the {region.name}
+                  </Link>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       )}
@@ -436,6 +420,8 @@ export default async function LocationHubPage({
   const publishedRegion = region
   const suburbs = listableSuburbs(publishedRegion)
   const localProjects = projectsInRegion(publishedRegion)
+  const featureProject = localProjects[0]
+  const featurePhoto = featureProject?.images[1] ?? featureProject?.images[0]
   const reviewedMonth = formatMonthYear(publishedRegion.updated ?? '2026-08-31')
   const publishedSuburbSet = new Set(
     publishedSuburbs(publishedRegion).map((suburb) => suburb.slug),
@@ -443,17 +429,32 @@ export default async function LocationHubPage({
   const siblingRegions = publishedRegions().filter(
     (item) => item.slug !== region.slug,
   )
+  const locationPosition = publishedLocationSlugs().indexOf(region.slug)
+  const proofImageOnRight = locationPosition >= 0 && locationPosition % 2 === 1
 
   // Per-region editorial content (answer-first lead, local detail, FAQ,
   // testimonial) — issue #35. Not every region has an entry; when it doesn't,
   // the extra sections simply don't render and the page is the older, thinner
   // shape. Every currently-published hub has one.
   //
-  // ⚠️ Band order below assumes the local-projects section (canvas) sits
-  // between the answer block and the local-detail section (both surface). Every
-  // published hub has projects; a future hub without them needs this revisited.
+  // The answer block uses canvas so the surface split feature that follows it
+  // keeps the band rhythm. Every published hub has a project and local detail.
   const hub = hubContentFor(region.slug)
   const testimonial = hub ? reviewByAuthor(hub.testimonialAuthor) : undefined
+
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const hubBreadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+    {
+      name: parentService.title,
+      url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/`,
+    },
+    {
+      name: region.name,
+      url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
+    },
+  ] as const
 
   return (
     <>
@@ -461,24 +462,12 @@ export default async function LocationHubPage({
         path={`/services/${LOCATION_PARENT_SLUG}/${region.slug}/`}
         name={`Bathroom Renovations ${region.name}`}
         description={`Bathroom renovations across ${regionLocationLabel(region)} by Elite Touch Renovations. Free on-site measure, fixed-scope written quotes, waterproofing to AS 3740 and a ${businessInfo.workmanshipWarrantyYears}-year workmanship warranty.`}
-        breadcrumbs={[
-          { name: 'Home', url: `${businessInfo.siteUrl}/` },
-          { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
-          {
-            name: parentService.title,
-            url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/`,
-          },
-          {
-            name: region.name,
-            url: `${businessInfo.siteUrl}/services/${LOCATION_PARENT_SLUG}/${region.slug}/`,
-          },
-        ]}
+        breadcrumbs={hubBreadcrumbs}
         hubService={{ service: parentService, region }}
         faqs={hub?.faqs}
       />
       <LocationHero
-        backHref={`/services/${LOCATION_PARENT_SLUG}/`}
-        backLabel="Bathroom renovations"
+        breadcrumbs={hubBreadcrumbs}
         title={`Bathroom renovations across ${regionLocationLabel(region)}`}
         lead={`Strip-out to handover across ${regionAreaLabel(region)}, with the scope and price in writing first.`}
         project={localProjects[0]}
@@ -494,7 +483,7 @@ export default async function LocationHubPage({
              can lift whole (geo-audit G-2): service, cost + size basis, duration,
              licence, warranty, one area line. Copy lives in lib/hubContent.ts. ---- */}
       {hub && (
-        <section className="et-section et-band-surface">
+        <section className="et-section et-band-canvas">
           <div className="et-container et-stack">
             <h2 className="et-h2 et-measure-tight">
               What a bathroom renovation in {regionAreaLabel(publishedRegion)} costs and involves
@@ -512,99 +501,90 @@ export default async function LocationHubPage({
         </section>
       )}
 
-      {/* ---- Local proof. This is what stops the page being templated filler. ---- */}
-      {localProjects.length > 0 && (
-        <section className="et-section et-band-canvas">
-          <div className="et-container et-stack">
-            <h2 className="et-h2 et-measure-tight">
-              {localProjects.length === 1
-                ? `A project completed in ${regionAreaLabel(publishedRegion)}`
-                : `${localProjects.length} projects completed across ${regionAreaLabel(publishedRegion)}`}
-            </h2>
-            <p className="et-lead et-measure">
-              These are our own photographs of finished work, in the suburbs
-              named. Not stock images, and not someone else&rsquo;s job.
-            </p>
-
+      {/* The local proof and region-specific detail share one split feature.
+          The second photo frame avoids repeating the hero where available. */}
+      {hub && featureProject && featurePhoto && (
+        <section className="et-section et-band-surface">
+          <div className="et-container">
             <div
-              className={
-                localProjects.length === 1
-                  ? 'et-container-narrow'
-                  : 'et-grid et-grid-2'
-              }
-              style={{
-                marginTop: 'var(--et-space-8)',
-                marginInline: 'auto',
-              }}
+              className="et-grid et-grid-2 et-grid-align-center"
+              dir={proofImageOnRight ? 'rtl' : 'ltr'}
             >
-              {localProjects.map((project, projectIndex) => {
-                /* The first project is the hero photo, so its card shows a different frame. */
-                const cardPhoto =
-                  projectIndex === 0 ? (project.images[1] ?? project.images[0]) : project.images[0]
-                return (
+              <figure className="et-stack" dir="ltr" style={{ margin: 0 }}>
                 <Link
-                  key={project.slug}
-                  href={`/gallery/${project.slug}/`}
-                  className="et-card et-card-link et-media-card"
+                  href={`/gallery/${featureProject.slug}/`}
+                  style={{ display: 'block' }}
+                  aria-label={`View the ${featureProject.suburb} bathroom project`}
                 >
-                  <span className="et-media-frame">
+                  <div className="et-photo" style={{ aspectRatio: '4 / 3' }}>
                     <Image
-                      src={cardPhoto.src}
-                      alt={cardPhoto.alt}
-                      width={cardPhoto.width}
-                      height={cardPhoto.height}
-                      sizes={
-                        localProjects.length === 1
-                          ? '(min-width: 784px) 640px, (min-width: 768px) calc(100vw - 128px), calc(100vw - 104px)'
-                          : '(min-width: 1360px) 548px, (min-width: 1024px) calc(50vw - 132px), (min-width: 768px) calc(50vw - 108px), calc(100vw - 104px)'
-                      }
+                      src={featurePhoto.src}
+                      alt={featurePhoto.alt}
+                      width={featurePhoto.width}
+                      height={featurePhoto.height}
+                      sizes="(min-width: 1280px) 608px, (min-width: 768px) calc(50vw - 32px), calc(100vw - 40px)"
                       loading="lazy"
                     />
-                  </span>
-                  <span className="et-badge-suburb">{project.suburb}</span>
-                  <h3
-                    className="et-h4"
-                    style={{ marginTop: 'var(--et-space-3)' }}
-                  >
-                    {project.name}
-                  </h3>
-                  <p
-                    className="et-body-sm"
-                    style={{
-                      marginTop: 'var(--et-space-3)',
-                      color: 'var(--et-text-secondary)',
-                    }}
-                  >
-                    {project.blurb}
-                  </p>
+                  </div>
                 </Link>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+                <figcaption className="et-stack">
+                  <span className="et-badge-suburb">{featureProject.suburb}</span>
+                  <p className="et-body-sm">
+                    <Link href={`/gallery/${featureProject.slug}/`} className="et-link">
+                      {featureProject.name}
+                    </Link>
+                  </p>
+                </figcaption>
+              </figure>
 
-      {/* ---- Local detail. Truthful, non-invented facts about renovating in
-             THIS region (D-06) — the section that has to fail the swap test.
-             Copy lives in lib/hubContent.ts. ---- */}
-      {hub && (
-        <section className="et-section et-band-surface">
-          <div className="et-container et-stack">
-            <h2 className="et-h2 et-measure-tight">
-              {hub.localAngle.heading}
-            </h2>
-            {hub.localAngle.paragraphs.map((para, index) => (
-              <p
-                key={index}
-                className={
-                  index === 0
-                    ? 'et-lead et-measure'
-                    : 'et-body-sm et-measure'
-                }
-                dangerouslySetInnerHTML={{ __html: para }}
-              />
-            ))}
+              <div className="et-stack" dir="ltr">
+                <h2 className="et-h2 et-measure-tight">
+                  {hub.localAngle.heading}
+                </h2>
+                {hub.localAngle.paragraphs.map((para, index) => (
+                  <p
+                    key={index}
+                    className={index === 0 ? 'et-lead et-measure' : 'et-body-sm et-measure'}
+                    dangerouslySetInnerHTML={{ __html: para }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {localProjects.length > 1 && (
+              <div className="et-stack" style={{ marginTop: 'var(--et-space-12)' }}>
+                <h2 className="et-h2 et-measure-tight">
+                  More completed work across {regionAreaLabel(publishedRegion)}
+                </h2>
+                <div className="et-grid et-grid-2">
+                  {localProjects.slice(1).map((project) => (
+                    <Link
+                      key={project.slug}
+                      href={`/gallery/${project.slug}/`}
+                      className="et-card et-card-link et-media-card"
+                    >
+                      <span className="et-media-frame">
+                        <Image
+                          src={project.images[0].src}
+                          alt={project.images[0].alt}
+                          width={project.images[0].width}
+                          height={project.images[0].height}
+                          sizes="(min-width: 1360px) 548px, (min-width: 1024px) calc(50vw - 132px), (min-width: 768px) calc(50vw - 108px), calc(100vw - 104px)"
+                          loading="lazy"
+                        />
+                      </span>
+                      <span className="et-badge-suburb">{project.suburb}</span>
+                      <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
+                        {project.name}
+                      </h3>
+                      <p className="et-body-sm" style={{ marginTop: 'var(--et-space-3)', color: 'var(--et-text-secondary)' }}>
+                        {project.blurb}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}

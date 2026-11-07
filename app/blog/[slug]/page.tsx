@@ -46,27 +46,35 @@ export default async function BlogPostPage({
     ? projectBySlug(post.heroProject.slug)
     : undefined
 
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Blogs', url: '/blog/' },
+    { name: post.title, url: `/blog/${post.slug}/` },
+  ] as const
+
   return (
     <>
-      <PageHero
-        eyebrow={post.category}
-        title={post.title}
-        leads={[post.description]}
-        facts={[
-          { label: 'Published', value: formatDayMonthYear(post.published) },
-          ...(post.updated
-            ? [{ label: 'Updated', value: formatDayMonthYear(post.updated) }]
-            : []),
-          { label: 'Reading time', value: post.readTime },
-        ]}
-        image={
-          heroProject
-            ? { project: heroProject, imageIndex: post.heroProject?.imageIndex }
-            : undefined
-        }
-      />
-      <main>
-        <article className="et-section et-band-surface">
+      <div className={heroProject ? styles.projectImageFirst : undefined}>
+        <PageHero
+          breadcrumbs={breadcrumbs}
+          title={post.title}
+          leads={[post.description]}
+          facts={[
+            { label: 'Published', value: formatDayMonthYear(post.published) },
+            ...(post.updated
+              ? [{ label: 'Updated', value: formatDayMonthYear(post.updated) }]
+              : []),
+            { label: 'Reading time', value: post.readTime },
+          ]}
+          image={
+            heroProject
+              ? { project: heroProject, imageIndex: post.heroProject?.imageIndex }
+              : undefined
+          }
+        />
+      </div>
+      <article className="et-section et-band-surface">
           <div className="et-container">
             <div className={styles.articleContent}>
               <nav className={styles.postNavigation} aria-label="Blog post navigation">
@@ -120,7 +128,6 @@ export default async function BlogPostPage({
                 ))}
                 {post.faq && post.faq.length > 0 && (
                   <section>
-                    <span className="et-eyebrow">FAQ</span>
                     <h2 className="et-h2">Frequently asked questions</h2>
                     <div style={{ marginTop: 'var(--et-space-4)' }}>
                       <FaqList items={post.faq} />
@@ -159,19 +166,14 @@ export default async function BlogPostPage({
               </div>
             </div>
           </div>
-        </article>
-        <ContactSection title="Ready to talk about your bathroom?" intro="Bring your questions to a free on-site measure anywhere in Sydney. We will discuss the room and send a fixed-scope written quote." />
-      </main>
+      </article>
+      <ContactSection title="Ready to talk about your bathroom?" intro="Bring your questions to a free on-site measure anywhere in Sydney. We will discuss the room and send a fixed-scope written quote." />
       <SchemaGraph
         path={`/blog/${post.slug}/`}
         name={post.title}
         description={post.description}
         pageType="WebPage"
-        breadcrumbs={[
-          { name: 'Home', url: '/' },
-          { name: 'Blogs', url: '/blog/' },
-          { name: post.title, url: `/blog/${post.slug}/` },
-        ]}
+        breadcrumbs={breadcrumbs}
         faqs={post.faq}
         primaryImage={
           heroProject

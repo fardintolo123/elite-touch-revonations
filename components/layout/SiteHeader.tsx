@@ -48,41 +48,45 @@ function ServicesPanel() {
 
   return (
     <div className="et-nav-panel et-nav-panel-services">
-      <div className="et-nav-panel-services-list">
+      <div className="et-nav-panel-services-main">
         <Link href="/services/" className="et-nav-panel-index et-nav-link-icon">
           <NavIcon name="grid" />
           All services
         </Link>
-        {services.map((service) => (
-          <Link
-            key={service.slug}
-            href={`/services/${service.slug}/`}
-            className="et-nav-link-icon"
-          >
-            <NavIcon name={serviceIcon(service.slug)} />
-            {service.title}
-          </Link>
-        ))}
+        <div className="et-nav-panel-services-list">
+          {services.map((service) => (
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}/`}
+              className="et-nav-link-icon"
+            >
+              <NavIcon name={serviceIcon(service.slug)} />
+              {service.title}
+            </Link>
+          ))}
+        </div>
       </div>
 
-      <p className="et-nav-panel-heading">Service areas</p>
-      <div className="et-nav-panel-regions">
-        {regions.map((region) => (
-          <div key={region.slug} className="et-nav-panel-group">
-            <Link href={`${region.hubUrl}/`}>{region.name}</Link>
-            <div className="et-nav-panel-suburbs">
-              {publishedSuburbs(region).map((suburb) => (
-                <Link
-                  key={suburb.slug}
-                  href={`/services/bathroom-renovations/${suburb.slug}/`}
-                  className="et-nav-panel-child"
-                >
-                  {suburb.name}
-                </Link>
-              ))}
+      <div className="et-nav-panel-areas">
+        <p className="et-nav-panel-heading">Service areas</p>
+        <div className="et-nav-panel-regions">
+          {regions.map((region) => (
+            <div key={region.slug} className="et-nav-panel-group">
+              <Link href={`${region.hubUrl}/`}>{region.name}</Link>
+              <div className="et-nav-panel-suburbs">
+                {publishedSuburbs(region).map((suburb) => (
+                  <Link
+                    key={suburb.slug}
+                    href={`/services/bathroom-renovations/${suburb.slug}/`}
+                    className="et-nav-panel-child"
+                  >
+                    {suburb.name}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )

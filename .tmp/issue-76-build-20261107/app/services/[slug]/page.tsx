@@ -1,0 +1,357 @@
+import { AnswerBlock } from '@/components/AnswerBlock'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { businessInfo, services } from '@/lib/businessInfo'
+import { buildMetadata } from '@/lib/metadata'
+import { featuredReviews, formatReviewBody } from '@/lib/reviews'
+import { ContactSection } from '@/components/ContactSection'
+import { WorkStrip } from '@/components/WorkStrip'
+import { PageHero } from '@/components/PageHero'
+import { SchemaGraph } from '@/components/SchemaGraph'
+import { ExternalLink } from '@/components/ExternalLink'
+import { GoogleRating } from '@/components/GoogleRating'
+import { projects } from '@/lib/projects'
+import { AreasServedLinks } from '@/components/AreasServedLinks'
+import { serviceHeroImages } from '@/lib/serviceHeroImages'
+import { FaqList } from '@/components/FaqList'
+
+/**
+ * Which real, suburb-attributed photo (if any) illustrates each service hero.
+ *
+ * ⚠️ Only `bathroom-renovations` and `ensuite-bathroom-renovations` are
+ * photographed (lib/projects.ts). `laundry-renovations` and
+ * `powder-room-renovations` have NO evidenced photography — showing a
+ * bathroom photo on either would imply proof of work we cannot support
+ * (DECISIONS.md D-83, D-06). Those two slugs are deliberately absent from
+ * this map, so their hero stays text-only. Do not add a fallback image here.
+ */
+/**
+ * One renderer, four pages, driven by `services` in lib/businessInfo.ts.
+ * "Content is data" — CLAUDE.md → Architecture Rules. Edit the data, not this
+ * markup, to change what the pages say.
+ *
+ * ⚠️ Every record in that array becomes a live URL (PROJECT_CONTEXT.md §4.4).
+ * `dynamicParams = false` means a slug that is NOT in the data 404s instead of
+ * being rendered on demand — so a half-finished record cannot leak a page.
+ * If you add a fifth service here, you have advertised a fifth service.
+ * DECISIONS.md D-01 says there are four.
+ */
+
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return services.map((service) => ({ slug: service.slug }))
+}
+
+function findService(slug: string) {
+  return services.find((service) => service.slug === slug)
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const service = findService(slug)
+
+  if (!service) {
+    return { title: 'Not found', robots: { index: false, follow: false } }
+  }
+
+  return buildMetadata({
+    path: `/services/${service.slug}/`,
+    // `metaTitle` overrides `h1` only where the full "service + Sydney" H1
+    // would push the templated `<title>` past 60 chars (issue #21 / M-5) —
+    // currently just laundry-renovations. The H1 itself is unaffected.
+    title: 'metaTitle' in service ? service.metaTitle : service.h1,
+    description: service.summary,
+  })
+}
+
+/** Included in every package tier — PROJECT_CONTEXT.md §2. Do not embellish. */
+const STANDARD_INCLUSIONS = [
+  { key: 'planning', body: 'Planning and design' },
+  {
+    key: 'demolition',
+    body: 'Demolition - floor protection, disconnection and removal of existing fittings, floor and wall tiles including old cement bedding, and complete off-site rubbish removal',
+  },
+  {
+    key: 'electrical',
+    body: 'Electrical - safe disconnection, replacement power points and light switch',
+  },
+  {
+    key: 'plumbing',
+    body: 'Plumbing - safe disconnection and installation of new fittings',
+  },
+  { key: 'walls', body: 'Render or re-sheet walls' },
+  {
+    key: 'waterproofing',
+    body: (
+      <>
+        Waterproofing to{' '}
+        <ExternalLink href={businessInfo.authorities.as3740}>
+          {businessInfo.standards.waterproofing}
+        </ExternalLink>{' '}
+        - primer plus two coats, certificate included
+      </>
+    ),
+  },
+  {
+    key: 'tiling',
+    body: 'Tiling - new screed to create falls to drains, all glues, tile trims, grouts and silicone',
+  },
+  { key: 'clean', body: 'Final clean before handover' },
+] as const
+
+const PRICED_SERVICES: string[] = ['bathroom-renovations', 'ensuite-bathroom-renovations']
+
+export default async function ServicePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
+  const service = findService(slug)
+
+  if (!service) notFound()
+
+  const [review] = featuredReviews(1)
+  const others = services.filter((item) => item.slug !== service.slug)
+
+  const heroImageRef = serviceHeroImages[service.slug]
+  const heroProject = heroImageRef
+    ? projects.find((p) => p.slug === heroImageRef.slug)
+    : undefined
+
+  // Optional per-service extras. Not every service has these, so guard with
+  // `in` rather than assuming the field exists on the whole `Service` union.
+  const about = 'about' in service ? service.about : undefined
+  const additionalSections =
+    'additionalSections' in service ? service.additionalSections : undefined
+  const faqs = 'faqs' in service ? service.faqs : undefined
+  // Some service pages carry their own timeline in the FAQ/about copy. When
+  // that timeline describes a different scope than the shared single-bathroom
+  // bands below, hide the shared block to avoid a visible contradiction.
+  const showBuildDurations = !(
+    'hideBuildDurations' in service && service.hideBuildDurations
+  )
+
+  /* D-177: real photos were 71% of the way down the page. Where the service has an
+     evidenced hero photo (bathroom, ensuite) the work strip now follows the opening
+     answer. Laundry and powder-room have no photographed jobs of their own (D-83/D-06),
+     so they keep the strip at the end rather than imply proof of that work up top. */
+  const workStripFirst = Boolean(heroProject)
+  const workStrip = (
+    <WorkStrip
+      title="Bathrooms we have finished"
+      intro="Our own photographs, with the suburb each job was in."
+      band="canvas"
+    />
+  )
+
+  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
+  const breadcrumbs = [
+    { name: 'Home', url: `${businessInfo.siteUrl}/` },
+    { name: 'Services', url: `${businessInfo.siteUrl}/services/` },
+    {
+      name: service.title,
+      url: `${businessInfo.siteUrl}/services/${service.slug}/`,
+    },
+  ] as const
+
+  return (
+    <>
+      <SchemaGraph
+        path={`/services/${service.slug}/`}
+        name={service.h1}
+        description={service.summary}
+        breadcrumbs={breadcrumbs}
+        faqs={faqs}
+        service={service}
+      />
+      <PageHero
+        breadcrumbs={breadcrumbs}
+        title={service.h1}
+        leads={[service.summary]}
+        /* The rating sits in the hero (D-177) instead of alone in its own band. */
+        rating={<GoogleRating compact />}
+        image={
+          heroProject
+            ? { project: heroProject, imageIndex: heroImageRef?.imageIndex }
+            : undefined
+        }
+        /* Backdrop only where a real evidenced photo exists (D-171). Laundry and
+           powder-room have none, so they keep the text-only hero rather than
+           borrowing a bathroom photo. */
+        backdrop={Boolean(heroProject)}
+      />
+
+      {about && (
+        <section className="et-section et-band-surface">
+          <div className="et-container et-stack">
+            <h2 className="et-h2 et-measure-tight">{about.heading}</h2>
+            {/* The price strip is only for the two services whose copy already quotes
+                the Basic, Standard and Premium room-size packages. Laundry and powder
+                room are not priced that way on this site (D-178). */}
+            <AnswerBlock
+              paragraphs={about.paragraphs}
+              prices={PRICED_SERVICES.includes(service.slug)}
+              pricesAfterLead
+            />
+          </div>
+        </section>
+      )}
+
+      {workStripFirst && workStrip}
+
+      <section className="et-section et-band-canvas">
+        <div className="et-container">
+          <div className="et-grid et-grid-2">
+            <div className="et-stack">
+              <h2 className="et-h2 et-measure-tight">
+                What does the written scope cover?
+              </h2>
+              <p className="et-lead et-measure">
+                These are the core stages across our packages. The fittings and
+                tile coverage change by tier; the sequence and written
+                responsibility for the work do not.
+              </p>
+              <p className="et-body-sm">
+                <Link href="/packages/" className="et-link">
+                  See how the packages differ
+                </Link>
+              </p>
+            </div>
+
+            <ul className="et-checklist">
+              {STANDARD_INCLUSIONS.map((item) => (
+                <li key={item.key} className="et-body-sm">
+                  {item.body}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {additionalSections?.map((section) => (
+        <section key={section.heading} className="et-section et-band-surface">
+          <div className="et-container et-stack">
+            <h2 className="et-h2 et-measure-tight">{section.heading}</h2>
+            <AnswerBlock paragraphs={section.paragraphs} />
+          </div>
+        </section>
+      ))}
+
+      {/* Build durations. Owner-supplied (issue #2 service PDF), settled in
+          D-75. These are on-site programs and a real customer promise — do not
+          shorten them to sound more competitive. Hidden when the service
+          record carries its own non-single-bathroom timeline. */}
+      {showBuildDurations && (
+      <section className="et-section et-band-surface">
+        <div className="et-container et-stack">
+          <h2 className="et-h2 et-measure-tight">
+            How long you will have us in the house.
+          </h2>
+          <p className="et-lead et-measure">
+            These are on-site programs, and you get yours in writing before work
+            starts. Older Sydney homes can need extra days for what turns up at
+            strip-out - rot, non-compliant plumbing, asbestos - and we tell you
+            how that is handled in the quote, not afterwards.
+          </p>
+
+          <div className="et-table-wrap">
+            <table className="et-table">
+              <caption>Typical on-site programs by renovation scope</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Renovation scope</th>
+                  <th scope="col">Time on site</th>
+                  <th scope="col">What changes the program</th>
+                </tr>
+              </thead>
+              <tbody>
+                {businessInfo.buildDurations.map((item) => (
+                  <tr key={item.label}>
+                    <th scope="row">{item.label}</th>
+                    <td>{item.weeks}</td>
+                    <td>{item.detail}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      )}
+
+      <section className="et-section et-band-ink">
+        <div className="et-container et-stack">
+          <figure style={{ margin: 0 }}>
+            <blockquote className="et-quote">
+              <p>{formatReviewBody(review.body)}</p>
+            </blockquote>
+            <figcaption className="et-quote-author">
+              By {review.author}
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <AreasServedLinks
+        title="Sydney areas with published project proof"
+        intro={`${businessInfo.name} works ${businessInfo.serviceArea.coverage}. These area pages stay limited to regions where we can show real local work.`}
+        band="canvas"
+      />
+
+      <section className="et-section et-band-surface">
+        <div className="et-container et-stack">
+          <h2 className="et-h2 et-measure-tight">Our other services</h2>
+          <ul className="et-checklist">
+            {others.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  href={`/services/${item.slug}/`}
+                  className="et-h4 et-link"
+                >
+                  {item.title}
+                </Link>
+                <p
+                  className="et-body-sm"
+                  style={{
+                    marginTop: 'var(--et-space-2)',
+                    color: 'var(--et-text-secondary)',
+                  }}
+                >
+                  {item.summary}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {faqs && faqs.length > 0 && (
+        <section className="et-section et-band-surface">
+          <div className="et-container">
+            <div className="et-stack">
+              <h2 className="et-h2 et-measure-tight">
+                Frequently asked questions about {service.title.toLowerCase()}
+              </h2>
+            </div>
+            <div style={{ marginTop: 'var(--et-space-8)' }}>
+              <FaqList items={faqs} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {!workStripFirst && workStrip}
+
+      <ContactSection />
+
+    </>
+  )
+}
