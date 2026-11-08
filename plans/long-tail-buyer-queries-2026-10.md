@@ -2,7 +2,7 @@
 
 **Outcome:** improve the commercial pages and buyer-intent blog posts that Search Console shows are already attracting impression share but almost no clicks, then re-check the real conversion signal (enquiries, not traffic).
 
-**Status:** Active tracking: #88–#90 remain open; #81–#85 are closed. This tracker owns no code changes; each child issue owns the implementation and measurement.
+**Status:** Active tracking: #89 and #90 remain open; #81–#85 and #88 are closed. This tracker owns no code changes; each child issue owns the implementation and measurement.
 
 ---
 
@@ -66,7 +66,7 @@ The DIY (309 impressions) and timeline (294) clusters are informational. D-144 a
 - [x] #83 — Titles and answer blocks for posts in the top 10 with no clicks
 - [x] #84 — Make the strata post the strata/apartment buyer page
 - [x] #85 — Closed by the owner-safe fallback: no specialist accessible / ageing-in-place / NDIS service claim; related posts remain informational (D-161).
-- [ ] #88 — 34-ways #31: "What happens after your bathroom renovation?" aftercare/handover/warranty post (first in the new append sequence; no dependency)
+- [x] #88 — 34-ways #31: aftercare/handover/warranty post is live; build, readability, design and served-page checks passed. Closed 2026-11-08; owner will request indexing.
 - [ ] #89 — 34-ways #5+#27: "Common bathroom problems and what a renovation fixes" problem-first post (after #88)
 - [ ] #90 — 34-ways #33: "Free on-site bathroom quote — what to expect" conversion post (after #89)
 

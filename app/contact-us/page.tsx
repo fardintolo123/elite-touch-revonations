@@ -90,35 +90,6 @@ export default function ContactPage() {
                 service, calling is the simplest place to start.
               </p>
 
-              <div className="et-stack">
-                <h3 className="et-h4">What happens after you get in touch</h3>
-                <ol
-                  className="et-stack"
-                  style={{
-                    marginTop: 'var(--et-space-2)',
-                    listStyle: 'decimal',
-                    paddingInlineStart: 'var(--et-space-8)',
-                  }}
-                >
-                  <li className="et-body-sm">
-                    We ask what is not working, then arrange a free measure
-                    anywhere in Sydney.
-                  </li>
-                  <li className="et-body-sm">
-                    We talk through the scope, the fittings and the sequence on
-                    site.
-                  </li>
-                  <li className="et-body-sm">
-                    You get the agreed inclusions, exclusions and price in a
-                    fixed-scope written quote.
-                  </li>
-                  <li className="et-body-sm">
-                    If you go ahead, we book the demolition date and keep you
-                    updated as the job runs.
-                  </li>
-                </ol>
-              </div>
-
               {/* Contact details supplied by the owner on issue #2.
                   The info@elitetouchrenovations.au address was withheld while
                   it was "being set up"; the owner confirmed on 2026-08-19 that
@@ -155,10 +126,11 @@ export default function ContactPage() {
                   ))}
                 </ul>
               </div>
+
             </div>
 
             {/* ---- Enquiry form ---- */}
-            <div className="et-card">
+            <div className="et-card" style={{ alignSelf: 'start' }}>
               <h2 className="et-h3">Send us your details</h2>
               <p
                 className="et-body-sm"
@@ -194,6 +166,38 @@ export default function ContactPage() {
                 .
               </p>
             </div>
+          </div>
+
+          <div
+            className="et-stack"
+            style={{ marginTop: 'var(--et-space-16)' }}
+          >
+            <h2 className="et-h3">What happens after you get in touch</h2>
+            <ol
+              className="et-grid et-grid-4"
+              style={{
+                marginTop: 'var(--et-space-2)',
+                listStyle: 'decimal',
+                paddingInlineStart: 'var(--et-space-8)',
+              }}
+            >
+              <li className="et-body-sm">
+                We ask what is not working, then arrange a free measure
+                anywhere in Sydney.
+              </li>
+              <li className="et-body-sm">
+                We talk through the scope, the fittings and the sequence on
+                site.
+              </li>
+              <li className="et-body-sm">
+                You get the agreed inclusions, exclusions and price in a
+                fixed-scope written quote.
+              </li>
+              <li className="et-body-sm">
+                If you go ahead, we book the demolition date and keep you
+                updated as the job runs.
+              </li>
+            </ol>
           </div>
         </div>
       </section>

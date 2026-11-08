@@ -73,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${base}/ai/`,
+      lastModified: LAST_CONTENT_PASS,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${base}/services/`,
       lastModified: ISSUE_64_CONTENT_PASS,
       changeFrequency: 'monthly',

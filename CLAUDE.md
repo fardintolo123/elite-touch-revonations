@@ -111,22 +111,28 @@ pause to confirm routine choices — implementation approach, file layout, wordi
 system, which check to run, how to phrase a commit message. Decide, do it, keep moving to the next
 step, and only stop when the task is actually finished (or genuinely blocked — see below).
 
-**Stop and ask the owner only for a genuine decision** — one only they can make:
-- Anything the [Source-of-Truth Hierarchy](#source-of-truth-hierarchy) already says to ask about: a
-  fact that isn't in `Customer Reviews.md`, a business-info file, or a prior owner message (a price,
-  review, location, licence detail, project detail, year in business, staff count).
-- A **[Business Rules](#business-rules)** trade-off — e.g. advertising a service outside the four,
-  or touching a legally significant claim (licence, ABN, warranty, insurance).
-- **Reversing a decision already recorded in `DECISIONS.md`** without new evidence.
-- A **destructive or hard-to-reverse action** — force-push, `git reset --hard`, deleting files or
-  branches, or pushing/deploying. (This project's standing rule: **never push or deploy without
-  explicit owner sign-off** — see [Git Workflow](#git-workflow).)
-- A choice with real money, legal, or brand risk that no doc already settles.
+**The only true hard stop — ask the owner:**
+- Force-push, `git reset --hard`, or deleting files or branches you didn't create this session. These are irreversible. (**Pushing verified, build-green commits to `main` is automatic — no approval needed.**)
 
-Everything else is yours to decide. If you're unsure whether something clears this bar, treat it as
-**not** clearing it only when getting it wrong would be expensive or hard to undo — otherwise decide,
-proceed, and record what you decided (in `DECISIONS.md` if it should outlive the session, and in the
-Executive Summary either way).
+**Everything else: proceed autonomously using the rule given:**
+- **Missing business fact** (price, review, licence detail, staff count, project detail — not in any codebase file or prior owner message): append a row to `MISSING_FACTS.md` at the repo root (create if absent): `| <fact needed> | <context> | <date> | pending |`. Use the best available placeholder or omit the detail, and keep going. The owner reviews the file periodically.
+- **Source conflict** (two sources disagree): apply the hierarchy (owner instruction > code > `DECISIONS.md` > docs), proceed with the higher-ranking source, note it in the Executive Summary.
+- **DECISIONS.md rejection** (about to re-attempt a rejected approach): skip it, note it in the Executive Summary, use the next compliant alternative.
+- **Ambiguous task**: pick the most reasonable reading, state the assumption in the Executive Summary, and proceed.
+
+Decide, proceed, and record what you decided (in `DECISIONS.md` if it should outlive the session, and in the Executive Summary either way).
+
+### Zero-Interruption Issue Mode
+
+When the owner opens or assigns a GitHub issue in a session, **complete the entire issue end-to-end without pausing for approval, confirmation, or approach choices.** This mode runs from the first file touched through the closed issue. Specifically:
+
+- **Never** stop mid-task to ask "should I continue?", "ready for the next step?", or "shall I proceed with X?"
+- **Never** present "Option A vs Option B" and wait for the owner to pick — choose the first compliant approach, note the assumption briefly, and keep going.
+- **Never** stop after finishing one sub-task or section to report progress and wait — keep going until the entire issue is done and all acceptance criteria are met.
+- **Never** call `wrap_up` with a question or action buttons during active issue work. Call `wrap_up` exactly once: only when the issue is fully implemented, QA-gated, and closed, to deliver the final Executive Summary.
+- When a detail is unclear but falls within compliant options, pick one, state the choice, and proceed. Do not turn it into a question.
+
+The **only** thing that overrides this mode is the single hard stop in [Autonomy & Session Handoff](#autonomy--session-handoff): force-push, `git reset --hard`, or deleting files you didn't create. Everything else — missing facts, source conflicts, DECISIONS.md rejections, ambiguous tasks — is handled with the autonomous rules there (log it, resolve it, skip it, or assume). Never stop for those.
 
 **Checkpoint substantial work and hand off automatically** using `.agents/workflows/sunset.md`
 and the compact record in `.agents/workflows/session-management.md`. Use a unique timestamp/session
@@ -699,10 +705,8 @@ came from, it is not ready to open.
   by another session.
 - Clear subject + a body explaining *why*. If a co-author trailer is used, name the agent/model that
   actually did the work; never copy a stale identity from an example.
-- **Do not push or deploy without explicit owner sign-off.**
-- **Do not create new branches** (owner, 2026-10-27 — D-157). Work and commit on `main`. Create a
-  branch only when the owner asks for one in that session. If the session environment assigns or
-  suggests a feature branch, follow this rule instead and tell the owner.
+- **Sessions start on `main`.** Do not create a branch unless the owner asks for one in that session. If the session environment assigns or suggests a feature branch, follow this rule instead and tell the owner. (D-157)
+- **Push commits to `main` when the build is green and the task is verified — no separate approval needed.** Never force-push or rewrite pushed history without asking.
 - Prefer hand edits over blind `sed`/regex on copy, titles or metadata.
 - For a long or special-character-heavy commit message, write it to a file and use
   `git commit -F <file> -- <paths>` instead of inline `-m`; a long `-m` string with symbols has been
