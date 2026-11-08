@@ -36,7 +36,6 @@ for executing an authorized implementation. Use one issue across sessions for th
 with a current writer, evidence and exact next action. A sunset is a checkpoint, not automatic closure.
 Instruction-only changes use link/diff/resume checks; application QA gates apply to runtime changes.
 
-<<<<<<< HEAD
 ## Starting or syncing a session
 
 The owner may paste this file at the start of a Claude Code, Claude, or Codex chat. Treat it as the
@@ -73,8 +72,6 @@ chat must inspect the live issue and actual checkout rather than assume the last
 finished. Local uncommitted changes remain in that checkout; another machine cannot retrieve them from
 the issue unless they were published or included in an approved recovery artifact.
 
-=======
->>>>>>> 54bb2b8b8496d4a8e9eac13d9d94d33a19ccc497
 ## Project knowledge: tips and winning features
 
 Maintain [tips.md](tips.md) and [winning-features.md](winning-features.md) using
