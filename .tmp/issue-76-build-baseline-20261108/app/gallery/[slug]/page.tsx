@@ -7,8 +7,6 @@ import { buildMetadata } from '@/lib/metadata'
 import { projects, projectBySlug, projectMetaDescription } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
-import { GoogleRating } from '@/components/GoogleRating'
 import {
   LOCATION_PARENT_SLUG,
   publishedRegionForSuburb,
@@ -88,34 +86,6 @@ export async function generateMetadata({
   })
 }
 
-/* One tile per other project. Short room-type label, not the full project name: the suburb badge
-   already carries the location, and repeating "renovation" ten times on this grid was the single
-   biggest drag on this page's readability score (docs/CONTENT_QUALITY_CHECKLIST.md §2). The full
-   name is still the page title and H1 one click away. */
-function ProjectTile({ item }: { item: (typeof projects)[number] }) {
-  return (
-    <Link
-      href={`/gallery/${item.slug}/`}
-      className="et-card et-card-link et-media-card"
-    >
-      <span className="et-media-frame">
-        <Image
-          src={item.images[0].src}
-          alt={item.images[0].alt}
-          width={item.images[0].width}
-          height={item.images[0].height}
-          sizes="(min-width: 1024px) 25vw, 50vw"
-          loading="lazy"
-        />
-      </span>
-      <span className="et-badge-suburb">{item.suburb}</span>
-      <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
-        {item.service.replace(/ renovation$/i, '')}
-      </h3>
-    </Link>
-  )
-}
-
 export default async function ProjectPage({
   params,
 }: {
@@ -155,13 +125,13 @@ export default async function ProjectPage({
 
   /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
   const breadcrumbs = [
-    { name: 'Home', url: `${businessInfo.siteUrl}/` },
-    { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
-    {
-      name: project.name,
-      url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
-    },
-  ] as const
+        { name: 'Home', url: `${businessInfo.siteUrl}/` },
+        { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
+        {
+          name: project.name,
+          url: `${businessInfo.siteUrl}/gallery/${project.slug}/`,
+        },
+      ] as const
 
   return (
     <>
@@ -174,13 +144,9 @@ export default async function ProjectPage({
       />
       <section className="et-hero">
         <div className="et-container">
-          <Breadcrumbs items={breadcrumbs} />
           <div className="et-hero-grid">
             {beforeImage ? (
-              <div
-                className="et-grid et-grid-2"
-                style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }}
-              >
+              <div className="et-grid et-grid-2">
                 <figure className="et-stack-tight" style={{ margin: 0 }}>
                   <div className="et-hero-media">
                     <Image
@@ -188,7 +154,7 @@ export default async function ProjectPage({
                       alt={leadImage.alt}
                       width={leadImage.width}
                       height={leadImage.height}
-                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 48vw"
+                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 100vw"
                       priority
                     />
                   </div>
@@ -201,7 +167,7 @@ export default async function ProjectPage({
                       alt={beforeImage.alt}
                       width={beforeImage.width}
                       height={beforeImage.height}
-                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 48vw"
+                      sizes="(min-width: 1360px) 326px, (min-width: 1024px) 25vw, 100vw"
                     />
                   </div>
                   <figcaption className="et-caption">
@@ -224,10 +190,14 @@ export default async function ProjectPage({
               </div>
             )}
             <div className="et-stack">
-              {/* The "← All projects" link that used to sit here is now the
-                  "Our Work" step of the breadcrumb trail above (D-180). Two
-                  ways back to the same index is the duplication D-174 forbids,
-                  and it also freed a scored <p> from the readability gate. */}
+              <p className="et-body-sm">
+                <Link href="/gallery/" className="et-link">
+                  ← All projects
+                </Link>
+              </p>
+              <span className="et-eyebrow">
+                {project.suburb} · {project.service}
+              </span>
               <p className="et-caption">Completed by {project.completedByYear}</p>
               <h1 className="et-h1 et-measure-tight">{project.name}</h1>
               <p className="et-lead et-measure">{project.blurb}</p>
@@ -252,16 +222,6 @@ export default async function ProjectPage({
                   ) : null}
                 </div>
               ) : null}
-              {/* D-182: proof and the next step in the hero of every project page. */}
-              <div className="et-hero-cta">
-                <Link
-                  href="/contact-us/"
-                  className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-                >
-                  {businessInfo.offer.primaryCta}
-                </Link>
-              </div>
-              <GoogleRating compact />
             </div>
           </div>
         </div>
@@ -270,7 +230,10 @@ export default async function ProjectPage({
       {project.story ? (
         <section className="et-section et-band-surface">
           <div className="et-container et-stack">
-            <h2 className="et-h2 et-measure-tight">Scope and key details</h2>
+            <h2 className="et-h2 et-measure-tight">
+              How {/^the\s/i.test(project.suburb) ? '' : 'the '}
+              {project.suburb} {project.service.toLowerCase()} came together
+            </h2>
             <p className="et-lead et-measure">{project.story}</p>
           </div>
         </section>
@@ -307,22 +270,19 @@ export default async function ProjectPage({
           <h2 className="et-h2 et-measure-tight">
             What goes into each renovation.
           </h2>
-          <ul className="et-facts et-facts-grid" style={{ marginTop: 'var(--et-space-6)' }}>
-            <li className="et-fact">
-              <strong>Waterproofing</strong>{' '}
-              {businessInfo.standards.waterproofingDated} - primer plus two
-              coats, certificate included
+          <ul className="et-checklist" style={{ marginTop: 'var(--et-space-6)' }}>
+            <li className="et-body-sm">
+              Waterproofing to {businessInfo.standards.waterproofingDated} -
+              primer plus two coats, certificate included
             </li>
-            <li className="et-fact">
-              <strong>Quote</strong> Fixed-scope, written, after a free on-site
-              measure
+            <li className="et-body-sm">
+              Fixed-scope written quote after a free on-site measure
             </li>
-            <li className="et-fact">
-              <strong>{businessInfo.workmanshipWarrantyYears}-year</strong>{' '}
-              workmanship warranty
+            <li className="et-body-sm">
+              {businessInfo.workmanshipWarrantyYears}-year workmanship warranty
             </li>
-            <li className="et-fact">
-              <strong>NSW Builder Licence</strong> {businessInfo.builderLicence}
+            <li className="et-body-sm">
+              NSW Builder Licence {businessInfo.builderLicence}
             </li>
           </ul>
           <p className="et-body-sm">
@@ -344,18 +304,23 @@ export default async function ProjectPage({
             measure.
           </p>
 
-          {/* Three links as ruled rows, not three cards (D-182): they are destinations, not content. */}
-          <ul className="et-link-rows">
-            <li>
-              <Link href={serviceHref} className="et-h4 et-link">
+          <div
+            className="et-grid et-grid-3"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
+            <Link
+              href={serviceHref}
+              className="et-card et-card-link"
+            >
+              <h3 className="et-h4">
                 {projectSuburb
                   ? `Bathroom renovations in ${projectSuburb.name}`
                   : 'Bathroom renovations'}
-              </Link>
+              </h3>
               <p
                 className="et-body-sm"
                 style={{
-                  marginTop: 'var(--et-space-2)',
+                  marginTop: 'var(--et-space-3)',
                   color: 'var(--et-text-secondary)',
                 }}
               >
@@ -363,61 +328,80 @@ export default async function ProjectPage({
                   ? `See the local service, process, package guidance and how to book a free on-site measure in ${projectSuburb.name}.`
                   : 'See how we strip out, waterproof, tile and fit off bathrooms across Sydney.'}
               </p>
-            </li>
-            <li>
-              <Link href="/packages/" className="et-h4 et-link">
-                Packages and pricing
-              </Link>
+            </Link>
+
+            <Link href="/packages/" className="et-card et-card-link">
+              <h3 className="et-h4">Packages and pricing</h3>
               <p
                 className="et-body-sm"
                 style={{
-                  marginTop: 'var(--et-space-2)',
+                  marginTop: 'var(--et-space-3)',
                   color: 'var(--et-text-secondary)',
                 }}
               >
                 Compare Basic, Standard and Premium package scopes before the
                 on-site measure.
               </p>
-            </li>
+            </Link>
+
             {projectRegion && (
-              <li>
-                <Link href={`${projectRegion.hubUrl}/`} className="et-h4 et-link">
-                  {projectRegion.name}
-                </Link>
+              <Link
+                href={`${projectRegion.hubUrl}/`}
+                className="et-card et-card-link"
+              >
+                <h3 className="et-h4">{projectRegion.name}</h3>
                 <p
                   className="et-body-sm"
                   style={{
-                    marginTop: 'var(--et-space-2)',
+                    marginTop: 'var(--et-space-3)',
                     color: 'var(--et-text-secondary)',
                   }}
                 >
                   See bathroom renovation projects and service coverage for
                   this area.
                 </p>
-              </li>
+              </Link>
             )}
-          </ul>
+          </div>
         </div>
       </section>
 
       <section className="et-section et-band-surface">
         <div className="et-container et-stack">
           <h2 className="et-h2 et-measure-tight">More project photos</h2>
-          <div className="et-tiles">
-            {others.slice(0, 6).map((item) => (
-              <ProjectTile key={item.slug} item={item} />
+          <div
+            className="et-grid et-grid-4"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
+            {others.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/gallery/${item.slug}/`}
+                className="et-card et-card-link et-media-card"
+              >
+                <span className="et-media-frame">
+                  <Image
+                    src={item.images[0].src}
+                    alt={item.images[0].alt}
+                    width={item.images[0].width}
+                    height={item.images[0].height}
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    loading="lazy"
+                  />
+                </span>
+                <span className="et-badge-suburb">{item.suburb}</span>
+                {/* Short room-type label, not the full project name — the
+                    suburb badge above already carries the location, and
+                    repeating "renovation" ten times on this grid alone was
+                    the single biggest drag on this page's readability score
+                    (docs/CONTENT_QUALITY_CHECKLIST.md §2). The full name is
+                    still the page title and H1 one click away. */}
+                <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
+                  {item.service.replace(/ renovation$/i, '')}
+                </h3>
+              </Link>
             ))}
           </div>
-          {others.length > 6 && (
-            <details className="et-more">
-              <summary>Show {others.length - 6} more projects</summary>
-              <div className="et-tiles">
-                {others.slice(6).map((item) => (
-                  <ProjectTile key={item.slug} item={item} />
-                ))}
-              </div>
-            </details>
-          )}
         </div>
       </section>
 

@@ -7,8 +7,6 @@ import { projects, projectCover } from '@/lib/projects'
 import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
-import { GoogleRating } from '@/components/GoogleRating'
 
 /**
  * Gallery / our work.
@@ -46,15 +44,35 @@ export const metadata: Metadata = buildMetadata({
     'Photos of bathroom renovations Elite Touch Renovations has completed across Sydney, from Artarmon and Balmain to Hunters Hill, Randwick and The Rocks.',
 })
 
+/**
+ * Documented projects with no photography supplied. Kept as text so the work is
+ * still represented. Do NOT attach any of the gallery photos to these — there
+ * is no confirmed evidence linking them (D-06).
+ *
+ * ⚠️ 2026-08-25: a photographed Hunters Hill and a photographed The Rocks
+ * project were added to `lib/projects.ts` (slugs `hunters-hill-bathroom`,
+ * `the-rocks-bathroom`) from a separate source. Both closely match the
+ * descriptions below — same suburb, same distinctive features (the Hunters
+ * Hill entry's marble/double-vanity/freestanding-bath; The Rocks entry's
+ * protected heritage window). They MAY be the same jobs as these two text
+ * entries, now with photos. Asked directly, the user did not know either way
+ * (see PROJECT_CONTEXT.md K14), so per D-06/D-69 they are kept as separate,
+ * unmerged entries rather than assumed identical.
+ */
+const TEXT_ONLY_PROJECTS = [
+  {
+    name: 'Heritage bathroom, The Rocks',
+    body: 'A bathroom in a 19th-century terrace, worked around an original timber-framed window that had to stay. Heritage fabric sets the constraints on a job like this - the waterproofing and the setout have to be planned around what cannot be moved.',
+  },
+  {
+    name: 'Marble bathroom, Hunters Hill',
+    body: 'Full-height marble, a custom double vanity and a freestanding bath. Large-format natural stone is unforgiving: the falls, the joints and the cuts all have to be right the first time, because there is no hiding a correction in marble.',
+  },
+] as const
+
 export default function GalleryPage() {
   const featuredProject = projects[0]
   const featuredCover = projectCover(featuredProject)
-
-  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
-  const breadcrumbs = [
-    { name: 'Home', url: `${businessInfo.siteUrl}/` },
-    { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
-  ] as const
 
   return (
     <>
@@ -63,12 +81,14 @@ export default function GalleryPage() {
         name="Bathroom Renovation Photos, Sydney"
         description="Photos of bathroom renovations Elite Touch Renovations has completed across Sydney, from Artarmon and Balmain to Hunters Hill, Randwick and The Rocks."
         pageType="CollectionPage"
-        breadcrumbs={breadcrumbs}
+        breadcrumbs={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'Our Work', url: `${businessInfo.siteUrl}/gallery/` },
+        ]}
         primaryImage={projectCover(projects[0])}
       />
       <section className="et-hero">
         <div className="et-container">
-          <Breadcrumbs items={breadcrumbs} />
           <div className="et-hero-grid">
             <Link
               href={`/gallery/${featuredProject.slug}/`}
@@ -85,6 +105,9 @@ export default function GalleryPage() {
               />
             </Link>
             <div className="et-stack">
+              <span className="et-eyebrow">
+                {featuredProject.suburb} · {featuredProject.service}
+              </span>
               <h1 className="et-h1 et-measure-tight">
                 Bathroom renovations we have completed across Sydney.
               </h1>
@@ -92,24 +115,6 @@ export default function GalleryPage() {
                 Real photographs from Artarmon, Balmain, Little Bay and The
                 Rocks. Each room has its own layout, materials and constraints.
               </p>
-              {/* D-182 (D-174 applied): the proof and the next step sit in the hero, not only at the
-                  bottom of a long grid. */}
-              <div className="et-hero-cta">
-                <Link
-                  href="/contact-us/"
-                  className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-                >
-                  {businessInfo.offer.primaryCta}
-                </Link>
-                {/* Real tel: anchor, never a JS handler (D-33) */}
-                <a
-                  href={businessInfo.phone.href}
-                  className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
-                >
-                  Call {businessInfo.phone.display}
-                </a>
-              </div>
-              <GoogleRating compact />
               <Link
                 href={`/gallery/${featuredProject.slug}/`}
                 className="et-body-sm et-link"
@@ -128,7 +133,10 @@ export default function GalleryPage() {
             {projects.length - 1} more photographed projects
           </h2>
 
-          <div className="et-tiles">
+          <div
+            className="et-grid et-grid-3"
+            style={{ marginTop: 'var(--et-space-8)' }}
+          >
             {projects.slice(1).map((project) => {
               const cover = projectCover(project)
               return (
@@ -146,7 +154,7 @@ export default function GalleryPage() {
                       /* Measured rendered width live (Playwright, issue #27):
                          390→310, 768→664, 1024+→344 (3-col grid caps at
                          the 1200px container, doesn't keep growing). */
-                      sizes="(min-width: 1024px) 344px, 50vw"
+                      sizes="(min-width: 1024px) 344px, (min-width: 768px) 664px, 100vw"
                       loading="lazy"
                     />
                   </span>
@@ -154,9 +162,8 @@ export default function GalleryPage() {
                   <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
                     {project.name}
                   </h3>
-                  {/* Two lines on screen; the whole sentence stays in the HTML. */}
                   <p
-                    className="et-body-sm et-tile-blurb"
+                    className="et-body-sm"
                     style={{
                       marginTop: 'var(--et-space-3)',
                       color: 'var(--et-text-secondary)',
@@ -186,6 +193,41 @@ export default function GalleryPage() {
         intro="The gallery shows real projects by suburb. The area pages explain where we work across Sydney and link the project proof to the service coverage."
         band="surface"
       />
+      <section className="et-section et-band-canvas">
+        <div className="et-container et-stack">
+          <h2 className="et-h2 et-measure-tight">
+            Two more projects worth describing
+          </h2>
+          <p className="et-lead et-measure">
+            We do not have photography cleared for these two yet, but the work
+            is worth explaining.
+          </p>
+
+          <div className="et-stack" style={{ marginTop: 'var(--et-space-8)' }}>
+            {TEXT_ONLY_PROJECTS.map((project) => (
+              <article
+                key={project.name}
+                style={{
+                  borderTop: '1px solid var(--et-border)',
+                  paddingBlock: 'var(--et-space-6)',
+                }}
+              >
+                <h3 className="et-h4">{project.name}</h3>
+                <p
+                  className="et-body-sm"
+                  style={{
+                    marginTop: 'var(--et-space-4)',
+                    color: 'var(--et-text-secondary)',
+                  }}
+                >
+                  {project.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <ContactSection />
     </>
   )

@@ -3,13 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { businessInfo } from '@/lib/businessInfo'
 import { buildMetadata } from '@/lib/metadata'
-import { formatReviewBody, reviewByAuthor, reviews } from '@/lib/reviews'
+import { formatReviewBody, reviews } from '@/lib/reviews'
 import { ContactSection } from '@/components/ContactSection'
 import { WorkStrip } from '@/components/WorkStrip'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { ExternalLink } from '@/components/ExternalLink'
 import { projects } from '@/lib/projects'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
 
 /**
  * About us.
@@ -35,21 +34,8 @@ export const metadata: Metadata = buildMetadata({
 
 const heroProject = projects.find((p) => p.slug === 'artarmon-bathroom')!
 const heroImage = heroProject.images[2]
-const featuredReviews = [
-  reviewByAuthor('Simon Andrews'),
-  reviewByAuthor('Luke Saukilai'),
-  reviewByAuthor('Kieran C'),
-]
-const featuredReviewAuthors = new Set(featuredReviews.map((review) => review.author))
-const otherReviews = reviews.filter((review) => !featuredReviewAuthors.has(review.author))
 
 export default function AboutPage() {
-  /* One array, two consumers: the visible trail and the BreadcrumbList (D-180). */
-  const breadcrumbs = [
-    { name: 'Home', url: `${businessInfo.siteUrl}/` },
-    { name: 'About Us', url: `${businessInfo.siteUrl}/about-us/` },
-  ] as const
-
   return (
     <>
       <SchemaGraph
@@ -57,11 +43,13 @@ export default function AboutPage() {
         name="About Us"
         description="Elite Touch Renovations is a family-run Sydney bathroom renovation business, founded in 2022 by the Dawood family. NSW Builder Licence 475204C."
         pageType="AboutPage"
-        breadcrumbs={breadcrumbs}
+        breadcrumbs={[
+          { name: 'Home', url: `${businessInfo.siteUrl}/` },
+          { name: 'About Us', url: `${businessInfo.siteUrl}/about-us/` },
+        ]}
       />
       <section className="et-hero">
         <div className="et-container">
-          <Breadcrumbs items={breadcrumbs} />
           <div className="et-hero-grid">
             <div className="et-stack">
               <div className="et-hero-media">
@@ -190,9 +178,8 @@ export default function AboutPage() {
             >
               <dt className="et-h4">Quoting</dt>
               <dd className="et-body-sm" style={{ marginInlineStart: 0 }}>
-                After a free on-site measure, we write the scope. The quote
-                shows what is included and what is not. You decide after you
-                see it.
+                After a free on-site measure, we write the scope. You see what
+                is included and what is not before you commit.
               </dd>
             </div>
           </dl>
@@ -209,12 +196,11 @@ export default function AboutPage() {
                 Licences, insurance and protections
               </h3>
               <p className="et-body-sm et-measure">
-                The law and the{' '}
+                NSW bathroom work must meet the law and the{' '}
                 <ExternalLink href={businessInfo.authorities.nccWetAreas}>
                   National Construction Code
                 </ExternalLink>
-                {' '}set the rules for bathroom work in NSW. Our builder licence
-                and insurance are in place.
+                . We meet the rules for licences and insurance.
               </p>
             </div>
 
@@ -395,7 +381,7 @@ export default function AboutPage() {
           </p>
 
           <div className="et-grid et-grid-2">
-            {featuredReviews.map((review) => (
+            {reviews.map((review) => (
               <figure
                 key={review.author}
                 style={{
@@ -414,34 +400,6 @@ export default function AboutPage() {
               </figure>
             ))}
           </div>
-          <details className="et-faq-item">
-            <summary className="et-faq-question">
-              <span>Read the other {otherReviews.length} customer reviews</span>
-            </summary>
-            <div
-              className="et-grid et-grid-2"
-              style={{ paddingBlock: 'var(--et-space-4)' }}
-            >
-              {otherReviews.map((review) => (
-                <figure
-                  key={review.author}
-                  style={{
-                    borderTop: '1px solid var(--et-border)',
-                    paddingBlock: 'var(--et-space-6)',
-                  }}
-                >
-                  <blockquote className="et-quote et-measure">
-                    {formatReviewBody(review.body).split('\n\n').map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
-                    ))}
-                  </blockquote>
-                  <figcaption className="et-quote-author">
-                    By {review.author}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </details>
         </div>
       </section>
 
