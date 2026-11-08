@@ -1,0 +1,379 @@
+{
+  "capturedAt": "2026-11-08T06:23:01.074Z",
+  "revision": "1e14bbdaed56f7c4e7bf71a148fe80b912a00b1b",
+  "baseUrl": "http://127.0.0.1:3350",
+  "method": "Capture 390x844 first views after visible hero image decode; scroll each representative route to trigger reveals and lazy images, decode all images, reset to top, then capture mobile and desktop full pages and 1440x900 first views.",
+  "routeCount": 16,
+  "representativeRoutes": [
+    "/services/",
+    "/services/bathroom-renovations/",
+    "/services/bathroom-renovations/hills-district/",
+    "/services/bathroom-renovations/baulkham-hills/"
+  ],
+  "results": [
+    {
+      "route": "/services/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovation services across Sydney."
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services-390-top.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopViewport": {
+        "width": 1440,
+        "height": 900,
+        "scrollX": 0,
+        "scrollY": 0,
+        "documentWidth": 1440,
+        "screenshot": "services-1440-viewport.png"
+      },
+      "desktopFullScreenshot": "services-1440-full.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom Renovations Sydney"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations-390-top.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopViewport": {
+        "width": 1440,
+        "height": 900,
+        "scrollX": 0,
+        "scrollY": 0,
+        "documentWidth": 1440,
+        "screenshot": "services_bathroom-renovations-1440-viewport.png"
+      },
+      "desktopFullScreenshot": "services_bathroom-renovations-1440-full.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/baulkham-hills/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations in Baulkham Hills"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_baulkham-hills-390-top.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopViewport": {
+        "width": 1440,
+        "height": 900,
+        "scrollX": 0,
+        "scrollY": 0,
+        "documentWidth": 1440,
+        "screenshot": "services_bathroom-renovations_baulkham-hills-1440-viewport.png"
+      },
+      "desktopFullScreenshot": "services_bathroom-renovations_baulkham-hills-1440-full.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/castle-hill/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations in Castle Hill"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_castle-hill-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/eastern-suburbs/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's Eastern Suburbs"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_eastern-suburbs-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/hills-district/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's Hills District"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_hills-district-390-top.png",
+      "statusDesktop": 200,
+      "overflow1440": false,
+      "desktopViewport": {
+        "width": 1440,
+        "height": 900,
+        "scrollX": 0,
+        "scrollY": 0,
+        "documentWidth": 1440,
+        "screenshot": "services_bathroom-renovations_hills-district-1440-viewport.png"
+      },
+      "desktopFullScreenshot": "services_bathroom-renovations_hills-district-1440-full.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/inner-west/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's Inner West"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_inner-west-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/kellyville/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations in Kellyville"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_kellyville-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/marrickville/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations in Marrickville"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_marrickville-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/north-shore/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations across Sydney's North Shore"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_north-shore-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/north-western-sydney/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations across North-Western Sydney"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_north-western-sydney-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/randwick/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations in Randwick"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_randwick-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/ryde/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom renovations in Ryde"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_bathroom-renovations_ryde-390-top.png"
+    },
+    {
+      "route": "/services/ensuite-bathroom-renovations/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Ensuite Renovations Sydney"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_ensuite-bathroom-renovations-390-top.png"
+    },
+    {
+      "route": "/services/laundry-renovations/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Bathroom and Laundry Renovations Sydney"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_laundry-renovations-390-top.png"
+    },
+    {
+      "route": "/services/powder-room-renovations/",
+      "status": 200,
+      "h1Count": 1,
+      "h1": [
+        "Powder Room Renovations Sydney"
+      ],
+      "hasDistinctiveH2": true,
+      "hasTel": true,
+      "overflow390": false,
+      "scrollY": 0,
+      "header": {
+        "top": 0,
+        "bottom": 114,
+        "height": 114,
+        "visible": true
+      },
+      "heroImageDecoded": true,
+      "screenshot390": "services_powder-room-renovations-390-top.png"
+    }
+  ]
+}
