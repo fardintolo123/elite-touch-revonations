@@ -4,8 +4,9 @@
 `docs/CONTENT_QUALITY_CHECKLIST.md` §2 says it measures, and the guides answer in their first two
 sentences more often than 9 times in 80.
 
-**Status (2026-11-05):** R1 and R2 were implemented by a concurrent session and are sitting
-uncommitted in this tree — they are **not** queued work and must not be issued. Only **R3** remains.
+**Status (2026-11-08):** R1 and R2 are **done, committed and verified** — `npm run check:readability`
+now reports **116/116 pages ≥ 60** against a green 122-page build, with `/blog/` passing. Only **R3**
+remains, tracked as issue #91.
 
 ---
 
@@ -41,29 +42,35 @@ here must be checked against the scored **word count**, not just the resulting s
 ## Checklist
 
 - [x] **R1** — `scripts/check-readability.mjs`: stop scoring heading and UI-label text as prose.
-      **Done by a concurrent session, uncommitted as at 2026-11-05.** It strips `<h1>`–`<h6>` and any
-      paragraph matching `N min read` before blocks are selected, keeping the description paragraph
-      inside its `<li>`. No issue — already implemented.
-- [x] **R2** — `lib/blog.ts`: rewrite the dense guide descriptions. **Done by the same concurrent
-      session, uncommitted.** All 80 `description` strings rewritten shorter and plainer (e.g.
-      *"See how room size, layout changes, tile coverage, fittings and site conditions can change a
-      bathroom renovation quote in Sydney."* → *"Room size, layout, tiles, fittings and site
-      conditions all shape a Sydney bathroom quote."*). No issue — already implemented.
+      **Done and committed by a concurrent session.** It strips `<h1>`–`<h6>` and any paragraph
+      matching `N min read` before blocks are selected, keeping the description paragraph inside its
+      `<li>` so no real prose is dropped. No issue was opened — it was already implemented.
+- [x] **R2** — `lib/blog.ts`: rewrite the dense guide descriptions. **Done and committed by the same
+      session.** All 80 `description` strings rewritten shorter and plainer (e.g. *"See how room size,
+      layout changes, tile coverage, fittings and site conditions can change a bathroom renovation
+      quote in Sydney."* → *"Room size, layout, tiles, fittings and site conditions all shape a Sydney
+      bathroom quote."*). No issue was opened — it was already implemented.
 - [ ] **R3** — `lib/blog.ts`: extend the quick-answer block beyond 9 of 80 guides → **issue #91**
-      (blocked until the uncommitted R2 work in `lib/blog.ts` is committed)
+      (unblocked as at 2026-11-08 — the R2 work it waited on is committed)
 
 ## Sequencing
 
-R1 and R2 are in the working tree and need committing by whoever owns that session, not re-doing.
-R3 edits `lib/blog.ts`, the same file R2 is mid-edit on, so **R3 cannot start until that work is
-committed**. Issue #77 separately owns the blog template files (`app/blog/page.tsx`,
-`app/blog/blog.module.css`, `app/blog/[slug]/page.tsx`); R3 must not touch them.
+R1 and R2 are committed, so **R3 (issue #91) is unblocked** and owns `lib/blog.ts` on its own.
+Issue #77 separately owns the blog template files (`app/blog/page.tsx`, `app/blog/blog.module.css`,
+`app/blog/[slug]/page.tsx`); #91 must not touch them.
 
 ```
-R1 (scripts/)  ── done, uncommitted ─┐
-R2 (lib/blog.ts) ── done, uncommitted ─┴─► R3 (lib/blog.ts)
+R1 (scripts/)    ── done, committed ─┐
+R2 (lib/blog.ts) ── done, committed ─┴─► R3 (lib/blog.ts) = issue #91, ready
 #77 (app/blog/**) runs independently
 ```
+
+## Outcome
+
+The readability half of this plan is closed: `/blog/` went from **53.2 (fail)** to passing, and the
+whole site reports 116/116 on a green 122-page build. The remaining work is signal 1 from the audit,
+not readability. Delete this plan once #91 closes, keeping the word-count lesson above if it is still
+useful.
 
 ## Out of scope
 
