@@ -164,3 +164,47 @@ None.
 4. O-13 (`/contact-us/` Cloudflare challenge) still needs the owner's hosting dashboard.
 5. Remaining 4EP gaps if wanted: a `/faq` hub, an `/areas-we-serve` hub, social share on guides,
    an editorial-policy page.
+
+---
+
+## Addendum — independent critique and fixes, 2026-11-08
+
+The `vision-auditor` critique that was outstanding when this handoff was written has now run.
+A first attempt stalled (no progress for 600s) because the brief asked it to curl a running
+server and read large docs; a leaner screenshot-and-code-only brief completed in 43 seconds.
+Worth remembering: give a critique subagent the rendered evidence and the component, not a
+research task.
+
+**Verdict: no P0/P1.** Two P2s, both fixed in `app/globals.css`:
+
+1. **Orphaned separator on a wrapped trail.** The "/" was a `::before` on each following crumb,
+   so when a five-level trail wrapped at 390 the second line opened with a slash and read as a
+   rendering fault. It is now an `::after` on the preceding crumb, so a wrapped line always
+   starts with a place name.
+2. **Deep and long trails cost two lines on a phone.** Below 640px the trail now hides its middle
+   steps — root plus the last two — and the final crumb shrinks with `text-overflow: ellipsis`.
+   A suburb page reads "Home / Hills District / Castle Hill"; a blog post shows its title
+   truncated. Both are one 27.6px line, measured, with no viewport overflow.
+
+Both changes are display-only. Every step stays in the DOM and in the `BreadcrumbList`, so the
+visible trail and the schema still agree — re-verified across 115 pages, 0 mismatches,
+0 duplicate nodes, 0 missing.
+
+The critique also flagged, correctly, that none of the saved screenshots showed the trail over a
+real photo on a `.et-hero-backdrop` at 1440, so that contrast case rests on the in-session check
+rather than a saved artefact.
+
+Gates after the fixes: build green (29 route groups), `check:design` PASS with no baseline
+change, `check:readability` **116/116** — the `/about-us/` failure noted in section 6 was fixed
+by whoever landed the `lib/businessInfo.ts` work, so that item is closed.
+
+Evidence added: `critique-fixed-390-location.jpg`, `critique-fixed-390-blog-post.jpg`.
+
+**Unrelated fix made in the same session:** `CLAUDE.md` had unresolved merge conflict markers
+(`<<<<<<< HEAD`, `=======`, `>>>>>>> 54bb2b8b`) committed at lines 39/76/77 by merge `257424a`.
+The "theirs" side was empty, so the resolution was to drop the three marker lines and keep the
+"Starting or syncing a session" section. Committed separately as `77fc791`.
+
+**Not verified this session:** production. Outbound HTTPS is blocked from this sandbox —
+`example.com` fails the same way — so the live site could not be re-checked. This is a sandbox
+limit, not evidence that the site is down.

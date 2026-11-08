@@ -1421,16 +1421,45 @@ svg {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-/* Separator is decorative: a CSS ::before is not in the accessibility tree, so
-   the nav reads as "Home, Services, ..." rather than "Home slash Services". */
-.et-breadcrumb > :not(:first-child)::before {
-  margin-right: var(--et-space-2);
+/* Separator is decorative: CSS generated content is not in the accessibility
+   tree, so the nav reads as "Home, Services, ..." not "Home slash Services".
+   It trails the PRECEDING crumb rather than leading the next one, so that when
+   a deep trail wraps, line two starts with a place name instead of an orphaned
+   "/" — which read as a rendering bug at 390 (independent critique, 2026-11-08). */
+.et-breadcrumb > :not(:last-child)::after {
+  margin-inline: var(--et-space-2);
   color: var(--et-text-muted);
   content: '/';
 }
 .et-breadcrumb-current {
   color: var(--et-text);
   font-weight: 600;
+}
+/* The last crumb is the page's own title, which on a blog post is a full
+   question ~55 characters long. On a phone that wrapped to three lines and
+   pushed the H1 down. Truncating is visual only: the full title stays in the
+   DOM and in the BreadcrumbList, so the trail and the schema still agree. */
+@media (max-width: 639px) {
+  /* Collapse the middle of a deep trail: keep the root and the last two steps,
+     so a five-level suburb page reads "Home / Hills District / Castle Hill" on
+     one line instead of wrapping to two. Shorter trails lose nothing — with
+     three items or fewer this selector matches none of them. The hidden steps
+     stay in the DOM and in the BreadcrumbList, and the header nav still reaches
+     every level. `wrap` is left on as a safety net rather than `nowrap`, which
+     would push a long crumb off-screen instead of onto a second line. */
+  .et-breadcrumb > :not(:first-child):not(:nth-last-child(-n + 2)) {
+    display: none;
+  }
+  /* `flex: 1 1 0` lets the title shrink into whatever space is left on the
+     first line instead of wrapping onto a second one; `min-width` keeps a few
+     characters visible so it never collapses to just the ellipsis. */
+  .et-breadcrumb-current {
+    flex: 1 1 0;
+    min-width: 6ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 /* On the pages that build their own hero markup the trail is a direct child of
    the container, immediately above a grid that has no top gap of its own. */
