@@ -54,10 +54,26 @@ export default function ContactPage() {
             Book a free bathroom renovation measure in Sydney.
           </h1>
           <p className="et-lead et-measure">
-            Tell us what is not working in the room. We will come out, measure
-            it and talk through the layout, fittings and scope at no cost. You
-            can then decide from a written quote that shows what is included,
-            what is not and what it costs.
+            Tell us what is not working in the room. We measure it for free,
+            then send a written quote that shows what is included, what is not
+            and what it costs.
+          </p>
+          {/* D-184 (D-174 applied): the call and the proof sit in the hero. They used to start about
+              a screen down, so the contact page showed neither on first load. */}
+          <div className="et-hero-cta">
+            {/* Real tel: anchor, never a JS click handler (D-33). */}
+            <a
+              href={businessInfo.phone.href}
+              className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
+            >
+              Call {businessInfo.phone.display}
+            </a>
+          </div>
+          <GoogleRating compact />
+          <p className="et-body-sm">
+            <a href="#send-details" className="et-link">
+              Or send us your details
+            </a>
           </p>
         </div>
       </section>
@@ -68,22 +84,11 @@ export default function ContactPage() {
             {/* ---- Contact routes that work today ---- */}
             <div className="et-stack">
               <h2 className="et-h2 et-measure-tight">Call or text us.</h2>
-              <p className="et-lead et-measure">
+              <p className="et-body-sm et-measure">
                 Our customers often mention quick replies by phone and SMS. If
                 you want to explain the room or ask whether your plans fit the
                 service, calling is the simplest place to start.
               </p>
-
-              {/* Real tel: anchor — D-33. Never a JS click handler. */}
-              <a
-                href={businessInfo.phone.href}
-                className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
-                style={{ alignSelf: 'flex-start' }}
-              >
-                Call {businessInfo.phone.display}
-              </a>
-
-              <GoogleRating />
 
               <div className="et-stack">
                 <h3 className="et-h4">What happens after you get in touch</h3>
@@ -150,20 +155,6 @@ export default function ContactPage() {
                   ))}
                 </ul>
               </div>
-
-              <ul className="et-facts">
-                <li className="et-fact">
-                  <strong>NSW Builder Licence</strong>{' '}
-                  {businessInfo.builderLicence}
-                </li>
-                <li className="et-fact">
-                  <strong>ABN</strong> {businessInfo.abn}
-                </li>
-                <li className="et-fact">
-                  <strong>Servicing</strong> {businessInfo.serviceArea.city},{' '}
-                  {businessInfo.serviceArea.state}
-                </li>
-              </ul>
             </div>
 
             {/* ---- Enquiry form ---- */}
@@ -179,6 +170,11 @@ export default function ContactPage() {
               >
                 We will call to learn about the room and arrange the measure.
               </p>
+              <span
+                id="send-details"
+                tabIndex={-1}
+                style={{ display: 'block', scrollMarginTop: '16rem' }}
+              />
               <EnquiryForm />
 
               {/* Privacy notice — issue #37 / content audit C-1. Server-rendered
