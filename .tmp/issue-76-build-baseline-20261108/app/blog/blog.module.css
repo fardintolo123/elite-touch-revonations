@@ -1,0 +1,144 @@
+.topicNavigation {
+  border-block: 1px solid var(--et-border);
+  padding-block: var(--et-space-5);
+}
+
+.topicLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--et-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topicLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: var(--et-space-3);
+  padding: var(--et-space-3) var(--et-space-4);
+  border: 1px solid var(--et-border);
+  border-radius: var(--et-radius-pill);
+  background: var(--et-surface);
+  color: var(--et-ink-500);
+  text-decoration: none;
+  transition:
+    background-color var(--et-duration-fast) var(--et-ease-standard),
+    border-color var(--et-duration-fast) var(--et-ease-standard),
+    color var(--et-duration-fast) var(--et-ease-standard);
+}
+
+.topicLink:hover {
+  border-color: var(--et-magenta-200);
+  background: var(--et-surface-accent);
+  color: var(--et-text-accent);
+}
+
+.topicCount,
+.articleTime {
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-caption);
+}
+
+.topicSections {
+  display: grid;
+  gap: var(--et-space-12);
+}
+
+.topicSection {
+  scroll-margin-top: var(--et-space-24);
+}
+
+.topicHeading {
+  margin: 0 0 var(--et-space-4);
+}
+
+.articleList {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--et-border);
+  list-style: none;
+}
+
+.articleItem {
+  min-width: 0;
+  padding-block: var(--et-space-6);
+  border-bottom: 1px solid var(--et-border);
+}
+
+.articleEntry {
+  display: grid;
+  gap: var(--et-space-3);
+}
+
+.articleTime,
+.articleDescription {
+  margin: 0;
+}
+
+.articleDescription {
+  color: var(--et-text-secondary);
+}
+
+.postNavigation {
+  display: flex;
+  min-height: 44px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--et-space-3);
+  margin-bottom: var(--et-space-8);
+  color: var(--et-text-secondary);
+  font-size: var(--et-text-sm);
+}
+
+.postNavigation a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.projectImageFirst :global(.et-hero-grid) > :first-child {
+  order: 2;
+}
+
+.projectImageFirst :global(.et-hero-grid) > :last-child {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  .projectImageFirst :global(.et-hero-grid) > :first-child {
+    order: 1;
+  }
+
+  .projectImageFirst :global(.et-hero-grid) > :last-child {
+    order: 2;
+  }
+}
+
+.articleContent {
+  max-width: 68ch;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .articleList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--et-space-10);
+  }
+}
+
+/* Author/publisher attribution at the foot of a post.
+   A top rule, not a third card — the post already ends with FAQ cards, and
+   stacking another card is the "same section composition repeated" pattern
+   docs/DISTINCTIVE_DESIGN_CHECKLIST.md §3 flags. */
+.postByline {
+  display: grid;
+  gap: var(--et-space-3);
+  margin-top: var(--et-space-10);
+  padding-top: var(--et-space-6);
+  border-top: 1px solid var(--et-border);
+  color: var(--et-text-secondary);
+}

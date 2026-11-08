@@ -1,0 +1,188 @@
+# SEO_CONTENT_GUIDE — content & SEO playbook
+
+The standing playbook for **any page, guide, case study or content task** on this site: what to
+create, what not to, and in what order.
+
+**How to invoke:** instead of a long brief, say *"write the Marrickville page per the SEO guide"* or
+*"draft the cost guide per the SEO guide"*. This file supplies the workflow, the decision rules and
+the guardrails.
+
+> This guide **routes and decides**. Exact readability and copy thresholds live in
+> [CONTENT_QUALITY_CHECKLIST.md](CONTENT_QUALITY_CHECKLIST.md); the per-page technical gate lives in
+> [SEO_AEO_GEO_CHECKLIST.md](SEO_AEO_GEO_CHECKLIST.md); which location pages exist at all is already
+> settled in [BATHROOM_SITE_STRUCTURE.md](BATHROOM_SITE_STRUCTURE.md). Read them; obey them over any
+> default.
+
+---
+
+## 1. Read first
+
+| For | Read |
+|---|---|
+| Business facts, services, package pricing | [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) |
+| What is already decided or rejected | [DECISIONS.md](../DECISIONS.md) |
+| Which suburb pages exist, routes, volumes, competitors | [BATHROOM_SITE_STRUCTURE.md](BATHROOM_SITE_STRUCTURE.md) |
+| Brand, colour, type, components | [DESIGN.md](../DESIGN.md) |
+| Real testimonials | [Customer Reviews.md](../Customer%20Reviews.md) |
+| Copy quality + readability rules | [CONTENT_QUALITY_CHECKLIST.md](CONTENT_QUALITY_CHECKLIST.md) |
+| Per-page ship gate | [SEO_AEO_GEO_CHECKLIST.md](SEO_AEO_GEO_CHECKLIST.md) |
+| Weight budgets (content adds weight too) | [PERFORMANCE_BUDGET.md](PERFORMANCE_BUDGET.md) |
+
+---
+
+## 2. Publishing priority
+
+The site exists to produce **bathroom renovation enquiries in Sydney**. Rank content by how directly
+it supports one:
+
+1. **The four service pages** — bathroom · ensuite · bathroom+laundry · powder room. Draft copy for
+   all four already exists on **issue #2**; start there rather than from scratch.
+2. **The "near me" target** — the home page / main service page. **1K–10K searches/month, the single
+   largest opportunity in the project** ([DECISIONS.md](../DECISIONS.md) D-12).
+3. **The approved Tier-1 suburb pages**, but publish only when `pagePublished` is backed by genuinely
+   local substance and the route/link/sitemap gates all agree. The data file may contain approved but
+   deliberately dormant Tier-1 records.
+4. **The five regional hubs**, keeping each differentiated and tied to real local proof.
+5. **Real case studies** — The Rocks, Hunters Hill, Artarmon. Real photos, real decisions, real
+   trades, real standards. These are the strongest asset the business has after the reviews, and the
+   thing competitors mostly fake or omit.
+6. **Cost/pricing and small-bathroom intent** — improve the existing packages/advice homes before
+   proposing another URL; both are GKP-confirmed at 100–1K.
+7. **The existing advice library** — improve buyer-support and design topics when Search Console
+   shows a page/query opportunity; do not reopen a new blog strategy or duplicate an intent the
+   library already owns.
+
+**Search volume alone never justifies a page.** Before approving a new topic, compare it against
+improving an existing service or suburb page, or documenting a real project. Choose whichever has the
+clearer line to an actual enquiry.
+
+---
+
+## 3. Rules that decide CREATE vs IMPROVE
+
+Assign exactly one status per page, with a one-line reason: **KEEP · IMPROVE · MERGE · DELETE ·
+REDIRECT · CREATE**.
+
+- **Check the page does not already exist first**, and that it is actually *published* — content **+**
+  an internal link from a hub **+** a sitemap entry. Default to **IMPROVE**, not CREATE.
+- **CREATE only when a specific, evidenced query has no existing home.** "Evidenced" normally means
+  volume data, not a competitor's page and not intuition. The owner-approved issue #58 exception
+  allows a first wave of six source-backed FindQuestions topics to be created without a GKP/Ahrefs
+  check. This exception is recorded in `DECISIONS.md` D-139 and does not automatically apply to
+  later reports.
+- **One term, one page.** Two pages targeting the same query compete with each other. The Tier-1 /
+  Tier-2 split exists precisely to prevent this at suburb level.
+- **Never build a page for a service we do not sell** — see [DECISIONS.md](../DECISIONS.md) D-01/D-02.
+- **MERGE / DELETE / REDIRECT need first-party evidence** (Search Console: one query returning two
+  URLs), never a tool's title-similarity guess.
+
+### High-intent keyword gate
+
+"Purchase intent" is a useful prioritisation signal, not permission to manufacture a landing page.
+Before treating a keyword as a new commercial-page opportunity, answer all five questions:
+
+1. **Service fit:** does the query map to one of the four confirmed renovation services? If not,
+   reject it or ask the owner about a genuine scope change.
+2. **Intent:** is the searcher choosing a renovator, comparing a quote/package, or looking for service
+   in a confirmed area? Generic inspiration and broad how-to traffic rank below these needs.
+3. **Existing home:** is there already a service, package, location, project or advice page that owns
+   the intent? If yes, **IMPROVE** that page; do not create a competing URL.
+4. **Evidence and proof:** is there first-party Search Console query-by-page evidence or credible
+   volume/difficulty data, and can the page contain real ETR proof? A keyword tool can show demand;
+   only real projects, photos, reviews and owner-approved facts can justify the page's substance.
+5. **Conversion path:** can the page lead naturally to a free on-site measure, tap-to-call action, or
+   the relevant commercial page, with calls/form submissions measurable in analytics?
+
+Create only when all five pass. Record the target query, intended page, evidence, proof source,
+primary CTA and measurement method before implementation. There is no ideal word count: write the
+shortest page that fully answers the decision and clears the quality/checklist gates.
+
+This is the useful part of the "Compact Keywords" framing (issue #65). It does **not** override the
+location-page gates, the evidence requirement, the four-service boundary, or the owner-approved
+issue-#58 exception in D-139.
+
+### Report intake — before actioning any third-party SEO tool output
+The sibling project triaged two external reports: between them, **19 recommendations produced 5 real
+fixes.** Acting on them as written would have deleted four healthy pages and manufactured
+cannibalisation. So:
+
+1. **Triage against the existing structure first.** Several "issues" are deliberate architecture.
+   Verify the report's concrete claims against current code and the live site; stale page counts,
+   contradictory tables and malformed brand queries invalidate the report's framing.
+2. **A gap report without volume + difficulty per item cannot normally justify CREATE.** Competitor presence
+   is not demand — it is a list of what another business chose to write about. A report that names
+   its sources and cites real question stems is **approved as directional research** for topic
+  generation and shortlist building. The owner has made a narrow exception for issue #58 D-139:
+  publish the six approved first-wave topics without GKP/Ahrefs data. This is not a standing green
+  light for every third-party report or every topic in the PDF. Locked metrics, repeated placeholders
+  such as "Niche", or labels without numeric/source evidence count as **no data**.
+3. **Require the competitor's real URL list**, not topics inferred from their body copy, and require
+   gaps in **both** directions. First confirm the named competitor is genuinely comparable—a
+   multi-trade builder is not valid demand evidence for a bathroom-only specialist. A report finding
+   zero gaps the other way is not credible.
+4. **A hub that summarises and links *down* to its spokes is correct, not duplication.**
+5. **Service scope is an owner question, never an SEO inference.**
+6. **Record the verdict** in `DECISIONS.md` with what new evidence would reopen it.
+7. **A GSC export's separate Query tab and Page tab do not prove a query caused that page's
+   performance.** Treat the two as correlation only unless you have an actual query-by-page export
+   (a real join, not two side-by-side screenshots). Without it, frame a finding as a hypothesis to
+   investigate, not a confirmed cause — this has nearly caused a false cannibalisation claim before.
+
+---
+
+## 4. What every page must contain
+
+- **Answer-first** — the direct answer in the first paragraph. No warm-up.
+- **A keyword-focused title and H1**, service + suburb where applicable.
+- **Clear H2/H3 structure**, short paragraphs, scannable.
+- **Concrete specifics over adjectives.** "Waterproofed to AS 3740, primer plus two coats,
+  certificate supplied" is worth more than any amount of "premium quality craftsmanship" — to
+  readers, to Google, and to AI engines deciding what to quote.
+- **Real proof** — a named testimonial from `Customer Reviews.md`, a real project, a real photo.
+- **Pricing guidance where relevant**, always with its size basis, always "firm after a free on-site
+  measure". Never invent a figure.
+- **Trust signals** — licence 475204C, AS 3740, family-run since 2022, fixed-scope written quote,
+  10-year workmanship warranty.
+- **An FAQ block** (4–6 real questions) and a clear CTA.
+- **Internal links** to the relevant hub, service and case-study pages.
+- **A real photo that shows the page's subject**, with alt text describing **the photograph**, never
+  the page topic. That drift is invisible to automated checks and, on a trade site, a caption claiming
+  work the photo does not show is a false claim.
+- Meets the [CONTENT_QUALITY_CHECKLIST.md](CONTENT_QUALITY_CHECKLIST.md) and the
+  [SEO_AEO_GEO_CHECKLIST.md](SEO_AEO_GEO_CHECKLIST.md).
+
+---
+
+## 5. Location pages — how not to make them thin
+
+The whole Tier-1 / Tier-2 design exists to avoid dozens of near-identical suburb pages. That only
+works if the six Tier-1 pages are genuinely different from each other. Each needs:
+
+- **A unique opening paragraph** naming the suburb — not a template with the name swapped.
+- **Something true about renovating *there*.** This is the bar ranking competitors actually clear:
+  heritage and Federation-era plumbing in Marrickville and Randwick, the "Garden Shire" character of
+  the Hills District, apartment and strata access constraints, older slab vs. timber-floor
+  substrates, parking and skip access on narrow terraces. **If nothing specific can be said truthfully
+  about a suburb, that is a signal the page should not exist.**
+- **A local project photo or testimonial** where one genuinely exists — and **nothing labelled with a
+  suburb we cannot evidence** ([DECISIONS.md](../DECISIONS.md) D-06).
+- **A link up to its regional hub**; hubs link back down.
+
+**Marrickville is the identified soft spot** — content-mill pages currently rank there. Specific,
+authoritative content has a real chance.
+
+---
+
+## 6. Standing guardrails — never violated by content work
+
+- **No invented facts.** No fabricated reviews, testimonials, case studies, project locations,
+  before/after pairs, prices, credentials, team sizes, or years in business.
+- **The 19 testimonials are the only permitted review copy**, verbatim and attributed as written.
+- **Only the four services** — see D-01. Waterproofing is a process claim, not a product.
+- **Prices always carry their size basis**, and "starts from" is never shortened to a flat price.
+- **Competitor sites are a layout reference only** — never a source of copy, specifications or
+  claims (D-05). Issue #1's *"same info, just change the photos"* means **structure**, not words.
+- **Content must not cost speed.** Every page adds images and markup on a site whose LCP will be a
+  photo. Reuse the image component with a measured `sizes`; never add a third-party embed, widget or
+  animation library to a content page. See [PERFORMANCE_BUDGET.md](PERFORMANCE_BUDGET.md).
+- **Do not push or deploy without explicit owner sign-off.**

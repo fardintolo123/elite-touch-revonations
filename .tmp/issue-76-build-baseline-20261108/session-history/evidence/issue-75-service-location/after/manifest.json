@@ -1,0 +1,600 @@
+{
+  "baseUrl": "http://127.0.0.1:34276",
+  "routeCount": 16,
+  "hubCount": 5,
+  "suburbCount": 6,
+  "results": [
+    {
+      "route": "/services/",
+      "status": 200,
+      "title": "Bathroom Renovations Across Sydney | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovation services across Sydney."
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "Bathroom Renovations",
+        "Ensuite Renovations",
+        "Bathroom + Laundry Renovations",
+        "Powder Room Renovations",
+        "Bathroom renovations by Sydney area",
+        "Recent work",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": null,
+        "imageAlt": null,
+        "imageWidth": null,
+        "copyHeading": "Book a free on-site measure"
+      },
+      "topScreenshot": "services-390-top.png",
+      "mobileFull": {
+        "path": "services-390-full.png",
+        "imageStatus": {
+          "imageCount": 6,
+          "unresolved": []
+        }
+      },
+      "desktopFull": {
+        "path": "services-1440-full.png",
+        "imageStatus": {
+          "imageCount": 6,
+          "unresolved": []
+        }
+      }
+    },
+    {
+      "route": "/services/bathroom-renovations/",
+      "status": 200,
+      "title": "Bathroom Renovations Sydney | Elite Touch Renovations",
+      "h1": [
+        "Bathroom Renovations Sydney"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What does a full bathroom renovation solve?",
+        "Bathrooms we have finished",
+        "What does the written scope cover?",
+        "How long you will have us in the house.",
+        "Sydney areas with published project proof",
+        "Our other services",
+        "Frequently asked questions about bathroom renovations",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": null,
+        "imageAlt": null,
+        "imageWidth": null,
+        "copyHeading": "Book a free on-site measure"
+      },
+      "topScreenshot": "services_bathroom-renovations-390-top.png",
+      "mobileFull": {
+        "path": "services_bathroom-renovations-390-full.png",
+        "imageStatus": {
+          "imageCount": 6,
+          "unresolved": []
+        }
+      },
+      "desktopFull": {
+        "path": "services_bathroom-renovations-1440-full.png",
+        "imageStatus": {
+          "imageCount": 6,
+          "unresolved": []
+        }
+      }
+    },
+    {
+      "route": "/services/ensuite-bathroom-renovations/",
+      "status": 200,
+      "title": "Ensuite Renovations Sydney | Elite Touch Renovations",
+      "h1": [
+        "Ensuite Renovations Sydney"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "How do you make a small ensuite work?",
+        "Bathrooms we have finished",
+        "What does the written scope cover?",
+        "How long you will have us in the house.",
+        "Sydney areas with published project proof",
+        "Our other services",
+        "Frequently asked questions about ensuite renovations",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": null,
+        "imageAlt": null,
+        "imageWidth": null,
+        "copyHeading": "Book a free on-site measure"
+      },
+      "topScreenshot": "services_ensuite-bathroom-renovations-390-top.png"
+    },
+    {
+      "route": "/services/laundry-renovations/",
+      "status": 200,
+      "title": "Bathroom + Laundry Renovations | Elite Touch Renovations",
+      "h1": [
+        "Bathroom and Laundry Renovations Sydney"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "Why renovate the bathroom and laundry together?",
+        "What does the written scope cover?",
+        "Where do we plan bathroom and laundry renovations in Sydney?",
+        "Sydney areas with published project proof",
+        "Our other services",
+        "Frequently asked questions about bathroom + laundry renovations",
+        "Bathrooms we have finished",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": null,
+        "imageAlt": null,
+        "imageWidth": null,
+        "copyHeading": "Book a free on-site measure"
+      },
+      "topScreenshot": "services_laundry-renovations-390-top.png"
+    },
+    {
+      "route": "/services/powder-room-renovations/",
+      "status": 200,
+      "title": "Powder Room Renovations Sydney | Elite Touch Renovations",
+      "h1": [
+        "Powder Room Renovations Sydney"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What do toilet renovations in Sydney cover?",
+        "What does the written scope cover?",
+        "Sydney areas with published project proof",
+        "Our other services",
+        "Frequently asked questions about powder room renovations",
+        "Bathrooms we have finished",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": null,
+        "imageAlt": null,
+        "imageWidth": null,
+        "copyHeading": "Book a free on-site measure"
+      },
+      "topScreenshot": "services_powder-room-renovations-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/hills-district/",
+      "status": 200,
+      "title": "Hills District bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations across Sydney's Hills District"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a bathroom renovation in the Hills District costs and involves",
+        "Renovating a bathroom in the Hills District",
+        "Hills District suburbs we service",
+        "Other Sydney areas and packages",
+        "Hills District: common bathroom renovation questions",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fshower-toilet-heated-rail.webp&w=384&q=75",
+        "imageAlt": "Frameless glass shower with rain head and handheld rail beside a white close-coupled toilet and stainless steel ladder heated towel rail.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Renovating a bathroom in the Hills District"
+      },
+      "topScreenshot": "services_bathroom-renovations_hills-district-390-top.png",
+      "mobileFull": {
+        "path": "services_bathroom-renovations_hills-district-390-full.png",
+        "imageStatus": {
+          "imageCount": 4,
+          "unresolved": []
+        }
+      },
+      "desktopFull": {
+        "path": "services_bathroom-renovations_hills-district-1440-full.png",
+        "imageStatus": {
+          "imageCount": 4,
+          "unresolved": []
+        }
+      }
+    },
+    {
+      "route": "/services/bathroom-renovations/baulkham-hills/",
+      "status": 200,
+      "title": "Baulkham Hills bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations in Baulkham Hills"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a Baulkham Hills bathroom renovation costs and involves",
+        "Bathrooms in established Baulkham Hills homes",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Baulkham Hills bathroom renovation questions",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "rtl",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fshower-toilet-heated-rail.webp&w=640&q=75",
+        "imageAlt": "Frameless glass shower with rain head and handheld rail beside a white close-coupled toilet and stainless steel ladder heated towel rail.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Bathrooms in established Baulkham Hills homes"
+      },
+      "topScreenshot": "services_bathroom-renovations_baulkham-hills-390-top.png",
+      "mobileFull": {
+        "path": "services_bathroom-renovations_baulkham-hills-390-full.png",
+        "imageStatus": {
+          "imageCount": 4,
+          "unresolved": []
+        }
+      },
+      "desktopFull": {
+        "path": "services_bathroom-renovations_baulkham-hills-1440-full.png",
+        "imageStatus": {
+          "imageCount": 4,
+          "unresolved": []
+        }
+      }
+    },
+    {
+      "route": "/services/bathroom-renovations/castle-hill/",
+      "status": 200,
+      "title": "Castle Hill bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations in Castle Hill"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a Castle Hill bathroom renovation costs and involves",
+        "A Castle Hill bathroom project",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Castle Hill bathroom renovation questions",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fshower-toilet-heated-rail.webp&w=640&q=75",
+        "imageAlt": "Frameless glass shower with rain head and handheld rail beside a white close-coupled toilet and stainless steel ladder heated towel rail.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "A Castle Hill bathroom project"
+      },
+      "topScreenshot": "services_bathroom-renovations_castle-hill-390-top.png",
+      "mobileFull": {
+        "path": "services_bathroom-renovations_castle-hill-390-full.png",
+        "imageStatus": {
+          "imageCount": 4,
+          "unresolved": []
+        }
+      },
+      "desktopFull": {
+        "path": "services_bathroom-renovations_castle-hill-1440-full.png",
+        "imageStatus": {
+          "imageCount": 4,
+          "unresolved": []
+        }
+      }
+    },
+    {
+      "route": "/services/bathroom-renovations/kellyville/",
+      "status": 200,
+      "title": "Kellyville bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations in Kellyville"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a Kellyville bathroom renovation costs and involves",
+        "Bathroom layouts in newer estates near Kellyville",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Kellyville bathroom renovation questions",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "rtl",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fcastle-hill-bathroom%2Fshower-toilet-heated-rail.webp&w=640&q=75",
+        "imageAlt": "Frameless glass shower with rain head and handheld rail beside a white close-coupled toilet and stainless steel ladder heated towel rail.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Bathroom layouts in newer estates near Kellyville"
+      },
+      "topScreenshot": "services_bathroom-renovations_kellyville-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/inner-west/",
+      "status": 200,
+      "title": "Inner West bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations across Sydney's Inner West"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a bathroom renovation in the Inner West costs and involves",
+        "Renovating a bathroom in Sydney's Inner West",
+        "Inner West suburbs we service",
+        "Other Sydney areas and packages",
+        "Inner West: common bathroom renovation questions",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "rtl",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fbalmain-bathroom%2Fvanity-storage-cabinet.webp&w=384&q=75",
+        "imageAlt": "Dark timber tall storage cabinet beside a matching wall-hung vanity with a white top and chrome tap, a wall-hung toilet, and a window set into grey concrete-look wall tiles.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Renovating a bathroom in Sydney's Inner West"
+      },
+      "topScreenshot": "services_bathroom-renovations_inner-west-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/marrickville/",
+      "status": 200,
+      "title": "Marrickville bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations in Marrickville"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a Marrickville bathroom renovation costs and involves",
+        "Older plumbing and floors in Marrickville bathrooms",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Marrickville bathroom renovation questions",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fbalmain-bathroom%2Fvanity-storage-cabinet.webp&w=384&q=75",
+        "imageAlt": "Dark timber tall storage cabinet beside a matching wall-hung vanity with a white top and chrome tap, a wall-hung toilet, and a window set into grey concrete-look wall tiles.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Older plumbing and floors in Marrickville bathrooms"
+      },
+      "topScreenshot": "services_bathroom-renovations_marrickville-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/north-western-sydney/",
+      "status": 200,
+      "title": "North-West bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations across North-Western Sydney"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a bathroom renovation in North-Western Sydney costs and involves",
+        "Renovating a bathroom in North-Western Sydney",
+        "More completed work across North-Western Sydney",
+        "North-Western Sydney suburbs we service",
+        "Other Sydney areas and packages",
+        "North-Western Sydney: common bathroom renovation questions",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fgladesville-bathroom%2Fshower-niche-detail.webp&w=384&q=75",
+        "imageAlt": "Corner of a frameless glass shower with a chrome rail shower and handheld head, a recessed tiled niche holding a dark bottle, and white subway tile walls.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Renovating a bathroom in North-Western Sydney"
+      },
+      "topScreenshot": "services_bathroom-renovations_north-western-sydney-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/ryde/",
+      "status": 200,
+      "title": "Ryde bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations in Ryde"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a Ryde bathroom renovation costs and involves",
+        "The closest photographed bathroom project to Ryde",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Ryde bathroom renovation questions",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "rtl",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fgladesville-bathroom%2Fshower-niche-detail.webp&w=384&q=75",
+        "imageAlt": "Corner of a frameless glass shower with a chrome rail shower and handheld head, a recessed tiled niche holding a dark bottle, and white subway tile walls.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "The closest photographed bathroom project to Ryde"
+      },
+      "topScreenshot": "services_bathroom-renovations_ryde-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/eastern-suburbs/",
+      "status": 200,
+      "title": "Eastern Suburbs bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations across Sydney's Eastern Suburbs"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a bathroom renovation in the Eastern Suburbs costs and involves",
+        "Renovating a bathroom in the Eastern Suburbs",
+        "More completed work across the Eastern Suburbs",
+        "Eastern Suburbs suburbs we service",
+        "Other Sydney areas and packages",
+        "Eastern Suburbs: common bathroom renovation questions",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "rtl",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Ffreestanding-bath-vanity.webp&w=1920&q=75",
+        "imageAlt": "White freestanding bath with a matte black wall-mounted spout beneath an obscured-glass window, next to a timber-look wall-hung vanity with a white basin, black tap and a round LED backlit mirror.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Renovating a bathroom in the Eastern Suburbs"
+      },
+      "topScreenshot": "services_bathroom-renovations_eastern-suburbs-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/randwick/",
+      "status": 200,
+      "title": "Randwick bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations in Randwick"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a Randwick bathroom renovation costs and involves",
+        "Renovating a bathroom in Randwick",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Randwick bathroom renovation questions",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Frandwick-bathroom%2Ffreestanding-bath-vanity.webp&w=1920&q=75",
+        "imageAlt": "White freestanding bath with a matte black wall-mounted spout beneath an obscured-glass window, next to a timber-look wall-hung vanity with a white basin, black tap and a round LED backlit mirror.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Renovating a bathroom in Randwick"
+      },
+      "topScreenshot": "services_bathroom-renovations_randwick-390-top.png"
+    },
+    {
+      "route": "/services/bathroom-renovations/north-shore/",
+      "status": 200,
+      "title": "North Shore bathroom renovation | Elite Touch Renovations",
+      "h1": [
+        "Bathroom renovations across Sydney's North Shore"
+      ],
+      "mobileTapToCallVisible": true,
+      "phoneLinks": [
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334",
+        "tel:+61411752334"
+      ],
+      "h2": [
+        "What a bathroom renovation in the North Shore costs and involves",
+        "Renovating a bathroom on the North Shore",
+        "More completed work across the North Shore",
+        "North Shore suburbs we service",
+        "Other Sydney areas and packages",
+        "North Shore: common bathroom renovation questions",
+        "AS 3740 waterproofing, NSW licence 475204C and a 10-year warranty",
+        "Book a free on-site measure"
+      ],
+      "feature": {
+        "direction": "ltr",
+        "columns": "335.2px",
+        "image": "http://127.0.0.1:34276/_next/image/?url=%2Fimages%2Fprojects%2Fartarmon-bathroom%2Ffreestanding-bath-window.webp&w=384&q=75",
+        "imageAlt": "White freestanding oval bath beneath a long horizontal window, with a gold wall-mounted bath spout, beige stone-look floor and wall tiles, and a wall-hung toilet with timber shelves to the right.",
+        "imageWidth": 335.20001220703125,
+        "copyHeading": "Renovating a bathroom on the North Shore"
+      },
+      "topScreenshot": "services_bathroom-renovations_north-shore-390-top.png"
+    }
+  ]
+}
