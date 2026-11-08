@@ -2317,6 +2317,70 @@ form [role='status'] {
 }
 
 /* Project detail: asymmetric grid, first image full width */
+/* Gallery tiles (D-182): two across on a phone, three on desktop, so ten projects are not ten full-width
+   cards. The blurb shows two lines; the whole sentence stays in the HTML. */
+.et-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--et-space-4);
+  margin-top: var(--et-space-8);
+}
+@media (min-width: 1024px) {
+  .et-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--et-space-6);
+  }
+}
+@media (max-width: 767px) {
+  .et-tiles .et-media-card {
+    padding: var(--et-space-3);
+  }
+  .et-tiles .et-media-frame {
+    margin-bottom: var(--et-space-3);
+  }
+  .et-tiles .et-h4 {
+    font-size: var(--et-text-body);
+  }
+  .et-tiles .et-card-link .et-body-sm:last-child {
+    display: none;
+  }
+}
+/* Destinations as ruled rows, not cards or bullets (D-182). */
+.et-link-rows {
+  display: grid;
+  margin: var(--et-space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.et-link-rows > li {
+  padding-block: var(--et-space-5);
+  border-top: 1px solid var(--et-border);
+}
+.et-link-rows > li:last-child {
+  border-bottom: 1px solid var(--et-border);
+}
+/* Trust facts on project pages: body size, two across from tablet up, so nothing wraps on its own. */
+.et-facts-grid {
+  display: grid;
+  gap: var(--et-space-3) var(--et-space-8);
+}
+.et-facts-grid .et-fact {
+  font-size: var(--et-text-body);
+}
+@media (min-width: 768px) {
+  .et-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.et-tile-blurb {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.et-more > .et-tiles {
+  margin-top: var(--et-space-3);
+}
 .et-photo-grid {
   display: grid;
   gap: var(--et-space-5);

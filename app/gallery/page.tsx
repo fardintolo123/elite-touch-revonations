@@ -8,6 +8,7 @@ import { ContactSection } from '@/components/ContactSection'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { AreasServedLinks } from '@/components/AreasServedLinks'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
+import { GoogleRating } from '@/components/GoogleRating'
 
 /**
  * Gallery / our work.
@@ -84,9 +85,6 @@ export default function GalleryPage() {
               />
             </Link>
             <div className="et-stack">
-              <span className="et-eyebrow">
-                {featuredProject.suburb} · {featuredProject.service}
-              </span>
               <h1 className="et-h1 et-measure-tight">
                 Bathroom renovations we have completed across Sydney.
               </h1>
@@ -94,6 +92,24 @@ export default function GalleryPage() {
                 Real photographs from Artarmon, Balmain, Little Bay and The
                 Rocks. Each room has its own layout, materials and constraints.
               </p>
+              {/* D-182 (D-174 applied): the proof and the next step sit in the hero, not only at the
+                  bottom of a long grid. */}
+              <div className="et-hero-cta">
+                <Link
+                  href="/contact-us/"
+                  className="et-btn et-btn-lg et-btn-primary et-btn-block-mobile"
+                >
+                  {businessInfo.offer.primaryCta}
+                </Link>
+                {/* Real tel: anchor, never a JS handler (D-33) */}
+                <a
+                  href={businessInfo.phone.href}
+                  className="et-btn et-btn-lg et-btn-secondary et-btn-block-mobile"
+                >
+                  Call {businessInfo.phone.display}
+                </a>
+              </div>
+              <GoogleRating compact />
               <Link
                 href={`/gallery/${featuredProject.slug}/`}
                 className="et-body-sm et-link"
@@ -112,10 +128,7 @@ export default function GalleryPage() {
             {projects.length - 1} more photographed projects
           </h2>
 
-          <div
-            className="et-grid et-grid-3"
-            style={{ marginTop: 'var(--et-space-8)' }}
-          >
+          <div className="et-tiles">
             {projects.slice(1).map((project) => {
               const cover = projectCover(project)
               return (
@@ -133,7 +146,7 @@ export default function GalleryPage() {
                       /* Measured rendered width live (Playwright, issue #27):
                          390→310, 768→664, 1024+→344 (3-col grid caps at
                          the 1200px container, doesn't keep growing). */
-                      sizes="(min-width: 1024px) 344px, (min-width: 768px) 664px, 100vw"
+                      sizes="(min-width: 1024px) 344px, 50vw"
                       loading="lazy"
                     />
                   </span>
@@ -141,8 +154,9 @@ export default function GalleryPage() {
                   <h3 className="et-h4" style={{ marginTop: 'var(--et-space-3)' }}>
                     {project.name}
                   </h3>
+                  {/* Two lines on screen; the whole sentence stays in the HTML. */}
                   <p
-                    className="et-body-sm"
+                    className="et-body-sm et-tile-blurb"
                     style={{
                       marginTop: 'var(--et-space-3)',
                       color: 'var(--et-text-secondary)',
