@@ -14,8 +14,8 @@ If your tool does not load the repository instructions, tell it to read
 - Read [CLAUDE.md](../../CLAUDE.md) and applicable decisions before implementation.
 - Create a branch only when the owner asks. Record the existing branch or detached HEAD truthfully;
   do not switch branches, create worktrees, pull, reset, stash or merge merely to run sunrise/sunset.
-- Preserve existing approval requirements for pushes, deployments and destructive operations.
-- Close an issue only when the owner requested closure or explicitly included it in the task. Otherwise report ready to close. Closure as completed requires every acceptance criterion and required verification to pass; owner-authorized cancellation is a separate outcome below.
+- Push to `main` when the build is green and the task is verified is **automatic — no separate owner approval needed** (per CLAUDE.md Zero-Interruption Issue Mode). The only actions that still require owner approval before proceeding are: force-push, `git reset --hard`, rewriting pushed history, or deleting a file you didn't create this session.
+- For an authorized end-to-end issue implementation, close the issue once every acceptance criterion passes — no separate owner authorization for the closure step is required. Closure as completed requires every acceptance criterion and required verification to pass; owner-authorized cancellation is a separate outcome below.
 - For changes limited to these instruction files, validate links, scoped diffs and resume behavior.
   Application build/browser/performance gates still apply when application behavior is affected.
 - Owner-authorized cancellation, duplication or supersession is a separate outcome: record the

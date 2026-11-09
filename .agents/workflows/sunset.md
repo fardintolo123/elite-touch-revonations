@@ -19,8 +19,12 @@ A sunset can finish a session with an open, blocked or approval-pending issue.
 5. Preserve recoverability of your unpublished changes. Where safe, save a scoped patch/bundle and
    verify its existence/content; identify any untracked/binary files it excludes and store the required
    files separately. Compare with the session-start snapshot so unrelated existing edits are not
-   included. Do not automatically stash, commit other sessions' changes, create branches, push or
-   deploy. If a bundle cannot safely be made, document its absence and the exact checkout needed.
+   included. Do not automatically stash, commit other sessions' changes, create branches or deploy.
+   **Push to `main` is automatic when the build is green and the task is verified** (per CLAUDE.md
+   Zero-Interruption Issue Mode) — no owner approval needed for that specific action. Before pushing,
+   ensure scratch/temp files (e.g. `.tmp/`, build artifacts, generated files) are in `.gitignore` and
+   untracked from the index; fix that autonomously rather than stopping to ask. If a bundle cannot
+   safely be made, document its absence and the exact checkout needed.
 6. Post the concise progress checkpoint to the source issue when tracking is authorized, update
    acceptance items supported by evidence, and link the handoff and recovery state. Capture the
    returned comment URL in the local checkpoint. If offline, save the pending update locally and say
