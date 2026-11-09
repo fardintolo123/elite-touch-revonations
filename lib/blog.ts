@@ -5650,6 +5650,80 @@ export const blogPosts: BlogPost[] = [
       { question: 'Who should I contact if I notice a problem?', answer: 'Contact the Elite Touch team to discuss work we completed. Note where the issue is and keep photos and your job details handy. For a fitting, check its maker details too.' },
     ],
   },
+  {
+    slug: 'free-bathroom-renovation-quote-what-to-expect',
+    title: 'Free bathroom renovation quote in Sydney: what to expect',
+    metaTitle: 'Free Bathroom Renovation Quote in Sydney',
+    description: 'Find out what happens at your free on-site measure and what your written bathroom renovation quote covers.',
+    published: '2026-11-08',
+    readTime: '4 min read',
+    category: 'Quotes and decisions',
+    quickAnswer: {
+      heading: 'Is the bathroom quote really free?',
+      paragraphs: [
+        'Yes. Elite Touch Renovations offers a free on-site measure and written quote across Sydney, with no obligation to proceed. We measure the room, discuss your plans and prepare a fixed-scope quote setting out the inclusions, exclusions and assumptions.',
+        'We usually send your written quote within five business days. You can then read the scope, ask questions and decide what to do next.',
+      ],
+      table: {
+        caption: 'From your first enquiry to your written quote.',
+        columns: ['Step', 'What happens'],
+        rows: [
+          { label: 'Book', detail: 'Call or send us your details.', value: 'Arrange a free measure' },
+          { label: 'Meet', detail: 'We measure your room and discuss your plans.', value: 'Talk through the work' },
+          { label: 'Review', detail: 'We set out the scope and price in writing.', value: 'Read your quote' },
+        ],
+      },
+      note: 'The measure and quote are free, with no obligation to proceed.',
+      cta: { href: '/contact-us/', label: 'Book a free on-site measure' },
+    },
+    sections: [
+      {
+        heading: 'What happens at the free on-site measure?',
+        paragraphs: [
+          'We visit your home, measure your bathroom and talk through what you hope to change. You can explain what is not working in the room and which choices matter most to you. The visit gives us the room details we need to prepare your written scope.',
+          'It helps to think about the fittings, finishes and layout you like before we meet. Bring any questions about the room or the work you would like covered in the quote.',
+        ],
+      },
+      {
+        heading: 'What does the written quote include?',
+        paragraphs: [
+          'The fixed-scope written quote sets out the proposed work, along with its inclusions, exclusions and assumptions. Read those details with the price so you can see what the scope covers and raise any questions before deciding what to do next.',
+          'Our guide to <a href="/blog/fixed-scope-quote-vs-provisional-sums-bathroom/" class="et-link">fixed-scope quotes and provisional sums</a> explains the terms. If you have more than one quote, the <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing bathroom renovation quotes</a> can help you compare the work as well as the total.',
+        ],
+      },
+      {
+        heading: 'How do the package prices relate to my quote?',
+        paragraphs: [
+          'The <a href="/packages/" class="et-link">package page</a> shows the starting prices alongside the room size and inclusions for each tier. Use those figures for early planning. Your written quote follows the on-site measure and sets out the scope for your room.',
+        ],
+      },
+      {
+        heading: 'How long does it take to receive the quote?',
+        paragraphs: [
+          'We usually send your fixed-scope written quote within five business days. If you have a particular date in mind, raise it with us when arranging the visit.',
+        ],
+      },
+      {
+        heading: 'Do I need to proceed after the quote?',
+        paragraphs: [
+          'No. The on-site measure and written quote are free, with no obligation to proceed. You can read the scope, ask questions and decide whether it is right for you.',
+        ],
+      },
+      {
+        heading: 'How do I book a free measure?',
+        paragraphs: [
+          'Call <a href="tel:0411752334" class="et-link">0411 752 334</a> or send your details through our <a href="/contact-us/" class="et-link">enquiry form</a>. Tell us where the bathroom is and what you would like to change. Our team can then arrange the on-site measure.',
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Is the bathroom quote free?', answer: 'Yes. Elite Touch offers a free on-site measure and written quote across Sydney, with no obligation to proceed.' },
+      { question: 'What does the quote set out?', answer: 'The written fixed-scope quote sets out the proposed work, inclusions, exclusions and assumptions.' },
+      { question: 'How long does the quote take?', answer: 'Elite Touch usually sends the written quote within five business days.' },
+      { question: 'Are package prices the quote for my room?', answer: 'The package prices are starting points tied to stated room sizes and inclusions. Your written quote follows the on-site measure.' },
+      { question: 'How do I arrange the measure?', answer: 'Call Elite Touch or send your details through the enquiry form so the team can arrange a visit.' },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {

@@ -145,6 +145,7 @@ const ROUTES = [
   '/blog/how-long-does-a-bathroom-renovation-last/',
   '/blog/repair-or-replace-bathroom-renovation/',
   '/blog/what-happens-after-bathroom-renovation/',
+  '/blog/free-bathroom-renovation-quote-what-to-expect/',
   '/services/',
   '/services/bathroom-renovations/',
   '/services/ensuite-bathroom-renovations/',
