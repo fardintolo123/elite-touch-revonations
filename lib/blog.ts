@@ -1,4 +1,5 @@
 import { businessInfo } from './businessInfo'
+import { packageStarts } from './packageStarts'
 
 export type BlogSection = {
   heading: string
@@ -57,6 +58,19 @@ export const blogPosts: BlogPost[] = [
     updated: '2026-11-02',
     readTime: '4 min read',
     category: 'Planning and cost',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Elite Touch bathroom packages start at the prices below for the room sizes shown. Your room, choices and scope will shape the written quote.',
+      ],
+      table: {
+        caption: 'Elite Touch package starting prices and bathroom size bases.',
+        columns: ['Package and room size', 'Starting price'],
+        rows: packageStarts.map((item) => ({ label: item.name, detail: item.size, value: item.price })),
+      },
+      note: 'These are starting prices. A free on-site measure helps set the scope and price for your room.',
+      cta: { href: '/packages/', label: 'Compare the packages' },
+    },
     sections: [
       { heading: 'Start with the room and the scope', paragraphs: ['There is no honest single price for every bathroom renovation. If you are pricing a full bathroom in Sydney, start with our <a href="/packages/" class="et-link">package prices and size bases</a>, then consider how room size, fittings, tile selection, electrical and plumbing work, and layout affect the final scope.', 'A useful quote should make those decisions visible. It should describe what is included, what is excluded and which selections are still provisional. That gives you something meaningful to compare instead of comparing two totals with different scopes.'] },
       { heading: 'ETR package starting points', paragraphs: ['If you are comparing Sydney bathroom renovation pricing, Elite Touch publishes <a href="/packages/" class="et-link">three package starting points</a>: Basic from $18,000 for an approximately 1.5 m × 1.8 m × 2.4 m bathroom, Standard from $25,000 for an approximately 1.8 m × 2.4 m × 2.4 m bathroom, and Premium from $30,000 for an approximately 2.4 m × 2.4 m × 2.4 m bathroom.', 'These are starting prices, not fixed quotes. The final scope depends on the actual room and your selections. A free on-site measure is the right next step when you need a price tied to your bathroom.'] },
@@ -896,6 +910,19 @@ export const blogPosts: BlogPost[] = [
     published: '2026-10-02',
     readTime: '4 min read',
     category: 'Planning and cost',
+    quickAnswer: {
+      heading: 'Quick answer',
+      paragraphs: [
+        'Start your budget with the room size and the work you want done. The Elite Touch package starting points below give you a guide before a site measure.',
+      ],
+      table: {
+        caption: 'Elite Touch package starting prices and bathroom size bases.',
+        columns: ['Package and room size', 'Starting price'],
+        rows: packageStarts.map((item) => ({ label: item.name, detail: item.size, value: item.price })),
+      },
+      note: 'These are starting prices. Your written quote will reflect your room and the agreed scope.',
+      cta: { href: '/contact-us/', label: 'Book a free on-site measure' },
+    },
     sections: [
       {
         heading: 'Why bathroom budgets blow out',
