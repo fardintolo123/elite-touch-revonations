@@ -78,6 +78,9 @@ export function SiteFooter() {
                 <Link href="/about-us/">About us</Link>
               </li>
               <li>
+                <Link href="/ai/">Business facts</Link>
+              </li>
+              <li>
                 <Link href="/gallery/">Gallery</Link>
               </li>
               <li>

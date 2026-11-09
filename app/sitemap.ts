@@ -51,6 +51,7 @@ import { blogPosts } from '@/lib/blog'
 const LAST_CONTENT_PASS = '2026-08-31'
 const SEARCH_GAP_CONTENT_PASS = '2026-09-14'
 const ISSUE_64_CONTENT_PASS = '2026-09-20'
+const AI_PAGE_UPDATED = '2026-11-09'
 
 const absolute = (path: string) => `${businessInfo.siteUrl}${path}`
 
@@ -74,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/ai/`,
-      lastModified: LAST_CONTENT_PASS,
+      lastModified: AI_PAGE_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.7,
     },

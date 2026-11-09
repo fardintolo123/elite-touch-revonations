@@ -58,6 +58,7 @@ const TARGET = 60
 const ROUTES = [
   '/',
   '/about-us/',
+  '/ai/',
   '/contact-us/',
   '/packages/',
   '/privacy/',
