@@ -42,11 +42,13 @@ The 6+ word set is mostly "how long does a bathroom renovation take" variants (a
 
 ## 3. Gaps → work
 
-- [ ] **G1: Complete and publish `/ai/` facts page** → issue #98. The route returned 200 on 2026-11-09, but its
-  live copy was incomplete and included stale area and package facts. A local rewrite now draws identity, services,
-  published areas, packages, evidence, booking and documentation from the existing `lib/` sources. Keep G1 open
-  until the code is published and the live route, sitemap, `/llms.txt` and footer are rechecked. No `/developers`
-  link, because the site has no agent API (the guide says do not invent one).
+- [x] **G1: Complete and publish `/ai/` facts page** → issue #98. The pre-rewrite route returned 200 but had
+  incomplete, stale copy. Commit `aebdc5b3a27a399d04d41e9dd4b571adcbae337a` rewrote it from `lib/` sources and
+  added `/ai/` to the hand-maintained readability inventory. Post-deploy verification on 2026-11-09 confirmed
+  `/ai/` returns 200 with its canonical URL, 53-character title and 128-character description; the sitemap has
+  one dated entry, `/llms.txt` has one line, and three pages each have one footer link. Schema has one
+  Organization referenced by the AboutPage. Build, typecheck, design and readability (117/117; `/ai/` 62.0)
+  pass. No `/developers` link because the site has no agent API.
 - [ ] **G2: Competitor market map (internal, sourced and dated)** → issue #99. D-17 records the competitor bar
   from SERP reading, and D-85/D-87 rejected reports built on non-competitors. Nothing yet records 5–10 real Sydney
   bathroom specialists side by side with sources and dates. The map feeds G1's fit wording and any later `/compare`
