@@ -1,5 +1,7 @@
 # CLAUDE.md — Elite Touch Renovations · AI Operating System
 
+**Design taste guide:** [`design/TASTE.md`](design/TASTE.md) — read before any UI/visual work. Tokens: [`design/tokens.css`](design/tokens.css). Reference screenshots: `design/references/`.
+
 This file is the **entry point for every task** in this repo. It does **not** repeat what other docs
 say — it tells you **which doc is authoritative, when to read it, and how to resolve conflicts.**
 Read the linked docs; do not assume their contents.
@@ -263,7 +265,7 @@ instruction, settled decisions, or the code-level source of truth for what is cu
 | Task type | Read first |
 |---|---|
 | **Anything, if unsure whether it's been decided** | [DECISIONS.md](DECISIONS.md) |
-| **UI / design / visual / component** | [DESIGN.md](DESIGN.md) — authoritative. Do not invent tokens. Then `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` — the AI-look lens and the rendered-screenshot gate. Skill **`impeccable`** for the design work and the independent critique ([PRODUCT.md](PRODUCT.md) is its product brief; critiques are saved to `.impeccable/critique/`) |
+| **UI / design / visual / component** | ⭐ [`design/TASTE.md`](design/TASTE.md) first (brand rules + 6-dimension scoring rubric); tokens: [`design/tokens.css`](design/tokens.css) — no raw hex. Then [DESIGN.md](DESIGN.md) — authoritative. Do not invent tokens. Then `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` — the AI-look lens and the rendered-screenshot gate. Skill **`impeccable`** for the design work and the independent critique ([PRODUCT.md](PRODUCT.md) is its product brief; critiques are saved to `.impeccable/critique/`) |
 | **Design audit of an existing page or section** ("does this look AI-generated / templated?") | `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` §4–§7 — screenshots at 390 + 1440 first, findings in its §6 format, **preserve what works**. Its §8 tracker maps every route class to its issue |
 | **New page or section** | `DESIGN.md` → `docs/DISTINCTIVE_DESIGN_CHECKLIST.md` (write the visual direction first) → `docs/SEO_CONTENT_GUIDE.md` → `docs/CONTENT_QUALITY_CHECKLIST.md` → `docs/SEO_AEO_GEO_CHECKLIST.md` |
 | **Copywriting / readability** | `docs/CONTENT_QUALITY_CHECKLIST.md` |
