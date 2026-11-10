@@ -49,10 +49,10 @@ The 6+ word set is mostly "how long does a bathroom renovation take" variants (a
   one dated entry, `/llms.txt` has one line, and three pages each have one footer link. Schema has one
   Organization referenced by the AboutPage. Build, typecheck, design and readability (117/117; `/ai/` 62.0)
   pass. No `/developers` link because the site has no agent API.
-- [ ] **G2: Competitor market map (internal, sourced and dated)** → issue #99. D-17 records the competitor bar
-  from SERP reading, and D-85/D-87 rejected reports built on non-competitors. Nothing yet records 5–10 real Sydney
-  bathroom specialists side by side with sources and dates. The map feeds G1's fit wording and any later `/compare`
-  decision.
+- [x] **G2: Competitor market map (internal, sourced and dated)** → issue #99. D-17 records the competitor bar
+  from SERP reading, and D-85/D-87 rejected reports built on non-competitors. [Eight real Sydney bathroom specialists
+  are mapped side by side with dated sources](../docs/competitor-market-map-2026-11.md). The map feeds G1's fit
+  wording and any later `/compare` decision.
 
 ## 4. Not actioned (reason)
 
