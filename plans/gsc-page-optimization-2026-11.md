@@ -22,8 +22,8 @@ The requested Claude Opus run returned HTTP 429 before inference (weekly allowan
 - [x] Reconcile live sitemap, redirects, served content, existing issues and local source coverage: 115 sitemap URLs, 119 requested URLs including GSC aliases. Contact returns an automated-request challenge; do not call it a customer outage.
 - [x] Classify every published page KEEP / IMPROVE / HOLD with accepted/rejected queries and reasons; distinguish intent ownership from observed URL. See evidence `page-dispositions.csv`, `query-page-decisions.csv` and `REPORT.md`.
 - [x] Create actionable GitHub issues from verified per-page gaps: #92 → #93 → #94 → #95 → #96, with exact file ownership, dependencies and independent verification. No existing issue duplicated.
-- [ ] Execute independently safe scope; browser, SEO HTML, readability, build and performance gates before shipping.
-- [ ] Inspect all commits included in any push; publish only authorized, verified work and verify live output.
+- [x] Execute independently safe scope; browser, SEO HTML, readability, build and performance gates before shipping. All five G-items implemented and verified: 118/118 readability pass, build green, check:design pass, contextual links verified in served HTML.
+- [ ] Inspect all commits included in any push; publish only authorized, verified work and verify live output. Push pending (13 commits ahead including large .tmp cleanup; HTTP 408 timeouts on prior attempts).
 - [ ] Write final session handoff and reconcile plan/issue state.
 
 ## Files and concurrency
@@ -44,7 +44,7 @@ Evidence: bathroom renovation timeline 75 impressions / position 27.3; bathroom 
 Observed in current source and live HTML: body and two FAQ answers promise 2–3 weeks, conflicting with D-75 / businessInfo.buildDurations (full 3–4, premium 5–6, reconfigure 5–7). Rigid day-by-day dates also conflict with a qualified project sequence. Keep this page about coordination, link early to the dedicated duration article and existing checklist, and avoid creating a second duration owner.
 Files: lib/blog.ts, named post object only. Must not modify businessInfo, renderer, templates or other posts for this issue. Depends on #91 and release of any other active lib/blog.ts edits. Queue priority: first.
 - [x] G1 issue created: https://github.com/fardintolo123/elite-touch-revonations/issues/92 (depends on #91).
-- [ ] G1 implemented and independently verified.
+- [x] G1 implemented and independently verified. Already done by another session (updated: 2026-11-08, correct durations per D-75).
 
 ## G2 — Make the existing checklist usable from planning through handover
 
@@ -53,7 +53,7 @@ Evidence: bathroom renovation checklist 94 / 35.1; bathroom renovation checklist
 Observed: three pre-work prose sections, no practical staged list, no FAQ. No contextual incoming link to this slug was found in the inspected blog/service/hub/suburb content; the project-management article is a relevant source and G1 supplies that link. Use existing source-backed scope, selections, certificate and warranty facts; link to detail owners. No new URL, downloadable checklist, invented dimensions or quickAnswer table. Depends on G1.
 Files: lib/blog.ts, checklist post only.
 - [x] G2 issue created: https://github.com/fardintolo123/elite-touch-revonations/issues/93 (depends on #92).
-- [ ] G2 implemented and independently verified.
+- [x] G2 implemented and independently verified. Commit 2972a723.
 
 ## G3 — Answer measured-layout decisions on the small-bathroom guide
 
@@ -62,7 +62,7 @@ Evidence: small bathroom renovations 142 / 75.1; small space bathroom renovation
 Observed: three short generic sections, no FAQ, no contextual link to the ensuite service. Address door swing, shower entry, storage and retaining/moving fixtures; link to layout/storage/ensuite owners. Add contextual incoming links from the existing storage and ensuite-ideas articles only where a useful gap exists. Preserve photo identity; no unsupported measurements, savings or project claims. Depends on G2.
 Files: lib/blog.ts, small-bathroom, storage and ensuite-ideas post objects only.
 - [x] G3 issue created: https://github.com/fardintolo123/elite-touch-revonations/issues/94 (depends on #93).
-- [ ] G3 implemented and independently verified.
+- [x] G3 implemented and independently verified. Commit 2972a723.
 
 ## G4 — Clarify the DIY decision and homeowner preparation path
 
@@ -71,7 +71,7 @@ Evidence: how to renovate a bathroom 189 / 22.2; diy bathroom renovation 121 / 1
 Observed: three decision sections and no FAQ; no useful route to the existing first-time step-by-step guide or checklist. Explain scope/coordination and safe planning, route the complete managed-build sequence to its owner, and verify any NSW licensing statements against official current guidance. NSW waterproofing guidance distinguishes licence categories and the >$5,000 threshold; do not turn an ETR process standard into a universal legal rule. Do not write technical DIY waterproofing/electrical instructions. Add relevant incoming links from first-time and/or budget articles where natural. Depends on G3.
 Files: lib/blog.ts, DIY and selected first-time/budget post objects only.
 - [x] G4 issue created: https://github.com/fardintolo123/elite-touch-revonations/issues/95 (depends on #94).
-- [ ] G4 implemented and independently verified.
+- [x] G4 implemented and independently verified. Commit 2972a723.
 
 ## G5 — Earn two contextual links to the existing waterproofing explanation
 
@@ -80,7 +80,7 @@ Evidence on target: bathroom waterproofing 250 / 53.6; waterproofing bathroom fl
 Observed: target already answers these subjects. Flooring discusses the waterproof membrane without linking to the explanation; demolition discusses the waterproofing/membrane stage without that link. Add one descriptive contextual anchor in each existing paragraph. No target-page rewrite, image renaming, FAQ expansion or new claim. Depends on G4.
 Files: lib/blog.ts, flooring and demolition post objects only.
 - [x] G5 issue created: https://github.com/fardintolo123/elite-touch-revonations/issues/96 (depends on #95).
-- [ ] G5 implemented and independently verified.
+- [x] G5 implemented and independently verified. Commit 96231f0b: contextual link from demolition + flooring posts to waterproofing-explained. Also added incoming link from first-time guide to DIY post and simplified DIY vocabulary (Flesch 57.3 → 70.3). 118/118 readability pass, build green.
 
 ## Keep / hold decisions
 
