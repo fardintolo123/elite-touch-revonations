@@ -162,16 +162,97 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'bathroom-renovation-checklist-sydney',
-    title: 'Bathroom renovation checklist for Sydney homeowners',
+    title: 'Bathroom renovation checklist: what to check at every stage',
     metaTitle: 'Bathroom Renovation Checklist',
-    description: 'Settle the scope, selections, access and key documents before bathroom work starts.',
+    description: 'A staged checklist covering what to prepare before quoting, what to verify before accepting, what to settle before work starts, what to check during the build, and what to collect at handover.',
     published: '2026-09-10',
-    readTime: '2 min read',
+    updated: '2026-11-09',
+    readTime: '6 min read',
     category: 'Planning and process',
     sections: [
-      { heading: 'Before requesting quotes', paragraphs: ['Write down what is not working in the room and what you want to change. Note storage needs, shower and bath choices, lighting, ventilation, access needs and any limits on the layout.', 'Take room measurements and photos for the first talk, but get an on-site measure before you rely on a price. The state of the room matters.'] },
-      { heading: 'Before accepting a quote', paragraphs: ['Check the scope, room size, what is in and out, your choices, the <a href="/blog/bathroom-renovation-project-management-timeline/" class="et-link">work plan</a> and how changes are agreed. Keep the final scope and choices together in writing.', 'Check the builder licence and ask who will manage the work. Make sure the quote covers waste, floor protection and the final clean.'] },
-      { heading: 'Before work starts', paragraphs: ['Choose items that must be ordered and confirm site access. Decide where materials can be stored and how the team will move through the home.', 'Keep a simple record of choices and changes. Clear notes help keep the job on track while the room is out of use.'] },
+      {
+        heading: 'Why a staged checklist matters',
+        paragraphs: [
+          'A bathroom renovation has five distinct stages, and each one has checks that are harder to fix once the next stage begins. A tile choice is easy to change during planning but expensive to undo after the room is tiled.',
+          'This checklist covers what to prepare before you request quotes, what to verify before you accept one, what to settle before work starts, what to watch during the build, and what to collect at handover. Every item here traces to an existing guide on this site, so you can read the detail when you need it.',
+        ],
+      },
+      {
+        heading: 'Before requesting quotes',
+        paragraphs: [
+          'Write down what is not working in the room and what you want to change. Note storage needs, shower and bath preferences, lighting, ventilation, access needs and any layout limits.',
+          'Take room measurements and photos for the first conversation, but get an on-site measure before you rely on a price. The condition behind the tiles matters more than the room dimensions alone.',
+          'If you live in a strata building, check your by-laws for renovation rules before you contact a builder. Some buildings require strata approval before a quote can be finalised.',
+          'Decide roughly how you want the room to work day-to-day. A clear brief helps the builder quote for the right scope instead of guessing at finishes.',
+        ],
+      },
+      {
+        heading: 'Before accepting a quote',
+        paragraphs: [
+          'Check the written scope: room size, what is included, what is excluded, which selections are still open, and how changes during the build will be priced and approved. A clear <a href="/blog/bathroom-renovation-contract-guide/" class="et-link">written agreement</a> protects both sides.',
+          'Verify the builder licence. In NSW, residential building work over $5,000 requires a licensed contractor. ETR operates under NSW Builder Licence 475204C.',
+          'Ask who will manage the <a href="/blog/bathroom-renovation-project-management-timeline/" class="et-link">work plan</a> and trade sequence. A single project manager is simpler than coordinating several trades yourself.',
+          'Confirm the quote covers demolition, waste removal, floor protection, plumbing, electrical, waterproofing, tiling, fit-off, painting and the final clean. Items left out of the quote will become extras later.',
+          'Ask about the <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">expected timeline</a>. Site work on the same footprint is usually three to four weeks; a premium build or layout change takes longer. Planning time is separate and depends on selections and ordering.',
+        ],
+      },
+      {
+        heading: 'Before work starts',
+        paragraphs: [
+          'Confirm every selection: tiles, tapware, vanity, toilet, shower screen, mirror, accessories and lighting. Late selections are the single biggest cause of delays on site.',
+          'Check lead times on anything that is ordered rather than taken from stock. A custom shower screen or imported tile can add weeks if it is not ordered early enough.',
+          'Agree on site access: where materials will be stored, how the team enters and exits, where a skip bin can sit, and whether parking, lift or hallway rules apply.',
+          'Plan how you will <a href="/blog/bathroom-renovation-living-at-home/" class="et-link">live while the room is out of service</a>. If this is your only bathroom, arrange access to another one for the duration of the build.',
+          'Keep the final written scope, your selection records, the agreed program and the builder\'s contact details together in one place. You will refer to them during the build.',
+        ],
+      },
+      {
+        heading: 'During the build',
+        paragraphs: [
+          'Ask for a brief update at the end of each day or stage: what was done, what happens next, and whether anything needs your decision before the next trade can start.',
+          'Expect a check between each major trade. The waterproofing membrane is inspected before tiling starts. Plumbing and electrical rough-in are checked before linings close them up. These sign-offs protect the finished result.',
+          'If something unexpected is found during demolition — old plumbing, water damage, asbestos — ask for the scope of the extra work, the cost and the timing effect before the work proceeds. A clear variation process keeps a surprise from becoming a dispute.',
+          'Do not add or change selections mid-build unless the variation is agreed in writing first. A verbal change on site is the fastest way to lose track of cost and timing.',
+        ],
+      },
+      {
+        heading: 'At handover',
+        paragraphs: [
+          'Walk the room with the project manager. Run every tap, flush the toilet, test the shower drain, check the exhaust fan and open every cabinet and drawer.',
+          'Collect the <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate</a> confirming work to AS 3740, plus plumbing and electrical compliance certificates. These are part of the renovation, not optional extras.',
+          'Collect the workmanship warranty terms, product warranty documents and care instructions for tiles, tapware and fittings. Keep them with the scope, invoices and certificates.',
+          'If a touch-up is needed, agree on what it is and when it will be done. A clear written note is better than a verbal promise at the doorstep.',
+        ],
+      },
+      {
+        heading: 'How ETR runs this process',
+        paragraphs: [
+          'ETR begins with a free on-site measure anywhere in Sydney. The written quote names every inclusion, and selections are confirmed before demolition day. Adam Dawood manages the trade sequence with over 25 years of experience, and the homeowner gets daily updates during the build.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What should I have ready before asking for a bathroom renovation quote?',
+        answer: 'A list of what is not working, what you want to change, your storage and layout preferences, room photos and rough measurements. The builder will do a proper on-site measure, but a clear brief helps scope the quote correctly from the start.',
+      },
+      {
+        question: 'How do I check whether a bathroom renovation quote is complete?',
+        answer: 'The written scope should name every inclusion and exclusion, the room size it is based on, which selections are still open, the variation process, the trade sequence, waste removal, floor protection and the final clean. If an item is not listed, assume it is not included.',
+      },
+      {
+        question: 'What is the most common cause of bathroom renovation delays?',
+        answer: 'Late selections. Tiles, tapware, vanity, toilet, shower screen and accessories that are not confirmed before the start date hold up the trades that depend on them. Ordering everything before demolition is the single most effective way to stay on schedule.',
+      },
+      {
+        question: 'What certificates should I receive at handover?',
+        answer: 'A waterproofing compliance certificate confirming work to AS 3740, plus plumbing and electrical certificates. You should also receive workmanship warranty terms and product warranty documents for installed fittings and fixtures.',
+      },
+      {
+        question: 'Can I change my selections after work has started?',
+        answer: 'Yes, but only through the variation process agreed in the written scope. A change during the build affects cost, timing and sometimes the trade sequence. Get the variation in writing before the extra work proceeds.',
+      },
     ],
   },
   {
@@ -205,7 +286,7 @@ export const blogPosts: BlogPost[] = [
       { heading: 'Start with the measure, not the mood board', paragraphs: ['Your first <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a> should start with the room as it is. The on-site measure checks the size, access, current layout, visible condition and practical needs before finishes are locked in.', 'Photos, saved ideas and showroom visits are useful, but the measured room decides what will fit. This is also where you raise daily-use issues such as storage, poor light, a tight shower, one bathroom in the home or a layout that never worked.'] },
       { heading: 'Then the scope is written down', paragraphs: ['After the measure, the renovation needs a written scope. It should say what is included, what is excluded, which selections are still open and how changes will be approved.', 'At ETR, the aim is a fixed-scope written quote before work begins. That means the job is not priced as a loose verbal estimate that changes once the bathroom has already been stripped out.'] },
       { heading: 'Selections and ordering happen before site work', paragraphs: ['Tiles, tapware, vanity, toilet, shower screen, accessories and lighting decisions affect timing and cost. The sooner these are settled, the fewer avoidable delays there are once the room is out of action.', 'If you are unsure, ask which choices must be made now and which can wait. Not every decision has the same impact on the program.'] },
-      { heading: 'Site work follows a sequence', paragraphs: ['The on-site stage usually moves through protection, demolition, plumbing and electrical preparation, waterproofing, tiling, fit-off, finishing and final clean. Each stage depends on the one before it.', 'Waterproofing is a good example. It needs proper prep and curing time. Rushing it may make a program look shorter on paper, but it adds risk to the part of the bathroom you cannot see once the tiles go on.'] },
+      { heading: 'Site work follows a sequence', paragraphs: ['The on-site stage usually moves through protection, demolition, plumbing and electrical preparation, waterproofing, tiling, fit-off, finishing and final clean. Each stage depends on the one before it. Our <a href="/blog/diy-or-professional-bathroom-renovation/" class="et-link">DIY vs professional guide</a> explains which stages need licensed trades and where coordination matters most.', 'Waterproofing is a good example. It needs proper prep and curing time. Rushing it may make a program look shorter on paper, but it adds risk to the part of the bathroom you cannot see once the tiles go on.'] },
       { heading: 'Changes need to be handled in writing', paragraphs: ['Even with a careful quote, an old bathroom can reveal problems after demolition. If that happens, ask for the reason, cost and timing effect before extra work proceeds.', 'This is why a variation process matters. It keeps a stressful moment from turning into a guessing game and gives both sides one clear record of the decision.'] },
       { heading: 'How do you keep the rest of the home usable?', paragraphs: ['Before work starts, agree how the team will move through the home, where tools and materials can be stored, how <a href="/blog/bathroom-renovation-living-at-home/" class="et-link">dust and floor protection</a> will be handled and when noisy work is likely.', 'This is especially important if you work from home, have children at home or have only one bathroom. Renovation is much less stressful when the practical rules are clear before the first day on site.'] },
       { heading: 'What should you keep asking during the job?', paragraphs: ['Ask what has been completed, what happens next and whether any decision is needed from you before the next stage can continue. Short, regular updates are better than waiting until a delay has already happened.', 'If something changes, ask for it in writing. First-time renovators often worry that asking simple questions is annoying, but a good process makes those questions normal.'] },
@@ -254,15 +335,92 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'small-bathroom-renovation-without-feeling-cramped',
     title: 'How to renovate a small bathroom without it feeling cramped',
-    metaTitle: 'Small Bathroom Renovation Guide',
-    description: 'Use clear paths, storage and door swings to plan a small bathroom.',
+    metaTitle: 'Small Bathroom Renovations',
+    description: 'Plan door swings, shower entry, vanity depth and fixture positions to get the most from a small bathroom renovation.',
     published: '2026-09-10',
-    readTime: '2 min read',
+    updated: '2026-11-09',
+    readTime: '6 min read',
     category: 'Small bathrooms',
     sections: [
-      { heading: 'Begin with movement and storage', paragraphs: ['A small bathroom needs a clear path through the room. Start by checking door swings, shower access, toilet clearance and the location of <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage</a> before choosing finishes.', 'A measured plan helps you decide where a vanity, shaving cabinet, shower screen and accessories can fit without making the room harder to use.'] },
-      { heading: 'Use a restrained selection', paragraphs: ['A small room can feel busy when every surface competes for attention. A consistent tile approach, considered contrast and fittings sized to the room can create a calmer result.', 'The right choice depends on the room and the homeowner. Inspiration is useful, but a selection should still be checked against the actual layout, maintenance needs and budget.'] },
-      { heading: 'Protect the essentials', paragraphs: ['Do not trade away waterproofing, sound preparation or a workable layout just to add a decorative feature. These are the parts that affect how the room performs every day.', 'Bring the room to a renovator for a measure and written scope. That turns a small-bathroom idea into a plan that can be priced honestly.'] },
+      {
+        heading: 'Start with movement, not finishes',
+        paragraphs: [
+          'A small bathroom needs a clear path through the room before anything else is chosen. Check door swings, shower entry, toilet clearance and the distance between fixtures. If you cannot move comfortably through the room on paper, finishes will not fix it.',
+          'The layout is settled during the design phase, before the quote is locked in. Changing a fixture position after tiles are on the walls means undoing work, so the order matters: movement first, then storage, then finishes.',
+        ],
+      },
+      {
+        heading: 'Door swings and entry',
+        paragraphs: [
+          'A standard hinged door that swings into a small bathroom can block the vanity, hit the toilet, or prevent two people from using the doorway at once. Three options solve this: a door that swings outward, a sliding pocket door, or a barn-style slider on the outside wall.',
+          'Each option has trade-offs. An outward-swinging door needs clear hallway space. A pocket door needs a wall cavity free of plumbing and electrical runs. A barn slider sits flat against the outside wall and needs room either side of the frame. The right choice depends on what is behind the wall.',
+        ],
+      },
+      {
+        heading: 'Shower entry and screen',
+        paragraphs: [
+          'In a small bathroom, the shower takes up the most floor area. A walk-in shower with no step and a frameless screen opens the room visually and makes cleaning easier. A semi-frameless screen with a hinged panel can fold in to free up floor space when the shower is not in use.',
+          'A shower recess set into the corner uses two existing walls and needs only one or two glass panels. This layout also puts the showerhead and mixer on an external wall, which simplifies plumbing if the waste and supply are already there.',
+        ],
+      },
+      {
+        heading: 'Vanity and storage depth',
+        paragraphs: [
+          'Standard vanities are 450 to 600 millimetres deep. In a narrow bathroom, a slim 350- to 400-millimetre vanity frees corridor space while still holding a basin and drawers. A wall-hung vanity creates visible floor underneath, which makes the room feel larger.',
+          'Drawers are more useful than cupboard doors in a small room because you can see and reach everything without bending to the back of a shelf. Our <a href="/blog/bathroom-storage-planning-renovation/" class="et-link">storage planning guide</a> covers how to list what needs a home and match each item to the right storage type.',
+        ],
+      },
+      {
+        heading: 'Keeping or moving fixtures',
+        paragraphs: [
+          'The cheapest and fastest small-bathroom renovation keeps the toilet, shower and vanity in their current positions. Moving a fixture means moving waste and supply lines, which adds plumbing cost and may extend the build by a week or more.',
+          'Sometimes the move is worth it. Shifting the toilet 300 millimetres along the wall can free enough space for a wider vanity. Moving the shower from a bath alcove to a corner can open the entire centre of the room. The on-site measure shows which moves are practical for your floor structure and plumbing layout.',
+          'Our <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">layout changes guide</a> explains when moving plumbing is justified and what it typically involves.',
+        ],
+      },
+      {
+        heading: 'Tile and finish choices that help',
+        paragraphs: [
+          'A consistent tile colour on the floor and lower walls reduces visual breaks and makes the room read as one surface. Fewer grout lines — from larger tiles — have the same effect. A 300 by 600 tile is a practical middle ground: large enough to reduce grout lines, small enough to cut around a tight space without excessive waste.',
+          'Light, neutral tones reflect more light and make the room feel open. A single feature wall or a niche with a contrasting tile adds interest without competing with the rest of the surfaces.',
+        ],
+      },
+      {
+        heading: 'Small ensuites',
+        paragraphs: [
+          'A small <a href="/services/ensuite-bathroom-renovations/" class="et-link">ensuite renovation</a> has the same layout pressures as a small main bathroom, plus the need to manage moisture next to a bedroom. Ventilation, door swing and noise are higher priorities in an ensuite because the room opens directly into the sleeping area.',
+          'Our <a href="/blog/ensuite-renovation-ideas-layout/" class="et-link">ensuite layout guide</a> covers fixture placement, ventilation and design choices for tight ensuite spaces.',
+        ],
+      },
+      {
+        heading: 'How ETR approaches small bathrooms',
+        paragraphs: [
+          'The free on-site measure checks the room dimensions, current fixture positions, wall condition and plumbing layout before any finishes are discussed. The written quote names every inclusion, and the layout is settled before demolition day.',
+          'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. Call 0411 752 334 for a free measure anywhere in Sydney.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the best layout for a small bathroom?',
+        answer: 'Put the shower in the far corner using two existing walls, the vanity nearest the door for daily access, and the toilet beside or opposite the vanity. This keeps the entry clear and puts the wet zone away from the door. The measured layout should be checked against your actual room before finishes are chosen.',
+      },
+      {
+        question: 'Should I keep the bath in a small bathroom?',
+        answer: 'Removing a bath and replacing it with a shower frees floor area and makes the room feel larger. In a bathroom under about four square metres, a bath usually dominates the room and limits where the vanity and toilet can go. If you rarely use the bath, a shower-only layout is more practical.',
+      },
+      {
+        question: 'Can I move the toilet or vanity in a small bathroom?',
+        answer: 'Yes. Moving a fixture means relocating waste and supply lines, which adds plumbing cost and time. The on-site measure shows which moves are practical for your floor structure. Sometimes a shift of 300 millimetres makes enough difference to justify the cost.',
+      },
+      {
+        question: 'What door type works best in a small bathroom?',
+        answer: 'A sliding pocket door or an outward-swinging door frees floor space inside the room. A pocket door needs a wall cavity free of plumbing and wiring. An outward-swinging door needs clear hallway space. Both are better than a standard inward-swinging door that blocks fixtures.',
+      },
+      {
+        question: 'How do I make a small bathroom feel bigger without moving walls?',
+        answer: 'Use consistent tile colour on the floor and lower walls, a frameless or semi-frameless shower screen, a wall-hung vanity that shows the floor underneath, and good lighting. Fewer grout lines and lighter tones reflect more light and reduce visual breaks.',
+      },
     ],
   },
   {
@@ -283,15 +441,93 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'diy-or-professional-bathroom-renovation',
     title: 'Should I renovate my bathroom myself or hire a professional?',
-    metaTitle: 'Should you DIY a bathroom renovation in NSW?',
-    description: 'See which tasks need licensed trades and where DIY can add risk in NSW.',
+    metaTitle: 'DIY Bathroom Renovation in NSW',
+    description: 'Understand which bathroom tasks need licensed trades in NSW, where DIY adds risk, and how to decide between doing it yourself and hiring a professional.',
     published: '2026-09-10',
-    readTime: '2 min read',
+    updated: '2026-11-09',
+    readTime: '6 min read',
     category: 'Choosing a renovator',
     sections: [
-      { heading: 'Know what you are coordinating', paragraphs: ['1) In NSW, a DIY bathroom renovation only makes sense for the finish work. Waterproofing, plumbing and electrical work must be done by licensed trades and signed off correctly, so the legal risk sits with the parts you are not meant to do yourself.', 'A bathroom renovation is a sequence of connected tasks, not just a collection of finishes. Demolition, plumbing, <a href="/blog/bathroom-renovation-electrical-work/" class="et-link">electrical work</a>, waterproofing, tiling and fitting installation need to be planned around one another.'] },
-      { heading: 'Consider licensed and regulated work', paragraphs: ['The rule is simple: if the work is regulated, it should be handled by a licensed professional. Check the NSW Fair Trading guidance before you decide how much of the job you want to take on: <a href="https://www.nsw.gov.au/housing-and-construction/building-or-renovating-a-home" class="et-link">NSW Fair Trading</a>.', 'A licensed renovator can help coordinate the work and document the agreed scope. ETR operates under NSW Builder Licence 475204C.'] },
-      { heading: 'Make the decision on the whole project', paragraphs: ['Compare the value of your time, the disruption of a room being out of action and the risk of rework. A lower initial spend is not useful if the sequence creates delays or requires work to be done twice.', 'Start with a measured scope and clear quote, whether you choose a professional or a carefully limited DIY approach. The practical rule is simple: do the safe, straightforward finish work yourself, and ask a licensed contractor to handle the work that carries compliance, licensing and warranty risk.'] },
+      {
+        heading: 'The short answer',
+        paragraphs: [
+          'In NSW, a DIY bathroom reno only makes sense for the finish work — paint, towel rails, mirrors and similar tasks that do not touch plumbing, wiring or sealing. The trades that carry licence rules need licensed pros, and the risk of getting those wrong sits with the homeowner.',
+          'The real question is not whether you can do some of it yourself, but whether running the full sequence — demo, plumbing, <a href="/blog/bathroom-renovation-electrical-work/" class="et-link">wiring</a>, sealing, tiling and fit-off — is something you want to manage. A bathroom reno is a chain of linked stages, not a list of weekend tasks.',
+        ],
+      },
+      {
+        heading: 'What requires a licensed professional in NSW',
+        paragraphs: [
+          'Plumbing and wiring must be done by licensed trades in NSW. This is not optional — it is law no matter the job value. Sealing work valued at more than $5,000 in labour and materials (with GST) also needs a licensed builder. Check the current <a href="https://www.nsw.gov.au/housing-and-construction/building-or-renovating-a-home" class="et-link">NSW Government rules</a> for the latest figures, because these rules change from time to time.',
+          'In practice, most bathroom renos cross the $5,000 mark quickly once plumbing, wiring, sealing and tiling are combined. The licence rule exists to protect you: licensed work comes with insurance, compliance papers and a defined complaints path through NSW Fair Trading.',
+        ],
+      },
+      {
+        heading: 'What a homeowner can safely do',
+        paragraphs: [
+          'Paint walls and ceilings after the wet trades are done. Put up towel rails, toilet roll holders, hooks, robe hooks and shelf brackets. Hang a mirror (not a hardwired lit mirror — that is wiring work). Apply silicone on non-structural joints after the tiler has finished. Clean and prep the room before and after trade work.',
+          'These tasks sit at the end of the sequence and do not affect the sealing, plumbing or wiring. They are the safe, simple parts of a reno that can cut cost without adding risk.',
+        ],
+      },
+      {
+        heading: 'The coordination problem',
+        paragraphs: [
+          'Even if you hire licensed trades for each stage, someone needs to run the sequence: book each trade in order, check the work between stages, manage selections and deliveries, handle changes, and keep the household informed. Our <a href="/blog/bathroom-renovation-project-management-timeline/" class="et-link">project management guide</a> explains what that booking involves.',
+          'When the homeowner runs it, delays between trades add up. A plumber who finishes on Thursday but the tiler cannot start until the next Wednesday means the room sits empty. A builder who books the sequence as one program can overlap the trades with less idle time.',
+          'Our <a href="/blog/first-time-bathroom-renovation-sydney/" class="et-link">first-time renovation guide</a> walks through the full sequence step by step, from the on-site measure through handover.',
+        ],
+      },
+      {
+        heading: 'Cost, time and rework risk',
+        paragraphs: [
+          'A lower upfront cost is not useful if the sequence creates rework. Tiles laid on a poorly prepped base crack. Sealing that is rushed or skipped leaks into the floor below. Plumbing that is not tested can fail months later behind finished walls.',
+          'Compare the total cost, including your time, how long the room is out of use, the risk of wasted materials from cutting errors, and the cost of fixing any stage that has to be redone. A written scope from a licensed builder gives you a fixed price for the same comparison. Our <a href="/blog/bathroom-renovation-checklist-sydney/" class="et-link">renovation checklist</a> covers what to verify before accepting a quote.',
+        ],
+      },
+      {
+        heading: 'The owner-builder option',
+        paragraphs: [
+          'NSW allows homeowners to act as an owner-builder for work valued over $10,000, provided they hold an owner-builder permit. The permit requires a course and creates duties around insurance, warranties and disclosure if you sell the home within six years.',
+          'An owner-builder still needs to hire licensed trades for plumbing, wiring and sealing. The permit lets you run the project yourself rather than hiring a licensed builder to manage it. Check the <a href="https://www.nsw.gov.au/housing-and-construction/building-or-renovating-a-home" class="et-link">NSW Government rules</a> for current owner-builder duties.',
+        ],
+      },
+      {
+        heading: 'How to decide',
+        paragraphs: [
+          'If the reno keeps the same layout, uses standard fixtures and finishes, and you are confident booking multiple trades, you may save money by managing the project yourself and hiring licensed trades for each regulated stage.',
+          'If the layout changes, fixtures move, or you want one person in charge of the whole sequence from measure to handover, a licensed builder who runs the trades as one program will usually finish faster with fewer gaps.',
+          'Either way, start with a measured scope and a clear written quote. The measure shows what the room actually needs, and the quote gives you a number to compare against managing it yourself.',
+        ],
+      },
+      {
+        heading: 'How ETR works',
+        paragraphs: [
+          'ETR handles the full sequence under one scope: measure, written quote, selections, trade booking, sealing to AS 3740, compliance papers and handover. Adam Dawood manages the trades with over 25 years of hands-on experience, and households get daily updates during the build.',
+          'Every bathroom is carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the starting point — call 0411 752 334.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I renovate my own bathroom in NSW?',
+        answer: 'You can do finish work like paint, towel rails and cleaning. Plumbing and wiring must be done by licensed trades. Sealing work over $5,000 (labour and materials with GST) also needs a licensed builder. Check the NSW Government website for current figures.',
+      },
+      {
+        question: 'Do I need an owner-builder permit for a bathroom renovation?',
+        answer: 'In NSW, an owner-builder permit is required when you manage building work valued over $10,000 yourself. The permit requires a course and creates duties around insurance, warranties and disclosure if you sell within six years. You still need licensed trades for plumbing, wiring and sealing.',
+      },
+      {
+        question: 'Is it cheaper to renovate a bathroom yourself?',
+        answer: 'The material cost is the same either way. You save the builder margin and booking fee, but you take on the time cost, scheduling risk and any rework cost. Compare the total including your time, how long the room is out of use, and the cost of fixing mistakes.',
+      },
+      {
+        question: 'What is the biggest risk of a DIY bathroom renovation?',
+        answer: 'Sealing failure. A membrane that is applied badly or not given enough curing time can leak into the floor, causing damage that is hidden until it becomes serious. Licensed sealing work includes inspection, a certificate and a defined warranty.',
+      },
+      {
+        question: 'What should I check before deciding between DIY and professional?',
+        answer: 'Whether you are changing the layout or keeping the same footprint, whether you can book and manage multiple trades in sequence, how long the room will be out of use, and whether the total cost including your time is truly lower than a fixed-scope written quote from a licensed builder.',
+      },
     ],
   },
   {
@@ -1153,7 +1389,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'What happens after demolition',
         paragraphs: [
           'Once the room is stripped, the preparation phase begins. The plumber roughs in the new pipe positions, the electrician runs new wiring, and any substrate repair - re-sheeting walls, levelling the floor, reinforcing timber framing - is completed.',
-          'The room is then ready for waterproofing. The membrane is applied, allowed to cure, and flood-tested before any tiles go on. This is the stage where the new bathroom starts to take shape.',
+          'The room is then ready for <a href="/blog/bathroom-waterproofing-explained/" class="et-link">waterproofing</a>. The membrane is applied, allowed to cure, and flood-tested before any tiles go on. This is the stage where the new bathroom starts to take shape.',
           'Demolition is not the renovation - it is the clearing away of the old room so the new one can be built properly. Understanding that it is a planned, controlled process makes the noise and disruption easier to manage. Our <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">renovation timeline guide</a> covers what comes after demolition and how long each stage takes.',
         ],
       },
@@ -2081,70 +2317,72 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'bathroom-renovation-project-management-timeline',
-    title: 'Bathroom renovation project management: what to expect week by week',
-    metaTitle: 'Bathroom Renovation Project Management Timeline',
-    description: 'Follow the work from the first measure to the final clean with a week-by-week plan.',
+    title: 'Bathroom renovation project management: who keeps the work moving',
+    metaTitle: 'Bathroom Renovation Project Plan',
+    description: 'See who coordinates selections, trade handoffs and handover, and what waits on your decisions.',
     published: '2026-10-03',
+    updated: '2026-11-08',
     readTime: '5 min read',
     category: 'Planning and cost',
     sections: [
       {
-        heading: 'Why a bathroom renovation has a sequence',
+        heading: 'Why a bathroom renovation needs coordination',
         paragraphs: [
-          'A bathroom renovation is not one job. It is a series of trades working in sequence: demolition, plumbing rough-in, electrical rough-in, waterproofing, tiling, fixture installation, painting, final plumbing, final electrical, clean-up. Each trade depends on the one before it.',
-          'Good project management means the right trade turns up on the right day with the right materials, and nothing waits longer than it needs to. Poor project management means the plumber is booked somewhere else when the demolition finishes, and the job sits idle for a week.',
+          'A bathroom renovation is not one job. It is a series of trades working in order: demolition, plumbing rough-in, electrical rough-in, waterproofing, tiling, fit-off, painting, silicone and clean-up. Each trade depends on the one before it being finished and checked.',
+          'That order comes from the work itself, not from personal preference. Tiling cannot start on a membrane that has not been inspected. A screen cannot be measured until the walls are tiled. Coordination means the next trade is booked, briefed and supplied before the trade ahead of it packs up.',
+          'When that does not happen, the plumber is booked somewhere else, the tiles are still on order, and the room sits empty. Chasing later does not make up for a gap in the sequence.',
         ],
       },
       {
-        heading: 'Before the renovation starts: planning and selections',
+        heading: 'Planning comes before site work',
         paragraphs: [
-          'The on-site measure happens first. The builder inspects the room, takes measurements, discusses the layout and scope, and identifies any likely issues - old plumbing, timber floors, access constraints, strata requirements.',
-          'After the measure, the written quote is prepared. The homeowner selects tiles, tapware, the vanity, toilet, shower screen, lighting and accessories. All selections should be confirmed and materials ordered before the renovation starts. Changes after site work begins cost time and money.',
-          'This planning phase typically takes 2 to 4 weeks, depending on how quickly selections are made and materials are available.',
+          'Most timing problems start before anyone lifts a tool. The room has been measured, but the tiles are not chosen and nobody has read the quoted scope properly.',
+          'A <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">bathroom renovation timeline</a> has two separate parts: planning, and site work. Planning covers the measure, the written quote, layout decisions, selections and ordering. Site work runs from strip-out to handover. Keep the two apart when you talk about dates, because one is set by decisions and the other by trades.',
+          'On site, a full renovation on the same footprint usually runs three to four weeks. A premium build with natural stone, custom joinery or complex glazing runs five to six weeks. A job that moves walls or fixture positions runs five to seven weeks. Those ranges cover site work only, and the program in your written quote should set the dates for your room.',
+          'Planning time depends on how fast selections are made, how long ordered items take to arrive and whether anything needs strata or council approval. A written program should say what it assumes rather than leave it to memory.',
         ],
       },
       {
-        heading: 'Week 1: demolition and rough-in',
+        heading: 'The trade sequence, in order',
         paragraphs: [
-          'Day 1 to 2: the old bathroom is stripped. Fixtures, tiles, screed and old waterproofing are removed. The room is reduced to structure - studs, slab or timber floor, pipe stubs. Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers this step in detail.',
-          'Day 2 to 3: the plumber roughs in the new pipe positions - water supply, drainage and any gas lines. The electrician runs new wiring for lights, the exhaust fan, heated towel rail and any underfloor heating.',
-          'Day 3 to 4: wall and floor substrates are repaired or replaced. Cement sheet lining goes on the walls. The floor screed is poured and set to the correct gradient for drainage.',
+          'The order below is the usual one for a bathroom. A coordinator works to it and adjusts the booking dates, not the order.',
+          '<strong>1. Demolition and strip-out.</strong> Fixtures, tiles, screed and the old membrane come out, leaving studs, the floor structure and pipe stubs. Our <a href="/blog/bathroom-demolition-what-to-expect/" class="et-link">demolition guide</a> covers what that week looks like for the household.',
+          '<strong>2. Plumbing and electrical rough-in.</strong> New supply, drainage and any gas lines are set out, and wiring goes in for lighting, the exhaust fan, a heated towel rail and underfloor heating. Both trades need the room before linings close it up.',
+          '<strong>3. Substrates.</strong> Walls are repaired or re-lined in cement sheet. The floor is screeded to a fall that drains properly. Nothing above this step can start until it is sound and flat.',
+          '<strong>4. Waterproofing.</strong> The membrane goes on in coats, each drying before the next, covering the floor, the floor-to-wall junctions and the required height up the shower walls. It is inspected and certified before a tile is laid. This is the step that cannot be compressed to save a day.',
+          '<strong>5. Tiling and grouting.</strong> Floor tiles first, then walls. Feature walls, mosaics and large-format tiles take longer than a standard set because of cutting and levelling. Grouting follows once the adhesive has cured.',
+          '<strong>6. Fit-off.</strong> The plumber returns for the basin, tapware, toilet and shower set. The electrician returns for fans, lights, mirrors and switches. Screens are measured after tiling and installed once they arrive, which is why a custom frameless screen is ordered as early as the tiling allows.',
+          '<strong>7. Painting, silicone and accessories.</strong> Walls and ceilings are painted, junctions are sealed at the screen, vanity and bath, and towel rails, hooks and holders are fixed.',
+          '<strong>8. Clean and handover.</strong> The final clean, then the walk-through.',
         ],
       },
       {
-        heading: 'Week 2: waterproofing and tiling',
+        heading: 'Who owns each handoff',
         paragraphs: [
-          'Day 5 to 6: the waterproofing membrane is applied. This is a multi-coat process - each coat must dry before the next is applied. The membrane covers the floor, the junction between floor and walls, and a minimum height up the shower walls. The membrane is inspected and certified before tiling begins.',
-          'Day 6 to 8: tiling starts. Floor tiles go down first, followed by wall tiles. A standard bathroom takes 2 to 3 days to tile. Complex layouts, feature walls or small mosaic tiles take longer. Grouting follows tiling - typically the next day.',
+          'Coordination is mostly a list of small promises. Someone has to own each one, or it becomes the homeowner\'s job to notice when it slips.',
+          'Before the start date: selections confirmed, long-lead items ordered, the scope read and signed, and access arranged for parking, waste removal and a working toilet. A <a href="/blog/bathroom-renovation-checklist-sydney/" class="et-link">bathroom renovation checklist</a> is the simplest way to hold that list in one place.',
+          'During the build: the room is checked and signed off between trades, the next trade is confirmed for a date rather than a hope, and the household is told what is happening and what is coming. Any variation is priced and agreed before the work is done, not after.',
+          'At the end: certificates collected, the walk-through completed, and any touch-ups booked rather than left open.',
         ],
       },
       {
-        heading: 'Week 3: fixtures and finishing',
+        heading: 'Handover is part of the project, not the end of it',
         paragraphs: [
-          'Day 9 to 10: the plumber returns to install the basin, tapware, toilet, shower set and any bath fittings. The shower screen is measured and ordered - a frameless screen is typically custom-made and arrives 5 to 10 business days after measurement.',
-          'Day 10 to 11: the electrician installs the exhaust fan, light fittings, mirror light, heated towel rail and switches. Painting of walls and ceilings is done at this stage.',
-          'Day 12 to 13: the shower screen is installed. Final silicone is applied at all junctions - screen to tile, vanity to wall, bath to tile. Accessories - towel rails, toilet roll holder, robe hooks - are fixed.',
-        ],
-      },
-      {
-        heading: 'Handover and clean-up',
-        paragraphs: [
-          'The final step is a thorough clean and a walk-through with the homeowner. Every fixture is checked, every tap is run, every drain is tested. The shower is run to check for leaks. The exhaust fan is tested.',
-          'All compliance certificates are handed over: waterproofing (AS 3740), plumbing, electrical. The warranty documentation is provided. The room is clean and ready to use.',
-          'From demolition to handover, a standard bathroom renovation takes 2 to 3 weeks of site work. The total project timeline - including the planning and selections phase - is typically 4 to 8 weeks.',
+          'Handover is where a renovation is either finished or quietly left unfinished. Every fixture is operated, every drain is run, the shower is tested for leaks and the exhaust fan is checked.',
+          'Compliance certificates should be handed over together: waterproofing to AS 3740, plus plumbing and electrical. Warranty documentation goes with them. If a touch-up is owed, it gets a date.',
         ],
       },
       {
         heading: 'What keeps a renovation on track',
         paragraphs: [
-          'Three things: confirmed selections before the start date, a clear written scope, and a project manager who coordinates the trades. When one of these is missing, the job stalls.',
-          'Adam Dawood manages ETR\'s projects with over 25 years of experience. The written scope names every inclusion, and the trade schedule is set before demolition day. Communication through the build - what is happening today, what is coming tomorrow - is something our <a href="/blog/bathroom-renovation-timeline-sydney/" class="et-link">timeline guide</a> and our reviews consistently highlight.',
+          'Three things: confirmed selections before the start date, a clear written scope, and one person coordinating the trades. When one of these is missing, the job stalls regardless of how good the trades are.',
+          'Adam Dawood manages ETR\'s projects with over 25 years of experience. The written scope names every inclusion, and the trade schedule is set before demolition day. Households are told what is happening today and what is coming next, which is the part our reviews mention most often.',
         ],
       },
       {
         heading: 'How ETR manages the process',
         paragraphs: [
-          'The on-site measure, written quote, selections process and trade schedule are all coordinated before site work begins. During the build, the homeowner is updated on progress and timing. The project manager is the single point of contact.',
+          'The on-site measure, written quote, selections process and trade schedule are all coordinated before site work begins. During the build, the homeowner is updated on progress and timing. The project manager is the single point of contact, so there is one person to ask rather than a list of trades to chase.',
           'Every bathroom is waterproofed to AS 3740 with a compliance certificate, carried out under NSW Builder Licence 475204C, with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
         ],
       },
@@ -2152,15 +2390,15 @@ export const blogPosts: BlogPost[] = [
     faq: [
       {
         question: 'How long does a bathroom renovation take from start to finish?',
-        answer: 'Site work typically takes 2 to 3 weeks for a standard bathroom. The total project timeline, including planning and selections, is 4 to 8 weeks. Complex renovations, heritage homes or custom materials can extend the timeline.',
+        answer: 'Treat planning and site work as two separate clocks. Site work for a full renovation on the same footprint is usually 3 to 4 weeks. A premium build with natural stone or custom joinery is 5 to 6 weeks, and moving walls or fixture positions is 5 to 7 weeks. Planning time depends on when selections are confirmed and how long ordered items take to arrive. Your written quote sets the program for your room.',
       },
       {
         question: 'What is the biggest cause of renovation delays?',
-        answer: 'Late selections. If tiles, tapware or fixtures are not confirmed before the start date, the job waits for materials. Confirming all selections and ordering materials before demolition is the single most effective way to avoid delays.',
+        answer: 'Late selections. If tiles, tapware or fixtures are not confirmed before the start date, the job waits for materials. Confirming all selections and ordering long-lead items before demolition is the most effective way to avoid delays.',
       },
       {
         question: 'Can I use the bathroom during the renovation?',
-        answer: 'No. The bathroom is out of service from demolition to handover - typically 2 to 3 weeks. You will need access to another bathroom or toilet in the house or a temporary arrangement.',
+        answer: 'No. The room is out of service from demolition until handover, because the waterproofing, tiling and fit-off all happen in that window. Site work is usually 3 to 4 weeks for a full renovation on the same footprint, or 5 to 7 weeks if walls or fixture positions move. Plan access to another bathroom or a temporary arrangement for that period.',
       },
       {
         question: 'What happens if something unexpected is found during demolition?',
@@ -3536,7 +3774,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'What makes a bathroom floor different',
         paragraphs: [
           'A bathroom floor gets wet. It needs to be waterproof, slip-resistant when wet, durable enough to handle daily foot traffic and easy to clean. Not every flooring material meets all four requirements.',
-          'In Australia, the floor of a wet area must be waterproofed to AS 3740. The flooring material sits on top of the waterproof membrane - the membrane does the waterproofing, and the floor material provides the wearing surface.',
+          'In Australia, the floor of a wet area must be waterproofed to AS 3740. The flooring material sits on top of the <a href="/blog/bathroom-waterproofing-explained/" class="et-link">waterproof membrane</a> - the membrane does the waterproofing, and the floor material provides the wearing surface.',
         ],
       },
       {
@@ -4600,7 +4838,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Vanity drawers and cupboards',
         paragraphs: [
           'The vanity is the primary storage unit in most bathrooms. Drawers are more useful than cupboard doors because you can see and reach everything without bending down and reaching to the back.',
-          'A 900-millimetre single vanity with three drawers holds more accessible storage than a 1,200-millimetre vanity with two cupboard doors. Drawer organisers (dividers, trays) make the most of each drawer. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers sizing and layout in detail.',
+          'A 900-millimetre single vanity with three drawers holds more accessible storage than a 1,200-millimetre vanity with two cupboard doors. Drawer organisers (dividers, trays) make the most of each drawer. In a <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathroom</a>, a slim 350- to 400-millimetre vanity still fits drawers while freeing corridor space. Our <a href="/blog/bathroom-vanity-guide-renovation/" class="et-link">vanity guide</a> covers sizing and layout in detail.',
         ],
       },
       {
@@ -4751,7 +4989,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Layout options for a small ensuite',
         paragraphs: [
-          'The three fixtures in most ensuites are a shower, a vanity and a toilet. In a small room, the layout sequence matters. The most common and space-efficient layout puts the vanity nearest the door, the toilet beside or opposite it, and the shower at the far end.',
+          'The three fixtures in most ensuites are a shower, a vanity and a toilet. In a small room, the layout sequence matters. The most common and space-efficient layout puts the vanity nearest the door, the toilet beside or opposite it, and the shower at the far end. The same door-swing, depth and fixture-position principles in our <a href="/blog/small-bathroom-renovation-without-feeling-cramped/" class="et-link">small bathroom guide</a> apply here.',
           'A long, narrow ensuite suits a linear layout - all three fixtures along one wall. A wider room allows an L-shaped layout with the shower tucked into a corner. Our <a href="/blog/bathroom-layout-changes-renovation/" class="et-link">layout changes guide</a> covers the cost and process of moving fixtures.',
           'In some master bedrooms, the ensuite has no external wall and therefore no window. In that case, a quality exhaust fan and good lighting are essential - see ventilation below.',
         ],

@@ -35,3 +35,7 @@ yarn-error.log*
 # scratch evidence: screenshots, mocks, Lighthouse JSON. Every tmp/ file in history arrived through
 # an automatic "1" commit, never on purpose. Files already tracked stay tracked until removed.
 /tmp/
+# Same story, different name. /.tmp/ reached 4,363 tracked files and ~763MB — including a complete
+# duplicate of the repo (.tmp/issue-76-build-final-20261107/) with unresolved conflict markers in it.
+# Untracked 2026-11-09; the files stay on disk, git just stops carrying them.
+/.tmp/

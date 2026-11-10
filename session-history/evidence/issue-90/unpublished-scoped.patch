@@ -1,0 +1,188 @@
+diff --git a/lib/blog.ts b/lib/blog.ts
+index d1ca1e3..70fe371 100644
+--- a/lib/blog.ts
++++ b/lib/blog.ts
+@@ -1,4 +1,5 @@
+ import { businessInfo } from './businessInfo'
++import { packageStarts } from './packageStarts'
+ 
+ export type BlogSection = {
+   heading: string
+@@ -57,6 +58,19 @@ export const blogPosts: BlogPost[] = [
+     updated: '2026-11-02',
+     readTime: '4 min read',
+     category: 'Planning and cost',
++    quickAnswer: {
++      heading: 'Quick answer',
++      paragraphs: [
++        'Elite Touch bathroom packages start at the prices below for the room sizes shown. Your room, choices and scope will shape the written quote.',
++      ],
++      table: {
++        caption: 'Elite Touch package starting prices and bathroom size bases.',
++        columns: ['Package and room size', 'Starting price'],
++        rows: packageStarts.map((item) => ({ label: item.name, detail: item.size, value: item.price })),
++      },
++      note: 'These are starting prices. A free on-site measure helps set the scope and price for your room.',
++      cta: { href: '/packages/', label: 'Compare the packages' },
++    },
+     sections: [
+       { heading: 'Start with the room and the scope', paragraphs: ['There is no honest single price for every bathroom renovation. If you are pricing a full bathroom in Sydney, start with our <a href="/packages/" class="et-link">package prices and size bases</a>, then consider how room size, fittings, tile selection, electrical and plumbing work, and layout affect the final scope.', 'A useful quote should make those decisions visible. It should describe what is included, what is excluded and which selections are still provisional. That gives you something meaningful to compare instead of comparing two totals with different scopes.'] },
+       { heading: 'ETR package starting points', paragraphs: ['If you are comparing Sydney bathroom renovation pricing, Elite Touch publishes <a href="/packages/" class="et-link">three package starting points</a>: Basic from $18,000 for an approximately 1.5 m × 1.8 m × 2.4 m bathroom, Standard from $25,000 for an approximately 1.8 m × 2.4 m × 2.4 m bathroom, and Premium from $30,000 for an approximately 2.4 m × 2.4 m × 2.4 m bathroom.', 'These are starting prices, not fixed quotes. The final scope depends on the actual room and your selections. A free on-site measure is the right next step when you need a price tied to your bathroom.'] },
+@@ -896,6 +910,19 @@ export const blogPosts: BlogPost[] = [
+     published: '2026-10-02',
+     readTime: '4 min read',
+     category: 'Planning and cost',
++    quickAnswer: {
++      heading: 'Quick answer',
++      paragraphs: [
++        'Start your budget with the room size and the work you want done. The Elite Touch package starting points below give you a guide before a site measure.',
++      ],
++      table: {
++        caption: 'Elite Touch package starting prices and bathroom size bases.',
++        columns: ['Package and room size', 'Starting price'],
++        rows: packageStarts.map((item) => ({ label: item.name, detail: item.size, value: item.price })),
++      },
++      note: 'These are starting prices. Your written quote will reflect your room and the agreed scope.',
++      cta: { href: '/contact-us/', label: 'Book a free on-site measure' },
++    },
+     sections: [
+       {
+         heading: 'Why bathroom budgets blow out',
+@@ -5623,6 +5650,80 @@ export const blogPosts: BlogPost[] = [
+       { question: 'Who should I contact if I notice a problem?', answer: 'Contact the Elite Touch team to discuss work we completed. Note where the issue is and keep photos and your job details handy. For a fitting, check its maker details too.' },
+     ],
+   },
++  {
++    slug: 'free-bathroom-renovation-quote-what-to-expect',
++    title: 'Free bathroom renovation quote in Sydney: what to expect',
++    metaTitle: 'Free Bathroom Renovation Quote in Sydney',
++    description: 'Find out what happens at your free on-site measure and what your written bathroom renovation quote covers.',
++    published: '2026-11-08',
++    readTime: '4 min read',
++    category: 'Quotes and decisions',
++    quickAnswer: {
++      heading: 'Is the bathroom quote really free?',
++      paragraphs: [
++        'Yes. Elite Touch Renovations offers a free on-site measure and written quote across Sydney, with no obligation to proceed. We measure the room, discuss your plans and prepare a fixed-scope quote setting out the inclusions, exclusions and assumptions.',
++        'We usually send your written quote within five business days. You can then read the scope, ask questions and decide what to do next.',
++      ],
++      table: {
++        caption: 'From your first enquiry to your written quote.',
++        columns: ['Step', 'What happens'],
++        rows: [
++          { label: 'Book', detail: 'Call or send us your details.', value: 'Arrange a free measure' },
++          { label: 'Meet', detail: 'We measure your room and discuss your plans.', value: 'Talk through the work' },
++          { label: 'Review', detail: 'We set out the scope and price in writing.', value: 'Read your quote' },
++        ],
++      },
++      note: 'The measure and quote are free, with no obligation to proceed.',
++      cta: { href: '/contact-us/', label: 'Book a free on-site measure' },
++    },
++    sections: [
++      {
++        heading: 'What happens at the free on-site measure?',
++        paragraphs: [
++          'We visit your home, measure your bathroom and talk through what you hope to change. You can explain what is not working in the room and which choices matter most to you. The visit gives us the room details we need to prepare your written scope.',
++          'It helps to think about the fittings, finishes and layout you like before we meet. Bring any questions about the room or the work you would like covered in the quote.',
++        ],
++      },
++      {
++        heading: 'What does the written quote include?',
++        paragraphs: [
++          'The fixed-scope written quote sets out the proposed work, along with its inclusions, exclusions and assumptions. Read those details with the price so you can see what the scope covers and raise any questions before deciding what to do next.',
++          'Our guide to <a href="/blog/fixed-scope-quote-vs-provisional-sums-bathroom/" class="et-link">fixed-scope quotes and provisional sums</a> explains the terms. If you have more than one quote, the <a href="/blog/how-to-compare-bathroom-renovation-quotes/" class="et-link">guide to comparing bathroom renovation quotes</a> can help you compare the work as well as the total.',
++        ],
++      },
++      {
++        heading: 'How do the package prices relate to my quote?',
++        paragraphs: [
++          'The <a href="/packages/" class="et-link">package page</a> shows the starting prices alongside the room size and inclusions for each tier. Use those figures for early planning. Your written quote follows the on-site measure and sets out the scope for your room.',
++        ],
++      },
++      {
++        heading: 'How long does it take to receive the quote?',
++        paragraphs: [
++          'We usually send your fixed-scope written quote within five business days. If you have a particular date in mind, raise it with us when arranging the visit.',
++        ],
++      },
++      {
++        heading: 'Do I need to proceed after the quote?',
++        paragraphs: [
++          'No. The on-site measure and written quote are free, with no obligation to proceed. You can read the scope, ask questions and decide whether it is right for you.',
++        ],
++      },
++      {
++        heading: 'How do I book a free measure?',
++        paragraphs: [
++          'Call <a href="tel:0411752334" class="et-link">0411 752 334</a> or send your details through our <a href="/contact-us/" class="et-link">enquiry form</a>. Tell us where the bathroom is and what you would like to change. Our team can then arrange the on-site measure.',
++        ],
++      },
++    ],
++    faq: [
++      { question: 'Is the bathroom quote free?', answer: 'Yes. Elite Touch offers a free on-site measure and written quote across Sydney, with no obligation to proceed.' },
++      { question: 'What does the quote set out?', answer: 'The written fixed-scope quote sets out the proposed work, inclusions, exclusions and assumptions.' },
++      { question: 'How long does the quote take?', answer: 'Elite Touch usually sends the written quote within five business days.' },
++      { question: 'Are package prices the quote for my room?', answer: 'The package prices are starting points tied to stated room sizes and inclusions. Your written quote follows the on-site measure.' },
++      { question: 'How do I arrange the measure?', answer: 'Call Elite Touch or send your details through the enquiry form so the team can arrange a visit.' },
++    ],
++  },
+ ]
+ 
+ export function getBlogPost(slug: string) {
+diff --git a/scripts/check-readability.mjs b/scripts/check-readability.mjs
+index a4c59f9..7569302 100644
+--- a/scripts/check-readability.mjs
++++ b/scripts/check-readability.mjs
+@@ -144,6 +144,7 @@ const ROUTES = [
+   '/blog/how-long-does-a-bathroom-renovation-last/',
+   '/blog/repair-or-replace-bathroom-renovation/',
+   '/blog/what-happens-after-bathroom-renovation/',
++  '/blog/free-bathroom-renovation-quote-what-to-expect/',
+   '/services/',
+   '/services/bathroom-renovations/',
+   '/services/ensuite-bathroom-renovations/',
+diff --git a/session-history/2026-11-08-1429-issue-80-codex-tracker-sync.md b/session-history/2026-11-08-1429-issue-80-codex-tracker-sync.md
+new file mode 100644
+index 0000000..dfbc767
+--- /dev/null
++++ b/session-history/2026-11-08-1429-issue-80-codex-tracker-sync.md
+@@ -0,0 +1,17 @@
++<!-- session-checkpoint:v1 -->
++# Session checkpoint
++
++- Repository / issue: `fardintolo123/elite-touch-revonations` #80.
++- Observed at: 2026-11-08 14:29 UTC (Asia/Kabul: 18:59).
++- Session: Codex desktop, continuing the existing issue #80 conversation; chat/session ID `01a1a7e8-152c-7223-822b-22bee8d56ed3`.
++- Mode requested / work performed: verify and synchronize the tracker; no application implementation performed in this continuation.
++- Ownership: tracker-only. No code paths claimed. Concurrent edits appeared in `lib/blog.ts` and `.tmp/issue-90-entry.txt` during the session; left untouched.
++- GitHub state / closure reason / work status: #80 remains open and active. #81–#85 and #88 are closed; #89 and #90 are open.
++- Code: `main` at `584a88caf92141a0565101b3dedcffa89e837e63` when the tracker was synchronized. Later status check showed concurrent working-tree edits; no Git state changes made here.
++- Publication: no code commits, push, or deployment from this session.
++- Completed / takeaways: re-read `CLAUDE.md`, Sunrise, and session-management rules; fetched live issue states; updated issue #80's body from the committed `plans/long-tail-buyer-queries-2026-10.md` so its status and child list match the current plan.
++- Verification: GitHub issue #80 re-fetch confirmed the synchronized body and open state. Live issue records show #89 and #90 still open.
++- Remaining / blocker: #89 and #90 remain part of the active tracker. Closing #80 as completed now would misstate the plan.
++- Next action: complete #89, then #90; reconcile their acceptance criteria and the plan, then close #80 when no tracked child remains open.
++- Approval: owner requested eventual closure. Completion closure is not yet supported by the live tracker state.
++- GitHub sync: tracker body updated and checkpoint comment posted at https://github.com/fardintolo123/elite-touch-revonations/issues/80#issuecomment-6722737097.
+diff --git a/session-history/2026-11-08-1903-issue-91-01a1ab30.md b/session-history/2026-11-08-1903-issue-91-01a1ab30.md
+new file mode 100644
+index 0000000..55d1957
+--- /dev/null
++++ b/session-history/2026-11-08-1903-issue-91-01a1ab30.md
+@@ -0,0 +1,15 @@
++<!-- session-checkpoint:v1 -->
++# Session checkpoint
++- Repository / issue: fardintolo123/elite-touch-revonations #91
++- Observed at: 2026-11-08 19:03 Asia/Kabul (UTC+04:30)
++- Session: Codex 01a1ab30-3ec5-74b2-91d0-c088746609cf; title: Check CLAUDE.md and issue 91.
++- Mode requested / work performed: implement and verify. Ownership released; #90 is preparing work on the shared blog file.
++- GitHub state / work status: #91 open; implementation partially completed, final verification blocked by existing readability inventory error. No issue progress comment posted.
++- Code: main, commit f72cb3f00497bcebc1d5c4949e60274e754a5323, `lib/blog.ts` only. The starting checkout was 584a88caf92141a0565101b3dedcffa89e837e63, clean; other sessions' untracked files preserved. Commit is local; no push or deployment by this session.
++- Recovery: local commit on main; unavailable from another machine until published. No patch needed for committed work.
++- Completed: Added package-based quick answers to bathroom-renovation-cost-sydney and bathroom-renovation-budget-planning. Rows use lib/packageStarts.ts, sourced to D-60/D-61 and docs/source-copy/packages-2026-08-19.md; each starting price carries its room-size basis. No existing description, sections, FAQ or quick answer altered. Existing two-column component reused.
++- Verification: Before and after local builds passed, each generating 123 pages. `npm run check:design` passed. `npm run check:readability` measured 116/116 listed routes >=60 including all 81 existing blog guides and the blog index; cost 69.0 and budget 66.8. The command exited 1 both before and after the change because built `ai.html` is absent from its route inventory. `scripts/check-readability.mjs` is explicitly outside #91's scope. Twelve source quickAnswer blocks matched twelve rendered blog HTML files. Playwright checked both changed pages at 390 and 1440, with three correct price/size rows and the correct CTA; no page-level overflow. The existing table component uses horizontal scrolling inside the desktop card because its minimum width exceeds the content column; no shared styling was changed. Before/after generated HTML sizes: cost 121008 -> 124383 bytes; budget 136486 -> 139927 bytes. No Lighthouse or real-user performance measurement was performed.
++- Remaining / blocker: Reconcile the pre-existing /ai/ inventory omission in its owning workstream, then run the full readability command to a zero exit status against a fresh isolated build. Review desktop table scrolling and resolve within the relevant shared-template ownership if needed. Issue #91 requires a closing comment listing deliberately omitted guides and reasons; no such comment or close action was made. The exact original owner statement for the full-renovation timeline was not located; D-75 says 3–5 weeks and D-126/businessInfo say 3–4, so no duration was added. Other buyer-intent guides, including the warranty and fast-renovation guides, were left without a new block because an appropriate supported multi-row table was not established within the issue's allowed fact sources; avoid forcing a price table into unrelated topics. Issue #91's requested optional-table follow-up remains unassessed.
++- Next action: run sunrise #91; coordinate the /ai/ route-inventory fix with its owner, verify the commit and rerun the required checks; inventory and name the guides deliberately left out before any authorized completion comment.
++- Approval: implementation requested; no explicit authorization to publish the commit or close the issue. No push or deployment performed.
++- GitHub sync: not posted; this checkpoint is local-only.
+\ No newline at end of file

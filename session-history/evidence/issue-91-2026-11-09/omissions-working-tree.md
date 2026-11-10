@@ -1,0 +1,73 @@
+# Guides without a quick-answer block
+
+Source: current working tree, including unrelated uncommitted edits. These are not necessarily all buyer-intent candidates. Assess each before adding a table; do not force unrelated package prices into a guide. Duration source conflict remains unresolved.
+
+- how-to-compare-bathroom-renovation-quotes — Fixed quote vs verbal estimate: what to ask before you sign
+- questions-to-ask-a-bathroom-renovator — How to choose a bathroom renovator in Sydney without getting burned
+- bathroom-renovation-checklist-sydney — Bathroom renovation checklist for Sydney homeowners
+- bathroom-waterproofing-certificate-sydney — Waterproofing certificates explained: what every Sydney bathroom renovation needs
+- first-time-bathroom-renovation-sydney — First time renovating? Here is exactly what happens, step by step
+- ensuite-vs-bathroom-vs-powder-room-renovation — Ensuite vs full bathroom vs powder room renovation: cost and scope compared
+- bathroom-laundry-combo-renovation-worth-it — Bathroom + laundry combo renovations: is combining the two worth it?
+- small-bathroom-renovation-without-feeling-cramped — How to renovate a small bathroom without it feeling cramped
+- bathroom-renovation-mistakes-to-avoid — What are the biggest bathroom renovation mistakes to avoid?
+- diy-or-professional-bathroom-renovation — Should I renovate my bathroom myself or hire a professional?
+- strata-bathroom-renovation-sydney — Renovating a bathroom in a Sydney apartment or strata unit?
+- bathroom-renovation-hidden-costs-sydney — Sydney bathroom renovation: hidden costs to watch for
+- bathroom-renovation-essential-upgrades — Bathroom renovation: essential upgrades vs nice-to-haves
+- bathroom-renovation-warranty-guide — What warranty should a bathroom renovation include?
+- fast-bathroom-renovation-what-to-expect — Is a quick bathroom renovation possible? What to expect
+- bathroom-trends-australia-right-now — Bathroom trends in Australia right now
+- small-bathroom-storage-solutions — Storage solutions for small bathrooms
+- bathroom-tiling-and-finishes-guide — Choosing bathroom tiles and finishes
+- bathroom-renovation-add-value-home — Does a bathroom renovation add value to your home?
+- bathroom-colour-schemes-australia — Bathroom colour schemes that actually work in Australian homes
+- bathroom-ventilation-sydney-renovation — Bathroom ventilation: what every Sydney renovation needs to get right
+- heritage-bathroom-renovation-sydney — Renovating a bathroom in a heritage or older Sydney home
+- walk-in-shower-vs-bathtub-renovation — Walk-in shower vs bathtub: how to choose during a bathroom renovation
+- bathroom-renovation-resale-value-what-agents-look-for — Bathroom renovation and resale: what agents actually look for
+- bathroom-demolition-what-to-expect — What happens during bathroom demolition? A step-by-step guide
+- accessible-bathroom-renovation-sydney — Accessible bathroom renovation: designing for all ages and abilities
+- apartment-bathroom-renovation-vs-house — Apartment bathroom renovation vs house: what changes
+- wet-room-bathroom-renovation — Wet room design: is it right for your bathroom renovation?
+- bathroom-tapware-finishes-guide — How to choose bathroom tapware finishes that last
+- underfloor-heating-bathroom-renovation — Underfloor heating in a bathroom: worth the cost?
+- family-bathroom-renovation-ideas — Family-friendly bathroom renovation: designing for kids and adults
+- bathroom-vanity-guide-renovation — How to choose the right bathroom vanity during a renovation
+- bathroom-renovation-permits-sydney — Bathroom renovation permits and approvals in Sydney: what you need
+- bathroom-renovation-plumbing-replacement — What plumbing gets replaced during a bathroom renovation?
+- bathroom-renovation-insurance-australia — Bathroom renovation and home insurance: what to know before you start
+- bathroom-renovation-project-management-timeline — Bathroom renovation project management: who keeps the work moving
+- large-format-tiles-bathroom-renovation — Large-format tiles in a bathroom renovation: pros, cons and what to know
+- eco-friendly-bathroom-renovation — Eco-friendly bathroom renovation: sustainable choices that save water and money
+- bathroom-renovation-living-at-home — Bathroom renovation while living at home: how to manage the disruption
+- shower-screen-types-bathroom-renovation — Shower screens explained: frameless, semi-frameless and framed
+- bathroom-niche-design-ideas — Bathroom niches and recessed shelves: design, sizing and waterproofing
+- freestanding-bath-renovation-guide — Freestanding bath in a renovation: space, plumbing and cost
+- bathroom-mould-prevention-renovation — Bathroom mould: why it returns and how a renovation stops it
+- heated-towel-rail-bathroom-guide — Heated towel rails: types, costs and what to know during a renovation
+- bathroom-mirror-guide-renovation — Bathroom mirrors: types, sizing and LED options for your renovation
+- bathroom-grout-guide-types-maintenance — Bathroom grout: types, colours and how to keep it clean
+- bathroom-splashback-ideas-renovation — Bathroom splashback ideas: tiles, glass and panels
+- bathroom-waterproofing-explained — Bathroom waterproofing explained: what every homeowner should know
+- bathroom-renovation-waste-disposal — Bathroom renovation waste: what gets removed and where it goes
+- bathroom-renovation-investment-property — Bathroom renovation for investment properties: what to spend and what to skip
+- bathroom-ceiling-renovation-guide — Bathroom ceiling renovation: what most people overlook
+- bathroom-renovation-electrical-work — Bathroom renovation electrical work: what changes and what stays
+- bathroom-flooring-options-renovation — Bathroom flooring options: tiles, vinyl and what works in wet areas
+- bathroom-renovation-design-process — The bathroom renovation design process: from first ideas to final plans
+- bathroom-renovation-contract-guide — What to look for in a bathroom renovation contract
+- aging-in-place-bathroom-design — Aging in place: designing a bathroom for the years ahead
+- bathroom-paint-guide-renovation — Bathroom paint: where to use it, what type and when tiles are better
+- how-to-choose-bathroom-renovator-sydney — How to choose a bathroom renovator in Sydney
+- bathroom-accessories-hardware-guide — Bathroom accessories and hardware: the finishing touches that matter
+- toilet-upgrade-guide-bathroom-renovation — Toilet upgrades during a bathroom renovation: types, costs and what to know
+- double-vanity-vs-single-bathroom — Double vanity vs single vanity: which suits your bathroom?
+- bathroom-renovation-scope-changes — Bathroom renovation scope: how to manage changes without blowing the budget
+- shower-seat-bench-bathroom-design — Shower seats and bench seating: comfort, safety and style
+- bathroom-layout-changes-renovation — Bathroom layout changes: when to move plumbing and when to keep it
+- wall-hung-vs-floor-mounted-fixtures — Wall-hung vs floor-mounted bathroom fixtures: pros, cons and cost
+- bathroom-storage-planning-renovation — How to plan bathroom storage during a renovation
+- bathroom-renovation-neighbours-noise — Bathroom renovation and your neighbours: managing noise and access
+- ensuite-renovation-ideas-layout — Ensuite renovation ideas: layout, design and what to prioritise
+- powder-room-renovation-guide — Powder room renovation: making a small space shine

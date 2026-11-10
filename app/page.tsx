@@ -247,33 +247,36 @@ export default function HomePage() {
       />
 
       {/* ---------------- Hero ----------------
-          Direction A (D-159): on phones the real photo comes first, then the
-          promise, then the room picker. DOM order = visual order on phones. */}
-      <section className={`et-hero ${styles.heroSection}`}>
-        <div className="et-container">
-          <div className={styles.hero}>
-            <figure className={styles.heroMedia}>
-              {/* LCP candidate: eager + high priority. Our own photograph,
-                  with alt text describing the photo (D-66). Rendered width
-                  measured with Playwright: 390→350, 1440→516; the square crop of a 3:2 photo scales it to ~516 x 1.5, so `sizes` asks for 780 so the crop stays sharp. */}
-              <div className={styles.heroPhoto}>
-                <Image
-                  src={heroImage.src}
-                  alt={heroImage.alt}
-                  width={heroImage.width}
-                  height={heroImage.height}
-                  sizes="(min-width: 1024px) 780px, 100vw"
-                  priority
-                />
-              </div>
-              <figcaption className={styles.caption}>
-                {heroProject.name} ·{' '}
-                <Link href={`/gallery/${heroProject.slug}/`} className="et-link">
-                  See this project
-                </Link>
-              </figcaption>
-            </figure>
+          Full-bleed proof photo, held to the viewport below the sticky header.
+          Copy and all existing booking/proof actions stay in the first screen. */}
+      <section className={`et-hero et-hero-backdrop ${styles.heroSection}`}>
+        <div className={styles.heroMedia}>
+          {/* LCP candidate: eager + high priority. This is our own, attributed
+              project photo; the scrim is static so the image is visible immediately. */}
+          <Image
+            src={heroImage.src}
+            alt={heroImage.alt}
+            fill
+            sizes="100vw"
+            priority
+            fetchPriority="high"
+            className={styles.heroImage}
+          />
+        </div>
+        <div
+          className={`et-hero-backdrop-scrim ${styles.heroScrim}`}
+          aria-hidden="true"
+        />
 
+        <p className={`et-hero-backdrop-credit ${styles.heroCaption}`}>
+          {heroProject.name} ·{' '}
+          <Link href={`/gallery/${heroProject.slug}/`} className="et-link">
+            See this project
+          </Link>
+        </p>
+
+        <div className={`et-container ${styles.heroContainer}`}>
+          <div className={styles.hero}>
             <div className={`et-stack ${styles.heroIntro}`}>
               {/* "Sydney" is already in the H1, so the pill carries only the fact. */}
               <span className={`et-eyebrow ${styles.heroEyebrow}`}>Family-run since 2022</span>
@@ -289,7 +292,7 @@ export default function HomePage() {
             </div>
 
             <div className={`et-stack ${styles.heroAct}`}>
-              <GoogleRating />
+              <GoogleRating compact />
 
               <HomeEnquiryStarter services={services.map((service) => service.title)} />
 

@@ -52,3 +52,13 @@ rendered page, relevant internal links and sitemap together. Check separate QA i
 
 **Evidence/status:** source-verified at the revision above. No ranking or indexing improvement is
 claimed from this architecture alone.
+
+## One-screen full-bleed homepage hero
+
+**What it does:** `app/page.tsx` and `app/page.module.css` use the existing attributed Hornsby bathroom photo as a static, high-priority full-bleed image. The hero height subtracts the sticky header from the viewport, keeps the H1, inline Google rating, primary room-to-enquiry choices, tap-to-call, quote/warranty facts and project credit in the first screen, and applies the shared scrim. `components/HomeEnquiryStarter.tsx` labels the room links as the starting path.
+
+**Why useful:** an actual Elite Touch project supplies the visual proof, and the hero gives visitors the real service choices and contact route without extending past the first viewport. The static image avoids hiding the LCP image during an entrance animation. This is a design rationale, not a measured conversion benefit.
+
+**Reusable principle:** use a business-owned, correctly attributed project photo; subtract the measured sticky-header height; test the crop and text contrast at 390px and 1440px, plus short mobile height; keep the LCP image eager/high-priority and unanimated; preserve the existing business facts and room-to-form handoff. Do not copy another project's photo, services or claims.
+
+**Evidence/status:** based on HEAD `96231f0b`; verified 2026-11-10. Production build, `typecheck`, `check:design` and `check:readability` (118/118) pass. Final browser captures at 390×844, 1440×900 and 390×667 show the hero bottom 0.4px, 1.2px and 0.2px inside the viewport; the independent screenshot review found no P0/P1/P2. Matched Lighthouse 13.4.1 mobile median LCP is 2.644s before / 3.064s after (+420ms); the final-source runs include the 1px height guard. The image request is high-priority and 15.7KB, and Lighthouse reports no LCP savings from its discovery/breakdown audits. A sync-decode experiment was reverted after TBT reached 627ms. The owner approved publication despite the 2.5s LCP target and +300ms regression gate on 2026-11-10. Release is pending safe `main` reconciliation; conversion, SEO and field Core Web Vitals impact are not measured.

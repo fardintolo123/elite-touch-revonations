@@ -1,0 +1,395 @@
+[
+  {
+    "size": "390x844",
+    "screenshot": "D:\\1\\elite-touch-revonations\\session-history\\evidence\\homepage-one-screen-hero-2026-11\\after-390x844-viewport.png",
+    "metrics": {
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "clientWidth": 375
+      },
+      "header": {
+        "x": 0,
+        "top": 0,
+        "right": 375.2,
+        "bottom": 113.6,
+        "width": 375.2,
+        "height": 113.6
+      },
+      "hero": {
+        "x": 0,
+        "top": 113.6,
+        "right": 375.2,
+        "bottom": 844.6,
+        "width": 375.2,
+        "height": 731
+      },
+      "heroBottomDelta": -0.6,
+      "required": {
+        "h1": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 213.5,
+            "right": 355.2,
+            "bottom": 343.1,
+            "width": 335.2,
+            "height": 129.6
+          },
+          "withinHero": true
+        },
+        "bookLabel": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 471.8,
+            "right": 355.2,
+            "bottom": 492.8,
+            "width": 335.2,
+            "height": 21
+          },
+          "withinHero": true
+        },
+        "roomChoices": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 512.8,
+            "right": 355.2,
+            "bottom": 636.4,
+            "width": 335.2,
+            "height": 123.6
+          },
+          "withinHero": true
+        },
+        "rating": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 431.8,
+            "right": 339.4,
+            "bottom": 455.8,
+            "width": 319.4,
+            "height": 24
+          },
+          "withinHero": true
+        },
+        "call": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 652.4,
+            "right": 355.2,
+            "bottom": 710,
+            "width": 335.2,
+            "height": 57.6
+          },
+          "withinHero": true
+        },
+        "facts": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 726,
+            "right": 355.2,
+            "bottom": 780,
+            "width": 335.2,
+            "height": 54
+          },
+          "withinHero": true
+        },
+        "credit": {
+          "exists": true,
+          "rect": {
+            "x": 71.6,
+            "top": 125.6,
+            "right": 355.2,
+            "bottom": 145.1,
+            "width": 283.6,
+            "height": 19.5
+          },
+          "withinHero": true
+        }
+      },
+      "creditOverlapsFacts": false,
+      "creditBackground": "rgba(20, 20, 22, 0.78)",
+      "bookLabelStyle": {
+        "color": "rgba(255, 255, 255, 0.92)",
+        "fontSize": "14px",
+        "fontWeight": "600"
+      },
+      "roomChoiceLinks": 4,
+      "image": {
+        "complete": true,
+        "naturalWidth": 390,
+        "opacity": "1",
+        "animationName": "none",
+        "fetchPriority": "high"
+      },
+      "documentWidth": 375
+    },
+    "pageErrors": []
+  },
+  {
+    "size": "1440x900",
+    "screenshot": "D:\\1\\elite-touch-revonations\\session-history\\evidence\\homepage-one-screen-hero-2026-11\\after-1440x900-viewport.png",
+    "metrics": {
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "clientWidth": 1425
+      },
+      "header": {
+        "x": 0,
+        "top": 0,
+        "right": 1424.8,
+        "bottom": 80.8,
+        "width": 1424.8,
+        "height": 80.8
+      },
+      "hero": {
+        "x": 0,
+        "top": 80.8,
+        "right": 1424.8,
+        "bottom": 899.8,
+        "width": 1424.8,
+        "height": 819
+      },
+      "heroBottomDelta": 0.2,
+      "required": {
+        "h1": {
+          "exists": true,
+          "rect": {
+            "x": 112.4,
+            "top": 241.1,
+            "right": 792.4,
+            "bottom": 387.9,
+            "width": 680,
+            "height": 146.9
+          },
+          "withinHero": true
+        },
+        "bookLabel": {
+          "exists": true,
+          "rect": {
+            "x": 112.4,
+            "top": 514.3,
+            "right": 832.4,
+            "bottom": 535.3,
+            "width": 720,
+            "height": 21
+          },
+          "withinHero": true
+        },
+        "roomChoices": {
+          "exists": true,
+          "rect": {
+            "x": 112.4,
+            "top": 555.3,
+            "right": 832.4,
+            "bottom": 659.3,
+            "width": 720,
+            "height": 104
+          },
+          "withinHero": true
+        },
+        "rating": {
+          "exists": true,
+          "rect": {
+            "x": 112.4,
+            "top": 466.3,
+            "right": 431.8,
+            "bottom": 490.3,
+            "width": 319.4,
+            "height": 24
+          },
+          "withinHero": true
+        },
+        "call": {
+          "exists": true,
+          "rect": {
+            "x": 112.4,
+            "top": 683.3,
+            "right": 326.4,
+            "bottom": 740.9,
+            "width": 214,
+            "height": 57.6
+          },
+          "withinHero": true
+        },
+        "facts": {
+          "exists": true,
+          "rect": {
+            "x": 112.4,
+            "top": 764.9,
+            "right": 832.4,
+            "bottom": 785.9,
+            "width": 720,
+            "height": 21
+          },
+          "withinHero": true
+        },
+        "credit": {
+          "exists": true,
+          "rect": {
+            "x": 1061.2,
+            "top": 92.8,
+            "right": 1344.8,
+            "bottom": 112.3,
+            "width": 283.6,
+            "height": 19.5
+          },
+          "withinHero": true
+        }
+      },
+      "creditOverlapsFacts": false,
+      "creditBackground": "rgba(20, 20, 22, 0.78)",
+      "bookLabelStyle": {
+        "color": "rgba(255, 255, 255, 0.92)",
+        "fontSize": "14px",
+        "fontWeight": "600"
+      },
+      "roomChoiceLinks": 4,
+      "image": {
+        "complete": true,
+        "naturalWidth": 843,
+        "opacity": "1",
+        "animationName": "none",
+        "fetchPriority": "high"
+      },
+      "documentWidth": 1425
+    },
+    "pageErrors": []
+  },
+  {
+    "size": "390x667",
+    "screenshot": "D:\\1\\elite-touch-revonations\\session-history\\evidence\\homepage-one-screen-hero-2026-11\\after-390x667-viewport.png",
+    "metrics": {
+      "viewport": {
+        "width": 390,
+        "height": 667,
+        "clientWidth": 375
+      },
+      "header": {
+        "x": 0,
+        "top": 0,
+        "right": 375.2,
+        "bottom": 113.6,
+        "width": 375.2,
+        "height": 113.6
+      },
+      "hero": {
+        "x": 0,
+        "top": 113.6,
+        "right": 375.2,
+        "bottom": 667.8,
+        "width": 375.2,
+        "height": 554.2
+      },
+      "heroBottomDelta": -0.8,
+      "required": {
+        "h1": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 182,
+            "right": 355.2,
+            "bottom": 251.1,
+            "width": 335.2,
+            "height": 69.1
+          },
+          "withinHero": true
+        },
+        "bookLabel": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 355.8,
+            "right": 355.2,
+            "bottom": 376.8,
+            "width": 335.2,
+            "height": 21
+          },
+          "withinHero": true
+        },
+        "roomChoices": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 396.8,
+            "right": 355.2,
+            "bottom": 520.4,
+            "width": 335.2,
+            "height": 123.6
+          },
+          "withinHero": true
+        },
+        "rating": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 323.8,
+            "right": 339.4,
+            "bottom": 347.8,
+            "width": 319.4,
+            "height": 24
+          },
+          "withinHero": true
+        },
+        "call": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 528.4,
+            "right": 355.2,
+            "bottom": 586,
+            "width": 335.2,
+            "height": 57.6
+          },
+          "withinHero": true
+        },
+        "facts": {
+          "exists": true,
+          "rect": {
+            "x": 20,
+            "top": 594,
+            "right": 355.2,
+            "bottom": 648,
+            "width": 335.2,
+            "height": 54
+          },
+          "withinHero": true
+        },
+        "credit": {
+          "exists": true,
+          "rect": {
+            "x": 71.6,
+            "top": 125.6,
+            "right": 355.2,
+            "bottom": 145.1,
+            "width": 283.6,
+            "height": 19.5
+          },
+          "withinHero": true
+        }
+      },
+      "creditOverlapsFacts": false,
+      "creditBackground": "rgba(20, 20, 22, 0.78)",
+      "bookLabelStyle": {
+        "color": "rgba(255, 255, 255, 0.92)",
+        "fontSize": "14px",
+        "fontWeight": "600"
+      },
+      "roomChoiceLinks": 4,
+      "image": {
+        "complete": true,
+        "naturalWidth": 228,
+        "opacity": "1",
+        "animationName": "none",
+        "fetchPriority": "high"
+      },
+      "documentWidth": 375
+    },
+    "pageErrors": []
+  }
+]

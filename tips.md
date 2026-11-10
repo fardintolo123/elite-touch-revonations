@@ -43,3 +43,15 @@ Keeping their source and status makes them reusable without mistaking a proposal
 **Application/status:** these files and the [maintenance workflow](.agents/workflows/project-knowledge.md)
 implement that mechanism. The initial feature catalogue is project-specific and source-verified;
 measured business benefits remain unclaimed unless supported by their own evidence.
+
+## Homepage hero height and image treatment (2026-11-09)
+
+**Source:** owner, Codex chat: "hero section to be one screen height not more"; confirmed implementation with "read claude.md and go ahead".
+
+**The tip:** include the sticky header in the one-screen measurement; the hero should fill only the remaining viewport.
+
+**Agent recommendation:** keep the real first-screen project image static. Do not fade it in; it is the LCP image and should be visible immediately.
+
+**Why it matters here:** the full-bleed photo gives the homepage a real local-project proof point, while the one-screen constraint keeps the room choices, rating, call option and written-quote/warranty facts visible.
+
+**Application/status:** implemented locally in `app/page.tsx`, `app/page.module.css` and `components/HomeEnquiryStarter.tsx`; measured at 390×844, 1440×900 and 390×667. Final-source matched Lighthouse shows median LCP 2.644s before and 3.064s after (+420ms), above the 2.5s target and +300ms regression limit. The owner approved publishing despite this gate on 2026-11-10; release is pending safe reconciliation of `main`. A sync-decode experiment increased TBT and was reverted. See D-186, D-187 and the evidence folder.

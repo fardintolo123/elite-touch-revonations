@@ -1,56 +1,88 @@
-/* Homepage layout (Direction A, DECISIONS.md D-159; issue #74). Page-only composition built from
-   DESIGN.md tokens. Shared components keep their own styles in globals.css (#78). */
+/* Homepage composition built from DESIGN.md tokens. Shared components keep their own styles in
+   globals.css (#78). */
 
-/* ---------- Hero: on phones the photo comes first, then the promise and the proof ----------
-   Desktop keeps the display H1 on two lines and the fact row above the fold (2026-10-29
-   independent critique, findings 1 and 7); D-174 then enlarged the photo and dropped the
-   review card from the hero. */
+/* ---------- Full-bleed homepage hero: a real Hornsby project photo ----------
+   Keep the complete section to the visible area below the sticky header. The image is a background
+   layer, so it does not push the booking and proof content below the first screen. */
 .heroSection:global(.et-hero) {
-  padding-top: var(--et-space-8);
+  height: calc(100vh - var(--et-header-flow-height) - 1px);
+  height: calc(100svh - var(--et-header-flow-height) - 1px);
+  min-height: 0;
+  padding: 0;
+}
+.heroMedia {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
+  min-width: 0;
+}
+.heroImage {
+  object-fit: cover;
+  object-position: 58% 50%;
+}
+.heroScrim {
+  z-index: -1;
+}
+.heroContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-block: clamp(24px, 4vh, 48px) 64px;
 }
 .hero {
   display: grid;
   gap: var(--et-space-6);
+  width: min(100%, 720px);
 }
-.heroMedia {
-  margin: 0;
+.heroIntro {
+  max-width: 680px;
+}
+.heroIntro :global(.et-display) {
+  color: white;
+}
+.heroAct {
   min-width: 0;
 }
-/* No entrance animation here: the photo and heading are the first thing a visitor should see, and
-   an opacity fade keeps them out of the LCP measurement (DESIGN.md §6 reveals are for sections). */
-.heroPhoto {
-  overflow: hidden;
-  border-radius: var(--et-radius-xl);
-  aspect-ratio: 4 / 3;
-  background: var(--et-ink-50);
-}
-.heroPhoto img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* The 3:2 source is cropped to a square; sit the crop left so the window, the glass and the
-     lit niche stay in frame and no fixture is cut by a rounded corner (independent critique). */
-  object-position: 38% 50%;
-}
-.caption {
-  margin-top: var(--et-space-3);
+.heroAct :global(.et-label) {
+  color: rgba(255, 255, 255, 0.92);
   font-size: var(--et-text-sm);
-  color: var(--et-text-secondary);
+  font-weight: 600;
+}
+.heroCaption {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  right: max(20px, calc((100vw - 1280px) / 2));
+  margin: 0;
+  padding-inline: var(--et-space-3);
+  border-radius: var(--et-radius-sm);
+  background: rgba(20, 20, 22, 0.78);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--et-text-caption);
+  text-align: right;
+  text-shadow: 0 1px 4px rgba(20, 20, 22, 0.9);
+}
+.heroCaption :global(.et-link) {
+  color: white;
+  text-decoration-color: rgba(255, 255, 255, 0.65);
 }
 .heroAct :global(.et-room-choices .et-btn) {
   border-width: 1.5px;
-  border-color: var(--et-ink-200);
+  border-color: rgba(255, 255, 255, 0.72);
+  color: white;
   font-weight: 600;
 }
-/* Phones: a 16:9 photo and a one-line rating keep the proof and the first room choices inside the
-   first 844 px screen. The GoogleRating component is shared (#78), so only its layout changes here. */
-@media (max-width: 479px) {
-  .heroPhoto {
-    aspect-ratio: 16 / 9;
-  }
-}
 @media (max-width: 1023px) {
+  .heroContainer {
+    align-items: center;
+    padding-block: clamp(14px, 2vh, 20px) 48px;
+  }
+  .hero {
+    gap: var(--et-space-5);
+  }
   .hero .heroIntro > * + *,
   .hero .heroAct > * + * {
     margin-top: var(--et-space-4);
@@ -82,33 +114,41 @@
   padding: var(--et-space-1) var(--et-space-3);
   letter-spacing: 0.1em;
 }
+@media (max-width: 767px) {
+  .heroScrim::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 20, 22, 0.42);
+    pointer-events: none;
+  }
+  .heroCaption {
+    right: 20px;
+    max-width: calc(100% - 40px);
+  }
+}
 @media (min-width: 1024px) {
-  .heroSection:global(.et-hero) {
-    padding-top: var(--et-space-24);
+  .heroContainer {
+    padding-bottom: 64px;
   }
-  /* D-174: a square photo instead of 4:3, and the review card that sat under it is gone. The
-     left column stays wide enough for the H1 to hold two lines (1.27fr measured at 1440). */
+}
+@media (max-height: 760px) and (max-width: 767px) {
+  .heroContainer {
+    padding-block: 10px 40px;
+  }
   .hero {
-    grid-template-columns: minmax(0, 1.27fr) minmax(0, 1fr);
-    grid-template-areas:
-      'intro media'
-      'act media';
-    column-gap: var(--et-space-8);
-    row-gap: var(--et-space-8);
-    align-items: start;
+    gap: 12px;
   }
-  .heroMedia {
-    grid-area: media;
+  .hero .heroIntro > * + *,
+  .hero .heroAct > * + * {
+    margin-top: 8px;
   }
-  .heroIntro {
-    grid-area: intro;
+  .heroIntro :global(.et-display) {
+    font-size: clamp(30px, 8.2vw, 34px);
+    line-height: 1.08;
   }
-  .heroAct {
-    grid-area: act;
-  }
-  .heroPhoto {
-    aspect-ratio: 1 / 1;
-    border-radius: var(--et-radius-2xl);
+  .heroAct :global(.et-facts) {
+    margin-top: 8px;
   }
 }
 

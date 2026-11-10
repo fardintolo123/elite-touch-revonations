@@ -67,8 +67,8 @@ The DIY (309 impressions) and timeline (294) clusters are informational. D-144 a
 - [x] #84 — Make the strata post the strata/apartment buyer page
 - [x] #85 — Closed by the owner-safe fallback: no specialist accessible / ageing-in-place / NDIS service claim; related posts remain informational (D-161).
 - [x] #88 — 34-ways #31: aftercare/handover/warranty post is live; build, readability, design and served-page checks passed. Closed 2026-11-08; owner will request indexing.
-- [ ] #89 — 34-ways #5+#27: "Common bathroom problems and what a renovation fixes" problem-first post (after #88)
-- [ ] #90 — 34-ways #33: "Free on-site bathroom quote — what to expect" conversion post (after #89)
+- [ ] #89 — 34-ways #5+#27: "Common bathroom problems and what a renovation fixes" problem-first post (after #88). **Not started as at 2026-11-08 21:40** — no `common-bathroom-problems` slug anywhere in `lib/blog.ts` or `scripts/check-readability.mjs`.
+- [ ] #90 — 34-ways #33: "Free on-site bathroom quote — what to expect" conversion post (after #89). **Implemented and verified 2026-11-08** in `4c72ef8`: slug `free-bathroom-renovation-quote-what-to-expect` in `lib/blog.ts` and `scripts/check-readability.mjs`; readability PASS (Flesch 76.0), design ratchet PASS, built HTML carries `BlogPosting` + `FAQPage`, the `/contact-us/` CTA and `tel:`, and the slug is in the built sitemap and listed on the `/blog/` hub. Left unticked only because the GitHub issue is still open, and it landed **before** its declared dependency #89.
 
 ## Measurement
 
