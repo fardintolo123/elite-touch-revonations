@@ -53,6 +53,19 @@ For a new chat, the owner can start with: `sunrise #NUMBER — implement this is
 issue in this session; first report its current status, risks, and next action.` Use `review` or
 `verify` instead of `implement` when that is the requested mode.
 
+### Session batching (GitHub milestones)
+
+Open issues are grouped into milestones named `Batch: <theme>`, each holding 3–5 related issues —
+this is the sizing unit for one agent session, not a date-based release. Several batches also have
+a tracker issue (title ending "— tracker") whose checklist links every member issue and auto-checks
+as each one closes; open that single issue to see the whole batch's state at a glance.
+
+- List batches and their open-issue counts: `gh api repos/:owner/:repo/milestones -q '.[] | select(.open_issues>0) | "\(.title): \(.open_issues) open"'`
+- List one batch's issues: `gh issue list --milestone "Batch: <name>"`
+- When `sunrise` runs without a number and no issue is already in progress, pick the next unstarted batch (or its tracker issue) rather than one issue in isolation — working a whole related batch in one session is what keeps the backlog from fragmenting into one session per issue.
+- Stay inside one batch per session. If the usage window runs out mid-batch, checkpoint per the sunset workflow above and resume the same batch next session.
+- Keep batches at 3–5 issues as the backlog changes — split an oversized milestone, fold small single-issue ones into a themed batch.
+
 When the owner asks Claude Code to break larger work into GitHub issues, create or update issues only
 for the requested substantive deliverables. Each issue should state its scope, file boundaries,
 dependencies, acceptance criteria, and independent verification. When the owner asks Claude or Codex

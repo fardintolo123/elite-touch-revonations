@@ -31,17 +31,14 @@ Added link to /blog/bathroom-waterproofing-explained/ from demolition post (post
 - No new dependencies, no visual changes, no URL changes, no 'use client' additions
 
 ## Push status
-Local main is 13 commits ahead of origin/main. Push has been attempted multiple times with HTTP 408 timeouts — the payload includes a large .tmp cleanup commit (04c57745) that removed ~4,363 tracked files. A background push was running at session end. If still failing, consider:
-1. Shallow clone or split push
-2. `git push origin HEAD~2:main` to push just the blog commits on top of current remote, then deal with the .tmp cleanup separately
-3. Or increase git HTTP buffer: `git config http.postBuffer 524288000`
+Pushed to origin/main via `push-clean` branch. Original local main had a 561MB .tmp/issue-90-isolated/source.zip in commit history that blocked direct push (GitHub 100MB file limit). Created push-clean from origin/main, applied all non-.tmp changes as one squashed commit (eaeb1759), then pushed. Session handoff pushed as c62e7bc8. Local `push-clean` branch is synced with origin/main; old `main` branch retains diverged history with the oversized blob.
 
 ## Files modified
 - `lib/blog.ts` — all blog content changes (issues #93, #94, #95, #96)
 - `plans/gsc-page-optimization-2026-11.md` — all G1–G5 marked complete
 
 ## Remaining
-- Push to origin/main still pending (background task)
 - Issues #92–#96 have implementation comments but are not closed (closure not authorized in this session)
-- Plan `plans/gsc-page-optimization-2026-11.md` can be archived once push succeeds and issues are closed
+- Plan `plans/gsc-page-optimization-2026-11.md` can be archived once issues are closed
 - Plan `plans/seo-content-strategy.md` is fully complete (52 articles + reciprocal links) and should be archived per plan lifecycle rules
+- Local `main` branch has polluted history (561MB zip blob); future sessions should work from `push-clean` or re-clone to avoid the same push problem
