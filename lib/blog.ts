@@ -52,7 +52,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-cost-sydney',
     title: 'What changes the cost of a bathroom renovation in Sydney?',
-    metaTitle: 'What Changes Bathroom Renovation Costs?',
+    metaTitle: 'Bathroom Renovation Cost Sydney',
     description: 'Room size, layout, tiles, fittings and site conditions all shape a Sydney bathroom quote.',
     published: '2026-09-10',
     updated: '2026-11-02',
@@ -258,7 +258,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-waterproofing-certificate-sydney',
     title: 'Waterproofing certificates explained: what every Sydney bathroom renovation needs',
-    metaTitle: 'Waterproofing Certificates Explained',
+    metaTitle: 'Waterproofing Certificates',
     description: 'Learn what the certificate covers, when to ask for it and how AS 3740 fits.',
     published: '2026-09-20',
     readTime: '4 min read',
@@ -533,7 +533,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'strata-bathroom-renovation-sydney',
     title: 'Renovating a bathroom in a Sydney apartment or strata unit?',
-    metaTitle: 'Strata Bathroom Renovation Sydney | Apartment Approval Guide',
+    metaTitle: 'Strata Bathroom Reno Sydney',
     description: 'Check strata rules, approvals, access and wet-area sign-off before work begins.',
     published: '2026-09-10',
     updated: '2026-11-02',
@@ -648,7 +648,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-warranty-guide',
     title: 'What warranty should a bathroom renovation include?',
-    metaTitle: 'How long should a bathroom renovation warranty last in NSW?',
+    metaTitle: 'Bathroom Renovation Warranty',
     description: 'Check NSW warranty rules and ETR’s stated 10-year workmanship warranty before you sign.',
     published: '2026-09-10',
     readTime: '2 min read',
@@ -862,7 +862,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-ventilation-sydney-renovation',
     title: 'Bathroom ventilation: what every Sydney renovation needs to get right',
-    metaTitle: 'Bathroom Ventilation Requirements Sydney',
+    metaTitle: 'Bathroom Ventilation Sydney',
     description: 'Learn fan rules, sizing and the damp that poor bathroom ventilation can leave.',
     published: '2026-10-02',
     readTime: '4 min read',
@@ -956,7 +956,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'heritage-bathroom-renovation-sydney',
     title: 'Renovating a bathroom in a heritage or older Sydney home',
-    metaTitle: 'Heritage Bathroom Renovation Sydney',
+    metaTitle: 'Heritage Bathroom Reno Sydney',
     description: 'Plan for approvals, old pipes and hidden structure in a Sydney heritage bathroom.',
     published: '2026-10-02',
     readTime: '5 min read',
@@ -1053,7 +1053,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'walk-in-shower-vs-bathtub-renovation',
     title: 'Walk-in shower vs bathtub: how to choose during a bathroom renovation',
-    metaTitle: 'Walk-In Shower vs Bathtub Renovation',
+    metaTitle: 'Walk-In Shower vs Bathtub',
     description: 'Compare space, access and household needs before choosing a shower or bath.',
     published: '2026-10-02',
     readTime: '4 min read',
@@ -1141,7 +1141,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-budget-planning',
     title: 'How to budget for a bathroom renovation without blowing it',
-    metaTitle: 'Bathroom Renovation Budget Planning',
+    metaTitle: 'Bathroom Renovation Budget',
     description: 'Plan the main costs, allow for changes and keep the agreed scope clear.',
     published: '2026-10-02',
     readTime: '4 min read',
@@ -1428,7 +1428,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'accessible-bathroom-renovation-sydney',
     title: 'Accessible bathroom renovation: designing for all ages and abilities',
-    metaTitle: 'Accessible Bathroom Renovation Sydney',
+    metaTitle: 'Accessible Bathroom Sydney',
     description: 'Plan clear paths, grab-rail support and easy shower access for all ages.',
     published: '2026-10-02',
     readTime: '4 min read',
@@ -1520,7 +1520,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'apartment-bathroom-renovation-vs-house',
     title: 'Apartment bathroom renovation vs house: what changes',
-    metaTitle: 'Apartment vs House Bathroom Renovation',
+    metaTitle: 'Apartment Bathroom Renovation',
     description: 'Check lift access, shared pipes, noise rules, strata terms and site costs.',
     published: '2026-10-02',
     readTime: '4 min read',
@@ -1614,7 +1614,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'wet-room-bathroom-renovation',
     title: 'Wet room design: is it right for your bathroom renovation?',
-    metaTitle: 'Wet Room Bathroom Renovation Australia',
+    metaTitle: 'Wet Room Bathroom Guide',
     description: 'Learn how a wet room differs from a standard bathroom and what it needs.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -1798,7 +1798,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'underfloor-heating-bathroom-renovation',
     title: 'Underfloor heating in a bathroom: worth the cost?',
-    metaTitle: 'Underfloor Heating Bathroom Renovation Cost',
+    metaTitle: 'Bathroom Underfloor Heating',
     description: 'Check supply cost, running cost and floor build-up before adding bathroom heating.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2148,7 +2148,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-plumbing-replacement',
     title: 'What plumbing gets replaced during a bathroom renovation?',
-    metaTitle: 'Bathroom Renovation Plumbing Replacement',
+    metaTitle: 'Bathroom Plumbing Replacement',
     description: 'See which pipes may be replaced and why old lines can be risky to keep.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2233,7 +2233,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-insurance-australia',
     title: 'Bathroom renovation and home insurance: what to know before you start',
-    metaTitle: 'Bathroom Renovation Insurance Australia',
+    metaTitle: 'Bathroom Renovation Insurance',
     description: 'Tell your insurer before work starts and check what your policy covers.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2413,7 +2413,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'large-format-tiles-bathroom-renovation',
     title: 'Large-format tiles in a bathroom renovation: pros, cons and what to know',
-    metaTitle: 'Large Format Tiles Bathroom Renovation',
+    metaTitle: 'Large Format Tiles Bathroom',
     description: 'Check tile size, wall preparation, fitting needs and cost before choosing large tiles.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2503,7 +2503,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'eco-friendly-bathroom-renovation',
     title: 'Eco-friendly bathroom renovation: sustainable choices that save water and money',
-    metaTitle: 'Eco Friendly Bathroom Renovation Australia',
+    metaTitle: 'Eco-Friendly Bathroom Reno',
     description: 'Choose water-saving fittings and durable materials to reduce water use and replacement waste.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2581,7 +2581,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-living-at-home',
     title: 'Bathroom renovation while living at home: how to manage the disruption',
-    metaTitle: 'Bathroom Renovation Living at Home Tips',
+    metaTitle: 'Renovating While Living at Home',
     description: 'Plan for dust, noise and bathroom access if you stay at home during the work.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2671,7 +2671,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'shower-screen-types-bathroom-renovation',
     title: 'Shower screens explained: frameless, semi-frameless and framed',
-    metaTitle: 'Shower Screen Types Bathroom Renovation',
+    metaTitle: 'Shower Screen Types Guide',
     description: 'Compare glass, wall fit, cleaning and cost across three shower-screen styles.',
     published: '2026-10-03',
     updated: '2026-11-02',
@@ -2759,7 +2759,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-niche-design-ideas',
     title: 'Bathroom niches and recessed shelves: design, sizing and waterproofing',
-    metaTitle: 'Bathroom niche sizes and what to store in one',
+    metaTitle: 'Bathroom Niche Ideas and Sizes',
     description: 'Plan niche size and placement so bottles fit and it works with the shower layout.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2840,7 +2840,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'freestanding-bath-renovation-guide',
     title: 'Freestanding bath in a renovation: space, plumbing and cost',
-    metaTitle: 'Freestanding Bath Renovation Guide Australia',
+    metaTitle: 'Freestanding Bath Guide',
     description: 'Check room size, plumbing, floor support and fit before choosing a freestanding bath.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -2926,7 +2926,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-mould-prevention-renovation',
     title: 'Bathroom mould: why it returns and how a renovation stops it',
-    metaTitle: 'Bathroom Mould Prevention Renovation',
+    metaTitle: 'Bathroom Mould Prevention',
     description: 'Find the moisture, airflow or leak issue behind bathroom mould before it returns.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3005,7 +3005,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'heated-towel-rail-bathroom-guide',
     title: 'Heated towel rails: types, costs and what to know during a renovation',
-    metaTitle: 'Heated Towel Rail Bathroom Guide Australia',
+    metaTitle: 'Heated Towel Rail Guide',
     description: 'Compare electric and hydronic heated rails, running costs and fit before choosing one.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3091,7 +3091,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-mirror-guide-renovation',
     title: 'Bathroom mirrors: types, sizing and LED options for your renovation',
-    metaTitle: 'Bathroom Mirror Guide Renovation LED',
+    metaTitle: 'Bathroom Mirror Guide',
     description: 'Check mirror size, lighting, anti-fog needs and wiring before the walls are closed.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3265,7 +3265,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-splashback-ideas-renovation',
     title: 'Bathroom splashback ideas: tiles, glass and panels',
-    metaTitle: 'Bathroom Splashback Ideas Renovation',
+    metaTitle: 'Bathroom Splashback Ideas',
     description: 'Compare tile, glass, stone and acrylic for splash zones around sinks and baths.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3353,7 +3353,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-waterproofing-explained',
     title: 'Bathroom waterproofing explained: what every homeowner should know',
-    metaTitle: 'Bathroom Waterproofing Explained Australia',
+    metaTitle: 'Bathroom Waterproofing Guide',
     description: 'See what AS 3740 covers and what to check before tiling over the membrane.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3439,7 +3439,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-waste-disposal',
     title: 'Bathroom renovation waste: what gets removed and where it goes',
-    metaTitle: 'Bathroom Renovation Waste Disposal Sydney',
+    metaTitle: 'Bathroom Renovation Waste',
     description: 'See what a bathroom renovation removes and how the waste is sorted and taken away in Sydney.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3518,7 +3518,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-investment-property',
     title: 'Bathroom renovation for investment properties: what to spend and what to skip',
-    metaTitle: 'Bathroom Renovation Investment Property Australia',
+    metaTitle: 'Investment Property Bathroom',
     description: 'Choose durable finishes for a rental and set spending around tenant needs.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3680,7 +3680,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-electrical-work',
     title: 'Bathroom renovation electrical work: what changes and what stays',
-    metaTitle: 'Bathroom Renovation Electrical Work Guide',
+    metaTitle: 'Bathroom Electrical Work',
     description: 'Plan bathroom lights, fans and heated rails, and check work against AS/NZS 3000.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3764,7 +3764,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-flooring-options-renovation',
     title: 'Bathroom flooring options: tiles, vinyl and what works in wet areas',
-    metaTitle: 'Bathroom Flooring Options Renovation Australia',
+    metaTitle: 'Bathroom Flooring Options',
     description: 'Compare tile, vinyl and stone by grip, care and use in wet areas.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3851,7 +3851,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-design-process',
     title: 'The bathroom renovation design process: from first ideas to final plans',
-    metaTitle: 'Bathroom Renovation Design Process Steps',
+    metaTitle: 'Bathroom Renovation Design',
     description: 'Follow the plan from site measure and layout options to selections and quote.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -3937,7 +3937,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-contract-guide',
     title: 'What to look for in a bathroom renovation contract',
-    metaTitle: 'Bathroom Renovation Contract Guide Australia',
+    metaTitle: 'Bathroom Renovation Contract',
     description: 'Check scope, price, payment dates, changes, warranty and insurance before you sign.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4023,7 +4023,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'aging-in-place-bathroom-design',
     title: 'Aging in place: designing a bathroom for the years ahead',
-    metaTitle: 'Aging in Place Bathroom Design Australia',
+    metaTitle: 'Aging in Place Bathroom Design',
     description: 'Plan grab-rail support, step-free showers and wider doors for future access.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4110,7 +4110,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-paint-guide-renovation',
     title: 'Bathroom paint: where to use it, what type and when tiles are better',
-    metaTitle: 'Bathroom Paint Guide Renovation Australia',
+    metaTitle: 'Bathroom Paint Guide',
     description: 'Choose paint for damp areas and know when tile may be a better fit.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4195,7 +4195,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'how-to-choose-bathroom-renovator-sydney',
     title: 'How to choose a bathroom renovator in Sydney',
-    metaTitle: 'How to Choose a Bathroom Renovator Sydney',
+    metaTitle: 'Choose a Bathroom Renovator',
     description: 'Check the licence, insurance, past work, written quote and warning signs.',
     published: '2026-10-03',
     readTime: '5 min read',
@@ -4280,7 +4280,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-accessories-hardware-guide',
     title: 'Bathroom accessories and hardware: the finishing touches that matter',
-    metaTitle: 'Bathroom Accessories Hardware Guide Renovation',
+    metaTitle: 'Bathroom Accessories Guide',
     description: 'Choose rails, hooks and holders early so their finish and location are set.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4356,7 +4356,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'toilet-upgrade-guide-bathroom-renovation',
     title: 'Toilet upgrades during a bathroom renovation: types, costs and what to know',
-    metaTitle: 'Toilet Types Bathroom Renovation Guide Australia',
+    metaTitle: 'Toilet Upgrade Guide',
     description: 'Compare wall-hung, back-to-wall and close-coupled toilets by fit and cost.',
     published: '2026-10-03',
     updated: '2026-11-02',
@@ -4434,7 +4434,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'double-vanity-vs-single-bathroom',
     title: 'Double vanity vs single vanity: which suits your bathroom?',
-    metaTitle: 'Double Vanity vs Single Vanity Bathroom Guide',
+    metaTitle: 'Double vs Single Vanity',
     description: 'Compare space, plumbing, storage and cost before choosing one or two basins.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4511,7 +4511,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-scope-changes',
     title: 'Bathroom renovation scope: how to manage changes without blowing the budget',
-    metaTitle: 'Bathroom Renovation Scope Changes Budget Guide',
+    metaTitle: 'Bathroom Reno Scope Changes',
     description: 'Write down changes, costs and timing before extra bathroom work starts.',
     published: '2026-10-03',
     readTime: '5 min read',
@@ -4589,7 +4589,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'shower-seat-bench-bathroom-design',
     title: 'Shower seats and bench seating: comfort, safety and style',
-    metaTitle: 'Shower Seat Bench Bathroom Design Guide',
+    metaTitle: 'Shower Seat and Bench Guide',
     description: 'Compare built-in, fold-down and freestanding shower seats for fit and use.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4664,7 +4664,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-layout-changes-renovation',
     title: 'Bathroom layout changes: when to move plumbing and when to keep it',
-    metaTitle: 'Bathroom Layout Changes Moving Plumbing Renovation',
+    metaTitle: 'Bathroom Layout Changes',
     description: 'Keep or move pipes based on layout, cost and how the room will work.',
     published: '2026-10-03',
     readTime: '5 min read',
@@ -4743,7 +4743,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'wall-hung-vs-floor-mounted-fixtures',
     title: 'Wall-hung vs floor-mounted bathroom fixtures: pros, cons and cost',
-    metaTitle: 'Wall Hung vs Floor Mounted Bathroom Fixtures Guide',
+    metaTitle: 'Wall-Hung vs Floor-Mounted',
     description: 'Compare cleaning, fitting and cost for wall-hung or floor-mounted fixtures.',
     published: '2026-10-03',
     updated: '2026-11-02',
@@ -4821,7 +4821,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-storage-planning-renovation',
     title: 'How to plan bathroom storage during a renovation',
-    metaTitle: 'Bathroom Storage Planning Renovation Guide',
+    metaTitle: 'Bathroom Storage Planning',
     description: 'Plan vanity drawers, niches and wall shelves before choosing bathroom finishes.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4896,7 +4896,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'bathroom-renovation-neighbours-noise',
     title: 'Bathroom renovation and your neighbours: managing noise and access',
-    metaTitle: 'Bathroom Renovation Neighbours Noise Management Guide',
+    metaTitle: 'Renovation Noise and Neighbours',
     description: 'Set work hours, dust control and access rules before renovation work begins.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -4973,7 +4973,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'ensuite-renovation-ideas-layout',
     title: 'Ensuite renovation ideas: layout, design and what to prioritise',
-    metaTitle: 'Ensuite Renovation Ideas Layout Design Guide',
+    metaTitle: 'Ensuite Renovation Ideas',
     description: 'Plan space, ventilation, storage and door swing before setting an ensuite layout.',
     published: '2026-10-03',
     readTime: '5 min read',
@@ -5056,7 +5056,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'powder-room-renovation-guide',
     title: 'Powder room renovation: making a small space shine',
-    metaTitle: 'Powder Room Renovation Guide Ideas Australia',
+    metaTitle: 'Powder Room Renovation Ideas',
     description: 'Plan a compact vanity, basin, door swing and lighting for a powder room.',
     published: '2026-10-03',
     readTime: '4 min read',
@@ -5233,7 +5233,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'porcelain-vs-ceramic-tiles-bathroom',
     title: 'Porcelain vs ceramic tiles for a bathroom: which is better?',
-    metaTitle: 'Porcelain vs Ceramic Bathroom Tiles',
+    metaTitle: 'Porcelain vs Ceramic Tiles',
     description: 'Compare water absorption, strength, cutting and cost before choosing bathroom tile.',
     published: '2026-11-02',
     readTime: '5 min read',
@@ -5429,7 +5429,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'frameless-vs-semi-frameless-shower-screen',
     title: 'Frameless vs semi-frameless shower screen: which is better?',
-    metaTitle: 'Frameless vs Semi-Frameless Shower Screen',
+    metaTitle: 'Frameless vs Semi-Frameless',
     description: 'Compare glass, wall fit, cleaning and cost before choosing a shower screen.',
     published: '2026-11-02',
     readTime: '5 min read',
@@ -5528,7 +5528,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'fixed-scope-quote-vs-provisional-sums-bathroom',
     title: 'Fixed-scope quote vs provisional sums and PC items: what each means',
-    metaTitle: 'Fixed-Scope Quote vs Provisional Sums',
+    metaTitle: 'Fixed Quote vs Provisional Sums',
     description: 'Learn how quote terms can change your final price and what to ask first.',
     published: '2026-11-02',
     readTime: '5 min read',
@@ -5624,7 +5624,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'how-long-does-a-bathroom-renovation-last',
     title: 'How long does a bathroom renovation last?',
-    metaTitle: 'How Long Does a Bathroom Renovation Last?',
+    metaTitle: 'How Long Does a Reno Last?',
     description: 'See what helps a bathroom last, from waterproofing and tile work to airflow.',
     published: '2026-11-04',
     readTime: '4 min read',
@@ -5820,7 +5820,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'what-happens-after-bathroom-renovation',
     title: 'What happens after your bathroom renovation?',
-    metaTitle: 'Bathroom Renovation Handover and Aftercare',
+    metaTitle: 'Bathroom Renovation Aftercare',
     description: 'Know what to check, which documents to keep and how to care for your new bathroom.',
     published: '2026-11-05',
     readTime: '4 min read',
@@ -5891,7 +5891,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'free-bathroom-renovation-quote-what-to-expect',
     title: 'Free bathroom renovation quote in Sydney: what to expect',
-    metaTitle: 'Free Bathroom Renovation Quote in Sydney',
+    metaTitle: 'Free Bathroom Quote Sydney',
     description: 'Find out what happens at your free on-site measure and what your written bathroom renovation quote covers.',
     published: '2026-11-08',
     readTime: '4 min read',

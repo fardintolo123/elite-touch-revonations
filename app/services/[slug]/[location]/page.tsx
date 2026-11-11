@@ -46,20 +46,10 @@ const HUB_OG_IMAGE: Record<string, string> = {
   'north-western-sydney': '/og/north-western-sydney.jpg',
 }
 
-/**
- * `<title>` for each hub (tech-audit M-5). "Bathroom Renovations {region}" +
- * the 26-char " | Elite Touch Renovations" tail runs 61-62 chars for two of
- * the three regions — over the 60-char SERP guide. "{region} bathroom
- * renovation" keeps the region and the primary keyword, reads as one
- * phrase, and fits 60 for two of three. Eastern Suburbs lands at 61 — one
- * over the soft guide, kept deliberately rather than abbreviate "renovation"
- * to "reno" (rejected sitewide in issue #21) or drop the keyword. The H1
- * ("Bathroom renovations on Sydney's {region}") is unaffected.
- */
 const HUB_META_TITLE: Record<string, string> = {
   'hills-district': 'Hills District bathroom renovation',
   'inner-west': 'Inner West bathroom renovation',
-  'eastern-suburbs': 'Eastern Suburbs bathroom renovation',
+  'eastern-suburbs': 'Eastern Suburbs bathroom reno',
   'north-shore': 'North Shore bathroom renovation',
   'north-western-sydney': 'North-West bathroom renovation',
 }
