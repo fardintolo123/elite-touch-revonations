@@ -297,19 +297,41 @@ export const blogPosts: BlogPost[] = [
     slug: 'ensuite-vs-bathroom-vs-powder-room-renovation',
     title: 'Ensuite vs full bathroom vs powder room renovation: cost and scope compared',
     metaTitle: 'Ensuite vs Bathroom vs Powder Room',
-    description: 'Compare room scope and costs for an ensuite, full bathroom or powder room.',
+    description: 'A main bathroom, ensuite and powder room share many trades but differ in scope, daily use and cost. Compare what changes in each room before you quote.',
     published: '2026-09-20',
     readTime: '4 min read',
     category: 'Compare your options',
     sections: [
       { heading: 'The short answer', paragraphs: ['A full bathroom, ensuite and powder room are all wet-area renovations, but they do not carry the same scope. The right comparison is not just room size; it is what the room must do each day.', 'A main bathroom often has the most users. An ensuite has to work beside a bedroom, often in a small footprint. A powder room may have no shower, but the fixture setout and waterproofing still matter if it has a water supply and floor waste.'] },
       { heading: 'What changes in a full bathroom?', paragraphs: ['A <a href="/services/bathroom-renovations/" class="et-link">full bathroom renovation</a> usually needs the broadest scope: shower, toilet, vanity, storage, waterproofing, tiling, ventilation, lighting and often a bath. It may also be the only bathroom in the home, so disruption planning matters.', 'ETR <a href="/packages/" class="et-link">package starting points</a> for bathroom-sized work begin at Basic from $18,000 for an approximately 1.5 m x 1.8 m bathroom, Standard from $25,000 and Premium from $30,000, each tied to its stated room size and inclusion list.'] },
-      { heading: 'What changes in an ensuite?', paragraphs: ['An <a href="/services/ensuite-bathroom-renovations/" class="et-link">ensuite renovation</a> often has the same trade sequence as a bathroom, but the design pressure is different. The room is smaller, storage is tighter, ventilation can be harder and noise beside the bedroom matters.', 'A good ensuite scope should settle the toilet position, shower clearance, vanity size, door swing, ventilation and lighting before the price is locked in. Small layout mistakes are felt every morning. Our <a href="/blog/ensuite-renovation-ideas-layout/" class="et-link">ensuite layout guide</a> covers the design choices that matter most in a tight space.'] },
+      { heading: 'What changes in an ensuite?', paragraphs: ['An <a href="/services/ensuite-bathroom-renovations/" class="et-link">ensuite renovation</a> often has the same trade sequence as a bathroom, but the design pressure is different. The room is smaller, storage is tighter, ventilation can be harder and noise beside the bedroom matters.', 'A functional ensuite can work in as little as about 1.2 m × 2 m, but that size demands careful layout: a wall-hung toilet, a compact vanity and a walk-in shower rather than a separate cubicle. Floating fixtures open the floor and make cleaning easier.', 'A good ensuite scope should settle the toilet position, shower clearance, vanity size, door swing, ventilation and lighting before the price is locked in. Small layout mistakes are felt every morning. Our <a href="/blog/ensuite-renovation-ideas-layout/" class="et-link">ensuite layout guide</a> covers the design choices that matter most in a tight space.'] },
       { heading: 'What changes in a powder room?', paragraphs: ['A <a href="/services/powder-room-renovations/" class="et-link">powder room renovation</a> is smaller again, usually with a toilet and hand basin. The design challenge is clearance: door swing, basin projection, toilet position and tile setout can make the difference between useful and cramped.', 'Do not assume a small room needs no serious planning. If it has a floor waste and water supply, waterproofing still has to be handled properly, and a poor layout can make the room awkward for years. Our <a href="/blog/powder-room-renovation-guide/" class="et-link">powder room guide</a> walks through the clearances that matter.'] },
       { heading: 'Where do costs overlap?', paragraphs: ['Some costs appear in every wet-area renovation: protection, demolition, plumbing, electrical work, waterproofing where required, tiling, fit-off and clean-up. Smaller rooms can still involve most of the same trades, even when the material quantities are lower.', 'That is why the room type alone does not set the price. A small ensuite with difficult access or a changed layout can be more involved than a larger bathroom that keeps the same service positions.'] },
       { heading: 'How should you choose where to start?', paragraphs: ['Start with the room causing the most daily friction. If the main bathroom is failing, it may need to come first. If the ensuite is used every day and the main bathroom still works, the ensuite may be the better first job.', 'If two wet areas are linked, ask whether they should be planned together. One measured scope can show whether sequencing the rooms saves disruption or whether separate stages make more sense for the household.'] },
       { heading: 'What should the quote make clear?', paragraphs: ['The quote should name the room, not just say "bathroom renovation". It should say whether the job is a main bathroom, ensuite, powder room or combined wet-area program, because the assumptions behind each one are different.', 'Ask for the scope to spell out the trade sequence, selections, waterproofing, exclusions and timing. A room-type comparison only helps if the written quote is specific enough to show what is being compared.'] },
       { heading: 'What is the best first question?', paragraphs: ['Ask what problem each room is meant to solve. A main bathroom may need better storage and family use, an ensuite may need quiet and ventilation, and a powder room may need better clearance.', 'Once the purpose is clear, the cost conversation becomes more useful because the quote can focus on the room that matters most.'] },
+    ],
+    faq: [
+      {
+        question: 'Is an ensuite renovation cheaper than a full bathroom?',
+        answer: 'Not always. An ensuite uses most of the same trades, and a tight space can add time. The tile and fixture quantities are lower, but layout changes, ventilation or access issues can offset that saving. The quote should compare scope, not just room size.',
+      },
+      {
+        question: 'What is the smallest functional ensuite size?',
+        answer: 'About 1.2 metres by 2 metres with a wall-hung toilet, compact vanity and walk-in shower. Below that, clearances become too tight for comfortable daily use.',
+      },
+      {
+        question: 'Does a powder room need waterproofing?',
+        answer: 'If the room has a floor waste and water supply, waterproofing is required in the wet zones under Australian Standards. Even without a shower, the area around the basin and floor waste must be sealed.',
+      },
+      {
+        question: 'Can I renovate an ensuite and main bathroom at the same time?',
+        answer: 'Yes. A combined program can reduce repeated setup and trade visits. The trade-off is that both rooms are offline at once, so the household needs a plan for daily routines during the work.',
+      },
+      {
+        question: 'Should I renovate the ensuite or main bathroom first?',
+        answer: 'Start with the room causing the most daily friction. If the ensuite is used every morning and the main bathroom still works, the ensuite may be the better first job. If the main bathroom is the only one, it usually takes priority.',
+      },
     ],
   },
   {
@@ -706,7 +728,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'bathroom-lighting-ideas',
     title: 'Bathroom lighting ideas that improve function and mood',
     metaTitle: 'Bathroom Lighting Ideas',
-    description: 'Place task, ambient and accent lights for shaving, cleaning and evening use.',
+    description: 'Three layers — task at the mirror, ambient for the room, accent for evenings — make a bathroom work at every hour. Plan positions before the rough-in.',
     published: '2026-09-12',
     updated: '2026-09-27',
     readTime: '4 min read',
@@ -735,10 +757,10 @@ export const blogPosts: BlogPost[] = [
     },
     sections: [
       { heading: 'Start with the task', paragraphs: ['Good bathroom lighting solves everyday tasks first: shaving, grooming, applying makeup and cleaning. A room can feel nicer with layered lighting, but it still needs to be usable first.', 'A single downlight above the door usually throws shadow across the face at the mirror. Light placed either side of the mirror, or built into a mirror itself, lights the face evenly instead.'] },
-      { heading: 'Layer the light instead of relying on one fixture', paragraphs: ['Lighting works best in layers. A ceiling layer for general brightness, a task layer at the <a href="/blog/bathroom-mirror-guide-renovation/" class="et-link">mirror</a>, and a softer accent layer in a niche or shaving cabinet can work together without making the room feel busy or over-lit.', 'The right mix depends on the room size, mirror position and the finishes in the space. A small bathroom with light tiles needs less ambient light than a larger, darker-toned room.'] },
+      { heading: 'Layer the light instead of relying on one fixture', paragraphs: ['Lighting works best in layers. A ceiling layer for general brightness, a task layer at the <a href="/blog/bathroom-mirror-guide-renovation/" class="et-link">mirror</a>, and a softer accent layer in a niche or shaving cabinet can work together without making the room feel busy or over-lit.', 'The right mix depends on the room size, mirror position and the finishes in the space. A small bathroom with light tiles needs less ambient light than a larger, darker-toned room.', 'Put each layer on its own switch or dimmer so mornings can be bright and evenings soft without changing a globe. A single switch that fires every fitting at once wastes the benefit of having separate layers.'] },
       { heading: 'Get the colour temperature right', paragraphs: ['Warm-to-neutral white light, roughly in the 2700K–3000K range, generally reads as calmer and more flattering to skin tones than a cooler, bluer white. A colder white can feel clinical in a small room.', 'Keep every fixture in the room on the same colour temperature. Mixing warm and cool white light in one bathroom is one of the most common reasons a finished room looks slightly wrong even when every fixture is good quality on its own.'] },
       { heading: 'Match fixtures to wet areas', paragraphs: ['Fittings near a shower or bath need a higher ingress-protection (IP) rating than fittings elsewhere in the room, because they need to tolerate moisture and spray. Australian wiring rules set out which zones near water need which rating.', 'This is a licensed electrician’s call, not a style choice. Confirm the required rating for each fitting’s position before you fall in love with a look that will not survive its own bathroom.'] },
-      { heading: 'Plan lighting early, not last', paragraphs: ['Lighting positions get locked in once the electrical rough-in is done and the tiles are set. Deciding fixture types and positions during the early planning stage, alongside the waterproofing and tiling plan, avoids a mirror light that ends up in the wrong spot or a switch plate placed somewhere awkward.', 'Good lighting is not about adding more fixtures. It is about using the right light, at the right colour temperature and the right safety rating, in the right place.'] },
+      { heading: 'Plan lighting early, not last', paragraphs: ['Lighting positions get locked in once the electrical rough-in is done and the tiles are set. Deciding fixture types and positions during the early planning stage, alongside the waterproofing and tiling plan, avoids a mirror light that ends up in the wrong spot or a switch plate placed somewhere awkward.', 'Good lighting is not about adding more fixtures. It is about using the right light, at the right colour temperature and the right safety rating, in the right place. Discuss your lighting plan at the free on-site measure for your <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a>.'] },
     ],
     faq: [
       {
@@ -1521,7 +1543,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'apartment-bathroom-renovation-vs-house',
     title: 'Apartment bathroom renovation vs house: what changes',
     metaTitle: 'Apartment Bathroom Renovation',
-    description: 'Check lift access, shared pipes, noise rules, strata terms and site costs.',
+    description: 'An apartment bathroom renovation needs strata approval, waterproofing certification and a plan for building access. Here is what changes versus a house.',
     published: '2026-10-02',
     readTime: '4 min read',
     category: 'Compare your options',
@@ -1537,7 +1559,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Strata approval: what you need and when',
         paragraphs: [
           'In NSW, strata renovations fall into three classes: cosmetic, minor or major. A bathroom renovation is almost always minor or major, because sealing the wet area affects shared property - the slab and the membrane under the tiles.',
-          'Minor work needs a majority vote from the strata committee. Major work needs a special vote at a general meeting - at least 75 percent of owners in favour.',
+          'Minor work needs a majority vote from the strata committee. Major work needs a special vote at a general meeting - at least 75 percent of owners in favour. Starting work without the right approval can lead to an order to reverse it and legal action from the owners corporation, so get the vote before you book a builder.',
           'Allow four to eight weeks for a by-law to be drafted, sent out and voted on. Start this before choosing tiles, not after.',
         ],
       },
@@ -1584,7 +1606,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'How ETR handles apartment renovations',
         paragraphs: [
           'We read the strata by-law before quoting so the scope, the sign-off rules and the access conditions are known up front. The written quote covers building covers, noise limits and any sound or sealing rules the by-law names.',
-          'Every apartment bathroom is waterproofed to AS 3740 with a compliance certificate. The work is carried out under NSW Builder Licence 475204C with a 10-year workmanship warranty. A free on-site measure anywhere in Sydney is the right starting point.',
+          'Every apartment bathroom is waterproofed to AS 3740 with a compliance certificate. The work is carried out under NSW Builder Licence 475204C with a 10-year workmanship warranty. A free on-site measure for your <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a> anywhere in Sydney is the right starting point.',
         ],
       },
     ],
@@ -2760,7 +2782,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'bathroom-niche-design-ideas',
     title: 'Bathroom niches and recessed shelves: design, sizing and waterproofing',
     metaTitle: 'Bathroom Niche Ideas and Sizes',
-    description: 'Plan niche size and placement so bottles fit and it works with the shower layout.',
+    description: 'A standard shower niche is 300 × 400 × 80 mm, sized for everyday bottles. Plan placement, waterproofing and tile alignment before tiling starts.',
     published: '2026-10-03',
     readTime: '4 min read',
     category: 'Design and finishes',
@@ -2785,6 +2807,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Sizing and proportions',
         paragraphs: [
           'A standard single niche is 300 millimetres wide by 400 millimetres tall by 80 to 100 millimetres deep. That holds most bottles upright. A double-height niche - 300 by 600 or 300 by 800 - gives two shelf levels with a horizontal tile divider in the middle.',
+          'For reference, a standard 500 ml shampoo bottle is about 65 mm wide and 220 mm tall. Two side by side need at least 150 mm of clear width, so the 300 mm standard niche fits two bottles comfortably with room to spare. If you keep taller pump bottles, go for a 400 mm tall niche.',
           'The width and height should align with the tile grid. A niche that cuts a tile in half looks messy. A niche that sits neatly between full tiles looks intentional. Your tiler plans the niche around the tile layout, not the other way around.',
           'Our <a href="/blog/small-bathroom-storage-solutions/" class="et-link">storage solutions guide</a> covers other ways to add storage in a small bathroom when a niche alone is not enough.',
         ],
@@ -2809,7 +2832,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'How ETR builds niches',
         paragraphs: [
           'The niche is planned during the design phase, before tiling starts. Farah Dawood works out the placement, size and tile alignment as part of the layout drawing. The niche is framed into the wall stud work, waterproofed with the rest of the shower, and tiled to match or contrast the surrounding wall.',
-          'Adam Dawood, with over 25 years in tiling, sets the niche so it aligns with the tile grid and the shelf slopes forward for drainage. Every niche is waterproofed to AS 3740. A free on-site measure anywhere in Sydney is the starting point.',
+          'Adam Dawood, with over 25 years in tiling, sets the niche so it aligns with the tile grid and the shelf slopes forward for drainage. Every niche is waterproofed to AS 3740. A free on-site measure for your <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a> anywhere in Sydney is the starting point.',
         ],
       },
     ],
@@ -4590,7 +4613,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'shower-seat-bench-bathroom-design',
     title: 'Shower seats and bench seating: comfort, safety and style',
     metaTitle: 'Shower Seat and Bench Guide',
-    description: 'Compare built-in, fold-down and freestanding shower seats for fit and use.',
+    description: 'A built-in shower bench costs $300–$800 during a renovation. Compare built-in, fold-down and freestanding seats by size, placement and comfort.',
     published: '2026-10-03',
     readTime: '4 min read',
     category: 'Design and finishes',
@@ -4626,7 +4649,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Sizing and placement',
         paragraphs: [
-          'The shower must be large enough to fit a seat and still have room to stand and move. A shower with a built-in bench should be at least 1,200 by 900 millimetres. The bench is usually placed on the wall opposite the shower head.',
+          'The shower must be large enough to fit a seat and still have room to stand and move. A shower with a built-in bench should be at least 1,200 by 900 millimetres. The bench is usually placed on the wall opposite the shower head. In a smaller shower, a corner bench tucked into the far corner takes less depth than a full-width seat while still giving enough room to sit.',
           'Height matters for comfort. A seat height of 450 to 500 millimetres suits most adults. For someone in a wheelchair who transfers to the seat, 450 millimetres matches the chair height.',
         ],
       },
@@ -4634,7 +4657,7 @@ export const blogPosts: BlogPost[] = [
         heading: 'Universal design and future-proofing',
         paragraphs: [
           'A shower seat is one of the simplest universal design features. It makes the shower safer and more comfortable for people of all ages and abilities, without looking like a medical fixture.',
-          'Ali Hassan said: "The bathroom renovation team was awesome! They listened to what we wanted, gave us great ideas, and did fantastic work." The seat design is discussed during the free on-site measure. Call 0411 752 334 to book yours.',
+          'Ali Hassan said: "The bathroom renovation team was awesome! They listened to what we wanted, gave us great ideas, and did fantastic work." The seat design is discussed during the free on-site measure for your <a href="/services/bathroom-renovations/" class="et-link">bathroom renovation</a>. Call 0411 752 334 to book yours.',
         ],
       },
     ],
