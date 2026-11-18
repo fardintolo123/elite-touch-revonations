@@ -9,6 +9,9 @@ Also read `docs/SPECIALIST_AGENTS.md` when a task may benefit from specialist re
 
 For WebMCP work, use the project skill at `.claude/skills/webmcp/SKILL.md`. Claude Code and GitHub Copilot can discover the project skill from that location; Codex should read it when the task matches.
 
+## Memory & code graph
+Before investigating past decisions, prior sessions, or "what happened/was decided before" questions, search MemPalace first (`mempalace-recall` skill; local-only, no data leaves the machine) rather than re-reading history from scratch. For codebase structure or file-relationship questions, query the local Graphify graph first (`/graphify` skill; `graphify-out/graph.json`, rebuild with `graphify update .`) instead of grepping blind. Both are local tools — treat their output as a starting point, not a source of truth; verify against the code per the hierarchy above.
+
 ## Session continuity
 
 Read `CLAUDE.md` and `.agents/workflows/session-management.md` for project rules. Treat `sunrise`
