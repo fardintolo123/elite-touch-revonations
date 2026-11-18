@@ -5985,6 +5985,85 @@ export const blogPosts: BlogPost[] = [
       { question: 'How do I arrange the measure?', answer: 'Call Elite Touch or send your details through the enquiry form so the team can arrange a visit.' },
     ],
   },
+  {
+    slug: 'common-bathroom-problems-what-a-renovation-fixes',
+    title: 'Common bathroom problems and what a renovation actually fixes',
+    metaTitle: 'Bathroom Problems a Renovation Fixes',
+    description: 'Leaks, mould, failing grout and lifting tiles usually trace to the same causes. See which recurring bathroom problems a proper renovation resolves.',
+    published: '2026-11-18',
+    readTime: '5 min read',
+    category: 'Compare your options',
+    quickAnswer: {
+      heading: 'Why do these problems keep coming back?',
+      paragraphs: [
+        'Recurring leaks, mould, cracking grout and lifting tiles usually share the same root causes: failed or absent waterproofing, poor drainage falls, and inadequate ventilation. Patching the surface treats the symptom while the cause stays in the walls and floor.',
+        'A renovation that strips the room back and rebuilds to AS 3740 waterproofing standard addresses those causes at the structure, not the surface.',
+      ],
+      table: {
+        caption: 'Common recurring bathroom problems and their usual structural cause.',
+        columns: ['Problem', 'Usual cause'],
+        rows: [
+          { label: 'Shower leak', detail: 'Failed or missing membrane beneath tiles.', value: 'Waterproofing failure' },
+          { label: 'Returning mould', detail: 'Moisture trapped by poor ventilation or leaks.', value: 'Ventilation or leak' },
+          { label: 'Cracking grout', detail: 'Movement, moisture or inadequate substrate.', value: 'Structural movement' },
+          { label: 'Lifting tiles', detail: 'Water beneath tiles weakening adhesion.', value: 'Water ingress' },
+        ],
+      },
+      note: 'Each symptom can appear alone, but in older bathrooms they often occur together because the original waterproofing or drainage has failed.',
+      cta: { href: '/contact-us/', label: 'Book a free on-site measure' },
+    },
+    sections: [
+      {
+        heading: 'Why does my shower keep leaking?',
+        paragraphs: [
+          'A shower that leaks into the ceiling below or into an adjacent wall usually has a waterproofing problem, not a grout problem. The membrane beneath the tiles is meant to catch any water that passes through the grout and direct it to the waste. When that membrane has failed, been installed incorrectly or was never applied, water finds its own path.',
+          'Regrouting or resealing can slow the leak temporarily, but if the membrane underneath has failed, the water will find another route. Our <a href="/blog/bathroom-waterproofing-explained/" class="et-link">waterproofing guide</a> explains what the membrane does and what AS 3740 requires. A renovation strips the room back and installs a new membrane so the wet areas are sealed properly.',
+        ],
+      },
+      {
+        heading: 'Why does mould keep coming back?',
+        paragraphs: [
+          'Cleaning mould treats the surface. It returns because the moisture that feeds it is still in the room. The usual causes are a weak or missing exhaust fan, no window or cross-ventilation, or a slow leak adding moisture behind the walls.',
+          'Our <a href="/blog/bathroom-mould-prevention-renovation/" class="et-link">mould prevention guide</a> explains the moisture and airflow issues in detail. A renovation can address all three at once: a properly rated exhaust fan ducted to the outside, sealed wet areas that stop hidden leaks, and finishes chosen for the room\'s actual ventilation. Our <a href="/blog/bathroom-ventilation-sydney-renovation/" class="et-link">ventilation guide</a> covers what to look for.',
+        ],
+      },
+      {
+        heading: 'Why does my grout keep cracking or going black?',
+        paragraphs: [
+          'Grout cracks when the surface beneath it moves or when moisture repeatedly wets and dries the joint. Black grout is usually mould growing in a joint that never fully dries. Both point to conditions behind the tile, not just to the grout itself.',
+          'Raking out and replacing grout can help for a while, but if the substrate is moving or water is sitting behind the tiles, the new grout will fail the same way. Our <a href="/blog/bathroom-grout-guide-types-maintenance/" class="et-link">grout guide</a> covers the different types, what affects their lifespan and what ongoing care each needs. A renovation rebuilds the substrate and waterproofing so the new grout has a stable, dry base to sit on.',
+        ],
+      },
+      {
+        heading: 'Why are my tiles lifting or sounding hollow?',
+        paragraphs: [
+          'A tile that sounds hollow when tapped has lost adhesion to the surface beneath it. Water getting under the tiles, a failed adhesive bond or movement in the substrate can all cause this. Once one tile lifts, water reaches more of the adhesive layer and the problem spreads.',
+          'Replacing individual tiles can work if the substrate and waterproofing underneath are still sound. When tiles are lifting across a larger area, the underlying surface is usually compromised. At that point, the <a href="/blog/repair-or-replace-bathroom-renovation/" class="et-link">repair-or-replace decision</a> becomes whether to keep patching a failing base or strip the room and rebuild it properly.',
+        ],
+      },
+      {
+        heading: 'When is a renovation the right answer instead of another repair?',
+        paragraphs: [
+          'A single repair is cheaper than a renovation. But when the same problem returns after each fix, the cost of repeated repairs adds up while the underlying cause stays. The trigger is usually a combination: a leak that reappears, grout that fails again within a year or two, mould that cleaning cannot stop, and tiles that are coming loose in more than one spot.',
+          'A renovation to AS 3740 standard addresses the causes together: new waterproofing, correct drainage falls, proper ventilation and a sound substrate for the tiles. Elite Touch Renovations waterproofs bathroom renovation work to AS 3740 and supplies a <a href="/blog/bathroom-waterproofing-certificate-sydney/" class="et-link">waterproofing certificate</a> for the work. That certificate is a record you keep — it shows the standard was met, not just promised.',
+        ],
+      },
+      {
+        heading: 'What a renovation changes versus what it cannot guarantee',
+        paragraphs: [
+          'A renovation replaces the structure, waterproofing, drainage and ventilation. It does not make the room maintenance-free. Grout still needs cleaning, exhaust fans still need to run, and silicone seals still have a lifespan.',
+          'The difference is that a properly rebuilt room responds to normal maintenance. A failing room does not, because the problem is behind the surface where cleaning and patching cannot reach. If you are weighing up the decision, our <a href="/blog/repair-or-replace-bathroom-renovation/" class="et-link">repair-or-replace guide</a> sets out the signs to look for.',
+        ],
+      },
+    ],
+    faq: [
+      { question: 'Why does my bathroom keep leaking after repairs?', answer: 'Shower leaks usually trace to failed waterproofing beneath the tiles. Regrouting or resealing treats the surface, but if the membrane underneath has failed, water finds another route. A renovation strips the room back and installs a new membrane to AS 3740 standard.' },
+      { question: 'Can mould be fixed without a renovation?', answer: 'Surface mould can be cleaned, but it returns if the moisture source is still there. When the cause is a missing exhaust fan, hidden leak or failed seal, those conditions often need a renovation to fix properly.' },
+      { question: 'Is it worth replacing grout or should I renovate?', answer: 'Replacing grout can help if the substrate and waterproofing beneath are sound. When grout keeps failing because the base is moving or wet, the new grout will fail the same way and a renovation that rebuilds the base is the more lasting fix.' },
+      { question: 'What does waterproofing to AS 3740 mean?', answer: 'AS 3740 is the Australian Standard for waterproofing wet areas. It sets out where membranes must be applied, how they are tested and what documentation is required. A renovation to this standard means the wet areas are sealed according to the standard, not just covered over.' },
+      { question: 'How do I know if my bathroom needs a renovation or just a repair?', answer: 'A single isolated problem in an otherwise sound room may only need a repair. When leaks, mould, failing grout and lifting tiles occur together or keep returning after fixes, the underlying structure is usually the issue and a renovation addresses the causes together.' },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string) {
