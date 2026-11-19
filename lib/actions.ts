@@ -1,5 +1,6 @@
 'use server'
 
+import { headers } from 'next/headers'
 import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
 import { businessInfo } from './businessInfo'
@@ -8,6 +9,7 @@ import {
   getEnquiryStartTiming,
   type EnquiryState,
 } from './enquiry'
+import { checkEnquiryRateLimit, clientIpFromHeaders } from './rateLimit'
 
 /**
  * Enquiry submission.
@@ -157,6 +159,17 @@ export async function submitEnquiry(
   if (asTrimmedString(formData.get('company')) !== '') {
     // Silently accept so the bot learns nothing.
     return { status: 'success', message: 'Thanks — we have your enquiry.' }
+  }
+
+  // Rate limit (issue #101) — before any Resend/Supabase call, so a throttled
+  // request never sends an email, inserts a row, or uploads a photo.
+  const ip = clientIpFromHeaders(await headers())
+  const withinLimit = await checkEnquiryRateLimit(ip, supabase)
+  if (!withinLimit) {
+    return {
+      status: 'error',
+      message: `We've had a lot of messages from this connection recently. Please call us on ${businessInfo.phone.display} and we'll help right away.`,
+    }
   }
 
   const errors: Record<string, string> = {}
