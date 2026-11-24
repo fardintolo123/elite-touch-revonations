@@ -36,7 +36,7 @@ export function SiteFooter() {
               height={320}
               loading="lazy"
             />
-            <p className="et-body-sm" style={{ color: '#e6edf7' }}>
+            <p className="et-body-sm" style={{ color: 'var(--et-text-inverse)' }}>
               Family-run bathroom renovations across Sydney since{' '}
               {businessInfo.foundedYear}. Fixed-scope written quotes, a free
               on-site measure, and a{' '}
@@ -125,7 +125,7 @@ export function SiteFooter() {
             </p>
             <ul>
               {businessInfo.hours.map((slot) => (
-                <li key={slot.days} style={{ color: '#e6edf7' }}>
+                <li key={slot.days} style={{ color: 'var(--et-text-inverse)' }}>
                   {slot.days}
                   <br />
                   {slot.open} – {slot.close}

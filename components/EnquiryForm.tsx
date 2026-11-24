@@ -580,7 +580,7 @@ export function EnquiryForm() {
                 ? 'var(--et-success-surface)'
                 : 'var(--et-danger-surface)',
             color:
-              state.status === 'success' ? '#07714E' : 'var(--et-danger)',
+              state.status === 'success' ? 'var(--et-success)' : 'var(--et-danger)',
           }}
         >
           <p>{state.message}</p>

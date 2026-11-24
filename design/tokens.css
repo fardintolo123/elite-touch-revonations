@@ -1,0 +1,153 @@
+/*
+ * Elite Touch Renovations — Design Tokens
+ *
+ * Standalone reference of the token contract from DESIGN.md §11.
+ * The canonical runtime tokens live in app/globals.css :root.
+ * This file exists so design tools and audits can consume tokens
+ * without parsing the full stylesheet.
+ *
+ * Rules:
+ *   - Never hard-code a hex, radius or duration in a component.
+ *   - Every spacing value is on the 4px grid.
+ *   - If a value isn't here, add it to DESIGN.md first.
+ */
+
+:root {
+  /* ---- Brand ---- */
+  --et-magenta-50:  #fff0f8;
+  --et-magenta-100: #ffdcef;
+  --et-magenta-200: #fcb8db;
+  --et-magenta-300: #f587bf;
+  --et-magenta-400: #ec4ba0;
+  --et-magenta-500: #dd0880;   /* Primary action fill */
+  --et-magenta-600: #c40772;   /* Primary hover */
+  --et-magenta-700: #b10666;   /* Ink: links, accent text */
+  --et-magenta-800: #8e0552;
+  --et-magenta-900: #6b043e;
+
+  /* ---- Neutrals ---- */
+  --et-ink-900: #141416;       /* Dark section bg */
+  --et-ink-800: #1c1c20;       /* Dark section cards */
+  --et-ink-700: #24242a;       /* Dark section raised */
+  --et-ink-500: #2a2a2a;       /* Body & heading text */
+  --et-ink-400: #545c66;       /* Secondary text */
+  --et-ink-300: #69727d;       /* Muted text, 14px+ only */
+  --et-ink-200: #c4c4c4;       /* Strong borders */
+  --et-ink-100: #d9d9d9;       /* Default borders */
+  --et-ink-50:  #f1f1f2;       /* Skeleton, disabled */
+
+  /* ---- Semantic surfaces ---- */
+  --et-canvas:          #fafafa;
+  --et-surface:         #ffffff;
+  --et-surface-raised:  #ffffff;
+  --et-surface-accent:  var(--et-magenta-50);
+  --et-surface-inverse: var(--et-ink-900);
+
+  /* ---- Semantic text ---- */
+  --et-text:           var(--et-ink-500);
+  --et-text-secondary: var(--et-ink-400);
+  --et-text-muted:     var(--et-ink-300);
+  --et-text-inverse:   #f4f4f5;
+  --et-text-accent:    var(--et-magenta-700);
+
+  /* ---- Semantic action ---- */
+  --et-accent:        var(--et-magenta-500);
+  --et-accent-hover:  var(--et-magenta-600);
+  --et-accent-active: var(--et-magenta-700);
+  --et-on-accent:     #ffffff;
+
+  /* ---- Borders ---- */
+  --et-border:        var(--et-ink-100);
+  --et-border-strong: var(--et-ink-200);
+
+  /* ---- Status ---- */
+  --et-success: #0e9f6e;  --et-success-surface: #e8f7f1;
+  --et-warning: #d9880b;  --et-warning-surface: #fdf3e3;
+  --et-danger:  #c01515;  --et-danger-surface:  #fbeaea;
+  --et-info:    #0b6fbf;  --et-info-surface:    #e8f1fa;
+
+  /* ---- Typography ---- */
+  --et-font: Jost, 'Jost Variable', ui-sans-serif, system-ui,
+             'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --et-text-display: clamp(2.5rem, 1.6rem + 3.6vw, 4.25rem);
+  --et-text-h1:      clamp(2.125rem, 1.6rem + 2.1vw, 3.125rem);
+  --et-text-h2:      clamp(1.75rem, 1.45rem + 1.2vw, 2.375rem);
+  --et-text-h3:      clamp(1.375rem, 1.25rem + 0.5vw, 1.75rem);
+  --et-text-h4:      clamp(1.125rem, 1.05rem + 0.3vw, 1.375rem);
+  --et-text-lead:    clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+  --et-text-body:    1rem;
+  --et-text-sm:      0.875rem;
+  --et-text-caption: 0.8125rem;
+  --et-text-eyebrow: 0.75rem;
+  --et-leading-tight: 1.15;
+  --et-leading-snug:  1.3;
+  --et-leading-body:  1.5;
+
+  /* ---- Spacing (4px grid) ---- */
+  --et-space-1: 4px;    --et-space-2: 8px;    --et-space-3: 12px;
+  --et-space-4: 16px;   --et-space-5: 20px;   --et-space-6: 24px;
+  --et-space-7: 28px;   --et-space-8: 32px;   --et-space-9: 36px;
+  --et-space-10: 40px;  --et-space-12: 48px;  --et-space-14: 56px;
+  --et-space-16: 64px;  --et-space-20: 80px;  --et-space-24: 96px;
+  --et-space-30: 120px; --et-space-40: 160px;
+
+  /* ---- Layout ---- */
+  --et-container-max:    1280px;
+  --et-container-wide:   1440px;
+  --et-container-narrow: 720px;
+  --et-gutter: 20px;
+
+  /* ---- Radius ---- */
+  --et-radius-sm:   12px;
+  --et-radius-md:   20px;
+  --et-radius-lg:   28px;
+  --et-radius-xl:   40px;
+  --et-radius-2xl:  56px;
+  --et-radius-pill: 999px;
+
+  /* ---- Elevation ---- */
+  --et-shadow-float:   0 8px 24px rgba(20, 20, 22, 0.08);
+  --et-shadow-overlay: 0 24px 64px rgba(20, 20, 22, 0.18);
+
+  /* ---- Motion ---- */
+  --et-duration-instant:    100ms;
+  --et-duration-fast:       150ms;
+  --et-duration-base:       200ms;
+  --et-duration-slow:       320ms;
+  --et-duration-deliberate: 500ms;
+  --et-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --et-ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --et-ease-in:       cubic-bezier(0.7, 0, 0.84, 0);
+
+  /* ---- Z-index ---- */
+  --et-z-raised: 10;   --et-z-sticky: 100;  --et-z-header: 200;
+  --et-z-dropdown: 300; --et-z-overlay: 400; --et-z-modal: 500;
+  --et-z-popover: 600;  --et-z-toast: 700;   --et-z-tooltip: 800;
+}
+
+@media (min-width: 768px)  { :root { --et-gutter: 32px; } }
+@media (min-width: 1280px) { :root { --et-gutter: 40px; } }
+
+[data-theme='dark'] {
+  --et-canvas:          #141416;
+  --et-surface:         #1c1c20;
+  --et-surface-raised:  #24242a;
+  --et-surface-accent:  #2a0f20;
+  --et-surface-inverse: #f4f4f5;
+
+  --et-text:           #f4f4f5;
+  --et-text-secondary: #b9bec7;
+  --et-text-muted:     #9098a3;
+  --et-text-inverse:   #141416;
+  --et-text-accent:    var(--et-magenta-400);
+
+  --et-accent:        var(--et-magenta-500);
+  --et-accent-hover:  var(--et-magenta-400);
+  --et-accent-active: var(--et-magenta-600);
+
+  --et-border:        #33333b;
+  --et-border-strong: #45454f;
+
+  --et-shadow-float:   0 8px 24px rgba(0, 0, 0, 0.45);
+  --et-shadow-overlay: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
