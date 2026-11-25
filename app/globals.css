@@ -1697,7 +1697,7 @@ svg {
 
 .et-footer {
   background: var(--et-ink-900);
-  color: #edf3fa;
+  color: var(--et-text-inverse);
   padding-block: var(--et-space-24) var(--et-space-12);
 }
 .et-footer h2,
@@ -1709,11 +1709,11 @@ svg {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #dfe7f2;
+  color: var(--et-ink-300);
   margin-bottom: var(--et-space-5);
 }
 .et-footer a {
-  color: #e8edf5;
+  color: #b9bec7;
   text-decoration: none;
   font-size: var(--et-text-sm);
   transition: color var(--et-duration-instant) var(--et-ease-standard);

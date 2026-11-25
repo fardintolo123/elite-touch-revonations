@@ -20,3 +20,10 @@
 - Snapshot check (NOT a publication tree): 96231f0b + the homepage session's UNCOMMITTED edits to app/page.module.css, app/page.tsx, components/HomeEnquiryStarter.tsx, built in worktree D:/tmp/etr-verify2: build green (124 pages), `check:design` PASS, `check:readability` 118/118.
 - Blocker: the committed tree still fails `check:design` until the homepage session commits those three files. Not committed or pushed by this session.
 - Left in place for the re-run: worktree D:/tmp/etr-verify2 (own node_modules copy). Remove with `git worktree remove --force D:/tmp/etr-verify2` from the main checkout, not while it is the shell's cwd.
+
+## Addendum 2026-11-24 20:15 (same session, resumed)
+- Resolved without further action by this session: another session published a clean history. Working copy is on branch `push-clean` @ 44e5f38e == origin/main. A code-level diff of the old local `main` (7ed8834a) against origin/main shows no unpublished code on old `main` (only origin-side additions: lib/rateLimit.ts, lib/actions.ts rate-limit, #101/#102 docs). Old `main` is stale diverged history; NOT deleted (not created by this session).
+- Live check 2026-11-24: /ai/ 200 (475204C present), /sitemap.xml 200, /llms.txt 200, new blog post common-bathroom-problems-what-a-renovation-fixes 200, DIY guide 200.
+- GitHub: #98, #91, #99 closed. #101 and #102 open (security batch, other session).
+- Housekeeping: removed worktree D:/tmp/etr-verify2 and my temp logs. Left D:/tmp/etr-verify-3220 (not created by this session). Three stashes from other sessions not touched.
+- Not re-run: check:design / check:readability on 44e5f38e (the earlier snapshot passed on 96231f0b + homepage edits; later commits not re-verified by this session).
