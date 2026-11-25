@@ -55,3 +55,21 @@ measured business benefits remain unclaimed unless supported by their own eviden
 **Why it matters here:** the full-bleed photo gives the homepage a real local-project proof point, while the one-screen constraint keeps the room choices, rating, call option and written-quote/warranty facts visible.
 
 **Application/status:** implemented locally in `app/page.tsx`, `app/page.module.css` and `components/HomeEnquiryStarter.tsx`; measured at 390×844, 1440×900 and 390×667. Final-source matched Lighthouse shows median LCP 2.644s before and 3.064s after (+420ms), above the 2.5s target and +300ms regression limit. The owner approved publishing despite this gate on 2026-11-10; release is pending safe reconciliation of `main`. A sync-decode experiment increased TBT and was reverted. See D-186, D-187 and the evidence folder.
+
+## Conversion — "You overexplain" + get found / trusted / call (2026-11-25)
+
+**Source:** the owner's mentor, quoted in a Claude Code chat on 2026-11-25. The owner also pasted a
+local-business website playbook in the same chat.
+
+**The tip:** "You overexplain too much → information overload for new visitors. Also you need
+seriously optimise the conversion rate." The playbook adds: a local site has three jobs, in order (get
+found, get trusted, get the call). Answer first, then prove it. One page, one next step. Keep the call
+button on screen. Never count keywords. Track calls and forms by page.
+
+**Why it matters here:** measured 2026-11-25, this site's copy is moderate (homepage 1,216 words,
+9 sections). Its first screen already does the job. The leaks are elsewhere: `/contact-us/` returns
+403, and nobody has split enquiries by landing page.
+
+**Application/status:** planned, not implemented. See `plans/conversion-baseline-2026-11.md` and
+milestone `Batch: Conversion — leaks & baseline`. Advice is not measured lift. Judge any later page
+cut by enquiries per 100 users over 28 days.
