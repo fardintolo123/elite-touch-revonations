@@ -42,6 +42,8 @@ What this shows:
       isn't 200.
 - [ ] **E1 · #111** Enquiries and calls by landing page, 90 days. This sets the pre-change baseline and
       names the 3 pages to fix first (needs the owner's GA4 export).
+- [x] **E2 · #113** Fix the CSP so GA4 hits to `analytics.google.com` and `www.google.com` are not refused
+      (found 2026-11-26 while running E1; blocks #111 and #109 until 28 days of clean data exist).
 - [ ] **#109** GA4 hour-of-day report, to set phone cover (moved here; it is the same export session).
 
 After E1: open page issues only for pages the data names, each with a before/after measurement

@@ -107,7 +107,9 @@ const cspHeader = [
   // GA4 sends hits to regional `*.analytics.google.com` collectors and, with Google signals on, to
   // `stats.g.doubleclick.net`. Both were blocked live on 2026-10-29, so GA4 recorded nothing. Google's
   // GTM CSP guide lists both; nothing broader is allowed.
-  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.googletagmanager.com",
+  // A wildcard never matches the bare host: gtag also posts to `analytics.google.com` and falls back to
+  // `www.google.com`, and both were refused live on 2026-11-26 (issue #113, D-162 amendment).
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com https://*.g.doubleclick.net https://*.googletagmanager.com",
   "img-src 'self' data: blob: https:",
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self'",
