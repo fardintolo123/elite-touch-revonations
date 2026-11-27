@@ -5988,7 +5988,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'common-bathroom-problems-what-a-renovation-fixes',
     title: 'Common bathroom problems and what a renovation actually fixes',
-    metaTitle: 'Bathroom Problems a Renovation Fixes',
+    metaTitle: 'Common Bathroom Problems Fixed',
     description: 'Leaks, mould, failing grout and lifting tiles usually trace to the same causes. See which recurring bathroom problems a proper renovation resolves.',
     published: '2026-11-18',
     readTime: '5 min read',
