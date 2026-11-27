@@ -53,8 +53,10 @@ Keep advice, verified implementation and measured outcomes distinct.
 
 A batch is a milestone named `Batch: <theme>` with a tracker issue (title ending "— tracker") whose
 checklist links every member issue. The owner usually runs a whole batch in one session, often in a
-separate DeepSeek or Codex chat. `sunrise #TRACKER` runs that batch; `sunrise batch <name>` finds the
-batch by milestone name; plain `sunrise batch` picks the next unstarted batch.
+separate DeepSeek or Codex chat. `sunrise #TRACKER` runs that batch. `sunrise batch <words>` finds it
+by name: match the words against open `Batch:` milestone titles, ignoring case and punctuation (for
+example `sunrise batch say less`). One match: run it. Several: list them and ask. None: list the open
+batches. Plain `sunrise batch` picks the next unstarted batch.
 
 - **One batch per session, one member at a time,** in the tracker's checklist order (dependency order).
   Never run two members, two builds or two writers in parallel.
@@ -67,6 +69,12 @@ batch by milestone name; plain `sunrise batch` picks the next unstarted batch.
   Execution block's stop condition is hit, or when an owner decision is needed. Never start the next
   member on top of a broken `main`. Report the stop reason in the batch checkpoint.
 - **Members outside the batch stay untouched,** even when they look related.
+- **Live data is gathered before hand-off, not mid-batch.** GA4, Search Console, Keyword Planner and
+  Business Profile numbers are pulled in the planning session (Claude, with the owner's browser access)
+  and committed as dated files that the member's Execution block names. If a member needs data that is
+  not committed, mark it `needs data` in the batch checkpoint, then move on to the next member. Don't
+  stop to ask the owner for an export. Post-deploy measurements ("28 days after deploy") are not the
+  executor's job: leave them unchecked with their due date.
 
 Batch checkpoint, posted on the tracker at `sunset` (the member being worked also gets its own issue
 checkpoint):
