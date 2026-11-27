@@ -73,3 +73,20 @@ button on screen. Never count keywords. Track calls and forms by page.
 **Application/status:** planned, not implemented. See `plans/conversion-baseline-2026-11.md` and
 milestone `Batch: Conversion — leaks & baseline`. Advice is not measured lift. Judge any later page
 cut by enquiries per 100 users over 28 days.
+
+## Workflow — Issues as execution specs for DeepSeek (2026-11-26)
+
+**Source:** the owner, relaying advice from Gemini, in a Claude Code chat on 2026-11-26.
+
+**The tip:** Claude writes the issues; DeepSeek runs them. Put exact file paths and one short
+verification command in each issue, so the executor doesn't explore the repo. Suggested settings:
+Flash, Medium or Low effort, agent teamwork off.
+
+**Why it matters here:** issues already list the files they own. The bigger savings are line anchors,
+the specific DECISIONS rows to read, and a quick check kept separate from the one-time full build.
+
+**Application/status:** `## Execution` block added to the issue rules in CLAUDE.md (2026-11-27).
+Settings were checked against the account's model list: there is no Medium effort (Low / High / Max),
+`deepseek-flash` reads images and `deepseek-v4-pro` is text-only. Use High for code or design work.
+The 90.6 Terminal-Bench figure is DeepSeek's own, reached at high effort. Teamwork stays off. Keep
+coding keys separate from site keys.

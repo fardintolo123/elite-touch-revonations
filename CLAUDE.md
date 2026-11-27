@@ -638,6 +638,27 @@ low, and record a blocked issue's blocker explicitly rather than leaving it sile
 plan file is the map; each issue is one step on it — if you cannot point at the plan line an issue
 came from, it is not ready to open.
 
+**Add an `## Execution` block to every issue.** The owner plans in Claude and often runs each issue in
+a separate DeepSeek or Codex session (2026-11-26), and this block is that session's brief:
+
+```md
+## Execution
+- Read only: <file:line anchors> · <DECISIONS rows> · <doc § if one applies>
+- Quick check between edits: <e.g. `npx tsc --noEmit`>
+- Final gate, once before commit: <e.g. `npm run build --ignore-scripts` + the task's check>
+- Owner-only steps: <list, or "none">
+- Stop and report if: <the condition that means the plan is wrong>
+- Executor settings: <model + effort>; agent teamwork off
+```
+
+Executor rules: list anchors so the executor skips repo-wide searches and reads only the named
+DECISIONS rows. Run one writer per issue, with no parallel helper agents (concurrent builds corrupt
+each other; see Testing Workflow). DeepSeek (checked 2026-11-27): `deepseek-flash` reads images,
+which design screenshot checks need, and `deepseek-v4-pro` is text-only. Effort is Low / High / Max,
+with no Medium. Use High for code, design or tracking changes. A reviewer that did not build it reads
+the diff and reruns the checks before the issue closes. Keep coding API keys separate from any key a
+live site uses.
+
 ## Testing Workflow
 
 - The build must be green before commit. Treat a **drop** in the route count as the red flag; don't
