@@ -51,7 +51,10 @@ checkpoints, then recommend a next action within the owner's stated scope; do no
 
 For a new chat, the owner can start with: `sunrise #NUMBER — implement this issue. Work only on this
 issue in this session; first report its current status, risks, and next action.` Use `review` or
-`verify` instead of `implement` when that is the requested mode.
+`verify` instead of `implement` when that is the requested mode. To run a whole batch, start with
+`sunrise #TRACKER — implement this batch.` (or `sunrise batch` for the next unstarted one). The session
+works the member issues one at a time and leaves a batch checkpoint on the tracker; see
+[batch mode](.agents/workflows/session-management.md#batch-mode).
 
 ### Session batching (GitHub milestones)
 

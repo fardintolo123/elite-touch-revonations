@@ -14,8 +14,8 @@ Before investigating past decisions, prior sessions, or "what happened/was decid
 
 ## Session continuity
 
-Read `CLAUDE.md` and `.agents/workflows/session-management.md` for project rules. Treat `sunrise`
-or `sunrise #NUMBER` as a request to follow `.agents/workflows/sunrise.md`; treat `sunset` as a
+Read `CLAUDE.md` and `.agents/workflows/session-management.md` for project rules. Treat `sunrise`,
+`sunrise #NUMBER` or `sunrise batch` / `sunrise #TRACKER` (batch mode) as a request to follow `.agents/workflows/sunrise.md`; treat `sunset` as a
 request to follow `.agents/workflows/sunset.md`. Preserve task mode, issue/session links, actual
 code revision, verification, recovery and approval state. Create a branch only when the owner asks.
 These words invoke project instructions; no native shell or slash command is implied.

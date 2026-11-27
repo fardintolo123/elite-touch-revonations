@@ -4,8 +4,8 @@ Repository: `fardintolo123/elite-touch-revonations`.
 
 ## How to use
 
-Type `sunrise` to recover the queue, `sunrise #NUMBER` to recover one issue, and `sunset`
-to save the current session. These are plain-language agent instructions, not installed shell commands.
+Type `sunrise` to recover the queue, `sunrise #NUMBER` to recover one issue, `sunrise #TRACKER` or
+`sunrise batch [name]` to run a batch, and `sunset` to save the current session. These are plain-language agent instructions, not installed shell commands.
 If your tool does not load the repository instructions, tell it to read
 [`sunrise.md`](sunrise.md) or [`sunset.md`](sunset.md). A slash-command integration is optional.
 
@@ -48,6 +48,39 @@ GitHub open/closed state, task progress, chat read state and agent running/idle/
 
 Read and maintain this repository's [tips and pattern records](project-knowledge.md) during work.
 Keep advice, verified implementation and measured outcomes distinct.
+
+## Batch mode
+
+A batch is a milestone named `Batch: <theme>` with a tracker issue (title ending "— tracker") whose
+checklist links every member issue. The owner usually runs a whole batch in one session, often in a
+separate DeepSeek or Codex chat. `sunrise #TRACKER` runs that batch; `sunrise batch <name>` finds the
+batch by milestone name; plain `sunrise batch` picks the next unstarted batch.
+
+- **One batch per session, one member at a time,** in the tracker's checklist order (dependency order).
+  Never run two members, two builds or two writers in parallel.
+- **Read first:** the tracker body and its latest "Batch execution" or batch-checkpoint comment. Read
+  each member's body and `## Execution` block when you reach it, not all of them up front.
+- **Per member:** claim it with a comment, implement it, run its own gates, commit and push under the
+  project rules, and post its issue checkpoint. A member is finished for the batch when it is closed,
+  or labelled "Ready for review" when the batch instructions ask for review before closure.
+- **Stop the batch** when a member fails its gates and the fix would go outside its files, when an
+  Execution block's stop condition is hit, or when an owner decision is needed. Never start the next
+  member on top of a broken `main`. Report the stop reason in the batch checkpoint.
+- **Members outside the batch stay untouched,** even when they look related.
+
+Batch checkpoint, posted on the tracker at `sunset` (the member being worked also gets its own issue
+checkpoint):
+
+```md
+<!-- batch-checkpoint:v1 -->
+# Batch checkpoint
+- Repository / batch: owner/repo · milestone "Batch: …" · tracker #N
+- Observed at / session: date, time and timezone · tool + session ID
+- Members: #A closed (SHA) · #B ready for review (SHA) · #C in progress, see its checkpoint · #D not started · #E blocked (reason)
+- Main: pushed SHA; deployment evidence or "not checked"
+- Stopped because: finished | usage limit | blocker (exact) | owner decision needed (exact)
+- Next action: `sunrise #N` → continue #C at <step>
+```
 
 ## Compact checkpoint format
 

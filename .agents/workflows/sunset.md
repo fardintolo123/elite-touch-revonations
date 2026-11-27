@@ -28,13 +28,15 @@ A sunset can finish a session with an open, blocked or approval-pending issue.
 6. Post the concise progress checkpoint to the source issue when tracking is authorized, update
    acceptance items supported by evidence, and link the handoff and recovery state. Capture the
    returned comment URL in the local checkpoint. If offline, save the pending update locally and say
-   it was not synced. A local-only handoff is not available from GitHub on another machine.
+   it was not synced. A local-only handoff is not available from GitHub on another machine. In batch
+   mode, also post a batch checkpoint on the tracker (format in session-management.md).
 7. Apply the project's issue-closure policy. Release this session's implementation claim on a final
    handoff; keep it active for an intermediate milestone if work continues. Never release or close
    another session's work. Keep named blockers and dates on incomplete issues.
 8. Confirm the checkpoint exists and report completed work, actual code/publication state, remaining
    blocker, GitHub sync result and the exact next action. Include the command/prompt needed to resume:
-   `sunrise #NUMBER` (or read the issue's latest checkpoint in another agent).
+   `sunrise #NUMBER`, using the tracker's number for a batch (or read the latest checkpoint in another
+   agent).
 
 No transcription of the full conversation, fixed review-loop count or mandatory memory service is
 required. Keep useful code/decision references and preserve unique evidence when retiring old plans.
