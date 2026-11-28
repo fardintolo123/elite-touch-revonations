@@ -46,3 +46,20 @@
 - **Blocked-path lesson for future sessions:** on Google search, `business.google.com/dashboard` redirects to the marketing page for this account, and the quick-edit sheet is unreachable from the DOM layer. If the profile edit must be automated later, it needs the Maps/Business Profile API, not the UI.
 - **Incidental observation (unverified):** the knowledge panel shows **5.0 · 20 reviews**, while `Customer Reviews.md` holds 19. Not acted on — it is a Business Rules question for the owner, not this batch.
 - **Files touched by this addendum:** this file only.
+## Update 2026-11-28 14:05 — the owner saved the Business Profile tag
+
+- **Done by the owner, verified here:** the profile's editor → Contact → **Website** now holds
+  `https://www.elitetouchrenovations.au/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing`
+  exactly (read from the Contact tab at 14:00). The tagged URL re-fetched 14:05: **200, 0 redirects**.
+- **Propagation still pending:** the public knowledge panel's **Website button still pointed at the untagged
+  `https://elitetouchrenovations.au/`** at 14:05. That is Google's cache; the stored value is right. Recorded
+  so a later session does not read the panel as a failed save.
+- **Remaining for #114:** GA4 → Traffic acquisition → **Session campaign** contains `gbp-listing` under
+  Organic Search. **Due by 2026-12-05.** That is the only open acceptance criterion.
+- **Recorded in:** D-194 (appended evidence update), `plans/conversion-baseline-2026-11.md` (#114 line and
+  status), tracker #112 body, #114 comment (#issuecomment-7237343392).
+- **Useful locator found:** the profile's Google location id is `7374911645160562298`
+  (`business.google.com/n/7374911645160562298/photos`). This is the route a future automation would need —
+  the quick-edit sheet is not addressable by the browser tool (see the 10:55 note).
+- **Files touched by this addendum:** `DECISIONS.md` (D-194 tail only), `plans/conversion-baseline-2026-11.md`,
+  this file.

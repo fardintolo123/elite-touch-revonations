@@ -1,7 +1,7 @@
 # Conversion: leaks and baseline first (2026-11)
 
-Status 2026-11-28: no page changed. #103 and #113 are done and verified live; #114 is code-side verified and
-waiting on the owner's Business Profile edit; #111 and #109 are date-gated to **on or after 2026-12-24**
+Status 2026-11-28: no page changed. #103 and #113 are done and verified live; #114's tag is saved and only
+its GA4 read is outstanding (due by 2026-12-05); #111 and #109 are date-gated to **on or after 2026-12-24**
 (28 complete days of clean GA4 data from 2026-11-26). Source of the `Batch: Conversion — leaks & baseline`
 (tracker #112) milestone.
 
@@ -51,8 +51,10 @@ What this shows:
       Same **2026-12-24** gate.
 - [ ] **#114** Tag the Business Profile website link (`utm_campaign=gbp-listing`, medium stays `organic`)
       so Maps visits can be counted separately. Agent side **verified 2026-11-28** (D-194): tagged URL is
-      200 with no redirect and a clean canonical. Waiting on the owner's Business Profile edit, then on
-      GA4 showing `gbp-listing` sessions.
+      200 with no redirect and a clean canonical. **Owner saved the tag 2026-11-28 14:05** (confirmed in the
+      editor's Contact → Website field). Remaining check: GA4 listing `gbp-listing` sessions under Organic
+      Search — **due by 2026-12-05**. The public panel's Website button still showed the untagged URL at
+      14:05, so the panel is not the evidence; GA4 is.
 
 After E1: open page issues only for pages the data names, each with a before/after measurement
 (words, phone screens, first-screen controls) and a 28-day enquiries-per-100-users comparison.
