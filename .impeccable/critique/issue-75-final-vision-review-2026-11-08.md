@@ -1,6 +1,6 @@
 # Issue #75 — independent visual critique, 2026-11-08
 
-**Evidence:** `session-history/evidence/issue-75-service-location/after-2026-11-08/`, revision `1e14bbd`. The manifest records `scrollY: 0`, visible header bounds, and decoded hero images for all 16 mobile strips. The four representative routes also have mobile and desktop full-page captures and 1440×900 viewport captures.
+**Evidence:** `session-history/evidence/issue-75-service-location/after-2026-11-08/`, revision `1e14bbd` (removed 2026-11-28 to cut repo weight; recoverable from git history at `3f8c8c1`). The manifest records `scrollY: 0`, visible header bounds, and decoded hero images for all 16 mobile strips. The four representative routes also have mobile and desktop full-page captures and 1440×900 viewport captures.
 
 | # | Priority | Problem | Where | Why it weakens the page | Replace with | Expected benefit | Evidence |
 |---|---|---|---|---|---|---|---|

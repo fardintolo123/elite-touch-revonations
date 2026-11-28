@@ -52,7 +52,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > The production build passed with 122 static routes, `check:design` passed, all 16 #75 routes passed the route and mobile call checks, and the independent visual review found no P0/P1 issues. The tracker row is `fixed`, not `verified`. I did not commit or push.
 > 
-> The updated [visual review](<D:/1/elite-touch-revonations/.impeccable/critique/issue-75-current-build-vision-review-2026-11-05.md>), [screenshot manifest](<D:/1/elite-touch-revonations/session-history/evidence/issue-75-service-location/current-build/manifest.json>), and session handoff (consolidated) record the results.
+> The updated [visual review](<D:/1/elite-touch-revonations/.impeccable/critique/issue-75-current-build-vision-review-2026-11-05.md>), screenshot manifest (archive removed 2026-11-28; recoverable from git history), and session handoff (consolidated) record the results.
 
 ### elite-touch-revonations - GSC page optimization
 
