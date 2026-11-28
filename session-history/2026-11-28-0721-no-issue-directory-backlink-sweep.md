@@ -61,4 +61,21 @@ Consequences, all verified rather than assumed:
 - The 20 reviews sit on a profile nobody controls, so they can be edited, merged, suspended or duplicated with no recourse.
 - The categories and description visible in the owner's screenshot (Bathroom Renovator primary, Tile contractor, Interior designer; description claiming "compliance certificates issued at handover") are not owner-controlled text either.
 
-This displaces directory listings as the campaign's highest-value action. Recommended path: `Own this business?` → complete verification with licence 475204C, vehicle and premises evidence; if there is no staffed shopfront with signage, claim as a **service-area business** so the street address is hidden rather than failing verification again for an address that cannot be demonstrated.
+This displaces directory listings as the campaign's highest-value action. Recommended path: `Own this business?` → complete verification with licence 475204C, vehicle and premises evidence; if there is no staffed shopfront with signage, claim as a **service-area business** so the street address is hidden, rather than failing verification again for an address that cannot be demonstrated.
+
+## ProvenExpert claimed and corrected — 2026-11-28 (owner supplied inbox access)
+
+The owner reported access to `fardintolo7@gmail.com`, and the Gmail tab was attached. Outcome:
+
+- **Root cause of the failed signups:** an account for that email already existed (ProvenExpert "Welcome" email dated **18 Aug 2026**, matching the profile's activation date). The public sign-up form silently clears and resets on an existing address, which is why four attempts produced no error and no progress.
+- The saved Chrome password was **rejected** ("Invalid login details"), and the site states social sign-up accounts must set a password after registration. A password reset through the account email succeeded, and the new password is stored at `%LOCALAPPDATA%\etr-directory-credentials.txt` — deliberately **outside the repository**.
+- **Corrections now live on the public profile** (`https://www.provenexpert.com/elite-touch-renovations/`, verified as a visitor after saving):
+  - Description rewritten. It no longer claims over-25-years experience, kitchens, full home renovations, new construction or "unit renovation clients". It now names the four approved services, AS 3740 waterproofing as part of renovation work, and the 10-year workmanship warranty.
+  - Subtitle/Activity field changed from "Bathroom renovations, ensuites, laundry renovations, kitchen renovations, unit r…" to "Bathroom, ensuite, bathroom and laundry, and powder room renovations".
+  - Contact email changed from `fardintolo7@gmail.com` to the approved `fardintolo8@gmail.com`.
+  - Contact person changed from "Elite Touch Renovations Pty Ltd" to **Fardin Tolo** (the surname is evidenced by the owner's own Google account, not invented).
+  - Phone, Granville address and website backlink were already correct and were left alone.
+- Company-name changes need ProvenExpert support; the public company name remains "Elite Touch Renovations", which is correct.
+- The tab used for this work was the owner's own Gmail tab, navigated to ProvenExpert; it was left open on the corrected public profile rather than closed.
+
+Lesson for the tracker: a silent form reset on a small directory usually means **the email is already registered**, not that automation is blocked. Check the inbox for a welcome/confirmation mail before assuming the flow is broken.
