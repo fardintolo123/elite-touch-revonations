@@ -14,19 +14,21 @@ location or case-study match. Flags 3, 5 and 6 remain standing production notes.
 
 ## Second batch — "Projects Before & After (1)" (2026-08-25)
 
-A separate, later-supplied folder (`C:\Users\Administrator\Downloads\Projects Before & After (1)\`,
-outside the repo) — 9 named projects, 38 photos, each with a written Project Info doc (budget,
-timeframe, scope of works, outcome). Full triage is preserved in
+A separate, later-supplied folder — 9 named projects, 38 photos, each with a written Project Info doc
+(budget, timeframe, scope of works, outcome). ⚠️ **The folder has moved:** it was recorded at
+`C:\Users\Administrator\Downloads\Projects Before & After (1)\` and now lives at
+`D:\downloads\Projects Before & After (1)\` (90 files, 35.5 MB when re-read on 2026-11-28). Full
+triage is preserved in
 the 2026-09-05 project-photo intake record (consolidated; see [session-history/README.md](../session-history/README.md));
 decisions in [DECISIONS.md](../DECISIONS.md) §3j (D-99–D-103); open items in
 [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K14.
 
-**Status: consent confirmed by the user 2026-08-25. Detect → Inventory → Verify → Flag → Approve →
-Add to repo → Commit → asset URL → alt text all complete for 6 of the 9 projects** — Balmain,
-Gladesville, Little Bay, Hunters Hill, The Rocks, and Artarmon (bathroom + ensuite). 30 photos
-converted to WebP (≤1400 px, quality 82) into `public/images/projects/{slug}/`, each individually
-viewed before its alt text was written, and added to `lib/projects.ts`. Live at
-`/gallery/{slug}/` once built and deployed.
+**Status: consent confirmed by the user 2026-08-25 and re-confirmed 2026-11-28. Detect → Inventory →
+Verify → Flag → Approve → Add to repo → Commit → asset URL → alt text all complete for 6 of the 9
+projects** — Balmain, Gladesville, Little Bay, Hunters Hill, The Rocks, and Artarmon (bathroom +
+ensuite). 30 photos converted to WebP (≤1400 px, quality 82) into
+`public/images/projects/{slug}/`, each individually viewed before its alt text was written, and added
+to `lib/projects.ts`. Live at `/gallery/{slug}/` once built and deployed.
 
 **3 of the 9 remain held, not published:**
 - **Enmore, and the "North Ryde" laundry project** — both are standalone laundry renovations, no
@@ -36,9 +38,23 @@ viewed before its alt text was written, and added to `lib/projects.ts`. Live at
   resolve either. Not published under either label pending confirmation (D-102). (Note: the
   "North Ryde" laundry project is blocked on both grounds.)
 
-**A second, separate batch (2026-08-25) is recorded in its own section below** — see
-*"2026-08-25 batch — `Projects Before & After (1)/`."* It is a different source folder from the
-33/34 files above and has its own Detect/Inventory/Verify/Flag record; do not conflate the two.
+**Do not re-open the two location questions without new evidence.** D-102 records that the owner was
+asked directly and did not know; they were asked again on 2026-11-28 and gave the same answer.
+Re-reading this folder rediscovers the same conflict every time, because the folder name and the
+project's own document are the only two sources and they contradict each other. It is settled as
+*unknown, therefore held*. What would actually resolve it: the job file or invoice for that address,
+the customer's own confirmation, or the original files' photo metadata. Nothing weaker than that.
+
+**Dormant assets left in the repo:** `public/images/projects/mosman-bathroom-ensuite/` holds four
+converted WebP files (`before-ensuite`, `ensuite-vanity-wide`, `main-bathroom-detail`,
+`main-bathroom-vanity-wide`) from the held "Mosman" project. No page, data file or component
+references them, so they are served but unlinked. They are kept rather than deleted so a future
+decision can publish without re-converting — but the path itself says **Mosman**, so if the true
+location turns out to be Drummoyne, that folder must be renamed in the same change as any
+`lib/projects.ts` entry, or the public URL will carry the wrong suburb.
+
+**This is a different source folder from the 33/34 files above** — do not conflate the two
+inventories.
 
 ---
 
