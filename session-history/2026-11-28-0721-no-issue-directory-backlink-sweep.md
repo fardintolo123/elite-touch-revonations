@@ -79,3 +79,10 @@ The owner reported access to `fardintolo7@gmail.com`, and the Gmail tab was atta
 - The tab used for this work was the owner's own Gmail tab, navigated to ProvenExpert; it was left open on the corrected public profile rather than closed.
 
 Lesson for the tracker: a silent form reset on a small directory usually means **the email is already registered**, not that automation is blocked. Check the inbox for a welcome/confirmation mail before assuming the flow is broken.
+
+## Follow-up pass 2026-11-28 — the other two wrong citations
+
+- **SeeBuilds — correction blocked, not fixed.** The English profile exists at `https://seebuilds.com/au/p/elite-touch-renovations` (the `/zh/` URL recorded earlier is the same page, not a duplicate) and still shows **Builds: Kitchen and bathroom**, 10 finished projects and a link to the site. Two independent blockers: the claim search returns nothing for the company name, the website, the ABN **or** the licence even though the page exists, and the manual route sends a verification code to **a mailbox on the business domain** (`@elitetouchrenovations.au`), which nobody here can read. Fixing this needs access to a mailbox on the business domain, or an owner support request. Status: `CONFIRMED LIVE - CORRECTION BLOCKED`.
+- **F65 — not a directory any more.** `f65.com` now redirects to `f65navi.com`, a Brazilian online-gambling affiliate landing page with deposit-bonus banners. The old company profile is gone. This is no longer an accuracy problem but a **toxic-link risk**: check Search Console for a residual link from `f65.com` and disavow if one remains. Status: `DISQUALIFIED - DOMAIN REPURPOSED TO GAMBLING`.
+- **Square booking page (`elite-touch-renovations.square.site`) is now behind a Cloudflare bot check**, so the Ermington address and the 8:00 pm hours could not be re-read or corrected. This remains an open NAP conflict and needs the owner in the Square dashboard; it is a first-party property, not a directory, so it is not tracked as a row.
+- No further directory opportunities were pursued: the remaining candidates are all account-, proof-, CAPTCHA- or domain-mailbox-gated.
