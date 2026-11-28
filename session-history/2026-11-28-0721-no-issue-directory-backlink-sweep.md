@@ -46,3 +46,19 @@ The owner explicitly delegated the five open calls. Decisions, with the evidence
 7. **Best Rated — owner-only.** The confirmation is a consent action in the owner's inbox; the private approval link is still not to be clicked on the owner's behalf. Deadline 2026-12-11 stands.
 
 Also rechecked and closed: `homeandgarden.com.au` (`SKIPPED ADDRESS/ACCOUNT`) — the postcode step now resolves with 2142, but the form still demands a new **password** and a mandatory **street address**, and the directory is a dated low-value site, so nothing was entered.
+
+## Critical discovery 2026-11-28 — the Google Business Profile is UNCLAIMED
+
+The owner shared a screenshot of the Business Profile editor showing **"Verification not successful"**. Investigation in the signed-in Chrome session:
+
+- The public knowledge panel for "Elite Touch Renovations Granville nsw" shows 5.0 from 20 reviews, phone 0411 752 334 and 86 Elizabeth St, Granville NSW 2142 — **and** the links `Suggest an edit · Own this business?`. Google only renders "Own this business?" when **nobody manages the profile**.
+- `business.google.com/locations` reports **0 businesses, 0% verified**, on both `authuser=0` and `authuser=1`. This account manages nothing.
+- Therefore the owner's claim attempt failed and the profile is not under business control.
+
+Consequences, all verified rather than assumed:
+
+- The public hours (**Mon–Fri 7:00 am–7:00 pm, Sat 7:00 am–5:00 pm, Sun 9:00 am–5:00 pm**) are Google's values, not the approved hours. They cannot be corrected by anyone until the profile is claimed. Decision #4 above is unaffected — the approved hours remain canonical — but the "correct the GBP hours" instruction is void until the claim succeeds.
+- The 20 reviews sit on a profile nobody controls, so they can be edited, merged, suspended or duplicated with no recourse.
+- The categories and description visible in the owner's screenshot (Bathroom Renovator primary, Tile contractor, Interior designer; description claiming "compliance certificates issued at handover") are not owner-controlled text either.
+
+This displaces directory listings as the campaign's highest-value action. Recommended path: `Own this business?` → complete verification with licence 475204C, vehicle and premises evidence; if there is no staffed shopfront with signage, claim as a **service-area business** so the street address is hidden rather than failing verification again for an address that cannot be demonstrated.
