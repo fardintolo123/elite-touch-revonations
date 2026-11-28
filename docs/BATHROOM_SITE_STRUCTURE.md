@@ -1,7 +1,7 @@
 # Bathroom Renovations — Site Structure Plan
 **Business:** Elite Touch Renovations
 **Service:** Bathroom renovations (Sydney, NSW)
-**Last updated:** August 12, 2026
+**Last updated:** November 28, 2026 (suburb query signals replaced with the date-verified 2026-11-27 pull)
 
 ## How this was built
 
@@ -52,40 +52,51 @@ One page per region. Each briefly covers the whole area, links out to that regio
 
 ---
 
-## Search Console query signals (2026-11-02; D-10 test incomplete)
+## Search Console query signals — date-verified, 2026-11-27 (D-10 test still incomplete)
 
-The supplied `Queries.csv` contains query-level results, while `Pages.csv` contains page-level
-totals. They are separate aggregates, not a query-by-page export, so they do not show which page
-ranked for each suburb query. The export does not identify its date range, and it does not include
-Google Keyword Planner volumes. The figures below are preliminary signals, not enough to complete
-the D-10 test or promote a suburb.
+The 2026-11-02 figures recorded in D-164 came from separate `Queries.csv` and `Pages.csv` exports
+that shared no filter, so they could not say which URL Google showed for a suburb query. On
+**2026-11-27** the owner's Search Console was read directly for the three candidates — property
+`sc-domain:elitetouchrenovations.au`, **Last 3 months to 2026-11-26**, search type Web, filter
+**Query contains <suburb>** — taking the Queries tab and the Pages tab **under the same filter**.
+That page-to-query-set attribution is the piece the promotion test was missing. Raw pull:
+`plans/gsc-exports/2026-11-27/suburb-queries-hornsby-artarmon-pymble.md`.
 
-| Suburb | Search Console query | Clicks | Impressions | CTR | Avg position | GKP volume | Current status |
-|---|---|---:|---:|---:|---:|---|---|
-| Hornsby | `bathroom renovations hornsby` | 0 | 511 | 0% | 30.85 | Not supplied | Re-test; keep current hub |
-| Hornsby | `bathroom renovation hornsby` | 0 | 62 | 0% | 24.97 | Not supplied | Re-test; keep current hub |
-| Artarmon | `bathroom renovations artarmon` | 1 | 355 | 0.28% | 24.84 | Not supplied | Re-test; keep current hub |
-| Artarmon | `bathroom renovation artarmon` | 0 | 25 | 0% | 15.56 | Not supplied | Re-test; keep current hub |
-| Pymble | `bathroom renovations pymble` | 0 | 225 | 0% | 58.59 | Not supplied | Re-test; keep current hub |
-| Pymble | `bathroom renovation pymble` | 0 | 67 | 0% | 57.75 | Not supplied | Re-test; keep current hub |
-| Pymble | `bathroom renovations west pymble` | 0 | 7 | 0% | 40.71 | Not supplied | Re-test; keep current hub |
-| Five Dock | `bathroom renovations five dock` | 0 | 157 | 0% | 51.31 | Not supplied | Re-test; keep current hub |
-| Five Dock | `bathroom renovation five dock` | 0 | 3 | 0% | 44.33 | Not supplied | Re-test; keep current hub |
-| Balmain | `bathroom renovations balmain` | 0 | 173 | 0% | 32.04 | Not supplied | Re-test; keep current hub |
+Note: GSC does not report anonymised queries, so every total here is a floor. The Pages tab
+aggregates across the whole filtered query set rather than joining each query to its own URL. That
+is sufficient to answer "which URL does Google show for people searching this suburb", which is the
+question D-10's promotion test needs answered.
 
-The separate `Pages.csv` reports the North Shore hub at 678 impressions, 0 clicks and average
-position 41.25; the Inner West hub has 370 impressions, 0 clicks and average position 39.68. It
-also shows the Artarmon gallery page at 215 impressions / position 17.96, the Hornsby bathroom
-gallery page at 594 / 28.53, the Hornsby ensuite gallery page at 108 / 27.36, and the Balmain
-gallery page at 131 / 31.76. These page totals still cannot be attributed to individual queries:
-the two CSVs are separate dimension exports, not a joined query-by-page report.
+| Suburb | Clicks | Impressions | Avg position | Top query (impr · pos) | URL Google showed | GKP volume | Current status |
+|---|---:|---:|---:|---|---|---|---|
+| Hornsby | 0 | 992 | 33.2 | `bathroom renovations hornsby` (776 · 32.1) | `/gallery/hornsby-bathroom/` (655 · 31.0), then `/gallery/hornsby-ensuite/` (282 · 31.5) | Not supplied | Re-test; keep on North Shore hub |
+| Artarmon | 5 | 354 | 26.2 | `bathroom renovations artarmon` (321 · 25.8) | `/gallery/artarmon-bathroom/` (235 · 18.5 — all 5 clicks) | Not supplied | Re-test; keep on North Shore hub |
+| Pymble | 0 | 444 | 55.8 | `bathroom renovations pymble` (325 · 55.6) | `/services/` (407 · 60.1), then the North Shore hub (66 · 34.5) | Not supplied | Re-test; keep on North Shore hub |
 
-**Preliminary status:** keep the existing North Shore and Inner West hub coverage while the test is
-incomplete; no suburb is promoted or demoted from these figures alone. Both hubs already show local
-projects and link to their gallery pages. The issue's final D-10 decision still needs a true
-query-by-page export and Keyword Planner volumes for the top three candidates (Hornsby, Artarmon
-and Pymble). Until those arrive, assign each candidate "re-test" rather than treating hub coverage
-as a completed volume-based verdict.
+What the numbers say, and what they do not:
+
+- **Hornsby and Artarmon already answer their suburb search through a real photographed project
+  page**, not a service page. Those gallery pages are the proof the North Shore hub links to. A new
+  Tier-1 suburb page would be a third URL chasing the same query against a page that already ranks
+  and, for Artarmon, already earns the only clicks in the set.
+- **Pymble is the weakest candidate.** Nothing local ranks for it: `/services/` carries the suburb
+  impressions at position 60.1, the hub at 34.5, against a 55.8 average. There is no Pymble project
+  to anchor a page and no page-one proximity to build on.
+- **Volume is still missing.** D-10 asks for two cross-checked volume sources, and no Google Keyword
+  Planner figure exists for these three queries. That is the one remaining column in the test, and
+  until it arrives none of the three is promoted or demoted.
+- Two side notes from the same pull: `/artarmon-bathroom-renovation/` still collects 42 impressions
+  at position 41.6 although it now 301s to `/services/bathroom-renovations/`; and
+  `https://elitetouchrenovations.au/` (apex host) shows 15 impressions at position 5.7 against
+  Hornsby queries. `businessInfo.siteUrl` and `metadataBase` are both the `www` host, so the apex
+  case is a hosting-level redirect question, not a code change, and it is not actioned here.
+
+Five Dock and Balmain are unchanged: their 2026-11-02 aggregate figures remain the record in D-164,
+Balmain already carries the D-188 hold verdict, and neither was part of the 2026-11-27 check.
+
+**Preliminary status (unchanged):** keep the existing North Shore and Inner West hub coverage; no
+suburb is promoted or demoted. Both hubs already show local projects and link to their gallery
+pages. **D-193** records this evidence and the one column still open.
 
 ## Recommended URL / route structure
 
