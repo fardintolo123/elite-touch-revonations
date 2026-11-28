@@ -197,8 +197,9 @@ Sources: the checked-in page-copy and package source files in `docs/source-copy/
 through **issue #2**), and [docs/BATHROOM_SITE_STRUCTURE.md](docs/BATHROOM_SITE_STRUCTURE.md). Full
 detail, including every package inclusion, is in [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
 
-**Once the site exists, put all of this in `src/data/businessInfo.ts` (or equivalent) — one file, one
-source of truth.** Never let a business fact live only in JSX, only in a doc, or only in a conversation.
+**All of this lives in `lib/businessInfo.ts` (plus `lib/metadata.ts` for the site-wide SEO defaults) —
+one file, one source of truth.** Never let a business fact live only in JSX, only in a doc, or only in
+a conversation.
 
 ---
 
