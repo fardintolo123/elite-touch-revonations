@@ -409,8 +409,14 @@ remains unpushed; the earlier performance gate is still open.
    **Pending owner actions (GA4 editor access required):**
    - Create custom dimension: Admin → Data display → Custom definitions → name `error_code`,
      scope Event, parameter `error_code`. Register before real traffic builds up — not backfilled.
-   - Star GA4 key events: generate_lead and phone_call_click (after events appear in GA4 Admin →
-     Events, which requires real traffic and the owner's GA4 editor account).
+   - Star GA4 key events. **`phone_call_click` starred 2026-11-28** (Admin → Data display → Events →
+     Recent events → the star beside the name); confirmed on the Key events tab, stream
+     `elitetouchrenovations.au`. **`generate_lead` is not yet starrable, and that is expected:** the
+     Events page lists key events plus only the events with data in the **last 28 days**, and
+     `generate_lead` has not fired since the CSP fix (#113), so it is absent from both tabs and the
+     page offers no "create key event by name" control. Star it the same way once the first enquiry
+     after 2026-11-26 lands. The event itself needs no change: `components/EnquiryForm.tsx` already
+     pushes `generate_lead` on success.
 17. **`.et-hero-media` is a fixed 4/3 ratio at every breakpoint** (D-84). Every source photo in
    `lib/projects.ts` is landscape (~3/2) - do not reintroduce a portrait override for "desktop
    polish"; that exact change was the reported crop bug.

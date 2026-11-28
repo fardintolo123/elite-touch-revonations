@@ -63,8 +63,9 @@ No GA4 connector reaches agent sessions — checked again 2026-11-28: the only G
 machine points at the sibling project (`sc-domain:4elementspainting.com.au`) and its service-account key
 file is absent. So the owner's export, or a session with the owner's GA4 open, is still the only input.
 
-1. GA4 → property `453254013` → Admin → Events: confirm `generate_lead` and `phone_call_click` are marked
-   as key events (still the owner's step from 2026-11-26).
+1. GA4 → property `453254013` → Admin → Data display → Events. `phone_call_click` **is already a key
+   event** (starred 2026-11-28). Check `generate_lead` on the **Recent events** tab: it only becomes
+   starrable once it has fired inside the 28-day window, i.e. after the first enquiry since 2026-11-26.
 2. Explore → Blank. Dimensions: Landing page + query string, Session campaign, Day of week, Hour.
    Metrics: Sessions, Engaged sessions, Key events, plus Event count filtered to the two events above.
    Date range **2026-11-26 → 2026-12-24** (clean data only; do **not** extend to 90 days, the pre-fix weeks

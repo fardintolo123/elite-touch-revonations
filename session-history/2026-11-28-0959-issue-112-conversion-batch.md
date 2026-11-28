@@ -27,3 +27,14 @@
 - **Next action:** re-read #112's batch checkpoint, then on/after **2026-12-24** run `sunrise #111` and follow `plans/conversion-baseline-2026-11.md` § *How to run E1 and #109*. Before that, if the owner has done the profile edit, run `sunrise #114` and check GA4 → Traffic acquisition with "Session campaign" for `gbp-listing`.
 - **Approval:** none needed or sought. Nothing irreversible was done; no issue was closed.
 - **GitHub sync:** #114 verification comment posted (#issuecomment-7234703453); #112 body updated with #114 and both date gates; batch checkpoint posted on #112 after the push.
+
+---
+
+## Update 2026-11-28 10:45 — GA4 key events (owner asked for it, agent-operated in their session)
+
+- **Done:** `phone_call_click` is now a **key event** in property `453254013`. Marked on Admin → Data display → Events → **Recent events** (star beside the name) and confirmed on the **Key events** tab — starred, stream `elitetouchrenovations.au`. Evidence: the Key events tab now lists `ads_conversion_Book_appointment_1`, `phone_call_click`, `purchase`.
+- **Could not be done:** `generate_lead`. The Events page states it shows "all key events and only events from the last 28 days"; `generate_lead` has not fired since the CSP fix (#113), so it is on neither tab, and that page offers no create-by-name control (only Create event / Attribution settings / Custom configurations). It becomes starrable with the first post-fix enquiry. Code needs no change — `components/EnquiryForm.tsx:254` already pushes it.
+- **Also confirmed while there:** recent events include `page_view`, `first_visit`, `scroll`, `session_start`, `user_engagement` — i.e. GA4 is receiving data after the CSP fix, which is the premise #111/#109 wait on.
+- **Documents updated:** `PROJECT_CONTEXT.md` §16 pending-action list; `plans/conversion-baseline-2026-11.md` step 1; tracker #112 body (status paragraph); comment on #111 (#issuecomment-7235065656).
+- **Approval:** the owner asked for this step explicitly ("go ahead with number 2") with their Analytics tab referenced.
+- **Files owned by this addendum:** `PROJECT_CONTEXT.md`, `plans/conversion-baseline-2026-11.md`, this file.
