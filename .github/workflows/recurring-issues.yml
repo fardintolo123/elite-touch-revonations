@@ -1,0 +1,57 @@
+name: Recurring cycle issues
+
+# Opens one dated maintenance issue per month and one per quarter, from the templates in
+# .github/ISSUE_TEMPLATE/. Runbook: docs/recurring-tasks.md. Issue: #116.
+#
+# Manual run:  gh workflow run recurring-issues.yml --field cycle=monthly
+# Future cycle: gh workflow run recurring-issues.yml --field cycle=monthly --field period=2027-01
+# A second run for the same period creates nothing: the title is matched across open and closed
+# issues first, so a duplicate dispatch is a pass. No AI calls, no secrets beyond the job token.
+
+on:
+  schedule:
+    # 1st of each month, 20:00 UTC.
+    - cron: '0 20 1 * *'
+    # 20th of the last month of each quarter, 20:00 UTC.
+    - cron: '0 20 20 3,6,9,12 *'
+  workflow_dispatch:
+    inputs:
+      cycle:
+        description: Which cycle issue to open
+        type: choice
+        options:
+          - auto
+          - monthly
+          - quarterly
+        default: auto
+      period:
+        description: 'Optional period override (YYYY-MM or YYYY-Qn), to open a future cycle early'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: recurring-cycle-issues
+  cancel-in-progress: false
+
+jobs:
+  open-cycle-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Open the cycle issue unless it already exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/recurring-cycle-issue.mjs \
+            --cycle "${{ inputs.cycle || 'auto' }}" \
+            --repo "${{ github.repository }}" \
+            --period "${{ inputs.period }}"

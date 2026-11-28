@@ -19,6 +19,9 @@ Follow [session-management.md](session-management.md) and the repository operati
    selected issue's full body, comments, dependencies, acceptance criteria and latest checkpoint. In
    batch mode, read the tracker, its latest batch checkpoint and every member's state; read a member's
    full body and `## Execution` block when you reach it.
+   **List open `recurring` and `health-alert` issues first** — an open cycle issue past its due date is
+   a missed cycle and an open health alert is a live fault, so both outrank ordinary backlog
+   ([recurring tasks](../../docs/recurring-tasks.md)).
    Fetch an explicitly selected issue even if it is closed or absent from the open queue; record its
    actual closure reason. Closed as not planned does not mean implemented, and absence is not unstarted.
    Read applicable decisions including superseding entries and the linked handoff. Confirm relevant

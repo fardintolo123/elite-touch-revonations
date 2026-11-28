@@ -71,6 +71,11 @@ as each one closes; open that single issue to see the whole batch's state at a g
 - Keep batches at 3–5 issues as the backlog changes — split an oversized milestone, fold small single-issue ones into a themed batch.
 - **Delete a batch milestone once it is finished** — every issue in it closed, tracker included. A finished batch must not stay in the milestone filter: it makes the real backlog look bigger than it is. List finished batches with `gh api 'repos/:owner/:repo/milestones?state=all' -q '.[] | select(.open_issues==0) | "\(.number): \(.title)"'`, then delete each with `gh api -X DELETE repos/:owner/:repo/milestones/<number>`. The closed issues and the tracker are the permanent record, so the milestone adds nothing. Never delete a batch that still holds an open issue — move that issue to the right batch first.
 
+**Recurring maintenance is separate from batching.** Robots open dated cycle issues and health alerts
+by themselves, and the runbook is [docs/recurring-tasks.md](docs/recurring-tasks.md). An open cycle
+issue past its due date is a missed cycle; an open `health-alert` issue is a live fault. Both outrank
+ordinary backlog when you pick what to work on.
+
 When the owner asks Claude Code to break larger work into GitHub issues, create or update issues only
 for the requested substantive deliverables. Each issue should state its scope, file boundaries,
 dependencies, acceptance criteria, and independent verification. When the owner asks Claude or Codex
