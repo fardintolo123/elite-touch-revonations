@@ -1,0 +1,29 @@
+<!-- session-checkpoint:v1 -->
+# Session checkpoint
+
+- **Repository / issue:** `fardintolo123/elite-touch-revonations` · batch milestone **"Batch: Conversion — leaks & baseline"** · tracker **#112**; worked member **#114**. Also read: #111, #109, #103, #113.
+- **Observed at:** 2026-11-28 09:59 +04:30 (Asia/Kabul).
+- **Session:** DeepSeek Harness web GUI, `deepseek-flash` (agent `lead`). Model-emitted session ID not exposed by the harness; identify by this file and the checkpoint comment on #112.
+- **Mode requested / work performed:** implement the batch (`run Batch: Conversion — leaks & baseline`) + check `CLAUDE.md`. Performed: sunrise recovery, live re-verification of the two closed members, agent-side completion of #114 (verification + D-194 + plan reconciliation), and an independent check of `CLAUDE.md` against its 65,536-byte instruction cap. **No page, component or config change** — this batch is measurement, and the measurement is date-gated.
+- **Ownership:** released for handoff. Files written by this session: `DECISIONS.md` (D-194), `plans/conversion-baseline-2026-11.md`, `session-history/evidence/issue-114-2026-11-28/`, this file. **Not touched:** `CLAUDE.md`, `package.json`, `scripts/`, `docs/AGENT_TOOLING.md` — a concurrent session owns those (see below).
+- **GitHub state / work status:** all four batch members still **open except #103 and #113 (closed, done)**. #114: **in progress — agent side complete, awaiting owner**. #111 and #109: **not started, date-gated** (not blocked on code).
+- **Code:** branch `main`, base HEAD `ccdec639723ac1258322f28b904ffc910d39aa78`. This session's commit follows this checkpoint.
+- **Publication:** docs-only commit pushed to `main`. No deployment evidence is claimed and none is needed — nothing that runs changed.
+- **Recovery:** the pushed commit plus this file. Working tree at the time of writing also held another session's uncommitted edits to `CLAUDE.md`, `package.json`, `scripts/check-instructions.mjs`, `docs/AGENT_TOOLING.md`, `docs/BATHROOM_SITE_STRUCTURE.md`, `plans/gsc-exports/…` — deliberately left uncommitted and unowned.
+- **Completed / takeaways:**
+  - **#103 confirmed fixed live:** `/contact-us/` returns **200** (was 403). The plan's "real leak is the contact page" bullet was corrected to past tense.
+  - **#113 confirmed live:** `connect-src` carries `https://analytics.google.com` **and** `https://www.google.com`.
+  - **#114 agent side done and evidenced:** tagged GBP URL returns 200 in **one hop, 0 redirects**, query string intact; canonical and `og:url` emit the clean `/`; `proxy.ts` matcher is `/elementor-hf*` only; `REDIRECTS_301` has no `/` rule; **no `page_location` override anywhere** so GA4 records the full tagged URL; homepage title already carries city + service. Evidence: `session-history/evidence/issue-114-2026-11-28/verification.md`.
+  - **D-194** records the tag values and why `utm_medium` stays `organic` (#111's baseline groups by landing page *inside* Organic Search; a new medium would move those sessions out of the group and invalidate the comparison).
+  - **GA4 is unreachable from an agent session — checked, not assumed.** The only Google API config on this machine is `~/.config/claude-seo/google-api.json`, whose `default_property` is the sibling project (`sc-domain:4elementspainting.com.au`) and whose `service_account_path` key file does not exist. So #111/#109 need the owner's export or the owner's GA4 open in-session.
+  - **`CLAUDE.md` now fits its cap.** Measured **62,530 / 65,536 bytes (95.4%, 3,006 bytes headroom)**; before the concurrent session's trim it was **65,688** — over the cap, which is why the harness was truncating the tail (the `<!-- BEGIN:nextjs-agent-rules -->` Next.js block). `npm run check:instructions` (new, added by that session) passes for both files: `AGENTS.md` 5,248 / 32,768. All 28 relative links in `CLAUDE.md` resolve; 0 missing.
+  - **One stale path left in `CLAUDE.md`:** `src/data/businessInfo.ts` — the file is **`lib/businessInfo.ts`** (there is no `src/` tree). Not edited here because a concurrent session has `CLAUDE.md` uncommitted in this worktree; see Next action.
+  - **Plan reconciled:** `plans/conversion-baseline-2026-11.md` now ticks #103, adds #114, states both date gates, and carries a **"How to run E1 and #109 on 2026-12-24"** section (exact GA4 exploration settings, the 2026-11-26 → 2026-12-24 range, Wilson intervals, the sum check) so that run is mechanical rather than re-planned.
+- **Verification:** live `curl` checks above, all reproduced in the evidence file; `npm run check:instructions` pass. No build needed: no runtime file changed. `git diff --stat` limited to this session's files at commit time — verified before staging.
+- **Remaining / blocker:**
+  1. **Owner, ~2 minutes:** Business Profile → Edit profile → Contact → Website → `https://www.elitetouchrenovations.au/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing`; and GA4 Admin → Events → mark `generate_lead` and `phone_call_click` as **key events**.
+  2. **Date gate:** #111 and #109 run **on or after 2026-12-24** (28 complete days of clean data from 2026-11-26). Not a code blocker.
+  3. `CLAUDE.md` line for `src/data/businessInfo.ts` → `lib/businessInfo.ts`.
+- **Next action:** re-read #112's batch checkpoint, then on/after **2026-12-24** run `sunrise #111` and follow `plans/conversion-baseline-2026-11.md` § *How to run E1 and #109*. Before that, if the owner has done the profile edit, run `sunrise #114` and check GA4 → Traffic acquisition with "Session campaign" for `gbp-listing`.
+- **Approval:** none needed or sought. Nothing irreversible was done; no issue was closed.
+- **GitHub sync:** #114 verification comment posted (#issuecomment-7234703453); #112 body updated with #114 and both date gates; batch checkpoint posted on #112 after the push.
