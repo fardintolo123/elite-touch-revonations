@@ -1,0 +1,76 @@
+name: Health checks
+
+# Speaks only on failure: opens one `health-alert` issue per failing check (or comments on the open
+# one), and posts "recovered" once a check passes again. A person closes the issue.
+# Runbook: docs/recurring-tasks.md. Issue: #117.
+#
+# Daily:  every sitemap URL is 200 with no Cloudflare challenge, and the enquiry form renders.
+# Weekly: the CSP still allows GA4 and GTM still loads, Cloudflare email obfuscation has not returned,
+#         and the published rating snapshot is under 60 days old.
+#
+# Manual:
+#   gh workflow run health-checks.yml --field checks=daily
+#   gh workflow run health-checks.yml --field checks=all --field force_fail=all
+#
+# GET only. Nothing is posted to the site, so no test data can reach production.
+
+on:
+  schedule:
+    # Daily at 19:00 UTC (early morning in Sydney).
+    - cron: '0 19 * * *'
+    # Mondays at 19:00 UTC.
+    - cron: '0 19 * * 1'
+  workflow_dispatch:
+    inputs:
+      checks:
+        description: Which checks to run
+        type: choice
+        options:
+          - auto
+          - daily
+          - weekly
+          - all
+        default: auto
+      force_fail:
+        description: 'Comma-separated check ids to force failing, or "all" (for testing)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: health-checks
+  cancel-in-progress: false
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run the health checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          checks="${{ inputs.checks }}"
+          if [ -z "$checks" ] || [ "$checks" = "auto" ]; then
+            case "${{ github.event.schedule }}" in
+              '0 19 * * 1') checks=weekly ;;
+              '0 19 * * *') checks=daily ;;
+              *) checks=all ;;
+            esac
+          fi
+
+          echo "Running checks: $checks"
+          node scripts/health-checks.mjs \
+            --checks "$checks" \
+            --repo "${{ github.repository }}" \
+            --force-fail "${{ inputs.force_fail }}"
