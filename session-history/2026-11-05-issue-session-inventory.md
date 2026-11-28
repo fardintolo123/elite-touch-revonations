@@ -52,7 +52,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > The production build passed with 122 static routes, `check:design` passed, all 16 #75 routes passed the route and mobile call checks, and the independent visual review found no P0/P1 issues. The tracker row is `fixed`, not `verified`. I did not commit or push.
 > 
-> The updated [visual review](<D:/1/elite-touch-revonations/.impeccable/critique/issue-75-current-build-vision-review-2026-11-05.md>), [screenshot manifest](<D:/1/elite-touch-revonations/session-history/evidence/issue-75-service-location/current-build/manifest.json>), and [session handoff](<D:/1/elite-touch-revonations/session-history/2026-11-05-issue-75-gate-recheck.md>) record the results.
+> The updated [visual review](<D:/1/elite-touch-revonations/.impeccable/critique/issue-75-current-build-vision-review-2026-11-05.md>), [screenshot manifest](<D:/1/elite-touch-revonations/session-history/evidence/issue-75-service-location/current-build/manifest.json>), and session handoff (consolidated) record the results.
 
 ### elite-touch-revonations - GSC page optimization
 
@@ -78,7 +78,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > - [#95: Improve the DIY decision guide](https://github.com/fardintolo123/elite-touch-revonations/issues/95)
 > - [#96: Add contextual waterproofing links](https://github.com/fardintolo123/elite-touch-revonations/issues/96)
 > 
-> Saved the [audit report](/D:/1/elite-touch-revonations/session-history/evidence/2026-11-05-gsc-optimization/REPORT.md) and [handoff](/D:/1/elite-touch-revonations/session-history/2026-11-05-gsc-page-optimization-audit-and-issues.md).
+> Saved the [audit report](/D:/1/elite-touch-revonations/session-history/evidence/2026-11-05-gsc-optimization/REPORT.md) and handoff (consolidated).
 > 
 > **What’s still a problem**
 > 
@@ -235,7 +235,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > - Production build passed with 121 routes; the design check passed.
 > - All 81 blog routes passed readability. The independent reviews found no P0/P1 issues.
 > - The completion comment is [posted on #77](https://github.com/fardintolo123/elite-touch-revonations/issues/77#issuecomment-6655292796).
-> - The handoff is in [session-history](D:/1/elite-touch-revonations/session-history/2026-11-05-issue-77-blog-design.md). Final captures include [mobile](D:/1/elite-touch-revonations/.impeccable/critique/issue-77-after-index-390.png) and [desktop](D:/1/elite-touch-revonations/.impeccable/critique/issue-77-after-index-1440.png).
+> - The handoff record has been consolidated (recover it from git history). Final captures include [mobile](D:/1/elite-touch-revonations/.impeccable/critique/issue-77-after-index-390.png) and [desktop](D:/1/elite-touch-revonations/.impeccable/critique/issue-77-after-index-1440.png).
 > 
 > ## What’s still a problem
 > 
@@ -259,7 +259,7 @@ This is a dated reconciliation snapshot, not the live queue or proof of code com
 > 
 > - Updated the packages page and preserved the fixed-price question as an H2.
 > - Passed the production build (121 routes) and design check; independently reviewed the final page.
-> - Recorded the handoff in [session-history/2026-11-05-issue-81-completion.md](<D:/1/elite-touch-revonations/session-history/2026-11-05-issue-81-completion.md>).
+> - Recorded the handoff (consolidated; recover it from git history).
 > - No push or deployment was made.
 > 
 > Screenshots and the independent review are saved locally: [390px before](<D:/1/elite-touch-revonations/.impeccable/critique/2026-11-05-issue-81/before-390.png>), [1440px before](<D:/1/elite-touch-revonations/.impeccable/critique/2026-11-05-issue-81/before-1440.png>), [390px after](<D:/1/elite-touch-revonations/.impeccable/critique/2026-11-05-issue-81/after-390.png>), [1440px after](<D:/1/elite-touch-revonations/.impec

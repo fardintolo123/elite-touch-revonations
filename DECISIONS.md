@@ -167,7 +167,7 @@ are built (both are currently `hubPublished: false`, so they 404 by design — D
 Issue #3 ("gaps") attached a third-party "Topic Gap Analysis Report" (generated 2026-08-10,
 comparing ETR against `sydneyeastbuilding.com.au`, branded with a `HeyTony.ca` content-strategy
 pitch). Full triage is preserved in
-`session-history/2026-08-29-issue-3-topic-gap-report-triage.md`; the original PDF is
+the 2026-08-29 topic-gap triage record (consolidated; see [session-history/README.md](session-history/README.md)); the original PDF is
 preserved at `docs/source-copy/pdf/topic-gap-report-2026-08-10.pdf`. Applied
 `docs/SEO_CONTENT_GUIDE.md`'s Report-intake rules.
 
@@ -183,7 +183,7 @@ preserved at `docs/source-copy/pdf/topic-gap-report-2026-08-10.pdf`. Applied
 Issue #4 ("gaps"), filed the same day as issue #3, attached a second third-party "Topic Gap
 Analysis Report" (also generated 2026-08-10, comparing ETR against `tradeindustriesgroup.com.au`,
 same `HeyTony.ca` content-strategy pitch). Full triage is preserved in
-`session-history/2026-08-29-issue-4-gap-report-triage-handoff.md`; the original PDF is preserved at
+the 2026-08-29 gap-report triage handoff (consolidated; see [session-history/README.md](session-history/README.md)); the original PDF is preserved at
 `docs/source-copy/pdf/topic-gap-report-2026-08-10-tradeindustriesgroup.pdf`. Applied
 `docs/SEO_CONTENT_GUIDE.md`'s Report-intake rules — same six-point process as D-85/D-86.
 
@@ -197,7 +197,7 @@ same `HeyTony.ca` content-strategy pitch). Full triage is preserved in
 ## 3g. Intake of GitHub issues #7 and #8 (2026-08-23) — llms.txt and a third-party GEO audit
 
 Full triage is preserved in
-`session-history/2026-08-29-issue-8-geo-audit-schema-and-metadata.md`. Issue #8's source PDF is preserved
+the 2026-08-29 GEO and schema audit record (consolidated; see [session-history/README.md](session-history/README.md)). Issue #8's source PDF is preserved
 at `docs/source-copy/pdf/geo-audit-report-2026-08-20.pdf`. Applied `docs/SEO_CONTENT_GUIDE.md`'s
 Report-intake rules to issue #8; issue #7 is a direct build task, not a report. **`D-89` is a
 deliberate gap** — see the reconciliation note at the end of §3h.
@@ -215,7 +215,7 @@ deliberate gap** — see the reconciliation note at the end of §3h.
 Issue #5 ("free-seo-audit") attached two screenshots of a Lighthouse-style report (no URL, no body
 text; a third attachment failed to upload). Four items visible: "Reduce unused JavaScript" (29 KiB),
 "LCP request discovery", "Legacy JavaScript" (14 KiB), "Network dependency tree". Full triage is
-preserved in `session-history/2026-08-29-issue-5-performance-audit-triage.md`. Applied `docs/SEO_CONTENT_GUIDE.md`'s
+preserved in the 2026-08-29 performance-audit triage record (consolidated; see [session-history/README.md](session-history/README.md)). Applied `docs/SEO_CONTENT_GUIDE.md`'s
 Report-intake rules and `docs/PERFORMANCE_BUDGET.md`'s regression process.
 
 | # | Decision | Status | Why · alternatives rejected |
@@ -246,7 +246,7 @@ Issue #9's body was a screenshot of a third-party SEO tool scoring `/packages/` 
 Ease 51.4** ("Fairly Difficult"), with "Word Complexity" flagged red. This is not a new rule —
 `docs/CONTENT_QUALITY_CHECKLIST.md` §2 already sets **Flesch Reading Ease ≥ 60 on body copy** as the
 target — but nothing in the repo ever measured it, so the site had silently drifted below its own
-bar. Full detail is preserved in `session-history/2026-08-29-issue-9-readability-fix.md`.
+bar. Full detail is preserved in the 2026-08-29 readability record (consolidated; see [session-history/README.md](session-history/README.md)).
 
 | # | Decision | Status | Why · alternatives rejected |
 |---|---|---|---|
@@ -261,7 +261,7 @@ bar. Full detail is preserved in `session-history/2026-08-29-issue-9-readability
 A second, separate folder of project photography ("Projects Before & After (1)", outside the
 repo) was supplied: 9 projects, 38 photos, each with a written Project Info document. Full triage is
 preserved in
-[session-history/2026-09-05-project-photos-intake-and-gallery-expansion.md](session-history/2026-09-05-project-photos-intake-and-gallery-expansion.md).
+the 2026-09-05 project-photo intake record (consolidated; see [session-history/README.md](session-history/README.md)).
 See also **PROJECT_CONTEXT.md K14**.
 
 | # | Decision | Status | Why · alternatives rejected |
@@ -280,7 +280,7 @@ Issue #11 ("questions for blogs") listed three question titles sourced from `fin
 third-party "people also ask"-style question tool, with no volume/difficulty data attached to any of
 them. Applied `docs/SEO_CONTENT_GUIDE.md`'s Report-intake rules — same standard as every other
 third-party content suggestion this repo has triaged (D-85–D-92). Full detail is preserved in
-`session-history/2026-08-29-issue-11-cost-guide-and-gallery-readability.md`.
+the 2026-08-29 cost-guide and gallery-readability record (consolidated; see [session-history/README.md](session-history/README.md)).
 
 | # | Decision | Status | Why · alternatives rejected |
 |---|---|---|---|
@@ -297,7 +297,7 @@ Every visible `Volume` cell reads the placeholder "Niche"; `Opportunity` and `In
 **no usable volume or difficulty figure anywhere in the report.** Triaged against
 `docs/BATHROOM_SITE_STRUCTURE.md`'s own GKP-confirmed table, same Report-intake standard as every
 other third-party suggestion (D-85–D-92, D-104/D-105). Full detail is preserved in
-`session-history/2026-08-29-issue-12-answerthepublic-triage-and-powder-room-faq.md`.
+the 2026-08-29 AnswerThePublic triage record (consolidated; see [session-history/README.md](session-history/README.md)).
 
 | # | Decision | Status | Why · alternatives rejected |
 |---|---|---|---|
@@ -464,7 +464,7 @@ are the retained record; the completed working plan was removed during the 2026-
 
 | # | Decision | Status | Why |
 |---|---|---|---|
-| **D-137** | **Inner West and North-Western Sydney are approved to be published as regional hubs, subject to the existing `hubPublished` guard and real local content.** | **AGENT — decision recorded 2026-09-09** | D-74's missing-proof blocker is cleared by two new suburb-attributed projects in `lib/projects.ts`: **Balmain bathroom** in Inner West and **Gladesville bathroom** in North-Western Sydney. The Inner West case is additionally supported by Tier-1 Marrickville volume and the existing article corroboration recorded in D-74; North-Western Sydney has Tier-1 Ryde volume. The SERP-overlap check preserved in `session-history/2026-09-09-blog-and-location-page-gap-analysis.md` found **zero shared top-10 URLs** between `bathroom renovations castle hill` and `bathroom renovations hills district sydney`, and zero between the Castle Hill and Randwick suburb terms, supporting distinct suburb and regional targets rather than self-cannibalising pages. This clears the decision gate for issues #49 and #50; it does **not** publish either hub by itself, waive D-06/D-10, or approve templated suburb pages. |
+| **D-137** | **Inner West and North-Western Sydney are approved to be published as regional hubs, subject to the existing `hubPublished` guard and real local content.** | **AGENT — decision recorded 2026-09-09** | D-74's missing-proof blocker is cleared by two new suburb-attributed projects in `lib/projects.ts`: **Balmain bathroom** in Inner West and **Gladesville bathroom** in North-Western Sydney. The Inner West case is additionally supported by Tier-1 Marrickville volume and the existing article corroboration recorded in D-74; North-Western Sydney has Tier-1 Ryde volume. The SERP-overlap check preserved in the 2026-09-09 blog and location gap analysis (consolidated; see [session-history/README.md](session-history/README.md)) found **zero shared top-10 URLs** between `bathroom renovations castle hill` and `bathroom renovations hills district sydney`, and zero between the Castle Hill and Randwick suburb terms, supporting distinct suburb and regional targets rather than self-cannibalising pages. This clears the decision gate for issues #49 and #50; it does **not** publish either hub by itself, waive D-06/D-10, or approve templated suburb pages. |
 
 | **D-138** | **Issue #55 is resolved as C1: do not create a blog; target the already-evidenced "bathroom renovations near me" intent through the existing homepage and main bathroom service page.** The homepage now uses "near you in Sydney" in its title, H1, opening answer and area-links section, while the existing FAQ, service links, proof and enquiry CTA remain in place. | **AGENT — built 2026-09-09** | The query has the largest confirmed volume in the project (1K–10K/mo, D-12) and already has the correct page class: a citywide service/homepage surface, not an informational article or suburb doorway page. This is a cheaper, more direct enquiry path than opening a blog, and it does not reverse D-86/D-113. A blog can be reconsidered only after a defined process or buyer-question cluster has real GKP/Ahrefs volume and no existing page owns it (C2). |
 

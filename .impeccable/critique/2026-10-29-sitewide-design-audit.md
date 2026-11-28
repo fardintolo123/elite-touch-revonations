@@ -11,7 +11,8 @@ status: audit + two directions delivered; WAITING ON OWNER at the gate (A, B, or
 
 # Sitewide design audit, 2026-10-29
 
-Phase 1 of the merged prompt in `session-history/2026-10-29-design-audit-prompt-review.md`.
+Phase 1 of the merged prompt in the 2026-10-29 design-audit prompt review (consolidated; recover it
+from git history).
 No site code changed. The live site serves the same commit as `main`, so live screenshots are the
 "before" record.
 
@@ -90,7 +91,7 @@ hard cap) · cost post 89 (**TBT 320 ms**) · The Rocks project 98 · `/services
 ## Side findings (not design; owner to verify)
 
 - **S1** `/contact-us/` returns **403 + Cloudflare challenge** to non-Australian traffic (rule added
-  2026-10-28, see `session-history/2026-10-28-cloudflare-freetier-setup.md`). Australian visitors
+  2026-10-28, see the Cloudflare setup record (consolidated; recover it from git history)). Australian visitors
   should pass. Check Googlebot is exempt (Search Console → URL inspection of `/contact-us/`).
 - **S2** Reviews praise cleanliness once in 19. CLAUDE.md and the checklist say reviews "repeatedly
   praise ... cleanliness". Lead with named people (Omar, Adam), detail, timing and communication;

@@ -40,6 +40,21 @@ current implementation owner per issue and coordinate shared files across issues
 are not atomic locks: re-read before editing, do not take over solely because a timestamp is old, and
 preserve other sessions' work. Independent read-only review can run alongside implementation.
 
+**When another session holds uncommitted hunks in the same file.** `git commit -- <path>` takes the
+whole working-tree file, so their edits ride along in your commit. Stage only your own hunks and commit
+the index instead:
+
+```sh
+git diff --no-color -- <file> > mine.patch   # then delete the hunks that are not yours
+git apply --cached mine.patch
+git diff --cached --name-only                # confirm only your files are staged
+git commit -m "…"                            # no pathspec: commits the index
+```
+
+Check the index is otherwise empty first: a path-limited commit takes the whole file, an index commit
+takes whatever else is staged. Never `git stash` or revert another session's work to get a clean
+commit, and never `git add -A`.
+
 State the task mode: review, implement or verify. A prompt rewrite supports an authorized implementation;
 it does not replace execution. Record what actually happened, separately from what was requested.
 GitHub open/closed state, task progress, chat read state and agent running/idle/error state are distinct.

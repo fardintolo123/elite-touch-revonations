@@ -19,7 +19,7 @@ form. Preserve its required fields, server action, calling, proof and tracking.
   baseline and final candidate both exceeded the 300ms TBT cap. Trigger: controlled
   comparison on a stable production test environment. No more noisy retry loops.
 - [x] Record decision D-155, mechanics and evidence report.
-- [x] Write and verify `session-history/2026-10-20-reel-enquiry-starter-and-profile-inventory.md`.
+- [x] Write and verify the 2026-10-20 reel enquiry starter record (consolidated; see [session-history/README.md](../session-history/README.md)).
 
 Files: app/page.tsx, components/EnquiryForm.tsx, components/ContactSection.tsx,
 new narrow starter leaf/bridge, app/globals.css and relevant documentation.

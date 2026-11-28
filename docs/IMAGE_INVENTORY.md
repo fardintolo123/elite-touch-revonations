@@ -17,7 +17,7 @@ location or case-study match. Flags 3, 5 and 6 remain standing production notes.
 A separate, later-supplied folder (`C:\Users\Administrator\Downloads\Projects Before & After (1)\`,
 outside the repo) — 9 named projects, 38 photos, each with a written Project Info doc (budget,
 timeframe, scope of works, outcome). Full triage is preserved in
-[the project-photo intake handoff](../session-history/2026-09-05-project-photos-intake-and-gallery-expansion.md);
+the 2026-09-05 project-photo intake record (consolidated; see [session-history/README.md](../session-history/README.md));
 decisions in [DECISIONS.md](../DECISIONS.md) §3j (D-99–D-103); open items in
 [PROJECT_CONTEXT.md](../PROJECT_CONTEXT.md) K14.
 
