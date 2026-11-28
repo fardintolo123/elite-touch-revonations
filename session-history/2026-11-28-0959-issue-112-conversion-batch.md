@@ -38,3 +38,11 @@
 - **Documents updated:** `PROJECT_CONTEXT.md` §16 pending-action list; `plans/conversion-baseline-2026-11.md` step 1; tracker #112 body (status paragraph); comment on #111 (#issuecomment-7235065656).
 - **Approval:** the owner asked for this step explicitly ("go ahead with number 2") with their Analytics tab referenced.
 - **Files owned by this addendum:** `PROJECT_CONTEXT.md`, `plans/conversion-baseline-2026-11.md`, this file.
+## Update 2026-11-28 10:55 — Business Profile edit attempted, blocked by the editor itself
+
+- **Attempted** the owner's step 1 in their signed-in browser: opened the "Your business on Google" owner panel from a Google search, clicked **Edit profile**, and the **"Business information"** sheet opened (About / Contact / Location / Hours / More).
+- **Blocked:** that sheet is outside everything the browser tool can address — not a `role="dialog"` (both candidates are empty), not in iframes 1–3 (checked with a frame-scoped `expect`), no accessible text, and it produced no network request. Screenshot only; the tool has no coordinate-click fallback. **No field was changed** — deliberately, because address, phone and hours sit one tab away from Website.
+- **Handed back to the owner** with the exact 3-click path and the copy-paste URL; recorded on #114 (#issuecomment-7235246260). Do not re-attempt the overlay: it is a dead end for this tooling, not a mis-click problem.
+- **Blocked-path lesson for future sessions:** on Google search, `business.google.com/dashboard` redirects to the marketing page for this account, and the quick-edit sheet is unreachable from the DOM layer. If the profile edit must be automated later, it needs the Maps/Business Profile API, not the UI.
+- **Incidental observation (unverified):** the knowledge panel shows **5.0 · 20 reviews**, while `Customer Reviews.md` holds 19. Not acted on — it is a Business Rules question for the owner, not this batch.
+- **Files touched by this addendum:** this file only.
