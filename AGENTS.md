@@ -28,9 +28,9 @@ verified reusable patterns when they change. Preserve actual evidence and public
 ## Skills
 
 User-level skills live in `~/.agents/skills` and are invoked with `$name` or `/skills`. The full list,
-grouped by use, and the rules for which to prefer are in `CLAUDE.md` under *Specialist Agents →
-Skills*. For design work and the independent design critique use `impeccable`; for SEO audits use
-`seo` and `seo-audit`. Skill output never overrides the Business Rules.
+grouped by use, and the rules for which to prefer are in `docs/AGENT_TOOLING.md`. For design work and
+the independent design critique use `impeccable`; for SEO audits use `seo` and `seo-audit`. Skill
+output never overrides the Business Rules.
 
 ## Design Standard: Must Not Look AI-Generated
 
