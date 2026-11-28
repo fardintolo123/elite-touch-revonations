@@ -32,3 +32,17 @@
 - Saturation: a competitor-citation sweep (Origin Bathrooms, raw source = their live index footprint) surfaced only Houzz, hipages, Word of Mouth, MapQuest, Pinterest and Facebook — all already tracked or already disqualified. The council/chamber class was tested and closed. No new qualified domain passed every automatic-only gate, so no domain was added as an opportunity.
 - No external message, form or submission was sent. Every remaining candidate is gated by account creation, owner proof/documents, a CAPTCHA or a final-submit confirmation, all of which require the owner.
 - Next action: owner confirms (a) the thelocallist removal and whether to re-add via its add-business flow, (b) postcode 2142 under the Granville base, (c) which address is canonical (Granville vs Ermington), (d) the ASIC notice status, (e) the Best Rated confirmation email before 2026-12-11.
+
+## Decisions taken 2026-11-28 (owner delegated: "answer and decide these questions")
+
+The owner explicitly delegated the five open calls. Decisions, with the evidence behind each:
+
+1. **ABN / ASIC — not a blocker.** ABN Lookup on 2026-11-28 shows ABN 92 679 016 721 **Active from 10 Jul 2024**, entity ELITE TOUCH RENOVATIONS PTY LTD, Australian Private Company. The 29 Sep 2026 s601AB deregistration notice has not cancelled the registration. No campaign change; the "founded 2022 vs ABN active 2024" gap stays a note, not a claim to publish.
+2. **Address — Granville is canonical.** 86 Elizabeth St, Granville NSW 2142, taken from the owner-controlled Google Business Profile and matching every other live citation. The Ermington address on the Square booking page is stale and must never be submitted. Owner may correct or retire the Square page when convenient.
+3. **Postcode — 2142 approved** for all listings under the Granville base.
+4. **Hours — the approved set governs:** Mon–Fri 7:00 am–5:30 pm, Sat 8:00 am–3:30 pm, Sun closed. The Google Business Profile's weekday close (7:00 pm) and Sunday opening (9:00 am) are wrong and should be corrected in GBP by the owner; listings must use the approved set.
+5. **thelocallist — do not resubmit.** Profile purged by the directory, domain no longer ranks, no referral or link value to rebuild.
+6. **Accounts — approved in principle.** Free, no-payment directories may get an account created with the approved listing email. Credentials stay **outside the repository** (`%LOCALAPPDATA%\etr-directory-credentials.txt`) so no secret enters git. Hereabouts HQ is the first candidate: its postcode blocker is now cleared.
+7. **Best Rated — owner-only.** The confirmation is a consent action in the owner's inbox; the private approval link is still not to be clicked on the owner's behalf. Deadline 2026-12-11 stands.
+
+Also rechecked and closed: `homeandgarden.com.au` (`SKIPPED ADDRESS/ACCOUNT`) — the postcode step now resolves with 2142, but the form still demands a new **password** and a mandatory **street address**, and the directory is a dated low-value site, so nothing was entered.
