@@ -1,0 +1,24 @@
+<!-- session-checkpoint:v1 -->
+# Session checkpoint
+- Repository / issue: `fardintolo123/elite-touch-revonations` — Batch "Buyer-intent & local SEO content" (#80 tracker, #72, #67)
+- Observed at: 2026-11-26 16:20 Asia/Kabul (UTC 11:50)
+- Session: DeepSeek Harness root agent "lead" (verify + reconcile mode; "run Batch: Buyer-intent & local SEO content")
+- Mode requested / work performed: verify + reconcile. No application code changed.
+- Ownership: released for handoff.
+- GitHub state / work status:
+  - #80 — open; tracker body reconciled (stale "Status" and child checklist corrected). Its content children #81–#85, #88–#90 are all CLOSED and verified.
+  - #72 — open; blocked on Google Keyword Planner volume (owner). Query×page half already satisfied in-repo.
+  - #67 — open; blocked on owner photos (or truthful local detail). Pure photo-backfill tracking; no code work.
+- Code: `main` at `fcaa25f6` (observed via `git log`). Uncommitted tree change unrelated to this session: `plans/free-directory-opportunities.csv` (another session's work; left untouched).
+- Publication: tracker body update + checkpoint comment posted to GitHub #80. No code commit/push/deploy.
+- Completed / takeaways:
+  - Verified the batch's implementation work is fully done: all content child issues closed; #89/#90 confirmed CLOSED (both `gh issue view` and milestone count).
+  - Verified `session-history/evidence/2026-11-05-gsc-optimization/gsc-query-page-2026-08-05--2026-11-02.txt` (2,459 rows) contains 74 query×page rows matching Hornsby/Artarmon/Pymble — this satisfies #72's Search Console "Queries × Pages" acceptance half.
+  - Reconciled #80's stale body (was still saying "#89 and #90 remain open"; checklist unchecked).
+- Verification: milestone open-issue count = 3 (#80, #72, #67); per-issue `gh issue view --json state` for #89/#90 = CLOSED; tracker body re-fetched to confirm no stale status or unchecked boxes remain.
+- Remaining / blocker:
+  - #72: Google Keyword Planner monthly volume for Hornsby, Artarmon, Pymble (owner Google Ads access; no DataForSEO MCP/credentials available — only `github` MCP, and `~/.config/claude-seo/google-api.json` holds a service account + default_property, which is Search Console/GA4, not Google Ads Keyword Planner).
+  - #67: photographed local projects or truthful local detail for Baulkham Hills, Kellyville, Marrickville, Ryde.
+- Next action: owner supplies (1) GKP volumes for Hornsby/Artarmon/Pymble → completes #72's D-10 test and lets a verdict be written into DECISIONS.md / docs/BATHROOM_SITE_STRUCTURE.md; (2) photos or truthful local detail → completes #67.
+- Approval: none required for the reconcile/verify work performed.
+- GitHub sync: checkpoint comment posted to #80; body updated.
