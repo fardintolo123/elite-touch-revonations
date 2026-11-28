@@ -49,8 +49,23 @@ Pages: `/gallery/artarmon-bathroom/` 235 (pos 18.5, all 5 clicks) · `/gallery/a
 
 Pages: `/services/` 407 (pos 60.1) · `/services/bathroom-renovations/north-shore/` 66 (34.5) · `/services/laundry-renovations/` 16 (38.0).
 
-## Still missing for #72
+## Keyword Planner volumes — added 2026-11-28
 
-- **Keyword Planner volume** for the top query per suburb ("bathroom renovations hornsby / artarmon / pymble").
-  That needs Google Ads Keyword Planner. It wasn't pulled here.
-- Facts only. The promote / keep-on-hub verdict and the D-row stay with #72's executor.
+Read in Google Ads → Tools → Keyword Planner → **Get search volume and forecasts**, account
+`991-056-6274 elite touch renovations`, location **Australia**, **All languages**, network **Google**,
+date range **Nov 2025 – Oct 2026**, plan `1447384741`.
+
+| Keyword | Avg. monthly searches | 3-month change | YoY change | Competition | Top of page bid (low – high) |
+|---|---|---:|---:|---|---|
+| `bathroom renovations artarmon` | **10 – 100** | 0% | 0% | High | — |
+| `bathroom renovations hornsby` | **10 – 100** | 0% | −90% | High | A$13.82 – A$70.06 |
+| `bathroom renovations pymble` | **10 – 100** | 0% | 0% | Low | — |
+
+⚠️ This Ads account has no spend (the "Verify your payment information" banner), so Keyword Planner
+reports brackets rather than exact counts. That is the same account condition and the same bracket
+granularity as the original six-suburb Tier-1 research (`docs/BATHROOM_SITE_STRUCTURE.md` →
+"How this was built"), so the comparison is like-for-like.
+
+**Result:** all three sit in the base **10 – 100** bracket. The six existing Tier-1 suburbs sit at
+**500/mo** (Baulkham Hills, Castle Hill, Kellyville) or **100 – 1K** (Marrickville, Ryde, Randwick).
+None of the three candidates clears D-10's step-up bar. Verdict recorded in D-195.

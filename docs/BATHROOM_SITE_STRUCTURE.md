@@ -1,7 +1,7 @@
 # Bathroom Renovations — Site Structure Plan
 **Business:** Elite Touch Renovations
 **Service:** Bathroom renovations (Sydney, NSW)
-**Last updated:** November 28, 2026 (suburb query signals replaced with the date-verified 2026-11-27 pull)
+**Last updated:** November 28, 2026 (Hornsby / Artarmon / Pymble test closed: date-verified Search Console pull + Keyword Planner volumes, all three stay on the hub)
 
 ## How this was built
 
@@ -52,7 +52,7 @@ One page per region. Each briefly covers the whole area, links out to that regio
 
 ---
 
-## Search Console query signals — date-verified, 2026-11-27 (D-10 test still incomplete)
+## Search Console + Keyword Planner verdict — 2026-11-27 / 28 (D-10 test complete: keep on hub)
 
 The 2026-11-02 figures recorded in D-164 came from separate `Queries.csv` and `Pages.csv` exports
 that shared no filter, so they could not say which URL Google showed for a suburb query. On
@@ -67,24 +67,35 @@ aggregates across the whole filtered query set rather than joining each query to
 is sufficient to answer "which URL does Google show for people searching this suburb", which is the
 question D-10's promotion test needs answered.
 
-| Suburb | Clicks | Impressions | Avg position | Top query (impr · pos) | URL Google showed | GKP volume | Current status |
+| Suburb | Clicks | Impressions | Avg position | Top query (impr · pos) | URL Google showed | GKP volume | Verdict |
 |---|---:|---:|---:|---|---|---|---|
-| Hornsby | 0 | 992 | 33.2 | `bathroom renovations hornsby` (776 · 32.1) | `/gallery/hornsby-bathroom/` (655 · 31.0), then `/gallery/hornsby-ensuite/` (282 · 31.5) | Not supplied | Re-test; keep on North Shore hub |
-| Artarmon | 5 | 354 | 26.2 | `bathroom renovations artarmon` (321 · 25.8) | `/gallery/artarmon-bathroom/` (235 · 18.5 — all 5 clicks) | Not supplied | Re-test; keep on North Shore hub |
-| Pymble | 0 | 444 | 55.8 | `bathroom renovations pymble` (325 · 55.6) | `/services/` (407 · 60.1), then the North Shore hub (66 · 34.5) | Not supplied | Re-test; keep on North Shore hub |
+| Hornsby | 0 | 992 | 33.2 | `bathroom renovations hornsby` (776 · 32.1) | `/gallery/hornsby-bathroom/` (655 · 31.0), then `/gallery/hornsby-ensuite/` (282 · 31.5) | **10 – 100** | **Keep on hub** |
+| Artarmon | 5 | 354 | 26.2 | `bathroom renovations artarmon` (321 · 25.8) | `/gallery/artarmon-bathroom/` (235 · 18.5 — all 5 clicks) | **10 – 100** | **Keep on hub** |
+| Pymble | 0 | 444 | 55.8 | `bathroom renovations pymble` (325 · 55.6) | `/services/` (407 · 60.1), then the North Shore hub (66 · 34.5) | **10 – 100** | **Keep on hub** |
 
-What the numbers say, and what they do not:
+The volume column was filled on **2026-11-28** from Google Ads → Keyword Planner → Get search volume
+and forecasts (Australia, All languages, Google, Nov 2025 – Oct 2026) for the same three queries. The
+account has no ad spend, so Planner reports brackets rather than exact counts — the same account
+condition and bracket granularity the original six-suburb research used, which keeps the comparison
+like-for-like.
 
+What the two sources say together:
+
+- **None of the three clears the volume bar.** All three sit in the base **10 – 100** bracket. The six
+  existing Tier-1 suburbs sit at **500/mo** (Baulkham Hills, Castle Hill, Kellyville) or **100 – 1K**
+  (Marrickville, Ryde, Randwick). D-10 requires a genuine, repeatable step up above the base bucket,
+  and a base-bucket reading is disqualifying on its own — the second source could only have helped if
+  Keyword Planner had shown a step up first.
 - **Hornsby and Artarmon already answer their suburb search through a real photographed project
   page**, not a service page. Those gallery pages are the proof the North Shore hub links to. A new
   Tier-1 suburb page would be a third URL chasing the same query against a page that already ranks
-  and, for Artarmon, already earns the only clicks in the set.
-- **Pymble is the weakest candidate.** Nothing local ranks for it: `/services/` carries the suburb
-  impressions at position 60.1, the hub at 34.5, against a 55.8 average. There is no Pymble project
-  to anchor a page and no page-one proximity to build on.
-- **Volume is still missing.** D-10 asks for two cross-checked volume sources, and no Google Keyword
-  Planner figure exists for these three queries. That is the one remaining column in the test, and
-  until it arrives none of the three is promoted or demoted.
+  and, for Artarmon, already earns the only clicks in the set — at base-bucket volume.
+- **Pymble is the weakest candidate on both axes.** Nothing local ranks for it (`/services/` at
+  position 60.1, the hub at 34.5, against a 55.8 average), there is no Pymble project to anchor a
+  page, and the volume is base bucket with **Low** ad competition.
+- Worth watching, not acting on: Hornsby's query shows a **−90% year-on-year** change in Planner
+  while its impressions are still the largest of the three. One reading of one bracket is not enough
+  to build on, but it is a reason to re-test rather than to invest.
 - Two side notes from the same pull: `/artarmon-bathroom-renovation/` still collects 42 impressions
   at position 41.6 although it now 301s to `/services/bathroom-renovations/`; and
   `https://elitetouchrenovations.au/` (apex host) shows 15 impressions at position 5.7 against
@@ -92,11 +103,12 @@ What the numbers say, and what they do not:
   case is a hosting-level redirect question, not a code change, and it is not actioned here.
 
 Five Dock and Balmain are unchanged: their 2026-11-02 aggregate figures remain the record in D-164,
-Balmain already carries the D-188 hold verdict, and neither was part of the 2026-11-27 check.
+Balmain already carries the D-188 hold verdict, and neither was part of this test.
 
-**Preliminary status (unchanged):** keep the existing North Shore and Inner West hub coverage; no
-suburb is promoted or demoted. Both hubs already show local projects and link to their gallery
-pages. **D-193** records this evidence and the one column still open.
+**Final status:** Hornsby, Artarmon and Pymble stay **Tier 2 on the North Shore hub**. No suburb page
+is built. The evidence is D-193 (Search Console half) and **D-195** (volume + verdict). Re-test only
+with new volume evidence — a Keyword Planner bracket above 100, or a different 12-month window that
+shows a stable step up.
 
 ## Recommended URL / route structure
 
